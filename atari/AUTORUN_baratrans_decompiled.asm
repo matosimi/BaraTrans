@@ -209,7 +209,15 @@ ZP_FE	equ $FE
 ZP_FF	equ $FF
 L_0200	equ $0200
 L_0201	equ $0201
+
+		org $D301
 ;
+L_D301	dta $FF			;D301 FF    
+;
+		org $D400
+;
+L_D400	dta $00			;D400 00    
+
 		org $0224
 ;
 L_0224	dta $01			;0224 01   !
@@ -304,1163 +312,8 @@ L_06EC	sty L_06D3			;06EC 8C D3 06
 		cli				;06FC 58
 		jmp L_0C38			;06FD 4C 38 0C
 ;
-		org $0C00
-;
-L_0C00	dta $02,$04,$0A,$0E,$17,$19,$18,$FF
-;vid	dta d""$*.798",$FF
-L_0C08	dta $00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"       ",$FF
-L_0C10	dta $02,$04,$0A,$0E,$17,$19,$18,$FF
-;vid	dta d""$*.798",$FF
-L_0C18	dta $00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"       ",$FF
-L_0C20	dta $06,$04,$06,$04,$04,$07,$04,$FF
-;vid	dta d"&$&$$'$",$FF
-L_0C28	dta $FF			;0C28 FF    
-L_0C29	dta $FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF
-L_0C2E	dta $FF			;0C2E FF    
-L_0C2F	dta $FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF
-L_0C33	dta $FF			;0C33 FF    
-L_0C34	dta $00			;0C34 00    
-L_0C35	dta $00			;0C35 00    
-L_0C36	dta $00,$00
-;vid	dta d"  "
-L_0C38	cld				;0C38 D8
-		ldx #$FF			;0C39 A2 FF
-		txs				;0C3B 9A
-		lda #$00			;0C3C A9 00
-		sta L_022F			;0C3E 8D 2F 02
-		sta ZP_F9			;0C41 85 F9
-		sta L_2111			;0C43 8D 11 21
-		jsr L_0C4C			;0C46 20 4C 0C
-		jmp L_0E52			;0C49 4C 52 0E
-L_0C4C	lda ZP_14			;0C4C A5 14
-L_0C4E	cmp ZP_14			;0C4E C5 14
-		beq L_0C4E			;0C50 F0 FC
-		lda #$00			;0C52 A9 00
-		sei				;0C54 78
-		sta L_D40E			;0C55 8D 0E D4
-		sta L_D20E			;0C58 8D 0E D2
-		sta L_D20F			;0C5B 8D 0F D2
-		lda #$FE			;0C5E A9 FE
-		sta L_D301			;0C60 8D 01 D3
-		ldx #$0C			;0C63 A2 0C
-		ldy #$80			;0C65 A0 80
-		stx L_FFFE			;0C67 8E FE FF
-		sty L_FFFF			;0C6A 8C FF FF
-		ldx #$0C			;0C6D A2 0C
-		ldy #$81			;0C6F A0 81
-		stx L_FFFB			;0C71 8E FB FF
-		sty L_FFFA			;0C74 8C FA FF
-		lda #$40			;0C77 A9 40
-		sta L_D40E			;0C79 8D 0E D4
-		cli				;0C7C 58
-		jmp L_0D57			;0C7D 4C 57 0D
-L_0C80	rti				;0C80 40
-L_0C81	bit L_D40F			;0C81 2C 0F D4
-		bpl L_0C89			;0C84 10 03
-		jmp (L_0200)		;0C86 6C 00 02
-L_0C89	php				;0C89 08
-		pha				;0C8A 48
-		txa				;0C8B 8A
-		pha				;0C8C 48
-		tya				;0C8D 98
-		pha				;0C8E 48
-		cld				;0C8F D8
-		lda #$FF			;0C90 A9 FF
-		sta L_D40F			;0C92 8D 0F D4
-		lda L_022F			;0C95 AD 2F 02
-		sta L_D400			;0C98 8D 00 D4
-		lda L_0230			;0C9B AD 30 02
-		sta L_D402			;0C9E 8D 02 D4
-		lda L_0231			;0CA1 AD 31 02
-		sta L_D403			;0CA4 8D 03 D4
-		lda L_02F4			;0CA7 AD F4 02
-		sta L_D409			;0CAA 8D 09 D4
-		lda L_026F			;0CAD AD 6F 02
-		sta L_D01B			;0CB0 8D 1B D0
-		ldx #$07			;0CB3 A2 07
-L_0CB5	lda L_02C0,X		;0CB5 BD C0 02
-		sta L_D012,X		;0CB8 9D 12 D0
-		dex				;0CBB CA
-		bpl L_0CB5			;0CBC 10 F7
-		lda L_D300			;0CBE AD 00 D3
-		and #$0F			;0CC1 29 0F
-		sta L_0278			;0CC3 8D 78 02
-		inc ZP_14			;0CC6 E6 14
-		jsr L_9122			;0CC8 20 22 91
-		ldx #$25			;0CCB A2 25
-		ldy #$10			;0CCD A0 10
-		stx ZP_EA			;0CCF 86 EA
-		sty ZP_EB			;0CD1 84 EB
-		clc				;0CD3 18
-		lda ZP_EA			;0CD4 A5 EA
-		adc #$46			;0CD6 69 46
-		sta ZP_EA			;0CD8 85 EA
-		lda ZP_EB			;0CDA A5 EB
-		adc #$01			;0CDC 69 01
-		sta ZP_EB			;0CDE 85 EB
-		dec L_0D48			;0CE0 CE 48 0D
-		bmi L_0CE8			;0CE3 30 03
-		jmp L_0D40			;0CE5 4C 40 0D
-L_0CE8	lda #$06			;0CE8 A9 06
-		sta L_0D48			;0CEA 8D 48 0D
-		lda ZP_EF			;0CED A5 EF
-		bpl L_0CF6			;0CEF 10 05
-		lda #$00			;0CF1 A9 00
-		sta L_0D47			;0CF3 8D 47 0D
-L_0CF6	lda L_0D47			;0CF6 AD 47 0D
-		asl @				;0CF9 0A
-		tax				;0CFA AA
-		lda L_0D49,X		;0CFB BD 49 0D
-		sta ZP_EC			;0CFE 85 EC
-		lda L_0D4A,X		;0D00 BD 4A 0D
-		sta ZP_ED			;0D03 85 ED
-		ldx #$00			;0D05 A2 00
-L_0D07	ldy #$00			;0D07 A0 00
-L_0D09	lda (ZP_EC),Y		;0D09 B1 EC
-		sta (ZP_EA),Y		;0D0B 91 EA
-		iny				;0D0D C8
-		cpy #$04			;0D0E C0 04
-		bne L_0D09			;0D10 D0 F7
-		clc				;0D12 18
-		lda ZP_EA			;0D13 A5 EA
-		adc #$28			;0D15 69 28
-		sta ZP_EA			;0D17 85 EA
-		lda ZP_EB			;0D19 A5 EB
-		adc #$00			;0D1B 69 00
-		sta ZP_EB			;0D1D 85 EB
-		clc				;0D1F 18
-		lda ZP_EC			;0D20 A5 EC
-		adc #$04			;0D22 69 04
-		sta ZP_EC			;0D24 85 EC
-		lda ZP_ED			;0D26 A5 ED
-		adc #$00			;0D28 69 00
-		sta ZP_ED			;0D2A 85 ED
-		inx				;0D2C E8
-		cpx #$20			;0D2D E0 20
-		bne L_0D07			;0D2F D0 D6
-		inc L_0D47			;0D31 EE 47 0D
-		lda L_0D47			;0D34 AD 47 0D
-		cmp #$07			;0D37 C9 07
-		bne L_0D40			;0D39 D0 05
-		lda #$00			;0D3B A9 00
-		sta L_0D47			;0D3D 8D 47 0D
-L_0D40	pla				;0D40 68
-		tay				;0D41 A8
-		pla				;0D42 68
-		tax				;0D43 AA
-		pla				;0D44 68
-		plp				;0D45 28
-		rti				;0D46 40
-L_0D47	brk				;0D47 00
-L_0D48	dta $00			;0D48 00    
-L_0D49	dta $2D			;0D49 2D - M
-L_0D4A	dta $47,$AD,$46,$AD,$47,$2D,$47,$2D,$46,$AD,$45,$2D,$46
-;vid	dta $47,d"M"*,$46,d"M"*,$47,d"M",$47,d"M",$46,d"M"*,$45,d"M",$46
-L_0D57	ldx #$00			;0D57 A2 00
-		ldy #$06			;0D59 A0 06
-		stx L_0230			;0D5B 8E 30 02
-		sty L_0231			;0D5E 8C 31 02
-		lda #$C0			;0D61 A9 C0
-		ldx #$80			;0D63 A2 80
-		ldy #$0D			;0D65 A0 0D
-		stx L_0200			;0D67 8E 00 02
-		sty L_0201			;0D6A 8C 01 02
-		sta L_D40E			;0D6D 8D 0E D4
-		lda #$40			;0D70 A9 40
-		sta L_02E0			;0D72 8D E0 02
-		lda #$0C			;0D75 A9 0C
-		sta L_02E1			;0D77 8D E1 02
-		lda #$24			;0D7A A9 24
-		sta L_02F4			;0D7C 8D F4 02
-		rts				;0D7F 60
-L_0D80	pha				;0D80 48
-		lda #$16			;0D81 A9 16
-		sta L_D40A			;0D83 8D 0A D4
-		lda L_0DDE			;0D86 AD DE 0D
-		sta L_D016			;0D89 8D 16 D0
-		lda L_0DDF			;0D8C AD DF 0D
-		sta L_D017			;0D8F 8D 17 D0
-		lda L_0DE0			;0D92 AD E0 0D
-		sta L_D018			;0D95 8D 18 D0
-		lda #$0E			;0D98 A9 0E
-		sta L_D019			;0D9A 8D 19 D0
-		lda #$00			;0D9D A9 00
-		sta L_D01A			;0D9F 8D 1A D0
-		lda #$22			;0DA2 A9 22
-		sta L_D40A			;0DA4 8D 0A D4
-		lda #$B3			;0DA7 A9 B3
-		sta L_0200			;0DA9 8D 00 02
-		lda #$0D			;0DAC A9 0D
-		sta L_0201			;0DAE 8D 01 02
-		pla				;0DB1 68
-		rti				;0DB2 40
-L_0DB3	pha				;0DB3 48
-		lda L_0DE1			;0DB4 AD E1 0D
-		sta L_D40A			;0DB7 8D 0A D4
-		sta L_D016			;0DBA 8D 16 D0
-		lda L_0DE2			;0DBD AD E2 0D
-		sta L_D017			;0DC0 8D 17 D0
-		lda L_0DE3			;0DC3 AD E3 0D
-		sta L_D018			;0DC6 8D 18 D0
-		lda #$00			;0DC9 A9 00
-		sta L_D01A			;0DCB 8D 1A D0
-		lda #$80			;0DCE A9 80
-		sta L_0200			;0DD0 8D 00 02
-		lda #$0D			;0DD3 A9 0D
-		sta L_0201			;0DD5 8D 01 02
-		pla				;0DD8 68
-		rti				;0DD9 40
-L_0DDA	brk				;0DDA 00
-L_0DDB	dta $00			;0DDB 00    
-L_0DDC	dta $00			;0DDC 00    
-L_0DDD	dta $00			;0DDD 00    
-L_0DDE	dta $00			;0DDE 00    
-L_0DDF	dta $00			;0DDF 00    
-L_0DE0	dta $00			;0DE0 00    
-L_0DE1	dta $00			;0DE1 00    
-L_0DE2	dta $00			;0DE2 00    
-L_0DE3	dta $00			;0DE3 00    
-L_0DE4	dta $00			;0DE4 00    
-L_0DE5	dta $00			;0DE5 00    
-L_0DE6	dta $00			;0DE6 00    
-L_0DE7	dta $00			;0DE7 00    
-L_0DE8	dta $00			;0DE8 00    
-L_0DE9	dta $00			;0DE9 00    
-L_0DEA	dta $00			;0DEA 00    
-L_0DEB	dta $00			;0DEB 00    
-L_0DEC	dta $00			;0DEC 00    
-L_0DED	dta $00			;0DED 00    
-L_0DEE	jsr L_0F9F			;0DEE 20 9F 0F
-		lda #$00			;0DF1 A9 00
-		sta ZP_D0			;0DF3 85 D0
-		sta ZP_D3			;0DF5 85 D3
-		sta ZP_D2			;0DF7 85 D2
-		sta L_0DED			;0DF9 8D ED 0D
-		sta L_3AE3			;0DFC 8D E3 3A
-		sta L_0DDA			;0DFF 8D DA 0D
-		sta ZP_F9			;0E02 85 F9
-		tax				;0E04 AA
-L_0E05	sta L_1B15,X		;0E05 9D 15 1B
-		inx				;0E08 E8
-		cpx #$06			;0E09 E0 06
-		bne L_0E05			;0E0B D0 F8
-		lda #$09			;0E0D A9 09
-		sta L_0C34			;0E0F 8D 34 0C
-		sta L_0C35			;0E12 8D 35 0C
-		ldx #$00			;0E15 A2 00
-		lda #$FF			;0E17 A9 FF
-		sta L_4283			;0E19 8D 83 42
-L_0E1C	sta L_0C2E,X		;0E1C 9D 2E 0C
-		inx				;0E1F E8
-		cpx #$06			;0E20 E0 06
-		bne L_0E1C			;0E22 D0 F8
-		jsr L_18B6			;0E24 20 B6 18
-		ldx #$00			;0E27 A2 00
-L_0E29	lda L_3EC2,X		;0E29 BD C2 3E
-		bmi L_0E3B			;0E2C 30 0D
-		sta L_3F58,X		;0E2E 9D 58 3F
-		lda L_3F0D,X		;0E31 BD 0D 3F
-		sta L_3FA2,X		;0E34 9D A2 3F
-		inx				;0E37 E8
-		jmp L_0E29			;0E38 4C 29 0E
-L_0E3B	ldx #$00			;0E3B A2 00
-L_0E3D	lda L_0C00,X		;0E3D BD 00 0C
-		bmi L_0E4F			;0E40 30 0D
-		sta L_0C10,X		;0E42 9D 10 0C
-		lda L_0C08,X		;0E45 BD 08 0C
-		sta L_0C18,X		;0E48 9D 18 0C
-		inx				;0E4B E8
-		jmp L_0E3D			;0E4C 4C 3D 0E
-L_0E4F	jmp L_425D			;0E4F 4C 5D 42
-L_0E52	jsr L_1FCA			;0E52 20 CA 1F
-		lda #$01			;0E55 A9 01
-		sta L_1B15			;0E57 8D 15 1B
-		lda #$28			;0E5A A9 28
-		sta ZP_FA			;0E5C 85 FA
-		lda #$0A			;0E5E A9 0A
-		sta ZP_FB			;0E60 85 FB
-		ldx #$00			;0E62 A2 00
-		ldy #$00			;0E64 A0 00
-		jsr L_4520			;0E66 20 20 45
-		jsr L_18B6			;0E69 20 B6 18
-		jsr L_4285			;0E6C 20 85 42
-		jsr L_20C0			;0E6F 20 C0 20
-		jsr L_5830			;0E72 20 30 58
-		lda #$22			;0E75 A9 22
-		sta L_022F			;0E77 8D 2F 02
-		lda #$23			;0E7A A9 23
-		sta L_0DE4			;0E7C 8D E4 0D
-		lda #$26			;0E7F A9 26
-		sta L_0DE5			;0E81 8D E5 0D
-		lda #$2C			;0E84 A9 2C
-		sta L_0DE6			;0E86 8D E6 0D
-		lda #$04			;0E89 A9 04
-		sta L_0DE7			;0E8B 8D E7 0D
-		lda #$08			;0E8E A9 08
-		sta L_0DE8			;0E90 8D E8 0D
-		lda #$0A			;0E93 A9 0A
-		sta L_0DE9			;0E95 8D E9 0D
-		lda #$62			;0E98 A9 62
-		sta L_0DEA			;0E9A 8D EA 0D
-		lda #$66			;0E9D A9 66
-		sta L_0DEB			;0E9F 8D EB 0D
-		lda #$6B			;0EA2 A9 6B
-		sta L_0DEC			;0EA4 8D EC 0D
-		ldx #$00			;0EA7 A2 00
-L_0EA9	lda L_0DE4,X		;0EA9 BD E4 0D
-		and #$F0			;0EAC 29 F0
-		sta L_0DDB,X		;0EAE 9D DB 0D
-		inx				;0EB1 E8
-		cpx #$09			;0EB2 E0 09
-		bne L_0EA9			;0EB4 D0 F3
-		ldx #$00			;0EB6 A2 00
-L_0EB8	lda L_0DDB,X		;0EB8 BD DB 0D
-		cmp L_0DE4,X		;0EBB DD E4 0D
-		beq L_0ECE			;0EBE F0 0E
-		inc L_0DDB,X		;0EC0 FE DB 0D
-		lda L_0DDB,X		;0EC3 BD DB 0D
-		cmp L_0DE4,X		;0EC6 DD E4 0D
-		bne L_0ECE			;0EC9 D0 03
-		inc L_0DED			;0ECB EE ED 0D
-L_0ECE	inx				;0ECE E8
-		cpx #$09			;0ECF E0 09
-		bne L_0EB8			;0ED1 D0 E5
-		lda L_0DED			;0ED3 AD ED 0D
-		cmp #$09			;0ED6 C9 09
-		bne L_0EDD			;0ED8 D0 03
-		jmp L_0DEE			;0EDA 4C EE 0D
-L_0EDD	lda L_0DDB			;0EDD AD DB 0D
-		sta L_02C4			;0EE0 8D C4 02
-		lda L_0DDC			;0EE3 AD DC 0D
-		sta L_02C5			;0EE6 8D C5 02
-		lda L_0DDD			;0EE9 AD DD 0D
-		sta L_02C6			;0EEC 8D C6 02
-		jsr L_18AA			;0EEF 20 AA 18
-		ldx #$00			;0EF2 A2 00
-		jmp L_0EB8			;0EF4 4C B8 0E
-L_0EF7	jsr L_0F12			;0EF7 20 12 0F
-		lda ZP_14			;0EFA A5 14
-L_0EFC	cmp ZP_14			;0EFC C5 14
-		beq L_0EFC			;0EFE F0 FC
-		lda L_D010			;0F00 AD 10 D0
-		beq L_0F08			;0F03 F0 03
-		jmp L_0EF7			;0F05 4C F7 0E
-L_0F08	lda ZP_F7			;0F08 A5 F7
-		bne L_0EF7			;0F0A D0 EB
-		jsr L_2118			;0F0C 20 18 21
-		jmp L_188E			;0F0F 4C 8E 18
-L_0F12	lda ZP_F7			;0F12 A5 F7
-		bne L_0F4D			;0F14 D0 37
-		lda L_D300			;0F16 AD 00 D3
-		eor #$FF			;0F19 49 FF
-		and #$0F			;0F1B 29 0F
-		ror @				;0F1D 6A
-		ror @				;0F1E 6A
-		ror @				;0F1F 6A
-		bcc L_0F34			;0F20 90 12
-		dec L_3FF3			;0F22 CE F3 3F
-		lda L_3FF3			;0F25 AD F3 3F
-		bpl L_0F2E			;0F28 10 04
-		inc L_3FF3			;0F2A EE F3 3F
-		rts				;0F2D 60
-L_0F2E	lda #$01			;0F2E A9 01
-		sta ZP_F7			;0F30 85 F7
-		bpl L_0F49			;0F32 10 15
-L_0F34	ror @				;0F34 6A
-		bcc L_0F74			;0F35 90 3D
-		inc L_3FF3			;0F37 EE F3 3F
-		lda L_3FF3			;0F3A AD F3 3F
-		cmp #$08			;0F3D C9 08
-		bne L_0F45			;0F3F D0 04
-		dec L_3FF3			;0F41 CE F3 3F
-		rts				;0F44 60
-L_0F45	lda #$02			;0F45 A9 02
-		sta ZP_F7			;0F47 85 F7
-L_0F49	lda #$00			;0F49 A9 00
-		sta ZP_F8			;0F4B 85 F8
-L_0F4D	lda ZP_F7			;0F4D A5 F7
-		lsr @				;0F4F 4A
-		bcc L_0F59			;0F50 90 07
-		lda #$FF			;0F52 A9 FF
-		sta L_0F62			;0F54 8D 62 0F
-		bmi L_0F5E			;0F57 30 05
-L_0F59	lda #$01			;0F59 A9 01
-		sta L_0F62			;0F5B 8D 62 0F
-L_0F5E	clc				;0F5E 18
-		lda ZP_F4			;0F5F A5 F4
-		adc #$01			;0F61 69 01
-L_0F62	equ *-1			;!
-		sta ZP_F4			;0F63 85 F4
-		inc ZP_F8			;0F65 E6 F8
-		lda ZP_F8			;0F67 A5 F8
-		cmp L_1010			;0F69 CD 10 10
-		bne L_0F74			;0F6C D0 06
-		lda #$00			;0F6E A9 00
-		sta ZP_F7			;0F70 85 F7
-		sta ZP_F8			;0F72 85 F8
-L_0F74	lda #$00			;0F74 A9 00
-		tax				;0F76 AA
-L_0F77	sta L_DC00,X		;0F77 9D 00 DC
-		sta L_DD00,X		;0F7A 9D 00 DD
-		inx				;0F7D E8
-		bne L_0F77			;0F7E D0 F7
-		ldx ZP_F4			;0F80 A6 F4
-		stx L_D000			;0F82 8E 00 D0
-		stx L_D001			;0F85 8E 01 D0
-		tax				;0F88 AA
-		ldy L_100F			;0F89 AC 0F 10
-L_0F8C	lda L_1011,X		;0F8C BD 11 10
-		sta L_DC00,Y		;0F8F 99 00 DC
-		lda L_101B,X		;0F92 BD 1B 10
-		sta L_DD00,Y		;0F95 99 00 DD
-		iny				;0F98 C8
-		inx				;0F99 E8
-		cpx #$0A			;0F9A E0 0A
-		bne L_0F8C			;0F9C D0 EE
-		rts				;0F9E 60
-L_0F9F	jsr L_0FEB			;0F9F 20 EB 0F
-		lda ZP_14			;0FA2 A5 14
-L_0FA4	cmp ZP_14			;0FA4 C5 14
-		beq L_0FA4			;0FA6 F0 FC
-		lda L_022F			;0FA8 AD 2F 02
-		ora #$1C			;0FAB 09 1C
-		sta L_022F			;0FAD 8D 2F 02
-		lda #$D8			;0FB0 A9 D8
-		sta L_D407			;0FB2 8D 07 D4
-		lda #$03			;0FB5 A9 03
-		sta L_D01D			;0FB7 8D 1D D0
-		ldx #$0A			;0FBA A2 0A
-		ldy #$0F			;0FBC A0 0F
-		stx L_02C0			;0FBE 8E C0 02
-		sty L_02C1			;0FC1 8C C1 02
-		lda #$21			;0FC4 A9 21
-		sta L_026F			;0FC6 8D 6F 02
-		ldx L_100E			;0FC9 AE 0E 10
-		stx ZP_F4			;0FCC 86 F4
-		lda #$04			;0FCE A9 04
-		sta L_3FF3			;0FD0 8D F3 3F
-		rts				;0FD3 60
-L_0FD4	jsr L_0FEB			;0FD4 20 EB 0F
-		lda L_022F			;0FD7 AD 2F 02
-		and #$E3			;0FDA 29 E3
-		sta L_022F			;0FDC 8D 2F 02
-		lda #$00			;0FDF A9 00
-		sta L_D01D			;0FE1 8D 1D D0
-		sta L_02C0			;0FE4 8D C0 02
-		sta L_02C1			;0FE7 8D C1 02
-		rts				;0FEA 60
-L_0FEB	lda #$00			;0FEB A9 00
-		tax				;0FED AA
-L_0FEE	sta L_DC00,X		;0FEE 9D 00 DC
-		sta L_DD00,X		;0FF1 9D 00 DD
-		sta L_DE00,X		;0FF4 9D 00 DE
-		sta L_DF00,X		;0FF7 9D 00 DF
-		inx				;0FFA E8
-		bne L_0FEE			;0FFB D0 F1
-		sta L_D008			;0FFD 8D 08 D0
-		sta L_D009			;1000 8D 09 D0
-		sta L_D000			;1003 8D 00 D0
-		sta L_D001			;1006 8D 01 D0
-		sta ZP_F7			;1009 85 F7
-		sta ZP_F8			;100B 85 F8
-		rts				;100D 60
-L_100E	txa				;100E 8A
-L_100F	dta $D4			;100F D4 T  
-L_1010	dta $14			;1010 14   4
-L_1011	dta $80,$C0,$A0,$90,$A0,$90,$E0,$A0,$10,$10
-;vid	dta d" "*,$C0,d"@0@0`@"*,d"00"
-L_101B	dta $00,$40,$40,$60,$78,$60,$10,$10,$08,$08
-;vid	dta d" ",$40,$40,d"`x`00(("
-L_1025
-		dta $00,$02,$AA,$95,$40,$01,$54,$00,$FD,$50,$05,$6A,$00,$00,$00,$68
-		dta $00,$0F,$F9,$40,$00,$03,$EA,$02,$BF,$E9,$50,$00,$00,$00,$00,$6B
-		dta $FE,$40,$00,$00,$00,$00,$00,$55,$0F,$FE,$AA,$A6,$54,$05,$56,$02
-		dta $BA,$54,$01,$56,$80,$00,$01,$5A,$80,$2A,$FE,$54,$00,$2B,$FA,$AF
-		dta $FA,$95,$55,$40,$00,$00,$56,$AA,$FE,$55,$50,$00,$00,$00,$15,$69
-		dta $AF,$FF,$AA,$AA,$95,$05,$6A,$AF,$F9,$55,$40,$5A,$FA,$54,$00,$55
-		dta $5A,$AA,$BE,$A5,$41,$5A,$FE,$FE,$A5,$55,$54,$00,$00,$05,$6A,$AA
-		dta $BF,$A5,$55,$00,$00,$05,$5B,$E9,$AB,$FF,$EA,$AA,$A5,$06,$AA,$AF
-		dta $FA,$55,$01,$6B,$F9,$55,$40,$55,$AA,$AF,$A9,$55,$01,$56,$AF,$FA
-		dta $55,$55,$50,$00,$14,$01,$56,$AB,$FF,$FA,$A5,$50,$00,$55,$BF,$FA
-		dta $AA,$BF,$EA,$AA,$A5,$46,$AA,$BF,$E9,$50,$05,$5A,$FE,$55,$50,$16
-		dta $AB,$FE,$55,$50,$00,$55,$6A,$E9,$55,$50,$00,$01,$55,$00,$15,$6A
-		dta $BF,$FE,$55,$54,$01,$6B,$FA,$FF,$AA,$BF,$FA,$96,$A9,$51,$AA,$FF
-		dta $A5,$40,$15,$56,$AF,$95,$40,$16,$AF,$F5,$55,$00,$00,$01,$55,$AA
-		dta $94,$00,$00,$16,$A9,$40,$05,$55,$AB,$FF,$AA,$54,$01,$5A,$A6,$AF
-		dta $AA,$AB,$FE,$55,$6A,$50,$6F,$FE,$95,$01,$55,$55,$5B,$E5,$00,$1A
-		dta $FF,$E9,$40,$00,$00,$00,$00,$1A,$00,$00,$05,$5A,$FA,$54,$00,$01
-		dta $5A,$BF,$FA,$95,$00,$15,$55,$6A,$A0,$00,$00,$00,$00,$90,$00,$00
-		dta $00,$00,$50,$00,$00,$00,$00,$50,$00,$00,$00,$00,$00,$00,$00,$00
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$90,$00,$00,$00,$00
-		dta $A3,$FF,$FF,$FF,$A8,$93,$FF,$FF,$FF,$A8,$53,$FF,$FF,$FF,$A8,$63
-		dta $FF,$FF,$FF,$A8,$03,$FF,$FF,$FF,$A8,$03,$FF,$FF,$FF,$A8,$03,$FF
-		dta $FF,$FF,$A8,$93,$FF,$FF,$FF,$A8,$93,$AA,$AA,$95,$5C,$A3,$AA,$AA
-		dta $95,$5C,$53,$AA,$AA,$95,$5C,$A3,$AA,$AA,$95,$5C,$03,$AA,$AA,$95
-		dta $5C,$03,$AA,$AA,$95,$5C,$43,$AA,$AA,$95,$5C,$E3,$AA,$AA,$95,$5C
-		dta $53,$80,$00,$00,$1C,$93,$80,$00,$00,$1C,$53,$80,$00,$0C,$9C,$A3
-		dta $80,$00,$00,$1C,$03,$80,$00,$00,$1C,$03,$80,$00,$00,$1C,$43,$80
-		dta $00,$00,$1C,$E3,$80,$00,$00,$1C,$53,$80,$00,$00,$1C,$A3,$80,$00
-		dta $00,$1C,$53,$88,$00,$00,$DC,$A3,$80,$00,$00,$1C,$03,$80,$00,$00
-		dta $1C,$03,$80,$2A,$00,$1C,$53,$80,$01,$00,$1C,$F3,$80,$0A,$40,$1C
-		dta $43,$80,$00,$00,$1C,$A3,$80,$15,$40,$1C,$53,$AE,$80,$02,$1C,$63
-		dta $80,$00,$00,$1C,$03,$80,$00,$00,$1C,$03,$80,$B3,$A0,$1C,$53,$80
-		dta $05,$00,$1C,$F3,$80,$2F,$90,$1C,$03,$85,$A4,$19,$1C,$A3,$80,$6F
-		dta $50,$1C,$53,$88,$0A,$83,$1C,$63,$80,$00,$00,$1C,$03,$80,$02,$00
-		dta $1C,$13,$82,$C0,$F8,$1C,$53,$80,$0A,$40,$1C,$F3,$80,$2F,$90,$1C
-		dta $03,$80,$00,$80,$1C,$E3,$80,$BF,$90,$1C,$53,$80,$2F,$E0,$1C,$63
-		dta $80,$00,$00,$1C,$13,$80,$03,$00,$1C,$13,$82,$C0,$02,$1C,$53,$80
-		dta $2F,$90,$1C,$E3,$80,$2F,$90,$1C,$03,$80,$00,$80,$1C,$F3,$82,$FF
-		dta $94,$1C,$53,$80,$BF,$E7,$1C,$53,$80,$3F,$F4,$1C,$13,$80,$03,$00
-		dta $1C,$13,$80,$B0,$02,$1C,$53,$80,$2F,$90,$1C,$93,$80,$2F,$90,$1C
-		dta $03,$80,$00,$80,$1C,$F3,$83,$FE,$A4,$1C,$53,$80,$BF,$F8,$1C,$13
-		dta $80,$3A,$94,$1C,$53,$80,$0B,$80,$1C,$13,$80,$B0,$03,$9C,$53,$80
-		dta $BF,$E4,$1C,$53,$80,$0A,$40,$1C,$03,$80,$00,$80,$1C,$F3,$83,$FE
-		dta $A4,$1C,$F3,$82,$FA,$BE,$1C,$13,$80,$EA,$94,$1C,$53,$80,$2D,$E0
-		dta $1C,$53,$82,$C0,$03,$9C,$63,$80,$BF,$E4,$1C,$43,$80,$00,$00,$1C
-		dta $03,$80,$00,$80,$1C,$B3,$8F,$AA,$A9,$1C,$F3,$82,$E8,$BE,$1C,$13
-		dta $80,$EA,$94,$1C,$53,$80,$02,$00,$1C,$53,$82,$C0,$0E,$1C,$63,$82
-		dta $FF,$F9,$1C,$43,$80,$05,$50,$1C,$43,$80,$00,$A0,$1C,$B3,$8E,$6A
-		dta $99,$1C,$F3,$83,$E0,$2E,$1C,$03,$83,$55,$54,$1C,$93,$80,$02,$00
-		dta $1C,$53,$8B,$00,$08,$1C,$A3,$82,$FF,$F9,$1C,$03,$80,$15,$50,$1C
-		dta $43,$86,$A4,$B5,$1C,$A3,$89,$59,$55,$1C,$F3,$83,$E0,$2F,$1C,$03
-		dta $81,$55,$54,$1C,$93,$80,$83,$08,$1C,$53,$85,$2A,$85,$1C,$B3,$82
-		dta $AF,$A9,$1C,$03,$80,$2A,$90,$1C,$53,$80,$00,$B0,$1C,$A3,$89,$1A
-		dta $45,$1C,$F3,$82,$A0,$2F,$1C,$03,$80,$09,$00,$1C,$93,$82,$C2,$0E
-		dta $1C,$63,$86,$AE,$AA,$1C,$B3,$80,$2F,$95,$1C,$03,$80,$2F,$90,$1C
-		dta $93,$80,$00,$A0,$1C,$A3,$8A,$6D,$99,$1C,$F3,$80,$00,$BF,$1C,$43
-		dta $80,$09,$00,$1C,$A3,$83,$CB,$8F,$1C,$63,$8E,$6F,$9A,$1C,$B3,$80
-		dta $2F,$90,$1C,$03,$80,$2F,$90,$1C,$93,$80,$00,$88,$1C,$63,$8B,$AD
-		dta $AD,$1C,$A3,$80,$00,$BC,$1C,$43,$80,$09,$00,$1C,$A3,$8E,$6D,$E6
-		dta $DC,$A3,$8C,$6A,$92,$1C,$F3,$80,$2F,$90,$1C,$03,$80,$2F,$90,$1C
-		dta $A3,$80,$00,$8C,$1C,$63,$8B,$FD,$F9,$1C,$A3,$88,$02,$FC,$1C,$53
-		dta $80,$09,$00,$1C,$A3,$83,$CB,$8F,$1C,$B3,$8C,$66,$52,$1C,$E3,$80
-		dta $2F,$90,$1C,$03,$80,$2F,$90,$1C,$A3,$80,$00,$8C,$1C,$13,$83,$FD
-		dta $F4,$1C,$A3,$AA,$0B,$F0,$1C,$53,$80,$05,$00,$1C,$A3,$82,$C2,$0E
-		dta $1C,$B3,$8D,$29,$46,$1C,$A3,$80,$2F,$90,$1C,$13,$80,$2F,$90,$1C
-		dta $E3,$80,$00,$8A,$1C,$13,$83,$FD,$F4,$1C,$63,$B3,$0B,$C0,$1C,$53
-		dta $80,$2A,$00,$1C,$63,$80,$83,$08,$1C,$F3,$89,$10,$45,$1C,$A3,$80
-		dta $2F,$90,$1C,$13,$80,$2F,$95,$1C,$E3,$86,$80,$93,$1C,$03,$82,$FD
-		dta $B4,$1C,$53,$82,$2F,$C0,$1C,$53,$80,$BF,$86,$9C,$63,$80,$02,$00
-		dta $1C,$F3,$8B,$4F,$19,$1C,$63,$80,$2A,$90,$1C,$13,$82,$AF,$A9,$1C
-		dta $E3,$80,$3F,$82,$1C,$03,$82,$F5,$64,$1C,$13,$8C,$2F,$00,$1C,$53
-		dta $80,$EA,$D6,$9C,$63,$80,$02,$00,$1C,$E3,$8B,$F0,$F9,$1C,$53,$80
-		dta $15,$50,$1C,$53,$82,$FF,$F9,$1C,$F3,$80,$FE,$80,$1C,$03,$82,$FF
-		dta $54,$1C,$03,$80,$2F,$08,$1C,$53,$80,$BF,$9A,$9C,$63,$80,$2D,$E0
-		dta $1C,$E3,$8B,$FC,$E5,$1C,$53,$80,$05,$50,$1C,$93,$82,$FF,$F9,$1C
-		dta $F3,$40,$FA,$80,$1C,$43,$41,$FF,$54,$1C,$03,$4C,$2F,$2A,$1C,$93
-		dta $40,$EA,$DA,$9C,$53,$40,$0B,$80,$1C,$A3,$42,$B3,$E4,$1C,$13,$40
-		dta $00,$00,$1C,$93,$40,$BF,$E4,$1C,$F3,$40,$EA,$40,$1C,$43,$41,$FA
-		dta $94,$1C,$43,$48,$2A,$33,$1C,$93,$40,$BF,$96,$9C,$53,$40,$03,$00
-		dta $1C,$93,$42,$AF,$94,$1C,$13,$40,$0A,$40,$1C,$D3,$40,$BF,$E4,$1C
-		dta $B3,$40,$A5,$40,$1C,$53,$41,$E0,$54,$1C,$93,$40,$00,$02,$1C,$93
-		dta $40,$6A,$D5,$5C,$53,$40,$03,$00,$1C,$93,$40,$9A,$50,$1C,$03,$40
-		dta $2F,$90,$1C,$E3,$40,$2F,$90,$1C,$A3,$40,$15,$00,$1C,$93,$40,$E5
-		dta $50,$1C,$A3,$40,$08,$0C,$1C,$D3,$40,$1F,$05,$5C,$53,$40,$02,$00
-		dta $1C,$53,$40,$25,$40,$1C,$03,$40,$2F,$90,$1C,$E3,$40,$2F,$90,$1C
-		dta $63,$46,$00,$29,$1C,$93,$40,$7F,$90,$1C,$E3,$40,$2E,$00,$1C,$E3
-		dta $40,$05,$00,$1C,$53,$40,$00,$00,$1C,$53,$40,$00,$00,$1C,$03,$40
-		dta $2F,$90,$1C,$F3,$40,$0A,$40,$1C,$63,$40,$00,$00,$1C,$A3,$40,$1F
-		dta $40,$1C,$E3,$40,$2E,$0C,$1C,$E3,$40,$09,$00,$1C,$53,$40,$00,$00
-		dta $1C,$53,$40,$00,$00,$1C,$03,$40,$2F,$90,$1C,$B3,$40,$05,$00,$1C
-		dta $63,$40,$00,$00,$1C,$A3,$40,$05,$00,$1C,$E3,$40,$08,$08,$1C,$F3
-		dta $40,$00,$00,$1C,$53,$40,$00,$00,$1C,$53,$40,$00,$00,$1C,$43,$40
-		dta $0A,$40,$1C,$B3,$40,$01,$00,$1C,$53,$40,$00,$00,$1C,$E3,$40,$00
-		dta $00,$1C,$F3,$40,$00,$00,$1C,$B3,$40,$00,$00,$1C,$63,$40,$00,$00
-		dta $1C,$53,$40,$00,$00,$1C,$43,$40,$00,$00,$1C,$A3,$40,$00,$00,$1C
-		dta $03,$55,$55,$55,$5C,$E3,$55,$55,$55,$5C,$F3,$55,$55,$55,$5C,$A3
-		dta $55,$55,$55,$5C,$A3,$55,$55,$55,$5C,$13,$55,$55,$55,$5C,$43,$55
-		dta $55,$55,$5C,$63,$55,$55,$55,$5C,$03,$FF,$FF,$FF,$FC,$F3,$FF,$FF
-		dta $FF,$FC,$E3,$FF,$FF,$FF,$FC,$63,$FF,$FF,$FF,$FC,$B3,$FF,$FF,$FF
-		dta $FC,$03,$FF,$FF,$FF,$FC,$43,$FF,$FF,$FF,$FC,$63,$FF,$FF,$FF,$FC
-		dta $00,$00,$00,$00,$00,$F0,$00,$00,$00,$00,$A0,$00,$00,$00,$00,$60
-		dta $00,$00,$00,$00,$F0,$00,$00,$00,$00,$00,$00,$00,$00,$00,$50,$00
-		dta $00,$00,$00,$50,$00,$00,$00,$00,$05,$AA,$AA,$AB,$FF,$FF,$A9,$54
-		dta $00,$55,$95,$00,$00,$00,$05,$69,$55,$00,$55,$AF,$FF,$FA,$80,$00
-		dta $00,$00,$00,$1B,$95,$56,$90,$00,$55,$40,$05,$55,$44,$01,$6B,$FA
-		dta $01,$69,$55,$5A,$AF,$FF,$EA,$95,$40,$15,$40,$05,$50,$00,$05,$A9
-		dta $54,$01,$5A,$BF,$FF,$A9,$55,$40,$00,$00,$55,$5A,$AA,$6A,$95,$00
-		dta $6A,$54,$01,$40,$00,$15,$AF,$E9,$00,$55,$00,$55,$AB,$FF,$FA,$A5
-		dta $50,$04,$00,$55,$55,$00,$16,$B9,$50,$16,$AA,$AB,$FE,$95,$A9,$55
-		dta $40,$00,$15,$56,$BE,$AF,$A5,$55,$AF,$A9,$40,$00,$00,$5A,$BE,$A5
-		dta $40,$00,$01,$5A,$AA,$FF,$FE,$AA,$55,$00,$05,$6A,$95,$40,$5A,$FA
-		dta $41,$55,$6A,$AA,$FE,$AA,$BA,$A9,$55,$00,$01,$55,$AB,$FF,$E9,$56
-		dta $AA,$95,$50,$00,$15,$6A,$FE,$95,$50,$00,$15,$A9,$6A,$AB,$FF,$EA
-		dta $95,$40,$06,$AF,$A5,$50,$1B,$FE,$40,$55,$56,$AA,$BF,$E9,$AF,$AA
-		dta $AA,$54,$01,$55,$56,$BA,$E5,$55,$65,$50,$00,$01,$55,$AB,$FA,$54
-		dta $15,$01,$56,$80,$0A,$AA,$00,$FE,$AA,$54,$02,$BF,$02,$94,$06,$BE
-		dta $00,$05,$00,$0A,$AA,$A4,$0A,$EA,$A9,$40,$00,$55,$AB,$E0,$09,$55
-		dta $54,$00,$00,$05,$5A,$83,$FE,$80,$01,$55,$5A,$00
-		dta $0A,$F0,$00,$00,$BE,$AA,$40,$2C,$00,$A0,$01,$A0,$00,$00,$00,$01
-;vid	dta d"*",d"p"*,d"  ",d"^J"*,$40,d"L ",d"@"*,d"!",d"@"*,d"   !"
-		dta $50,$00,$00,$AA,$94,$00,$00,$06,$BF,$80,$02,$A4,$00,$00,$00,$01
-;vid	dta $50,d"  ",d"J4"*,d"  &",d"_ "*,d""",d"D"*,d"   !"
-		dta $A8,$00,$F0,$00
-;vid	dta d"H"*,d" ",d"p"*,d" "
-L_17A5	lda #$00			;17A5 A9 00
-		sta L_3E27			;17A7 8D 27 3E
-		sta L_3E28			;17AA 8D 28 3E
-		sta L_1843			;17AD 8D 43 18
-		ldx #$00			;17B0 A2 00
-		lda #$FF			;17B2 A9 FF
-		sta L_33CB			;17B4 8D CB 33
-L_17B7	sta L_0C28,X		;17B7 9D 28 0C
-		inx				;17BA E8
-		cpx #$06			;17BB E0 06
-		bne L_17B7			;17BD D0 F8
-		ldx #$00			;17BF A2 00
-L_17C1	sta L_3E29,X		;17C1 9D 29 3E
-		inx				;17C4 E8
-		cpx #$06			;17C5 E0 06
-		bne L_17C1			;17C7 D0 F8
-		ldx #$00			;17C9 A2 00
-		stx L_1843			;17CB 8E 43 18
-		lda ZP_F9			;17CE A5 F9
-		sta L_1844			;17D0 8D 44 18
-L_17D3	lda L_3F58,X		;17D3 BD 58 3F
-		bpl L_17DB			;17D6 10 03
-		jmp L_1818			;17D8 4C 18 18
-L_17DB	cmp L_1844			;17DB CD 44 18
-		bne L_17E3			;17DE D0 03
-		jmp L_17E7			;17E0 4C E7 17
-L_17E3	inx				;17E3 E8
-		jmp L_17D3			;17E4 4C D3 17
-L_17E7	lda L_3FA2,X		;17E7 BD A2 3F
-		cmp #$01			;17EA C9 01
-		beq L_17F9			;17EC F0 0B
-		lda L_3FA2,X		;17EE BD A2 3F
-		cmp #$FE			;17F1 C9 FE
-		beq L_1804			;17F3 F0 0F
-		inx				;17F5 E8
-		jmp L_17D3			;17F6 4C D3 17
-L_17F9	lda L_3FF3			;17F9 AD F3 3F
-		cmp #$04			;17FC C9 04
-		bne L_1804			;17FE D0 04
-		inx				;1800 E8
-		jmp L_17D3			;1801 4C D3 17
-L_1804	txa				;1804 8A
-		ldx L_1843			;1805 AE 43 18
-		sta L_3E29,X		;1808 9D 29 3E
-		inx				;180B E8
-		stx L_1843			;180C 8E 43 18
-		cpx #$06			;180F E0 06
-		beq L_1818			;1811 F0 05
-		tax				;1813 AA
-		inx				;1814 E8
-		jmp L_17D3			;1815 4C D3 17
-L_1818	lda L_3E29			;1818 AD 29 3E
-		bmi L_1822			;181B 30 05
-		lda #$01			;181D A9 01
-		sta L_3E27			;181F 8D 27 3E
-L_1822	lda L_0C2E			;1822 AD 2E 0C
-		bmi L_1832			;1825 30 0B
-		lda #$01			;1827 A9 01
-		sta L_3E28			;1829 8D 28 3E
-		lda #$00			;182C A9 00
-		sta L_33CB			;182E 8D CB 33
-		rts				;1831 60
-L_1832	lda L_3E27			;1832 AD 27 3E
-		bne L_183D			;1835 D0 06
-		lda #$FF			;1837 A9 FF
-		sta L_33CB			;1839 8D CB 33
-		rts				;183C 60
-L_183D	lda #$00			;183D A9 00
-		sta L_33CB			;183F 8D CB 33
-		rts				;1842 60
-L_1843	brk				;1843 00
-L_1844	dta $00			;1844 00    
-L_1845	lda L_3E23			;1845 AD 23 3E
-		bne L_185F			;1848 D0 15
-		lda L_3E28			;184A AD 28 3E
-		beq L_185F			;184D F0 10
-		ldx #$00			;184F A2 00
-L_1851	lda L_0C2E,X		;1851 BD 2E 0C
-		sta L_0C28,X		;1854 9D 28 0C
-		inx				;1857 E8
-		cpx #$06			;1858 E0 06
-		bne L_1851			;185A D0 F5
-		jmp L_1884			;185C 4C 84 18
-L_185F	lda L_3E27			;185F AD 27 3E
-		bne L_1877			;1862 D0 13
-		lda L_3E28			;1864 AD 28 3E
-		bne L_186F			;1867 D0 06
-		lda #$FE			;1869 A9 FE
-		sta L_0C36			;186B 8D 36 0C
-		rts				;186E 60
-L_186F	lda #$00			;186F A9 00
-		sta L_3E23			;1871 8D 23 3E
-		jmp L_1845			;1874 4C 45 18
-L_1877	ldx #$00			;1877 A2 00
-L_1879	lda L_3E29,X		;1879 BD 29 3E
-		sta L_0C28,X		;187C 9D 28 0C
-		inx				;187F E8
-		cpx #$06			;1880 E0 06
-		bne L_1879			;1882 D0 F5
-L_1884	jsr L_3FF4			;1884 20 F4 3F
-		jsr L_18AA			;1887 20 AA 18
-		jsr L_4158			;188A 20 58 41
-		rts				;188D 60
-L_188E	lda L_D010			;188E AD 10 D0
-		beq L_188E			;1891 F0 FB
-		lda L_3FF3			;1893 AD F3 3F
-		asl @				;1896 0A
-		tax				;1897 AA
-		lda L_2003,X		;1898 BD 03 20
-		sta L_3FF1			;189B 8D F1 3F
-		lda L_2004,X		;189E BD 04 20
-		sta L_3FF2			;18A1 8D F2 3F
-		jsr L_18AA			;18A4 20 AA 18
-		jmp (L_3FF1)		;18A7 6C F1 3F
-L_18AA	ldx #$05			;18AA A2 05
-L_18AC	lda ZP_14			;18AC A5 14
-L_18AE	cmp ZP_14			;18AE C5 14
-		beq L_18AE			;18B0 F0 FC
-		dex				;18B2 CA
-		bpl L_18AC			;18B3 10 F7
-		rts				;18B5 60
-L_18B6	lda ZP_F9			;18B6 A5 F9
-		asl @				;18B8 0A
-		tax				;18B9 AA
-		lda L_19D6,X		;18BA BD D6 19
-		sta ZP_F0			;18BD 85 F0
-		lda L_19D7,X		;18BF BD D7 19
-		sta ZP_F1			;18C2 85 F1
-		ldy #$00			;18C4 A0 00
-		ldx #$00			;18C6 A2 00
-L_18C8	lda (ZP_F0),Y		;18C8 B1 F0
-		cmp #$FF			;18CA C9 FF
-		bne L_18D6			;18CC D0 08
-		lda #$00			;18CE A9 00
-		sta L_1B1B,X		;18D0 9D 1B 1B
-		jmp L_18FF			;18D3 4C FF 18
-L_18D6	cmp #$FD			;18D6 C9 FD
-		bne L_18DD			;18D8 D0 03
-		jmp L_1904			;18DA 4C 04 19
-L_18DD	cmp #$FE			;18DD C9 FE
-		bne L_18FA			;18DF D0 19
-		iny				;18E1 C8
-		lda (ZP_F0),Y		;18E2 B1 F0
-		sta L_19D3			;18E4 8D D3 19
-		sty L_19D4			;18E7 8C D4 19
-		stx L_19D5			;18EA 8E D5 19
-		jsr L_1B89			;18ED 20 89 1B
-		ldx L_19D5			;18F0 AE D5 19
-		ldy L_19D4			;18F3 AC D4 19
-		iny				;18F6 C8
-		jmp L_18FF			;18F7 4C FF 18
-L_18FA	lda #$01			;18FA A9 01
-		sta L_1B1B,X		;18FC 9D 1B 1B
-L_18FF	iny				;18FF C8
-		inx				;1900 E8
-		jmp L_18C8			;1901 4C C8 18
-L_1904	ldx #$00			;1904 A2 00
-L_1906	lda L_1B15,X		;1906 BD 15 1B
-		cmp L_1B1B,X		;1909 DD 1B 1B
-		bne L_1914			;190C D0 06
-		inx				;190E E8
-		cpx #$06			;190F E0 06
-		bne L_1906			;1911 D0 F3
-		rts				;1913 60
-L_1914	ldx #$00			;1914 A2 00
-L_1916	lda L_1B1B,X		;1916 BD 1B 1B
-		sta L_1B15,X		;1919 9D 15 1B
-		inx				;191C E8
-		cpx #$06			;191D E0 06
-		bne L_1916			;191F D0 F5
-		lda #$FD			;1921 A9 FD
-		sta ZP_F2			;1923 85 F2
-		lda #$1B			;1925 A9 1B
-		sta ZP_F3			;1927 85 F3
-		ldx #$20			;1929 A2 20
-		ldy #$11			;192B A0 11
-		jsr L_1B21			;192D 20 21 1B
-		lda #$02			;1930 A9 02
-		sta ZP_F2			;1932 85 F2
-		lda #$1F			;1934 A9 1F
-		sta ZP_F3			;1936 85 F3
-		ldx #$20			;1938 A2 20
-		ldy #$01			;193A A0 01
-		jsr L_1B21			;193C 20 21 1B
-		lda #$66			;193F A9 66
-		sta ZP_F2			;1941 85 F2
-		lda #$1F			;1943 A9 1F
-		sta ZP_F3			;1945 85 F3
-		ldx #$20			;1947 A2 20
-		ldy #$48			;1949 A0 48
-		jsr L_1B21			;194B 20 21 1B
-		lda L_1B15			;194E AD 15 1B
-		cmp #$01			;1951 C9 01
-		bne L_1964			;1953 D0 0F
-		lda #$FF			;1955 A9 FF
-		sta ZP_F2			;1957 85 F2
-		lda #$1D			;1959 A9 1D
-		sta ZP_F3			;195B 85 F3
-		ldx #$20			;195D A2 20
-		ldy #$26			;195F A0 26
-		jsr L_1B21			;1961 20 21 1B
-L_1964	lda L_1B16			;1964 AD 16 1B
-		cmp #$01			;1967 C9 01
-		bne L_197A			;1969 D0 0F
-		lda #$17			;196B A9 17
-		sta ZP_F2			;196D 85 F2
-		lda #$1E			;196F A9 1E
-		sta ZP_F3			;1971 85 F3
-		ldx #$25			;1973 A2 25
-		ldy #$26			;1975 A0 26
-		jsr L_1B21			;1977 20 21 1B
-L_197A	lda L_1B17			;197A AD 17 1B
-		cmp #$01			;197D C9 01
-		bne L_1990			;197F D0 0F
-		lda #$A7			;1981 A9 A7
-		sta ZP_F2			;1983 85 F2
-		lda #$1D			;1985 A9 1D
-		sta ZP_F3			;1987 85 F3
-		ldx #$22			;1989 A2 22
-		ldy #$11			;198B A0 11
-		jsr L_1B21			;198D 20 21 1B
-L_1990	lda L_1B18			;1990 AD 18 1B
-		cmp #$01			;1993 C9 01
-		bne L_19A6			;1995 D0 0F
-		lda #$D3			;1997 A9 D3
-		sta ZP_F2			;1999 85 F2
-		lda #$1D			;199B A9 1D
-		sta ZP_F3			;199D 85 F3
-		ldx #$22			;199F A2 22
-		ldy #$38			;19A1 A0 38
-		jsr L_1B21			;19A3 20 21 1B
-L_19A6	lda L_1B19			;19A6 AD 19 1B
-		cmp #$01			;19A9 C9 01
-		bne L_19BC			;19AB D0 0F
-		lda #$9E			;19AD A9 9E
-		sta ZP_F2			;19AF 85 F2
-		lda #$1E			;19B1 A9 1E
-		sta ZP_F3			;19B3 85 F3
-		ldx #$20			;19B5 A2 20
-		ldy #$01			;19B7 A0 01
-		jsr L_1B21			;19B9 20 21 1B
-L_19BC	lda L_1B1A			;19BC AD 1A 1B
-		cmp #$01			;19BF C9 01
-		bne L_19D2			;19C1 D0 0F
-		lda #$3A			;19C3 A9 3A
-		sta ZP_F2			;19C5 85 F2
-		lda #$1E			;19C7 A9 1E
-		sta ZP_F3			;19C9 85 F3
-		ldx #$20			;19CB A2 20
-		ldy #$48			;19CD A0 48
-		jsr L_1B21			;19CF 20 21 1B
-L_19D2	rts				;19D2 60
-L_19D3	brk				;19D3 00
-L_19D4	dta $00			;19D4 00    
-L_19D5	dta $00			;19D5 00    
-L_19D6		dta a(L_1A14)		;19D6 14 1A
-L_19D7	equ *-1
-		dta a(L_1A1B)		;19D8 1B 1A
-		dta a(L_1A24)		;19DA 24 1A
-		dta a(L_1A31)		;19DC 31 1A
-		dta a(L_1A3A)		;19DE 3A 1A
-		dta a(L_1A41)		;19E0 41 1A
-		dta a(L_1A48)		;19E2 48 1A
-		dta a(L_1A51)		;19E4 51 1A
-		dta a(L_1A58)		;19E6 58 1A
-		dta a(L_1A5F)		;19E8 5F 1A
-		dta a(L_1A66)		;19EA 66 1A
-		dta a(L_1A6D)		;19EC 6D 1A
-		dta a(L_1A74)		;19EE 74 1A
-		dta a(L_1A7B)		;19F0 7B 1A
-		dta a(L_1A82)		;19F2 82 1A
-		dta a(L_1A8B)		;19F4 8B 1A
-		dta a(L_1A92)		;19F6 92 1A
-		dta a(L_1A99)		;19F8 99 1A
-		dta a(L_1AA0)		;19FA A0 1A
-		dta a(L_1AA9)		;19FC A9 1A
-		dta a(L_1AB0)		;19FE B0 1A
-		dta a(L_1AB7)		;1A00 B7 1A
-		dta a(L_1ABE)		;1A02 BE 1A
-		dta a(L_1AC7)		;1A04 C7 1A
-		dta a(L_1ACE)		;1A06 CE 1A
-		dta a(L_1AD5)		;1A08 D5 1A
-		dta a(L_1ADC)		;1A0A DC 1A
-		dta a(L_1AE3)		;1A0C E3 1A
-		dta a(L_1AEA)		;1A0E EA 1A
-		dta a(L_1AF3)		;1A10 F3 1A
-		dta a(L_1AFA)		;1A12 FA 1A
-L_1A14	dta $FF,$FF,$00,$FF,$FF,$FF,$FD
-;vid	dta $FF,$FF,d" ",$FF,$FF,$FF,d"}"*
-L_1A1B	dta $01,$FF,$FE,$00,$02,$03,$FF,$FF,$FD
-;vid	dta d"!",$FF,d"~"*,d" "#",$FF,$FF,d"}"*
-L_1A24	dta $FE,$01,$06,$FE,$02,$04,$05,$FE,$00,$00,$FF,$FF,$FD
-;vid	dta d"~"*,d"!&",d"~"*,d""$%",d"~"*,d"  ",$FF,$FF,d"}"*
-L_1A31	dta $FF,$08,$FE,$04,$07,$09,$FF,$FF,$FD
-;vid	dta $FF,d"(",d"~"*,d"$')",$FF,$FF,d"}"*
-L_1A3A	dta $09,$FF,$FF,$FF,$FF,$FF,$FD
-;vid	dta d")",$FF,$FF,$FF,$FF,$FF,d"}"*
-L_1A41	dta $FF,$00,$FF,$FF,$FF,$FF,$FD
-;vid	dta $FF,d" ",$FF,$FF,$FF,$FF,d"}"*
-L_1A48	dta $FF,$09,$FF,$FF,$FE,$03,$0A,$FF,$FD
-;vid	dta $FF,d")",$FF,$FF,d"~"*,d"#*",$FF,d"}"*
-L_1A51	dta $05,$FF,$FF,$FF,$FF,$FF,$FD
-;vid	dta d"%",$FF,$FF,$FF,$FF,$FF,d"}"*
-L_1A58	dta $FF,$FF,$FF,$FF,$FF,$0B,$FD
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"+",d"}"*
-L_1A5F	dta $FF,$0E,$FF,$05,$0F,$0D,$FD
-;vid	dta $FF,d".",$FF,d"%/-",d"}"*
-L_1A66	dta $10,$FF,$FF,$FF,$FF,$0C,$FD
-;vid	dta d"0",$FF,$FF,$FF,$FF,d",",d"}"*
-L_1A6D	dta $FF,$11,$FF,$FF,$FF,$FF,$FD
-;vid	dta $FF,d"1",$FF,$FF,$FF,$FF,d"}"*
-L_1A74	dta $FF,$FF,$FF,$FF,$0C,$FF,$FD
-;vid	dta $FF,$FF,$FF,$FF,d",",$FF,d"}"*
-L_1A7B	dta $0C,$FF,$FF,$FF,$12,$FF,$FD
-;vid	dta d",",$FF,$FF,$FF,d"2",$FF,d"}"*
-L_1A82	dta $FF,$FF,$FE,$05,$14,$FF,$FF,$13,$FD
-;vid	dta $FF,$FF,d"~"*,d"%4",$FF,$FF,d"3",d"}"*
-L_1A8B	dta $FF,$FF,$FF,$15,$FF,$FF,$FD
-;vid	dta $FF,$FF,$FF,d"5",$FF,$FF,d"}"*
-L_1A92	dta $FF,$FF,$FF,$FF,$FF,$FF,$FD
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,d"}"*
-L_1A99	dta $FF,$FF,$16,$FF,$FF,$FF,$FD
-;vid	dta $FF,$FF,d"6",$FF,$FF,$FF,d"}"*
-L_1AA0	dta $FE,$06,$18,$FF,$FF,$17,$FF,$FF,$FD
-;vid	dta d"~"*,d"&8",$FF,$FF,d"7",$FF,$FF,d"}"*
-L_1AA9	dta $1C,$FF,$FF,$FF,$1F,$1E,$FD
-;vid	dta d"<",$FF,$FF,$FF,d"?>",d"}"*
-L_1AB0	dta $FF,$FF,$FF,$FF,$FF,$FF,$FD
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,d"}"*
-L_1AB7	dta $FF,$FF,$1B,$FF,$FF,$FF,$FD
-;vid	dta $FF,$FF,d";",$FF,$FF,$FF,d"}"*
-L_1ABE	dta $FF,$19,$1C,$FE,$08,$1A,$FF,$FF,$FD
-;vid	dta $FF,d"9<",d"~"*,d"(:",$FF,$FF,d"}"*
-L_1AC7	dta $FF,$1D,$FF,$1B,$FF,$FF,$FD
-;vid	dta $FF,d"=",$FF,d";",$FF,$FF,d"}"*
-L_1ACE	dta $FF,$FF,$FF,$FF,$FF,$2A,$FD
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"J",d"}"*
-L_1AD5	dta $FF,$FF,$FF,$FF,$29,$28,$FD
-;vid	dta $FF,$FF,$FF,$FF,d"IH",d"}"*
-L_1ADC	dta $25,$FF,$26,$FF,$27,$FF,$FD
-;vid	dta d"E",$FF,d"F",$FF,d"G",$FF,d"}"*
-L_1AE3	dta $FF,$23,$FF,$24,$22,$FF,$FD
-;vid	dta $FF,d"C",$FF,d"DB",$FF,d"}"*
-L_1AEA	dta $20,$FF,$FF,$FF,$FF,$FE,$07,$21,$FD
-;vid	dta d"@",$FF,$FF,$FF,$FF,d"~"*,d"'A",d"}"*
-L_1AF3	dta $FF,$28,$FF,$FF,$FF,$FF,$FD
-;vid	dta $FF,d"H",$FF,$FF,$FF,$FF,d"}"*
-L_1AFA	dta $FF,$FF,$FF,$FF,$FF,$FF,$FD,$00,$00
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,d"}"*,d"  "
-L_1B03	dta $FF			;1B03 FF    
-L_1B04	dta $04,$FF,$07,$FF,$09,$13,$12,$FF,$1F,$FF,$2F,$FF,$46,$3F,$FF,$FF
-;vid	dta d"$",$FF,d"'",$FF,d")32",$FF,d"?",$FF,d"O",$FF,$46,d"_",$FF,$FF
-		dta $3B			;1B14 3B ; [
-L_1B15	dta $00			;1B15 00    
-L_1B16	dta $00			;1B16 00    
-L_1B17	dta $00			;1B17 00    
-L_1B18	dta $00			;1B18 00    
-L_1B19	dta $00			;1B19 00    
-L_1B1A	dta $00			;1B1A 00    
-L_1B1B	dta $00,$00,$00,$00,$00,$00
-;vid	dta d"      "
-L_1B21	txa				;1B21 8A
-		clc				;1B22 18
-		adc #$00			;1B23 69 00
-		sta ZP_F0			;1B25 85 F0
-		lda #$F0			;1B27 A9 F0
-		adc #$00			;1B29 69 00
-		sta ZP_F1			;1B2B 85 F1
-		dey				;1B2D 88
-		bmi L_1B41			;1B2E 30 11
-		iny				;1B30 C8
-L_1B31	clc				;1B31 18
-		lda ZP_F0			;1B32 A5 F0
-		adc #$28			;1B34 69 28
-		sta ZP_F0			;1B36 85 F0
-		lda ZP_F1			;1B38 A5 F1
-		adc #$00			;1B3A 69 00
-		sta ZP_F1			;1B3C 85 F1
-		dey				;1B3E 88
-		bne L_1B31			;1B3F D0 F0
-L_1B41	ldy #$00			;1B41 A0 00
-		lda (ZP_F2),Y		;1B43 B1 F2
-		sta L_1BFB			;1B45 8D FB 1B
-		iny				;1B48 C8
-		lda (ZP_F2),Y		;1B49 B1 F2
-		tax				;1B4B AA
-		ldy #$00			;1B4C A0 00
-		clc				;1B4E 18
-		lda ZP_F2			;1B4F A5 F2
-		adc #$02			;1B51 69 02
-		sta ZP_F2			;1B53 85 F2
-		lda ZP_F3			;1B55 A5 F3
-		adc #$00			;1B57 69 00
-		sta ZP_F3			;1B59 85 F3
-L_1B5B	lda (ZP_F2),Y		;1B5B B1 F2
-		sta (ZP_F0),Y		;1B5D 91 F0
-		iny				;1B5F C8
-		cpy L_1BFB			;1B60 CC FB 1B
-		bne L_1B5B			;1B63 D0 F6
-		ldy #$00			;1B65 A0 00
-		dex				;1B67 CA
-		beq L_1B88			;1B68 F0 1E
-		clc				;1B6A 18
-		lda ZP_F0			;1B6B A5 F0
-		adc #$28			;1B6D 69 28
-		sta ZP_F0			;1B6F 85 F0
-		lda ZP_F1			;1B71 A5 F1
-		adc #$00			;1B73 69 00
-		sta ZP_F1			;1B75 85 F1
-		clc				;1B77 18
-		lda ZP_F2			;1B78 A5 F2
-		adc L_1BFB			;1B7A 6D FB 1B
-		sta ZP_F2			;1B7D 85 F2
-		lda ZP_F3			;1B7F A5 F3
-		adc #$00			;1B81 69 00
-		sta ZP_F3			;1B83 85 F3
-		jmp L_1B5B			;1B85 4C 5B 1B
-L_1B88	rts				;1B88 60
-L_1B89	ldx L_19D5			;1B89 AE D5 19
-		lda #$00			;1B8C A9 00
-		sta L_1B1B,X		;1B8E 9D 1B 1B
-		lda L_19D3			;1B91 AD D3 19
-		asl @				;1B94 0A
-		tax				;1B95 AA
-		stx L_1BFB			;1B96 8E FB 1B
-		lda L_1B03,X		;1B99 BD 03 1B
-		bmi L_1BD9			;1B9C 30 3B
-		tay				;1B9E A8
-		cpy #$3F			;1B9F C0 3F
-		bne L_1BC3			;1BA1 D0 20
-		lda L_3F58,Y		;1BA3 B9 58 3F
-		cmp ZP_F9			;1BA6 C5 F9
-		beq L_1BB3			;1BA8 F0 09
-		ldx L_19D5			;1BAA AE D5 19
-		lda #$01			;1BAD A9 01
-		sta L_1B1B,X		;1BAF 9D 1B 1B
-		rts				;1BB2 60
-L_1BB3	lda L_3FA2,Y		;1BB3 B9 A2 3F
-		cmp #$FF			;1BB6 C9 FF
-		bne L_1BFA			;1BB8 D0 40
-		ldx L_19D5			;1BBA AE D5 19
-		lda #$01			;1BBD A9 01
-		sta L_1B1B,X		;1BBF 9D 1B 1B
-		rts				;1BC2 60
-L_1BC3	lda L_3F58,Y		;1BC3 B9 58 3F
-		cmp ZP_F9			;1BC6 C5 F9
-		bne L_1BFA			;1BC8 D0 30
-		lda L_3FA2,Y		;1BCA B9 A2 3F
-		cmp #$FF			;1BCD C9 FF
-		beq L_1BFA			;1BCF F0 29
-		ldx L_19D5			;1BD1 AE D5 19
-		lda #$01			;1BD4 A9 01
-		sta L_1B1B,X		;1BD6 9D 1B 1B
-L_1BD9	ldx L_1BFB			;1BD9 AE FB 1B
-		lda L_1B04,X		;1BDC BD 04 1B
-		bmi L_1BFA			;1BDF 30 19
-		tay				;1BE1 A8
-		lda L_3FA2,Y		;1BE2 B9 A2 3F
-		bne L_1BF2			;1BE5 D0 0B
-		lda #$00			;1BE7 A9 00
-		ldx L_19D5			;1BE9 AE D5 19
-		sta L_1B1B,X		;1BEC 9D 1B 1B
-		jmp L_1BFA			;1BEF 4C FA 1B
-L_1BF2	ldx L_19D5			;1BF2 AE D5 19
-		lda #$01			;1BF5 A9 01
-		sta L_1B1B,X		;1BF7 9D 1B 1B
-L_1BFA	rts				;1BFA 60
-L_1BFB
-		dta $00,$00,$08,$35,$00,$00,$00,$04,$00,$00,$00,$00,$00,$00,$00,$04
-		dta $00,$00,$00,$00,$00,$00,$00,$04,$00,$00,$00,$00,$00,$00,$00,$11
-		dta $00,$00,$00,$00,$00,$00,$00,$11,$00,$00,$00,$00,$00,$00,$00,$40
-		dta $40,$00,$00,$00,$00,$00,$00,$40,$40,$04,$00,$00,$00,$00,$01,$00
-		dta $10,$08,$00,$00,$00,$00,$21,$51,$53,$0C,$00,$00,$00,$00,$A0,$11
-		dta $02,$BF,$90,$00,$00,$02,$90,$11,$01,$0C,$00,$00,$00,$02,$40,$11
-		dta $00,$48,$00,$00,$00,$0A,$40,$11,$00,$44,$00,$00,$00,$29,$00,$15
-		dta $00,$13,$00,$00,$00,$29,$00,$00,$00,$1B,$00,$00,$00,$29,$00,$2A
-		dta $00,$1B,$00,$00,$00,$A4,$02,$80,$E0,$06,$C0,$00,$00,$A4,$09,$44
-		dta $6C,$06,$C0,$00,$00,$A4,$09,$00,$2C,$06,$C0,$00,$02,$90,$24,$04
-		dta $0B,$01,$B0,$00,$00,$00,$24,$04,$0B,$00,$00,$00,$00,$40,$90,$08
-		dta $02,$C0,$40,$00,$01,$40,$90,$08,$02,$C0,$50,$00,$01,$40,$10,$0C
-		dta $02,$00,$50,$00,$04,$55,$00,$0C,$00,$15,$44,$00,$10,$01,$00,$08
-		dta $00,$10,$01,$00,$50,$01,$16,$FF,$E5,$10,$01,$40,$10,$01,$00,$08
-		dta $00,$10,$01,$00,$04,$55,$00,$0C,$00,$15,$44,$00,$01,$40,$10,$0C
-		dta $02,$00,$50,$00,$01,$40,$90,$08,$02,$C0,$50,$00,$00,$40,$90,$08
-		dta $02,$C0,$40,$00,$00,$00,$24,$04,$0B,$00,$00,$00,$02,$90,$24,$04
-		dta $0B,$01,$B0,$00,$00,$A4,$09,$00,$2C,$06,$C0,$00,$00,$A4,$09,$44
-		dta $6C,$06,$C0,$00,$00,$A4,$02,$80,$A0,$06,$C0,$00,$00,$29,$00,$2A
-		dta $00,$1B,$00,$00,$00,$29,$00,$00,$00,$1B,$00,$00,$00,$29,$00,$15
-		dta $00,$1B,$00,$00,$00,$0A,$40,$11,$00,$6C,$00,$00,$00,$02,$40,$11
-		dta $00,$60,$00,$00,$00,$02,$90,$11,$01,$A0,$00,$00,$00,$00,$A0,$11
-		dta $02,$80,$00,$00,$00,$00,$21,$51,$52,$00,$00,$00,$00,$00,$01,$00
-		dta $10,$00,$00,$00,$00,$00,$00,$40,$40,$00,$00,$00,$00,$00,$00,$40
-		dta $40,$00,$00,$00,$00,$00,$00,$11,$00,$00,$00,$00,$00,$00,$00,$11
-		dta $00,$00,$00,$00,$00,$00,$00,$04,$00,$00,$00,$00,$00,$00,$00,$04
-		dta $00,$00,$00,$00,$00,$00,$00,$04,$00,$00,$00,$00,$03,$0E,$00,$08
-		dta $00,$00,$0C,$00,$00,$0C,$00,$00,$37,$00,$00,$37,$00,$00,$E2,$C0
-		dta $00,$D1,$C0,$03,$55,$70,$23,$F7,$F3,$A0,$37,$02,$90,$37,$01,$40
-		dta $37,$00,$40,$37,$00,$00,$3F,$00,$03,$0E,$00,$3F,$00,$40,$37,$00
-		dta $40,$37,$00,$90,$37,$01,$A0,$37,$02,$23,$F7,$F2,$03,$55,$70,$00
-		dta $D1,$C0,$00,$E2,$C0,$00,$37,$00,$00,$37,$00,$00,$0C,$00,$00,$0C
-		dta $00,$00,$08,$00,$02,$0B,$00,$C0,$02,$C0,$03,$C0,$0D,$FF,$29,$57
-		dta $F4,$57,$29,$57,$0D,$FF,$03,$C0,$02,$C0,$00,$C0,$03,$0B,$C0,$C0
-		dta $00,$C0,$E0,$00,$00,$F0,$00,$3F,$DC,$00,$35,$5A,$00,$35,$47,$C0
-		dta $35,$5A,$00,$3F,$DC,$00,$00,$F0,$00,$C0,$E0,$00,$C0,$C0,$00,$07
-		dta $0E
-L_1E3C
-		dta $03,$FF,$FF,$FF,$FF,$FF,$F0,$03,$AA,$AA,$AA,$AA,$95,$70,$03,$80
-		dta $00,$00,$00,$00,$70,$03,$80,$00,$0C,$00,$00,$70,$03,$80,$39,$19
-		dta $20,$00,$70,$03,$80,$21,$22,$30,$00,$70,$03,$80,$32,$33,$3C,$00
-		dta $70,$03,$80,$33,$33,$30,$00,$70,$03,$80,$33,$22,$30,$00,$70,$03
-		dta $80,$29,$19,$2B,$00,$70,$03,$80,$00,$00,$00,$00,$70,$03,$80,$00
-		dta $00,$00,$00,$70,$03,$AA,$A9,$55,$55,$55,$70,$03,$FF,$FF,$FF,$FF
-		dta $FF,$F0,$07,$0E,$03,$FF,$FF,$FF,$FF,$FF,$F0,$03,$AA,$AA,$AA,$AA
-		dta $95,$70,$03,$80,$00,$00,$00,$00,$70,$03,$80,$00,$C0,$00,$00,$70
-		dta $03,$81,$B1,$93,$91,$90,$70,$03,$82,$02,$23,$22,$20,$70,$03,$83
-		dta $03,$33,$23,$30,$70,$03,$83,$33,$33,$93,$B0,$70,$03,$82,$22,$22
-		dta $83,$30,$70,$03,$81,$A1,$92,$22,$20,$70,$03,$80,$00,$00,$00,$00
-		dta $70,$03,$80,$00,$00,$00,$00,$70,$03,$AA,$A9,$55,$55,$55,$70,$03
-		dta $FF,$FF,$FF,$FF,$FF,$F0,$07,$0E,$00,$00,$00,$00,$00,$00,$00,$00
-		dta $55,$55,$55,$55,$55,$40,$00,$40,$00,$00,$00,$00,$40,$00,$40,$00
-		dta $80,$00,$00,$40,$00,$40,$61,$91,$40,$40,$40,$00,$42,$01,$12,$21
-		dta $10,$40,$00,$42,$02,$22,$22,$20,$40,$00,$42,$22,$21,$91,$50,$40
-		dta $00,$41,$11,$11,$41,$20,$40,$00,$41,$51,$91,$11,$10,$40,$00,$40
-		dta $00,$00,$00,$00,$40,$00,$40,$00,$00,$00,$00,$40,$00,$55,$55,$55
-		dta $55,$55,$40,$00,$00,$00,$00,$00,$00,$00,$07,$0E,$00,$00,$00,$00
-		dta $00,$00,$00,$00,$55,$55,$55,$55,$55,$40,$00,$40,$00,$00,$00,$00
-		dta $40,$00,$40,$00,$08,$00,$00,$40,$00,$40,$14,$19,$10,$00,$40,$00
-		dta $40,$21,$11,$10,$00,$40,$00,$40,$21,$22,$28,$00,$40,$00,$40,$22
-		dta $22,$20,$00,$40,$00,$40,$22,$11,$10,$00,$40,$00,$40,$14,$19,$15
-		dta $00,$40,$00,$40,$00,$00,$00,$00,$40,$00,$40,$00,$00,$00,$00,$40
-		dta $00,$55,$55,$55,$55,$55,$40,$00,$00,$00,$00,$00,$00,$00
-L_1FCA	lda #$70			;1FCA A9 70
-		sta ZP_F0			;1FCC 85 F0
-		lda #$EE			;1FCE A9 EE
-		sta ZP_F1			;1FD0 85 F1
-		clc				;1FD2 18
-		lda ZP_F0			;1FD3 A5 F0
-		adc #$29			;1FD5 69 29
-		sta ZP_F0			;1FD7 85 F0
-		lda ZP_F1			;1FD9 A5 F1
-		adc #$00			;1FDB 69 00
-		sta ZP_F1			;1FDD 85 F1
-		ldx #$00			;1FDF A2 00
-		ldy #$00			;1FE1 A0 00
-		lda #$00			;1FE3 A9 00
-L_1FE5	sta (ZP_F0),Y		;1FE5 91 F0
-		iny				;1FE7 C8
-		cpy #$26			;1FE8 C0 26
-		bne L_1FE5			;1FEA D0 F9
-		ldy #$00			;1FEC A0 00
-		clc				;1FEE 18
-		lda ZP_F0			;1FEF A5 F0
-		adc #$28			;1FF1 69 28
-		sta ZP_F0			;1FF3 85 F0
-		lda ZP_F1			;1FF5 A5 F1
-		adc #$00			;1FF7 69 00
-		sta ZP_F1			;1FF9 85 F1
-		lda #$00			;1FFB A9 00
-		inx				;1FFD E8
-		cpx #$08			;1FFE E0 08
-L_2000	bne L_1FE5			;2000 D0 E3
+
+L_2000	bne $1fe5 ;L_1FE5			;2000 D0 E3
 		rts				;2002 60
 L_2003	dta $14			;2003 14   4
 L_2004	dta $20,$40,$48,$55,$21,$A9,$31,$25,$28,$9F,$2C,$B4,$2D,$84,$30
@@ -8877,7 +7730,1164 @@ L_98DE	brk				;98DE 00
 ;vid	dta d"                "
 		dta $00			;98FF 00    
 L_9900	equ $9900
+
+		org $0C00,$9900
 ;
+L_0C00	dta $02,$04,$0A,$0E,$17,$19,$18,$FF
+;vid	dta d""$*.798",$FF
+L_0C08	dta $00,$00,$00,$00,$00,$00,$00,$FF
+;vid	dta d"       ",$FF
+L_0C10	dta $02,$04,$0A,$0E,$17,$19,$18,$FF
+;vid	dta d""$*.798",$FF
+L_0C18	dta $00,$00,$00,$00,$00,$00,$00,$FF
+;vid	dta d"       ",$FF
+L_0C20	dta $06,$04,$06,$04,$04,$07,$04,$FF
+;vid	dta d"&$&$$'$",$FF
+L_0C28	dta $FF			;0C28 FF    
+L_0C29	dta $FF,$FF,$FF,$FF,$FF
+;vid	dta $FF,$FF,$FF,$FF,$FF
+L_0C2E	dta $FF			;0C2E FF    
+L_0C2F	dta $FF,$FF,$FF,$FF
+;vid	dta $FF,$FF,$FF,$FF
+L_0C33	dta $FF			;0C33 FF    
+L_0C34	dta $00			;0C34 00    
+L_0C35	dta $00			;0C35 00    
+L_0C36	dta $00,$00
+;vid	dta d"  "
+L_0C38	cld				;0C38 D8
+		ldx #$FF			;0C39 A2 FF
+		txs				;0C3B 9A
+		lda #$00			;0C3C A9 00
+		sta L_022F			;0C3E 8D 2F 02
+		sta ZP_F9			;0C41 85 F9
+		sta L_2111			;0C43 8D 11 21
+		jsr L_0C4C			;0C46 20 4C 0C
+		jmp L_0E52			;0C49 4C 52 0E
+L_0C4C	lda ZP_14			;0C4C A5 14
+L_0C4E	cmp ZP_14			;0C4E C5 14
+		beq L_0C4E			;0C50 F0 FC
+		lda #$00			;0C52 A9 00
+		sei				;0C54 78
+		sta L_D40E			;0C55 8D 0E D4
+		sta L_D20E			;0C58 8D 0E D2
+		sta L_D20F			;0C5B 8D 0F D2
+		lda #$FE			;0C5E A9 FE
+		sta L_D301			;0C60 8D 01 D3
+		ldx #$0C			;0C63 A2 0C
+		ldy #$80			;0C65 A0 80
+		stx L_FFFE			;0C67 8E FE FF
+		sty L_FFFF			;0C6A 8C FF FF
+		ldx #$0C			;0C6D A2 0C
+		ldy #$81			;0C6F A0 81
+		stx L_FFFB			;0C71 8E FB FF
+		sty L_FFFA			;0C74 8C FA FF
+		lda #$40			;0C77 A9 40
+		sta L_D40E			;0C79 8D 0E D4
+		cli				;0C7C 58
+		jmp L_0D57			;0C7D 4C 57 0D
+L_0C80	rti				;0C80 40
+L_0C81	bit L_D40F			;0C81 2C 0F D4
+		bpl L_0C89			;0C84 10 03
+		jmp (L_0200)		;0C86 6C 00 02
+L_0C89	php				;0C89 08
+		pha				;0C8A 48
+		txa				;0C8B 8A
+		pha				;0C8C 48
+		tya				;0C8D 98
+		pha				;0C8E 48
+		cld				;0C8F D8
+		lda #$FF			;0C90 A9 FF
+		sta L_D40F			;0C92 8D 0F D4
+		lda L_022F			;0C95 AD 2F 02
+		sta L_D400			;0C98 8D 00 D4
+		lda L_0230			;0C9B AD 30 02
+		sta L_D402			;0C9E 8D 02 D4
+		lda L_0231			;0CA1 AD 31 02
+		sta L_D403			;0CA4 8D 03 D4
+		lda L_02F4			;0CA7 AD F4 02
+		sta L_D409			;0CAA 8D 09 D4
+		lda L_026F			;0CAD AD 6F 02
+		sta L_D01B			;0CB0 8D 1B D0
+		ldx #$07			;0CB3 A2 07
+L_0CB5	lda L_02C0,X		;0CB5 BD C0 02
+		sta L_D012,X		;0CB8 9D 12 D0
+		dex				;0CBB CA
+		bpl L_0CB5			;0CBC 10 F7
+		lda L_D300			;0CBE AD 00 D3
+		and #$0F			;0CC1 29 0F
+		sta L_0278			;0CC3 8D 78 02
+		inc ZP_14			;0CC6 E6 14
+		jsr L_9122			;0CC8 20 22 91
+		ldx #$25			;0CCB A2 25
+		ldy #$10			;0CCD A0 10
+		stx ZP_EA			;0CCF 86 EA
+		sty ZP_EB			;0CD1 84 EB
+		clc				;0CD3 18
+		lda ZP_EA			;0CD4 A5 EA
+		adc #$46			;0CD6 69 46
+		sta ZP_EA			;0CD8 85 EA
+		lda ZP_EB			;0CDA A5 EB
+		adc #$01			;0CDC 69 01
+		sta ZP_EB			;0CDE 85 EB
+		dec L_0D48			;0CE0 CE 48 0D
+		bmi L_0CE8			;0CE3 30 03
+		jmp L_0D40			;0CE5 4C 40 0D
+L_0CE8	lda #$06			;0CE8 A9 06
+		sta L_0D48			;0CEA 8D 48 0D
+		lda ZP_EF			;0CED A5 EF
+		bpl L_0CF6			;0CEF 10 05
+		lda #$00			;0CF1 A9 00
+		sta L_0D47			;0CF3 8D 47 0D
+L_0CF6	lda L_0D47			;0CF6 AD 47 0D
+		asl @				;0CF9 0A
+		tax				;0CFA AA
+		lda L_0D49,X		;0CFB BD 49 0D
+		sta ZP_EC			;0CFE 85 EC
+		lda L_0D4A,X		;0D00 BD 4A 0D
+		sta ZP_ED			;0D03 85 ED
+		ldx #$00			;0D05 A2 00
+L_0D07	ldy #$00			;0D07 A0 00
+L_0D09	lda (ZP_EC),Y		;0D09 B1 EC
+		sta (ZP_EA),Y		;0D0B 91 EA
+		iny				;0D0D C8
+		cpy #$04			;0D0E C0 04
+		bne L_0D09			;0D10 D0 F7
+		clc				;0D12 18
+		lda ZP_EA			;0D13 A5 EA
+		adc #$28			;0D15 69 28
+		sta ZP_EA			;0D17 85 EA
+		lda ZP_EB			;0D19 A5 EB
+		adc #$00			;0D1B 69 00
+		sta ZP_EB			;0D1D 85 EB
+		clc				;0D1F 18
+		lda ZP_EC			;0D20 A5 EC
+		adc #$04			;0D22 69 04
+		sta ZP_EC			;0D24 85 EC
+		lda ZP_ED			;0D26 A5 ED
+		adc #$00			;0D28 69 00
+		sta ZP_ED			;0D2A 85 ED
+		inx				;0D2C E8
+		cpx #$20			;0D2D E0 20
+		bne L_0D07			;0D2F D0 D6
+		inc L_0D47			;0D31 EE 47 0D
+		lda L_0D47			;0D34 AD 47 0D
+		cmp #$07			;0D37 C9 07
+		bne L_0D40			;0D39 D0 05
+		lda #$00			;0D3B A9 00
+		sta L_0D47			;0D3D 8D 47 0D
+L_0D40	pla				;0D40 68
+		tay				;0D41 A8
+		pla				;0D42 68
+		tax				;0D43 AA
+		pla				;0D44 68
+		plp				;0D45 28
+		rti				;0D46 40
+L_0D47	brk				;0D47 00
+L_0D48	dta $00			;0D48 00    
+L_0D49	dta $2D			;0D49 2D - M
+L_0D4A	dta $47,$AD,$46,$AD,$47,$2D,$47,$2D,$46,$AD,$45,$2D,$46
+;vid	dta $47,d"M"*,$46,d"M"*,$47,d"M",$47,d"M",$46,d"M"*,$45,d"M",$46
+L_0D57	ldx #$00			;0D57 A2 00
+		ldy #$06			;0D59 A0 06
+		stx L_0230			;0D5B 8E 30 02
+		sty L_0231			;0D5E 8C 31 02
+		lda #$C0			;0D61 A9 C0
+		ldx #$80			;0D63 A2 80
+		ldy #$0D			;0D65 A0 0D
+		stx L_0200			;0D67 8E 00 02
+		sty L_0201			;0D6A 8C 01 02
+		sta L_D40E			;0D6D 8D 0E D4
+		lda #$40			;0D70 A9 40
+		sta L_02E0			;0D72 8D E0 02
+		lda #$0C			;0D75 A9 0C
+		sta L_02E1			;0D77 8D E1 02
+		lda #$24			;0D7A A9 24
+		sta L_02F4			;0D7C 8D F4 02
+		rts				;0D7F 60
+L_0D80	pha				;0D80 48
+		lda #$16			;0D81 A9 16
+		sta L_D40A			;0D83 8D 0A D4
+		lda L_0DDE			;0D86 AD DE 0D
+		sta L_D016			;0D89 8D 16 D0
+		lda L_0DDF			;0D8C AD DF 0D
+		sta L_D017			;0D8F 8D 17 D0
+		lda L_0DE0			;0D92 AD E0 0D
+		sta L_D018			;0D95 8D 18 D0
+		lda #$0E			;0D98 A9 0E
+		sta L_D019			;0D9A 8D 19 D0
+		lda #$00			;0D9D A9 00
+		sta L_D01A			;0D9F 8D 1A D0
+		lda #$22			;0DA2 A9 22
+		sta L_D40A			;0DA4 8D 0A D4
+		lda #$B3			;0DA7 A9 B3
+		sta L_0200			;0DA9 8D 00 02
+		lda #$0D			;0DAC A9 0D
+		sta L_0201			;0DAE 8D 01 02
+		pla				;0DB1 68
+		rti				;0DB2 40
+L_0DB3	pha				;0DB3 48
+		lda L_0DE1			;0DB4 AD E1 0D
+		sta L_D40A			;0DB7 8D 0A D4
+		sta L_D016			;0DBA 8D 16 D0
+		lda L_0DE2			;0DBD AD E2 0D
+		sta L_D017			;0DC0 8D 17 D0
+		lda L_0DE3			;0DC3 AD E3 0D
+		sta L_D018			;0DC6 8D 18 D0
+		lda #$00			;0DC9 A9 00
+		sta L_D01A			;0DCB 8D 1A D0
+		lda #$80			;0DCE A9 80
+		sta L_0200			;0DD0 8D 00 02
+		lda #$0D			;0DD3 A9 0D
+		sta L_0201			;0DD5 8D 01 02
+		pla				;0DD8 68
+		rti				;0DD9 40
+L_0DDA	brk				;0DDA 00
+L_0DDB	dta $00			;0DDB 00    
+L_0DDC	dta $00			;0DDC 00    
+L_0DDD	dta $00			;0DDD 00    
+L_0DDE	dta $00			;0DDE 00    
+L_0DDF	dta $00			;0DDF 00    
+L_0DE0	dta $00			;0DE0 00    
+L_0DE1	dta $00			;0DE1 00    
+L_0DE2	dta $00			;0DE2 00    
+L_0DE3	dta $00			;0DE3 00    
+L_0DE4	dta $00			;0DE4 00    
+L_0DE5	dta $00			;0DE5 00    
+L_0DE6	dta $00			;0DE6 00    
+L_0DE7	dta $00			;0DE7 00    
+L_0DE8	dta $00			;0DE8 00    
+L_0DE9	dta $00			;0DE9 00    
+L_0DEA	dta $00			;0DEA 00    
+L_0DEB	dta $00			;0DEB 00    
+L_0DEC	dta $00			;0DEC 00    
+L_0DED	dta $00			;0DED 00    
+L_0DEE	jsr L_0F9F			;0DEE 20 9F 0F
+		lda #$00			;0DF1 A9 00
+		sta ZP_D0			;0DF3 85 D0
+		sta ZP_D3			;0DF5 85 D3
+		sta ZP_D2			;0DF7 85 D2
+		sta L_0DED			;0DF9 8D ED 0D
+		sta L_3AE3			;0DFC 8D E3 3A
+		sta L_0DDA			;0DFF 8D DA 0D
+		sta ZP_F9			;0E02 85 F9
+		tax				;0E04 AA
+L_0E05	sta L_1B15,X		;0E05 9D 15 1B
+		inx				;0E08 E8
+		cpx #$06			;0E09 E0 06
+		bne L_0E05			;0E0B D0 F8
+		lda #$09			;0E0D A9 09
+		sta L_0C34			;0E0F 8D 34 0C
+		sta L_0C35			;0E12 8D 35 0C
+		ldx #$00			;0E15 A2 00
+		lda #$FF			;0E17 A9 FF
+		sta L_4283			;0E19 8D 83 42
+L_0E1C	sta L_0C2E,X		;0E1C 9D 2E 0C
+		inx				;0E1F E8
+		cpx #$06			;0E20 E0 06
+		bne L_0E1C			;0E22 D0 F8
+		jsr L_18B6			;0E24 20 B6 18
+		ldx #$00			;0E27 A2 00
+L_0E29	lda L_3EC2,X		;0E29 BD C2 3E
+		bmi L_0E3B			;0E2C 30 0D
+		sta L_3F58,X		;0E2E 9D 58 3F
+		lda L_3F0D,X		;0E31 BD 0D 3F
+		sta L_3FA2,X		;0E34 9D A2 3F
+		inx				;0E37 E8
+		jmp L_0E29			;0E38 4C 29 0E
+L_0E3B	ldx #$00			;0E3B A2 00
+L_0E3D	lda L_0C00,X		;0E3D BD 00 0C
+		bmi L_0E4F			;0E40 30 0D
+		sta L_0C10,X		;0E42 9D 10 0C
+		lda L_0C08,X		;0E45 BD 08 0C
+		sta L_0C18,X		;0E48 9D 18 0C
+		inx				;0E4B E8
+		jmp L_0E3D			;0E4C 4C 3D 0E
+L_0E4F	jmp L_425D			;0E4F 4C 5D 42
+L_0E52	jsr L_1FCA			;0E52 20 CA 1F
+		lda #$01			;0E55 A9 01
+		sta L_1B15			;0E57 8D 15 1B
+		lda #$28			;0E5A A9 28
+		sta ZP_FA			;0E5C 85 FA
+		lda #$0A			;0E5E A9 0A
+		sta ZP_FB			;0E60 85 FB
+		ldx #$00			;0E62 A2 00
+		ldy #$00			;0E64 A0 00
+		jsr L_4520			;0E66 20 20 45
+		jsr L_18B6			;0E69 20 B6 18
+		jsr L_4285			;0E6C 20 85 42
+		jsr L_20C0			;0E6F 20 C0 20
+		jsr L_5830			;0E72 20 30 58
+		lda #$22			;0E75 A9 22
+		sta L_022F			;0E77 8D 2F 02
+		lda #$23			;0E7A A9 23
+		sta L_0DE4			;0E7C 8D E4 0D
+		lda #$26			;0E7F A9 26
+		sta L_0DE5			;0E81 8D E5 0D
+		lda #$2C			;0E84 A9 2C
+		sta L_0DE6			;0E86 8D E6 0D
+		lda #$04			;0E89 A9 04
+		sta L_0DE7			;0E8B 8D E7 0D
+		lda #$08			;0E8E A9 08
+		sta L_0DE8			;0E90 8D E8 0D
+		lda #$0A			;0E93 A9 0A
+		sta L_0DE9			;0E95 8D E9 0D
+		lda #$62			;0E98 A9 62
+		sta L_0DEA			;0E9A 8D EA 0D
+		lda #$66			;0E9D A9 66
+		sta L_0DEB			;0E9F 8D EB 0D
+		lda #$6B			;0EA2 A9 6B
+		sta L_0DEC			;0EA4 8D EC 0D
+		ldx #$00			;0EA7 A2 00
+L_0EA9	lda L_0DE4,X		;0EA9 BD E4 0D
+		and #$F0			;0EAC 29 F0
+		sta L_0DDB,X		;0EAE 9D DB 0D
+		inx				;0EB1 E8
+		cpx #$09			;0EB2 E0 09
+		bne L_0EA9			;0EB4 D0 F3
+		ldx #$00			;0EB6 A2 00
+L_0EB8	lda L_0DDB,X		;0EB8 BD DB 0D
+		cmp L_0DE4,X		;0EBB DD E4 0D
+		beq L_0ECE			;0EBE F0 0E
+		inc L_0DDB,X		;0EC0 FE DB 0D
+		lda L_0DDB,X		;0EC3 BD DB 0D
+		cmp L_0DE4,X		;0EC6 DD E4 0D
+		bne L_0ECE			;0EC9 D0 03
+		inc L_0DED			;0ECB EE ED 0D
+L_0ECE	inx				;0ECE E8
+		cpx #$09			;0ECF E0 09
+		bne L_0EB8			;0ED1 D0 E5
+		lda L_0DED			;0ED3 AD ED 0D
+		cmp #$09			;0ED6 C9 09
+		bne L_0EDD			;0ED8 D0 03
+		jmp L_0DEE			;0EDA 4C EE 0D
+L_0EDD	lda L_0DDB			;0EDD AD DB 0D
+		sta L_02C4			;0EE0 8D C4 02
+		lda L_0DDC			;0EE3 AD DC 0D
+		sta L_02C5			;0EE6 8D C5 02
+		lda L_0DDD			;0EE9 AD DD 0D
+		sta L_02C6			;0EEC 8D C6 02
+		jsr L_18AA			;0EEF 20 AA 18
+		ldx #$00			;0EF2 A2 00
+		jmp L_0EB8			;0EF4 4C B8 0E
+L_0EF7	jsr L_0F12			;0EF7 20 12 0F
+		lda ZP_14			;0EFA A5 14
+L_0EFC	cmp ZP_14			;0EFC C5 14
+		beq L_0EFC			;0EFE F0 FC
+		lda L_D010			;0F00 AD 10 D0
+		beq L_0F08			;0F03 F0 03
+		jmp L_0EF7			;0F05 4C F7 0E
+L_0F08	lda ZP_F7			;0F08 A5 F7
+		bne L_0EF7			;0F0A D0 EB
+		jsr L_2118			;0F0C 20 18 21
+		jmp L_188E			;0F0F 4C 8E 18
+L_0F12	lda ZP_F7			;0F12 A5 F7
+		bne L_0F4D			;0F14 D0 37
+		lda L_D300			;0F16 AD 00 D3
+		eor #$FF			;0F19 49 FF
+		and #$0F			;0F1B 29 0F
+		ror @				;0F1D 6A
+		ror @				;0F1E 6A
+		ror @				;0F1F 6A
+		bcc L_0F34			;0F20 90 12
+		dec L_3FF3			;0F22 CE F3 3F
+		lda L_3FF3			;0F25 AD F3 3F
+		bpl L_0F2E			;0F28 10 04
+		inc L_3FF3			;0F2A EE F3 3F
+		rts				;0F2D 60
+L_0F2E	lda #$01			;0F2E A9 01
+		sta ZP_F7			;0F30 85 F7
+		bpl L_0F49			;0F32 10 15
+L_0F34	ror @				;0F34 6A
+		bcc L_0F74			;0F35 90 3D
+		inc L_3FF3			;0F37 EE F3 3F
+		lda L_3FF3			;0F3A AD F3 3F
+		cmp #$08			;0F3D C9 08
+		bne L_0F45			;0F3F D0 04
+		dec L_3FF3			;0F41 CE F3 3F
+		rts				;0F44 60
+L_0F45	lda #$02			;0F45 A9 02
+		sta ZP_F7			;0F47 85 F7
+L_0F49	lda #$00			;0F49 A9 00
+		sta ZP_F8			;0F4B 85 F8
+L_0F4D	lda ZP_F7			;0F4D A5 F7
+		lsr @				;0F4F 4A
+		bcc L_0F59			;0F50 90 07
+		lda #$FF			;0F52 A9 FF
+		sta L_0F62			;0F54 8D 62 0F
+		bmi L_0F5E			;0F57 30 05
+L_0F59	lda #$01			;0F59 A9 01
+		sta L_0F62			;0F5B 8D 62 0F
+L_0F5E	clc				;0F5E 18
+		lda ZP_F4			;0F5F A5 F4
+		adc #$01			;0F61 69 01
+L_0F62	equ *-1			;!
+		sta ZP_F4			;0F63 85 F4
+		inc ZP_F8			;0F65 E6 F8
+		lda ZP_F8			;0F67 A5 F8
+		cmp L_1010			;0F69 CD 10 10
+		bne L_0F74			;0F6C D0 06
+		lda #$00			;0F6E A9 00
+		sta ZP_F7			;0F70 85 F7
+		sta ZP_F8			;0F72 85 F8
+L_0F74	lda #$00			;0F74 A9 00
+		tax				;0F76 AA
+L_0F77	sta L_DC00,X		;0F77 9D 00 DC
+		sta L_DD00,X		;0F7A 9D 00 DD
+		inx				;0F7D E8
+		bne L_0F77			;0F7E D0 F7
+		ldx ZP_F4			;0F80 A6 F4
+		stx L_D000			;0F82 8E 00 D0
+		stx L_D001			;0F85 8E 01 D0
+		tax				;0F88 AA
+		ldy L_100F			;0F89 AC 0F 10
+L_0F8C	lda L_1011,X		;0F8C BD 11 10
+		sta L_DC00,Y		;0F8F 99 00 DC
+		lda L_101B,X		;0F92 BD 1B 10
+		sta L_DD00,Y		;0F95 99 00 DD
+		iny				;0F98 C8
+		inx				;0F99 E8
+		cpx #$0A			;0F9A E0 0A
+		bne L_0F8C			;0F9C D0 EE
+		rts				;0F9E 60
+L_0F9F	jsr L_0FEB			;0F9F 20 EB 0F
+		lda ZP_14			;0FA2 A5 14
+L_0FA4	cmp ZP_14			;0FA4 C5 14
+		beq L_0FA4			;0FA6 F0 FC
+		lda L_022F			;0FA8 AD 2F 02
+		ora #$1C			;0FAB 09 1C
+		sta L_022F			;0FAD 8D 2F 02
+		lda #$D8			;0FB0 A9 D8
+		sta L_D407			;0FB2 8D 07 D4
+		lda #$03			;0FB5 A9 03
+		sta L_D01D			;0FB7 8D 1D D0
+		ldx #$0A			;0FBA A2 0A
+		ldy #$0F			;0FBC A0 0F
+		stx L_02C0			;0FBE 8E C0 02
+		sty L_02C1			;0FC1 8C C1 02
+		lda #$21			;0FC4 A9 21
+		sta L_026F			;0FC6 8D 6F 02
+		ldx L_100E			;0FC9 AE 0E 10
+		stx ZP_F4			;0FCC 86 F4
+		lda #$04			;0FCE A9 04
+		sta L_3FF3			;0FD0 8D F3 3F
+		rts				;0FD3 60
+L_0FD4	jsr L_0FEB			;0FD4 20 EB 0F
+		lda L_022F			;0FD7 AD 2F 02
+		and #$E3			;0FDA 29 E3
+		sta L_022F			;0FDC 8D 2F 02
+		lda #$00			;0FDF A9 00
+		sta L_D01D			;0FE1 8D 1D D0
+		sta L_02C0			;0FE4 8D C0 02
+		sta L_02C1			;0FE7 8D C1 02
+		rts				;0FEA 60
+L_0FEB	lda #$00			;0FEB A9 00
+		tax				;0FED AA
+L_0FEE	sta L_DC00,X		;0FEE 9D 00 DC
+		sta L_DD00,X		;0FF1 9D 00 DD
+		sta L_DE00,X		;0FF4 9D 00 DE
+		sta L_DF00,X		;0FF7 9D 00 DF
+		inx				;0FFA E8
+		bne L_0FEE			;0FFB D0 F1
+		sta L_D008			;0FFD 8D 08 D0
+		sta L_D009			;1000 8D 09 D0
+		sta L_D000			;1003 8D 00 D0
+		sta L_D001			;1006 8D 01 D0
+		sta ZP_F7			;1009 85 F7
+		sta ZP_F8			;100B 85 F8
+		rts				;100D 60
+L_100E	txa				;100E 8A
+L_100F	dta $D4			;100F D4 T  
+L_1010	dta $14			;1010 14   4
+L_1011	dta $80,$C0,$A0,$90,$A0,$90,$E0,$A0,$10,$10
+;vid	dta d" "*,$C0,d"@0@0`@"*,d"00"
+L_101B	dta $00,$40,$40,$60,$78,$60,$10,$10,$08,$08
+;vid	dta d" ",$40,$40,d"`x`00(("
+L_1025
+		dta $00,$02,$AA,$95,$40,$01,$54,$00,$FD,$50,$05,$6A,$00,$00,$00,$68
+		dta $00,$0F,$F9,$40,$00,$03,$EA,$02,$BF,$E9,$50,$00,$00,$00,$00,$6B
+		dta $FE,$40,$00,$00,$00,$00,$00,$55,$0F,$FE,$AA,$A6,$54,$05,$56,$02
+		dta $BA,$54,$01,$56,$80,$00,$01,$5A,$80,$2A,$FE,$54,$00,$2B,$FA,$AF
+		dta $FA,$95,$55,$40,$00,$00,$56,$AA,$FE,$55,$50,$00,$00,$00,$15,$69
+		dta $AF,$FF,$AA,$AA,$95,$05,$6A,$AF,$F9,$55,$40,$5A,$FA,$54,$00,$55
+		dta $5A,$AA,$BE,$A5,$41,$5A,$FE,$FE,$A5,$55,$54,$00,$00,$05,$6A,$AA
+		dta $BF,$A5,$55,$00,$00,$05,$5B,$E9,$AB,$FF,$EA,$AA,$A5,$06,$AA,$AF
+		dta $FA,$55,$01,$6B,$F9,$55,$40,$55,$AA,$AF,$A9,$55,$01,$56,$AF,$FA
+		dta $55,$55,$50,$00,$14,$01,$56,$AB,$FF,$FA,$A5,$50,$00,$55,$BF,$FA
+		dta $AA,$BF,$EA,$AA,$A5,$46,$AA,$BF,$E9,$50,$05,$5A,$FE,$55,$50,$16
+		dta $AB,$FE,$55,$50,$00,$55,$6A,$E9,$55,$50,$00,$01,$55,$00,$15,$6A
+		dta $BF,$FE,$55,$54,$01,$6B,$FA,$FF,$AA,$BF,$FA,$96,$A9,$51,$AA,$FF
+		dta $A5,$40,$15,$56,$AF,$95,$40,$16,$AF,$F5,$55,$00,$00,$01,$55,$AA
+		dta $94,$00,$00,$16,$A9,$40,$05,$55,$AB,$FF,$AA,$54,$01,$5A,$A6,$AF
+		dta $AA,$AB,$FE,$55,$6A,$50,$6F,$FE,$95,$01,$55,$55,$5B,$E5,$00,$1A
+		dta $FF,$E9,$40,$00,$00,$00,$00,$1A,$00,$00,$05,$5A,$FA,$54,$00,$01
+		dta $5A,$BF,$FA,$95,$00,$15,$55,$6A,$A0,$00,$00,$00,$00,$90,$00,$00
+		dta $00,$00,$50,$00,$00,$00,$00,$50,$00,$00,$00,$00,$00,$00,$00,$00
+		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$90,$00,$00,$00,$00
+		dta $A3,$FF,$FF,$FF,$A8,$93,$FF,$FF,$FF,$A8,$53,$FF,$FF,$FF,$A8,$63
+		dta $FF,$FF,$FF,$A8,$03,$FF,$FF,$FF,$A8,$03,$FF,$FF,$FF,$A8,$03,$FF
+		dta $FF,$FF,$A8,$93,$FF,$FF,$FF,$A8,$93,$AA,$AA,$95,$5C,$A3,$AA,$AA
+		dta $95,$5C,$53,$AA,$AA,$95,$5C,$A3,$AA,$AA,$95,$5C,$03,$AA,$AA,$95
+		dta $5C,$03,$AA,$AA,$95,$5C,$43,$AA,$AA,$95,$5C,$E3,$AA,$AA,$95,$5C
+		dta $53,$80,$00,$00,$1C,$93,$80,$00,$00,$1C,$53,$80,$00,$0C,$9C,$A3
+		dta $80,$00,$00,$1C,$03,$80,$00,$00,$1C,$03,$80,$00,$00,$1C,$43,$80
+		dta $00,$00,$1C,$E3,$80,$00,$00,$1C,$53,$80,$00,$00,$1C,$A3,$80,$00
+		dta $00,$1C,$53,$88,$00,$00,$DC,$A3,$80,$00,$00,$1C,$03,$80,$00,$00
+		dta $1C,$03,$80,$2A,$00,$1C,$53,$80,$01,$00,$1C,$F3,$80,$0A,$40,$1C
+		dta $43,$80,$00,$00,$1C,$A3,$80,$15,$40,$1C,$53,$AE,$80,$02,$1C,$63
+		dta $80,$00,$00,$1C,$03,$80,$00,$00,$1C,$03,$80,$B3,$A0,$1C,$53,$80
+		dta $05,$00,$1C,$F3,$80,$2F,$90,$1C,$03,$85,$A4,$19,$1C,$A3,$80,$6F
+		dta $50,$1C,$53,$88,$0A,$83,$1C,$63,$80,$00,$00,$1C,$03,$80,$02,$00
+		dta $1C,$13,$82,$C0,$F8,$1C,$53,$80,$0A,$40,$1C,$F3,$80,$2F,$90,$1C
+		dta $03,$80,$00,$80,$1C,$E3,$80,$BF,$90,$1C,$53,$80,$2F,$E0,$1C,$63
+		dta $80,$00,$00,$1C,$13,$80,$03,$00,$1C,$13,$82,$C0,$02,$1C,$53,$80
+		dta $2F,$90,$1C,$E3,$80,$2F,$90,$1C,$03,$80,$00,$80,$1C,$F3,$82,$FF
+		dta $94,$1C,$53,$80,$BF,$E7,$1C,$53,$80,$3F,$F4,$1C,$13,$80,$03,$00
+		dta $1C,$13,$80,$B0,$02,$1C,$53,$80,$2F,$90,$1C,$93,$80,$2F,$90,$1C
+		dta $03,$80,$00,$80,$1C,$F3,$83,$FE,$A4,$1C,$53,$80,$BF,$F8,$1C,$13
+		dta $80,$3A,$94,$1C,$53,$80,$0B,$80,$1C,$13,$80,$B0,$03,$9C,$53,$80
+		dta $BF,$E4,$1C,$53,$80,$0A,$40,$1C,$03,$80,$00,$80,$1C,$F3,$83,$FE
+		dta $A4,$1C,$F3,$82,$FA,$BE,$1C,$13,$80,$EA,$94,$1C,$53,$80,$2D,$E0
+		dta $1C,$53,$82,$C0,$03,$9C,$63,$80,$BF,$E4,$1C,$43,$80,$00,$00,$1C
+		dta $03,$80,$00,$80,$1C,$B3,$8F,$AA,$A9,$1C,$F3,$82,$E8,$BE,$1C,$13
+		dta $80,$EA,$94,$1C,$53,$80,$02,$00,$1C,$53,$82,$C0,$0E,$1C,$63,$82
+		dta $FF,$F9,$1C,$43,$80,$05,$50,$1C,$43,$80,$00,$A0,$1C,$B3,$8E,$6A
+		dta $99,$1C,$F3,$83,$E0,$2E,$1C,$03,$83,$55,$54,$1C,$93,$80,$02,$00
+		dta $1C,$53,$8B,$00,$08,$1C,$A3,$82,$FF,$F9,$1C,$03,$80,$15,$50,$1C
+		dta $43,$86,$A4,$B5,$1C,$A3,$89,$59,$55,$1C,$F3,$83,$E0,$2F,$1C,$03
+		dta $81,$55,$54,$1C,$93,$80,$83,$08,$1C,$53,$85,$2A,$85,$1C,$B3,$82
+		dta $AF,$A9,$1C,$03,$80,$2A,$90,$1C,$53,$80,$00,$B0,$1C,$A3,$89,$1A
+		dta $45,$1C,$F3,$82,$A0,$2F,$1C,$03,$80,$09,$00,$1C,$93,$82,$C2,$0E
+		dta $1C,$63,$86,$AE,$AA,$1C,$B3,$80,$2F,$95,$1C,$03,$80,$2F,$90,$1C
+		dta $93,$80,$00,$A0,$1C,$A3,$8A,$6D,$99,$1C,$F3,$80,$00,$BF,$1C,$43
+		dta $80,$09,$00,$1C,$A3,$83,$CB,$8F,$1C,$63,$8E,$6F,$9A,$1C,$B3,$80
+		dta $2F,$90,$1C,$03,$80,$2F,$90,$1C,$93,$80,$00,$88,$1C,$63,$8B,$AD
+		dta $AD,$1C,$A3,$80,$00,$BC,$1C,$43,$80,$09,$00,$1C,$A3,$8E,$6D,$E6
+		dta $DC,$A3,$8C,$6A,$92,$1C,$F3,$80,$2F,$90,$1C,$03,$80,$2F,$90,$1C
+		dta $A3,$80,$00,$8C,$1C,$63,$8B,$FD,$F9,$1C,$A3,$88,$02,$FC,$1C,$53
+		dta $80,$09,$00,$1C,$A3,$83,$CB,$8F,$1C,$B3,$8C,$66,$52,$1C,$E3,$80
+		dta $2F,$90,$1C,$03,$80,$2F,$90,$1C,$A3,$80,$00,$8C,$1C,$13,$83,$FD
+		dta $F4,$1C,$A3,$AA,$0B,$F0,$1C,$53,$80,$05,$00,$1C,$A3,$82,$C2,$0E
+		dta $1C,$B3,$8D,$29,$46,$1C,$A3,$80,$2F,$90,$1C,$13,$80,$2F,$90,$1C
+		dta $E3,$80,$00,$8A,$1C,$13,$83,$FD,$F4,$1C,$63,$B3,$0B,$C0,$1C,$53
+		dta $80,$2A,$00,$1C,$63,$80,$83,$08,$1C,$F3,$89,$10,$45,$1C,$A3,$80
+		dta $2F,$90,$1C,$13,$80,$2F,$95,$1C,$E3,$86,$80,$93,$1C,$03,$82,$FD
+		dta $B4,$1C,$53,$82,$2F,$C0,$1C,$53,$80,$BF,$86,$9C,$63,$80,$02,$00
+		dta $1C,$F3,$8B,$4F,$19,$1C,$63,$80,$2A,$90,$1C,$13,$82,$AF,$A9,$1C
+		dta $E3,$80,$3F,$82,$1C,$03,$82,$F5,$64,$1C,$13,$8C,$2F,$00,$1C,$53
+		dta $80,$EA,$D6,$9C,$63,$80,$02,$00,$1C,$E3,$8B,$F0,$F9,$1C,$53,$80
+		dta $15,$50,$1C,$53,$82,$FF,$F9,$1C,$F3,$80,$FE,$80,$1C,$03,$82,$FF
+		dta $54,$1C,$03,$80,$2F,$08,$1C,$53,$80,$BF,$9A,$9C,$63,$80,$2D,$E0
+		dta $1C,$E3,$8B,$FC,$E5,$1C,$53,$80,$05,$50,$1C,$93,$82,$FF,$F9,$1C
+		dta $F3,$40,$FA,$80,$1C,$43,$41,$FF,$54,$1C,$03,$4C,$2F,$2A,$1C,$93
+		dta $40,$EA,$DA,$9C,$53,$40,$0B,$80,$1C,$A3,$42,$B3,$E4,$1C,$13,$40
+		dta $00,$00,$1C,$93,$40,$BF,$E4,$1C,$F3,$40,$EA,$40,$1C,$43,$41,$FA
+		dta $94,$1C,$43,$48,$2A,$33,$1C,$93,$40,$BF,$96,$9C,$53,$40,$03,$00
+		dta $1C,$93,$42,$AF,$94,$1C,$13,$40,$0A,$40,$1C,$D3,$40,$BF,$E4,$1C
+		dta $B3,$40,$A5,$40,$1C,$53,$41,$E0,$54,$1C,$93,$40,$00,$02,$1C,$93
+		dta $40,$6A,$D5,$5C,$53,$40,$03,$00,$1C,$93,$40,$9A,$50,$1C,$03,$40
+		dta $2F,$90,$1C,$E3,$40,$2F,$90,$1C,$A3,$40,$15,$00,$1C,$93,$40,$E5
+		dta $50,$1C,$A3,$40,$08,$0C,$1C,$D3,$40,$1F,$05,$5C,$53,$40,$02,$00
+		dta $1C,$53,$40,$25,$40,$1C,$03,$40,$2F,$90,$1C,$E3,$40,$2F,$90,$1C
+		dta $63,$46,$00,$29,$1C,$93,$40,$7F,$90,$1C,$E3,$40,$2E,$00,$1C,$E3
+		dta $40,$05,$00,$1C,$53,$40,$00,$00,$1C,$53,$40,$00,$00,$1C,$03,$40
+		dta $2F,$90,$1C,$F3,$40,$0A,$40,$1C,$63,$40,$00,$00,$1C,$A3,$40,$1F
+		dta $40,$1C,$E3,$40,$2E,$0C,$1C,$E3,$40,$09,$00,$1C,$53,$40,$00,$00
+		dta $1C,$53,$40,$00,$00,$1C,$03,$40,$2F,$90,$1C,$B3,$40,$05,$00,$1C
+		dta $63,$40,$00,$00,$1C,$A3,$40,$05,$00,$1C,$E3,$40,$08,$08,$1C,$F3
+		dta $40,$00,$00,$1C,$53,$40,$00,$00,$1C,$53,$40,$00,$00,$1C,$43,$40
+		dta $0A,$40,$1C,$B3,$40,$01,$00,$1C,$53,$40,$00,$00,$1C,$E3,$40,$00
+		dta $00,$1C,$F3,$40,$00,$00,$1C,$B3,$40,$00,$00,$1C,$63,$40,$00,$00
+		dta $1C,$53,$40,$00,$00,$1C,$43,$40,$00,$00,$1C,$A3,$40,$00,$00,$1C
+		dta $03,$55,$55,$55,$5C,$E3,$55,$55,$55,$5C,$F3,$55,$55,$55,$5C,$A3
+		dta $55,$55,$55,$5C,$A3,$55,$55,$55,$5C,$13,$55,$55,$55,$5C,$43,$55
+		dta $55,$55,$5C,$63,$55,$55,$55,$5C,$03,$FF,$FF,$FF,$FC,$F3,$FF,$FF
+		dta $FF,$FC,$E3,$FF,$FF,$FF,$FC,$63,$FF,$FF,$FF,$FC,$B3,$FF,$FF,$FF
+		dta $FC,$03,$FF,$FF,$FF,$FC,$43,$FF,$FF,$FF,$FC,$63,$FF,$FF,$FF,$FC
+		dta $00,$00,$00,$00,$00,$F0,$00,$00,$00,$00,$A0,$00,$00,$00,$00,$60
+		dta $00,$00,$00,$00,$F0,$00,$00,$00,$00,$00,$00,$00,$00,$00,$50,$00
+		dta $00,$00,$00,$50,$00,$00,$00,$00,$05,$AA,$AA,$AB,$FF,$FF,$A9,$54
+		dta $00,$55,$95,$00,$00,$00,$05,$69,$55,$00,$55,$AF,$FF,$FA,$80,$00
+		dta $00,$00,$00,$1B,$95,$56,$90,$00,$55,$40,$05,$55,$44,$01,$6B,$FA
+		dta $01,$69,$55,$5A,$AF,$FF,$EA,$95,$40,$15,$40,$05,$50,$00,$05,$A9
+		dta $54,$01,$5A,$BF,$FF,$A9,$55,$40,$00,$00,$55,$5A,$AA,$6A,$95,$00
+		dta $6A,$54,$01,$40,$00,$15,$AF,$E9,$00,$55,$00,$55,$AB,$FF,$FA,$A5
+		dta $50,$04,$00,$55,$55,$00,$16,$B9,$50,$16,$AA,$AB,$FE,$95,$A9,$55
+		dta $40,$00,$15,$56,$BE,$AF,$A5,$55,$AF,$A9,$40,$00,$00,$5A,$BE,$A5
+		dta $40,$00,$01,$5A,$AA,$FF,$FE,$AA,$55,$00,$05,$6A,$95,$40,$5A,$FA
+		dta $41,$55,$6A,$AA,$FE,$AA,$BA,$A9,$55,$00,$01,$55,$AB,$FF,$E9,$56
+		dta $AA,$95,$50,$00,$15,$6A,$FE,$95,$50,$00,$15,$A9,$6A,$AB,$FF,$EA
+		dta $95,$40,$06,$AF,$A5,$50,$1B,$FE,$40,$55,$56,$AA,$BF,$E9,$AF,$AA
+		dta $AA,$54,$01,$55,$56,$BA,$E5,$55,$65,$50,$00,$01,$55,$AB,$FA,$54
+		dta $15,$01,$56,$80,$0A,$AA,$00,$FE,$AA,$54,$02,$BF,$02,$94,$06,$BE
+		dta $00,$05,$00,$0A,$AA,$A4,$0A,$EA,$A9,$40,$00,$55,$AB,$E0,$09,$55
+		dta $54,$00,$00,$05,$5A,$83,$FE,$80,$01,$55,$5A,$00
+		dta $0A,$F0,$00,$00,$BE,$AA,$40,$2C,$00,$A0,$01,$A0,$00,$00,$00,$01
+;vid	dta d"*",d"p"*,d"  ",d"^J"*,$40,d"L ",d"@"*,d"!",d"@"*,d"   !"
+		dta $50,$00,$00,$AA,$94,$00,$00,$06,$BF,$80,$02,$A4,$00,$00,$00,$01
+;vid	dta $50,d"  ",d"J4"*,d"  &",d"_ "*,d""",d"D"*,d"   !"
+		dta $A8,$00,$F0,$00
+;vid	dta d"H"*,d" ",d"p"*,d" "
+L_17A5	lda #$00			;17A5 A9 00
+		sta L_3E27			;17A7 8D 27 3E
+		sta L_3E28			;17AA 8D 28 3E
+		sta L_1843			;17AD 8D 43 18
+		ldx #$00			;17B0 A2 00
+		lda #$FF			;17B2 A9 FF
+		sta L_33CB			;17B4 8D CB 33
+L_17B7	sta L_0C28,X		;17B7 9D 28 0C
+		inx				;17BA E8
+		cpx #$06			;17BB E0 06
+		bne L_17B7			;17BD D0 F8
+		ldx #$00			;17BF A2 00
+L_17C1	sta L_3E29,X		;17C1 9D 29 3E
+		inx				;17C4 E8
+		cpx #$06			;17C5 E0 06
+		bne L_17C1			;17C7 D0 F8
+		ldx #$00			;17C9 A2 00
+		stx L_1843			;17CB 8E 43 18
+		lda ZP_F9			;17CE A5 F9
+		sta L_1844			;17D0 8D 44 18
+L_17D3	lda L_3F58,X		;17D3 BD 58 3F
+		bpl L_17DB			;17D6 10 03
+		jmp L_1818			;17D8 4C 18 18
+L_17DB	cmp L_1844			;17DB CD 44 18
+		bne L_17E3			;17DE D0 03
+		jmp L_17E7			;17E0 4C E7 17
+L_17E3	inx				;17E3 E8
+		jmp L_17D3			;17E4 4C D3 17
+L_17E7	lda L_3FA2,X		;17E7 BD A2 3F
+		cmp #$01			;17EA C9 01
+		beq L_17F9			;17EC F0 0B
+		lda L_3FA2,X		;17EE BD A2 3F
+		cmp #$FE			;17F1 C9 FE
+		beq L_1804			;17F3 F0 0F
+		inx				;17F5 E8
+		jmp L_17D3			;17F6 4C D3 17
+L_17F9	lda L_3FF3			;17F9 AD F3 3F
+		cmp #$04			;17FC C9 04
+		bne L_1804			;17FE D0 04
+		inx				;1800 E8
+		jmp L_17D3			;1801 4C D3 17
+L_1804	txa				;1804 8A
+		ldx L_1843			;1805 AE 43 18
+		sta L_3E29,X		;1808 9D 29 3E
+		inx				;180B E8
+		stx L_1843			;180C 8E 43 18
+		cpx #$06			;180F E0 06
+		beq L_1818			;1811 F0 05
+		tax				;1813 AA
+		inx				;1814 E8
+		jmp L_17D3			;1815 4C D3 17
+L_1818	lda L_3E29			;1818 AD 29 3E
+		bmi L_1822			;181B 30 05
+		lda #$01			;181D A9 01
+		sta L_3E27			;181F 8D 27 3E
+L_1822	lda L_0C2E			;1822 AD 2E 0C
+		bmi L_1832			;1825 30 0B
+		lda #$01			;1827 A9 01
+		sta L_3E28			;1829 8D 28 3E
+		lda #$00			;182C A9 00
+		sta L_33CB			;182E 8D CB 33
+		rts				;1831 60
+L_1832	lda L_3E27			;1832 AD 27 3E
+		bne L_183D			;1835 D0 06
+		lda #$FF			;1837 A9 FF
+		sta L_33CB			;1839 8D CB 33
+		rts				;183C 60
+L_183D	lda #$00			;183D A9 00
+		sta L_33CB			;183F 8D CB 33
+		rts				;1842 60
+L_1843	brk				;1843 00
+L_1844	dta $00			;1844 00    
+L_1845	lda L_3E23			;1845 AD 23 3E
+		bne L_185F			;1848 D0 15
+		lda L_3E28			;184A AD 28 3E
+		beq L_185F			;184D F0 10
+		ldx #$00			;184F A2 00
+L_1851	lda L_0C2E,X		;1851 BD 2E 0C
+		sta L_0C28,X		;1854 9D 28 0C
+		inx				;1857 E8
+		cpx #$06			;1858 E0 06
+		bne L_1851			;185A D0 F5
+		jmp L_1884			;185C 4C 84 18
+L_185F	lda L_3E27			;185F AD 27 3E
+		bne L_1877			;1862 D0 13
+		lda L_3E28			;1864 AD 28 3E
+		bne L_186F			;1867 D0 06
+		lda #$FE			;1869 A9 FE
+		sta L_0C36			;186B 8D 36 0C
+		rts				;186E 60
+L_186F	lda #$00			;186F A9 00
+		sta L_3E23			;1871 8D 23 3E
+		jmp L_1845			;1874 4C 45 18
+L_1877	ldx #$00			;1877 A2 00
+L_1879	lda L_3E29,X		;1879 BD 29 3E
+		sta L_0C28,X		;187C 9D 28 0C
+		inx				;187F E8
+		cpx #$06			;1880 E0 06
+		bne L_1879			;1882 D0 F5
+L_1884	jsr L_3FF4			;1884 20 F4 3F
+		jsr L_18AA			;1887 20 AA 18
+		jsr L_4158			;188A 20 58 41
+		rts				;188D 60
+L_188E	lda L_D010			;188E AD 10 D0
+		beq L_188E			;1891 F0 FB
+		lda L_3FF3			;1893 AD F3 3F
+		asl @				;1896 0A
+		tax				;1897 AA
+		lda L_2003,X		;1898 BD 03 20
+		sta L_3FF1			;189B 8D F1 3F
+		lda L_2004,X		;189E BD 04 20
+		sta L_3FF2			;18A1 8D F2 3F
+		jsr L_18AA			;18A4 20 AA 18
+		jmp (L_3FF1)		;18A7 6C F1 3F
+L_18AA	ldx #$05			;18AA A2 05
+L_18AC	lda ZP_14			;18AC A5 14
+L_18AE	cmp ZP_14			;18AE C5 14
+		beq L_18AE			;18B0 F0 FC
+		dex				;18B2 CA
+		bpl L_18AC			;18B3 10 F7
+		rts				;18B5 60
+L_18B6	lda ZP_F9			;18B6 A5 F9
+		asl @				;18B8 0A
+		tax				;18B9 AA
+		lda L_19D6,X		;18BA BD D6 19
+		sta ZP_F0			;18BD 85 F0
+		lda L_19D7,X		;18BF BD D7 19
+		sta ZP_F1			;18C2 85 F1
+		ldy #$00			;18C4 A0 00
+		ldx #$00			;18C6 A2 00
+L_18C8	lda (ZP_F0),Y		;18C8 B1 F0
+		cmp #$FF			;18CA C9 FF
+		bne L_18D6			;18CC D0 08
+		lda #$00			;18CE A9 00
+		sta L_1B1B,X		;18D0 9D 1B 1B
+		jmp L_18FF			;18D3 4C FF 18
+L_18D6	cmp #$FD			;18D6 C9 FD
+		bne L_18DD			;18D8 D0 03
+		jmp L_1904			;18DA 4C 04 19
+L_18DD	cmp #$FE			;18DD C9 FE
+		bne L_18FA			;18DF D0 19
+		iny				;18E1 C8
+		lda (ZP_F0),Y		;18E2 B1 F0
+		sta L_19D3			;18E4 8D D3 19
+		sty L_19D4			;18E7 8C D4 19
+		stx L_19D5			;18EA 8E D5 19
+		jsr L_1B89			;18ED 20 89 1B
+		ldx L_19D5			;18F0 AE D5 19
+		ldy L_19D4			;18F3 AC D4 19
+		iny				;18F6 C8
+		jmp L_18FF			;18F7 4C FF 18
+L_18FA	lda #$01			;18FA A9 01
+		sta L_1B1B,X		;18FC 9D 1B 1B
+L_18FF	iny				;18FF C8
+		inx				;1900 E8
+		jmp L_18C8			;1901 4C C8 18
+L_1904	ldx #$00			;1904 A2 00
+L_1906	lda L_1B15,X		;1906 BD 15 1B
+		cmp L_1B1B,X		;1909 DD 1B 1B
+		bne L_1914			;190C D0 06
+		inx				;190E E8
+		cpx #$06			;190F E0 06
+		bne L_1906			;1911 D0 F3
+		rts				;1913 60
+L_1914	ldx #$00			;1914 A2 00
+L_1916	lda L_1B1B,X		;1916 BD 1B 1B
+		sta L_1B15,X		;1919 9D 15 1B
+		inx				;191C E8
+		cpx #$06			;191D E0 06
+		bne L_1916			;191F D0 F5
+		lda #$FD			;1921 A9 FD
+		sta ZP_F2			;1923 85 F2
+		lda #$1B			;1925 A9 1B
+		sta ZP_F3			;1927 85 F3
+		ldx #$20			;1929 A2 20
+		ldy #$11			;192B A0 11
+		jsr L_1B21			;192D 20 21 1B
+		lda #$02			;1930 A9 02
+		sta ZP_F2			;1932 85 F2
+		lda #$1F			;1934 A9 1F
+		sta ZP_F3			;1936 85 F3
+		ldx #$20			;1938 A2 20
+		ldy #$01			;193A A0 01
+		jsr L_1B21			;193C 20 21 1B
+		lda #$66			;193F A9 66
+		sta ZP_F2			;1941 85 F2
+		lda #$1F			;1943 A9 1F
+		sta ZP_F3			;1945 85 F3
+		ldx #$20			;1947 A2 20
+		ldy #$48			;1949 A0 48
+		jsr L_1B21			;194B 20 21 1B
+		lda L_1B15			;194E AD 15 1B
+		cmp #$01			;1951 C9 01
+		bne L_1964			;1953 D0 0F
+		lda #$FF			;1955 A9 FF
+		sta ZP_F2			;1957 85 F2
+		lda #$1D			;1959 A9 1D
+		sta ZP_F3			;195B 85 F3
+		ldx #$20			;195D A2 20
+		ldy #$26			;195F A0 26
+		jsr L_1B21			;1961 20 21 1B
+L_1964	lda L_1B16			;1964 AD 16 1B
+		cmp #$01			;1967 C9 01
+		bne L_197A			;1969 D0 0F
+		lda #$17			;196B A9 17
+		sta ZP_F2			;196D 85 F2
+		lda #$1E			;196F A9 1E
+		sta ZP_F3			;1971 85 F3
+		ldx #$25			;1973 A2 25
+		ldy #$26			;1975 A0 26
+		jsr L_1B21			;1977 20 21 1B
+L_197A	lda L_1B17			;197A AD 17 1B
+		cmp #$01			;197D C9 01
+		bne L_1990			;197F D0 0F
+		lda #$A7			;1981 A9 A7
+		sta ZP_F2			;1983 85 F2
+		lda #$1D			;1985 A9 1D
+		sta ZP_F3			;1987 85 F3
+		ldx #$22			;1989 A2 22
+		ldy #$11			;198B A0 11
+		jsr L_1B21			;198D 20 21 1B
+L_1990	lda L_1B18			;1990 AD 18 1B
+		cmp #$01			;1993 C9 01
+		bne L_19A6			;1995 D0 0F
+		lda #$D3			;1997 A9 D3
+		sta ZP_F2			;1999 85 F2
+		lda #$1D			;199B A9 1D
+		sta ZP_F3			;199D 85 F3
+		ldx #$22			;199F A2 22
+		ldy #$38			;19A1 A0 38
+		jsr L_1B21			;19A3 20 21 1B
+L_19A6	lda L_1B19			;19A6 AD 19 1B
+		cmp #$01			;19A9 C9 01
+		bne L_19BC			;19AB D0 0F
+		lda #$9E			;19AD A9 9E
+		sta ZP_F2			;19AF 85 F2
+		lda #$1E			;19B1 A9 1E
+		sta ZP_F3			;19B3 85 F3
+		ldx #$20			;19B5 A2 20
+		ldy #$01			;19B7 A0 01
+		jsr L_1B21			;19B9 20 21 1B
+L_19BC	lda L_1B1A			;19BC AD 1A 1B
+		cmp #$01			;19BF C9 01
+		bne L_19D2			;19C1 D0 0F
+		lda #$3A			;19C3 A9 3A
+		sta ZP_F2			;19C5 85 F2
+		lda #$1E			;19C7 A9 1E
+		sta ZP_F3			;19C9 85 F3
+		ldx #$20			;19CB A2 20
+		ldy #$48			;19CD A0 48
+		jsr L_1B21			;19CF 20 21 1B
+L_19D2	rts				;19D2 60
+L_19D3	brk				;19D3 00
+L_19D4	dta $00			;19D4 00    
+L_19D5	dta $00			;19D5 00    
+L_19D6		dta a(L_1A14)		;19D6 14 1A
+L_19D7	equ *-1
+		dta a(L_1A1B)		;19D8 1B 1A
+		dta a(L_1A24)		;19DA 24 1A
+		dta a(L_1A31)		;19DC 31 1A
+		dta a(L_1A3A)		;19DE 3A 1A
+		dta a(L_1A41)		;19E0 41 1A
+		dta a(L_1A48)		;19E2 48 1A
+		dta a(L_1A51)		;19E4 51 1A
+		dta a(L_1A58)		;19E6 58 1A
+		dta a(L_1A5F)		;19E8 5F 1A
+		dta a(L_1A66)		;19EA 66 1A
+		dta a(L_1A6D)		;19EC 6D 1A
+		dta a(L_1A74)		;19EE 74 1A
+		dta a(L_1A7B)		;19F0 7B 1A
+		dta a(L_1A82)		;19F2 82 1A
+		dta a(L_1A8B)		;19F4 8B 1A
+		dta a(L_1A92)		;19F6 92 1A
+		dta a(L_1A99)		;19F8 99 1A
+		dta a(L_1AA0)		;19FA A0 1A
+		dta a(L_1AA9)		;19FC A9 1A
+		dta a(L_1AB0)		;19FE B0 1A
+		dta a(L_1AB7)		;1A00 B7 1A
+		dta a(L_1ABE)		;1A02 BE 1A
+		dta a(L_1AC7)		;1A04 C7 1A
+		dta a(L_1ACE)		;1A06 CE 1A
+		dta a(L_1AD5)		;1A08 D5 1A
+		dta a(L_1ADC)		;1A0A DC 1A
+		dta a(L_1AE3)		;1A0C E3 1A
+		dta a(L_1AEA)		;1A0E EA 1A
+		dta a(L_1AF3)		;1A10 F3 1A
+		dta a(L_1AFA)		;1A12 FA 1A
+L_1A14	dta $FF,$FF,$00,$FF,$FF,$FF,$FD
+;vid	dta $FF,$FF,d" ",$FF,$FF,$FF,d"}"*
+L_1A1B	dta $01,$FF,$FE,$00,$02,$03,$FF,$FF,$FD
+;vid	dta d"!",$FF,d"~"*,d" "#",$FF,$FF,d"}"*
+L_1A24	dta $FE,$01,$06,$FE,$02,$04,$05,$FE,$00,$00,$FF,$FF,$FD
+;vid	dta d"~"*,d"!&",d"~"*,d""$%",d"~"*,d"  ",$FF,$FF,d"}"*
+L_1A31	dta $FF,$08,$FE,$04,$07,$09,$FF,$FF,$FD
+;vid	dta $FF,d"(",d"~"*,d"$')",$FF,$FF,d"}"*
+L_1A3A	dta $09,$FF,$FF,$FF,$FF,$FF,$FD
+;vid	dta d")",$FF,$FF,$FF,$FF,$FF,d"}"*
+L_1A41	dta $FF,$00,$FF,$FF,$FF,$FF,$FD
+;vid	dta $FF,d" ",$FF,$FF,$FF,$FF,d"}"*
+L_1A48	dta $FF,$09,$FF,$FF,$FE,$03,$0A,$FF,$FD
+;vid	dta $FF,d")",$FF,$FF,d"~"*,d"#*",$FF,d"}"*
+L_1A51	dta $05,$FF,$FF,$FF,$FF,$FF,$FD
+;vid	dta d"%",$FF,$FF,$FF,$FF,$FF,d"}"*
+L_1A58	dta $FF,$FF,$FF,$FF,$FF,$0B,$FD
+;vid	dta $FF,$FF,$FF,$FF,$FF,d"+",d"}"*
+L_1A5F	dta $FF,$0E,$FF,$05,$0F,$0D,$FD
+;vid	dta $FF,d".",$FF,d"%/-",d"}"*
+L_1A66	dta $10,$FF,$FF,$FF,$FF,$0C,$FD
+;vid	dta d"0",$FF,$FF,$FF,$FF,d",",d"}"*
+L_1A6D	dta $FF,$11,$FF,$FF,$FF,$FF,$FD
+;vid	dta $FF,d"1",$FF,$FF,$FF,$FF,d"}"*
+L_1A74	dta $FF,$FF,$FF,$FF,$0C,$FF,$FD
+;vid	dta $FF,$FF,$FF,$FF,d",",$FF,d"}"*
+L_1A7B	dta $0C,$FF,$FF,$FF,$12,$FF,$FD
+;vid	dta d",",$FF,$FF,$FF,d"2",$FF,d"}"*
+L_1A82	dta $FF,$FF,$FE,$05,$14,$FF,$FF,$13,$FD
+;vid	dta $FF,$FF,d"~"*,d"%4",$FF,$FF,d"3",d"}"*
+L_1A8B	dta $FF,$FF,$FF,$15,$FF,$FF,$FD
+;vid	dta $FF,$FF,$FF,d"5",$FF,$FF,d"}"*
+L_1A92	dta $FF,$FF,$FF,$FF,$FF,$FF,$FD
+;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,d"}"*
+L_1A99	dta $FF,$FF,$16,$FF,$FF,$FF,$FD
+;vid	dta $FF,$FF,d"6",$FF,$FF,$FF,d"}"*
+L_1AA0	dta $FE,$06,$18,$FF,$FF,$17,$FF,$FF,$FD
+;vid	dta d"~"*,d"&8",$FF,$FF,d"7",$FF,$FF,d"}"*
+L_1AA9	dta $1C,$FF,$FF,$FF,$1F,$1E,$FD
+;vid	dta d"<",$FF,$FF,$FF,d"?>",d"}"*
+L_1AB0	dta $FF,$FF,$FF,$FF,$FF,$FF,$FD
+;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,d"}"*
+L_1AB7	dta $FF,$FF,$1B,$FF,$FF,$FF,$FD
+;vid	dta $FF,$FF,d";",$FF,$FF,$FF,d"}"*
+L_1ABE	dta $FF,$19,$1C,$FE,$08,$1A,$FF,$FF,$FD
+;vid	dta $FF,d"9<",d"~"*,d"(:",$FF,$FF,d"}"*
+L_1AC7	dta $FF,$1D,$FF,$1B,$FF,$FF,$FD
+;vid	dta $FF,d"=",$FF,d";",$FF,$FF,d"}"*
+L_1ACE	dta $FF,$FF,$FF,$FF,$FF,$2A,$FD
+;vid	dta $FF,$FF,$FF,$FF,$FF,d"J",d"}"*
+L_1AD5	dta $FF,$FF,$FF,$FF,$29,$28,$FD
+;vid	dta $FF,$FF,$FF,$FF,d"IH",d"}"*
+L_1ADC	dta $25,$FF,$26,$FF,$27,$FF,$FD
+;vid	dta d"E",$FF,d"F",$FF,d"G",$FF,d"}"*
+L_1AE3	dta $FF,$23,$FF,$24,$22,$FF,$FD
+;vid	dta $FF,d"C",$FF,d"DB",$FF,d"}"*
+L_1AEA	dta $20,$FF,$FF,$FF,$FF,$FE,$07,$21,$FD
+;vid	dta d"@",$FF,$FF,$FF,$FF,d"~"*,d"'A",d"}"*
+L_1AF3	dta $FF,$28,$FF,$FF,$FF,$FF,$FD
+;vid	dta $FF,d"H",$FF,$FF,$FF,$FF,d"}"*
+L_1AFA	dta $FF,$FF,$FF,$FF,$FF,$FF,$FD,$00,$00
+;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,d"}"*,d"  "
+L_1B03	dta $FF			;1B03 FF    
+L_1B04	dta $04,$FF,$07,$FF,$09,$13,$12,$FF,$1F,$FF,$2F,$FF,$46,$3F,$FF,$FF
+;vid	dta d"$",$FF,d"'",$FF,d")32",$FF,d"?",$FF,d"O",$FF,$46,d"_",$FF,$FF
+		dta $3B			;1B14 3B ; [
+L_1B15	dta $00			;1B15 00    
+L_1B16	dta $00			;1B16 00    
+L_1B17	dta $00			;1B17 00    
+L_1B18	dta $00			;1B18 00    
+L_1B19	dta $00			;1B19 00    
+L_1B1A	dta $00			;1B1A 00    
+L_1B1B	dta $00,$00,$00,$00,$00,$00
+;vid	dta d"      "
+L_1B21	txa				;1B21 8A
+		clc				;1B22 18
+		adc #$00			;1B23 69 00
+		sta ZP_F0			;1B25 85 F0
+		lda #$F0			;1B27 A9 F0
+		adc #$00			;1B29 69 00
+		sta ZP_F1			;1B2B 85 F1
+		dey				;1B2D 88
+		bmi L_1B41			;1B2E 30 11
+		iny				;1B30 C8
+L_1B31	clc				;1B31 18
+		lda ZP_F0			;1B32 A5 F0
+		adc #$28			;1B34 69 28
+		sta ZP_F0			;1B36 85 F0
+		lda ZP_F1			;1B38 A5 F1
+		adc #$00			;1B3A 69 00
+		sta ZP_F1			;1B3C 85 F1
+		dey				;1B3E 88
+		bne L_1B31			;1B3F D0 F0
+L_1B41	ldy #$00			;1B41 A0 00
+		lda (ZP_F2),Y		;1B43 B1 F2
+		sta L_1BFB			;1B45 8D FB 1B
+		iny				;1B48 C8
+		lda (ZP_F2),Y		;1B49 B1 F2
+		tax				;1B4B AA
+		ldy #$00			;1B4C A0 00
+		clc				;1B4E 18
+		lda ZP_F2			;1B4F A5 F2
+		adc #$02			;1B51 69 02
+		sta ZP_F2			;1B53 85 F2
+		lda ZP_F3			;1B55 A5 F3
+		adc #$00			;1B57 69 00
+		sta ZP_F3			;1B59 85 F3
+L_1B5B	lda (ZP_F2),Y		;1B5B B1 F2
+		sta (ZP_F0),Y		;1B5D 91 F0
+		iny				;1B5F C8
+		cpy L_1BFB			;1B60 CC FB 1B
+		bne L_1B5B			;1B63 D0 F6
+		ldy #$00			;1B65 A0 00
+		dex				;1B67 CA
+		beq L_1B88			;1B68 F0 1E
+		clc				;1B6A 18
+		lda ZP_F0			;1B6B A5 F0
+		adc #$28			;1B6D 69 28
+		sta ZP_F0			;1B6F 85 F0
+		lda ZP_F1			;1B71 A5 F1
+		adc #$00			;1B73 69 00
+		sta ZP_F1			;1B75 85 F1
+		clc				;1B77 18
+		lda ZP_F2			;1B78 A5 F2
+		adc L_1BFB			;1B7A 6D FB 1B
+		sta ZP_F2			;1B7D 85 F2
+		lda ZP_F3			;1B7F A5 F3
+		adc #$00			;1B81 69 00
+		sta ZP_F3			;1B83 85 F3
+		jmp L_1B5B			;1B85 4C 5B 1B
+L_1B88	rts				;1B88 60
+L_1B89	ldx L_19D5			;1B89 AE D5 19
+		lda #$00			;1B8C A9 00
+		sta L_1B1B,X		;1B8E 9D 1B 1B
+		lda L_19D3			;1B91 AD D3 19
+		asl @				;1B94 0A
+		tax				;1B95 AA
+		stx L_1BFB			;1B96 8E FB 1B
+		lda L_1B03,X		;1B99 BD 03 1B
+		bmi L_1BD9			;1B9C 30 3B
+		tay				;1B9E A8
+		cpy #$3F			;1B9F C0 3F
+		bne L_1BC3			;1BA1 D0 20
+		lda L_3F58,Y		;1BA3 B9 58 3F
+		cmp ZP_F9			;1BA6 C5 F9
+		beq L_1BB3			;1BA8 F0 09
+		ldx L_19D5			;1BAA AE D5 19
+		lda #$01			;1BAD A9 01
+		sta L_1B1B,X		;1BAF 9D 1B 1B
+		rts				;1BB2 60
+L_1BB3	lda L_3FA2,Y		;1BB3 B9 A2 3F
+		cmp #$FF			;1BB6 C9 FF
+		bne L_1BFA			;1BB8 D0 40
+		ldx L_19D5			;1BBA AE D5 19
+		lda #$01			;1BBD A9 01
+		sta L_1B1B,X		;1BBF 9D 1B 1B
+		rts				;1BC2 60
+L_1BC3	lda L_3F58,Y		;1BC3 B9 58 3F
+		cmp ZP_F9			;1BC6 C5 F9
+		bne L_1BFA			;1BC8 D0 30
+		lda L_3FA2,Y		;1BCA B9 A2 3F
+		cmp #$FF			;1BCD C9 FF
+		beq L_1BFA			;1BCF F0 29
+		ldx L_19D5			;1BD1 AE D5 19
+		lda #$01			;1BD4 A9 01
+		sta L_1B1B,X		;1BD6 9D 1B 1B
+L_1BD9	ldx L_1BFB			;1BD9 AE FB 1B
+		lda L_1B04,X		;1BDC BD 04 1B
+		bmi L_1BFA			;1BDF 30 19
+		tay				;1BE1 A8
+		lda L_3FA2,Y		;1BE2 B9 A2 3F
+		bne L_1BF2			;1BE5 D0 0B
+		lda #$00			;1BE7 A9 00
+		ldx L_19D5			;1BE9 AE D5 19
+		sta L_1B1B,X		;1BEC 9D 1B 1B
+		jmp L_1BFA			;1BEF 4C FA 1B
+L_1BF2	ldx L_19D5			;1BF2 AE D5 19
+		lda #$01			;1BF5 A9 01
+		sta L_1B1B,X		;1BF7 9D 1B 1B
+L_1BFA	rts				;1BFA 60
+L_1BFB
+		dta $00,$00,$08,$35,$00,$00,$00,$04,$00,$00,$00,$00,$00,$00,$00,$04
+		dta $00,$00,$00,$00,$00,$00,$00,$04,$00,$00,$00,$00,$00,$00,$00,$11
+		dta $00,$00,$00,$00,$00,$00,$00,$11,$00,$00,$00,$00,$00,$00,$00,$40
+		dta $40,$00,$00,$00,$00,$00,$00,$40,$40,$04,$00,$00,$00,$00,$01,$00
+		dta $10,$08,$00,$00,$00,$00,$21,$51,$53,$0C,$00,$00,$00,$00,$A0,$11
+		dta $02,$BF,$90,$00,$00,$02,$90,$11,$01,$0C,$00,$00,$00,$02,$40,$11
+		dta $00,$48,$00,$00,$00,$0A,$40,$11,$00,$44,$00,$00,$00,$29,$00,$15
+		dta $00,$13,$00,$00,$00,$29,$00,$00,$00,$1B,$00,$00,$00,$29,$00,$2A
+		dta $00,$1B,$00,$00,$00,$A4,$02,$80,$E0,$06,$C0,$00,$00,$A4,$09,$44
+		dta $6C,$06,$C0,$00,$00,$A4,$09,$00,$2C,$06,$C0,$00,$02,$90,$24,$04
+		dta $0B,$01,$B0,$00,$00,$00,$24,$04,$0B,$00,$00,$00,$00,$40,$90,$08
+		dta $02,$C0,$40,$00,$01,$40,$90,$08,$02,$C0,$50,$00,$01,$40,$10,$0C
+		dta $02,$00,$50,$00,$04,$55,$00,$0C,$00,$15,$44,$00,$10,$01,$00,$08
+		dta $00,$10,$01,$00,$50,$01,$16,$FF,$E5,$10,$01,$40,$10,$01,$00,$08
+		dta $00,$10,$01,$00,$04,$55,$00,$0C,$00,$15,$44,$00,$01,$40,$10,$0C
+		dta $02,$00,$50,$00,$01,$40,$90,$08,$02,$C0,$50,$00,$00,$40,$90,$08
+		dta $02,$C0,$40,$00,$00,$00,$24,$04,$0B,$00,$00,$00,$02,$90,$24,$04
+		dta $0B,$01,$B0,$00,$00,$A4,$09,$00,$2C,$06,$C0,$00,$00,$A4,$09,$44
+		dta $6C,$06,$C0,$00,$00,$A4,$02,$80,$A0,$06,$C0,$00,$00,$29,$00,$2A
+		dta $00,$1B,$00,$00,$00,$29,$00,$00,$00,$1B,$00,$00,$00,$29,$00,$15
+		dta $00,$1B,$00,$00,$00,$0A,$40,$11,$00,$6C,$00,$00,$00,$02,$40,$11
+		dta $00,$60,$00,$00,$00,$02,$90,$11,$01,$A0,$00,$00,$00,$00,$A0,$11
+		dta $02,$80,$00,$00,$00,$00,$21,$51,$52,$00,$00,$00,$00,$00,$01,$00
+		dta $10,$00,$00,$00,$00,$00,$00,$40,$40,$00,$00,$00,$00,$00,$00,$40
+		dta $40,$00,$00,$00,$00,$00,$00,$11,$00,$00,$00,$00,$00,$00,$00,$11
+		dta $00,$00,$00,$00,$00,$00,$00,$04,$00,$00,$00,$00,$00,$00,$00,$04
+		dta $00,$00,$00,$00,$00,$00,$00,$04,$00,$00,$00,$00,$03,$0E,$00,$08
+		dta $00,$00,$0C,$00,$00,$0C,$00,$00,$37,$00,$00,$37,$00,$00,$E2,$C0
+		dta $00,$D1,$C0,$03,$55,$70,$23,$F7,$F3,$A0,$37,$02,$90,$37,$01,$40
+		dta $37,$00,$40,$37,$00,$00,$3F,$00,$03,$0E,$00,$3F,$00,$40,$37,$00
+		dta $40,$37,$00,$90,$37,$01,$A0,$37,$02,$23,$F7,$F2,$03,$55,$70,$00
+		dta $D1,$C0,$00,$E2,$C0,$00,$37,$00,$00,$37,$00,$00,$0C,$00,$00,$0C
+		dta $00,$00,$08,$00,$02,$0B,$00,$C0,$02,$C0,$03,$C0,$0D,$FF,$29,$57
+		dta $F4,$57,$29,$57,$0D,$FF,$03,$C0,$02,$C0,$00,$C0,$03,$0B,$C0,$C0
+		dta $00,$C0,$E0,$00,$00,$F0,$00,$3F,$DC,$00,$35,$5A,$00,$35,$47,$C0
+		dta $35,$5A,$00,$3F,$DC,$00,$00,$F0,$00,$C0,$E0,$00,$C0,$C0,$00,$07
+		dta $0E
+L_1E3C
+		dta $03,$FF,$FF,$FF,$FF,$FF,$F0,$03,$AA,$AA,$AA,$AA,$95,$70,$03,$80
+		dta $00,$00,$00,$00,$70,$03,$80,$00,$0C,$00,$00,$70,$03,$80,$39,$19
+		dta $20,$00,$70,$03,$80,$21,$22,$30,$00,$70,$03,$80,$32,$33,$3C,$00
+		dta $70,$03,$80,$33,$33,$30,$00,$70,$03,$80,$33,$22,$30,$00,$70,$03
+		dta $80,$29,$19,$2B,$00,$70,$03,$80,$00,$00,$00,$00,$70,$03,$80,$00
+		dta $00,$00,$00,$70,$03,$AA,$A9,$55,$55,$55,$70,$03,$FF,$FF,$FF,$FF
+		dta $FF,$F0,$07,$0E,$03,$FF,$FF,$FF,$FF,$FF,$F0,$03,$AA,$AA,$AA,$AA
+		dta $95,$70,$03,$80,$00,$00,$00,$00,$70,$03,$80,$00,$C0,$00,$00,$70
+		dta $03,$81,$B1,$93,$91,$90,$70,$03,$82,$02,$23,$22,$20,$70,$03,$83
+		dta $03,$33,$23,$30,$70,$03,$83,$33,$33,$93,$B0,$70,$03,$82,$22,$22
+		dta $83,$30,$70,$03,$81,$A1,$92,$22,$20,$70,$03,$80,$00,$00,$00,$00
+		dta $70,$03,$80,$00,$00,$00,$00,$70,$03,$AA,$A9,$55,$55,$55,$70,$03
+		dta $FF,$FF,$FF,$FF,$FF,$F0,$07,$0E,$00,$00,$00,$00,$00,$00,$00,$00
+		dta $55,$55,$55,$55,$55,$40,$00,$40,$00,$00,$00,$00,$40,$00,$40,$00
+		dta $80,$00,$00,$40,$00,$40,$61,$91,$40,$40,$40,$00,$42,$01,$12,$21
+		dta $10,$40,$00,$42,$02,$22,$22,$20,$40,$00,$42,$22,$21,$91,$50,$40
+		dta $00,$41,$11,$11,$41,$20,$40,$00,$41,$51,$91,$11,$10,$40,$00,$40
+		dta $00,$00,$00,$00,$40,$00,$40,$00,$00,$00,$00,$40,$00,$55,$55,$55
+		dta $55,$55,$40,$00,$00,$00,$00,$00,$00,$00,$07,$0E,$00,$00,$00,$00
+		dta $00,$00,$00,$00,$55,$55,$55,$55,$55,$40,$00,$40,$00,$00,$00,$00
+		dta $40,$00,$40,$00,$08,$00,$00,$40,$00,$40,$14,$19,$10,$00,$40,$00
+		dta $40,$21,$11,$10,$00,$40,$00,$40,$21,$22,$28,$00,$40,$00,$40,$22
+		dta $22,$20,$00,$40,$00,$40,$22,$11,$10,$00,$40,$00,$40,$14,$19,$15
+		dta $00,$40,$00,$40,$00,$00,$00,$00,$40,$00,$40,$00,$00,$00,$00,$40
+		dta $00,$55,$55,$55,$55,$55,$40,$00,$00,$00,$00,$00,$00,$00
+L_1FCA	lda #$70			;1FCA A9 70
+		sta ZP_F0			;1FCC 85 F0
+		lda #$EE			;1FCE A9 EE
+		sta ZP_F1			;1FD0 85 F1
+		clc				;1FD2 18
+		lda ZP_F0			;1FD3 A5 F0
+		adc #$29			;1FD5 69 29
+		sta ZP_F0			;1FD7 85 F0
+		lda ZP_F1			;1FD9 A5 F1
+		adc #$00			;1FDB 69 00
+		sta ZP_F1			;1FDD 85 F1
+		ldx #$00			;1FDF A2 00
+		ldy #$00			;1FE1 A0 00
+		lda #$00			;1FE3 A9 00
+L_1FE5	sta (ZP_F0),Y		;1FE5 91 F0
+		iny				;1FE7 C8
+		cpy #$26			;1FE8 C0 26
+		bne L_1FE5			;1FEA D0 F9
+		ldy #$00			;1FEC A0 00
+		clc				;1FEE 18
+		lda ZP_F0			;1FEF A5 F0
+		adc #$28			;1FF1 69 28
+		sta ZP_F0			;1FF3 85 F0
+		lda ZP_F1			;1FF5 A5 F1
+		adc #$00			;1FF7 69 00
+		sta ZP_F1			;1FF9 85 F1
+		lda #$00			;1FFB A9 00
+		inx				;1FFD E8
+		cpx #$08			;1FFE E0 08
+
 		org $AD00
 ;
 		dta $00,$00,$00,$00,$02,$1B,$E4,$00,$01,$50,$00,$00,$00,$00,$00,$00
@@ -9349,13 +9359,7 @@ L_D20F	equ $D20F
 L_D21F	equ $D21F
 L_D300	equ $D300
 ;
-		org $D301
-;
-L_D301	dta $FF			;D301 FF    
-;
-		org $D400
-;
-L_D400	dta $00			;D400 00    
+
 L_D402	equ $D402
 L_D403	equ $D403
 L_D407	equ $D407
