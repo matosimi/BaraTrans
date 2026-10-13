@@ -14,12 +14,16 @@
         {
             splitContainer1 = new SplitContainer();
             glyphGridViewer1 = new GlyphGridViewer();
+            rightLayout = new TableLayoutPanel();
             listViewChanges = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
-            rightLayout = new TableLayoutPanel();
             flowLayoutPanelLines = new FlowLayoutPanel();
+            lineActionsPanel = new FlowLayoutPanel();
+            buttonSetLines = new Button();
+            buttonMark = new Button();
+            buttonResolved = new Button();
             glyphGridViewerScreen = new GlyphGridViewer();
             textBoxPl = new TextBox();
             textBoxEn = new TextBox();
@@ -45,6 +49,8 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             rightLayout.SuspendLayout();
+            flowLayoutPanelLines.SuspendLayout();
+            lineActionsPanel.SuspendLayout();
             languagePanel.SuspendLayout();
             sourceLayout.SuspendLayout();
             sourceToolbar.SuspendLayout();
@@ -78,6 +84,30 @@
             glyphGridViewer1.TabIndex = 0;
             glyphGridViewer1.Text = "glyphGridViewer1";
             // 
+            // rightLayout
+            // 
+            rightLayout.ColumnCount = 2;
+            rightLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 700F));
+            rightLayout.ColumnStyles.Add(new ColumnStyle());
+            rightLayout.Controls.Add(flowLayoutPanelLines, 0, 4);
+            rightLayout.Controls.Add(listViewChanges, 1, 0);
+            rightLayout.Controls.Add(glyphGridViewerScreen, 0, 0);
+            rightLayout.Controls.Add(textBoxPl, 0, 1);
+            rightLayout.Controls.Add(textBoxEn, 0, 3);
+            rightLayout.Controls.Add(languagePanel, 0, 2);
+            rightLayout.Dock = DockStyle.Fill;
+            rightLayout.Location = new Point(0, 0);
+            rightLayout.Name = "rightLayout";
+            rightLayout.Padding = new Padding(11, 12, 11, 12);
+            rightLayout.RowCount = 5;
+            rightLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
+            rightLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 125F));
+            rightLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
+            rightLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 125F));
+            rightLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            rightLayout.Size = new Size(1146, 834);
+            rightLayout.TabIndex = 0;
+            // 
             // listViewChanges
             // 
             listViewChanges.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
@@ -104,37 +134,56 @@
             columnHeader3.Text = "Content";
             columnHeader3.Width = 234;
             // 
-            // rightLayout
-            // 
-            rightLayout.ColumnCount = 2;
-            rightLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 700F));
-            rightLayout.ColumnStyles.Add(new ColumnStyle());
-            rightLayout.Controls.Add(flowLayoutPanelLines, 0, 4);
-            rightLayout.Controls.Add(listViewChanges, 1, 0);
-            rightLayout.Controls.Add(glyphGridViewerScreen, 0, 0);
-            rightLayout.Controls.Add(textBoxPl, 0, 1);
-            rightLayout.Controls.Add(textBoxEn, 0, 3);
-            rightLayout.Controls.Add(languagePanel, 0, 2);
-            rightLayout.Dock = DockStyle.Fill;
-            rightLayout.Location = new Point(0, 0);
-            rightLayout.Name = "rightLayout";
-            rightLayout.Padding = new Padding(11, 12, 11, 12);
-            rightLayout.RowCount = 5;
-            rightLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
-            rightLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 125F));
-            rightLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
-            rightLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 125F));
-            rightLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            rightLayout.Size = new Size(1146, 834);
-            rightLayout.TabIndex = 0;
-            // 
             // flowLayoutPanelLines
             // 
+            flowLayoutPanelLines.Controls.Add(lineActionsPanel);
             flowLayoutPanelLines.Dock = DockStyle.Fill;
             flowLayoutPanelLines.Location = new Point(14, 473);
             flowLayoutPanelLines.Name = "flowLayoutPanelLines";
             flowLayoutPanelLines.Size = new Size(694, 346);
             flowLayoutPanelLines.TabIndex = 3;
+            // 
+            // lineActionsPanel
+            // 
+            lineActionsPanel.Controls.Add(buttonSetLines);
+            lineActionsPanel.Controls.Add(buttonMark);
+            lineActionsPanel.Controls.Add(buttonResolved);
+            lineActionsPanel.Location = new Point(0, 0);
+            lineActionsPanel.Margin = new Padding(0);
+            lineActionsPanel.Name = "lineActionsPanel";
+            lineActionsPanel.Size = new Size(398, 38);
+            lineActionsPanel.TabIndex = 0;
+            lineActionsPanel.WrapContents = false;
+            // 
+            // buttonSetLines
+            // 
+            buttonSetLines.Enabled = false;
+            buttonSetLines.Location = new Point(4, 4);
+            buttonSetLines.Margin = new Padding(4, 4, 30, 0);
+            buttonSetLines.Name = "buttonSetLines";
+            buttonSetLines.Size = new Size(80, 30);
+            buttonSetLines.TabIndex = 0;
+            buttonSetLines.Text = "Set";
+            // 
+            // buttonMark
+            // 
+            buttonMark.Enabled = false;
+            buttonMark.Location = new Point(118, 4);
+            buttonMark.Margin = new Padding(4, 4, 0, 0);
+            buttonMark.Name = "buttonMark";
+            buttonMark.Size = new Size(80, 30);
+            buttonMark.TabIndex = 1;
+            buttonMark.Text = "Mark";
+            // 
+            // buttonResolved
+            // 
+            buttonResolved.Enabled = false;
+            buttonResolved.Location = new Point(202, 4);
+            buttonResolved.Margin = new Padding(4, 4, 0, 0);
+            buttonResolved.Name = "buttonResolved";
+            buttonResolved.Size = new Size(90, 30);
+            buttonResolved.TabIndex = 2;
+            buttonResolved.Text = "Resolved";
             // 
             // glyphGridViewerScreen
             // 
@@ -338,10 +387,10 @@
             // hoverByteLabel
             // 
             hoverByteLabel.AutoSize = true;
-            hoverByteLabel.Location = new Point(754, 10);
+            hoverByteLabel.Location = new Point(766, 10);
             hoverByteLabel.Margin = new Padding(12, 5, 0, 0);
             hoverByteLabel.Name = "hoverByteLabel";
-            hoverByteLabel.Size = new Size(77, 25);
+            hoverByteLabel.Size = new Size(69, 25);
             hoverByteLabel.TabIndex = 8;
             hoverByteLabel.Text = "Byte: --";
             // 
@@ -359,6 +408,8 @@
             splitContainer1.ResumeLayout(false);
             rightLayout.ResumeLayout(false);
             rightLayout.PerformLayout();
+            flowLayoutPanelLines.ResumeLayout(false);
+            lineActionsPanel.ResumeLayout(false);
             languagePanel.ResumeLayout(false);
             sourceLayout.ResumeLayout(false);
             sourceToolbar.ResumeLayout(false);
@@ -391,6 +442,10 @@
         private Button buttonExportBinary;
         private Button buttonTestAtr;
         private FlowLayoutPanel flowLayoutPanelLines;
+        private FlowLayoutPanel lineActionsPanel;
+        private Button buttonSetLines;
+        private Button buttonMark;
+        private Button buttonResolved;
         private ListView listViewChanges;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;

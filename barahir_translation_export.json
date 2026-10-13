@@ -1,0 +1,1836 @@
+[
+  {
+    "Start": 1041,
+    "End": 1063,
+    "Replacement": "gLSoqbOAsKG0qICspaGks4COjo6AgIA=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 4190,
+    "End": 4218,
+    "Replacement": "AQgEACcvLCQAIiUoKS4kADQoJQAiLy8rMwEAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 8152,
+    "End": 8159,
+    "Replacement": "ASIHr46rjv8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 8064,
+    "End": 8080,
+    "Replacement": "ARoIsLKls7OApqmypYCAgP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 15194,
+    "End": 15314,
+    "Replacement": "BAEBAAAAOS81BzIlACE0ADQoJQAlJCclAC8mADQoJQAmLzIlMzQOAP8DAgA0KCUyJQczACEAJywvLy05ACMhMzQsJQAiJSgpLiQAAP8EAzQoJQA0MiUlMw4ANCglADAhNCgALCUhJDMANC83ITIk/wUEJyE0JQ4A/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 15315,
+    "End": 15469,
+    "Replacement": "BAIBAAAAOS81ADM0IS4kACE0ADQoJQAtITMzKTYlDAA0ISwsAP8CAgA3ISwsMwAvJgA0KCUAJi8yNDIlMzMOADQoJTIlBzMAIQD/AQMAIiknACIvNSwkJTIAKS4AJjIvLjQALyYAOS81DgAiJSgpLiT/AQQAOS81MgAiISMrDAA0KCUyJQczACEAMTUpJTQAJi8yJTM0DgAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 584,
+    "End": 607,
+    "Replacement": "AQoBgICAgKyvr6uAobSAjo6OgICAgID/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 608,
+    "End": 626,
+    "Replacement": "AQwErq+0qKmup4CzsKWjqaGs/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 971,
+    "End": 1031,
+    "Replacement": "AgQEs6+ysrmMgKK1tICopbKlgKmzgK6vtKiprqeA/wUFgICAgICAtK+ArK+vq4ChtI6AgICAgICAgICA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 1065,
+    "End": 1099,
+    "Replacement": "AQQEgICAgICAgICAgK6vgLehuYCvtbSAgYCAgICAgICAgP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 1218,
+    "End": 1233,
+    "Replacement": "qa60r4C0qKWAo6GztKylAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 1888,
+    "End": 1903,
+    "Replacement": "qa60r4C0qKWAsq+vrQAAAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 1939,
+    "End": 1944,
+    "Replacement": "pK+3rgAA",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 1949,
+    "End": 1958,
+    "Replacement": "tbAAAAAAAAAAAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 1187,
+    "End": 1202,
+    "Replacement": "gKSvgKKyoa25gLqhrau1gA==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 1206,
+    "End": 1213,
+    "Replacement": "sK+kgKecobo=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 1238,
+    "End": 1244,
+    "Replacement": "pK+ArKGztQ==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 1249,
+    "End": 1266,
+    "Replacement": "sLK6pbqApJ2ir7elgKSyurep",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 1271,
+    "End": 1284,
+    "Replacement": "rqGApLqppaS6qa6ppaM=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 1289,
+    "End": 1306,
+    "Replacement": "sLK6pbqAorWrr7elgKSyurep",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 3290,
+    "End": 3422,
+    "Replacement": "BAUCNC8AMDUcITArIQABACspJSQ5ADAvMzQhNykcJQsA/wUDMzQvMDkALiEAMzQvMC4pISMoDAA0JQA6ITAhJBw5/wUEMykdADAvJAA0NzktACMpHTshMiUtDgA6ISIpHCUL/wUFMykdADUwISQhKiAjADcAIiU6JCUuLiAAKiEtHQ4A/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 3423,
+    "End": 3516,
+    "Replacement": "AwYDKyEtKSUuLiUAJC4vAC4hJywlADMrLxsjOjkcL/8GBDMpHQEANzAhJBwlCwA3ACIlOiQlLi4gADQvGwz/BgUAIiU6ADshJC45IygAMzohLjMAMiE0NS4rNQAB/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 3639,
+    "End": 3677,
+    "Replacement": "AQMDgIC5r7WAobKlgK6vtICjobKyuamup4ChrrmAqbSlrYGAgID/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 3678,
+    "End": 3715,
+    "Replacement": "AQMDgLmvtYChsqWAo6GysrmprqeAr66suYCvrqWAqbSlrZqAgP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 3716,
+    "End": 3753,
+    "Replacement": "AQMBgK6ppbOppbO6gK6hs7SdsLWqoKOlgLCyuqWkramvtLmagP8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 4219,
+    "End": 4281,
+    "Replacement": "AgYENyglLgA5LzUALCkmNCUkADQoJQAmNTIMAAAAAP8GBSEuACUuNDIhLiMlADchMwAyJTYlISwlJAEAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 4282,
+    "End": 4317,
+    "Replacement": "AQQEMC8kACccLzcgACI5HCEANSsyOTQhACQKNyknLikhAAH/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 4318,
+    "End": 4378,
+    "Replacement": "AgYDITIlLgc0ADkvNQAvNiUyJC8pLicAKTQAIjkA/wYEKC8hMiQpLicAISwsADQoKTMAMzQ1JiYAHwEA/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 4379,
+    "End": 4447,
+    "Replacement": "AgQCta6mr7K0ta6htKWsuYCNgLmvtYCjoa6HtIC0oaulgP8EA4CAgICAgICAgICAoa65gKm0pa2AgICAgICAgICAgID/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 4448,
+    "End": 4489,
+    "Replacement": "AQEDgICAgIC5r7WAo6GugK+urLmAtKGrpYCvrqWAqbSlrZqAgICAgID/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 4490,
+    "End": 4513,
+    "Replacement": "AQoBgKOvgKOoo6WzuoC3uqmgi56An4D/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 4739,
+    "End": 4764,
+    "Replacement": "AQkBgKOvgKOoo6WzuoC6r7O0obepnoCfgP8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 4765,
+    "End": 4806,
+    "Replacement": "AQEDgLmvtYCjoa6ArKWhtqWAoqWoqa6kgK+urLmAr66lgKm0pa2BgID/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 5514,
+    "End": 5625,
+    "Replacement": "AwMDMC8kHC8nIQA6ITAhJBwhADMpHQA3MiE6ADoANC8iIAABAP8DBCIhMiQ6LwA0MjUkLi8AMDI6JTs5HgAjOjQlMiQ6KSUzNC//AwUALSU0Mi83OQAsLzQOADslJy4hKgAiITIhKCkyOiUODg4A/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 5661,
+    "End": 5769,
+    "Replacement": "AwMDLiEnLCUAMzQhHC8AMykdACMvCwAuKSU6NzkrHCUnLwAN/wMEMDI6JS4pKy4gHCULADAyOiU6ADQhJiwdACw1MzQyIQAp/wMFOi4hLCE6HCULADMpHQAwLwAkMjUnKSUqADM0Mi8uKSUB/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 5898,
+    "End": 6103,
+    "Replacement": "BQEBADohLSUrADAdKxwAMC8kADcwHDk3JS0ALS8jOQAkISUyLy4hAQD/AQIAIzohMi4vKzMpHTsuKSsAOiEiMiEcAC8kACMpJSIpJQAsITMrHf8BAwApADc5MzolMDQhHAAuKSU6LiEuJQA6ISssHSMpJQ4ALiEnLCUA/wEEAAAANzM6OTM0Ky8AOiE3KTIvNyEcLwApAC8LLCUwKRwAIykdAAD/AQUAACQ6KTcuOQAiLCEzKw4ANTAhJBwlCwAuIQA6KSUtKR0ADg4OAP8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 6351,
+    "End": 6379,
+    "Replacement": "AQgEIy8uJzIhNDUsITQpLy4zDAAiITIhKCkyAf8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 6380,
+    "End": 6405,
+    "Replacement": "AQkEADQoJQAsLyMrACQpJC4HNAAvMCUuAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 6460,
+    "End": 6543,
+    "Replacement": "AgEDCyMpIS4hDAAwMjo5ACs0LzIlKgA6LiEqJDUqJQAzKR0AJi80JSz/AQQALyIyDyMpHCEAMyklAC4hJywlADcyIToAOgA0LyIgAA4ODgAAAAD/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 6582,
+    "End": 6738,
+    "Replacement": "BAICAAApNAA3ITMANDIlISMoJTIvNTMAITMrITIHMwA0MiEwAQAA/wIDAAAhACQlISQsOQAiJSQAJDIhJyclJAA5LzUAKS4zKSQlDgAA/wIEAAAAAAA0KCUuACEsLAA5LzUAIy81LCQAKCUhMgA3ITMAAAAA/wIFAAAAAAAAAAAAAAAAMy0hIyspLicODg4AAAAAAAAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 6983,
+    "End": 7168,
+    "Replacement": "BQMBNS4mLzI0NS4hNCUsOQANADkvNTIALDUjKwAoITMAMjUuAP8DAgAvNTQANCgpMwA0KS0lAQAhADMlIy8uJAAzLywkKSUyAAD/AwMAIyEtJQAvNTQALyYANCglACchNCUAIS4kADMwLzQ0JSQA/wMEOS81ACIlKCkuJAA0KCUAIi81LCQlMg4AOS81ACQpJC4HNP8DBQAAMzQhLiQAIQAjKCEuIyUAISchKS4zNAA0KCUtDg4OAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 7254,
+    "End": 7287,
+    "Replacement": "AQUEAAAAAAAANCglACchNCUAKTMALzAlLikuJw4AAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 7546,
+    "End": 7576,
+    "Replacement": "Ag4DgICupbeAp6GtpYCA/w4FgIC0qKWApa6kgICA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 7577,
+    "End": 7733,
+    "Replacement": "BAICOS81MgAtKTMzKS8uACghMwAuLzQAIiUlLgAjLy0wLCU0JSQO/wIDADQoJQArKS4nJC8tACkzACEsMiUhJDkALC8zNA4AJTYpLAAA/wIEMC83JTIzADUuJCUyACEzKyEyADcpLCwAMCw1LiclADQoJTMl/wIFAAAsIS4kMwAmLzIlNiUyACkuNC8AJCEyKy4lMzMODg4AAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 7762,
+    "End": 7828,
+    "Replacement": "AgUEKQctADMvMjI5DAAiNTQAOS81MgAlLiUyJzkAAAAA/wUFAAAAACghMwAiJSUuACQlMCwlITQlJAEAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 7829,
+    "End": 7891,
+    "Replacement": "AgYDgICph62As6+ysrmMgKK1tIC5r7WAqKG2pYCAgP8GBICAgICur7Soqa6ngLSvgLWzpYCopbKlgICAgID/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 7892,
+    "End": 7928,
+    "Replacement": "AQMEAK6ppYC6sq+iqbO6gLqAtLmtgK6po4CjqaWrobelp6+A/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 7929,
+    "End": 7950,
+    "Replacement": "AQsBAKOvgKOoo6WzuoC1u7megJ8A/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 7951,
+    "End": 7977,
+    "Replacement": "AQgEgICAtKilsqWHs4Cur4Clpqalo7SAgID/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 7978,
+    "End": 8000,
+    "Replacement": "AQsEgKq1u4C0r4C6sq+iqZyli4CBgP8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 9560,
+    "End": 9601,
+    "Replacement": "AQEEMDI6JSQAMy8iIAA3KSQ6KTM6ACsyOTM6NCEcLzcgACM6ITM6Kx3/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 9602,
+    "End": 9641,
+    "Replacement": "AQEENwALIykhLiklADcpJDopMzoALzQ3LzI6Ly45ADMjKC83JSsO/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 11145,
+    "End": 11175,
+    "Replacement": "AQcBNCErJQA5LzUyACwhMzQAJCUjKTMpLy4aAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 11176,
+    "End": 11198,
+    "Replacement": "AQsEAAAkLy4HNAAiJQAzKSwsOQEAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 11827,
+    "End": 11875,
+    "Replacement": "AgwFOS81ADMlITIjKCUkADQoJQAiLyQ5/wwGAAAhLiQAJi81LiQANCglACslOQAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 11876,
+    "End": 11926,
+    "Replacement": "AgwFAC0hMjQ3JS01ADM0MiE7LikrLzcpAP8MBgA3OTAhJBwAOgAyHSspAC0pJSM6AAD/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 11927,
+    "End": 11987,
+    "Replacement": "AgcENS4mLzI0NS4hNCUsOQwANCglAC8wMC8uJS40/wcFMDIvNiUkADM0Mi8uJyUyADQoIS4AOS81Dg4O/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 11995,
+    "End": 12030,
+    "Replacement": "ADkvNQA0KDIlNwA5LzUyMyUsJgAhNAA0KCUALzAwLy4lLjQB",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12032,
+    "End": 12086,
+    "Replacement": "AggEADQoJQAnLyQzACYhNi8yADkvNQEAAAAA/wgFAAA5LzUANy8uADQoJQAmKScoNA4AAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12366,
+    "End": 12402,
+    "Replacement": "Ag0DgICioaOrgK+mpoCAgICA/w0FgICAgKapp6i0gICAgICA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12403,
+    "End": 12436,
+    "Replacement": "AQUEAAAoJQAkLyUzLgc0ADchLjQAIS45ACk0JS0AAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12437,
+    "End": 12478,
+    "Replacement": "AQEDAAAAOS81ACMhLgAnKTYlAC8uLDkANCgpMwAvLiUAKTQlLRoAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12486,
+    "End": 12499,
+    "Replacement": "gIC5r7WygKWupbKnuZo=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12505,
+    "End": 12538,
+    "Replacement": "AQUEAAAAOS81ACQvLgc0ACghNiUAIS45ACk0JS0BAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12539,
+    "End": 12560,
+    "Replacement": "AQsBIy8AIygjJTM6AC01ACQhHgAf/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 12637,
+    "End": 12650,
+    "Replacement": "AQ8FIzolKyEzOg4ODv8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 12651,
+    "End": 12726,
+    "Replacement": "AxAFADkvNQAzJSUAIQAnNSEyJA4AKCUAAP8QBiwvLyszADclISslMgA0KCEuADkvNQz/EAciNTQAKCUHMwAnLzQAIQA3JSEwLy4O/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12727,
+    "End": 12777,
+    "Replacement": "AhAFOS81ADMlJQA0KCUAJzUhMiQOACglAP8QBikzACYvIzUzJSQALy4AOS81Dg4OAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12778,
+    "End": 12824,
+    "Replacement": "AhEFADcpJDopMzoAKy8sJSouJScvAAD/EQYzNDIhLikrIQA0JScvADohLSs1Dv8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 12825,
+    "End": 12900,
+    "Replacement": "AxAFOS81ADMlJQAhACcpIS40ACc1ITIkDv8QBgAmKScoNCkuJwAoKS0ANyksLAAiJQD/EAcAAAA2JTI5ACQpJiYpIzUsNA4AAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12901,
+    "End": 12976,
+    "Replacement": "AxAFOS81ADMlJQA5LzUyACYyKSUuJAAAAP8QBiQhJTIvLg4AKCUHMwA0MiEwMCUkAAD/EAcAACIlKCkuJAA0KCUAIiEyMw4AAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 12977,
+    "End": 13027,
+    "Replacement": "AgkFIQAkJSEkACIvJDkALCklMwAAAAAAAP8JBikuACYyLy40AC8mADkvNQ4AAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 13028,
+    "End": 13092,
+    "Replacement": "BAECAAAAADchKTQAAAAAAP8BBAAAAAA0ISwrAAAAAAD/AQYAAAAAJyk2JQAAAAAA/wEIAAAAACYpJyg0AAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 13093,
+    "End": 13143,
+    "Replacement": "AgkFgIC0qKWypYezgK6vgK+0qKWygICAgP8JBrClsrOvroCopbKlgKK1tIC5r7WOgID/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 13144,
+    "End": 13194,
+    "Replacement": "AgkELiklADMgJDodDAAhIjkAIjkcIQA0L/8JBQA6Ijk0AC83LyMuIQAyLzotLzchAAD/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 13291,
+    "End": 13341,
+    "Replacement": "AgkEAi4vNwA1MyUAOS81MgAjIS4lACEuJP8JBSkHLCwAJikuISwsOQAiJQAmMiUlAQL/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 13342,
+    "End": 13394,
+    "Replacement": "AgkEAig1MjI5ADUwAQA0KCUyJQApMwAuLwD/CQUAAAA0KS0lDAAtOQAmMiklLiQOAgAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 13395,
+    "End": 13570,
+    "Replacement": "BQQCAjkvNQcyJQAmKS4hLCw5ACglMiUBAC4vNwAoJSwwAAD/BAMtJQAnJTQALzU0AC8mACglMiUADQA5LzUHNiUAJy80AP8EBDQvACYpLiQALTkALSEnKSMAIywvISsAIS4kACMhLiUO/wQFJy8AJi8yACk0DAAmMiklLiQOAgANJCElMi8uAAAAAAD/BAYzKC81NCUkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 13655,
+    "End": 13763,
+    "Replacement": "AwQCNCglACc1ITIkADMhKSQaAAIpBywsACwlNAA5LzUAAAAA/wQDACcvACkmADkvNQAnJTQALSUAMy8tJTQoKS4nAAAAAAAA/wQEAAAAAAAAAAAAADYhLDUhIiwlDgIAAAAAAAAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 13764,
+    "End": 13892,
+    "Replacement": "BAYCAikHLCwALCU0ADkvNQAnLwApJgA5LzUAJyk2JQD/BgMALSUAMy8tJTQoKS4nACkALCkrJQ4AJC8uBzQAAP8GBC0hKyUAIQAtKTM0ISslDAA5LzUALy4sOQAoITYl/wYFLy4lACMoIS4jJQECAA0AMyE5MwA0KCUAJzUhMiT/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 14033,
+    "End": 14062,
+    "Replacement": "AQcEAAAAACkAJC8uBzQALiUlJAApNAEAAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 14142,
+    "End": 14252,
+    "Replacement": "AwMCKQc2JQAmKS4hLCw5ADIlJyEpLiUkAC05ADAvNyUyACIh/wMEADU7OSoANCUyIToALSEnKSM6LiUqACwhMyspDAAhACohAP8DBTMwMiE3KR0MADslAC80Ny8yOjkALy4hACssITQrHQ4AAgD/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 14253,
+    "End": 14321,
+    "Replacement": "AgUEAjQoITQAKCEzAC4vADYhLDUlADQvAC0lDgAAAAAAAP8FBQAAAAApADchMi4lJAA5LzUBAAIAAAAAAAAAAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 14322,
+    "End": 14355,
+    "Replacement": "AQUEAAAAAAIhLCwAMiknKDQADQAnLwECAAAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 14427,
+    "End": 14579,
+    "Replacement": "BAICAAA0KCUAJzUhMiQAMyg1JiYsJSQAISwvLicAJi8yACEAAAD/AgMtLy0lLjQMACYpLiQpLicALi80KCkuJwAzNTMwKSMpLzUzDP8CBAA3ISwrJSQANTAANC8ANCglACchNCUMACsuLyMrJSQANDcv/wIFAAA0KS0lMwwAIS4kACQpMzMhMDAlITIlJAApLjMpJCUOAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 14580,
+    "End": 14654,
+    "Replacement": "AgMDOS81ACglITIkACEAMygvNTQaAAIkKSUMADcyJTQjKAECAP8DBAAAAC4vNwA5LzUAKCE2JQA0LwAmKScoNA4ODgAAAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 14950,
+    "End": 15012,
+    "Replacement": "AgYEo6ilo6uAqaaAtKilgKasr7CwuYC3qbSogLSopf8GBYCAp6GtpYCps4CproC0qKWApKmzq4Cksqm2pYD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 15470,
+    "End": 15637,
+    "Replacement": "BQIBMzQvKTM6ADcAIyklLS45LQAwMjolKgsjKTUMABwgIzogIzkt/wMCNyUqCyMpJQA6ACQ6KSUkOikbIyUtDgAuISQANDcvKiD/AQMnHC83IAA3KTMpACshLSklLi4lADMrLCUwKSUuKSUOAC0pLS//AQQwDxwtMi8rNQAwLwAvIjUAMzQyLy4hIygANzkyIQouKSUANykN/wIFJCEeACQyOjcpDgD/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 15638,
+    "End": 15837,
+    "Replacement": "BQEBOS81ACEyJQApLgA0KCUAJS0wNDkAIy81MjQ5ITIkAC8mADQoKTP/AQIAAC05MzQlMikvNTMAIyEzNCwlDgA5LzUAMyUlACEuLzQoJTIAAP8CAwAnKSEuNAAnITQlDAA0KCkzADQpLSUALCUhJCkuJwApLjQvAAD/AQQAADQoJQAmLzI0MiUzMw4ALy4ALy4lADMpJCUAOS81ACMhLgAA/wMFAAAAADMlJQAhLgAlLjQyIS4jJQA0LwAhADIvLy0OAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 15838,
+    "End": 15994,
+    "Replacement": "BAEBOS81ADchLCslJAApLjQvADQoJQAnNSEyJDMHADIvLy0OADQoJf8BAgAAJC8vMgA5LzUAIyEtJQA0KDIvNScoACkzADQoJQAvLiw5/wEDACU4KTQOACEANCEiLCUAMzQhLiQzACkuADQoJQAjJS40JTIOAAD/AgQAIQAsJTYlMgApMwAiNSksNAApLjQvADQoJQA3ISwsDgAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 15995,
+    "End": 16127,
+    "Replacement": "BAEBJxwhOgAtLzslADM0IS4vNykeACQvMysvLiEcIAArMjkqDzcrHQ7/AgI3KSQhHgAzNCAkACQvKxwhJC4pJQAjIRwgACIyIS0dDgA6If8CAy01MiEtKQA3ITIvNy4pADIvOiMpICchADMpHQA3MzAhLikhHDn/BQQrMiEqLyIyIToO/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 16128,
+    "End": 16281,
+    "Replacement": "BAIBOS81BzIlADM0IS4kKS4nACkuACEAIy8vLAAhLiQAJCEtMAAA/wECMi8vLQANACkANy8uJCUyACkmADQoITQHMwAoLzcANCglADIlMzT/AwMvJgA0KCUAMzQyNSM0NTIlACwvLyszADQoJQAzIS0lDv8CBAAAIQA0LzIjKAApMwAtLzUuNCUkADQvADQoJQA3ISwsDgAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 16282,
+    "End": 16434,
+    "Replacement": "BAEBAAAANCgpMwAyLy8tACkzAC4vNAA2JTI5ACwhMiclDAAiNTQAAAD/AgIwJTIoITAzADkvNQA3KSwsACYpLiQAMy8tJTQoKS4nACglMiUO/wEDADQoJTIlACkzACEALCEyJyUAIi84ACkuADQoJQAjLzIuJTIMAP8FBAAhLiQAIQAjNTAiLyEyJAAiOQA0KCUANyEsLA7/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 16435,
+    "End": 16584,
+    "Replacement": "BAEBOS81ACcvNAApLjQvACEAMy0hLCwAMi8vLQ4AKTQAKTMAJjUsLP8CAi8mACMvIjclIjMOACghMwAuLwAvLiUAIiUlLgAoJTIlHwD/AQMANCglMiUAKTMAIS4vNCglMgAsJTYlMgAvLgA0KCUANyEsLA7/BAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 16585,
+    "End": 16740,
+    "Replacement": "BAIBADkvNQcyJQApLjMpJCUANCglACMhMzQsJQ4AOS81ADMlJQD/AgIAAAA0KDIlJQAlOCk0MxoALy4lACwlISQzADQvADQoJQAAAAD/AgMAIiEzJS0lLjQMAC80KCUyADUwMzQhKTIzDAA0KCkyJAAAAAD/AgQAAAA0LzchMiQzACQvLzIANC8ANCglACMoIS0iJTIOAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 16741,
+    "End": 16858,
+    "Replacement": "AwEBOS81BzIlADM0IS4kKS4nAC8uADQoJQAmLC8vMgApLgAAAP8BAjQoJQAiLzQ0Ly0ALyYANCglADQvNyUyDgA0KCUANykuJCkuJ/8BAzM0ISkyMwAsJSEkACQvNy4OAAAAAAAAAAAAAAAAAAAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 16859,
+    "End": 16966,
+    "Replacement": "AwEBOS81ADMlJQAhADMtISwsACEuJAAkITIrADIvLy0AKS4ANCgl/wECNTAwJTIAMCEyNAAvJgA0KCUANC83JTIOADQoJQAAAAAAAAAA/wEDLy4sOQA3ITkALzU0ACkzADQoMi81JygANCj/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 16967,
+    "End": 17096,
+    "Replacement": "BAEBNzM6JSQcJQsAJC8ANyksJy80LiUqADApNy4pIzkOACM6NSolMzr/AQIqISsALC8kLzchNCUAMC83KSU0MjolADAyOiUuKSshADQ3Lyol/wEDKy8LIykOADAyOjkAKyEtKSUuLiUqAAsjKSEuKSUAMzQvKiD/BQQyJSchHDkO/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 17097,
+    "End": 17251,
+    "Replacement": "BAEBAAAAOS81BzIlADM0IS4kKS4nACkuACEALCEyJyUAMi8vLQ7/AQIAAAAAACEnISkuMzQANCglADchLCwAKTMAIQAsITInJQwA/wEDAAAAMikjKCw5ACQlIy8yITQlJAAjKCEpMg4AOS81ADMlJQD/AQQAAAAAAAAAAAAAMzQhKTIzACwlISQpLicANTAOAAAAAAAAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 17252,
+    "End": 17389,
+    "Replacement": "BAEBAAAAOS81BzIlADM0IS4kKS4nACE0ADQoJQAkLy8yAAAA/wECACwlISQpLicANC8ANCglACIlJDIvLy0OADQoJQA2KSU3AAD/AQMpMwAlLighLiMlJAAiOQA0KCUAMzQhKTIjITMlADcoKSMoAP8HBAAAAAAsJSEkMwAkLzcuNyEyJDMOAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 17390,
+    "End": 17570,
+    "Replacement": "BQEBOS81BzIlACkuADQoJQAiJSQyLy8tDAA3KTQoADQoJQAsITInJQD/AQIjIS4vMDkAIiUkDgA0KCUyJQApMwAhADYlMjkAMywlJTA5AAD/AQMhNC0vMzAoJTIlACglMiUOADQoMi81JygAIQAoITolDAA5LzUAAP8BBDMlJQAhACg1JyUALSkyMi8yACMvNiUyKS4nAC8uJQAvJgA0KCX/AQU3ISwsMw4AAAAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 17571,
+    "End": 17715,
+    "Replacement": "BAEBOS81BzIlACkuACEAMyUjMiU0ADIvLy0OACU2JTI5NCgp/wECMiEkKSE0JTMAIQAzNDIhLiclACcsLzcOACEAMzQvLiUAAAAA/wEDMCUkJTM0ISwAMzQhLiQzACkuADQoJQAjJS40JTIOACEuAAAA/wEEITItIyghKTIAMzQuACEnISkuMzQANA43ISwN/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 17716,
+    "End": 17850,
+    "Replacement": "BAEBOS81BzIlACkuACEAJCEyKwAoISwsNyE5DgA5LzUAIyEuAAAA/wECLy4sOQAzJSUALy4lACU4KTQALCUhJCkuJwA0LwA0KCUAAP8BAy80KCUyADMpJCUALyYANCglACMvMjIpJC8yDgA0KCUyJQcz/wcEIQAsJTYlMgAvLgA0KCUANw3/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 17851,
+    "End": 17972,
+    "Replacement": "AwEBOS81BzIlACkuADQoJQAzJSMvLiQAMyUjNCkvLgAvJgA0KCUAAP8BAgAjLzIyKSQvMgwAJTE1ISwsOQAkITIrACEuJAAkIS0wDgAAAAD/AQMhADMjLy4jJQApMwAhNDQhIyglJAA0LwA0KCUANyEsLA4AAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 17973,
+    "End": 18114,
+    "Replacement": "BAEBOS81ADchLCslJAApLjQvACEAJCUzJTI0JSQAMi8vLQ4AOS81AP8BAiMhLgAnLwAvNTQANCglACQvLzIALzIAIygvLzMlACIlNDclJS7/AQMANDcvADM0ISkyMw4ANCglOQAsJSEkADUwACEuJAAkLzcuDgAA/wMEDQAAAAAAAAAAAAAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 18115,
+    "End": 18231,
+    "Replacement": "AwEBNCglMiUAITIlACIvLyszKCUsNiUzACkuADQoKTMAMi8vLQ4A/wECAAA0KCkzAC0pJyg0ACIlACEzKyEyBzMAMzQ1JDkOADQoJQD/AQMAAAAAAAAAAAAAACU4KTQAKTMAIQAkLy8yDg0AAAAAAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 18232,
+    "End": 18352,
+    "Replacement": "AwEBOS81BzIlACkuADQoJQAsKSIyITI5DgA0KCUyJQAhMiUAMCwl/wECMCwlLjQ5AC8mACIvLyszAC8uADQoJQAzKCUsNiUzDgA5LzUAAAD/AQMnLwA0LwA0KCUAIy8yMikkLzIMACkuNC8ANCglADIvLy0ALzIA/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 18353,
+    "End": 18466,
+    "Replacement": "AwEBOS81BzIlACkuACEAMy0hLCwAJS0wNDkAMi8vLQ4ANCgl/wECLCknKDQAJiEsLDMANCgyLzUnKAAhADMtISwsACgvLCUAKS7/AQM0KCUAIyUpLCkuJw4AOS81ACMhLgAnLwApLgA0Ny8ANyE5Mw7/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 18467,
+    "End": 18577,
+    "Replacement": "AwEBOS81BzIlACkuACEAMCwhIyUANyglMiUAOS81MgAmMiklLiQAAAD/AQIkISUyLy4AKTMANDIhMDAlJA4AKCUAKTMAAAAAAAAA/wEDMzUyMi81LiQlJAAiOQAzKSw2JTIAIiEyMw4NAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 18578,
+    "End": 18651,
+    "Replacement": "AgEBOS81BzIlAC8uADQoJQAoISwmDTM0LzI5AC8mADQoJQAkITIr/wECNC83JTIOADM0ISkyMwAsJSEkADUwACEuJAAkLzcuDv8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 18652,
+    "End": 18773,
+    "Replacement": "BAEBMzQvKTM6AC4hACshLSklLi4lKgAwLzMhJDojJQAwMjo5/wECNyUqCyMpNQAkLwArIS4hHDUOACsyHTQlADMjKC8kOQA3KS8kIP8BAyQvACcPMjkMAC0vOyUzOgApCx4ANCU7ACQvACsvLS4hNDn/BwQvIi8rDv8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 18774,
+    "End": 18897,
+    "Replacement": "BAEBADkvNQcyJQArLiUlDSQlJTAAKS4AKSMlADchNCUyACkuACEA/wECAAAkITIrACMhLiEsDgA0KCUyJQczACEAKC8sJQAhIi82JQD/AQM5LzUOADQoJTIlACkzACEuLzQoJTIAIy81MCwlAC0lNCUyM/8EBCE3ITkO/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 18898,
+    "End": 19001,
+    "Replacement": "AwEBOS81ADchLCslJAApLjQvACEAMy0hLCwAMi8vLQ4AOS81AAAA/wECIyEuACcvACQvNy4ANCglADM0ISkyMw4AOS81AAAAAAAA/wQDJiUlLAA0KCUAIy8sJAAhKTIOAA0AAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19002,
+    "End": 19090,
+    "Replacement": "AwEBOS81ACEyJQApLgAhLgAlLiMsLzMlJAAzMCEjJQ4ANCglAAD/AQIvLiw5ACU4KTQALCUhJDMAIiEjKwA0LwAjIS4hLA4AAAAA/wQDDQAAAAAAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19284,
+    "End": 19295,
+    "Replacement": "LyErACQvLzIAAAAA",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19260,
+    "End": 19264,
+    "Replacement": "JyE0JQ0=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19271,
+    "End": 19282,
+    "Replacement": "IiUlIygAJC8vMg0A",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19297,
+    "End": 19301,
+    "Replacement": "KyU5DQA=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19303,
+    "End": 19310,
+    "Replacement": "LCU2JTINAAA=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19317,
+    "End": 19324,
+    "Replacement": "JDIhNyUyDQA=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19326,
+    "End": 19333,
+    "Replacement": "JiwpLjQNAAA=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19335,
+    "End": 19343,
+    "Replacement": "NC8yIygNAAAA",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19345,
+    "End": 19351,
+    "Replacement": "LCEkJCUyDQ==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19365,
+    "End": 19369,
+    "Replacement": "IjIlISQ=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19380,
+    "End": 19391,
+    "Replacement": "JywhMzMAIiEsLA0A",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19393,
+    "End": 19405,
+    "Replacement": "Jy8sJAArJTkAAAAAAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19412,
+    "End": 19416,
+    "Replacement": "LSUhNA0=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19418,
+    "End": 19424,
+    "Replacement": "Mys1LCwNAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19426,
+    "End": 19438,
+    "Replacement": "JywhMzMAIzI1LSIzAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19440,
+    "End": 19446,
+    "Replacement": "KyU5AAAAAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19460,
+    "End": 19465,
+    "Replacement": "LSkyMi8y",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19467,
+    "End": 19470,
+    "Replacement": "IiUkAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19472,
+    "End": 19478,
+    "Replacement": "NyEuJAAAAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19480,
+    "End": 19484,
+    "Replacement": "JC8vMgA=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19486,
+    "End": 19490,
+    "Replacement": "Ji80JSw=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 19492,
+    "End": 19500,
+    "Replacement": "MCUkJTM0ISwA",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19521,
+    "End": 19527,
+    "Replacement": "MzQvMiEnJQ==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19529,
+    "End": 19535,
+    "Replacement": "Iy8hNAAAAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19543,
+    "End": 19549,
+    "Replacement": "Ii8vKzMAAA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19551,
+    "End": 19555,
+    "Replacement": "JjUyAAA=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19557,
+    "End": 19566,
+    "Replacement": "LSEuNTMjMikwNA==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19568,
+    "End": 19573,
+    "Replacement": "IyglMzQA",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19575,
+    "End": 19583,
+    "Replacement": "MDI6JSoLIykl",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 19585,
+    "End": 19589,
+    "Replacement": "Jy8sJAA=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19591,
+    "End": 19595,
+    "Replacement": "MzcvMiQ=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19747,
+    "End": 19765,
+    "Replacement": "AQwEKCEyJAAhLiQAKy4vNDQ5/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19770,
+    "End": 19797,
+    "Replacement": "AQgEKCUhNjkMADIpIygsOQAkJSMvMiE0JSQA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19802,
+    "End": 19831,
+    "Replacement": "AQcEKTMALC8jKyUkACYyLy0ANCglACkuMykkJQD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19836,
+    "End": 19851,
+    "Replacement": "AQsEKTQHMwAvMCUuAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19888,
+    "End": 19912,
+    "Replacement": "AQoEITIlACwvIyslJAA3KTQoACEAKyU5/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19917,
+    "End": 19932,
+    "Replacement": "AQ4EITIlAC8wJS4lJAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19937,
+    "End": 19952,
+    "Replacement": "AQ0EITIlACwvIyslJAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19957,
+    "End": 19972,
+    "Replacement": "AQ4EITIlAC8wJS4lJAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19977,
+    "End": 20001,
+    "Replacement": "AQsEMyktMCwlAC0lNCEsACslOQAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20006,
+    "End": 20042,
+    "Replacement": "AQMENTMlJAA0LwAvMCUuADQoJQAtISkuACchNCUAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20047,
+    "End": 20081,
+    "Replacement": "AQQELS87JTM6AC4pIAA6IS0rLiAeACccDzcuIAAiMiEtHf8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 20086,
+    "End": 20107,
+    "Replacement": "AQgEOi4hLCE6HCULADM6NSYsISQd/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 20112,
+    "End": 20151,
+    "Replacement": "AQIEMiknKDQALi83DAA0KCUAJDIhNyUyACkzAC8wJS4AAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20156,
+    "End": 20173,
+    "Replacement": "AQoEKTMAIywvMyUkAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20178,
+    "End": 20238,
+    "Replacement": "AgcEITMAOS81ACMhLgApLSEnKS4lAA0AKTQHMwAA/wcFNTMlJAA0LwAsKScoNAAhACYpMiUAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20243,
+    "End": 20301,
+    "Replacement": "AgQEKTQHMwAvNTQADQA3JQAjLzUsJAA1MyUAAAD/BAUAAAAAIQAmLCkuNA0AAAAAAAAAAAAAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20306,
+    "End": 20322,
+    "Replacement": "AQ0EKTQHMwAsKTQAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20327,
+    "End": 20389,
+    "Replacement": "AgYEKTQALSE5ACIlADUzJSQANC8ALzAlLgAAAAAAAP8GBQAAAAAhLi80KCUyADAhMzMhJyUAAAAAAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20394,
+    "End": 20418,
+    "Replacement": "AQkEKjU7ADMpHQAuKSAAIiE3KRwlCwAB/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 20423,
+    "End": 20436,
+    "Replacement": "AQ8EOjc5Kxw5AC4PO/8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 20441,
+    "End": 20458,
+    "Replacement": "AQ0EKTQHMwAjLC8zJSQAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20463,
+    "End": 20491,
+    "Replacement": "AQcEOS81BywsACYpLiQALi80KCkuJwAoJTIlAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20496,
+    "End": 20517,
+    "Replacement": "AQkELC8vKzMALjU0Mik0KS81MwAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20522,
+    "End": 20586,
+    "Replacement": "AgcEKTQHMwAsLyMrJSQOACkANy8uJCUyADcoITQAAAD/BwUAADQyJSEzNTIlMwApNAAjLy40ISkuMx8AAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20591,
+    "End": 20611,
+    "Replacement": "AQwEKiUzNAAqNTsALzQvMjovLiH/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 20616,
+    "End": 20654,
+    "Replacement": "AQIEKTQHMwAkJSYpLik0JSw5ACEALSEnKSMALyIqJSM0AQAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20659,
+    "End": 20697,
+    "Replacement": "AQIEKCEzACUuJzIhNiUkACksLCUnKSIsJQAwITQ0JTIuMwAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20702,
+    "End": 20762,
+    "Replacement": "AgYEKTQHMwAsLyMrJSQOADkvNQAjIS4HNAAzJSUA/wYFAAAAACEAKyU5KC8sJQAhLjk3KCUyJQAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20767,
+    "End": 20797,
+    "Replacement": "AQgENyUqCyMpJQAjOiUrIQAuIQALLSkhHCsPNwAB/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 20802,
+    "End": 20819,
+    "Replacement": "AQ0EKTQHMwAjLC8zJSQAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20824,
+    "End": 20841,
+    "Replacement": "AQ0EKTQHMwAjLC8zJSQADQ3/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20846,
+    "End": 20869,
+    "Replacement": "AQoENCglMiUHMwAuLzQoKS4nACkuACn/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20874,
+    "End": 20898,
+    "Replacement": "AQoEIiknDAAtNTQ0Ly4ANCgpJygAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20903,
+    "End": 20959,
+    "Replacement": "AgcEKiUzNAAiITIkOi8AJDU7IQwAMzQvKQA3AP8HBSMlLjQyISwuJSoAIzodCyMpACsvLS4hNDn/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 20964,
+    "End": 20987,
+    "Replacement": "AQoEIQArJTkALCkrJQAtIS45AC80KA3/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 20992,
+    "End": 21020,
+    "Replacement": "AQYEIy8tLS8uACg1LjQpLicANDIvMCg5AAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21025,
+    "End": 21054,
+    "Replacement": "AQcEIiUhNTQpJjUsACMyOTM0ISwALSkyMi8yAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21059,
+    "End": 21096,
+    "Replacement": "AQMENzIdIzoAKzUzKQwAISI5ADMpHQAuIQAuKS0AMC8cLzs5Hv8=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 21101,
+    "End": 21149,
+    "Replacement": "AgoELC8vKzMALCkrJQAlNiUyOQAAAAAA/woFAAAtIScpIwA3IS4kAAAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21154,
+    "End": 21181,
+    "Replacement": "AQcEKTQHMwAtISQlAC8mADM0Ly4lAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21186,
+    "End": 21262,
+    "Replacement": "AgIEKTQHMwAtISQlAC8mADM0Ly4lDAAvLgApNDMAAAAAAAAAAAD/AgU3ISwsMwAhMiUANzIpNDQlLgAyNS4pIwAzKScuMwAAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21267,
+    "End": 21295,
+    "Replacement": "AQcEKTQAKTMAMzQ1JCQlJAA3KTQoACclLTMOAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21300,
+    "End": 21335,
+    "Replacement": "AQQEOS81ACYvNS4kACEAIy8hNAApLjMpJCUAKCktAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21340,
+    "End": 21418,
+    "Replacement": "AgIEIiknACIsISMrACMvITQADQApADcvLiQlMgApJgApNAczAAAA/wIFAAA1MyUkADQvADAyLzQlIzQAISchKS4zNAAyISkuHwAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21423,
+    "End": 21459,
+    "Replacement": "AQQELiklAC0hADcALiktAC4pIwA3KR0jJSoMACEAMzorLyQh/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 21464,
+    "End": 21566,
+    "Replacement": "AwQDADQoJTkHMiUAMyUhLCUkADcpNCgAKTIvLgwAAAAAAP8EBCUuJzIhNiUkADcpNCgAMjUuMw4ANCglOQcyJQAAAAD/BAUjLC8zJSQALyYmADcpNCgAMy8tJTQoKS4nDgAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21571,
+    "End": 21604,
+    "Replacement": "AQUEKTQHMwAsLy4nDAA3KTQoADI1IjkAITQ0KCUlLiQN/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21609,
+    "End": 21665,
+    "Replacement": "AggELiE0NTIlACIvLyszAA0lDicOAAAAAAAAAP8IBQIiKTIkACIyJSUkKS4nAg0AAAAAAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21670,
+    "End": 21694,
+    "Replacement": "AQoEKTQHMwAhIi81NAAiLCEjKy0hJykN/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21699,
+    "End": 21725,
+    "Replacement": "AQkEIy8uNCEpLjMAMy8tJQAzMCUsLDMAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21730,
+    "End": 21768,
+    "Replacement": "AQIENCglACMhJyUALC8jKwApMwAkJSMvMiE0JSQANw4yNSI5DQD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21773,
+    "End": 21802,
+    "Replacement": "AQcEOiEAJxwhOiUtADouISwhOhwlCwArIS05Kyn/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 21954,
+    "End": 21968,
+    "Replacement": "AQ8ELy4AOS81HwEAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 21974,
+    "End": 22168,
+    "Replacement": "BQIBIQAzNC8uJQA0KDIvNy4AITQANCglACchNCUAISwhMi0lJAAA/wICNCgvMyUAKyUlMCkuJwA3ITQjKAApLjMpJCUOADQoJSchNCUN/wIDIywhNDQlMiUkDAAhLiQAOS81ADMhNwA0KCUAMyksKC81JTQ0/wIELyYAIQAnNSEyJA4AKCUAMzQlMDAlJAAvNTQALyYANCglAAAA/wIFJS40MiEuIyUAIS4kACIlJyEuADQvACwvLysAITIvNS4kDg7/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22174,
+    "End": 22204,
+    "Replacement": "AQYEOS81ACMhLgAoJSEyADQoJQA1LiwvIyspLicB/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22210,
+    "End": 22270,
+    "Replacement": "AgUEKTQHMwA0Ly8AKCUhNjkADQA5LzUAIyEuBzQA/wUFAAAAAC8wJS4AKTQAOS81MjMlLCYOAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22276,
+    "End": 22336,
+    "Replacement": "AgYEIywvMykuJwA0KCUAJyE0JQA0Ly8rAAAAAAAA/wYFAAAAACEALC80AC8mACUmJi8yNA4NAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22342,
+    "End": 22404,
+    "Replacement": "AgYENCghNAAkKSQuBzQANy8yKw4ALSE5IiUAIQAAAP8GBQAsKTQ0LCUALS8yJQAhLiEiLywpIzMfAA0AAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22410,
+    "End": 22433,
+    "Replacement": "AQoELCUwKSUqADU7OSoAKyw1IzohAAH/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 22439,
+    "End": 22459,
+    "Replacement": "AQwENCglOQcyJQAzNDUjKwEAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22465,
+    "End": 22479,
+    "Replacement": "AQ8EKTQHMwAvMCUuAQD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22485,
+    "End": 22500,
+    "Replacement": "AQ4EOiEtKy4gHCULACol/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 22506,
+    "End": 22566,
+    "Replacement": "AgYENCglACwvIysAIywpIyslJAAzLyY0LDkODg4A/wYFAAAAAAAAAAAALzAlLgABAA0AAAAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22572,
+    "End": 22620,
+    "Replacement": "Ag8EOS81BzYlACEjNCk2ITQlJAA0KCUA/w8FJyE0JS8wJS4pLictJSMoIS4pMy0N/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22626,
+    "End": 22661,
+    "Replacement": "AQQEOS81KCUhMjQoJSMsIS4nLyY0KCUjLC8zKS4nJyE0JQ3/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22667,
+    "End": 22723,
+    "Replacement": "AggENy81LCQAOS81ACwpKyUANC8AIyEyNiUAAP8IBQAAAAAhADMpJy4AKS4AKTQfDQAAAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22729,
+    "End": 22750,
+    "Replacement": "AQsEOS81IywvMyUkNCglJDIhNyUy/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22756,
+    "End": 22792,
+    "Replacement": "AQQEOS81ACYvNS4kACEAJiwpLjQAKS4ANCglACQyITclMgEA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22798,
+    "End": 22860,
+    "Replacement": "AgYEOS81ACwpNAA0KCUANC8yIygBACgpJygANTAAAP8GBSEiLzYlADkvNQAzJSUAIS4ALzAlLikuJw4AAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22866,
+    "End": 22890,
+    "Replacement": "AQoEOS81AC0vNiUkADQoJQAsJTYlMg4A/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22896,
+    "End": 22929,
+    "Replacement": "AQUEOS81AC0vNiUkADQoJQAsJTYlMgAhJyEpLg4NAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22935,
+    "End": 22958,
+    "Replacement": "AQoEOS81BzIlADM1IygAIQAiKTQjKAH/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 22964,
+    "End": 23026,
+    "Replacement": "AgYEOS81ACYvNS4kACIyJSEkACkuADQoJQAAAAAAAP8GBSM1MCIvITIkDjkvNTQvLyspNC81NCclLjQsOQ3/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23032,
+    "End": 23052,
+    "Replacement": "AQsEOiEtKy4gHCULACsyJSQlLjP/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 23058,
+    "End": 23077,
+    "Replacement": "AQwENiUyOQA0ITM0OQEAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23083,
+    "End": 23135,
+    "Replacement": "Ag4EOS81ACMhLgc0ACwvIysAKTQMADQoJQD/DgUsLyMrACkzADQvLwAvLCQOAAAAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23141,
+    "End": 23168,
+    "Replacement": "AQcEKTQHMwAsLyMrJSQANyk0KAAhACslOQ4A/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23174,
+    "End": 23298,
+    "Replacement": "BAUCJTYlMjk0KCkuJwAiJSchLgA0LwA2KSIyITQlAP8FAyclLjQsOQw0KCUAMzAoJTIlJiwpIyslMiUkDg3/BQQAAAAAOS81ACYlLDQANCglACYsLzcALyYAAAAA/wUFAAAAAAAAACEtITopLicAJS4lMic5DQAAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23304,
+    "End": 23412,
+    "Replacement": "AwIDADQoJQArJTkALSE0IyglJAA0KCUALC8jKwAvJgA0KCUA/wIEIi84ADAlMiYlIzQsOQEAKS4zKSQlACk0BzMAJCUwNCgz/wIFOS81ACYvNS4kACEAMzQyIS4nJQAnLCEzMwAzMCglMiUO/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23418,
+    "End": 23443,
+    "Replacement": "AQkENyghNAAhMiUAOS81ACcvLi4hACQvH/8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23449,
+    "End": 23479,
+    "Replacement": "AQcEIiwvKzUqJQAqIAAqISspCwAtJSMoIS4pOi0O/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 23513,
+    "End": 23534,
+    "Replacement": "AQsELzQ3LzI6ORwlCwArMiUkJS4z/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 23540,
+    "End": 23558,
+    "Replacement": "AQ0ELzI6JQo3KRwhACMpHQAB/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 23564,
+    "End": 23595,
+    "Replacement": "AQYEKTQANCEzNCUkACIhJAwAIjU0ADclLCwODg4AAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23601,
+    "End": 23651,
+    "Replacement": "AgkEOS81ADQ1Mi4lJAA0KCUAKyU5ACkuAP8JBQAANCglACwvIysADQAvMCUuAQAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23657,
+    "End": 23681,
+    "Replacement": "AQoEOS81ADUuLC8jKyUkADQoJSwlNiUy/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23687,
+    "End": 23714,
+    "Replacement": "AQgEKC83ACghLiQzLy0lADkvNQAhMiUAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23720,
+    "End": 23766,
+    "Replacement": "AgoEOS81ACwhOQAkLzcuADcpNCgAAAD/CgUyJSwpJSYALy4hMy8mNAAkLzcuDf8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23772,
+    "End": 23889,
+    "Replacement": "AwIDNS4kJTIANCglADQvNSMoAC8mADQoJQA3IS4kDAA0KCUAAAAA/wIEIzI5MzQhLAAzKzUsLAAzKCE0NCUyJSQANikvLCUuNCw5DgAA/wIFIQAzLSEsLAArJTkALCklMwAhLS8uJzQoJQAmMiEnLSUuNDMB/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23895,
+    "End": 23918,
+    "Replacement": "AQoEMyAAOiEtKy4pHTQlACssNSM6JS3/",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 23924,
+    "End": 23945,
+    "Replacement": "AQsEOS81ADMsIS0tJSQANCglJC8v/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23951,
+    "End": 23978,
+    "Replacement": "AQgEOS81ADMhNAAvLgApNAAjLy0mLzI0ISIN/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 23984,
+    "End": 24005,
+    "Replacement": "AQsEJCkkADkvNQAsKSslACk0HwAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24011,
+    "End": 24042,
+    "Replacement": "AQYEKQAkLy4HNAA0KCkuKwApNAczADUzJSY1LAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24048,
+    "End": 24114,
+    "Replacement": "AgUCOS81ADA1LCwlJAA0KCUALCU2JTIMACI1NAAAAAAA/wUDIjU0ADMvLSU0KCkuJwAtISQlADkvNQA3LzIyOQ4O/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24117,
+    "End": 24146,
+    "Replacement": "MzUkJCUuLDkANCglACYsLy8yAC8wJS4lJAAAAAAA",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24150,
+    "End": 24179,
+    "Replacement": "AAAwLyQALi8nIS0pACkAMC8jOjUcJQsMADslAAAA",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24183,
+    "End": 24212,
+    "Replacement": "AAAAAAAALCUjKTM6ADcAJxwgIgABAAAAAAAAAAAA",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24219,
+    "End": 24321,
+    "Replacement": "AwQDNyglLgA5LzUAJyUuNCw5ADA1LCwlJAA0KCUAAAAAAP8EBCMhLiQsJTM0KSMrDAA0KCUAMyUjMiU0ADAhMzMhJyX/BAUvMCUuJSQBDQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24327,
+    "End": 24363,
+    "Replacement": "AQQEOS81ADA1LCwlJAA0KCUAIyEuJCwlMzQpIysAISchKS4A/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24369,
+    "End": 24393,
+    "Replacement": "AQoEOS81ACMhLgc0ACwvIysAKTQANTAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24399,
+    "End": 24431,
+    "Replacement": "AQUEOS81ACghNiUALi8ALiUlJAA0LwA3JSEyACk0AAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24437,
+    "End": 24463,
+    "Replacement": "AQkEOS81ACMhLgc0AC8wJS4ANCglLQAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24469,
+    "End": 24491,
+    "Replacement": "AQoEKTQANy8uBzQAIjUkJyUAAAAAAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24497,
+    "End": 24543,
+    "Replacement": "AgoEOS81ACclLjQsOQA0LzUjKCUkAAD/CgU0KCUALC8jKy8mNCglACcyITQlDf8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24549,
+    "End": 24575,
+    "Replacement": "AQkELi8ANCktJQA0LwAyJSEkAAAAAAAAAAD/",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24581,
+    "End": 24629,
+    "Replacement": "AgoEOS81ADIlISQANCglADMwJSwsAA0A/woFNCglACQvLzIALzAlLiUkAQAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24635,
+    "End": 24683,
+    "Replacement": "AgoEOS81BzIlADQvLwA3JSErADQvAAAA/woFAAAAADQlITIALSU0ISwAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24692,
+    "End": 24715,
+    "Replacement": "LygBACgvNwAoIS4kMy8tJQA5LzUAITIl",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24725,
+    "End": 24748,
+    "Replacement": "OS81ADMhNC8uKTQAIy8tJi8yNCEiLDkN",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 24758,
+    "End": 24787,
+    "Replacement": "LS87JQAzMDIPIjUqADAyOiU6AC4pJQAwMjolKgse",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 24797,
+    "End": 24813,
+    "Replacement": "Li80KCkuJwAoITAwJS4lJAA=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 3227,
+    "End": 3252,
+    "Replacement": "MzQyITsuKSsAIykdAC4pJQAwMjolMDULIyk=",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 3754,
+    "End": 3793,
+    "Replacement": "AQICgK6ppbO0pbS5gK6ppYCtobO6gLevrK6lp6+AramlqrOjoYCB/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 6104,
+    "End": 6350,
+    "Replacement": "BgEBKyklJDkALzQ3LzI6ORwlCwAvIzo5DAAzMC8zNDI6JSccJQsAOyX/AQIuKSUAOi4hKiQ1KiUzOgAzKR0ANwA6IS0rNQwAISwlADM0LykzOv8BAy4hACwlCy4lKgAwLywhLiklDgA1KjI6IRwlCwAkISUyLy4hDAAA/wEEKzQPMjkAKzI6OSsuIBwaAAIANSQhHC8AIykAMykdAAEANCUyITr/AQUvIiEqADcyDyMpLTkAJC8AKzIPLCUzNDchDQAjOiUrIQAuITMAAP8BBgAALS4PMzQ3LwAwMiEjOQwAIiEyISgpMjolAAEAAgAAAAAAAAAA/w==",
+    "Checked": true,
+    "Type": 1
+  },
+  {
+    "Start": 9107,
+    "End": 9120,
+    "Replacement": "AQIHOS81ADMlJQAaAP8=",
+    "Checked": true,
+    "Type": 0
+  },
+  {
+    "Start": 19239,
+    "End": 19243,
+    "Replacement": "IjIhLiM=",
+    "Checked": true,
+    "Type": 0
+  }
+]

@@ -17,7 +17,6 @@ namespace BaraTrans
         private readonly byte[] _originalAutorun = (byte[])Properties.Resources.AUTORUN.Clone();
         private readonly List<EditRecord> _editRecords = new();
         private static readonly HttpClient TranslationClient = new();
-        private Button _setLinesButton = null!;
         private Button _englishButton = null!;
         private bool _loadingLineEditors;
         private bool _updatingSourceText;
@@ -48,6 +47,9 @@ namespace BaraTrans
             flowLayoutPanelLines.Resize += (_, _) => UpdateLineEditorWidths();
     _englishButton = buttonPlToEn;
     buttonPlToEn.Click += async (_, _) => await TranslateSourceAsync();
+            buttonSetLines.Click += SetLinesButton_Click;
+            buttonMark.Click += MarkButton_Click;
+            buttonResolved.Click += ResolvedButton_Click;
             buttonSaveChanges.Click += (_, _) => SaveChanges();
             buttonLoadChanges.Click += (_, _) => LoadChanges();
             buttonExportBinary.Click += (_, _) => ExportBinary();
@@ -86,6 +88,7 @@ namespace BaraTrans
                         glyphGridViewer1.SelectedEnd,
                         glyphGridViewer1.SelectedLength);
                 UpdateSelectionPreview();
+                UpdateRangeActionButtons();
             };
             glyphGridViewer1.HoveredIndexChanged += (_, _) => UpdateHoverByteLabel();
 
@@ -150,16 +153,7 @@ namespace BaraTrans
                 flowLayoutPanelLines.Controls.Add(row);
             }
 
-            _setLinesButton = new Button
-            {
-                Text = "SET",
-                Width = 80,
-                Height = 30,
-                Margin = new Padding(0, 4, 0, 0),
-                Enabled = false
-            };
-            _setLinesButton.Click += SetLinesButton_Click;
-            flowLayoutPanelLines.Controls.Add(_setLinesButton);
+            flowLayoutPanelLines.Controls.Add(lineActionsPanel);
             UpdateLineEditorWidths();
         }
 
@@ -168,11 +162,13 @@ namespace BaraTrans
             int width = Math.Max(100, flowLayoutPanelLines.ClientSize.Width - SystemInformation.VerticalScrollBarWidth);
             foreach (FlowLayoutPanel row in flowLayoutPanelLines.Controls.OfType<FlowLayoutPanel>())
             {
-                row.Width = width;
-                if (row.Controls.Count > 1)
+                if (row.Controls.Count < 2 || row.Controls[0] is not CheckBox || row.Controls[1] is not TextBox)
                 {
-                    row.Controls[1].Width = Math.Max(100, width - 40);
+                    continue;
                 }
+
+                row.Width = width;
+                row.Controls[1].Width = Math.Max(100, width - 40);
             }
         }
 
@@ -311,7 +307,7 @@ namespace BaraTrans
                 _lineHighlightChecks[index].Checked = available && _selectedLines[index].Highlighted;
             }
 
-            _setLinesButton.Enabled = _selectedLines.Count > 0;
+            buttonSetLines.Enabled = _selectedLines.Count > 0;
         }
 
         private void ClearLineEditors()
@@ -325,7 +321,8 @@ namespace BaraTrans
                 _lineTextBoxes[index].MaxLength = 0;
                 _lineTextBoxes[index].Enabled = false;
             }
-            _setLinesButton.Enabled = false;
+            buttonSetLines.Enabled = false;
+            UpdateRangeActionButtons();
         }
 
         private void SetLinesButton_Click(object? sender, EventArgs e)
@@ -412,21 +409,94 @@ namespace BaraTrans
             if (existingEdit != null)
             {
                 existingEdit.Replacement = replacement;
+                existingEdit.Type = RangeType.Translated;
                 existingEdit.Item!.Checked = true;
+                existingEdit.Item.SubItems[1].Text = GetRangeTypeName(existingEdit.Type);
                 existingEdit.Item.SubItems[2].Text = string.Join(" / ", _selectedLines.Select(line => line.Text));
                 RebuildWorkingData();
                 return;
             }
 
-            var edit = new EditRecord(selectionStart, selectionStart + replacement.Length - 1, replacement);
+            var edit = new EditRecord(selectionStart, selectionStart + replacement.Length - 1, replacement, RangeType.Translated);
             var item = new ListViewItem($"${edit.Start:X4}..${edit.End:X4}") { Checked = true, Tag = edit };
-            item.SubItems.Add("Text");
+            item.SubItems.Add(GetRangeTypeName(edit.Type));
             item.SubItems.Add(string.Join(" / ", _selectedLines.Select(line => line.Text)));
             edit.Item = item;
             _editRecords.Add(edit);
             listViewChanges.Items.Add(item);
             RebuildWorkingData();
         }
+
+        private void MarkButton_Click(object? sender, EventArgs e)
+        {
+            int start = glyphGridViewer1.SelectedStart;
+            int end = glyphGridViewer1.SelectedEnd;
+            if (glyphGridViewer1.SelectedLength == 0) return;
+
+            EditRecord? existingEdit = _editRecords.FirstOrDefault(edit => edit.Start == start && edit.End == end);
+            if (_editRecords.Any(edit => start <= edit.End && edit.Start <= end) && existingEdit == null)
+            {
+                MessageBox.Show("The selected range overlaps an existing edit.", "Overlapping edit", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (existingEdit == null)
+            {
+                byte[] selected = glyphGridViewer1.Data.Skip(start).Take(glyphGridViewer1.SelectedLength).ToArray();
+                existingEdit = new EditRecord(start, end, selected, RangeType.Marked);
+                var item = new ListViewItem($"${start:X4}..${end:X4}") { Checked = true, Tag = existingEdit };
+                item.SubItems.Add(GetRangeTypeName(existingEdit.Type));
+                item.SubItems.Add("Marked range");
+                existingEdit.Item = item;
+                _editRecords.Add(existingEdit);
+                listViewChanges.Items.Add(item);
+            }
+            else
+            {
+                existingEdit.Type = RangeType.Marked;
+                existingEdit.Item!.Checked = true;
+                existingEdit.Item.SubItems[1].Text = GetRangeTypeName(existingEdit.Type);
+            }
+
+            RebuildWorkingData();
+        }
+
+        private void ResolvedButton_Click(object? sender, EventArgs e)
+        {
+            int start = glyphGridViewer1.SelectedStart;
+            int end = glyphGridViewer1.SelectedEnd;
+            EditRecord? markedEdit = _editRecords.FirstOrDefault(edit =>
+                edit.Start == start && edit.End == end && edit.Type == RangeType.Marked);
+            if (markedEdit == null) return;
+
+            markedEdit.Type = RangeType.Resolved;
+            markedEdit.Item!.Checked = true;
+            markedEdit.Item.SubItems[1].Text = GetRangeTypeName(markedEdit.Type);
+            RebuildWorkingData();
+        }
+
+        private void UpdateRangeActionButtons()
+        {
+            int start = glyphGridViewer1.SelectedStart;
+            int end = glyphGridViewer1.SelectedEnd;
+            bool hasSelection = glyphGridViewer1.SelectedLength > 0;
+            EditRecord? selectedEdit = hasSelection
+                ? _editRecords.FirstOrDefault(edit => edit.Start == start && edit.End == end)
+                : null;
+            bool overlapsAnotherEdit = hasSelection && _editRecords.Any(edit =>
+                start <= edit.End && edit.Start <= end && edit != selectedEdit);
+
+            buttonSetLines.Enabled = hasSelection && _selectedLines.Count > 0;
+            buttonMark.Enabled = hasSelection && !overlapsAnotherEdit;
+            buttonResolved.Enabled = selectedEdit?.Type == RangeType.Marked;
+        }
+
+        private static string GetRangeTypeName(RangeType type) => type switch
+        {
+            RangeType.Marked => "Marked",
+            RangeType.Resolved => "Resolved",
+            _ => "Translated"
+        };
 
         private void ExportBinary()
         {
@@ -533,14 +603,16 @@ namespace BaraTrans
             if (existingEdit != null)
             {
                 existingEdit.Replacement = replacement;
+                existingEdit.Type = RangeType.Translated;
                 existingEdit.Item!.Checked = true;
+                existingEdit.Item.SubItems[1].Text = GetRangeTypeName(existingEdit.Type);
                 existingEdit.Item.SubItems[2].Text = content;
             }
             else
             {
-                var edit = new EditRecord(start, end, replacement);
+                var edit = new EditRecord(start, end, replacement, RangeType.Translated);
                 var item = new ListViewItem($"${edit.Start:X4}..${edit.End:X4}") { Checked = true, Tag = edit };
-                item.SubItems.Add("Text");
+                item.SubItems.Add(GetRangeTypeName(edit.Type));
                 item.SubItems.Add(content);
                 edit.Item = item;
                 _editRecords.Add(edit);
@@ -562,11 +634,17 @@ namespace BaraTrans
             glyphGridViewer1.Data = working;
             glyphGridViewer1.SetCoverageRanges(_editRecords
                 .Where(edit => edit.Item?.Checked == true)
-                .Select(edit => new GlyphGridViewer.CoverageRange(edit.Start, edit.End, Color.Red)));
+                .Select(edit => new GlyphGridViewer.CoverageRange(edit.Start, edit.End, edit.Type switch
+                {
+                    RangeType.Marked => Color.Red,
+                    RangeType.Resolved => Color.DarkGreen,
+                    _ => Color.Green
+                })));
             if (selectedStart >= 0 && selectedEnd < working.Length)
             {
                 glyphGridViewer1.SelectRange(selectedStart, selectedEnd);
             }
+            UpdateRangeActionButtons();
         }
 
         private void ConfigureListContextMenu()
@@ -608,7 +686,7 @@ namespace BaraTrans
             if (dialog.ShowDialog(this) != DialogResult.OK) return;
 
             var records = _editRecords
-                .Select(edit => new SavedEdit(edit.Start, edit.End, edit.Replacement, edit.Item?.Checked ?? false))
+                .Select(edit => new SavedEdit(edit.Start, edit.End, edit.Replacement, edit.Item?.Checked ?? false, edit.Type))
                 .ToList();
 
             File.WriteAllText(
@@ -648,10 +726,11 @@ namespace BaraTrans
                     continue;
                 }
 
-                var edit = new EditRecord(saved.Start, saved.End, saved.Replacement);
+                RangeType type = Enum.IsDefined(typeof(RangeType), saved.Type) ? saved.Type : RangeType.Translated;
+                var edit = new EditRecord(saved.Start, saved.End, saved.Replacement, type);
                 var item = new ListViewItem($"${edit.Start:X4}..${edit.End:X4}") { Checked = saved.Checked, Tag = edit };
-                item.SubItems.Add("Text");
-                item.SubItems.Add(DecodeAtariText(saved.Replacement));
+                item.SubItems.Add(GetRangeTypeName(edit.Type));
+                item.SubItems.Add(edit.Type == RangeType.Translated ? DecodeAtariText(saved.Replacement) : "Marked range");
                 edit.Item = item;
                 _editRecords.Add(edit);
                 listViewChanges.Items.Add(item);
@@ -783,22 +862,31 @@ namespace BaraTrans
 
         private sealed record BarahirLine(byte X, byte Y, int TextOffset, int TextLength, string Text, bool Highlighted);
 
+        private enum RangeType
+        {
+            Translated,
+            Marked,
+            Resolved
+        }
+
         private sealed class EditRecord
         {
-            public EditRecord(int start, int end, byte[] replacement)
+            public EditRecord(int start, int end, byte[] replacement, RangeType type = RangeType.Translated)
             {
                 Start = start;
                 End = end;
                 Replacement = replacement;
+                Type = type;
             }
 
             public int Start { get; }
             public int End { get; }
             public byte[] Replacement { get; set; }
+            public RangeType Type { get; set; }
             public ListViewItem? Item { get; set; }
         }
 
-        private sealed record SavedEdit(int Start, int End, byte[] Replacement, bool Checked);
+        private sealed record SavedEdit(int Start, int End, byte[] Replacement, bool Checked, RangeType Type);
 
         private static bool TryFindSmartSelection(byte[] data, int clickedIndex, out int start, out int end)
         {
