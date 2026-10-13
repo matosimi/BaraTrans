@@ -13,7 +13,7 @@ import os
 # Configuration
 fname = "AUTORUN_orig_moved.XEX" #"autorun.sys"
 extra_run_addresses = "$2000,$2003,$17a5,$1845,$2014,$2155,$2825,$2c9f,$2db4,$3084,$31ac,$39fb,$3ae4,$39d6,$3996,$39a6,$39b6,$39c6,$3935,$4949,$393f,$387c,$3872,$37e8,$3450,$356c,$3579,$34dc,$3431,$3446,$33f5,$4840,$4aa4,$4e19,$4a35,$4e4f,$4aa1,$5527,$5588,$55d1,$53e5,$540f,$526e,$56f6,$5721,$504d,$5099,$50fb,$50cc,$5147,$5193,$91c0,$91eb,$92ae,$924a,$929f,$92aa,$9251,$94b9,$94bf,$94c5,$94cf,$94d9,$94e2,$9502,$9875"
-hex_only_ranges = "$45ad-$483f,$1bfb-$1e3b,$1e3c-$1fc9,$1025-$1780"  # Format: "$xxxx-$yyyy,$aaaa-$bbbb" - output as hex only, no disassembly
+hex_only_ranges = "$45ad-$483f,$1bfb-$1e3b,$1e3c-$1fc9,$1025-$1780,$2400-$262f"  # Format: "$xxxx-$yyyy,$aaaa-$bbbb" - output as hex only, no disassembly
 lookup_lo_hi_data = "$19d6-$1a13,$232e-$2383,$5a00-$5a3b,$6975-$6a08,$6b6f-$6c00,$740d-$748a"  # Format: "$xxxx-$yyyy" - pointer table (lo-hi format), data only
 lookup_lo_hi_code = "$33cd-$33f4,$4ff3-$503e,$91b0-$91bf,$94ab-$94b8"  # Format: "$xxxx-$yyyy" - pointer table (lo-hi format), add to code disassembly
 

@@ -360,8 +360,8 @@ L_2059	lda L_D010			;2059 AD 10 D0
 		lda #$FF			;2065 A9 FF
 		sta L_2111			;2067 8D 11 21
 L_206A	inc L_2111			;206A EE 11 21
-		jsr L_18AA			;206D 20 AA 18
-		jsr L_18AA			;2070 20 AA 18
+		jsr L_18AA_pause5			;206D 20 AA 18
+		jsr L_18AA_pause5			;2070 20 AA 18
 		jsr L_20C0			;2073 20 C0 20
 		jmp L_2014			;2076 4C 14 20
 L_2079	cmp #$07			;2079 C9 07
@@ -374,8 +374,8 @@ L_2079	cmp #$07			;2079 C9 07
 		bne L_208F			;2088 D0 05
 		lda #$03			;208A A9 03
 		sta L_2111			;208C 8D 11 21
-L_208F	jsr L_18AA			;208F 20 AA 18
-		jsr L_18AA			;2092 20 AA 18
+L_208F	jsr L_18AA_pause5			;208F 20 AA 18
+		jsr L_18AA_pause5			;2092 20 AA 18
 		dec L_2111			;2095 CE 11 21
 		jsr L_20C0			;2098 20 C0 20
 		jmp L_2014			;209B 4C 14 20
@@ -386,8 +386,8 @@ L_209E	cmp #$0D			;209E C9 0D
 		bne L_20AE			;20A7 D0 05
 		lda #$FF			;20A9 A9 FF
 		sta L_2111			;20AB 8D 11 21
-L_20AE	jsr L_18AA			;20AE 20 AA 18
-		jsr L_18AA			;20B1 20 AA 18
+L_20AE	jsr L_18AA_pause5			;20AE 20 AA 18
+		jsr L_18AA_pause5			;20B1 20 AA 18
 		inc L_2111			;20B4 EE 11 21
 		jsr L_20C0			;20B7 20 C0 20
 		jmp L_2014			;20BA 4C 14 20
@@ -475,7 +475,7 @@ L_2194	jsr L_1845			;2194 20 45 18
 		bpl L_21D7			;219A 10 3B
 		cmp #$FE			;219C C9 FE
 		bne L_21A6			;219E D0 06
-		jsr L_18AA			;21A0 20 AA 18
+		jsr L_18AA_pause5			;21A0 20 AA 18
 		jmp L_425D			;21A3 4C 5D 42
 L_21A6	lda L_3E23			;21A6 AD 23 3E
 		beq L_21C1			;21A9 F0 16
@@ -484,7 +484,7 @@ L_21A6	lda L_3E23			;21A6 AD 23 3E
 		jmp L_2194			;21B0 4C 94 21
 L_21B3	lda #$00			;21B3 A9 00
 		sta L_3E23			;21B5 8D 23 3E
-		jsr L_18AA			;21B8 20 AA 18
+		jsr L_18AA_pause5			;21B8 20 AA 18
 		jsr L_4285			;21BB 20 85 42
 		jmp L_217E			;21BE 4C 7E 21
 L_21C1	lda L_3E28			;21C1 AD 28 3E
@@ -492,10 +492,10 @@ L_21C1	lda L_3E28			;21C1 AD 28 3E
 		jmp L_2194			;21C6 4C 94 21
 L_21C9	lda #$01			;21C9 A9 01
 		sta L_3E23			;21CB 8D 23 3E
-		jsr L_18AA			;21CE 20 AA 18
+		jsr L_18AA_pause5			;21CE 20 AA 18
 		jsr L_4285			;21D1 20 85 42
 		jmp L_217E			;21D4 4C 7E 21
-L_21D7	jsr L_18AA			;21D7 20 AA 18
+L_21D7	jsr L_18AA_pause5			;21D7 20 AA 18
 		lda L_0C36			;21DA AD 36 0C
 		asl @				;21DD 0A
 		tax				;21DE AA
@@ -611,8 +611,8 @@ L_22EF	dta $00,$01,$06,$03,$80,$B4,$A8,$A9,$B3,$80,$B0,$A1,$B4,$A8,$80,$AC
 ;vid	dta d"         NO WAY "*
 		dta $AF,$B5,$B4,$80,$81,$80,$80,$80,$80,$80,$80,$80,$80,$80,$FF
 ;vid	dta d"OUT !         "*,$FF
-L_232E		dta a(L_2384)		;232E 84 23
-L_232F	equ *-1
+L_232E_ptr_direction_lo	dta a(L_2384)		;232E 84 23
+L_232F_ptr_direction_hi	equ *-1
 		dta a(L_2396)		;2330 96 23
 		dta a(L_23A2)		;2332 A2 23
 		dta a(L_23B6)		;2334 B6 23
@@ -655,178 +655,104 @@ L_232F	equ *-1
 		dta a(L_27FA)		;237E FA 27
 		dta a(L_2808)		;2380 08 28
 		dta a(L_2816)		;2382 16 28
-L_2384	dta $01,$80,$A4,$AF,$80,$A2,$B2,$A1,$AD,$B9,$80,$BA,$A1,$AD,$AB,$B5
-;vid	dta d"!",d" DO BRAMY ZAMKU"*
-		dta $80,$FF
-;vid	dta d" "*,$FF
-L_2396	dta $05,$80,$B0,$AF,$A4,$80,$A7,$9C,$A1,$BA,$80,$FF
-;vid	dta d"%",d" POD G<AZ "*,$FF
-L_23A2	dta $02,$80,$A9,$AE,$B4,$AF,$80,$B4,$A8,$A5,$80,$A3,$A1,$B3,$B4,$AC
-;vid	dta d""",d" INTO THE CASTL"*
-		dta $A5,$00,$80,$FF
-;vid	dta d"E"*,d" ",d" "*,$FF
-L_23B6	dta $00,$80,$A4,$AF,$80,$AC,$A1,$B3,$B5,$80,$FF
-;vid	dta d" ",d" DO LASU "*,$FF
-L_23C1	dta $04,$80,$B0,$B2,$BA,$A5,$BA,$80,$A4,$9D,$A2,$AF,$B7,$A5,$80,$A4
-;vid	dta d"$",d" PRZEZ D=BOWE D"*
-		dta $B2,$BA,$B7,$A9,$80,$FF
-;vid	dta d"RZWI "*,$FF
-L_23D7	dta $03,$80,$AE,$A1,$80,$A4,$BA,$A9,$A5,$A4,$BA,$A9,$AE,$A9,$A5,$A3
-;vid	dta d"#",d" NA DZIEDZINIEC"*
-		dta $80,$FF
-;vid	dta d" "*,$FF
-L_23E9	dta $06,$80,$B0,$B2,$BA,$A5,$BA,$80,$A2,$B5,$AB,$AF,$B7,$A5,$80,$A4
-;vid	dta d"&",d" PRZEZ BUKOWE D"*
-		dta $B2,$BA,$B7,$A9,$80,$FF,$25,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"RZWI "*,$FF,d"E         "
-		dta $30,$20,$20,$30,$00,$30,$00,$CC,$88,$44,$00,$00,$00,$00,$00,$00
-;vid	dta d"P@@P P ",$CC,d"("*,$44,d"      "
-		dta $FF,$AA,$AA,$55,$55,$00,$00,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4
-;vid	dta $FF,d"JJ"*,$55,$55,d"  ",d"ddddddddd"*
-		dta $E4,$E4,$E4,$E4,$E4,$E4,$E4,$00,$00,$FF,$FF,$AA,$AA,$55,$00,$08
-;vid	dta d"ddddddd"*,d"  ",$FF,$FF,d"JJ"*,$55,d" ("
-		dta $0C,$08,$00,$00,$00,$00,$00,$00,$70,$80,$80,$C0,$80,$70,$00,$00
-;vid	dta d",(      p",d"  "*,$C0,d" "*,d"p  "
-		dta $34,$08,$08,$0C,$08,$34,$00,$0C,$F8,$08,$24,$30,$90,$BC,$00,$30
-;vid	dta d"T((,(T ,",d"x"*,d"(DP",d"0\"*,d" P"
-		dta $6C,$80,$64,$08,$0C,$F4,$00,$00,$00,$00,$00,$00,$04,$08,$0C,$00
-;vid	dta d"l",d" "*,d"d(,",d"t"*,d"      $(, "
-		dta $00,$00,$B8,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0C,$00,$30
-;vid	dta d"  ",d"X"*,d"          , P"
-		dta $64,$88,$CC,$CC,$88,$64,$00,$00,$64,$44,$CC,$CC,$88,$64,$00,$00
-;vid	dta d"d",d"("*,$CC,$CC,d"("*,d"d  d",$44,$CC,$CC,d"("*,d"d  "
-		dta $0C,$28,$3C,$8C,$0C,$08,$00,$00,$64,$C8,$08,$30,$C0,$EC,$00,$00
-;vid	dta d",H\",d","*,d",(  d",$C8,d"(P",$C0,d"l"*,d"  "
-		dta $F4,$08,$24,$08,$08,$F4,$00,$00,$C8,$CC,$AC,$0C,$0C,$08,$00,$00
-;vid	dta d"t"*,d"(D((",d"t"*,d"  ",$C8,$CC,d"L"*,d",,(  "
-		dta $BC,$C0,$E4,$08,$08,$E4,$00,$00,$78,$80,$E4,$C8,$88,$64,$00,$00
-;vid	dta d"\"*,$C0,d"d"*,d"((",d"d"*,d"  x",d" d"*,$C8,d"("*,d"d  "
-		dta $F8,$08,$2C,$0C,$0C,$08,$00,$00,$64,$C8,$64,$8C,$CC,$74,$00,$00
-;vid	dta d"x"*,d"(L,,(  d",$C8,d"d",d","*,$CC,d"t  "
-		dta $64,$88,$6C,$0C,$04,$B4,$00,$00,$00,$20,$30,$00,$30,$20,$00,$30
-;vid	dta d"d",d"("*,d"l,$",d"T"*,d"   @P P@ P"
-		dta $E4,$88,$CC,$CC,$CC,$88,$00,$00,$80,$C0,$F0,$C0,$80,$EC,$00,$00
-;vid	dta d"d("*,$CC,$CC,$CC,d"("*,d"  ",d" "*,$C0,d"p"*,$C0,d" l"*,d"  "
-		dta $FC,$80,$E0,$C0,$C0,$EC,$0C,$30,$64,$80,$C0,$C0,$C0,$64,$00,$00
-;vid	dta d"| `"*,$C0,$C0,d"l"*,d",Pd",d" "*,$C0,$C0,$C0,d"d  "
-		dta $74,$CC,$08,$34,$00,$30,$00,$00,$64,$88,$EC,$CC,$CC,$88,$0C,$00
-;vid	dta d"t",$CC,d"(T P  d",d"(l"*,$CC,$CC,d"("*,d", "
-		dta $64,$88,$EC,$CC,$CC,$88,$00,$00,$E4,$C8,$E4,$C8,$CC,$A4,$00,$00
-;vid	dta d"d",d"(l"*,$CC,$CC,d"("*,d"  ",d"d"*,$C8,d"d"*,$C8,$CC,d"D"*,d"  "
-		dta $64,$80,$C0,$C0,$C0,$64,$00,$00,$E4,$88,$CC,$CC,$CC,$A4,$00,$00
-;vid	dta d"d",d" "*,$C0,$C0,$C0,d"d  ",d"d("*,$CC,$CC,$CC,d"D"*,d"  "
-		dta $FC,$80,$E0,$C0,$C0,$EC,$00,$00,$EC,$80,$E0,$C0,$C0,$80,$00,$00
-;vid	dta d"| `"*,$C0,$C0,d"l"*,d"  ",d"l `"*,$C0,$C0,d" "*,d"  "
-		dta $64,$80,$C0,$C4,$C8,$6C,$00,$00,$CC,$88,$EC,$CC,$CC,$88,$00,$00
-;vid	dta d"d",d" "*,$C0,$C4,$C8,d"l  ",$CC,d"(l"*,$CC,$CC,d"("*,d"  "
-		dta $30,$20,$30,$30,$30,$20,$00,$00,$EC,$08,$0C,$0C,$8C,$64,$00,$00
-;vid	dta d"P@PPP@  ",d"l"*,d"(,,",d","*,d"d  "
-		dta $CC,$88,$E0,$C4,$88,$8C,$00,$00,$80,$C0,$C0,$C0,$80,$EC,$00,$00
-;vid	dta $CC,d"(`"*,$C4,d"(,"*,d"  ",d" "*,$C0,$C0,$C0,d" l"*,d"  "
-		dta $DC,$B8,$78,$88,$CC,$88,$00,$00,$E4,$88,$CC,$CC,$CC,$88,$00,$00
-;vid	dta $DC,d"X"*,d"x",d"("*,$CC,d"("*,d"  ",d"d("*,$CC,$CC,$CC,d"("*,d"  "
-		dta $64,$88,$CC,$CC,$88,$64,$00,$00,$E4,$88,$C8,$E4,$C0,$80,$00,$00
-;vid	dta d"d",d"("*,$CC,$CC,d"("*,d"d  ",d"d("*,$C8,d"d"*,$C0,d" "*,d"  "
-		dta $64,$88,$CC,$CC,$B8,$6C,$0C,$00,$E4,$88,$C8,$E4,$E0,$88,$00,$00
-;vid	dta d"d",d"("*,$CC,$CC,d"X"*,d"l, ",d"d("*,$C8,d"d`("*,d"  "
-		dta $6C,$80,$64,$08,$0C,$F4,$00,$00,$FC,$20,$30,$30,$30,$20,$00,$00
-;vid	dta d"l",d" "*,d"d(,",d"t"*,d"  ",d"|"*,d"@PPP@  "
-		dta $CC,$CC,$88,$CC,$CC,$64,$00,$00,$CC,$CC,$88,$88,$64,$20,$00,$00
-;vid	dta $CC,$CC,d"("*,$CC,$CC,d"d  ",$CC,$CC,d"(("*,d"d@  "
-		dta $88,$CC,$88,$78,$B8,$DC,$00,$00,$CC,$88,$20,$98,$CC,$CC,$00,$00
-;vid	dta d"("*,$CC,d"("*,d"x",d"X"*,$DC,d"  ",$CC,d"("*,d"@",d"8"*,$CC,$CC,d"  "
-		dta $CC,$CC,$88,$64,$30,$30,$00,$00,$E8,$08,$24,$30,$90,$BC,$00,$30
-;vid	dta $CC,$CC,d"("*,d"dPP  ",d"h"*,d"(DP",d"0\"*,d" P"
-		dta $E8,$08,$24,$30,$90,$BC,$00,$00,$FF,$EA,$EA,$E5,$E5,$E4,$E4,$00
-;vid	dta d"h"*,d"(DP",d"0\"*,d"  ",$FF,d"jjeedd"*,d" "
-		dta $F4,$A4,$A4,$64,$E4,$E4,$E4,$E4,$E4,$E7,$EF,$EA,$EA,$55,$00,$E4
-;vid	dta d"tDD"*,d"d",d"dddddgojj"*,$55,d" ",d"d"*
-		dta $E4,$E4,$E4,$A4,$A4,$54,$00,$00,$03,$0F,$3E,$3A,$0F,$03,$00,$00
-;vid	dta d"dddDD"*,$54,d"  #/^Z/#  "
-		dta $00,$00,$F0,$F0,$00,$00,$00,$00,$03,$03,$3E,$3E,$03,$03,$00,$00
-;vid	dta d"  ",d"pp"*,d"    ##^^##  "
-		dta $00,$C0,$F0,$B0,$C0,$00,$00,$7C,$FC,$00,$00,$00,$FC,$BC,$6A,$F4
-;vid	dta d" ",$C0,d"pP"*,$C0,d"  |",d"|"*,d"   ",d"|\"*,d"j",d"t"*
-		dta $3D,$0E,$02,$0E,$3E,$F9,$A4
-;vid	dta d"].".^",d"yD"*
-L_2630	dta $09,$80,$B7,$80,$A7,$9C,$A0,$A2,$80,$BA,$A1,$AD,$AB,$B5,$80,$FF
-;vid	dta d")",d" W G<@B ZAMKU "*,$FF
-L_2640	dta $07,$80,$A9,$AE,$B4,$AF,$80,$B4,$A8,$A5,$80,$B2,$AF,$AF,$AD,$00
-;vid	dta d"'",d" INTO THE ROOM"*,d" "
-		dta $00,$00,$80,$FF
-;vid	dta d"  ",d" "*,$FF
-L_2654	dta $02,$00,$24,$2F,$00,$30,$32,$3A,$25,$2A,$0B,$23,$29,$21,$00,$FF
-;vid	dta d"" DO PRZEJ+CIA ",$FF
-L_2664	dta $08,$80,$AE,$A1,$80,$B3,$B4,$B2,$B9,$B3,$BA,$A5,$AB,$80,$FF
-;vid	dta d"(",d" NA STRYSZEK "*,$FF
-L_2673	dta $06,$80,$A4,$AF,$B7,$AE,$00,$00,$80,$FF
-;vid	dta d"&",d" DOWN"*,d"  ",d" "*,$FF
-L_267D	dta $09,$80,$B5,$B0,$00,$00,$00,$00,$00,$00,$00,$00,$80,$FF
-;vid	dta d")",d" UP"*,d"        ",d" "*,$FF
-L_268B	dta $0C,$00,$A4,$AF,$80,$B0,$A9,$B7,$AE,$A9,$A3,$B9,$00,$FF
-;vid	dta d", ",d"DO PIWNICY"*,d" ",$FF
-L_2699	dta $0D,$80,$A4,$AF,$80,$AB,$AF,$AD,$AE,$A1,$B4,$B9,$80,$FF
-;vid	dta d"-",d" DO KOMNATY "*,$FF
-L_26A7	dta $0A,$80,$AE,$A1,$80,$A7,$8F,$B2,$9D,$80,$FF
-;vid	dta d"*",d" NA G/R= "*,$FF
-L_26B2	dta $0B,$80,$A4,$AF,$80,$AB,$AF,$AD,$AE,$A1,$B4,$B9,$80,$FF
-;vid	dta d"+",d" DO KOMNATY "*,$FF
-L_26C0	dta $0A,$80,$A4,$AF,$80,$BA,$A5,$AA,$8B,$A3,$A9,$A1,$80,$FF
-;vid	dta d"*",d" DO ZEJ+CIA "*,$FF
-L_26CE	dta $0E,$80,$AE,$A1,$80,$A7,$8F,$B2,$9D,$80,$FF
-;vid	dta d".",d" NA G/R= "*,$FF
-L_26D9	dta $0D,$80,$AE,$A1,$80,$A4,$8F,$9C,$80,$FF
-;vid	dta d"-",d" NA D/< "*,$FF
-L_26E3	dta $0F,$80,$A4,$AF,$80,$AB,$AF,$AD,$AE,$A1,$B4,$B9,$80,$FF
-;vid	dta d"/",d" DO KOMNATY "*,$FF
-L_26F1	dta $0E,$80,$A4,$AF,$80,$BA,$A5,$AA,$8B,$A3,$A9,$A1,$80,$FF
-;vid	dta d".",d" DO ZEJ+CIA "*,$FF
+L_2384	dta $01,d" TO THE CASTLE GATE "*,$FF
+L_2396	dta $05,d" BEHIND THE BOULDER "*,$FF
+L_23A2	dta $02,d" INTO THE CASTLE "*,$FF
+L_23B6	dta $00,d" TO THE FOREST "*,$FF
+L_23C1	dta $04,d" THROUGH THE OAK DOOR "*,$FF
+L_23D7	dta $03,d" TO THE COURTYARD "*,$FF
+.print "FONT at $2400: ",*
+;$2400-$262f FONT
+	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$30,$20,$20,$30,$00,$30,$00
+	dta $CC,$88,$44,$00,$00,$00,$00,$00,$00,$FF,$AA,$AA,$55,$55,$00,$00
+	dta $E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4,$E4
+	dta $00,$00,$FF,$FF,$AA,$AA,$55,$00,$08,$0C,$08,$00,$00,$00,$00,$00
+	dta $00,$70,$80,$80,$C0,$80,$70,$00,$00,$34,$08,$08,$0C,$08,$34,$00
+	dta $0C,$F8,$08,$24,$30,$90,$BC,$00,$30,$6C,$80,$64,$08,$0C,$F4,$00
+	dta $00,$00,$00,$00,$00,$04,$08,$0C,$00,$00,$00,$B8,$00,$00,$00,$00
+	dta $00,$00,$00,$00,$00,$00,$0C,$00,$30,$64,$88,$CC,$CC,$88,$64,$00
+	dta $00,$64,$44,$CC,$CC,$88,$64,$00,$00,$0C,$28,$3C,$8C,$0C,$08,$00
+	dta $00,$64,$C8,$08,$30,$C0,$EC,$00,$00,$F4,$08,$24,$08,$08,$F4,$00
+	dta $00,$C8,$CC,$AC,$0C,$0C,$08,$00,$00,$BC,$C0,$E4,$08,$08,$E4,$00
+	dta $00,$78,$80,$E4,$C8,$88,$64,$00,$00,$F8,$08,$2C,$0C,$0C,$08,$00
+	dta $00,$64,$C8,$64,$8C,$CC,$74,$00,$00,$64,$88,$6C,$0C,$04,$B4,$00
+	dta $00,$00,$20,$30,$00,$30,$20,$00,$30,$E4,$88,$CC,$CC,$CC,$88,$00
+	dta $00,$80,$C0,$F0,$C0,$80,$EC,$00,$00,$FC,$80,$E0,$C0,$C0,$EC,$0C
+	dta $30,$64,$80,$C0,$C0,$C0,$64,$00,$00,$74,$CC,$08,$34,$00,$30,$00
+	dta $00,$64,$88,$EC,$CC,$CC,$88,$0C,$00,$64,$88,$EC,$CC,$CC,$88,$00
+	dta $00,$E4,$C8,$E4,$C8,$CC,$A4,$00,$00,$64,$80,$C0,$C0,$C0,$64,$00
+	dta $00,$E4,$88,$CC,$CC,$CC,$A4,$00,$00,$FC,$80,$E0,$C0,$C0,$EC,$00
+	dta $00,$EC,$80,$E0,$C0,$C0,$80,$00,$00,$64,$80,$C0,$C4,$C8,$6C,$00
+	dta $00,$CC,$88,$EC,$CC,$CC,$88,$00,$00,$30,$20,$30,$30,$30,$20,$00
+	dta $00,$EC,$08,$0C,$0C,$8C,$64,$00,$00,$CC,$88,$E0,$C4,$88,$8C,$00
+	dta $00,$80,$C0,$C0,$C0,$80,$EC,$00,$00,$DC,$B8,$78,$88,$CC,$88,$00
+	dta $00,$E4,$88,$CC,$CC,$CC,$88,$00,$00,$64,$88,$CC,$CC,$88,$64,$00
+	dta $00,$E4,$88,$C8,$E4,$C0,$80,$00,$00,$64,$88,$CC,$CC,$B8,$6C,$0C
+	dta $00,$E4,$88,$C8,$E4,$E0,$88,$00,$00,$6C,$80,$64,$08,$0C,$F4,$00
+	dta $00,$FC,$20,$30,$30,$30,$20,$00,$00,$CC,$CC,$88,$CC,$CC,$64,$00
+	dta $00,$CC,$CC,$88,$88,$64,$20,$00,$00,$88,$CC,$88,$78,$B8,$DC,$00
+	dta $00,$CC,$88,$20,$98,$CC,$CC,$00,$00,$CC,$CC,$88,$64,$30,$30,$00
+	dta $00,$E8,$08,$24,$30,$90,$BC,$00,$30,$E8,$08,$24,$30,$90,$BC,$00
+	dta $00,$FF,$EA,$EA,$E5,$E5,$E4,$E4,$00,$F4,$A4,$A4,$64,$E4,$E4,$E4
+	dta $E4,$E4,$E7,$EF,$EA,$EA,$55,$00,$E4,$E4,$E4,$E4,$A4,$A4,$54,$00
+	dta $00,$03,$0F,$3E,$3A,$0F,$03,$00,$00,$00,$00,$F0,$F0,$00,$00,$00
+	dta $00,$03,$03,$3E,$3E,$03,$03,$00,$00,$00,$C0,$F0,$B0,$C0,$00,$00
+	dta $7C,$FC,$00,$00,$00,$FC,$BC,$6A,$F4,$3D,$0E,$02,$0E,$3E,$F9,$A4
+L_23E9	dta $06,d" THROUGH THE BEECH DOOR "*,$FF
+L_2630	dta $09,d" DEEPER INTO THE CASTLE "*,$FF
+L_2640	dta $07,d" INTO THE ROOM "*,$FF
+L_2654	dta $02,d" TO THE PASSAGE "*,$FF
+L_2664	dta $08,d" UP TO THE ATTIC "*,$FF
+L_26D9 ;repeated:
+L_276C
+L_2673	dta $06,d" DOWN "*,$FF
+L_26A7 ;repeated:
+L_26CE
+L_26F1
+L_267D	dta $09,d" UP "*,$FF
+L_268B	dta $0C,d" TO THE CELLAR "*,$FF
+L_26B2 ;repeated:
+L_26E3
+L_2750
+L_275E
+L_2775
+L_2808
+L_2699	dta $0D,d" TO THE CHAMBER "*,$FF
+;L_26A7	dta $0A,d" UP "*,$FF
+;L_26B2	dta $0B,d" TO THE CHAMBER "*,$FF
+L_2709 ;repeated:
+L_27AE
+L_27FA
+L_26C0	dta $0A,d" DEEPER "*,$FF
+;L_26CE	dta $0E,d" UP "*,$FF
+;L_26D9	dta $0D,d" DOWN "*,$FF
+;L_26E3	dta $0F,d" TO THE CHAMBER "*,$FF
+;L_26F1	dta $0E,d" DOWN "*,$FF
 L_26FF	dta $12,$80,$B7,$80,$A7,$9C,$A0,$A2,$80,$FF
 ;vid	dta d"2",d" W G<@B "*,$FF
-L_2709	dta $11,$80,$B7,$80,$A7,$9C,$A0,$A2,$80,$FF
-;vid	dta d"1",d" W G<@B "*,$FF
-L_2713	dta $16,$80,$A4,$AF,$80,$8B,$B2,$AF,$A4,$AB,$A1,$80,$FF
-;vid	dta d"6",d" DO +RODKA "*,$FF
-L_2720	dta $12,$80,$A4,$AF,$80,$AB,$AF,$B2,$B9,$B4,$A1,$B2,$BA,$A1,$80,$FF
-;vid	dta d"2",d" DO KORYTARZA "*,$FF
-L_2730	dta $15,$80,$B0,$B2,$BA,$A5,$BA,$80,$A4,$B2,$BA,$B7,$A9,$80,$FF
-;vid	dta d"5",d" PRZEZ DRZWI "*,$FF
-L_273F	dta $16,$80,$A4,$AF,$80,$A2,$A9,$A2,$AC,$A9,$AF,$B4,$A5,$AB,$A9,$80
-;vid	dta d"6",d" DO BIBLIOTEKI "*
-		dta $FF			;274F FF    
-L_2750	dta $17,$80,$A4,$AF,$80,$AB,$AF,$AD,$AE,$A1,$B4,$B9,$80,$FF
-;vid	dta d"7",d" DO KOMNATY "*,$FF
-L_275E	dta $13,$80,$A4,$AF,$80,$AB,$AF,$AD,$AE,$A1,$B4,$B9,$80,$FF
-;vid	dta d"3",d" DO KOMNATY "*,$FF
-L_276C	dta $14,$80,$B7,$80,$A4,$8F,$9C,$80,$FF
-;vid	dta d"4",d" W D/< "*,$FF
-L_2775	dta $1C,$80,$A4,$AF,$80,$AB,$AF,$AD,$AE,$A1,$B4,$B9,$80,$FF
-;vid	dta d"<",d" DO KOMNATY "*,$FF
-L_2783	dta $13,$80,$AE,$A1,$80,$B3,$A3,$A8,$AF,$A4,$B9,$80,$FF
-;vid	dta d"3",d" NA SCHODY "*,$FF
-L_2790	dta $1B,$80,$B0,$B2,$BA,$A5,$BA,$80,$AF,$B4,$B7,$8F,$B2,$80,$FF
-;vid	dta d";",d" PRZEZ OTW/R "*,$FF
-L_279F	dta $1C,$80,$B0,$B2,$BA,$A5,$BA,$80,$AF,$B4,$B7,$8F,$B2,$80,$FF
-;vid	dta d"<",d" PRZEZ OTW/R "*,$FF
-L_27AE	dta $1E,$80,$B7,$80,$A7,$9C,$A0,$A2,$80,$FF
-;vid	dta d">",d" W G<@B "*,$FF
-L_27B8	dta $1A,$80,$B0,$B2,$BA,$A5,$BA,$80,$B7,$B9,$AA,$8B,$A3,$A9,$A5,$80
-;vid	dta d":",d" PRZEZ WYJ+CIE "*
-		dta $FF			;27C8 FF    
-L_27C9	dta $1D,$80,$A4,$AF,$80,$B0,$AF,$AD,$A9,$A5,$B3,$BA,$A3,$BA,$A5,$AE
-;vid	dta d"=",d" DO POMIESZCZEN"*
-		dta $A9,$A1,$80,$FF
-;vid	dta d"IA "*,$FF
-L_27DD	dta $1B,$80,$A4,$AF,$80,$AB,$A1,$AE,$A1,$9C,$B5,$80,$FF
-;vid	dta d";",d" DO KANA<U "*,$FF
-L_27EA	dta $19,$80,$AE,$A1,$80,$B0,$8F,$9C,$B0,$A9,$9D,$B4,$B2,$AF,$80,$FF
-;vid	dta d"9",d" NA P/<PI=TRO "*,$FF
-L_27FA	dta $1A,$80,$A4,$AF,$80,$BA,$A5,$AA,$8B,$A3,$A9,$A1,$80,$FF
-;vid	dta d":",d" DO ZEJ+CIA "*,$FF
-L_2808	dta $18,$80,$A4,$AF,$80,$AB,$AF,$AD,$AE,$A1,$B4,$B9,$80,$FF
-;vid	dta d"8",d" DO KOMNATY "*,$FF
-L_2816	dta $19,$80,$AE,$A1,$80,$BA,$A5,$B7,$AE,$A0,$B4,$B2,$BA,$80,$FF
-;vid	dta d"9",d" NA ZEWN@TRZ "*,$FF
+;L_2709	dta $11,d" DEEPER "*,$FF
+L_2713	dta $16,d" TO THE CENTER "*,$FF
+L_2720	dta $12,d" TO THE CORRIDOR "*,$FF
+L_2730	dta $15,d" THROUGH THE DOOR "*,$FF
+L_273F	dta $16,d" TO THE LIBRARY "*,$FF			
+;L_2750	dta $17,d" TO THE CHAMBER "*,$FF
+;L_275E	dta $13,d" TO THE CHAMBER "*,$FF
+;L_276C	dta $14,d" DOWN "*,$FF
+;L_2775	dta $1C,d" TO THE CHAMBER "*,$FF
+L_2783	dta $13,d" TO THE STAIRS "*,$FF
+L_279F ;repeated:
+L_2790	dta $1B,d" THROUGH THE OPENING "*,$FF
+;L_279F	dta $1C,d" THROUGH THE OPENING "*,$FF
+;L_27AE	dta $1E,d" DEEPER "*,$FF
+L_27B8	dta $1A,d" THROUGH THE EXIT "*,$FF
+L_27C9	dta $1D,d" INSIDE "*,$FF
+L_27DD	dta $1B,d" TO THE CANAL "*,$FF
+L_27EA	dta $19,d" TO MEZZANINE "*,$FF
+;L_27FA	dta $1A,d" DEEPER "*,$FF
+;L_2808	dta $18,d" TO THE CHAMBER "*,$FF
+L_2816	dta $19,d" OUTSIDE "*,$FF
+.print *
+	fill_until $2825 0
 L_2825	ldx #$00			;2825 A2 00
 L_2827	lda L_1B15,X		;2827 BD 15 1B
 		bne L_284D			;282A D0 21
@@ -866,7 +792,7 @@ L_285D	jsr L_4285			;285D 20 85 42
 		lda L_2BAD			;2879 AD AD 2B
 		cmp #$06			;287C C9 06
 		bne L_2886			;287E D0 06
-		jsr L_18AA			;2880 20 AA 18
+		jsr L_18AA_pause5			;2880 20 AA 18
 		jmp L_2908			;2883 4C 08 29
 L_2886	asl @				;2886 0A
 		tax				;2887 AA
@@ -899,9 +825,9 @@ L_28BA	cpx L_2BAD			;28BA EC AD 2B
 		jmp L_28AF			;28C1 4C AF 28
 L_28C4	asl @				;28C4 0A
 		tax				;28C5 AA
-		lda L_232E,X		;28C6 BD 2E 23
+		lda L_232E_ptr_direction_lo,X		;28C6 BD 2E 23
 		sta ZP_F0			;28C9 85 F0
-		lda L_232F,X		;28CB BD 2F 23
+		lda L_232F_ptr_direction_hi,X		;28CB BD 2F 23
 		sta ZP_F1			;28CE 85 F1
 		lda #$70			;28D0 A9 70
 		sta ZP_F2			;28D2 85 F2
@@ -944,7 +870,7 @@ L_2912	cmp #$0B			;2912 C9 0B
 		bne L_292D			;2920 D0 0B
 		lda #$06			;2922 A9 06
 		sta L_2BAD			;2924 8D AD 2B
-		jsr L_18AA			;2927 20 AA 18
+		jsr L_18AA_pause5			;2927 20 AA 18
 		jmp L_285D			;292A 4C 5D 28
 L_292D	cmp #$06			;292D C9 06
 		bne L_2941			;292F D0 10
@@ -952,7 +878,7 @@ L_292D	cmp #$06			;292D C9 06
 		beq L_2941			;2934 F0 0B
 		lda #$00			;2936 A9 00
 		sta L_2BAD			;2938 8D AD 2B
-		jsr L_18AA			;293B 20 AA 18
+		jsr L_18AA_pause5			;293B 20 AA 18
 		jmp L_285D			;293E 4C 5D 28
 L_2941	lda L_0278			;2941 AD 78 02
 		cmp #$07			;2944 C9 07
@@ -967,13 +893,13 @@ L_2941	lda L_0278			;2941 AD 78 02
 		beq L_2976			;2959 F0 1B
 		lda #$01			;295B A9 01
 		sta L_2BAD			;295D 8D AD 2B
-		jsr L_18AA			;2960 20 AA 18
+		jsr L_18AA_pause5			;2960 20 AA 18
 		jmp L_285D			;2963 4C 5D 28
 L_2966	lda L_2BAD			;2966 AD AD 2B
 		bne L_2976			;2969 D0 0B
 		lda #$06			;296B A9 06
 		sta L_2BAD			;296D 8D AD 2B
-		jsr L_18AA			;2970 20 AA 18
+		jsr L_18AA_pause5			;2970 20 AA 18
 		jmp L_285D			;2973 4C 5D 28
 L_2976	lda L_0278			;2976 AD 78 02
 		cmp #$0D			;2979 C9 0D
@@ -987,11 +913,11 @@ L_2976	lda L_0278			;2976 AD 78 02
 		beq L_2998			;298B F0 0B
 		lda #$02			;298D A9 02
 		sta L_2BAD			;298F 8D AD 2B
-		jsr L_18AA			;2992 20 AA 18
+		jsr L_18AA_pause5			;2992 20 AA 18
 		jmp L_285D			;2995 4C 5D 28
 L_2998	lda #$06			;2998 A9 06
 		sta L_2BAD			;299A 8D AD 2B
-		jsr L_18AA			;299D 20 AA 18
+		jsr L_18AA_pause5			;299D 20 AA 18
 		jmp L_285D			;29A0 4C 5D 28
 L_29A3	cmp #$02			;29A3 C9 02
 		beq L_2998			;29A5 F0 F1
@@ -1001,13 +927,13 @@ L_29A3	cmp #$02			;29A3 C9 02
 		beq L_29BB			;29AE F0 0B
 		lda #$03			;29B0 A9 03
 		sta L_2BAD			;29B2 8D AD 2B
-		jsr L_18AA			;29B5 20 AA 18
+		jsr L_18AA_pause5			;29B5 20 AA 18
 		jmp L_285D			;29B8 4C 5D 28
 L_29BB	lda L_1B1A			;29BB AD 1A 1B
 		beq L_29DF			;29BE F0 1F
 		lda #$05			;29C0 A9 05
 		sta L_2BAD			;29C2 8D AD 2B
-		jsr L_18AA			;29C5 20 AA 18
+		jsr L_18AA_pause5			;29C5 20 AA 18
 		jmp L_285D			;29C8 4C 5D 28
 L_29CB	cmp #$03			;29CB C9 03
 		bne L_29DF			;29CD D0 10
@@ -1015,7 +941,7 @@ L_29CB	cmp #$03			;29CB C9 03
 		beq L_29DF			;29D2 F0 0B
 		lda #$05			;29D4 A9 05
 		sta L_2BAD			;29D6 8D AD 2B
-		jsr L_18AA			;29D9 20 AA 18
+		jsr L_18AA_pause5			;29D9 20 AA 18
 		jmp L_285D			;29DC 4C 5D 28
 L_29DF	lda L_0278			;29DF AD 78 02
 		cmp #$0E			;29E2 C9 0E
@@ -1029,11 +955,11 @@ L_29DF	lda L_0278			;29DF AD 78 02
 		beq L_2A01			;29F4 F0 0B
 		lda #$03			;29F6 A9 03
 		sta L_2BAD			;29F8 8D AD 2B
-		jsr L_18AA			;29FB 20 AA 18
+		jsr L_18AA_pause5			;29FB 20 AA 18
 		jmp L_285D			;29FE 4C 5D 28
 L_2A01	lda #$06			;2A01 A9 06
 		sta L_2BAD			;2A03 8D AD 2B
-		jsr L_18AA			;2A06 20 AA 18
+		jsr L_18AA_pause5			;2A06 20 AA 18
 		jmp L_285D			;2A09 4C 5D 28
 L_2A0C	cmp #$03			;2A0C C9 03
 		beq L_2A01			;2A0E F0 F1
@@ -1043,13 +969,13 @@ L_2A0C	cmp #$03			;2A0C C9 03
 		beq L_2A24			;2A17 F0 0B
 		lda #$02			;2A19 A9 02
 		sta L_2BAD			;2A1B 8D AD 2B
-		jsr L_18AA			;2A1E 20 AA 18
+		jsr L_18AA_pause5			;2A1E 20 AA 18
 		jmp L_285D			;2A21 4C 5D 28
 L_2A24	lda L_1B19			;2A24 AD 19 1B
 		beq L_2A48			;2A27 F0 1F
 		lda #$04			;2A29 A9 04
 		sta L_2BAD			;2A2B 8D AD 2B
-		jsr L_18AA			;2A2E 20 AA 18
+		jsr L_18AA_pause5			;2A2E 20 AA 18
 		jmp L_285D			;2A31 4C 5D 28
 L_2A34	cmp #$02			;2A34 C9 02
 		bne L_2A48			;2A36 D0 10
@@ -1057,7 +983,7 @@ L_2A34	cmp #$02			;2A34 C9 02
 		beq L_2A48			;2A3B F0 0B
 		lda #$04			;2A3D A9 04
 		sta L_2BAD			;2A3F 8D AD 2B
-		jsr L_18AA			;2A42 20 AA 18
+		jsr L_18AA_pause5			;2A42 20 AA 18
 		jmp L_285D			;2A45 4C 5D 28
 L_2A48	lda L_D010			;2A48 AD 10 D0
 		bne L_2A68			;2A4B D0 1B
@@ -1068,8 +994,8 @@ L_2A48	lda L_D010			;2A48 AD 10 D0
 		ldy L_2B99			;2A57 AC 99 2B
 		stx ZP_F4			;2A5A 86 F4
 		sty L_100F			;2A5C 8C 0F 10
-		jsr L_18AA			;2A5F 20 AA 18
-		jsr L_18AA			;2A62 20 AA 18
+		jsr L_18AA_pause5			;2A5F 20 AA 18
+		jsr L_18AA_pause5			;2A62 20 AA 18
 		jmp L_425D			;2A65 4C 5D 42
 L_2A68	jmp L_2908			;2A68 4C 08 29
 L_2A6B	ldx L_2B98			;2A6B AE 98 2B
@@ -1098,9 +1024,9 @@ L_2A93	cpx L_2BAD			;2A93 EC AD 2B
 		jmp L_2A88			;2A9A 4C 88 2A
 L_2A9D	asl @				;2A9D 0A
 		tax				;2A9E AA
-		lda L_232E,X		;2A9F BD 2E 23
+		lda L_232E_ptr_direction_lo,X		;2A9F BD 2E 23
 		sta ZP_F0			;2AA2 85 F0
-		lda L_232F,X		;2AA4 BD 2F 23
+		lda L_232F_ptr_direction_hi,X		;2AA4 BD 2F 23
 		sta ZP_F1			;2AA7 85 F1
 		ldy #$00			;2AA9 A0 00
 		lda (ZP_F0),Y		;2AAB B1 F0
@@ -1128,8 +1054,8 @@ L_2ACE	lda (ZP_F0),Y		;2ACE B1 F0
 		jsr L_3E73			;2AD5 20 73 3E
 		cpx #$FF			;2AD8 E0 FF
 		bne L_2AE5			;2ADA D0 09
-		jsr L_18AA			;2ADC 20 AA 18
-		jsr L_18AA			;2ADF 20 AA 18
+		jsr L_18AA_pause5			;2ADC 20 AA 18
+		jsr L_18AA_pause5			;2ADF 20 AA 18
 		jmp L_425D			;2AE2 4C 5D 42
 L_2AE5	pla				;2AE5 68
 		tax				;2AE6 AA
@@ -1143,8 +1069,8 @@ L_2AE5	pla				;2AE5 68
 		lda ZP_F9			;2AF3 A5 F9
 		cmp #$14			;2AF5 C9 14
 		bne L_2B1B			;2AF7 D0 22
-		jsr L_18AA			;2AF9 20 AA 18
-		jsr L_18AA			;2AFC 20 AA 18
+		jsr L_18AA_pause5			;2AF9 20 AA 18
+		jsr L_18AA_pause5			;2AFC 20 AA 18
 		ldx #$BC			;2AFF A2 BC
 		ldy #$2B			;2B01 A0 2B
 		jsr L_448C			;2B03 20 8C 44
@@ -1160,8 +1086,8 @@ L_2AE5	pla				;2AE5 68
 L_2B1B	lda ZP_F9			;2B1B A5 F9
 		cmp #$1E			;2B1D C9 1E
 		bne L_2B43			;2B1F D0 22
-		jsr L_18AA			;2B21 20 AA 18
-		jsr L_18AA			;2B24 20 AA 18
+		jsr L_18AA_pause5			;2B21 20 AA 18
+		jsr L_18AA_pause5			;2B24 20 AA 18
 		ldx #$41			;2B27 A2 41
 		ldy #$2C			;2B29 A0 2C
 		jsr L_448C			;2B2B 20 8C 44
@@ -1185,7 +1111,7 @@ L_2B45	lda L_0C2E,Y		;2B45 B9 2E 0C
 		bne L_2B45			;2B53 D0 F0
 L_2B55	jsr L_5830			;2B55 20 30 58
 		jmp L_425D			;2B58 4C 5D 42
-L_2B5B	jsr L_18AA			;2B5B 20 AA 18
+L_2B5B	jsr L_18AA_pause5			;2B5B 20 AA 18
 		ldx #$7A			;2B5E A2 7A
 		ldy #$2B			;2B60 A0 2B
 		jsr L_448C			;2B62 20 8C 44
@@ -1408,7 +1334,7 @@ L_2E5D	ldx #$6C			;2E5D A2 6C
 		sta ZP_FB			;2E6E 85 FB
 		jsr L_4520			;2E70 20 20 45
 L_2E73	jsr L_3FF4			;2E73 20 F4 3F
-		jsr L_18AA			;2E76 20 AA 18
+		jsr L_18AA_pause5			;2E76 20 AA 18
 		jsr L_4158			;2E79 20 58 41
 		bpl L_2E81			;2E7C 10 03
 		jmp L_2F3A			;2E7E 4C 3A 2F
@@ -1429,10 +1355,10 @@ L_2E8E	lda ZP_FE			;2E8E A5 FE
 		lda ZP_F9			;2E9F A5 F9
 		cmp #$0A			;2EA1 C9 0A
 		bne L_2ED1			;2EA3 D0 2C
-		jsr L_18AA			;2EA5 20 AA 18
-		jsr L_18AA			;2EA8 20 AA 18
-		jsr L_18AA			;2EAB 20 AA 18
-		jsr L_18AA			;2EAE 20 AA 18
+		jsr L_18AA_pause5			;2EA5 20 AA 18
+		jsr L_18AA_pause5			;2EA8 20 AA 18
+		jsr L_18AA_pause5			;2EAB 20 AA 18
+		jsr L_18AA_pause5			;2EAE 20 AA 18
 		lda #$FE			;2EB1 A9 FE
 		ldx #$2A			;2EB3 A2 2A
 		sta L_3FA2,X		;2EB5 9D A2 3F
@@ -1453,10 +1379,10 @@ L_2ED1	lda ZP_FE			;2ED1 A5 FE
 		lda ZP_F9			;2ED7 A5 F9
 		cmp #$15			;2ED9 C9 15
 		bne L_2F09			;2EDB D0 2C
-		jsr L_18AA			;2EDD 20 AA 18
-		jsr L_18AA			;2EE0 20 AA 18
-		jsr L_18AA			;2EE3 20 AA 18
-		jsr L_18AA			;2EE6 20 AA 18
+		jsr L_18AA_pause5			;2EDD 20 AA 18
+		jsr L_18AA_pause5			;2EE0 20 AA 18
+		jsr L_18AA_pause5			;2EE3 20 AA 18
+		jsr L_18AA_pause5			;2EE6 20 AA 18
 		ldx #$47			;2EE9 A2 47
 		lda #$01			;2EEB A9 01
 		sta L_3FA2,X		;2EED 9D A2 3F
@@ -1477,10 +1403,10 @@ L_2F09	lda ZP_FE			;2F09 A5 FE
 		lda ZP_F9			;2F0F A5 F9
 		cmp #$1C			;2F11 C9 1C
 		bne L_2F37			;2F13 D0 22
-		jsr L_18AA			;2F15 20 AA 18
-		jsr L_18AA			;2F18 20 AA 18
-		jsr L_18AA			;2F1B 20 AA 18
-		jsr L_18AA			;2F1E 20 AA 18
+		jsr L_18AA_pause5			;2F15 20 AA 18
+		jsr L_18AA_pause5			;2F18 20 AA 18
+		jsr L_18AA_pause5			;2F1B 20 AA 18
+		jsr L_18AA_pause5			;2F1E 20 AA 18
 		ldx #$5D			;2F21 A2 5D
 		ldy #$2F			;2F23 A0 2F
 		jsr L_448C			;2F25 20 8C 44
@@ -1602,7 +1528,7 @@ L_310A	lda L_0C2E,X		;310A BD 2E 0C
 		cpx #$06			;3111 E0 06
 		bne L_310A			;3113 D0 F5
 		jsr L_3FF4			;3115 20 F4 3F
-		jsr L_18AA			;3118 20 AA 18
+		jsr L_18AA_pause5			;3118 20 AA 18
 		jsr L_4158			;311B 20 58 41
 		bmi L_315F			;311E 30 3F
 		tax				;3120 AA
@@ -1681,7 +1607,7 @@ L_31EB	jsr L_1845			;31EB 20 45 18
 		bpl L_322E			;31F1 10 3B
 		cmp #$FE			;31F3 C9 FE
 		bne L_31FD			;31F5 D0 06
-		jsr L_18AA			;31F7 20 AA 18
+		jsr L_18AA_pause5			;31F7 20 AA 18
 		jmp L_425D			;31FA 4C 5D 42
 L_31FD	lda L_3E23			;31FD AD 23 3E
 		beq L_3218			;3200 F0 16
@@ -1690,7 +1616,7 @@ L_31FD	lda L_3E23			;31FD AD 23 3E
 		jmp L_31EB			;3207 4C EB 31
 L_320A	lda #$00			;320A A9 00
 		sta L_3E23			;320C 8D 23 3E
-		jsr L_18AA			;320F 20 AA 18
+		jsr L_18AA_pause5			;320F 20 AA 18
 		jsr L_4285			;3212 20 85 42
 		jmp L_31D5			;3215 4C D5 31
 L_3218	lda L_3E28			;3218 AD 28 3E
@@ -1698,10 +1624,10 @@ L_3218	lda L_3E28			;3218 AD 28 3E
 		jmp L_31EB			;321D 4C EB 31
 L_3220	lda #$01			;3220 A9 01
 		sta L_3E23			;3222 8D 23 3E
-		jsr L_18AA			;3225 20 AA 18
+		jsr L_18AA_pause5			;3225 20 AA 18
 		jsr L_4285			;3228 20 85 42
 		jmp L_31D5			;322B 4C D5 31
-L_322E	jsr L_18AA			;322E 20 AA 18
+L_322E	jsr L_18AA_pause5			;322E 20 AA 18
 		lda L_0C36			;3231 AD 36 0C
 		sta L_4439			;3234 8D 39 44
 		cmp #$0F			;3237 C9 0F
@@ -1791,8 +1717,8 @@ L_32EA	ldy #$03			;32EA A0 03
 		lda (ZP_F0),Y		;32F4 B1 F0
 		sta L_3FA2,X		;32F6 9D A2 3F
 L_32F9	jmp L_3356			;32F9 4C 56 33
-L_32FC	jsr L_18AA			;32FC 20 AA 18
-		jsr L_18AA			;32FF 20 AA 18
+L_32FC	jsr L_18AA_pause5			;32FC 20 AA 18
+		jsr L_18AA_pause5			;32FF 20 AA 18
 		ldx #$F1			;3302 A2 F1
 		ldy #$3D			;3304 A0 3D
 		jsr L_448C			;3306 20 8C 44
@@ -1809,8 +1735,8 @@ L_32FC	jsr L_18AA			;32FC 20 AA 18
 		sta L_4283			;3320 8D 83 42
 		sta L_4284			;3323 8D 84 42
 		jmp L_425D			;3326 4C 5D 42
-L_3329	jsr L_18AA			;3329 20 AA 18
-		jsr L_18AA			;332C 20 AA 18
+L_3329	jsr L_18AA_pause5			;3329 20 AA 18
+		jsr L_18AA_pause5			;332C 20 AA 18
 		ldx #$0C			;332F A2 0C
 		ldy #$3E			;3331 A0 3E
 		jsr L_448C			;3333 20 8C 44
@@ -2350,11 +2276,11 @@ L_3AFB	ldx #$38			;3AFB A2 38
 		sta L_3FA2,X		;3B1B 9D A2 3F
 		lda #$00			;3B1E A9 00
 		sta L_0DDA			;3B20 8D DA 0D
-		jsr L_18AA			;3B23 20 AA 18
-		jsr L_18AA			;3B26 20 AA 18
+		jsr L_18AA_pause5			;3B23 20 AA 18
+		jsr L_18AA_pause5			;3B26 20 AA 18
 		jsr L_3E73			;3B29 20 73 3E
-		jsr L_18AA			;3B2C 20 AA 18
-		jsr L_18AA			;3B2F 20 AA 18
+		jsr L_18AA_pause5			;3B2C 20 AA 18
+		jsr L_18AA_pause5			;3B2F 20 AA 18
 		jsr L_18B6			;3B32 20 B6 18
 		jmp L_4267			;3B35 4C 67 42
 L_3B38	ora (ZP_05,X)		;3B38 01 05
@@ -2422,8 +2348,8 @@ L_3BC8	lda L_0278			;3BC8 AD 78 02
 		bne L_3BC8			;3BD2 D0 F4
 		lda L_2BAD			;3BD4 AD AD 2B
 		bne L_3BE9			;3BD7 D0 10
-		jsr L_18AA			;3BD9 20 AA 18
-		jsr L_18AA			;3BDC 20 AA 18
+		jsr L_18AA_pause5			;3BD9 20 AA 18
+		jsr L_18AA_pause5			;3BDC 20 AA 18
 		lda #$00			;3BDF A9 00
 		sta ZP_F9			;3BE1 85 F9
 		jsr L_5830			;3BE3 20 30 58
@@ -2442,8 +2368,8 @@ L_3BEC	cmp #$0E			;3BEC C9 0E
 		sta (ZP_F0),Y		;3C00 91 F0
 		iny				;3C02 C8
 		sta (ZP_F0),Y		;3C03 91 F0
-		jsr L_18AA			;3C05 20 AA 18
-		jsr L_18AA			;3C08 20 AA 18
+		jsr L_18AA_pause5			;3C05 20 AA 18
+		jsr L_18AA_pause5			;3C08 20 AA 18
 		sec				;3C0B 38
 		lda ZP_F0			;3C0C A5 F0
 		sbc #$50			;3C0E E9 50
@@ -2467,8 +2393,8 @@ L_3C1E	cmp #$0D			;3C1E C9 0D
 		sta (ZP_F0),Y		;3C35 91 F0
 		iny				;3C37 C8
 		sta (ZP_F0),Y		;3C38 91 F0
-		jsr L_18AA			;3C3A 20 AA 18
-		jsr L_18AA			;3C3D 20 AA 18
+		jsr L_18AA_pause5			;3C3A 20 AA 18
+		jsr L_18AA_pause5			;3C3D 20 AA 18
 		clc				;3C40 18
 		lda ZP_F0			;3C41 A5 F0
 		adc #$50			;3C43 69 50
@@ -2558,8 +2484,8 @@ L_3E27	dta $00			;3E27 00
 L_3E28	dta $00			;3E28 00    
 L_3E29	dta $FF,$FF,$FF,$FF,$FF,$FF
 ;vid	dta $FF,$FF,$FF,$FF,$FF,$FF
-L_3E2F	jsr L_18AA			;3E2F 20 AA 18
-		jsr L_18AA			;3E32 20 AA 18
+L_3E2F	jsr L_18AA_pause5			;3E2F 20 AA 18
+		jsr L_18AA_pause5			;3E32 20 AA 18
 		lda #$0F			;3E35 A9 0F
 		sta ZP_FA			;3E37 85 FA
 		lda #$03			;3E39 A9 03
@@ -2576,8 +2502,8 @@ L_3E4B	lda L_D010			;3E4B AD 10 D0
 L_3E53	lda L_D010			;3E53 AD 10 D0
 		beq L_3E53			;3E56 F0 FB
 		jsr L_2118			;3E58 20 18 21
-		jsr L_18AA			;3E5B 20 AA 18
-		jsr L_18AA			;3E5E 20 AA 18
+		jsr L_18AA_pause5			;3E5B 20 AA 18
+		jsr L_18AA_pause5			;3E5E 20 AA 18
 		rts				;3E61 60
 L_3E62	dta 1,$1a,8,d"PRES"
 	;ora (ZP_1A,X)		;3E62 01 1A
@@ -2586,8 +2512,8 @@ L_3E62	dta 1,$1a,8,d"PRES"
 	;	lda ZP_B3			;3E67 A5 B3
 		dta $B3,$80,$A6,$A9,$B2,$A5,$80,$80,$80,$FF
 ;vid	dta d"S FIRE   "*,$FF
-L_3E73	jsr L_18AA			;3E73 20 AA 18
-		jsr L_18AA			;3E76 20 AA 18
+L_3E73	jsr L_18AA_pause5			;3E73 20 AA 18
+		jsr L_18AA_pause5			;3E76 20 AA 18
 		ldx #$BA			;3E79 A2 BA
 		ldy #$3E			;3E7B A0 3E
 		jsr L_448C			;3E7D 20 8C 44
@@ -2612,9 +2538,9 @@ L_3EA6	ldx #$FF			;3EA6 A2 FF
 		rts				;3EA8 60
 L_3EA9	lda L_D010			;3EA9 AD 10 D0
 		beq L_3EA9			;3EAC F0 FB
-		jsr L_18AA			;3EAE 20 AA 18
+		jsr L_18AA_pause5			;3EAE 20 AA 18
 		jsr L_2118			;3EB1 20 18 21
-		jsr L_18AA			;3EB4 20 AA 18
+		jsr L_18AA_pause5			;3EB4 20 AA 18
 		ldx #$01			;3EB7 A2 01
 		rts				;3EB9 60
 L_3EBA	ora (ZP_22,X)		;3EBA 01 22
@@ -2903,7 +2829,7 @@ L_41C7	cmp #$0E			;41C7 C9 0E
 		bne L_41FC			;41C9 D0 31
 		dec L_4157			;41CB CE 57 41
 		beq L_41F9			;41CE F0 29
-		jsr L_18AA			;41D0 20 AA 18
+		jsr L_18AA_pause5			;41D0 20 AA 18
 		ldy #$00			;41D3 A0 00
 		lda #$00			;41D5 A9 00
 		sta (ZP_F0),Y		;41D7 91 F0
@@ -2921,12 +2847,12 @@ L_41C7	cmp #$0E			;41C7 C9 0E
 		lda ZP_F1			;41ED A5 F1
 		sbc #$00			;41EF E9 00
 		sta ZP_F1			;41F1 85 F1
-		jsr L_18AA			;41F3 20 AA 18
+		jsr L_18AA_pause5			;41F3 20 AA 18
 		jmp L_417F			;41F6 4C 7F 41
 L_41F9	inc L_4157			;41F9 EE 57 41
 L_41FC	cmp #$0D			;41FC C9 0D
 		bne L_423C			;41FE D0 3C
-		jsr L_18AA			;4200 20 AA 18
+		jsr L_18AA_pause5			;4200 20 AA 18
 		ldx L_4157			;4203 AE 57 41
 		lda L_0C28,X		;4206 BD 28 0C
 		bmi L_423C			;4209 30 31
@@ -2951,8 +2877,8 @@ L_41FC	cmp #$0D			;41FC C9 0D
 		lda ZP_F1			;422D A5 F1
 		adc #$00			;422F 69 00
 		sta ZP_F1			;4231 85 F1
-		jsr L_18AA			;4233 20 AA 18
-		jsr L_18AA			;4236 20 AA 18
+		jsr L_18AA_pause5			;4233 20 AA 18
+		jsr L_18AA_pause5			;4236 20 AA 18
 		jmp L_417F			;4239 4C 7F 41
 L_423C	lda L_D010			;423C AD 10 D0
 		beq L_4244			;423F F0 03
@@ -3512,13 +3438,13 @@ L_4919	ldy #$01			;4919 A0 01
 		lda #$41			;492B A9 41
 		sta (ZP_F0),Y		;492D 91 F0
 		jsr L_49B1			;492F 20 B1 49
-		jsr L_18AA			;4932 20 AA 18
+		jsr L_18AA_pause5			;4932 20 AA 18
 L_4935	lda L_0278			;4935 AD 78 02
 		cmp #$0F			;4938 C9 0F
 		beq L_498D			;493A F0 51
 		cmp #$0B			;493C C9 0B
 		bne L_4946			;493E D0 06
-		jsr L_18AA			;4940 20 AA 18
+		jsr L_18AA_pause5			;4940 20 AA 18
 		jmp L_425D			;4943 4C 5D 42
 L_4946	cmp #$07			;4946 C9 07
 		dta $D0			;4948 D0 P   ; !!! BNE L_4950
@@ -3533,9 +3459,9 @@ L_4950	cmp #$0E			;4950 C9 0E
 		beq L_4935			;4959 F0 DA
 		dec L_4FA1			;495B CE A1 4F
 		jsr L_49DB			;495E 20 DB 49
-		jsr L_18AA			;4961 20 AA 18
+		jsr L_18AA_pause5			;4961 20 AA 18
 		jsr L_49CD			;4964 20 CD 49
-		jsr L_18AA			;4967 20 AA 18
+		jsr L_18AA_pause5			;4967 20 AA 18
 		jmp L_4919			;496A 4C 19 49
 L_496D	lda L_0278			;496D AD 78 02
 		cmp #$0D			;4970 C9 0D
@@ -3545,15 +3471,15 @@ L_496D	lda L_0278			;496D AD 78 02
 		beq L_4935			;4979 F0 BA
 		inc L_4FA1			;497B EE A1 4F
 		jsr L_49DB			;497E 20 DB 49
-		jsr L_18AA			;4981 20 AA 18
+		jsr L_18AA_pause5			;4981 20 AA 18
 		jsr L_49BF			;4984 20 BF 49
-		jsr L_18AA			;4987 20 AA 18
+		jsr L_18AA_pause5			;4987 20 AA 18
 		jmp L_4919			;498A 4C 19 49
 L_498D	lda L_D010			;498D AD 10 D0
 		bne L_4935			;4990 D0 A3
 L_4992	lda L_D010			;4992 AD 10 D0
 		beq L_4992			;4995 F0 FB
-		jsr L_18AA			;4997 20 AA 18
+		jsr L_18AA_pause5			;4997 20 AA 18
 		dec L_4FA1			;499A CE A1 4F
 		lda L_4FA1			;499D AD A1 4F
 		asl @				;49A0 0A
@@ -3639,7 +3565,7 @@ L_4A35	lda ZP_EF			;4A35 A5 EF
 		lda L_5018,X		;4A43 BD 18 50
 		sta L_4FA2			;4A46 8D A2 4F
 		jmp (L_4FA1)		;4A49 6C A1 4F
-L_4A4C	jsr L_18AA			;4A4C 20 AA 18
+L_4A4C	jsr L_18AA_pause5			;4A4C 20 AA 18
 		ldx #$3F			;4A4F A2 3F
 		ldy #$50			;4A51 A0 50
 		jsr L_448C			;4A53 20 8C 44
@@ -3664,8 +3590,8 @@ L_4A6B	dta 1,7,1,d"TAKE YOU"
 ;vid	dta d"   ",$FF,d"!+$  DON"
 L_4A92	dta $07,$34,$00,$22,$25,$00,$33,$29,$2C,$2C,$39,$01,$00,$00,$FF
 ;vid	dta d"'T BE SILLY!  ",$FF
-L_4AA1	jsr L_18AA			;4AA1 20 AA 18
-L_4AA4	jsr L_18AA			;4AA4 20 AA 18
+L_4AA1	jsr L_18AA_pause5			;4AA1 20 AA 18
+L_4AA4	jsr L_18AA_pause5			;4AA4 20 AA 18
 		lda ZP_F9			;4AA7 A5 F9
 		cmp #$18			;4AA9 C9 18
 		bne L_4AC9			;4AAB D0 1C
@@ -3682,7 +3608,7 @@ L_4AA4	jsr L_18AA			;4AA4 20 AA 18
 		jsr L_3E2F			;4AC3 20 2F 3E
 		jmp L_425D			;4AC6 4C 5D 42
 L_4AC9	jsr L_4285			;4AC9 20 85 42
-		jsr L_18AA			;4ACC 20 AA 18
+		jsr L_18AA_pause5			;4ACC 20 AA 18
 		ldx #$6B			;4ACF A2 6B
 		ldy #$4A			;4AD1 A0 4A
 		jsr L_448C			;4AD3 20 8C 44
@@ -3759,8 +3685,8 @@ L_4B56	cmp #$0E			;4B56 C9 0E
 		sta (ZP_F0),Y		;4B6A 91 F0
 		iny				;4B6C C8
 		sta (ZP_F0),Y		;4B6D 91 F0
-		jsr L_18AA			;4B6F 20 AA 18
-		jsr L_18AA			;4B72 20 AA 18
+		jsr L_18AA_pause5			;4B6F 20 AA 18
+		jsr L_18AA_pause5			;4B72 20 AA 18
 		sec				;4B75 38
 		lda ZP_F0			;4B76 A5 F0
 		sbc #$50			;4B78 E9 50
@@ -3784,8 +3710,8 @@ L_4B88	cmp #$0D			;4B88 C9 0D
 		sta (ZP_F0),Y		;4B9F 91 F0
 		iny				;4BA1 C8
 		sta (ZP_F0),Y		;4BA2 91 F0
-		jsr L_18AA			;4BA4 20 AA 18
-		jsr L_18AA			;4BA7 20 AA 18
+		jsr L_18AA_pause5			;4BA4 20 AA 18
+		jsr L_18AA_pause5			;4BA7 20 AA 18
 		clc				;4BAA 18
 		lda ZP_F0			;4BAB A5 F0
 		adc #$50			;4BAD 69 50
@@ -3804,9 +3730,9 @@ L_4BC4	lda ZP_D1			;4BC4 A5 D1
 		jsr L_3E2F			;4BC8 20 2F 3E
 		jsr L_5830			;4BCB 20 30 58
 		jmp L_425D			;4BCE 4C 5D 42
-L_4BD1	jsr L_18AA			;4BD1 20 AA 18
-		jsr L_18AA			;4BD4 20 AA 18
-		jsr L_18AA			;4BD7 20 AA 18
+L_4BD1	jsr L_18AA_pause5			;4BD1 20 AA 18
+		jsr L_18AA_pause5			;4BD4 20 AA 18
+		jsr L_18AA_pause5			;4BD7 20 AA 18
 		ldx #$BA			;4BDA A2 BA
 		ldy #$4D			;4BDC A0 4D
 		jsr L_448C			;4BDE 20 8C 44
@@ -3860,8 +3786,8 @@ L_4C3E	ldx #$49			;4C3E A2 49
 		bmi L_4C88			;4C53 30 33
 		sta L_4DB9			;4C55 8D B9 4D
 L_4C58	jmp L_4C7D			;4C58 4C 7D 4C
-L_4C5B	jsr L_18AA			;4C5B 20 AA 18
-		jsr L_18AA			;4C5E 20 AA 18
+L_4C5B	jsr L_18AA_pause5			;4C5B 20 AA 18
+		jsr L_18AA_pause5			;4C5E 20 AA 18
 		ldx #$79			;4C61 A2 79
 		ldy #$4D			;4C63 A0 4D
 		jsr L_448C			;4C65 20 8C 44
@@ -3878,10 +3804,10 @@ L_4C7D	lda L_4DB8			;4C7D AD B8 4D
 		sbc L_4DB9			;4C80 ED B9 4D
 		bmi L_4C5B			;4C83 30 D6
 		sta L_0C34			;4C85 8D 34 0C
-L_4C88	jsr L_18AA			;4C88 20 AA 18
-		jsr L_18AA			;4C8B 20 AA 18
-		jsr L_18AA			;4C8E 20 AA 18
-		jsr L_18AA			;4C91 20 AA 18
+L_4C88	jsr L_18AA_pause5			;4C88 20 AA 18
+		jsr L_18AA_pause5			;4C8B 20 AA 18
+		jsr L_18AA_pause5			;4C8E 20 AA 18
+		jsr L_18AA_pause5			;4C91 20 AA 18
 		ldx #$E2			;4C94 A2 E2
 		ldy #$4D			;4C96 A0 4D
 		jsr L_448C			;4C98 20 8C 44
@@ -3895,8 +3821,8 @@ L_4C88	jsr L_18AA			;4C88 20 AA 18
 		jsr L_3E73			;4CAA 20 73 3E
 		lda ZP_EF			;4CAD A5 EF
 		bne L_4CDC			;4CAF D0 2B
-		jsr L_18AA			;4CB1 20 AA 18
-		jsr L_18AA			;4CB4 20 AA 18
+		jsr L_18AA_pause5			;4CB1 20 AA 18
+		jsr L_18AA_pause5			;4CB4 20 AA 18
 		ldx #$46			;4CB7 A2 46
 		ldy #$4D			;4CB9 A0 4D
 		jsr L_448C			;4CBB 20 8C 44
@@ -3916,8 +3842,8 @@ L_4C88	jsr L_18AA			;4C88 20 AA 18
 L_4CDC	lda ZP_EF			;4CDC A5 EF
 		cmp #$01			;4CDE C9 01
 		bne L_4D0B			;4CE0 D0 29
-		jsr L_18AA			;4CE2 20 AA 18
-		jsr L_18AA			;4CE5 20 AA 18
+		jsr L_18AA_pause5			;4CE2 20 AA 18
+		jsr L_18AA_pause5			;4CE5 20 AA 18
 		ldx #$15			;4CE8 A2 15
 		ldy #$4D			;4CEA A0 4D
 		jsr L_448C			;4CEC 20 8C 44
@@ -3983,7 +3909,7 @@ L_4E19	lda ZP_EF			;4E19 A5 EF
 		lda L_500A,X		;4E27 BD 0A 50
 		sta L_4FA2			;4E2A 8D A2 4F
 		jmp (L_4FA1)		;4E2D 6C A1 4F
-L_4E30	jsr L_18AA			;4E30 20 AA 18
+L_4E30	jsr L_18AA_pause5			;4E30 20 AA 18
 		ldx #$3A			;4E33 A2 3A
 		ldy #$52			;4E35 A0 52
 		jsr L_448C			;4E37 20 8C 44
@@ -4008,10 +3934,10 @@ L_4E5D	lda L_0C2E,X		;4E5D BD 2E 0C
 		inx				;4E63 E8
 		cpx #$06			;4E64 E0 06
 		bne L_4E5D			;4E66 D0 F5
-		jsr L_18AA			;4E68 20 AA 18
+		jsr L_18AA_pause5			;4E68 20 AA 18
 		lda L_0C2E			;4E6B AD 2E 0C
 		bpl L_4E8F			;4E6E 10 1F
-		jsr L_18AA			;4E70 20 AA 18
+		jsr L_18AA_pause5			;4E70 20 AA 18
 		ldx #$BB			;4E73 A2 BB
 		ldy #$4F			;4E75 A0 4F
 		jsr L_448C			;4E77 20 8C 44
@@ -4051,8 +3977,8 @@ L_4EC3	jsr L_3FF4			;4EC3 20 F4 3F
 		jsr L_4158			;4EC6 20 58 41
 		lda L_0C36			;4EC9 AD 36 0C
 		bpl L_4ED7			;4ECC 10 09
-		jsr L_18AA			;4ECE 20 AA 18
-		jsr L_18AA			;4ED1 20 AA 18
+		jsr L_18AA_pause5			;4ECE 20 AA 18
+		jsr L_18AA_pause5			;4ED1 20 AA 18
 		jmp L_425D			;4ED4 4C 5D 42
 L_4ED7	lda ZP_F9			;4ED7 A5 F9
 		cmp #$0A			;4ED9 C9 0A
@@ -4070,7 +3996,7 @@ L_4EED	lda ZP_EF			;4EED A5 EF
 		lda L_4FFB,X		;4EF1 BD FB 4F
 		cmp #$FF			;4EF4 C9 FF
 		bne L_4F24			;4EF6 D0 2C
-L_4EF8	jsr L_18AA			;4EF8 20 AA 18
+L_4EF8	jsr L_18AA_pause5			;4EF8 20 AA 18
 		ldx #$55			;4EFB A2 55
 		ldy #$4F			;4EFD A0 4F
 		jsr L_448C			;4EFF 20 8C 44
@@ -4238,7 +4164,7 @@ L_5193	dta $02,$09,$05,$21,$00,$24,$25,$21,$24,$00,$22,$2F,$24,$39,$00,$2C
 		dta $32,$2F,$3A,$2D,$2F,$37,$21,$00,$00,$FF
 ;vid	dta d"ROZMOWA  ",$FF
 L_526D	dta $00			;526D 00    
-L_526E	jsr L_18AA			;526E 20 AA 18
+L_526E	jsr L_18AA_pause5			;526E 20 AA 18
 		lda L_526D			;5271 AD 6D 52
 		bne L_5292			;5274 D0 1C
 		ldx #$35			;5276 A2 35
@@ -4315,11 +4241,11 @@ L_52C7	jsr L_3E2F			;52C7 20 2F 3E
 ;vid	dta d"                "
 		dta $00,$00,$00,$00,$00,$00,$00,$FF
 ;vid	dta d"       ",$FF
-L_53E5	jsr L_18AA			;53E5 20 AA 18
+L_53E5	jsr L_18AA_pause5			;53E5 20 AA 18
 		lda L_55B1			;53E8 AD B1 55
 		beq L_53F0			;53EB F0 03
 		jmp L_4E30			;53ED 4C 30 4E
-L_53F0	jsr L_18AA			;53F0 20 AA 18
+L_53F0	jsr L_18AA_pause5			;53F0 20 AA 18
 		ldx #$A6			;53F3 A2 A6
 		ldy #$54			;53F5 A0 54
 		jsr L_448C			;53F7 20 8C 44
@@ -4332,11 +4258,11 @@ L_53F0	jsr L_18AA			;53F0 20 AA 18
 		jsr L_4520			;5406 20 20 45
 		jsr L_3E2F			;5409 20 2F 3E
 		jmp L_425D			;540C 4C 5D 42
-L_540F	jsr L_18AA			;540F 20 AA 18
+L_540F	jsr L_18AA_pause5			;540F 20 AA 18
 		lda L_55B2			;5412 AD B2 55
 		beq L_541A			;5415 F0 03
 		jmp L_4E30			;5417 4C 30 4E
-L_541A	jsr L_18AA			;541A 20 AA 18
+L_541A	jsr L_18AA_pause5			;541A 20 AA 18
 		ldx #$39			;541D A2 39
 		ldy #$54			;541F A0 54
 		jsr L_448C			;5421 20 8C 44
@@ -4379,8 +4305,8 @@ L_5439	dta $03,$04,$02,$34,$28,$25,$00,$27,$35,$21,$32,$24,$00,$33,$21,$29
 ;vid	dta d"ONE CHANCE!" - S"
 		dta $21,$39,$33,$00,$34,$28,$25,$00,$27,$35,$21,$32,$24,$FF
 ;vid	dta d"AYS THE GUARD",$FF
-L_5527	jsr L_18AA			;5527 20 AA 18
-		jsr L_18AA			;552A 20 AA 18
+L_5527	jsr L_18AA_pause5			;5527 20 AA 18
+		jsr L_18AA_pause5			;552A 20 AA 18
 		lda L_0C36			;552D AD 36 0C
 		cmp #$33			;5530 C9 33
 		bne L_5537			;5532 D0 03
@@ -4419,8 +4345,8 @@ L_556C	ldx #$D4			;556C A2 D4
 		jsr L_4520			;557F 20 20 45
 		jsr L_3E73			;5582 20 73 3E
 		jmp L_425D			;5585 4C 5D 42
-L_5588	jsr L_18AA			;5588 20 AA 18
-		jsr L_18AA			;558B 20 AA 18
+L_5588	jsr L_18AA_pause5			;5588 20 AA 18
+		jsr L_18AA_pause5			;558B 20 AA 18
 		lda L_0C36			;558E AD 36 0C
 		cmp #$47			;5591 C9 47
 		beq L_55A1			;5593 F0 0C
@@ -4440,8 +4366,8 @@ L_55B2	dta $00,$01,$07,$04,$00,$00,$00,$00,$29,$00,$24,$2F,$2E,$07,$34,$00
 ;vid	dta d" !'$    I DON'T "
 		dta $2E,$25,$25,$24,$00,$29,$34,$01,$00,$00,$00,$00,$00,$00,$FF
 ;vid	dta d"NEED IT!      ",$FF
-L_55D1	jsr L_18AA			;55D1 20 AA 18
-		jsr L_18AA			;55D4 20 AA 18
+L_55D1	jsr L_18AA_pause5			;55D1 20 AA 18
+		jsr L_18AA_pause5			;55D4 20 AA 18
 		lda L_0C36			;55D7 AD 36 0C
 		cmp #$38			;55DA C9 38
 		beq L_55FA			;55DC F0 1C
@@ -8073,7 +7999,7 @@ L_0EDD	lda L_0DDB			;0EDD AD DB 0D
 		sta L_02C5			;0EE6 8D C5 02
 		lda L_0DDD			;0EE9 AD DD 0D
 		sta L_02C6			;0EEC 8D C6 02
-		jsr L_18AA			;0EEF 20 AA 18
+		jsr L_18AA_pause5			;0EEF 20 AA 18
 		ldx #$00			;0EF2 A2 00
 		jmp L_0EB8			;0EF4 4C B8 0E
 L_0EF7	jsr L_0F12			;0EF7 20 12 0F
@@ -8434,7 +8360,7 @@ L_1879	lda L_3E29,X		;1879 BD 29 3E
 		cpx #$06			;1880 E0 06
 		bne L_1879			;1882 D0 F5
 L_1884	jsr L_3FF4			;1884 20 F4 3F
-		jsr L_18AA			;1887 20 AA 18
+		jsr L_18AA_pause5			;1887 20 AA 18
 		jsr L_4158			;188A 20 58 41
 		rts				;188D 60
 L_188E	lda L_D010			;188E AD 10 D0
@@ -8446,15 +8372,17 @@ L_188E	lda L_D010			;188E AD 10 D0
 		sta L_3FF1			;189B 8D F1 3F
 		lda L_2004,X		;189E BD 04 20
 		sta L_3FF2			;18A1 8D F2 3F
-		jsr L_18AA			;18A4 20 AA 18
+		jsr L_18AA_pause5			;18A4 20 AA 18
 		jmp (L_3FF1)		;18A7 6C F1 3F
-L_18AA	ldx #$05			;18AA A2 05
+L_18AA_pause5	
+	ldx #$05			;18AA A2 05
 L_18AC	lda ZP_14			;18AC A5 14
 L_18AE	cmp ZP_14			;18AE C5 14
-		beq L_18AE			;18B0 F0 FC
-		dex				;18B2 CA
-		bpl L_18AC			;18B3 10 F7
-		rts				;18B5 60
+	beq L_18AE			;18B0 F0 FC
+	dex				;18B2 CA
+	bpl L_18AC			;18B3 10 F7
+	rts				;18B5 60
+
 L_18B6	lda ZP_F9			;18B6 A5 F9
 		asl @				;18B8 0A
 		tax				;18B9 AA
@@ -9421,6 +9349,7 @@ L_FFFB	equ $FFFB
 L_FFFE	equ $FFFE
 L_FFFF	equ $FFFF
 
+	icl "matosimi_macros.asx"
 ;
 ;--------------------------------
 ;
