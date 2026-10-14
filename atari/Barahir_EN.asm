@@ -4784,323 +4784,103 @@ L_5A01	equ *-1
 		dta a(L_6838)		;5A36 38 68
 		dta a(L_68B4)		;5A38 B4 68
 		dta a(L_691C)		;5A3A 1C 69
-L_5A3C	dta $04,$01,$01,$00,$00,$00,$39,$2F,$35,$07,$32,$25,$00,$21,$34,$00
-;vid	dta d"$!!   YOU'RE AT "
-		dta $34,$28,$25,$00,$25,$24,$27,$25,$00,$2F,$26,$00,$34,$28,$25,$00
-;vid	dta d"THE EDGE OF THE "
-		dta $26,$2F,$32,$25,$33,$34,$0E,$00,$FF,$03,$02,$00,$34,$28,$25,$32
-;vid	dta d"FOREST. ",$FF,d"#" THER"
-		dta $25,$07,$33,$00,$21,$00,$27,$2C,$2F,$2F,$2D,$39,$00,$23,$21,$33
-;vid	dta d"E'S A GLOOMY CAS"
-		dta $34,$2C,$25,$00,$22,$25,$28,$29,$2E,$24,$00,$00,$FF,$04,$03,$34
-;vid	dta d"TLE BEHIND  ",$FF,d"$#T"
-		dta $28,$25,$00,$34,$32,$25,$25,$33,$0E,$00,$34,$28,$25,$00,$30,$21
-;vid	dta d"HE TREES. THE PA"
-		dta $34,$28,$00,$2C,$25,$21,$24,$33,$00,$34,$2F,$37,$21,$32,$24,$FF
-;vid	dta d"TH LEADS TOWARD",$FF
-		dta $05,$04,$27,$21,$34,$25,$0E,$00,$FF
-;vid	dta d"%$GATE. ",$FF
-L_5AB5	dta $04,$02,$01,$00,$00,$00,$39,$2F,$35,$00,$33,$34,$21,$2E,$24,$00
-;vid	dta d"$"!   YOU STAND "
-		dta $21,$34,$00,$34,$28,$25,$00,$2D,$21,$33,$33,$29,$36,$25,$0C,$00
-;vid	dta d"AT THE MASSIVE, "
-		dta $34,$21,$2C,$2C,$00,$FF,$02,$02,$00,$37,$21,$2C,$2C,$33,$00,$2F
-;vid	dta d"TALL ",$FF,d""" WALLS O"
-		dta $26,$00,$34,$28,$25,$00,$26,$2F,$32,$34,$32,$25,$33,$33,$0E,$00
-;vid	dta d"F THE FORTRESS. "
-		dta $34,$28,$25,$32,$25,$07,$33,$00,$21,$00,$FF,$01,$03,$00,$22,$29
-;vid	dta d"THERE'S A ",$FF,d"!# BI"
-		dta $27,$00,$22,$2F,$35,$2C,$24,$25,$32,$00,$29,$2E,$00,$26,$32,$2F
-;vid	dta d"G BOULDER IN FRO"
-		dta $2E,$34,$00,$2F,$26,$00,$39,$2F,$35,$0E,$00,$22,$25,$28,$29,$2E
-;vid	dta d"NT OF YOU. BEHIN"
-		dta $24,$FF,$01,$04,$00,$39,$2F,$35,$32,$00,$22,$21,$23,$2B,$0C,$00
-;vid	dta d"D",$FF,d"!$ YOUR BACK, "
-		dta $34,$28,$25,$32,$25,$07,$33,$00,$21,$00,$31,$35,$29,$25,$34,$00
-;vid	dta d"THERE'S A QUIET "
-		dta $26,$2F,$32,$25,$33,$34,$0E,$00,$00,$00,$FF
-;vid	dta d"FOREST.   ",$FF
-L_5B50	dta $05,$02,$01,$33,$34,$2F,$29,$33,$3A,$00,$37,$00,$23,$29,$25,$2D
-;vid	dta d"%"!STOISZ W CIEM"
-		dta $2E,$39,$2D,$00,$30,$32,$3A,$25,$2A,$0B,$23,$29,$35,$0C,$00,$1C
-;vid	dta d"NYM PRZEJ+CIU, <"
-		dta $20,$23,$3A
-;vid	dta d"@CZ"
-L_5B73	jsr L_3923			;5B73 20 23 39
-		and L_03FF			;5B76 2D FF 03
-		dta $02,$37,$25,$2A,$0B,$23,$29,$25,$00,$3A,$00,$24,$3A,$29,$25,$24
-;vid	dta d""WEJ+CIE Z DZIED"
-		dta $3A,$29,$1B,$23,$25,$2D,$0E,$00,$2E,$21,$24,$00,$34,$37,$2F,$2A
-;vid	dta d"ZI;CEM. NAD TWOJ"
-		dta $20,$FF,$01,$03,$27,$1C,$2F,$37,$20,$00,$37,$29,$33,$29,$00,$2B
-;vid	dta d"@",$FF,d"!#G<OW@ WISI K"
-		dta $21,$2D,$29,$25,$2E,$2E,$25,$00,$33,$2B,$2C,$25,$30,$29,$25,$2E
-;vid	dta d"AMIENNE SKLEPIEN"
-		dta $29,$25,$0E,$00,$2D,$29,$2D,$2F,$FF,$01,$04,$30,$0F,$1C,$2D,$32
-;vid	dta d"IE. MIMO",$FF,d"!$P/<MR"
-		dta $2F,$2B,$35,$00,$30,$2F,$00,$2F,$22,$35,$00,$33,$34,$32,$2F,$2E
-;vid	dta d"OKU PO OBU STRON"
-		dta $21,$23,$28,$00,$37,$39,$32,$21,$0A,$2E,$29,$25,$00,$37,$29,$0D
-;vid	dta d"ACH WYRA*NIE WI-"
-		dta $FF,$02,$05,$24,$21,$1E,$00,$24,$32,$3A,$37,$29,$0E,$00,$FF
-;vid	dta $FF,d""%DA> DRZWI. ",$FF
-L_5BF8	dta $05,$01,$01,$39,$2F,$35,$00,$21,$32,$25,$00,$29,$2E,$00,$34,$28
-;vid	dta d"%!!YOU ARE IN TH"
-		dta $25,$00,$25,$2D,$30,$34,$39,$00,$23,$2F,$35,$32,$34,$39,$21,$32
-;vid	dta d"E EMPTY COURTYAR"
-		dta $24,$00,$2F,$26,$00,$34,$28,$29,$33,$FF,$01,$02,$00,$00,$2D,$39
-;vid	dta d"D OF THIS",$FF,d"!"  MY"
-		dta $33,$34,$25,$32,$29,$2F,$35,$33,$00,$23,$21,$33,$34,$2C,$25,$0E
-;vid	dta d"STERIOUS CASTLE."
-		dta $00,$39,$2F,$35,$00,$33,$25,$25,$00,$21,$2E,$2F,$34,$28,$25,$32
-;vid	dta d" YOU SEE ANOTHER"
-		dta $00,$00,$FF,$02,$03,$00,$27,$29,$21,$2E,$34,$00,$27,$21,$34,$25
-;vid	dta d"  ",$FF,d""# GIANT GATE"
-		dta $0C,$00,$34,$28,$29,$33,$00,$34,$29,$2D,$25,$00,$2C,$25,$21,$24
-;vid	dta d", THIS TIME LEAD"
-		dta $29,$2E,$27,$00,$29,$2E,$34,$2F,$00,$00,$FF,$01,$04,$00,$00,$34
-;vid	dta d"ING INTO  ",$FF,d"!$  T"
-		dta $28,$25,$00,$26,$2F,$32,$34,$32,$25,$33,$33,$0E,$00,$2F,$2E,$00
-;vid	dta d"HE FORTRESS. ON "
-		dta $2F,$2E,$25,$00,$33,$29,$24,$25,$00,$39,$2F,$35,$00,$23,$21,$2E
-;vid	dta d"ONE SIDE YOU CAN"
-		dta $00,$00,$FF,$03,$05,$00,$00,$00,$00,$33,$25,$25,$00,$21,$2E,$00
-;vid	dta d"  ",$FF,d"#%    SEE AN "
-		dta $25,$2E,$34,$32,$21,$2E,$23,$25,$00,$34,$2F,$00,$21,$00,$32,$2F
-;vid	dta d"ENTRANCE TO A RO"
-		dta $2F,$2D,$0E,$00,$00,$00,$00,$FF
-;vid	dta d"OM.    ",$FF
-L_5CC0	dta $04,$01,$01,$39,$2F,$35,$00,$37,$21,$2C,$2B,$25,$24,$00,$29,$2E
-;vid	dta d"$!!YOU WALKED IN"
-		dta $34,$2F,$00,$34,$28,$25,$00,$27,$35,$21,$32,$24,$33,$07,$00,$32
-;vid	dta d"TO THE GUARDS' R"
-		dta $2F,$2F,$2D,$0E,$00,$34,$28,$25,$FF,$01,$02,$00,$00,$24,$2F,$2F
-;vid	dta d"OOM. THE",$FF,d"!"  DOO"
-		dta $32,$00,$39,$2F,$35,$00,$23,$21,$2D,$25,$00,$34,$28,$32,$2F,$35
-;vid	dta d"R YOU CAME THROU"
-		dta $27,$28,$00,$29,$33,$00,$34,$28,$25,$00,$2F,$2E,$2C,$39,$FF,$01
-;vid	dta d"GH IS THE ONLY",$FF,d"!"
-		dta $03,$00,$25,$38,$29,$34,$0E,$00,$21,$00,$34,$21,$22,$2C,$25,$00
-;vid	dta d"# EXIT. A TABLE "
-		dta $33,$34,$21,$2E,$24,$33,$00,$29,$2E,$00,$34,$28,$25,$00,$23,$25
-;vid	dta d"STANDS IN THE CE"
-		dta $2E,$34,$25,$32,$0E,$00,$00,$FF,$02,$04,$00,$21,$00,$2C,$25,$36
-;vid	dta d"NTER.  ",$FF,d""$ A LEV"
-		dta $25,$32,$00,$29,$33,$00,$22,$35,$29,$2C,$34,$00,$29,$2E,$34,$2F
-;vid	dta d"ER IS BUILT INTO"
-		dta $00,$34,$28,$25,$00,$37,$21,$2C,$2C,$0E,$00,$00,$FF
-;vid	dta d" THE WALL.  ",$FF
-L_5D5D	dta $04,$01,$01,$27,$1C,$21,$3A,$00,$2D,$2F,$3B,$25,$00,$33,$34,$21
-;vid	dta d"$!!G<AZ MO[E STA"
-		dta $2E,$2F,$37,$29,$1E,$00,$24,$2F,$33,$2B,$2F,$2E,$21,$1C,$20,$00
-;vid	dta d"NOWI> DOSKONA<@ "
-		dta $2B,$32,$39,$2A,$0F,$37,$2B,$1D,$0E,$FF,$02,$02,$37,$29,$24,$21
-;vid	dta d"KRYJ/WK=.",$FF,d"""WIDA"
-		dta $1E,$00,$33,$34,$20,$24,$00,$24,$2F,$2B,$1C,$21,$24,$2E,$29,$25
-;vid	dta d"> ST@D DOK<ADNIE"
-		dta $00,$23,$21,$1C,$20,$00,$22,$32,$21,$2D,$1D,$0E,$00,$3A,$21,$FF
-;vid	dta d" CA<@ BRAM=. ZA",$FF
-		dta $02,$03,$2D,$35,$32,$21,$2D,$29,$00,$37,$21,$32,$2F,$37,$2E,$29
-;vid	dta d""#MURAMI WAROWNI"
-		dta $00,$32,$2F,$3A,$23,$29,$20,$27,$21,$00,$33,$29,$1D,$00,$37,$33
-;vid	dta d" ROZCI@GA SI= WS"
-		dta $30,$21,$2E,$29,$21,$1C,$39,$FF,$05,$04,$2B,$32,$21,$2A,$2F,$22
-;vid	dta d"PANIA<Y",$FF,d"%$KRAJOB"
-		dta $32,$21,$3A,$0E,$FF
-;vid	dta d"RAZ.",$FF
-L_5DE2	dta $04,$02,$01,$39,$2F,$35,$07,$32,$25,$00,$33,$34,$21,$2E,$24,$29
-;vid	dta d"$"!YOU'RE STANDI"
-		dta $2E,$27,$00,$29,$2E,$00,$21,$00,$23,$2F,$2F,$2C,$00,$21,$2E,$24
-;vid	dta d"NG IN A COOL AND"
-		dta $00,$24,$21,$2D,$30,$00,$00,$FF,$01,$02,$32,$2F,$2F,$2D,$00,$0D
-;vid	dta d" DAMP  ",$FF,d"!"ROOM -"
-		dta $00,$29,$00,$37,$2F,$2E,$24,$25,$32,$00,$29,$26,$00,$34,$28,$21
-;vid	dta d" I WONDER IF THA"
-		dta $34,$07,$33,$00,$28,$2F,$37,$00,$34,$28,$25,$00,$32,$25,$33,$34
-;vid	dta d"T'S HOW THE REST"
-		dta $FF,$03,$03,$2F,$26,$00,$34,$28,$25,$00,$33,$34,$32,$35,$23,$34
-;vid	dta $FF,d"##OF THE STRUCT"
-		dta $35,$32,$25,$00,$2C,$2F,$2F,$2B,$33,$00,$34,$28,$25,$00,$33,$21
-;vid	dta d"URE LOOKS THE SA"
-		dta $2D,$25,$0E,$FF,$02,$04,$00,$00,$21,$00,$34,$2F,$32,$23,$28,$00
-;vid	dta d"ME.",$FF,d""$  A TORCH "
-		dta $29,$33,$00,$2D,$2F,$35,$2E,$34,$25,$24,$00,$34,$2F,$00,$34,$28
-;vid	dta d"IS MOUNTED TO TH"
-		dta $25,$00,$37,$21,$2C,$2C,$0E,$00,$00,$FF
-;vid	dta d"E WALL.  ",$FF
-L_5E7C	dta $04,$01,$01,$00,$00,$00,$34,$28,$29,$33,$00,$32,$2F,$2F,$2D,$00
-;vid	dta d"$!!   THIS ROOM "
-		dta $29,$33,$00,$2E,$2F,$34,$00,$36,$25,$32,$39,$00,$2C,$21,$32,$27
-;vid	dta d"IS NOT VERY LARG"
-		dta $25,$0C,$00,$22,$35,$34,$00,$00,$00,$FF,$02,$02,$30,$25,$32,$28
-;vid	dta d"E, BUT   ",$FF,d"""PERH"
-		dta $21,$30,$33,$00,$39,$2F,$35,$00,$37,$29,$2C,$2C,$00,$26,$29,$2E
-;vid	dta d"APS YOU WILL FIN"
-		dta $24,$00,$33,$2F,$2D,$25,$34,$28,$29,$2E,$27,$00,$28,$25,$32,$25
-;vid	dta d"D SOMETHING HERE"
-		dta $0E,$FF,$01,$03,$00,$34,$28,$25,$32,$25,$00,$29,$33,$00,$21,$00
-;vid	dta d".",$FF,d"!# THERE IS A "
-		dta $2C,$21,$32,$27,$25,$00,$22,$2F,$38,$00,$29,$2E,$00,$34,$28,$25
-;vid	dta d"LARGE BOX IN THE"
-		dta $00,$23,$2F,$32,$2E,$25,$32,$0C,$00,$FF,$05,$04,$00,$21,$2E,$24
-;vid	dta d" CORNER, ",$FF,d"%$ AND"
-		dta $00,$21,$00,$23,$35,$30,$22,$2F,$21,$32,$24,$00,$22,$39,$00,$34
-;vid	dta d" A CUPBOARD BY T"
-		dta $28,$25,$00,$37,$21,$2C,$2C,$0E,$FF
-;vid	dta d"HE WALL.",$FF
-L_5F15	dta $04,$01,$01,$39,$2F,$35,$00,$27,$2F,$34,$00,$29,$2E,$34,$2F,$00
-;vid	dta d"$!!YOU GOT INTO "
-		dta $21,$00,$33,$2D,$21,$2C,$2C,$00,$32,$2F,$2F,$2D,$0E,$00,$29,$34
-;vid	dta d"A SMALL ROOM. IT"
-		dta $00,$29,$33,$00,$26,$35,$2C,$2C,$FF,$02,$02,$2F,$26,$00,$23,$2F
-;vid	dta d" IS FULL",$FF,d"""OF CO"
-		dta $22,$37,$25,$22,$33,$0E,$00,$28,$21,$33,$00,$2E,$2F,$00,$2F,$2E
-;vid	dta d"BWEBS. HAS NO ON"
-		dta $25,$00,$22,$25,$25,$2E,$00,$28,$25,$32,$25,$1F,$00,$FF,$01,$03
-;vid	dta d"E BEEN HERE? ",$FF,d"!#"
-		dta $00,$34,$28,$25,$32,$25,$00,$29,$33,$00,$21,$2E,$2F,$34,$28,$25
-;vid	dta d" THERE IS ANOTHE"
-		dta $32,$00,$2C,$25,$36,$25,$32,$00,$2F,$2E,$00,$34,$28,$25,$00,$37
-;vid	dta d"R LEVER ON THE W"
-		dta $21,$2C,$2C,$0E,$FF,$04,$04,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"ALL.",$FF,d"$$         "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$FF
-;vid	dta d"     ",$FF
-L_5FAB	dta $04,$02,$01,$00,$39,$2F,$35,$07,$32,$25,$00,$29,$2E,$33,$29,$24
-;vid	dta d"$"! YOU'RE INSID"
-		dta $25,$00,$34,$28
-;vid	dta d"E TH"
-L_5FBF	and ZP_00			;5FBF 25 00
-		dta $23,$21,$33,$34,$2C,$25,$0E,$00,$39,$2F,$35,$00,$33,$25,$25,$00
-;vid	dta d"CASTLE. YOU SEE "
-		dta $FF,$02,$02,$00,$00,$00,$34,$28,$32,$25,$25,$00,$25,$38,$29,$34
-;vid	dta $FF,d"""   THREE EXIT"
-		dta $33,$1A,$00,$2F,$2E,$25,$00,$2C,$25,$21,$24,$33,$00,$34,$2F,$00
-;vid	dta d"S: ONE LEADS TO "
-		dta $34,$28,$25,$00,$00,$00,$00,$FF,$02,$03,$00,$22,$21,$33,$25,$2D
-;vid	dta d"THE    ",$FF,d""# BASEM"
-		dta $25,$2E,$34,$0C,$00,$2F,$34,$28,$25,$32,$00,$35,$30,$33,$34,$21
-;vid	dta d"ENT, OTHER UPSTA"
-		dta $29,$32,$33,$0C,$00,$34,$28,$29,$32,$24,$00,$00,$00,$00,$FF,$02
-;vid	dta d"IRS, THIRD    ",$FF,d"""
-		dta $04,$00,$00,$00,$34,$2F,$37,$21,$32,$24,$33,$00,$24,$2F,$2F,$32
-;vid	dta d"$   TOWARDS DOOR"
-		dta $00,$34,$2F,$00,$34,$28,$25,$00,$23,$28,$21,$2D,$22,$25,$32,$0E
-;vid	dta d" TO THE CHAMBER."
-		dta $00,$00,$00,$00,$00,$FF
-;vid	dta d"     ",$FF
-L_6047	dta $03,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$33,$34,$21,$2E,$24,$29
-;vid	dta d"#!!YOU'RE STANDI"
-		dta $2E,$27,$00,$2F,$2E,$00,$34,$28,$25,$00,$26,$2C,$2F,$2F,$32,$00
-;vid	dta d"NG ON THE FLOOR "
-		dta $29,$2E,$00,$00,$00,$FF,$01,$02,$34,$28,$25,$00,$22,$2F,$34,$34
-;vid	dta d"IN   ",$FF,d"!"THE BOTT"
-		dta $2F,$2D,$00,$2F,$26,$00,$34,$28,$25,$00,$34,$2F,$37,$25,$32,$0E
-;vid	dta d"OM OF THE TOWER."
-		dta $00,$34,$28,$25,$00,$37,$29,$2E,$24,$29,$2E,$27,$FF,$01,$03,$33
-;vid	dta d" THE WINDING",$FF,d"!#S"
-		dta $34,$21,$29,$32,$33,$00,$2C,$25,$21,$24,$00,$24,$2F,$37,$2E,$0E
-;vid	dta d"TAIRS LEAD DOWN."
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$FF
-;vid	dta d"     ",$FF
-L_60BD	dta $03,$01,$01,$39,$2F,$35,$00,$33,$25,$25,$00,$21,$00,$33,$2D,$21
-;vid	dta d"#!!YOU SEE A SMA"
-		dta $2C,$2C,$00,$21,$2E,$24,$00,$24,$21,$32,$2B,$00,$32,$2F,$2F,$2D
-;vid	dta d"LL AND DARK ROOM"
-		dta $00,$29,$2E,$00,$34,$28,$25,$FF,$01,$02,$35,$30,$30,$25,$32,$00
-;vid	dta d" IN THE",$FF,d"!"UPPER "
-		dta $30,$21,$32,$34,$00,$2F,$26,$00,$34,$28,$25,$00,$34,$2F,$37,$25
-;vid	dta d"PART OF THE TOWE"
-		dta $32,$0E,$00,$34,$28,$25,$00,$00,$00,$00,$00,$00,$00,$00,$FF,$01
-;vid	dta d"R. THE        ",$FF,d"!"
-		dta $03,$2F,$2E,$2C,$39,$00,$37,$21,$39,$00,$2F,$35,$34,$00,$29,$33
-;vid	dta d"#ONLY WAY OUT IS"
-		dta $00,$34,$28,$32,$2F,$35,$27,$28,$00,$34,$28,$FF
-;vid	dta d" THROUGH TH",$FF
-L_6129	dta $04,$01,$01,$37,$33,$3A,$25,$24,$1C,$25,$0B,$00,$24,$2F,$00,$37
-;vid	dta d"$!!WSZED<E+ DO W"
-		dta $29,$2C,$27,$2F,$34,$2E,$25,$2A,$00,$30,$29,$37,$2E,$29,$23,$39
-;vid	dta d"ILGOTNEJ PIWNICY"
-		dta $0E,$00,$23,$3A,$35,$2A,$25,$33,$3A,$FF,$01,$02,$2A,$21,$2B,$00
-;vid	dta d". CZUJESZ",$FF,d"!"JAK "
-		dta $2C,$2F,$24,$2F,$37,$21,$34,$25,$00,$30,$2F,$37,$29,$25,$34,$32
-;vid	dta d"LODOWATE POWIETR"
-		dta $3A,$25,$00,$30,$32,$3A,$25,$2E,$29,$2B,$21,$00,$34,$37,$2F,$2A
-;vid	dta d"ZE PRZENIKA TWOJ"
-		dta $25,$FF,$01,$03,$2B,$2F,$0B,$23,$29,$0E,$00,$30,$32,$3A,$39,$00
-;vid	dta d"E",$FF,d"!#KO+CI. PRZY "
-		dta $2B,$21,$2D,$29,$25,$2E,$2E,$25,$2A,$00,$0B,$23,$29,$21,$2E,$29
-;vid	dta d"KAMIENNEJ +CIANI"
-		dta $25,$00,$33,$34,$2F,$2A,$20,$FF,$05,$04,$32,$25,$27,$21,$1C,$39
-;vid	dta d"E STOJ@",$FF,d"%$REGA<Y"
-		dta $0E,$FF
-;vid	dta d".",$FF
-L_61AB	dta $04,$01,$01,$00,$00,$00,$39,$2F,$35,$07,$32,$25,$00,$33,$34,$21
-;vid	dta d"$!!   YOU'RE STA"
-		dta $2E,$24,$29,$2E,$27,$00,$29,$2E,$00,$21,$00,$2C,$21,$32,$27,$25
-;vid	dta d"NDING IN A LARGE"
-		dta $00,$32,$2F,$2F,$2D,$0E,$FF,$01,$02,$00,$00,$00,$00,$00,$21,$27
-;vid	dta d" ROOM.",$FF,d"!"     AG"
-		dta $21,$29,$2E,$33,$34,$00,$34,$28,$25,$00,$37,$21,$2C,$2C,$00,$29
-;vid	dta d"AINST THE WALL I"
-		dta $33,$00,$21,$00,$2C,$21,$32,$27,$25,$0C,$00,$FF,$01,$03,$00,$00
-;vid	dta d"S A LARGE, ",$FF,d"!#  "
-		dta $00,$32,$29,$23,$28,$2C,$39,$00,$24,$25,$23,$2F,$32,$21,$34,$25
-;vid	dta d" RICHLY DECORATE"
-		dta $24,$00,$23,$28,$21,$29,$32,$0E,$00,$39,$2F,$35,$00,$33,$25,$25
-;vid	dta d"D CHAIR. YOU SEE"
-		dta $00,$FF,$01,$04,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$33,$34
-;vid	dta d" ",$FF,d"!$          ST"
-		dta $21,$29,$32,$33,$00,$2C,$25,$21,$24,$29,$2E,$27,$00,$35,$30,$0E
-;vid	dta d"AIRS LEADING UP."
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"          ",$FF
-L_6246	dta $04,$01,$01,$00,$00,$00,$39,$2F,$35,$07,$32,$25,$00,$33,$34,$21
-;vid	dta d"$!!   YOU'RE STA"
-		dta $2E,$24,$29,$2E,$27,$00,$21,$34,$00,$34,$28,$25,$00,$24,$2F,$2F
-;vid	dta d"NDING AT THE DOO"
-		dta $32,$00,$00,$00,$FF,$01,$02,$00,$2C,$25,$21,$24,$29,$2E,$27,$00
-;vid	dta d"R   ",$FF,d"!" LEADING "
-		dta $34,$2F,$00,$34,$28,$25,$00,$22,$25,$24,$32,$2F,$2F,$2D,$0E,$00
-;vid	dta d"TO THE BEDROOM. "
-		dta $34,$28,$25,$00,$36,$29,$25,$37,$00,$00,$FF,$01,$03,$29,$33,$00
-;vid	dta d"THE VIEW  ",$FF,d"!#IS "
-		dta $25,$2E,$28,$21,$2E,$23,$25,$24,$00,$22,$39,$00,$34,$28,$25,$00
-;vid	dta d"ENHANCED BY THE "
-		dta $33,$34,$21,$29,$32,$23,$21,$33,$25,$00,$37,$28,$29,$23,$28,$00
-;vid	dta d"STAIRCASE WHICH "
-		dta $FF,$07,$04,$00,$00,$00,$00,$2C,$25,$21,$24,$33,$00,$24,$2F,$37
-;vid	dta $FF,d"'$    LEADS DOW"
-		dta $2E,$37,$21,$32,$24,$33,$0E,$00,$00,$FF
-;vid	dta d"NWARDS.  ",$FF
-L_62D0	dta $05,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$29,$2E,$00,$34,$28,$25
-;vid	dta d"%!!YOU'RE IN THE"
-		dta $00,$22,$25,$24,$32,$2F,$2F,$2D,$0C,$00,$37,$29,$34,$28,$00,$34
-;vid	dta d" BEDROOM, WITH T"
-		dta $28,$25,$00,$2C,$21,$32,$27,$25,$00,$FF,$01,$02,$23,$21,$2E,$2F
-;vid	dta d"HE LARGE ",$FF,d"!"CANO"
-		dta $30,$39,$00,$22,$25,$24,$0E,$00,$34,$28,$25,$32,$25,$00,$29,$33
-;vid	dta d"PY BED. THERE IS"
-		dta $00,$21,$00,$36,$25,$32,$39,$00,$33,$2C,$25,$25,$30,$39,$00,$00
-;vid	dta d" A VERY SLEEPY  "
-		dta $FF,$01,$03,$21,$34,$2D,$2F,$33,$30,$28,$25,$32,$25,$00,$28,$25
-;vid	dta $FF,d"!#ATMOSPHERE HE"
-		dta $32,$25,$0E,$00,$34,$28,$32,$2F,$35,$27,$28,$00,$21,$00,$28,$21
-;vid	dta d"RE. THROUGH A HA"
-		dta $3A,$25,$0C,$00,$39,$2F,$35,$00,$00,$FF,$01,$04,$33,$25,$25,$00
-;vid	dta d"ZE, YOU  ",$FF,d"!$SEE "
-		dta $21,$00,$28,$35,$27,$25,$00,$2D,$29,$32,$32,$2F,$32,$00,$23,$2F
-;vid	dta d"A HUGE MIRROR CO"
-		dta $36,$25,$32,$29,$2E,$27,$00,$2F,$2E,$25,$00,$2F,$26,$00,$34,$28
-;vid	dta d"VERING ONE OF TH"
-		dta $25,$FF,$01,$05,$37,$21,$2C,$2C,$33,$0E,$00,$00,$00,$00,$00,$00
-;vid	dta d"E",$FF,d"!%WALLS.      "
-		dta $00,$00,$00,$00,$FF
-;vid	dta d"    ",$FF
+L_5A3C	dta 3
+;	dta 0,0,d"0123456789012345678901234567890123456789"
+	dta 1,1,d"YOU'RE AT THE EDGE OF THE FOREST.",$FF
+	dta 1,2,d"THERE'S A GLOOMY CASTLE BEHIND THE",$FF
+	dta 1,3,d"TREES. THE PATH LEADS TOWARD THE GATE.",$FF
+	
+L_5AB5	dta 4
+	dta 1,1,d"YOU'RE STANDING AT THE MASSIVE, TALL",$FF
+	dta 1,2,d"WALLS OF THE FORTRESS. THERE'S A BIG",$FF
+	dta 1,3,d"BOULDER IN FRONT OF YOU. BEHIND YOUR",$FF
+	dta 1,4,d"BACK, THERE'S A QUIET FOREST.",$FF
+	
+L_5B50	dta 5
+	dta 1,1,d"YOU ARE STANDING IN A DARK PASSAGEWAY",$FF
+	dta 1,2,d"CONNECTING THE ENTRANCE TO THE",$FF
+	dta 1,3,d"COURTYARD. DESPITE THE GLOOM, DOORS",$FF
+	dta 1,4,d"ARE CLEARLY VISIBLE ON BOTH SIDES. A",$FF
+	dta 1,5,d"STONE VAULT HANGS OVERHEAD.",$FF
+	
+L_5BF8	dta 5
+	dta 1,1,d"YOU ARE IN THE EMPTY COURTYARD OF THIS",$FF
+	dta 1,2,d"MYSTERIOUS CASTLE. YOU SEE ANOTHER",$FF
+	dta 1,3,d"GIANT GATE, THIS TIME LEADING INTO THE",$FF
+	dta 1,4,d"FORTRESS. ON ONE SIDE YOU CAN SEE AN",$FF
+	dta 1,5,d"ENTRANCE TO A ROOM.",$FF
+	
+L_5CC0	dta 4
+	dta 1,1,d"YOU WALKED INTO THE GUARDS' ROOM. THE",$ff
+	dta 1,2,d"DOOR YOU CAME THROUGH IS THE ONLY",$FF
+	dta 1,3,d"EXIT. A TABLE STANDS IN THE CENTER. A",$ff
+	dta 1,4,d"LEVER IS BUILT INTO THE WALL.",$FF
+
+L_5D5D	dta 5
+	dta 1,1,d"THE BOULDER MAKES OF AN EXCELLENT",$FF
+	dta 1,2,d"HIDING SPOT. FROM HERE, YOU HAVE A",$FF
+	dta 1,3,d"CLEAR VIEW OF THE ENTIRE GATEWAY.",$FF
+	dta 1,4,d"BEYOND THE FORTRESS WALLS, A",$ff
+	dta 1,5,d"MAGNIFICENT LANDSCAPE UNFOLDS.",$FF
+	
+L_5DE2	dta 4
+	dta 1,1,d"YOU'RE STANDING IN A COOL AND DAMP",$FF
+	dta 1,2,d"ROOM. I WONDER IF THAT'S HOW THE REST",$FF
+	dta 1,3,d"OF THE STRUCTURE LOOKS THE SAME. A",$ff
+	dta 1,4,d"TORCH IS MOUNTED TO THE WALL.",$FF
+	
+L_5E7C	dta 4
+	dta 1,1,d"THIS ROOM IS NOT VERY LARGE, BUT",$ff
+	dta 1,2,d"PERHAPS YOU WILL FIND SOMETHING HERE.",$ff
+	dta 1,3,d"THERE IS A LARGE CHEST IN THE CORNER,",$ff
+	dta 1,4,d"AND A CUPBOARD BY THE WALL.",$FF
+	
+L_5F15	dta 3
+	dta 1,1,d"YOU GOT INTO A SMALL ROOM. IT'S FULL",$ff
+	dta 1,2,d"OF COBWEBS. HAS NO ONE BEEN HERE?",$ff
+	dta 1,3,d"THERE'S ANOTHER LEVER ON THE WALL.",$FF
+	
+L_5FAB	dta 4
+	dta 1,1,d"YOU'RE INSIDE THE CASTLE. YOU SEE",$ff
+	dta 1,2,d"THREE EXITS: ONE LEADS TO THE",$ff
+	dta 1,3,d"BASEMENT, OTHER UPSTAIRS, THIRD TOWARD",$ff
+	dta 1,4,d"DOOR TO THE CHAMBER."
+		
+L_6047	dta 3
+	dta 1,1,d"YOU'RE STANDING ON THE FLOOR IN THE",$ff
+	dta 1,2,d"BOTTOM OF THE TOWER. THE WINDING STAIRS",$ff
+	dta 1,3,d"LEAD DOWN.",$ff
+		
+L_60BD	dta 3
+	dta 1,1,d"YOU SEE A DARK SMALL ROOM IN THE UPPER",$ff
+	dta 1,2,d"PART OF THE TOWER. THE ONLY WAY OUT IS",$ff
+	dta 1,3,d"THROUGH THE DOOR.",$FF
+
+L_6129	dta 4
+	dta 1,1,d"YOU HAVE ENTERED A DAMP CELLAR. YOU",$ff
+	dta 1,2,d"FEEL THE ICY AIR PIERCING YOUR BONES.",$ff
+	dta 1,3,d"SHELVING UNITS STAND AGAINST THE STONE",$ff
+	dta 1,4,d"WALL.",$ff
+	
+L_61AB	dta 4
+	dta 1,1,d"YOU'RE STANDING IN A LARGE ROOM.",$ff
+	dta 1,2,d"AGAINST THE WALL IS A LARGE, RICHLY",$ff
+	dta 1,3,d"DECORATED THRONE. YOU SEE STAIRS",$ff
+	dta 1,4,d"LEADING UP.",$FF
+
+L_6246	dta 3
+	dta 1,1,d"YOU'RE STANDING AT THE DOOR LEADING TO",$ff
+	dta 1,2,d"THE BEDROOM. THE VIEW IS ENHANCED BY",$ff
+	dta 1,3,d"THE STAIRCASE WHICH LEADS DOWNWARDS.",$FF
+	
+L_62D0	dta 5
+	dta 1,1,d"YOU'RE IN THE BEDROOM, WITH THE LARGE",$FF
+	dta 1,2,d"CANOPY BED. THERE IS A VERY SLEEPY",$ff
+	dta 1,3,d"ATMOSPHERE HERE. THROUGH A HAZE, YOU",$ff
+	dta 1,4,d"SEE A HUGE MIRROR COVERING ONE OF THE",$ff
+	dta 1,5,d"WALLS.",$ff
+.print "gogo:",*
+	fill_until $6385 00
 L_6385	dta $04,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$29,$2E,$00,$21,$00,$33
 ;vid	dta d"$!!YOU'RE IN A S"
 		dta $25,$23,$32,$25,$34,$00,$32,$2F,$2F,$2D,$0E,$00,$25,$36,$25,$32
@@ -7325,7 +7105,7 @@ L_946D	ldy L_9129			;946D AC 29 91
 		sta L_9491			;9487 8D 91 94
 		lda L_915B			;948A AD 5B 91
 		sta ZP_FE			;948D 85 FE
-		jsr L_5B73			;948F 20 73 5B
+		jsr $ffff			;948F 20 73 5B
 L_9490	equ *-2			;!
 L_9491	equ *-1			;!
 		sty L_9129			;9492 8C 29 91
@@ -7761,7 +7541,7 @@ L_98C2	lda L_98DC			;98C2 AD DC 98
 L_98D3	jsr L_93D7			;98D3 20 D7 93
 		bcc L_98DB			;98D6 90 03
 		jsr L_98C2			;98D8 20 C2 98
-L_98DB	jmp L_5FBF			;98DB 4C BF 5F
+L_98DB	jmp $ffff ;L_5FBF			;98DB 4C BF 5F
 L_98DC	equ *-2			;!
 L_98DD	equ *-1			;!
 L_98DE	brk				;98DE 00
