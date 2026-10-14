@@ -183,7 +183,7 @@ ZP_37	equ $37
 ZP_80	equ $80
 ZP_B5	equ $B5
 ZP_D0	equ $D0
-ZP_D1	equ $D1
+ZP_D1_previous_position	equ $D1
 ZP_D2	equ $D2
 ZP_D3	equ $D3
 ZP_D4	equ $D4
@@ -202,7 +202,7 @@ ZP_F3	equ $F3
 ZP_F4	equ $F4
 ZP_F7	equ $F7
 ZP_F8	equ $F8
-ZP_F9	equ $F9
+ZP_F9_current_room_id	equ $F9
 ZP_FA	equ $FA
 ZP_FB	equ $FB
 ZP_FC	equ $FC
@@ -611,8 +611,8 @@ L_22EF	dta $00,$01,$06,$03,$80,$B4,$A8,$A9,$B3,$80,$B0,$A1,$B4,$A8,$80,$AC
 ;vid	dta d"         NO WAY "*
 		dta $AF,$B5,$B4,$80,$81,$80,$80,$80,$80,$80,$80,$80,$80,$80,$FF
 ;vid	dta d"OUT !         "*,$FF
-L_232E_ptr_direction_lo	dta a(L_2384)		;232E 84 23
-L_232F_ptr_direction_hi	equ *-1
+L_232E_ptrlut_direction_lo	dta a(L_2384)		;232E 84 23
+L_232F_ptrlut_direction_hi	equ *-1
 		dta a(L_2396)		;2330 96 23
 		dta a(L_23A2)		;2332 A2 23
 		dta a(L_23B6)		;2334 B6 23
@@ -655,12 +655,14 @@ L_232F_ptr_direction_hi	equ *-1
 		dta a(L_27FA)		;237E FA 27
 		dta a(L_2808)		;2380 08 28
 		dta a(L_2816)		;2382 16 28
-L_2384	dta $01,d" TO THE CASTLE GATE "*,$FF
-L_2396	dta $05,d" BEHIND THE BOULDER "*,$FF
-L_23A2	dta $02,d" INTO THE CASTLE "*,$FF
-L_23B6	dta $00,d" TO THE FOREST "*,$FF
-L_23C1	dta $04,d" THROUGH THE OAK DOOR "*,$FF
-L_23D7	dta $03,d" TO THE COURTYARD "*,$FF
+L_2384	dta /*$01,*/d" TO THE CASTLE GATE "*,$FF
+L_2396	dta /*$05,*/d" BEHIND THE BOULDER "*,$FF
+L_23A2	dta /*$02,*/d" INTO THE CASTLE "*,$FF
+L_23B6	dta /*$00,*/d" TO THE FOREST "*,$FF
+L_23C1	dta /*$04,*/d" THROUGH THE OAK DOOR "*,$FF
+L_23D7	dta /*$03,*/d" TO THE COURTYARD "*,$FF
+	guard $2400
+	fill_until $2400 0
 .print "FONT at $2400: ",*
 ;$2400-$262f FONT
 	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$30,$20,$20,$30,$00,$30,$00
@@ -698,63 +700,75 @@ L_23D7	dta $03,d" TO THE COURTYARD "*,$FF
 	dta $00,$03,$0F,$3E,$3A,$0F,$03,$00,$00,$00,$00,$F0,$F0,$00,$00,$00
 	dta $00,$03,$03,$3E,$3E,$03,$03,$00,$00,$00,$C0,$F0,$B0,$C0,$00,$00
 	dta $7C,$FC,$00,$00,$00,$FC,$BC,$6A,$F4,$3D,$0E,$02,$0E,$3E,$F9,$A4
-L_23E9	dta $06,d" THROUGH THE BEECH DOOR "*,$FF
-L_2630	dta $09,d" DEEPER INTO THE CASTLE "*,$FF
-L_2640	dta $07,d" INTO THE ROOM "*,$FF
-L_2654	dta $02,d" TO THE PASSAGE "*,$FF
-L_2664	dta $08,d" UP TO THE ATTIC "*,$FF
+
+destination_table ;room_ids
+	dta 1,5,2,0,4,3
+	dta 6,9,7,2,8,6,9,$c,$d
+	;first repeated...
+	dta $a,$b,$a,$e,$d,$f,$e,$12,$11,$16,$12,$15,$16
+	dta $17,$13,$14,$1c,$13,$1b,$1c,$1e
+	dta $1a,$1d,$1b,$19,$1a,$18,$19
+	dta $ff ;crazy value for debug
+future_room_id
+	dta 0	;set right when selected
+	
+L_23E9	dta /*$06,*/d" THROUGH THE BEECH DOOR "*,$FF
+L_2630	dta /*$09,*/d" DEEPER INTO THE CASTLE "*,$FF
+L_2640	dta /*$07,*/d" INTO THE ROOM "*,$FF
+L_2654	dta /*$02,*/d" TO THE PASSAGE "*,$FF
+L_2664	dta /*$08,*/d" UP TO THE ATTIC "*,$FF
 L_26D9 ;repeated:
 L_276C
-L_2673	dta $06,d" DOWN "*,$FF
+L_2673	dta /*$06,*/d" DOWN "*,$FF
 L_26A7 ;repeated:
 L_26CE
 L_26F1
-L_267D	dta $09,d" UP "*,$FF
-L_268B	dta $0C,d" TO THE CELLAR "*,$FF
+L_267D	dta /*$09,*/d" UP "*,$FF
+L_268B	dta /*$0C,*/d" TO THE CELLAR "*,$FF
 L_26B2 ;repeated:
 L_26E3
 L_2750
 L_275E
 L_2775
 L_2808
-L_2699	dta $0D,d" TO THE CHAMBER "*,$FF
+L_2699	dta /*$0D,*/d" TO THE CHAMBER "*,$FF
 ;L_26A7	dta $0A,d" UP "*,$FF
 ;L_26B2	dta $0B,d" TO THE CHAMBER "*,$FF
-L_2709 ;repeated:
+L_26FF ;repeated:
+L_2709 
 L_27AE
 L_27FA
-L_26C0	dta $0A,d" DEEPER "*,$FF
+L_26C0	dta /*$0A,*/d" DEEPER "*,$FF
 ;L_26CE	dta $0E,d" UP "*,$FF
 ;L_26D9	dta $0D,d" DOWN "*,$FF
 ;L_26E3	dta $0F,d" TO THE CHAMBER "*,$FF
 ;L_26F1	dta $0E,d" DOWN "*,$FF
-L_26FF	dta $12,$80,$B7,$80,$A7,$9C,$A0,$A2,$80,$FF
-;vid	dta d"2",d" W G<@B "*,$FF
+;L_26FF	dta $12,d" DEEPER "*,$FF
 ;L_2709	dta $11,d" DEEPER "*,$FF
-L_2713	dta $16,d" TO THE CENTER "*,$FF
-L_2720	dta $12,d" TO THE CORRIDOR "*,$FF
-L_2730	dta $15,d" THROUGH THE DOOR "*,$FF
-L_273F	dta $16,d" TO THE LIBRARY "*,$FF			
+L_2713	dta /*$16,*/d" TO THE CENTER "*,$FF
+L_2720	dta /*$12,*/d" TO THE CORRIDOR "*,$FF
+L_2730	dta /*$15,*/d" THROUGH THE DOOR "*,$FF
+L_273F	dta /*$16,*/d" TO THE LIBRARY "*,$FF			
 ;L_2750	dta $17,d" TO THE CHAMBER "*,$FF
 ;L_275E	dta $13,d" TO THE CHAMBER "*,$FF
 ;L_276C	dta $14,d" DOWN "*,$FF
 ;L_2775	dta $1C,d" TO THE CHAMBER "*,$FF
-L_2783	dta $13,d" TO THE STAIRS "*,$FF
+L_2783	dta /*$13,*/d" TO THE STAIRS "*,$FF
 L_279F ;repeated:
-L_2790	dta $1B,d" THROUGH THE OPENING "*,$FF
+L_2790	dta /*$1B,*/d" THROUGH THE OPENING "*,$FF
 ;L_279F	dta $1C,d" THROUGH THE OPENING "*,$FF
 ;L_27AE	dta $1E,d" DEEPER "*,$FF
-L_27B8	dta $1A,d" THROUGH THE EXIT "*,$FF
-L_27C9	dta $1D,d" INSIDE "*,$FF
-L_27DD	dta $1B,d" TO THE CANAL "*,$FF
-L_27EA	dta $19,d" TO MEZZANINE "*,$FF
+L_27B8	dta /*$1A,*/d" THROUGH THE EXIT "*,$FF
+L_27C9	dta /*$1D,*/d" INSIDE "*,$FF
+L_27DD	dta /*$1B,*/d" TO THE CANAL "*,$FF
+L_27EA	dta /*$19,*/d" TO MEZZANINE "*,$FF
 ;L_27FA	dta $1A,d" DEEPER "*,$FF
 ;L_2808	dta $18,d" TO THE CHAMBER "*,$FF
-L_2816	dta $19,d" OUTSIDE "*,$FF
+L_2816	dta /*$19,*/d" OUTSIDE "*,$FF
 .print *
 	fill_until $2825 0
 L_2825	ldx #$00			;2825 A2 00
-L_2827	lda L_1B15,X		;2827 BD 15 1B
+L_2827	lda L_1B15_previous_compass_states,X		;2827 BD 15 1B
 		bne L_284D			;282A D0 21
 		inx				;282C E8
 		cpx #$06			;282D E0 06
@@ -772,7 +786,7 @@ L_2827	lda L_1B15,X		;2827 BD 15 1B
 		jsr L_3E2F			;2847 20 2F 3E
 		jmp L_425D			;284A 4C 5D 42
 L_284D	lda #$06			;284D A9 06
-		sta L_2BAD			;284F 8D AD 2B
+		sta L_2BAD_compas_selected_index			;284F 8D AD 2B
 		ldx ZP_F4			;2852 A6 F4
 		ldy L_100F			;2854 AC 0F 10
 		stx L_2B98			;2857 8E 98 2B
@@ -789,7 +803,7 @@ L_285D	jsr L_4285			;285D 20 85 42
 		sta ZP_FB			;2871 85 FB
 		jsr L_4520			;2873 20 20 45
 		jsr L_2B9A			;2876 20 9A 2B
-		lda L_2BAD			;2879 AD AD 2B
+		lda L_2BAD_compas_selected_index			;2879 AD AD 2B
 		cmp #$06			;287C C9 06
 		bne L_2886			;287E D0 06
 		jsr L_18AA_pause5			;2880 20 AA 18
@@ -803,12 +817,12 @@ L_2886	asl @				;2886 0A
 		ldx L_19D4			;2894 AE D4 19
 		ldy L_19D5			;2897 AC D5 19
 		jsr L_2B9A			;289A 20 9A 2B
-		lda ZP_F9			;289D A5 F9
+		lda ZP_F9_current_room_id			;289D A5 F9
 		asl @				;289F 0A
 		tax				;28A0 AA
-		lda L_19D6,X		;28A1 BD D6 19
+		lda L_19D6_ptrlut_room_exits_lo,X		;28A1 BD D6 19
 		sta ZP_F0			;28A4 85 F0
-		lda L_19D7,X		;28A6 BD D7 19
+		lda L_19D7_ptrlut_room_exits_hi,X		;28A6 BD D7 19
 		sta ZP_F1			;28A9 85 F1
 		ldx #$00			;28AB A2 00
 		ldy #$00			;28AD A0 00
@@ -818,16 +832,21 @@ L_28AF	lda (ZP_F0),Y		;28AF B1 F0
 		iny				;28B5 C8
 		iny				;28B6 C8
 		jmp L_28AF			;28B7 4C AF 28
-L_28BA	cpx L_2BAD			;28BA EC AD 2B
+L_28BA	cpx L_2BAD_compas_selected_index			;28BA EC AD 2B
 		beq L_28C4			;28BD F0 05
 		inx				;28BF E8
 		iny				;28C0 C8
 		jmp L_28AF			;28C1 4C AF 28
-L_28C4	asl @				;28C4 0A
+L_28C4	;{ this sets up the destination from the LUT
+	tax
+	mva destination_table,x future_room_id
+	txa
+	;}
+	asl @				;28C4 0A
 		tax				;28C5 AA
-		lda L_232E_ptr_direction_lo,X		;28C6 BD 2E 23
+		lda L_232E_ptrlut_direction_lo,X		;28C6 BD 2E 23
 		sta ZP_F0			;28C9 85 F0
-		lda L_232F_ptr_direction_hi,X		;28CB BD 2F 23
+		lda L_232F_ptrlut_direction_hi,X		;28CB BD 2F 23
 		sta ZP_F1			;28CE 85 F1
 		lda #$70			;28D0 A9 70
 		sta ZP_F2			;28D2 85 F2
@@ -840,7 +859,8 @@ L_28C4	asl @				;28C4 0A
 		lda ZP_F3			;28DF A5 F3
 		adc #$00			;28E1 69 00
 		sta ZP_F3			;28E3 85 F3
-		ldy #$01			;28E5 A0 01
+		ldy #$00	;moved destination out from the prefix
+		;ldy #$01			;28E5 A0 01
 L_28E7	lda (ZP_F0),Y		;28E7 B1 F0
 		cmp #$FF			;28E9 C9 FF
 		beq L_28F5			;28EB F0 08
@@ -863,48 +883,48 @@ L_2908	lda L_0278			;2908 AD 78 02
 		jmp L_2A48			;290F 4C 48 2A
 L_2912	cmp #$0B			;2912 C9 0B
 		bne L_2941			;2914 D0 2B
-		lda L_2BAD			;2916 AD AD 2B
+		lda L_2BAD_compas_selected_index			;2916 AD AD 2B
 		beq L_2941			;2919 F0 26
-		lda L_2BAD			;291B AD AD 2B
+		lda L_2BAD_compas_selected_index			;291B AD AD 2B
 		cmp #$01			;291E C9 01
 		bne L_292D			;2920 D0 0B
 		lda #$06			;2922 A9 06
-		sta L_2BAD			;2924 8D AD 2B
+		sta L_2BAD_compas_selected_index			;2924 8D AD 2B
 		jsr L_18AA_pause5			;2927 20 AA 18
 		jmp L_285D			;292A 4C 5D 28
 L_292D	cmp #$06			;292D C9 06
 		bne L_2941			;292F D0 10
-		lda L_1B15			;2931 AD 15 1B
+		lda L_1B15_previous_compass_states			;2931 AD 15 1B
 		beq L_2941			;2934 F0 0B
 		lda #$00			;2936 A9 00
-		sta L_2BAD			;2938 8D AD 2B
+		sta L_2BAD_compas_selected_index			;2938 8D AD 2B
 		jsr L_18AA_pause5			;293B 20 AA 18
 		jmp L_285D			;293E 4C 5D 28
 L_2941	lda L_0278			;2941 AD 78 02
 		cmp #$07			;2944 C9 07
 		bne L_2976			;2946 D0 2E
-		lda L_2BAD			;2948 AD AD 2B
+		lda L_2BAD_compas_selected_index			;2948 AD AD 2B
 		cmp #$01			;294B C9 01
 		beq L_2976			;294D F0 27
-		lda L_2BAD			;294F AD AD 2B
+		lda L_2BAD_compas_selected_index			;294F AD AD 2B
 		cmp #$06			;2952 C9 06
 		bne L_2966			;2954 D0 10
 		lda L_1B16			;2956 AD 16 1B
 		beq L_2976			;2959 F0 1B
 		lda #$01			;295B A9 01
-		sta L_2BAD			;295D 8D AD 2B
+		sta L_2BAD_compas_selected_index			;295D 8D AD 2B
 		jsr L_18AA_pause5			;2960 20 AA 18
 		jmp L_285D			;2963 4C 5D 28
-L_2966	lda L_2BAD			;2966 AD AD 2B
+L_2966	lda L_2BAD_compas_selected_index			;2966 AD AD 2B
 		bne L_2976			;2969 D0 0B
 		lda #$06			;296B A9 06
-		sta L_2BAD			;296D 8D AD 2B
+		sta L_2BAD_compas_selected_index			;296D 8D AD 2B
 		jsr L_18AA_pause5			;2970 20 AA 18
 		jmp L_285D			;2973 4C 5D 28
 L_2976	lda L_0278			;2976 AD 78 02
 		cmp #$0D			;2979 C9 0D
 		bne L_29DF			;297B D0 62
-		lda L_2BAD			;297D AD AD 2B
+		lda L_2BAD_compas_selected_index			;297D AD AD 2B
 		cmp #$05			;2980 C9 05
 		beq L_29DF			;2982 F0 5B
 		cmp #$04			;2984 C9 04
@@ -912,11 +932,11 @@ L_2976	lda L_0278			;2976 AD 78 02
 		lda L_1B17			;2988 AD 17 1B
 		beq L_2998			;298B F0 0B
 		lda #$02			;298D A9 02
-		sta L_2BAD			;298F 8D AD 2B
+		sta L_2BAD_compas_selected_index			;298F 8D AD 2B
 		jsr L_18AA_pause5			;2992 20 AA 18
 		jmp L_285D			;2995 4C 5D 28
 L_2998	lda #$06			;2998 A9 06
-		sta L_2BAD			;299A 8D AD 2B
+		sta L_2BAD_compas_selected_index			;299A 8D AD 2B
 		jsr L_18AA_pause5			;299D 20 AA 18
 		jmp L_285D			;29A0 4C 5D 28
 L_29A3	cmp #$02			;29A3 C9 02
@@ -926,13 +946,13 @@ L_29A3	cmp #$02			;29A3 C9 02
 		lda L_1B18			;29AB AD 18 1B
 		beq L_29BB			;29AE F0 0B
 		lda #$03			;29B0 A9 03
-		sta L_2BAD			;29B2 8D AD 2B
+		sta L_2BAD_compas_selected_index			;29B2 8D AD 2B
 		jsr L_18AA_pause5			;29B5 20 AA 18
 		jmp L_285D			;29B8 4C 5D 28
 L_29BB	lda L_1B1A			;29BB AD 1A 1B
 		beq L_29DF			;29BE F0 1F
 		lda #$05			;29C0 A9 05
-		sta L_2BAD			;29C2 8D AD 2B
+		sta L_2BAD_compas_selected_index			;29C2 8D AD 2B
 		jsr L_18AA_pause5			;29C5 20 AA 18
 		jmp L_285D			;29C8 4C 5D 28
 L_29CB	cmp #$03			;29CB C9 03
@@ -940,13 +960,13 @@ L_29CB	cmp #$03			;29CB C9 03
 		lda L_1B1A			;29CF AD 1A 1B
 		beq L_29DF			;29D2 F0 0B
 		lda #$05			;29D4 A9 05
-		sta L_2BAD			;29D6 8D AD 2B
+		sta L_2BAD_compas_selected_index			;29D6 8D AD 2B
 		jsr L_18AA_pause5			;29D9 20 AA 18
 		jmp L_285D			;29DC 4C 5D 28
 L_29DF	lda L_0278			;29DF AD 78 02
 		cmp #$0E			;29E2 C9 0E
 		bne L_2A48			;29E4 D0 62
-		lda L_2BAD			;29E6 AD AD 2B
+		lda L_2BAD_compas_selected_index			;29E6 AD AD 2B
 		cmp #$04			;29E9 C9 04
 		beq L_2A48			;29EB F0 5B
 		cmp #$05			;29ED C9 05
@@ -954,11 +974,11 @@ L_29DF	lda L_0278			;29DF AD 78 02
 		lda L_1B18			;29F1 AD 18 1B
 		beq L_2A01			;29F4 F0 0B
 		lda #$03			;29F6 A9 03
-		sta L_2BAD			;29F8 8D AD 2B
+		sta L_2BAD_compas_selected_index			;29F8 8D AD 2B
 		jsr L_18AA_pause5			;29FB 20 AA 18
 		jmp L_285D			;29FE 4C 5D 28
 L_2A01	lda #$06			;2A01 A9 06
-		sta L_2BAD			;2A03 8D AD 2B
+		sta L_2BAD_compas_selected_index			;2A03 8D AD 2B
 		jsr L_18AA_pause5			;2A06 20 AA 18
 		jmp L_285D			;2A09 4C 5D 28
 L_2A0C	cmp #$03			;2A0C C9 03
@@ -968,13 +988,13 @@ L_2A0C	cmp #$03			;2A0C C9 03
 		lda L_1B17			;2A14 AD 17 1B
 		beq L_2A24			;2A17 F0 0B
 		lda #$02			;2A19 A9 02
-		sta L_2BAD			;2A1B 8D AD 2B
+		sta L_2BAD_compas_selected_index			;2A1B 8D AD 2B
 		jsr L_18AA_pause5			;2A1E 20 AA 18
 		jmp L_285D			;2A21 4C 5D 28
 L_2A24	lda L_1B19			;2A24 AD 19 1B
 		beq L_2A48			;2A27 F0 1F
 		lda #$04			;2A29 A9 04
-		sta L_2BAD			;2A2B 8D AD 2B
+		sta L_2BAD_compas_selected_index			;2A2B 8D AD 2B
 		jsr L_18AA_pause5			;2A2E 20 AA 18
 		jmp L_285D			;2A31 4C 5D 28
 L_2A34	cmp #$02			;2A34 C9 02
@@ -982,12 +1002,12 @@ L_2A34	cmp #$02			;2A34 C9 02
 		lda L_1B19			;2A38 AD 19 1B
 		beq L_2A48			;2A3B F0 0B
 		lda #$04			;2A3D A9 04
-		sta L_2BAD			;2A3F 8D AD 2B
+		sta L_2BAD_compas_selected_index			;2A3F 8D AD 2B
 		jsr L_18AA_pause5			;2A42 20 AA 18
 		jmp L_285D			;2A45 4C 5D 28
 L_2A48	lda L_D010			;2A48 AD 10 D0
 		bne L_2A68			;2A4B D0 1B
-		lda L_2BAD			;2A4D AD AD 2B
+		lda L_2BAD_compas_selected_index			;2A4D AD AD 2B
 		cmp #$06			;2A50 C9 06
 		bne L_2A6B			;2A52 D0 17
 		ldx L_2B98			;2A54 AE 98 2B
@@ -1002,12 +1022,12 @@ L_2A6B	ldx L_2B98			;2A6B AE 98 2B
 		ldy L_2B99			;2A6E AC 99 2B
 		stx ZP_F4			;2A71 86 F4
 		sty L_100F			;2A73 8C 0F 10
-		lda ZP_F9			;2A76 A5 F9
+		lda ZP_F9_current_room_id			;2A76 A5 F9
 		asl @				;2A78 0A
 		tax				;2A79 AA
-		lda L_19D6,X		;2A7A BD D6 19
+		lda L_19D6_ptrlut_room_exits_lo,X		;2A7A BD D6 19
 		sta ZP_F0			;2A7D 85 F0
-		lda L_19D7,X		;2A7F BD D7 19
+		lda L_19D7_ptrlut_room_exits_hi,X		;2A7F BD D7 19
 		sta ZP_F1			;2A82 85 F1
 		ldx #$00			;2A84 A2 00
 		ldy #$00			;2A86 A0 00
@@ -1017,35 +1037,44 @@ L_2A88	lda (ZP_F0),Y		;2A88 B1 F0
 		iny				;2A8E C8
 		iny				;2A8F C8
 		jmp L_2A88			;2A90 4C 88 2A
-L_2A93	cpx L_2BAD			;2A93 EC AD 2B
+L_2A93	cpx L_2BAD_compas_selected_index			;2A93 EC AD 2B
 		beq L_2A9D			;2A96 F0 05
 		inx				;2A98 E8
 		iny				;2A99 C8
 		jmp L_2A88			;2A9A 4C 88 2A
-L_2A9D	asl @				;2A9D 0A
+L_2A9D	/*asl @				;2A9D 0A
 		tax				;2A9E AA
-		lda L_232E_ptr_direction_lo,X		;2A9F BD 2E 23
+		lda L_232E_ptrlut_direction_lo,X		;2A9F BD 2E 23
 		sta ZP_F0			;2AA2 85 F0
-		lda L_232F_ptr_direction_hi,X		;2AA4 BD 2F 23
+		lda L_232F_ptrlut_direction_hi,X		;2AA4 BD 2F 23
 		sta ZP_F1			;2AA7 85 F1
 		ldy #$00			;2AA9 A0 00
-		lda (ZP_F0),Y		;2AAB B1 F0
-		cmp ZP_D1			;2AAD C5 D1
+		lda (ZP_F0),Y		;2AAB B1 F0 
+	*/
+	;{
+		lda future_room_id
+	;}
+		cmp ZP_D1_previous_position			;2AAD C5 D1
 		beq L_2ACE			;2AAF F0 1D
-		lda ZP_F9			;2AB1 A5 F9
+		lda ZP_F9_current_room_id			;2AB1 A5 F9
 		cmp #$18			;2AB3 C9 18
 		beq L_2ACE			;2AB5 F0 17
 		ldx #$00			;2AB7 A2 00
 L_2AB9	lda L_0C10,X		;2AB9 BD 10 0C
 		bmi L_2ACE			;2ABC 30 10
-		cmp ZP_F9			;2ABE C5 F9
+		cmp ZP_F9_current_room_id			;2ABE C5 F9
 		beq L_2AC6			;2AC0 F0 04
 		inx				;2AC2 E8
 		jmp L_2AB9			;2AC3 4C B9 2A
 L_2AC6	lda L_0C18,X		;2AC6 BD 18 0C
 		bne L_2ACE			;2AC9 D0 03
 		jmp L_2B5B			;2ACB 4C 5B 2B
-L_2ACE	lda (ZP_F0),Y		;2ACE B1 F0
+L_2ACE	;{
+	lda future_room_id
+	;}
+	;lda (ZP_F0),Y		;2ACE B1 F0
+		guard $2AD0
+		fill_until $2ad0 {nop}
 		pha				;2AD0 48
 		tya				;2AD1 98
 		pha				;2AD2 48
@@ -1061,12 +1090,12 @@ L_2AE5	pla				;2AE5 68
 		tax				;2AE6 AA
 		pla				;2AE7 68
 		tay				;2AE8 A8
-		lda ZP_F9			;2AE9 A5 F9
-		sta ZP_D1			;2AEB 85 D1
+		lda ZP_F9_current_room_id			;2AE9 A5 F9
+		sta ZP_D1_previous_position			;2AEB 85 D1
 		sta L_4438			;2AED 8D 38 44
 		pla				;2AF0 68
-		sta ZP_F9			;2AF1 85 F9
-		lda ZP_F9			;2AF3 A5 F9
+		sta ZP_F9_current_room_id			;2AF1 85 F9
+		lda ZP_F9_current_room_id			;2AF3 A5 F9
 		cmp #$14			;2AF5 C9 14
 		bne L_2B1B			;2AF7 D0 22
 		jsr L_18AA_pause5			;2AF9 20 AA 18
@@ -1083,7 +1112,7 @@ L_2AE5	pla				;2AE5 68
 		jsr L_4520			;2B12 20 20 45
 		jsr L_3E2F			;2B15 20 2F 3E
 		jmp L_3B5A			;2B18 4C 5A 3B
-L_2B1B	lda ZP_F9			;2B1B A5 F9
+L_2B1B	lda ZP_F9_current_room_id			;2B1B A5 F9
 		cmp #$1E			;2B1D C9 1E
 		bne L_2B43			;2B1F D0 22
 		jsr L_18AA_pause5			;2B21 20 AA 18
@@ -1104,7 +1133,7 @@ L_2B43	ldy #$00			;2B43 A0 00
 L_2B45	lda L_0C2E,Y		;2B45 B9 2E 0C
 		bmi L_2B55			;2B48 30 0B
 		tax				;2B4A AA
-		lda ZP_F9			;2B4B A5 F9
+		lda ZP_F9_current_room_id			;2B4B A5 F9
 		sta L_3F58,X		;2B4D 9D 58 3F
 		iny				;2B50 C8
 		cpy #$06			;2B51 C0 06
@@ -1131,7 +1160,7 @@ L_2B7A	ora (ZP_07,X)		;2B7A 01 07
 ;vid	dta d"E PRZEPU+CI",$FF
 L_2B98	dta $00			;2B98 00    
 L_2B99	dta $00			;2B99 00    
-L_2B9A	lda L_2BAD			;2B9A AD AD 2B
+L_2B9A	lda L_2BAD_compas_selected_index			;2B9A AD AD 2B
 		asl @				;2B9D 0A
 		tax				;2B9E AA
 		lda L_2BAE,X		;2B9F BD AE 2B
@@ -1139,7 +1168,7 @@ L_2B9A	lda L_2BAD			;2B9A AD AD 2B
 		lda L_2BAF,X		;2BA4 BD AF 2B
 		sta L_100F			;2BA7 8D 0F 10
 		jmp L_0F74			;2BAA 4C 74 0F
-L_2BAD	brk				;2BAD 00
+L_2BAD_compas_selected_index	dta $00	;0..5=compas selection:W,E,N,S,U,D;6=nothing				;2BAD 00
 L_2BAE	dta $B4			;2BAE B4 4 T
 L_2BAF	dta $3C,$C8,$3C,$BE,$28,$BE,$4F,$BE,$19,$BE,$60,$BE,$3A,$04,$05,$02
 ;vid	dta d"\",$C8,d"\",d"^"*,d"H",d"^"*,$4F,d"^"*,d"9",d"^"*,d"`",d"^"*,d"Z$%""
@@ -1273,7 +1302,7 @@ L_2DE8	stx ZP_FA			;2DE8 86 FA
 		ldx #$00			;2DEA A2 00
 		stx ZP_FC			;2DEC 86 FC
 		ldx #$00			;2DEE A2 00
-		lda ZP_F9			;2DF0 A5 F9
+		lda ZP_F9_current_room_id			;2DF0 A5 F9
 		sta ZP_FB			;2DF2 85 FB
 L_2DF4	lda L_3F58,X		;2DF4 BD 58 3F
 		bmi L_2E1E			;2DF7 30 25
@@ -1352,7 +1381,7 @@ L_2E8E	lda ZP_FE			;2E8E A5 FE
 		lda ZP_FE			;2E99 A5 FE
 		cmp #$29			;2E9B C9 29
 		bne L_2ED1			;2E9D D0 32
-		lda ZP_F9			;2E9F A5 F9
+		lda ZP_F9_current_room_id			;2E9F A5 F9
 		cmp #$0A			;2EA1 C9 0A
 		bne L_2ED1			;2EA3 D0 2C
 		jsr L_18AA_pause5			;2EA5 20 AA 18
@@ -1376,7 +1405,7 @@ L_2E8E	lda ZP_FE			;2E8E A5 FE
 L_2ED1	lda ZP_FE			;2ED1 A5 FE
 		cmp #$3E			;2ED3 C9 3E
 		bne L_2F09			;2ED5 D0 32
-		lda ZP_F9			;2ED7 A5 F9
+		lda ZP_F9_current_room_id			;2ED7 A5 F9
 		cmp #$15			;2ED9 C9 15
 		bne L_2F09			;2EDB D0 2C
 		jsr L_18AA_pause5			;2EDD 20 AA 18
@@ -1400,7 +1429,7 @@ L_2ED1	lda ZP_FE			;2ED1 A5 FE
 L_2F09	lda ZP_FE			;2F09 A5 FE
 		cmp #$3F			;2F0B C9 3F
 		bne L_2F37			;2F0D D0 28
-		lda ZP_F9			;2F0F A5 F9
+		lda ZP_F9_current_room_id			;2F0F A5 F9
 		cmp #$1C			;2F11 C9 1C
 		bne L_2F37			;2F13 D0 22
 		jsr L_18AA_pause5			;2F15 20 AA 18
@@ -1532,7 +1561,7 @@ L_310A	lda L_0C2E,X		;310A BD 2E 0C
 		jsr L_4158			;311B 20 58 41
 		bmi L_315F			;311E 30 3F
 		tax				;3120 AA
-		lda ZP_F9			;3121 A5 F9
+		lda ZP_F9_current_room_id			;3121 A5 F9
 		sta L_3F58,X		;3123 9D 58 3F
 		lda #$01			;3126 A9 01
 		sta L_3FA2,X		;3128 9D A2 3F
@@ -1638,14 +1667,14 @@ L_322E	jsr L_18AA_pause5			;322E 20 AA 18
 L_3242	lda L_0C36			;3242 AD 36 0C
 		cmp #$3C			;3245 C9 3C
 		bne L_3252			;3247 D0 09
-		lda ZP_F9			;3249 A5 F9
+		lda ZP_F9_current_room_id			;3249 A5 F9
 		cmp #$18			;324B C9 18
 		beq L_3252			;324D F0 03
 		jmp L_32FC			;324F 4C FC 32
 L_3252	lda L_0C36			;3252 AD 36 0C
 		cmp #$01			;3255 C9 01
 		bne L_3266			;3257 D0 0D
-		lda ZP_F9			;3259 A5 F9
+		lda ZP_F9_current_room_id			;3259 A5 F9
 		cmp #$01			;325B C9 01
 		beq L_3266			;325D F0 07
 		cmp #$05			;325F C9 05
@@ -1700,7 +1729,7 @@ L_32C9	ldy #$01			;32C9 A0 01
 		lda (ZP_F0),Y		;32D1 B1 F0
 		tax				;32D3 AA
 		lda L_3F58,X		;32D4 BD 58 3F
-		cmp ZP_F9			;32D7 C5 F9
+		cmp ZP_F9_current_room_id			;32D7 C5 F9
 		beq L_32DE			;32D9 F0 03
 		jmp L_32FC			;32DB 4C FC 32
 L_32DE	lda L_3FA2,X		;32DE BD A2 3F
@@ -1908,7 +1937,7 @@ L_34DC	ldx #$FF			;34DC A2 FF
 		jsr L_4520			;34EF 20 20 45
 		jsr L_3E2F			;34F2 20 2F 3E
 		lda #$11			;34F5 A9 11
-		sta ZP_F9			;34F7 85 F9
+		sta ZP_F9_current_room_id			;34F7 85 F9
 		jsr L_5830			;34F9 20 30 58
 		jmp L_4267			;34FC 4C 67 42
 L_34FF	dta $03,$03,$03,$2E,$21,$27,$2C,$25,$00,$33,$34,$21,$1C,$2F,$00,$33
@@ -2056,16 +2085,16 @@ L_37E8	ldx #$1E			;37E8 A2 1E
 		ldx #$00			;37F7 A2 00
 		ldy #$02			;37F9 A0 02
 		jsr L_4520			;37FB 20 20 45
-		lda ZP_F9			;37FE A5 F9
+		lda ZP_F9_current_room_id			;37FE A5 F9
 		cmp #$0D			;3800 C9 0D
 		bne L_3811			;3802 D0 0D
 		lda #$10			;3804 A9 10
-		sta ZP_F9			;3806 85 F9
+		sta ZP_F9_current_room_id			;3806 85 F9
 		jsr L_3E2F			;3808 20 2F 3E
 		jsr L_5830			;380B 20 30 58
 		jmp L_4267			;380E 4C 67 42
 L_3811	lda #$0D			;3811 A9 0D
-		sta ZP_F9			;3813 85 F9
+		sta ZP_F9_current_room_id			;3813 85 F9
 		jsr L_3E2F			;3815 20 2F 3E
 		jsr L_5830			;3818 20 30 58
 		jmp L_4267			;381B 4C 67 42
@@ -2328,7 +2357,7 @@ L_3B73	ldx #$5C			;3B73 A2 5C
 		adc #$00			;3BA9 69 00
 		sta ZP_F1			;3BAB 85 F1
 		lda #$00			;3BAD A9 00
-		sta L_2BAD			;3BAF 8D AD 2B
+		sta L_2BAD_compas_selected_index			;3BAF 8D AD 2B
 L_3BB2	ldy #$00			;3BB2 A0 00
 		lda #$42			;3BB4 A9 42
 		sta (ZP_F0),Y		;3BB6 91 F0
@@ -2346,18 +2375,18 @@ L_3BC8	lda L_0278			;3BC8 AD 78 02
 		bne L_3BEC			;3BCD D0 1D
 		lda L_D010			;3BCF AD 10 D0
 		bne L_3BC8			;3BD2 D0 F4
-		lda L_2BAD			;3BD4 AD AD 2B
+		lda L_2BAD_compas_selected_index			;3BD4 AD AD 2B
 		bne L_3BE9			;3BD7 D0 10
 		jsr L_18AA_pause5			;3BD9 20 AA 18
 		jsr L_18AA_pause5			;3BDC 20 AA 18
 		lda #$00			;3BDF A9 00
-		sta ZP_F9			;3BE1 85 F9
+		sta ZP_F9_current_room_id			;3BE1 85 F9
 		jsr L_5830			;3BE3 20 30 58
 		jmp L_0DEE			;3BE6 4C EE 0D
 L_3BE9	jmp L_3C50			;3BE9 4C 50 3C
 L_3BEC	cmp #$0E			;3BEC C9 0E
 		bne L_3C1E			;3BEE D0 2E
-		lda L_2BAD			;3BF0 AD AD 2B
+		lda L_2BAD_compas_selected_index			;3BF0 AD AD 2B
 		beq L_3BC8			;3BF3 F0 D3
 		lda #$00			;3BF5 A9 00
 		ldy #$00			;3BF7 A0 00
@@ -2377,13 +2406,13 @@ L_3BEC	cmp #$0E			;3BEC C9 0E
 		lda ZP_F1			;3C12 A5 F1
 		sbc #$00			;3C14 E9 00
 		sta ZP_F1			;3C16 85 F1
-		dec L_2BAD			;3C18 CE AD 2B
+		dec L_2BAD_compas_selected_index			;3C18 CE AD 2B
 		jmp L_3BB2			;3C1B 4C B2 3B
 L_3C1E	cmp #$0D			;3C1E C9 0D
 		bne L_3BC8			;3C20 D0 A6
-		lda L_2BAD			;3C22 AD AD 2B
+		lda L_2BAD_compas_selected_index			;3C22 AD AD 2B
 		bne L_3BC8			;3C25 D0 A1
-		inc L_2BAD			;3C27 EE AD 2B
+		inc L_2BAD_compas_selected_index			;3C27 EE AD 2B
 		lda #$00			;3C2A A9 00
 		ldy #$00			;3C2C A0 00
 		sta (ZP_F0),Y		;3C2E 91 F0
@@ -2543,9 +2572,10 @@ L_3EA9	lda L_D010			;3EA9 AD 10 D0
 		jsr L_18AA_pause5			;3EB4 20 AA 18
 		ldx #$01			;3EB7 A2 01
 		rts				;3EB9 60
-L_3EBA	ora (ZP_22,X)		;3EBA 01 22
-		dta $07,$AF,$8E,$AB,$8E,$FF
-;vid	dta d"'",d"O.K."*,$FF
+		
+L_3EBA	dta $01,$22,$07
+	dta d"O.K."*,$FF
+		
 L_3EC2	dta $00,$05,$01,$01,$01,$05,$02,$02,$02,$02,$04,$04,$04,$04,$04,$04
 ;vid	dta d" %!!!%""""$$$$$$"
 		dta $04,$06,$06,$03,$08,$08,$08,$07,$07,$07,$07,$07,$07,$08,$03,$03
@@ -2566,26 +2596,18 @@ L_3F0D	dta $01,$00,$FE,$FE,$00,$FE,$FE,$00,$FE,$00,$00,$00,$FE,$FE,$00,$00
 ;vid	dta d" ",d"~~"*,d"!",d"~~"*,d"    ",d"~"*,d" !!!!"
 		dta $01,$01,$FE,$00,$00,$FE,$00,$00,$00,$00,$FF
 ;vid	dta d"!!",d"~"*,d"  ",d"~"*,d"    ",$FF
+
 L_3F58	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"          "
+	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00
 L_3FA2	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"          "
+	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+
 L_3FEC	dta $00			;3FEC 00    
 L_3FED	dta $00			;3FED 00    
 L_3FEE	dta $00			;3FEE 00    
@@ -2924,7 +2946,7 @@ L_4285	jsr L_1FCA			;4285 20 CA 1F
 		ldx #$00			;429D A2 00
 L_429F	lda L_0C10,X		;429F BD 10 0C
 		bmi L_42BA			;42A2 30 16
-		cmp ZP_F9			;42A4 C5 F9
+		cmp ZP_F9_current_room_id			;42A4 C5 F9
 		beq L_42AC			;42A6 F0 04
 		inx				;42A8 E8
 		jmp L_429F			;42A9 4C 9F 42
@@ -2934,7 +2956,7 @@ L_42AC	lda L_0C18,X		;42AC BD 18 0C
 		stx ZP_EF			;42B3 86 EF
 		jmp L_42BA			;42B5 4C BA 42
 L_42B8	stx ZP_EE			;42B8 86 EE
-L_42BA	lda ZP_F9			;42BA A5 F9
+L_42BA	lda ZP_F9_current_room_id			;42BA A5 F9
 		cmp #$05			;42BC C9 05
 		bne L_42D0			;42BE D0 10
 		lda L_0C10			;42C0 AD 10 0C
@@ -2944,7 +2966,7 @@ L_42BA	lda ZP_F9			;42BA A5 F9
 		bne L_42D0			;42CA D0 04
 		lda #$00			;42CC A9 00
 		sta ZP_EF			;42CE 85 EF
-L_42D0	lda ZP_F9			;42D0 A5 F9
+L_42D0	lda ZP_F9_current_room_id			;42D0 A5 F9
 		asl @				;42D2 0A
 		tax				;42D3 AA
 		lda L_5A00,X		;42D4 BD 00 5A
@@ -2959,7 +2981,7 @@ L_42D0	lda ZP_F9			;42D0 A5 F9
 		tay				;42EA A8
 		ldx L_442E			;42EB AE 2E 44
 		jsr L_448C			;42EE 20 8C 44
-		lda ZP_F9			;42F1 A5 F9
+		lda ZP_F9_current_room_id			;42F1 A5 F9
 		cmp #$0B			;42F3 C9 0B
 		bne L_4305			;42F5 D0 0E
 		ldx #$26			;42F7 A2 26
@@ -2968,7 +2990,7 @@ L_42D0	lda ZP_F9			;42D0 A5 F9
 		ldx #$3A			;42FE A2 3A
 		ldy #$44			;4300 A0 44
 		jsr L_448C			;4302 20 8C 44
-L_4305	lda ZP_F9			;4305 A5 F9
+L_4305	lda ZP_F9_current_room_id			;4305 A5 F9
 		cmp #$16			;4307 C9 16
 		bne L_4320			;4309 D0 15
 		ldx #$37			;430B A2 37
@@ -2989,7 +3011,7 @@ L_4322	lda #$FF			;4322 A9 FF
 		ldx #$00			;432C A2 00
 		stx L_4437			;432E 8E 37 44
 		stx L_442A			;4331 8E 2A 44
-		lda ZP_F9			;4334 A5 F9
+		lda ZP_F9_current_room_id			;4334 A5 F9
 		sta L_4429			;4336 8D 29 44
 L_4339	lda L_3F58,X		;4339 BD 58 3F
 		bmi L_4369			;433C 30 2B
@@ -3032,7 +3054,7 @@ L_437E	clc				;437E 18
 		inx				;438B E8
 		cpx L_2013			;438C EC 13 20
 		bne L_437E			;438F D0 ED
-		lda ZP_F9			;4391 A5 F9
+		lda ZP_F9_current_room_id			;4391 A5 F9
 		cmp #$16			;4393 C9 16
 		bne L_439A			;4395 D0 03
 		inc L_2013			;4397 EE 13 20
@@ -3592,7 +3614,7 @@ L_4A92	dta $07,$34,$00,$22,$25,$00,$33,$29,$2C,$2C,$39,$01,$00,$00,$FF
 ;vid	dta d"'T BE SILLY!  ",$FF
 L_4AA1	jsr L_18AA_pause5			;4AA1 20 AA 18
 L_4AA4	jsr L_18AA_pause5			;4AA4 20 AA 18
-		lda ZP_F9			;4AA7 A5 F9
+		lda ZP_F9_current_room_id			;4AA7 A5 F9
 		cmp #$18			;4AA9 C9 18
 		bne L_4AC9			;4AAB D0 1C
 		ldx #$8A			;4AAD A2 8A
@@ -3720,13 +3742,13 @@ L_4B88	cmp #$0D			;4B88 C9 0D
 		adc #$00			;4BB3 69 00
 		sta ZP_F1			;4BB5 85 F1
 		jmp L_4B24			;4BB7 4C 24 4B
-L_4BBA	lda ZP_F9			;4BBA A5 F9
+L_4BBA	lda ZP_F9_current_room_id			;4BBA A5 F9
 		cmp #$01			;4BBC C9 01
 		bne L_4BC4			;4BBE D0 04
 		lda #$01			;4BC0 A9 01
 		sta ZP_D3			;4BC2 85 D3
-L_4BC4	lda ZP_D1			;4BC4 A5 D1
-		sta ZP_F9			;4BC6 85 F9
+L_4BC4	lda ZP_D1_previous_position			;4BC4 A5 D1
+		sta ZP_F9_current_room_id			;4BC6 85 F9
 		jsr L_3E2F			;4BC8 20 2F 3E
 		jsr L_5830			;4BCB 20 30 58
 		jmp L_425D			;4BCE 4C 5D 42
@@ -3836,7 +3858,7 @@ L_4C88	jsr L_18AA_pause5			;4C88 20 AA 18
 		ldx #$49			;4CCD A2 49
 		lda #$01			;4CCF A9 01
 		sta L_3FA2,X		;4CD1 9D A2 3F
-		lda ZP_F9			;4CD4 A5 F9
+		lda ZP_F9_current_room_id			;4CD4 A5 F9
 		sta L_3F58,X		;4CD6 9D 58 3F
 		jmp L_4D08			;4CD9 4C 08 4D
 L_4CDC	lda ZP_EF			;4CDC A5 EF
@@ -3980,12 +4002,12 @@ L_4EC3	jsr L_3FF4			;4EC3 20 F4 3F
 		jsr L_18AA_pause5			;4ECE 20 AA 18
 		jsr L_18AA_pause5			;4ED1 20 AA 18
 		jmp L_425D			;4ED4 4C 5D 42
-L_4ED7	lda ZP_F9			;4ED7 A5 F9
+L_4ED7	lda ZP_F9_current_room_id			;4ED7 A5 F9
 		cmp #$0A			;4ED9 C9 0A
 		bne L_4EE2			;4EDB D0 05
 		lda L_55B1			;4EDD AD B1 55
 		bne L_4EF8			;4EE0 D0 16
-L_4EE2	lda ZP_F9			;4EE2 A5 F9
+L_4EE2	lda ZP_F9_current_room_id			;4EE2 A5 F9
 		cmp #$19			;4EE4 C9 19
 		bne L_4EED			;4EE6 D0 05
 		lda L_55B2			;4EE8 AD B2 55
@@ -4427,7 +4449,7 @@ L_561F	dta $03,$03,$03,$02,$29,$07,$36,$25,$00,$26,$29,$2E,$21,$2C,$2C,$39
 ;vid	dta d" RIGHT - GO!"   "
 		dta $00,$00,$00,$00,$00,$00,$FF
 ;vid	dta d"      ",$FF
-L_56F6	lda ZP_F9			;56F6 A5 F9
+L_56F6	lda ZP_F9_current_room_id			;56F6 A5 F9
 		cmp #$05			;56F8 C9 05
 		bne L_5721			;56FA D0 25
 		lda ZP_D3			;56FC A5 D3
@@ -4496,7 +4518,7 @@ L_5830	lda L_022F			;5830 AD 2F 02
 		bne L_5840			;5839 D0 05
 		lda #$00			;583B A9 00
 		jmp L_5850			;583D 4C 50 58
-L_5840	ldx ZP_F9			;5840 A6 F9
+L_5840	ldx ZP_F9_current_room_id			;5840 A6 F9
 		lda L_5929,X		;5842 BD 29 59
 		cmp L_5996			;5845 CD 96 59
 		bne L_584D			;5848 D0 03
@@ -4561,7 +4583,7 @@ L_58A4	cmp ZP_14			;58A4 C5 14
 		jsr L_911F			;58D1 20 1F 91
 L_58D4	lda #$00			;58D4 A9 00
 		sta L_022F			;58D6 8D 2F 02
-		ldx ZP_F9			;58D9 A6 F9
+		ldx ZP_F9_current_room_id			;58D9 A6 F9
 		lda L_590A,X		;58DB BD 0A 59
 		asl @				;58DE 0A
 		tax				;58DF AA
@@ -4571,7 +4593,7 @@ L_58D4	lda #$00			;58D4 A9 00
 		sta ZP_F3			;58E8 85 F3
 		ldx #$0A			;58EA A2 0A
 		ldy #$00			;58EC A0 00
-		jsr L_1B21			;58EE 20 21 1B
+		jsr L_1B21_blit_bitmap_to_screen			;58EE 20 21 1B
 		jsr L_18B6			;58F1 20 B6 18
 		lda #$C0			;58F4 A9 C0
 		sta L_D40E			;58F6 8D 0E D4
@@ -7692,7 +7714,7 @@ L_0C38	cld				;0C38 D8
 		txs				;0C3B 9A
 		lda #$00			;0C3C A9 00
 		sta L_022F			;0C3E 8D 2F 02
-		sta ZP_F9			;0C41 85 F9
+		sta ZP_F9_current_room_id			;0C41 85 F9
 		sta L_2111			;0C43 8D 11 21
 		jsr L_0C4C			;0C46 20 4C 0C
 		jmp L_0E52			;0C49 4C 52 0E
@@ -7902,9 +7924,9 @@ L_0DEE	jsr L_0F9F			;0DEE 20 9F 0F
 		sta L_0DED			;0DF9 8D ED 0D
 		sta L_3AE3			;0DFC 8D E3 3A
 		sta L_0DDA			;0DFF 8D DA 0D
-		sta ZP_F9			;0E02 85 F9
+		sta ZP_F9_current_room_id			;0E02 85 F9
 		tax				;0E04 AA
-L_0E05	sta L_1B15,X		;0E05 9D 15 1B
+L_0E05	sta L_1B15_previous_compass_states,X		;0E05 9D 15 1B
 		inx				;0E08 E8
 		cpx #$06			;0E09 E0 06
 		bne L_0E05			;0E0B D0 F8
@@ -7938,7 +7960,7 @@ L_0E3D	lda L_0C00,X		;0E3D BD 00 0C
 L_0E4F	jmp L_425D			;0E4F 4C 5D 42
 L_0E52	jsr L_1FCA			;0E52 20 CA 1F
 		lda #$01			;0E55 A9 01
-		sta L_1B15			;0E57 8D 15 1B
+		sta L_1B15_previous_compass_states			;0E57 8D 15 1B
 		lda #$28			;0E5A A9 28
 		sta ZP_FA			;0E5C 85 FA
 		lda #$0A			;0E5E A9 0A
@@ -8278,7 +8300,7 @@ L_17C1	sta L_3E29,X		;17C1 9D 29 3E
 		bne L_17C1			;17C7 D0 F8
 		ldx #$00			;17C9 A2 00
 		stx L_1843			;17CB 8E 43 18
-		lda ZP_F9			;17CE A5 F9
+		lda ZP_F9_current_room_id			;17CE A5 F9
 		sta L_1844			;17D0 8D 44 18
 L_17D3	lda L_3F58,X		;17D3 BD 58 3F
 		bpl L_17DB			;17D6 10 03
@@ -8383,12 +8405,12 @@ L_18AE	cmp ZP_14			;18AE C5 14
 	bpl L_18AC			;18B3 10 F7
 	rts				;18B5 60
 
-L_18B6	lda ZP_F9			;18B6 A5 F9
+L_18B6	lda ZP_F9_current_room_id			;18B6 A5 F9
 		asl @				;18B8 0A
 		tax				;18B9 AA
-		lda L_19D6,X		;18BA BD D6 19
+		lda L_19D6_ptrlut_room_exits_lo,X		;18BA BD D6 19
 		sta ZP_F0			;18BD 85 F0
-		lda L_19D7,X		;18BF BD D7 19
+		lda L_19D7_ptrlut_room_exits_hi,X		;18BF BD D7 19
 		sta ZP_F1			;18C2 85 F1
 		ldy #$00			;18C4 A0 00
 		ldx #$00			;18C6 A2 00
@@ -8396,11 +8418,11 @@ L_18C8	lda (ZP_F0),Y		;18C8 B1 F0
 		cmp #$FF			;18CA C9 FF
 		bne L_18D6			;18CC D0 08
 		lda #$00			;18CE A9 00
-		sta L_1B1B,X		;18D0 9D 1B 1B
+		sta L_1B1B_current_compass_states,X		;18D0 9D 1B 1B
 		jmp L_18FF			;18D3 4C FF 18
 L_18D6	cmp #$FD			;18D6 C9 FD
 		bne L_18DD			;18D8 D0 03
-		jmp L_1904			;18DA 4C 04 19
+		jmp L_1904_refresh_room_exit_indicators			;18DA 4C 04 19
 L_18DD	cmp #$FE			;18DD C9 FE
 		bne L_18FA			;18DF D0 19
 		iny				;18E1 C8
@@ -8414,55 +8436,58 @@ L_18DD	cmp #$FE			;18DD C9 FE
 		iny				;18F6 C8
 		jmp L_18FF			;18F7 4C FF 18
 L_18FA	lda #$01			;18FA A9 01
-		sta L_1B1B,X		;18FC 9D 1B 1B
+		sta L_1B1B_current_compass_states,X		;18FC 9D 1B 1B
 L_18FF	iny				;18FF C8
 		inx				;1900 E8
 		jmp L_18C8			;1901 4C C8 18
-L_1904	ldx #$00			;1904 A2 00
-L_1906	lda L_1B15,X		;1906 BD 15 1B
-		cmp L_1B1B,X		;1909 DD 1B 1B
-		bne L_1914			;190C D0 06
-		inx				;190E E8
-		cpx #$06			;190F E0 06
-		bne L_1906			;1911 D0 F3
-		rts				;1913 60
+		
+L_1904_refresh_room_exit_indicators	
+	ldx #$00			;1904 A2 00
+L_1906	lda L_1B15_previous_compass_states,X		;1906 BD 15 1B
+	cmp L_1B1B_current_compass_states,X		;1909 DD 1B 1B
+	bne L_1914			;190C D0 06
+	inx				;190E E8
+	cpx #$06			;190F E0 06
+	bne L_1906			;1911 D0 F3
+	rts				;1913 60
 L_1914	ldx #$00			;1914 A2 00
-L_1916	lda L_1B1B,X		;1916 BD 1B 1B
-		sta L_1B15,X		;1919 9D 15 1B
-		inx				;191C E8
-		cpx #$06			;191D E0 06
-		bne L_1916			;191F D0 F5
-		lda #$FD			;1921 A9 FD
-		sta ZP_F2			;1923 85 F2
-		lda #$1B			;1925 A9 1B
-		sta ZP_F3			;1927 85 F3
-		ldx #$20			;1929 A2 20
-		ldy #$11			;192B A0 11
-		jsr L_1B21			;192D 20 21 1B
-		lda #$02			;1930 A9 02
-		sta ZP_F2			;1932 85 F2
-		lda #$1F			;1934 A9 1F
-		sta ZP_F3			;1936 85 F3
-		ldx #$20			;1938 A2 20
-		ldy #$01			;193A A0 01
-		jsr L_1B21			;193C 20 21 1B
-		lda #$66			;193F A9 66
-		sta ZP_F2			;1941 85 F2
-		lda #$1F			;1943 A9 1F
-		sta ZP_F3			;1945 85 F3
-		ldx #$20			;1947 A2 20
-		ldy #$48			;1949 A0 48
-		jsr L_1B21			;194B 20 21 1B
-		lda L_1B15			;194E AD 15 1B
-		cmp #$01			;1951 C9 01
-		bne L_1964			;1953 D0 0F
-		lda #$FF			;1955 A9 FF
-		sta ZP_F2			;1957 85 F2
-		lda #$1D			;1959 A9 1D
-		sta ZP_F3			;195B 85 F3
-		ldx #$20			;195D A2 20
-		ldy #$26			;195F A0 26
-		jsr L_1B21			;1961 20 21 1B
+L_1916	lda L_1B1B_current_compass_states,X		;1916 BD 1B 1B
+	sta L_1B15_previous_compass_states,X		;1919 9D 15 1B
+	inx				;191C E8
+	cpx #$06			;191D E0 06
+	bne L_1916			;191F D0 F5
+	
+	lda #$FD			;1921 A9 FD
+	sta ZP_F2			;1923 85 F2
+	lda #$1B			;1925 A9 1B
+	sta ZP_F3			;1927 85 F3
+	ldx #$20			;1929 A2 20
+	ldy #$11			;192B A0 11
+	jsr L_1B21_blit_bitmap_to_screen			;192D 20 21 1B
+	lda #$02			;1930 A9 02
+	sta ZP_F2			;1932 85 F2
+	lda #$1F			;1934 A9 1F
+	sta ZP_F3			;1936 85 F3
+	ldx #$20			;1938 A2 20
+	ldy #$01			;193A A0 01
+	jsr L_1B21_blit_bitmap_to_screen			;193C 20 21 1B
+	lda #$66			;193F A9 66
+	sta ZP_F2			;1941 85 F2
+	lda #$1F			;1943 A9 1F
+	sta ZP_F3			;1945 85 F3
+	ldx #$20			;1947 A2 20
+	ldy #$48			;1949 A0 48
+	jsr L_1B21_blit_bitmap_to_screen			;194B 20 21 1B
+	lda L_1B15_previous_compass_states			;194E AD 15 1B
+	cmp #$01			;1951 C9 01
+	bne L_1964			;1953 D0 0F
+	lda #$FF			;1955 A9 FF
+	sta ZP_F2			;1957 85 F2
+	lda #$1D			;1959 A9 1D
+	sta ZP_F3			;195B 85 F3
+	ldx #$20			;195D A2 20
+	ldy #$26			;195F A0 26
+	jsr L_1B21_blit_bitmap_to_screen			;1961 20 21 1B
 L_1964	lda L_1B16			;1964 AD 16 1B
 		cmp #$01			;1967 C9 01
 		bne L_197A			;1969 D0 0F
@@ -8472,7 +8497,7 @@ L_1964	lda L_1B16			;1964 AD 16 1B
 		sta ZP_F3			;1971 85 F3
 		ldx #$25			;1973 A2 25
 		ldy #$26			;1975 A0 26
-		jsr L_1B21			;1977 20 21 1B
+		jsr L_1B21_blit_bitmap_to_screen			;1977 20 21 1B
 L_197A	lda L_1B17			;197A AD 17 1B
 		cmp #$01			;197D C9 01
 		bne L_1990			;197F D0 0F
@@ -8482,7 +8507,7 @@ L_197A	lda L_1B17			;197A AD 17 1B
 		sta ZP_F3			;1987 85 F3
 		ldx #$22			;1989 A2 22
 		ldy #$11			;198B A0 11
-		jsr L_1B21			;198D 20 21 1B
+		jsr L_1B21_blit_bitmap_to_screen			;198D 20 21 1B
 L_1990	lda L_1B18			;1990 AD 18 1B
 		cmp #$01			;1993 C9 01
 		bne L_19A6			;1995 D0 0F
@@ -8492,7 +8517,7 @@ L_1990	lda L_1B18			;1990 AD 18 1B
 		sta ZP_F3			;199D 85 F3
 		ldx #$22			;199F A2 22
 		ldy #$38			;19A1 A0 38
-		jsr L_1B21			;19A3 20 21 1B
+		jsr L_1B21_blit_bitmap_to_screen			;19A3 20 21 1B
 L_19A6	lda L_1B19			;19A6 AD 19 1B
 		cmp #$01			;19A9 C9 01
 		bne L_19BC			;19AB D0 0F
@@ -8502,7 +8527,7 @@ L_19A6	lda L_1B19			;19A6 AD 19 1B
 		sta ZP_F3			;19B3 85 F3
 		ldx #$20			;19B5 A2 20
 		ldy #$01			;19B7 A0 01
-		jsr L_1B21			;19B9 20 21 1B
+		jsr L_1B21_blit_bitmap_to_screen			;19B9 20 21 1B
 L_19BC	lda L_1B1A			;19BC AD 1A 1B
 		cmp #$01			;19BF C9 01
 		bne L_19D2			;19C1 D0 0F
@@ -8512,13 +8537,13 @@ L_19BC	lda L_1B1A			;19BC AD 1A 1B
 		sta ZP_F3			;19C9 85 F3
 		ldx #$20			;19CB A2 20
 		ldy #$48			;19CD A0 48
-		jsr L_1B21			;19CF 20 21 1B
+		jsr L_1B21_blit_bitmap_to_screen			;19CF 20 21 1B
 L_19D2	rts				;19D2 60
-L_19D3	brk				;19D3 00
+L_19D3	dta $00				;19D3 00
 L_19D4	dta $00			;19D4 00    
 L_19D5	dta $00			;19D5 00    
-L_19D6		dta a(L_1A14)		;19D6 14 1A
-L_19D7	equ *-1
+L_19D6_ptrlut_room_exits_lo		dta a(L_1A14)		;19D6 14 1A
+L_19D7_ptrlut_room_exits_hi	equ *-1
 		dta a(L_1A1B)		;19D8 1B 1A
 		dta a(L_1A24)		;19DA 24 1A
 		dta a(L_1A31)		;19DC 31 1A
@@ -8549,6 +8574,13 @@ L_19D7	equ *-1
 		dta a(L_1AEA)		;1A0E EA 1A
 		dta a(L_1AF3)		;1A10 F3 1A
 		dta a(L_1AFA)		;1A12 FA 1A
+;room exit data records for each room, 6 compas directions in general with suffix:
+;$FF - no go
+;$FD - end of record suffix
+;$FE - conditional direction followed by 1 byte defining the condition index
+;(that is the reason for different record length for each room id)
+;$xx - room id that is in the compass direction
+
 L_1A14	dta $FF,$FF,$00,$FF,$FF,$FF,$FD
 ;vid	dta $FF,$FF,d" ",$FF,$FF,$FF,d"}"*
 L_1A1B	dta $01,$FF,$FE,$00,$02,$03,$FF,$FF,$FD
@@ -8612,109 +8644,113 @@ L_1AF3	dta $FF,$28,$FF,$FF,$FF,$FF,$FD
 L_1AFA	dta $FF,$FF,$FF,$FF,$FF,$FF,$FD,$00,$00
 ;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,d"}"*,d"  "
 L_1B03	dta $FF			;1B03 FF    
-L_1B04	dta $04,$FF,$07,$FF,$09,$13,$12,$FF,$1F,$FF,$2F,$FF,$46,$3F,$FF,$FF
-;vid	dta d"$",$FF,d"'",$FF,d")32",$FF,d"?",$FF,d"O",$FF,$46,d"_",$FF,$FF
-		dta $3B			;1B14 3B ; [
-L_1B15	dta $00			;1B15 00    
+L_1B04	dta $04
+	dta $FF,$07,$FF,$09,$13,$12,$FF,$1F
+	dta $FF,$2F,$FF,$46,$3F,$FF,$FF,$3B
+	
+L_1B15_previous_compass_states	
+	dta $00			;1B15 00    
 L_1B16	dta $00			;1B16 00    
 L_1B17	dta $00			;1B17 00    
 L_1B18	dta $00			;1B18 00    
 L_1B19	dta $00			;1B19 00    
 L_1B1A	dta $00			;1B1A 00    
-L_1B1B	dta $00,$00,$00,$00,$00,$00
+L_1B1B_current_compass_states	
+	dta $00,$00,$00,$00,$00,$00
 ;vid	dta d"      "
-L_1B21	txa				;1B21 8A
-		clc				;1B22 18
-		adc #$00			;1B23 69 00
-		sta ZP_F0			;1B25 85 F0
-		lda #$F0			;1B27 A9 F0
-		adc #$00			;1B29 69 00
-		sta ZP_F1			;1B2B 85 F1
-		dey				;1B2D 88
-		bmi L_1B41			;1B2E 30 11
-		iny				;1B30 C8
+L_1B21_blit_bitmap_to_screen	
+	txa				;1B21 8A
+	clc				;1B22 18
+	adc #$00			;1B23 69 00
+	sta ZP_F0			;1B25 85 F0
+	lda #$F0			;1B27 A9 F0
+	adc #$00			;1B29 69 00
+	sta ZP_F1			;1B2B 85 F1
+	dey				;1B2D 88
+	bmi L_1B41			;1B2E 30 11
+	iny				;1B30 C8
 L_1B31	clc				;1B31 18
-		lda ZP_F0			;1B32 A5 F0
-		adc #$28			;1B34 69 28
-		sta ZP_F0			;1B36 85 F0
-		lda ZP_F1			;1B38 A5 F1
-		adc #$00			;1B3A 69 00
-		sta ZP_F1			;1B3C 85 F1
-		dey				;1B3E 88
-		bne L_1B31			;1B3F D0 F0
+	lda ZP_F0			;1B32 A5 F0
+	adc #$28			;1B34 69 28
+	sta ZP_F0			;1B36 85 F0
+	lda ZP_F1			;1B38 A5 F1
+	adc #$00			;1B3A 69 00
+	sta ZP_F1			;1B3C 85 F1
+	dey				;1B3E 88
+	bne L_1B31			;1B3F D0 F0
 L_1B41	ldy #$00			;1B41 A0 00
-		lda (ZP_F2),Y		;1B43 B1 F2
-		sta L_1BFB			;1B45 8D FB 1B
-		iny				;1B48 C8
-		lda (ZP_F2),Y		;1B49 B1 F2
-		tax				;1B4B AA
-		ldy #$00			;1B4C A0 00
-		clc				;1B4E 18
-		lda ZP_F2			;1B4F A5 F2
-		adc #$02			;1B51 69 02
-		sta ZP_F2			;1B53 85 F2
-		lda ZP_F3			;1B55 A5 F3
-		adc #$00			;1B57 69 00
-		sta ZP_F3			;1B59 85 F3
+	lda (ZP_F2),Y		;1B43 B1 F2
+	sta L_1BFB			;1B45 8D FB 1B
+	iny				;1B48 C8
+	lda (ZP_F2),Y		;1B49 B1 F2
+	tax				;1B4B AA
+	ldy #$00			;1B4C A0 00
+	clc				;1B4E 18
+	lda ZP_F2			;1B4F A5 F2
+	adc #$02			;1B51 69 02
+	sta ZP_F2			;1B53 85 F2
+	lda ZP_F3			;1B55 A5 F3
+	adc #$00			;1B57 69 00
+	sta ZP_F3			;1B59 85 F3
 L_1B5B	lda (ZP_F2),Y		;1B5B B1 F2
-		sta (ZP_F0),Y		;1B5D 91 F0
-		iny				;1B5F C8
-		cpy L_1BFB			;1B60 CC FB 1B
-		bne L_1B5B			;1B63 D0 F6
-		ldy #$00			;1B65 A0 00
-		dex				;1B67 CA
-		beq L_1B88			;1B68 F0 1E
-		clc				;1B6A 18
-		lda ZP_F0			;1B6B A5 F0
-		adc #$28			;1B6D 69 28
-		sta ZP_F0			;1B6F 85 F0
-		lda ZP_F1			;1B71 A5 F1
-		adc #$00			;1B73 69 00
-		sta ZP_F1			;1B75 85 F1
-		clc				;1B77 18
-		lda ZP_F2			;1B78 A5 F2
-		adc L_1BFB			;1B7A 6D FB 1B
-		sta ZP_F2			;1B7D 85 F2
-		lda ZP_F3			;1B7F A5 F3
-		adc #$00			;1B81 69 00
-		sta ZP_F3			;1B83 85 F3
-		jmp L_1B5B			;1B85 4C 5B 1B
+	sta (ZP_F0),Y		;1B5D 91 F0
+	iny				;1B5F C8
+	cpy L_1BFB			;1B60 CC FB 1B
+	bne L_1B5B			;1B63 D0 F6
+	ldy #$00			;1B65 A0 00
+	dex				;1B67 CA
+	beq L_1B88			;1B68 F0 1E
+	clc				;1B6A 18
+	lda ZP_F0			;1B6B A5 F0
+	adc #$28			;1B6D 69 28
+	sta ZP_F0			;1B6F 85 F0
+	lda ZP_F1			;1B71 A5 F1
+	adc #$00			;1B73 69 00
+	sta ZP_F1			;1B75 85 F1
+	clc				;1B77 18
+	lda ZP_F2			;1B78 A5 F2
+	adc L_1BFB			;1B7A 6D FB 1B
+	sta ZP_F2			;1B7D 85 F2
+	lda ZP_F3			;1B7F A5 F3
+	adc #$00			;1B81 69 00
+	sta ZP_F3			;1B83 85 F3
+	jmp L_1B5B			;1B85 4C 5B 1B
 L_1B88	rts				;1B88 60
 L_1B89	ldx L_19D5			;1B89 AE D5 19
-		lda #$00			;1B8C A9 00
-		sta L_1B1B,X		;1B8E 9D 1B 1B
-		lda L_19D3			;1B91 AD D3 19
-		asl @				;1B94 0A
-		tax				;1B95 AA
-		stx L_1BFB			;1B96 8E FB 1B
-		lda L_1B03,X		;1B99 BD 03 1B
-		bmi L_1BD9			;1B9C 30 3B
-		tay				;1B9E A8
-		cpy #$3F			;1B9F C0 3F
-		bne L_1BC3			;1BA1 D0 20
-		lda L_3F58,Y		;1BA3 B9 58 3F
-		cmp ZP_F9			;1BA6 C5 F9
-		beq L_1BB3			;1BA8 F0 09
-		ldx L_19D5			;1BAA AE D5 19
-		lda #$01			;1BAD A9 01
-		sta L_1B1B,X		;1BAF 9D 1B 1B
-		rts				;1BB2 60
+	lda #$00			;1B8C A9 00
+	sta L_1B1B_current_compass_states,X		;1B8E 9D 1B 1B
+	lda L_19D3			;1B91 AD D3 19
+	asl @				;1B94 0A
+	tax				;1B95 AA
+	stx L_1BFB			;1B96 8E FB 1B
+	lda L_1B03,X		;1B99 BD 03 1B
+	bmi L_1BD9			;1B9C 30 3B
+	tay				;1B9E A8
+	cpy #$3F			;1B9F C0 3F
+	bne L_1BC3			;1BA1 D0 20
+	lda L_3F58,Y		;1BA3 B9 58 3F
+	cmp ZP_F9_current_room_id			;1BA6 C5 F9
+	beq L_1BB3			;1BA8 F0 09
+	ldx L_19D5			;1BAA AE D5 19
+	lda #$01			;1BAD A9 01
+	sta L_1B1B_current_compass_states,X		;1BAF 9D 1B 1B
+	rts				;1BB2 60
 L_1BB3	lda L_3FA2,Y		;1BB3 B9 A2 3F
-		cmp #$FF			;1BB6 C9 FF
-		bne L_1BFA			;1BB8 D0 40
-		ldx L_19D5			;1BBA AE D5 19
-		lda #$01			;1BBD A9 01
-		sta L_1B1B,X		;1BBF 9D 1B 1B
-		rts				;1BC2 60
+	cmp #$FF			;1BB6 C9 FF
+	bne L_1BFA			;1BB8 D0 40
+	ldx L_19D5			;1BBA AE D5 19
+	lda #$01			;1BBD A9 01
+	sta L_1B1B_current_compass_states,X		;1BBF 9D 1B 1B
+	rts				;1BC2 60
 L_1BC3	lda L_3F58,Y		;1BC3 B9 58 3F
-		cmp ZP_F9			;1BC6 C5 F9
+		cmp ZP_F9_current_room_id			;1BC6 C5 F9
 		bne L_1BFA			;1BC8 D0 30
 		lda L_3FA2,Y		;1BCA B9 A2 3F
 		cmp #$FF			;1BCD C9 FF
 		beq L_1BFA			;1BCF F0 29
 		ldx L_19D5			;1BD1 AE D5 19
 		lda #$01			;1BD4 A9 01
-		sta L_1B1B,X		;1BD6 9D 1B 1B
+		sta L_1B1B_current_compass_states,X		;1BD6 9D 1B 1B
 L_1BD9	ldx L_1BFB			;1BD9 AE FB 1B
 		lda L_1B04,X		;1BDC BD 04 1B
 		bmi L_1BFA			;1BDF 30 19
@@ -8723,11 +8759,11 @@ L_1BD9	ldx L_1BFB			;1BD9 AE FB 1B
 		bne L_1BF2			;1BE5 D0 0B
 		lda #$00			;1BE7 A9 00
 		ldx L_19D5			;1BE9 AE D5 19
-		sta L_1B1B,X		;1BEC 9D 1B 1B
+		sta L_1B1B_current_compass_states,X		;1BEC 9D 1B 1B
 		jmp L_1BFA			;1BEF 4C FA 1B
 L_1BF2	ldx L_19D5			;1BF2 AE D5 19
 		lda #$01			;1BF5 A9 01
-		sta L_1B1B,X		;1BF7 9D 1B 1B
+		sta L_1B1B_current_compass_states,X		;1BF7 9D 1B 1B
 L_1BFA	rts				;1BFA 60
 L_1BFB
 		dta $00,$00,$08,$35,$00,$00,$00,$04,$00,$00,$00,$00,$00,$00,$00,$04
