@@ -5386,971 +5386,508 @@ L_740E	equ *-1
 		dta a(L_7E8E)		;7485 8E 7E
 		dta a(L_7EC2)		;7487 C2 7E
 		dta a(L_7EC2)		;7489 C2 7E
-		dta $FF,$FF,$EF,$78,$E2,$7E,$18,$7F,$FF,$FF,$4E,$7F,$6F,$7F,$90,$7F
-;vid	dta $FF,$FF,d"o"*,d"x",d"b"*,d"~8",$7F,$FF,$FF,$4E,$7F,d"o",$7F,d"0"*,$7F
-		dta $FF,$FF,$B7,$7F
-;vid	dta $FF,$FF,d"W"*,$7F
-L_749F	dta $FF,$FF,$FF,$FF,$FF,$01,$0F,$04,$2F,$2E,$00,$39,$2F,$35,$1F,$01
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!/$ON YOU?!"
-		dta $00,$00,$00,$FF
-;vid	dta d"   ",$FF
-L_74B3	dta $00,$FF,$FF,$FF,$FF,$05,$02,$01,$21,$00,$33,$34,$2F,$2E,$25,$00
-;vid	dta d" ",$FF,$FF,$FF,$FF,d"%"!A STONE "
-		dta $34,$28,$32,$2F,$37,$2E,$00,$21,$34,$00,$34,$28,$25,$00,$27,$21
-;vid	dta d"THROWN AT THE GA"
-		dta $34,$25,$00,$21,$2C,$21,$32,$2D,$25,$24,$00,$00,$FF,$02,$02,$34
-;vid	dta d"TE ALARMED  ",$FF,d"""T"
-		dta $28,$2F,$33,$25,$00,$2B,$25,$25,$30,$29,$2E,$27,$00,$37,$21,$34
-;vid	dta d"HOSE KEEPING WAT"
-		dta $23,$28,$00,$29,$2E,$33,$29,$24,$25,$0E,$00,$34,$28,$25,$27,$21
-;vid	dta d"CH INSIDE. THEGA"
-		dta $34,$25,$0D,$FF,$02,$03,$23,$2C,$21,$34,$34,$25,$32,$25,$24,$0C
-;vid	dta d"TE-",$FF,d""#CLATTERED,"
-		dta $00,$21,$2E,$24,$00,$39,$2F,$35,$00,$33,$21,$37,$00,$34,$28,$25
-;vid	dta d" AND YOU SAW THE"
-		dta $00,$33,$29,$2C,$28,$2F,$35,$25,$34,$34,$FF,$02,$04,$2F,$26,$00
-;vid	dta d" SILHOUETT",$FF,d""$OF "
-		dta $21,$00,$27,$35,$21,$32,$24,$0E,$00,$28,$25,$00,$33,$34,$25,$30
-;vid	dta d"A GUARD. HE STEP"
-		dta $30,$25,$24,$00,$2F,$35,$34,$00,$2F,$26,$00,$34,$28,$25,$00,$00
-;vid	dta d"PED OUT OF THE  "
-		dta $00,$FF,$02,$05,$25,$2E,$34,$32,$21,$2E,$23,$25,$00,$21,$2E,$24
-;vid	dta d" ",$FF,d""%ENTRANCE AND"
-		dta $00,$22,$25,$27,$21,$2E,$00,$34,$2F,$00,$2C,$2F,$2F,$2B,$00,$21
-;vid	dta d" BEGAN TO LOOK A"
-		dta $32,$2F,$35,$2E,$24,$0E,$0E,$FF
-;vid	dta d"ROUND..",$FF
-L_757B	dta $01,$FF,$FF,$FF,$FF,$01,$06,$04,$39,$2F,$35,$00,$23,$21,$2E,$00
-;vid	dta d"!",$FF,$FF,$FF,$FF,d"!&$YOU CAN "
-		dta $28,$25,$21,$32,$00,$34,$28,$25,$00,$35,$2E,$2C,$2F,$23,$2B,$29
-;vid	dta d"HEAR THE UNLOCKI"
-		dta $2E,$27,$01,$FF
-;vid	dta d"NG!",$FF
-L_759F	dta $FF,$FF,$FF,$FF,$FF,$02,$05,$04,$29,$34,$07,$33,$00,$34,$2F,$2F
-;vid	dta $FF,$FF,$FF,$FF,$FF,d""%$IT'S TOO"
-		dta $00,$28,$25,$21,$36,$39,$00,$0D,$00,$39,$2F,$35,$00,$23,$21,$2E
-;vid	dta d" HEAVY - YOU CAN"
-		dta $07,$34,$00,$FF,$05,$05,$00,$00,$00,$00,$2F,$30,$25,$2E,$00,$29
-;vid	dta d"'T ",$FF,d"%%    OPEN I"
-		dta $34,$00,$39,$2F,$35,$32,$33,$25,$2C,$26,$0E,$00,$00,$00,$00,$00
-;vid	dta d"T YOURSELF.     "
-		dta $00,$FF
-;vid	dta d" ",$FF
-L_75E1	dta $02,$FF,$FF,$FF,$FF,$02,$06,$04,$23,$2C,$2F,$33,$29,$2E,$27,$00
-;vid	dta d""",$FF,$FF,$FF,$FF,d""&$CLOSING "
-		dta $34,$28,$25,$00,$27,$21,$34,$25,$00,$34,$2F,$2F,$2B,$00,$00,$00
-;vid	dta d"THE GATE TOOK   "
-		dta $00,$00,$00,$FF,$06,$05,$00,$00,$00,$00,$21,$00,$2C,$2F,$34,$00
-;vid	dta d"   ",$FF,d"&%    A LOT "
-		dta $2F,$26,$00,$25,$26,$26,$2F,$32,$34,$0E,$0D,$00,$00,$00,$00,$00
-;vid	dta d"OF EFFORT.-     "
-		dta $00,$FF
-;vid	dta d" ",$FF
-L_7623	dta $FF,$FF,$FF,$FF,$FF,$02,$06,$04,$34,$28,$21,$34,$00,$24,$29,$24
-;vid	dta $FF,$FF,$FF,$FF,$FF,d""&$THAT DID"
-		dta $2E,$07,$34,$00,$37,$2F,$32,$2B,$0E,$00,$2D,$21,$39,$22,$25,$00
-;vid	dta d"N'T WORK. MAYBE "
-		dta $21,$00,$00,$00,$FF,$06,$05,$00,$2C,$29,$34,$34,$2C,$25,$00,$2D
-;vid	dta d"A   ",$FF,d"&% LITTLE M"
-		dta $2F,$32,$25,$00,$21,$2E,$21,$22,$2F,$2C,$29,$23,$33,$1F,$00,$0D
-;vid	dta d"ORE ANABOLICS? -"
-		dta $00,$00,$00,$FF
-;vid	dta d"   ",$FF
-L_7667	dta $FF,$FF,$FF,$FF,$FF,$01,$0A,$04,$2C,$25,$30,$29,$25,$2A,$00,$35
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!*$LEPIEJ U"
-		dta $3B,$39,$2A,$00,$2B,$2C,$35,$23,$3A,$21,$00,$01,$FF
-;vid	dta d"[YJ KLUCZA !",$FF
-L_7684	dta $FF,$07,$00,$06,$FE,$01,$0C,$04,$34,$28,$25,$39,$07,$32,$25,$00
-;vid	dta $FF,d"' &",d"~"*,d"!,$THEY'RE "
-		dta $33,$34,$35,$23,$2B,$01,$00,$00,$00,$FF
-;vid	dta d"STUCK!   ",$FF
-L_769E	dta $FF,$08,$00,$09,$FE,$01,$0F,$04,$29,$34,$07,$33,$00,$2F,$30,$25
-;vid	dta $FF,d"( )",d"~"*,d"!/$IT'S OPE"
-		dta $2E,$01,$00,$FF
-;vid	dta d"N! ",$FF
-L_76B2	dta $FF,$09,$00,$08,$FE,$01,$0E,$04,$3A,$21,$2D,$2B,$2E,$20,$1C,$25
-;vid	dta $FF,d") (",d"~"*,d"!.$ZAMKN@<E"
-		dta $0B,$00,$2A,$25,$FF
-;vid	dta d"+ JE",$FF
-L_76C7	dta $FF,$06,$00,$07,$FE,$02,$06,$04,$34,$28,$25,$00,$2C,$2F,$23,$2B
-;vid	dta $FF,d"& '",d"~"*,d""&$THE LOCK"
-		dta $00,$23,$2C,$29,$23,$2B,$25,$24,$00,$33,$2F,$26,$34,$2C,$39,$0E
-;vid	dta d" CLICKED SOFTLY."
-		dta $0E,$0E,$00,$FF,$06,$05,$00,$00,$00,$00,$00,$00,$00,$00,$00,$2F
-;vid	dta d".. ",$FF,d"&%         O"
-		dta $30,$25,$2E,$00,$01,$00,$0D,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"PEN ! -         "
-		dta $00,$FF
-;vid	dta d" ",$FF
-L_7709	dta $03,$0B,$00,$0C,$FE,$02,$0F,$04,$39,$2F,$35,$07,$36,$25,$00,$21
-;vid	dta d"#+ ,",d"~"*,d""/$YOU'VE A"
-		dta $23,$34,$29,$36,$21,$34,$25,$24,$00,$34,$28,$25,$00,$FF,$0F,$05
-;vid	dta d"CTIVATED THE ",$FF,d"/%"
-		dta $27,$21,$34,$25,$2F,$30,$25,$2E,$29,$2E,$27,$2D,$25,$23,$28,$21
-;vid	dta d"GATEOPENINGMECHA"
-		dta $2E,$29,$33,$2D,$0D,$FF
-;vid	dta d"NISM-",$FF
-L_773F	dta $04,$0C,$00,$0B,$FE,$01,$04,$04,$39,$2F,$35,$28,$25,$21,$32,$34
-;vid	dta d"$, +",d"~"*,d"!$$YOUHEART"
-		dta $28,$25,$23,$2C,$21,$2E,$27,$2F,$26,$34,$28,$25,$23,$2C,$2F,$33
-;vid	dta d"HECLANGOFTHECLOS"
-		dta $29,$2E,$27,$27,$21,$34,$25,$0D,$FF
-;vid	dta d"INGGATE-",$FF
-L_7768	dta $FF,$FF,$FF,$FF,$FF,$02,$08,$04,$37,$2F,$35,$2C,$24,$00,$39,$2F
-;vid	dta $FF,$FF,$FF,$FF,$FF,d""($WOULD YO"
-		dta $35,$00,$2C,$29,$2B,$25,$00,$34,$2F,$00,$23,$21,$32,$36,$25,$00
-;vid	dta d"U LIKE TO CARVE "
-		dta $00,$FF,$08,$05,$00,$00,$00,$00,$21,$00,$33,$29,$27,$2E,$00,$29
-;vid	dta d" ",$FF,d"(%    A SIGN I"
-		dta $2E,$00,$29,$34,$1F,$0D,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"N IT?-       ",$FF
-L_77A6	dta $FF,$0E,$00,$22,$FE,$01,$0B,$04,$39,$2F,$35,$23,$2C,$2F,$33,$25
-;vid	dta $FF,d". B",d"~"*,d"!+$YOUCLOSE"
-		dta $24,$34,$28,$25,$24,$32,$21,$37,$25,$32,$FF
-;vid	dta d"DTHEDRAWER",$FF
-L_77C1	dta $FF,$0F,$00,$10,$01,$01,$04,$04,$39,$2F,$35,$00,$26,$2F,$35,$2E
-;vid	dta $FF,d"/ 0!!$$YOU FOUN"
-		dta $24,$00,$21,$00,$26,$2C,$29,$2E,$34,$00,$29,$2E,$00,$34,$28,$25
-;vid	dta d"D A FLINT IN THE"
-		dta $00,$24,$32,$21,$37,$25,$32,$01,$00,$FF
-;vid	dta d" DRAWER! ",$FF
-L_77EB	dta $FF,$11,$00,$12,$FE,$02,$06,$04,$39,$2F,$35,$00,$2C,$29,$34,$00
-;vid	dta $FF,d"1 2",d"~"*,d""&$YOU LIT "
-		dta $34,$28,$25,$00,$34,$2F,$32,$23,$28,$01,$00,$28,$29,$27,$28,$00
-;vid	dta d"THE TORCH! HIGH "
-		dta $35,$30,$00,$00,$FF,$06,$05,$21,$22,$2F,$36,$25,$00,$39,$2F,$35
-;vid	dta d"UP  ",$FF,d"&%ABOVE YOU"
-		dta $00,$33,$25,$25,$00,$21,$2E,$00,$2F,$30,$25,$2E,$29,$2E,$27,$0E
-;vid	dta d" SEE AN OPENING."
-		dta $00,$00,$00,$FF
-;vid	dta d"   ",$FF
-L_782F	dta $05,$14,$00,$15,$FE,$01,$0A,$04,$39,$2F,$35,$00,$2D,$2F,$36,$25
-;vid	dta d"%4 5",d"~"*,d"!*$YOU MOVE"
-		dta $24,$00,$34,$28,$25,$00,$2C,$25,$36,$25,$32,$0E,$00,$FF
-;vid	dta d"D THE LEVER. ",$FF
-L_784D	dta $06,$15,$00,$14,$FE,$01,$05,$04,$39,$2F,$35,$00,$2D,$2F,$36,$25
-;vid	dta d"&5 4",d"~"*,d"!%$YOU MOVE"
-		dta $24,$00,$34,$28,$25,$00,$2C,$25,$36,$25,$32,$00,$21,$27,$21,$29
-;vid	dta d"D THE LEVER AGAI"
-		dta $2E,$0E,$0D,$00,$00,$00,$FF
-;vid	dta d"N.-   ",$FF
-L_7874	dta $FF,$FF,$FF,$FF,$FF,$01,$0A,$04,$39,$2F,$35,$07,$32,$25,$00,$33
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!*$YOU'RE S"
-		dta $35,$23,$28,$00,$21,$00,$22,$29,$34,$23,$28,$01,$FF
-;vid	dta d"UCH A BITCH!",$FF
-L_7891	dta $07,$17,$00,$18,$FE,$02,$06,$04,$39,$2F,$35,$00,$26,$2F,$35,$2E
-;vid	dta d"'7 8",d"~"*,d""&$YOU FOUN"
-		dta $24,$00,$22,$32,$25,$21,$24,$00,$29,$2E,$00,$34,$28,$25,$00,$00
-;vid	dta d"D BREAD IN THE  "
-		dta $00,$00,$00,$00,$FF,$06,$05,$23,$35,$30,$22,$2F,$21,$32,$24,$0E
-;vid	dta d"    ",$FF,d"&%CUPBOARD."
-		dta $39,$2F,$35,$34,$2F,$2F,$2B,$29,$34,$2F,$35,$34,$27,$25,$2E,$34
-;vid	dta d"YOUTOOKITOUTGENT"
-		dta $2C,$39,$0D,$FF
-;vid	dta d"LY-",$FF
-L_78D5	dta $FF,$18,$00,$23,$FE,$01,$0B,$04,$3A,$21,$2D,$2B,$2E,$20,$1C,$25
-;vid	dta $FF,d"8 C",d"~"*,d"!+$ZAMKN@<E"
-		dta $0B,$00,$2B,$32,$25,$24,$25,$2E,$33,$FF
-;vid	dta d"+ KREDENS",$FF
-L_78EF	dta $08,$FF,$FF,$19,$00,$01,$0C,$04,$36,$25,$32,$39,$00,$34,$21,$33
-;vid	dta d"(",$FF,$FF,d"9 !,$VERY TAS"
-		dta $34,$39,$01,$00,$00,$00,$00,$00,$FF
-;vid	dta d"TY!     ",$FF
-L_7908	dta $FF,$FF,$FF,$FF,$FF,$02,$0E,$04,$39,$2F,$35,$00,$23,$21,$2E,$07
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"".$YOU CAN'"
-		dta $34,$00,$2C,$2F,$23,$2B,$00,$29,$34,$0C,$00,$34,$28,$25,$00,$FF
-;vid	dta d"T LOCK IT, THE ",$FF
-		dta $0E,$05,$2C,$2F,$23,$2B,$00,$29,$33,$00,$34,$2F,$2F,$00,$2F,$2C
-;vid	dta d".%LOCK IS TOO OL"
-		dta $24,$0E,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"D.       ",$FF
-L_7942	dta $FF,$FF,$FF,$FF,$FF,$01,$07,$04,$29,$34,$07,$33,$00,$2C,$2F,$23
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!'$IT'S LOC"
-		dta $2B,$25,$24,$00,$37,$29,$34,$28,$00,$21,$00,$2B,$25,$39,$0E,$00
-;vid	dta d"KED WITH A KEY. "
-		dta $FF			;7962 FF    
-L_7963	dta $11,$32,$FE,$2B,$00,$04,$05,$02,$25,$36,$25,$32,$39,$34,$28,$29
-;vid	dta d"1R",d"~"*,d"K $%"EVERYTHI"
-		dta $2E,$27,$00,$22,$25,$27,$21,$2E,$00,$34,$2F,$00,$36,$29,$22,$32
-;vid	dta d"NG BEGAN TO VIBR"
-		dta $21,$34,$25,$00,$FF,$05,$03,$27,$25,$2E,$34,$2C,$39,$0C,$34,$28
-;vid	dta d"ATE ",$FF,d"%#GENTLY,TH"
-		dta $25,$00,$33,$30,$28,$25,$32,$25,$26,$2C,$29,$23,$2B,$25,$32,$25
-;vid	dta d"E SPHEREFLICKERE"
-		dta $24,$0E,$0D,$FF,$05,$04,$00,$00,$00,$00,$39,$2F,$35,$00,$26,$25
-;vid	dta d"D.-",$FF,d"%$    YOU FE"
-		dta $2C,$34,$00,$34,$28,$25,$00,$26,$2C,$2F,$37,$00,$2F,$26,$00,$00
-;vid	dta d"LT THE FLOW OF  "
-		dta $00,$00,$FF,$05,$05,$00,$00,$00,$00,$00,$00,$00,$21,$2D,$21,$3A
-;vid	dta d"  ",$FF,d"%%       AMAZ"
-		dta $29,$2E,$27,$00,$25,$2E,$25,$32,$27,$39,$0D,$00,$00,$00,$00,$00
-;vid	dta d"ING ENERGY-     "
-		dta $00,$FF
-;vid	dta d" ",$FF
-L_79E5	dta $09,$1B,$00,$1A,$FE,$03,$02,$03,$00,$34,$28,$25,$00,$2B,$25,$39
-;vid	dta d"); :",d"~"*,d"#"# THE KEY"
-		dta $00,$2D,$21,$34,$23,$28,$25,$24,$00,$34,$28,$25,$00,$2C,$2F,$23
-;vid	dta d" MATCHED THE LOC"
-		dta $2B,$00,$2F,$26,$00,$34,$28,$25,$00,$FF,$02,$04,$22,$2F,$38,$00
-;vid	dta d"K OF THE ",$FF,d""$BOX "
-		dta $30,$25,$32,$26,$25,$23,$34,$2C,$39,$01,$00,$29,$2E,$33,$29,$24
-;vid	dta d"PERFECTLY! INSID"
-		dta $25,$00,$29,$34,$07,$33,$00,$24,$25,$30,$34,$28,$33,$FF,$02,$05
-;vid	dta d"E IT'S DEPTHS",$FF,d""%"
-		dta $39,$2F,$35,$00,$26,$2F,$35,$2E,$24,$00,$21,$00,$33,$34,$32,$21
-;vid	dta d"YOU FOUND A STRA"
-		dta $2E,$27,$25,$00,$27,$2C,$21,$33,$33,$00,$33,$30,$28,$25,$32,$25
-;vid	dta d"NGE GLASS SPHERE"
-		dta $0E,$FF
-;vid	dta d".",$FF
-L_7A57	dta $FF,$FF,$FF,$FF,$FF,$01,$09,$04,$37,$28,$21,$34,$00,$21,$32,$25
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!)$WHAT ARE"
-		dta $00,$39,$2F,$35,$00,$27,$2F,$2E,$2E,$21,$00,$24,$2F,$1F,$FF
-;vid	dta d" YOU GONNA DO?",$FF
-L_7A76	dta $FF,$FF,$FF,$FF,$FF,$01,$07,$04,$22,$2C,$2F,$2B,$35,$2A,$25,$00
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!'$BLOKUJE "
-		dta $2A,$20,$00,$2A,$21,$2B,$29,$0B,$00,$2D,$25,$23,$28,$21,$2E,$29
-;vid	dta d"J@ JAKI+ MECHANI"
-		dta $3A,$2D,$0E,$FF
-;vid	dta d"ZM.",$FF
-L_7A9A	dta $FF,$22,$00,$0E,$FE,$01,$0A,$04,$2F,$34,$37,$2F,$32,$3A,$39,$1C
-;vid	dta $FF,d"B .",d"~"*,d"!*$OTWORZY<"
-		dta $25,$0B,$00,$33,$3A,$35,$26,$2C,$21,$24,$1D,$FF
-;vid	dta d"E+ SZUFLAD=",$FF
-L_7AB6	dta $FF,$23,$00,$18,$FE,$01,$0B,$04,$2F,$34,$37,$2F,$32,$3A,$39,$1C
-;vid	dta $FF,d"C 8",d"~"*,d"!+$OTWORZY<"
-		dta $25,$0B,$00,$2B,$32,$25,$24,$25,$2E,$33,$FF
-;vid	dta d"E+ KREDENS",$FF
-L_7AD1	dta $08,$FF,$FF,$FF,$FF,$01,$0D,$04,$2F,$32,$3A,$25,$0A,$37,$29,$1C
-;vid	dta d"(",$FF,$FF,$FF,$FF,d"!-$ORZE*WI<"
-		dta $21,$00,$23,$29,$1D,$00,$01,$FF
-;vid	dta d"A CI= !",$FF
-L_7AE9	dta $08,$FF,$FF,$FF,$FF,$01,$06,$04,$29,$34,$00,$34,$21,$33,$34,$25
-;vid	dta d"(",$FF,$FF,$FF,$FF,d"!&$IT TASTE"
-		dta $24,$00,$22,$21,$24,$0C,$00,$22,$35,$34,$00,$37,$25,$2C,$2C,$0E
-;vid	dta d"D BAD, BUT WELL."
-		dta $0E,$0E,$00,$00,$FF
-;vid	dta d"..  ",$FF
-L_7B0E	dta $FF,$2E,$00,$2F,$FE,$02,$09,$04,$39,$2F,$35,$00,$34,$35,$32,$2E
-;vid	dta $FF,d"N O",d"~"*,d"")$YOU TURN"
-		dta $25,$24,$00,$34,$28,$25,$00,$2B,$25,$39,$00,$29,$2E,$00,$FF,$09
-;vid	dta d"ED THE KEY IN ",$FF,d")"
-		dta $05,$00,$00,$34,$28,$25,$00,$2C,$2F,$23,$2B,$00,$0D,$00,$2F,$30
-;vid	dta d"%  THE LOCK - OP"
-		dta $25,$2E,$01,$00,$00,$00,$00,$FF
-;vid	dta d"EN!    ",$FF
-L_7B46	dta $12,$2A,$FE,$45,$00,$01,$0A,$04,$39,$2F,$35,$00,$35,$2E,$2C,$2F
-;vid	dta d"2J",d"~"*,$45,d" !*$YOU UNLO"
-		dta $23,$2B,$25,$24,$00,$34,$28,$25,$2C,$25,$36,$25,$32,$FF
-;vid	dta d"CKED THELEVER",$FF
-L_7B64	dta $FF,$FF,$FF,$FF,$FF,$01,$08,$04,$28,$2F,$37,$00,$28,$21,$2E,$24
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!($HOW HAND"
-		dta $33,$2F,$2D,$25,$00,$39,$2F,$35,$00,$21,$32,$25,$00,$00,$00,$00
-;vid	dta d"SOME YOU ARE    "
-		dta $FF			;7B84 FF    
-L_7B85	dta $0A,$FF,$FF,$FF,$FF,$02,$0A,$04,$39,$2F,$35,$00,$2C,$21,$39,$00
-;vid	dta d"*",$FF,$FF,$FF,$FF,d""*$YOU LAY "
-		dta $24,$2F,$37,$2E,$00,$37,$29,$34,$28,$00,$00,$00,$FF,$0A,$05,$32
-;vid	dta d"DOWN WITH   ",$FF,d"*%R"
-		dta $25,$2C,$29,$25,$26,$00,$2F,$2E,$21,$33,$2F,$26,$34,$00,$24,$2F
-;vid	dta d"ELIEF ONASOFT DO"
-		dta $37,$2E,$0D,$FF
-;vid	dta d"WN-",$FF
-L_7BB9	dta $0B,$26,$00,$27,$01,$03,$02,$03,$35,$2E,$24,$25,$32,$00,$34,$28
-;vid	dta d"+F G!#"#UNDER TH"
-		dta $25,$00,$34,$2F,$35,$23,$28,$00,$2F,$26,$00,$34,$28,$25,$00,$37
-;vid	dta d"E TOUCH OF THE W"
-		dta $21,$2E,$24,$0C,$00,$34,$28,$25,$00,$00,$00,$00,$FF,$02,$04,$23
-;vid	dta d"AND, THE    ",$FF,d""$C"
-		dta $32,$39,$33,$34,$21,$2C,$00,$33,$2B,$35,$2C,$2C,$00,$33,$28,$21
-;vid	dta d"RYSTAL SKULL SHA"
-		dta $34,$34,$25,$32,$25,$24,$00,$36,$29,$2F,$2C,$25,$2E,$34,$2C,$39
-;vid	dta d"TTERED VIOLENTLY"
-		dta $0E,$00,$00,$FF,$02,$05,$21,$00,$33,$2D,$21,$2C,$2C,$00,$2B,$25
-;vid	dta d".  ",$FF,d""%A SMALL KE"
-		dta $39,$00,$2C,$29,$25,$33,$00,$21,$2D,$2F,$2E,$27,$34,$28,$25,$00
-;vid	dta d"Y LIES AMONGTHE "
-		dta $26,$32,$21,$27,$2D,$25,$2E,$34,$33,$01,$FF
-;vid	dta d"FRAGMENTS!",$FF
-L_7C34	dta $FF,$FF,$FF,$FF,$FF,$01,$0A,$04,$33,$20,$00,$3A,$21,$2D,$2B,$2E
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!*$S@ ZAMKN"
-		dta $29,$1D,$34,$25,$00,$2B,$2C,$35,$23,$3A,$25,$2D,$FF
-;vid	dta d"I=TE KLUCZEM",$FF
-L_7C51	dta $FF,$2F,$00,$2E,$FE,$01,$0B,$04,$39,$2F,$35,$00,$33,$2C,$21,$2D
-;vid	dta $FF,d"O N",d"~"*,d"!+$YOU SLAM"
-		dta $2D,$25,$24,$00,$34,$28,$25,$24,$2F,$2F,$FF
-;vid	dta d"MED THEDOO",$FF
-L_7C6C	dta $0C,$FF,$FF,$FF,$FF,$01,$08,$04,$39,$2F,$35,$00,$33,$21,$34,$00
-;vid	dta d",",$FF,$FF,$FF,$FF,d"!($YOU SAT "
-		dta $2F,$2E,$00,$29,$34,$00,$23,$2F,$2D,$26,$2F,$32,$34,$21,$22,$0D
-;vid	dta d"ON IT COMFORTAB-"
-		dta $FF			;7C8C FF    
-L_7C8D	dta $0C,$FF,$FF,$FF,$FF,$01,$0B,$04,$24,$29,$24,$00,$39,$2F,$35,$00
-;vid	dta d",",$FF,$FF,$FF,$FF,d"!+$DID YOU "
-		dta $2C,$29,$2B,$25,$00,$29,$34,$1F,$00,$00,$FF
-;vid	dta d"LIKE IT?  ",$FF
-L_7CA8	dta $FF,$FF,$FF,$FF,$FF,$01,$06,$04,$29,$00,$24,$2F,$2E,$07,$34,$00
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!&$I DON'T "
-		dta $34,$28,$29,$2E,$2B,$00,$29,$34,$07,$33,$00,$35,$33,$25,$26,$35
-;vid	dta d"THINK IT'S USEFU"
-		dta $2C,$00,$00,$00,$FF
-;vid	dta d"L   ",$FF
-L_7CCD	dta $0D,$FF,$FF,$FF,$FF,$02,$05,$02,$39,$2F,$35,$00,$30,$35,$2C,$2C
-;vid	dta d"-",$FF,$FF,$FF,$FF,d""%"YOU PULL"
-		dta $25,$24,$00,$34,$28,$25,$00,$2C,$25,$36,$25,$32,$0C,$00,$22,$35
-;vid	dta d"ED THE LEVER, BU"
-		dta $34,$00,$00,$00,$00,$00,$FF,$05,$03,$22,$35,$34,$00,$33,$2F,$2D
-;vid	dta d"T     ",$FF,d"%#BUT SOM"
-		dta $25,$34,$28,$29,$2E,$27,$00,$2D,$21,$24,$25,$00,$39,$2F,$35,$00
-;vid	dta d"ETHING MADE YOU "
-		dta $37,$2F,$32,$32,$39,$0E,$0E,$FF,$05,$04,$33,$35,$24,$24,$25,$2E
-;vid	dta d"WORRY..",$FF,d"%$SUDDEN"
-		dta $2C,$39,$00,$34,$28,$25,$00,$26,$2C,$2F,$2F,$32,$00,$2F,$30,$25
-;vid	dta d"LY THE FLOOR OPE"
-		dta $2E,$25,$24,$00,$00,$00,$00,$00,$FF,$05,$05,$00,$00,$30,$2F,$24
-;vid	dta d"NED     ",$FF,d"%%  POD"
-		dta $00,$2E,$2F,$27,$21,$2D,$29,$00,$29,$00,$30,$2F,$23,$3A,$35,$1C
-;vid	dta d" NOGAMI I POCZU<"
-		dta $25,$0B,$0C,$00,$3B,$25,$00,$00,$00,$FF,$05,$06,$00,$00,$00,$00
-;vid	dta d"E+, [E   ",$FF,d"%&    "
-		dta $00,$00,$2C,$25,$23,$29,$33,$3A,$00,$37,$00,$27,$1C,$20,$22,$00
-;vid	dta d"  LECISZ W G<@B "
-		dta $01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"!         ",$FF
-L_7D78	dta $0E,$35,$00,$46,$FE,$03,$04,$03,$37,$28,$25,$2E,$00,$39,$2F,$35
-;vid	dta d".U ",$46,d"~"*,d"#$#WHEN YOU"
-		dta $00,$27,$25,$2E,$34,$2C,$39,$00,$30,$35,$2C,$2C,$25,$24,$00,$34
-;vid	dta d" GENTLY PULLED T"
-		dta $28,$25,$00,$00,$00,$00,$00,$FF,$04,$04,$23,$21,$2E,$24,$2C,$25
-;vid	dta d"HE     ",$FF,d"$$CANDLE"
-		dta $33,$34,$29,$23,$2B,$0C,$00,$34,$28,$25,$00,$33,$25,$23,$32,$25
-;vid	dta d"STICK, THE SECRE"
-		dta $34,$00,$30,$21,$33,$33,$21,$27,$25,$FF,$04,$05,$2F,$30,$25,$2E
-;vid	dta d"T PASSAGE",$FF,d"$%OPEN"
-		dta $25,$24,$01,$0D,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"ED!-            "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"           ",$FF
-L_7DE4	dta $13,$36,$00,$37,$FE,$01,$04,$04,$39,$2F,$35,$00,$30,$35,$2C,$2C
-;vid	dta d"3V W",d"~"*,d"!$$YOU PULL"
-		dta $25,$24,$00,$34,$28,$25,$00,$23,$21,$2E,$24,$2C,$25,$33,$34,$29
-;vid	dta d"ED THE CANDLESTI"
-		dta $23,$2B,$00,$21,$27,$21,$29,$2E,$00,$FF
-;vid	dta d"CK AGAIN ",$FF
-L_7E0E	dta $FF,$FF,$FF,$FF,$FF,$01,$0A,$04,$39,$2F,$35,$00,$23,$21,$2E,$07
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!*$YOU CAN'"
-		dta $34,$00,$2C,$2F,$23,$2B,$00,$29,$34,$00,$35,$30,$00,$FF
-;vid	dta d"T LOCK IT UP ",$FF
-L_7E2C	dta $FF,$FF,$FF,$FF,$FF,$01,$05,$04,$39,$2F,$35,$00,$28,$21,$36,$25
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!%$YOU HAVE"
-		dta $00,$2E,$2F,$00,$2E,$25,$25,$24,$00,$34,$2F,$00,$37,$25,$21,$32
-;vid	dta d" NO NEED TO WEAR"
-		dta $00,$29,$34,$00,$00,$FF
-;vid	dta d" IT  ",$FF
-L_7E52	dta $FF,$FF,$FF,$FF,$FF,$01,$09,$04,$39,$2F,$35,$00,$23,$21,$2E,$07
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!)$YOU CAN'"
-		dta $34,$00,$2F,$30,$25,$2E,$00,$34,$28,$25,$2D,$00,$00,$00,$00,$FF
-;vid	dta d"T OPEN THEM    ",$FF
-L_7E72	dta $FF,$FF,$FF,$FF,$FF,$01,$0A,$04,$29,$34,$00,$37,$2F,$2E,$07,$34
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!*$IT WON'T"
-		dta $00,$22,$35,$24,$27,$25,$00,$00,$00,$00,$00,$FF
-;vid	dta d" BUDGE     ",$FF
-L_7E8E	dta $0F,$FF,$FF,$FF,$FF,$02,$0A,$04,$39,$2F,$35,$00,$27,$25,$2E,$34
-;vid	dta d"/",$FF,$FF,$FF,$FF,d""*$YOU GENT"
-		dta $2C,$39,$00,$34,$2F,$35,$23,$28,$25,$24,$00,$00,$FF,$0A,$05,$34
-;vid	dta d"LY TOUCHED  ",$FF,d"*%T"
-		dta $28,$25,$00,$2C,$2F,$23,$2B,$2F,$26,$34,$28,$25,$00,$27,$32,$21
-;vid	dta d"HE LOCKOFTHE GRA"
-		dta $34,$25,$0D,$FF
-;vid	dta d"TE-",$FF
-L_7EC2	dta $FF,$FF,$FF,$FF,$FF,$01,$09,$04,$2E,$2F,$00,$34,$29,$2D,$25,$00
-;vid	dta $FF,$FF,$FF,$FF,$FF,d"!)$NO TIME "
-		dta $34,$2F,$00,$32,$25,$21,$24,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"TO READ        ",$FF
-		dta $FF,$3A,$00,$3B,$FE,$02,$0A,$04,$39,$2F,$35,$00,$32,$25,$21,$24
-;vid	dta $FF,d"Z [",d"~"*,d""*$YOU READ"
-		dta $00,$34,$28,$25,$00,$33,$30,$25,$2C,$2C,$00,$0D,$00,$FF,$0A,$05
-;vid	dta d" THE SPELL - ",$FF,d"*%"
-		dta $34,$28,$25,$00,$24,$2F,$2F,$32,$00,$2F,$30,$25,$2E,$25,$24,$01
-;vid	dta d"THE DOOR OPENED!"
-		dta $00,$00,$00,$00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$02,$0A,$04,$39,$2F
-;vid	dta d"     ",$FF,$FF,$FF,$FF,$FF,$FF,d""*$YO"
-		dta $35,$07,$32,$25,$00,$34,$2F,$2F,$00,$37,$25,$21,$2B,$00,$34,$2F
-;vid	dta d"U'RE TOO WEAK TO"
-		dta $00,$00,$00,$FF,$0A,$05,$00,$00,$00,$00,$34,$25,$21,$32,$00,$2D
-;vid	dta d"   ",$FF,d"*%    TEAR M"
-		dta $25,$34,$21,$2C,$00,$00,$00,$00,$00,$00,$00,$FF,$10,$FF,$FF,$FF
-;vid	dta d"ETAL       ",$FF,d"0",$FF,$FF,$FF
-		dta $0F,$01,$08,$04,$2F,$28,$01,$00,$28,$2F,$37,$00,$28,$21,$2E,$24
-;vid	dta d"/!($OH! HOW HAND"
-		dta $33,$2F,$2D,$25,$00,$39,$2F,$35,$00,$21,$32,$25,$FF,$FF,$FF,$FF
-;vid	dta d"SOME YOU ARE",$FF,$FF,$FF,$FF
-		dta $FF,$FF,$01,$08,$04,$39,$2F,$35,$00,$33,$21,$34,$2F,$2E,$29,$34
-;vid	dta $FF,$FF,d"!($YOU SATONIT"
-		dta $00,$23,$2F,$2D,$26,$2F,$32,$34,$21,$22,$2C,$39,$0D,$FF,$FF,$FF
-;vid	dta d" COMFORTABLY-",$FF,$FF,$FF
-		dta $FF,$FF,$FF,$01,$05,$04,$2D,$2F,$3B,$25,$00,$33,$30,$32,$0F,$22
-;vid	dta $FF,$FF,$FF,d"!%$MO[E SPR/B"
-		dta $35,$2A,$00,$30,$32,$3A,$25,$3A,$00,$2E,$29,$25,$00,$30,$32,$3A
-;vid	dta d"UJ PRZEZ NIE PRZ"
-		dta $25,$2A,$0B,$1E,$FF,$FF,$FF,$FF,$FF,$FF,$01,$0C,$04,$2E,$2F,$34
-;vid	dta d"EJ+>",$FF,$FF,$FF,$FF,$FF,$FF,d"!,$NOT"
-		dta $28,$29,$2E,$27,$00,$28,$21,$30,$30,$25,$2E,$25,$24,$00,$FF,$00
-;vid	dta d"HING HAPPENED ",$FF,d" "
+		dta a(L_FFFF)		;748B FF FF
+		dta a(L_78EF)		;748D EF 78
+		dta a(L_7EE2)		;748F E2 7E
+		dta a(L_7F18)		;7491 18 7F
+		dta a(L_FFFF)		;7493 FF FF
+		dta a(L_7F4E)		;7495 4E 7F
+		dta a(L_7F6F)		;7497 6F 7F
+		dta a(L_7F90)		;7499 90 7F
+		dta a(L_FFFF)		;749B FF FF
+		dta a(L_7FB7)		;749D B7 7F
+L_749F	dta $FF,$FF,$FF,$FF,$FF,$01,$0F,$04
+	dta d"ON YOURSELF?!",$FF
+	
+L_74B3	dta $00,$FF,$FF,$FF,$FF,$05
+	dta 2,1,d"A PEBBLE THROWN AT THE GATE ALARMED ",$FF
+	dta 2,2,d"THOSE KEEPING WATCH INSIDE. THE GATE",$ff
+	dta 2,3,d"OPENED, AND YOU SAW THE SILHOUETTE",$FF
+	dta 2,4,d"OF A GUARD. HE STEPPED OUT OF THE",$ff
+	dta 2,5,d"ENTRANCE AND BEGAN TO LOOK AROUND...",$FF
+
+L_757B	dta $01,$FF,$FF,$FF,$FF,$01
+	dta 6,4,d"YOU HEAR THE CLATTER!",$FF
+	
+L_759F	dta $FF,$FF,$FF,$FF,$FF,$02
+	dta 5,4,d"IT'S TOO HEAVY - YOU CAN'T",$FF
+	dta 9,5,d"OPEN IT YOURSELF.",$FF
+	
+	fill_until $75e1 0
+	
+L_75E1	dta $02,$FF,$FF,$FF,$FF,$02
+	dta 6,4,d"CLOSING THE GATE TOOK",$ff
+	dta 6,5,d"  A LOT OF EFFORT.   ",$ff
+		
+L_7623	dta $FF,$FF,$FF,$FF,$FF,$02
+	dta 6,4,d"THAT DIDN'T WORK. MAYBE A",$ff
+	dta 6,5,d" LITTLE MORE ANABOLICS?  ",$ff
+	
+L_7667	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta 10,4,d"KEY NEEDED!",$FF
+	
+L_7684	dta $FF,$07,$00,$06,$FE,$01
+	dta $0C,$04,d"THEY'RE STUCK!",$FF
+	
+L_769E	dta $FF,$08,$00,$09,$FE,$01
+	dta $0F,$04,d"IT'S OPEN!",$FF
+	
+L_76B2	dta $FF,$09,$00,$08,$FE,$01
+	dta $0E,$04,d"YOU CLOSED THEM",$FF
+	
+L_76C7	dta $FF,$06,$00,$07,$FE,$02
+	dta $06,$04,d"THE LOCK CLICKED SOFTLY.",$ff
+	dta $06,$05,d"         OPEN !         ",$ff
+	
+L_7709	dta $03,$0B,$00,$0C,$FE,$02
+	dta $0F,$04,d" YOU'VE ACTIVATED THE ",$FF
+	dta $0F,$05,d"GATE OPENING MECHANISM",$ff
+	
+L_773F	dta $04,$0C,$00,$0B,$FE,$02
+	dta $04,$04,d"YOU HEAR THE CLANG OF",$ff
+	dta $04,$05,d" THE CLOSING GATE.   ",$FF
+	
+L_7768	dta $FF,$FF,$FF,$FF,$FF,$02
+	dta $08,$04,d"WOULD YOU LIKE TO CARVE",$ff
+	dta $08,$05,d"   A SIGN IN IT?       ",$FF
+	
+L_77A6	dta $FF,$0E,$00,$22,$FE,$01
+	dta $0B,$04,d"YOU CLOSED THE DRAWER",$FF
+	
+L_77C1	dta $FF,$0F,$00,$10,$01,$01
+	dta $04,$04,d"YOU FOUND A FLINT IN THE DRAWER!",$FF
+	
+L_77EB	dta $FF,$11,$00,$12,$FE,$02
+	dta $06,$04,d"YOU LIT THE TORCH! HIGH UP",$FF
+	dta $06,$05,d" ABOVE YOU SEE AN OPENING.",$FF
+	
+L_782F	dta $05,$14,$00,$15,$FE,$01
+	dta $0A,$04,d"YOU MOVED THE LEVER.",$FF
+	
+L_784D	dta $06,$15,$00,$14,$FE,$01
+	dta $05,$04,d"YOU MOVED THE LEVER AGAIN.",$FF
+	
+L_7874	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $0A,$04,d"YOU'RE SUCH A BRAVE MAN!",$FF
+	
+L_7891	dta $07,$17,$00,$18,$FE,$02
+	dta $06,$04,d"YOU FOUND BREAD IN THE CUPBOARD.",$ff
+	dta $06,$05,d"    YOU TOOK IT OUT GENTLY.     ",$ff
+	
+L_78D5	dta $FF,$18,$00,$23,$FE,$01
+	dta $0B,$04,d"YOU CLOSED THE CUPBOARD.",$FF
+	
+L_78EF	dta $08,$FF,$FF,$19,$00,$01
+	dta $0C,$04,d"SO TASTY!",$FF
+	
+L_7908	dta $FF,$FF,$FF,$FF,$FF,$02
+	dta $0E,$04,d"YOU CAN'T LOCK IT, THE ",$FF
+	dta $0e,$05,d"   LOCK IS TOO OLD.    ",$FF
+	
+L_7942	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $07,$04,d"IT'S LOCKED WITH A KEY.",$FF
+	
+L_7963	dta $11,$32,$FE,$2B,$00,$04
+	dta $05,$02,d" EVERYTHING BEGAN TO VIBRATE ",$FF
+	dta $05,$03,d"GENTLY, THE SPHERE FLICKERED.",$ff
+	dta $05,$04,d"    YOU FELT THE FLOW OF     ",$ff
+	dta $05,$05,d"       AMAZING ENERGY...     ",$ff
+		
+L_79E5	dta $09,$1B,$00,$1A,$FE,$03
+	dta $02,$03,d"  THE KEY MATCHED THE LOCK OF THE  ",$ff
+	dta $02,$04,d"CHEST PERFECTLY! INSIDE IT'S DEPTHS",$FF
+	dta $02,$05,d" YOU FOUND A STRANGE GLASS SPHERE. ",$FF
+	
+L_7A57	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $09,$04,d"WHAT ARE YOU GONNA DO?",$FF
+	
+L_7A76	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $07,$04,d"SOME MECHANISM IS BLOCKING IT!",$ff
+	
+L_7A9A	dta $FF,$22,$00,$0E,$FE,$01
+	dta $0A,$04,d"YOU OPENED THE DRAWER.",$FF
+	
+L_7AB6	dta $FF,$23,$00,$18,$FE,$01
+	dta $0B,$04,d"YOU OPENED THE CUPBOARD.",$FF
+	
+L_7AD1	dta $08,$FF,$FF,$FF,$FF,$01
+	dta $0D,$04,d"SO REFRESHING!",$FF
+	
+L_7AE9	dta $08,$FF,$FF,$FF,$FF,$01
+	dta $06,$04,d"IT TASTED BAD, BUT WHATEVER."
+		
+L_7B0E	dta $FF,$2E,$00,$2F,$FE,$02
+	dta $09,$04,d"YOU TURNED THE KEY IN",$FF
+	dta $09,$05,d"  THE LOCK - OPEN!   ",$FF
+	
+L_7B46	dta $12,$2A,$FE,$45,$00,$01
+	dta $0A,$04,d"YOU UNLOCKED THE LEVER!",$FF
+	
+L_7B64	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $08,$04,d"HOW HANDSOME YOU ARE...",$FF
+	
+L_7B85	dta $0A,$FF,$FF,$FF,$FF,$01
+	dta $0A,$04,d"YOU LAID DOWN WITH RELIEF.",$FF
+	
+L_7BB9	dta $0B,$26,$00,$27,$01,$03
+	dta $02,$03,d"   UNDER THE TOUCH OF THE WAND, THE  ",$FF
+	dta $02,$04,d"  CRYSTAL SKULL SHATTERED VIOLENTLY. ",$ff
+	dta $02,$05,d"A SMALL KEY LIES AMONG THE FRAGMENTS!",$FF
+	
+L_7C34	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $0A,$04,d"LOCKED BY A KEY.",$FF
+	
+L_7C51	dta $FF,$2F,$00,$2E,$FE,$01
+	dta $0B,$04,d"YOU SLAMMED THE DOOR!",$FF
+	
+L_7C6C	dta $0C,$FF,$FF,$FF,$FF,$01
+	dta $08,$04,d"YOU SAT ON IT COMFORTABLY.",$FF    
+	
+L_7C8D	dta $0C,$FF,$FF,$FF,$FF,$01
+	dta $0B,$04,d"DID YOU LIKE IT?",$FF
+	
+L_7CA8	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $06,$04,d"I DON'T THINK IT'S USEFUL.",$FF
+	
+L_7CCD	dta $0D,$FF,$FF,$FF,$FF,$02
+	dta $05,$02,d"YOU PULLED THE LEVER, THEN YOU ",$FF
+	dta $05,$03,d"	      FROZE.             ",$ff
+	dta $05,$04,d"SUDDENLY THE FLOOR OPENED UNDER",$FF
+	dta $05,$05,d" YOUR FEET AND YOU'RE FALLING  ",$FF
+	dta $05,$06,d"       INTO THE DEPTHS !       ",$FF
+	
+L_7D78	dta $0E,$35,$00,$46,$FE,$03
+	dta $04,$03,d"   WHEN YOU GENTLY PULLED THE  ",$FF
+	dta $04,$04,d"CANDLESTICK, THE SECRET PASSAGE",$FF
+	dta $04,$05,d"          OPENED!              ",$ff
+	
+L_7DE4	dta $13,$36,$00,$37,$FE,$01
+	dta $04,$04,d"YOU PULLED THE CANDLESTICK AGAIN.",$FF
+	
+L_7E0E	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $0A,$04,d"YOU CAN'T LOCK IT UP.",$FF
+	
+L_7E2C	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $05,$04,d"YOU HAVE NO NEED TO WEAR IT.",$FF
+	
+L_7E52	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $09,$04,d"YOU CAN'T OPEN IT.",$FF
+	
+L_7E72	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $0A,$04,d"IT WON'T BUDGE!",$FF
+	
+L_7E8E	dta $0F,$FF,$FF,$FF,$FF,$02
+	dta $0A,$04,d"  YOU GENTLY TOUCHED  ",$FF
+	dta $0a,$05,d"THE LOCK OF THE CRATE.",$FF
+	
+L_7EC2	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $09,$04,d"NO TIME TO READ...",$FF
+	
+L_7EE2	dta $FF,$3A,$00,$3B,$FE,$02
+	dta $0A,$04,d"YOU READ THE SPELL...",$FF
+	dta $0a,$05,d"  THE DOOR OPENED!   ",$FF
+	
+L_7F18	dta $FF,$FF,$FF,$FF,$FF,$02
+	dta $0A,$04,d"YOU'RE TOO WEAK TO",$FF
+	dta $0a,$05,d"    TEAR METAL.   ",$FF
+	
+L_7F4E	dta $10,$FF,$FF,$FF,$0F,$01
+	dta $08,$04,d"OH! HOW HANDSOME YOU ARE...",$FF    
+	
+L_7F6F	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $08,$04,d"YOU SAT ON IT COMFORTABLY.",$FF
+	
+L_7F90	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $03,$04,d"MAYBE TRY GOING THROUGH THEM...",$FF
+	
+L_7FB7	dta $FF,$FF,$FF,$FF,$FF,$01
+	dta $0C,$04,d"NOTHING HAPPENED.",$FF,d"      "
+
 		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
 ;vid	dta d"                "
 		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
 ;vid	dta d"                "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$A0,$E3
-;vid	dta d"              ",d"@c"*
-		dta $ED,$E3,$A0,$E4,$E1,$F4,$E1,$A0,$E6,$E9,$EC,$E5,$A0,$8E,$95,$0D
-;vid	dta d"mc@data@file@.5"*,d"-"
-		dta $20,$06,$B5,$42,$27,$4C,$4B,$00,$52,$19,$73,$B5,$F7,$1F,$F6,$B4
-;vid	dta d"@&",d"U"*,$42,d"G",$4C,$4B,d" ",$52,d"9s",d"Uw"*,d"?",d"vT"*
-		dta $72,$90,$36,$F3,$A4,$E6,$28,$6A,$0B,$AC,$C2,$D9,$54,$15,$B9,$67
-;vid	dta d"r",d"0"*,d"V",d"sDf"*,d"Hj+",d"L"*,$C2,$D9,$54,d"5",d"Y"*,d"g"
-		dta $A6,$E8,$EE,$F4,$FA,$00,$00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta d"Fhntz"*,d"   ",$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+.print "CMC:",*
+	fill_until $8000 0
+L_8000_cmc_data_file
+		dta $A0,$E3,$ED,$E3,$A0,$E4,$E1,$F4,$E1,$A0,$E6,$E9,$EC,$E5,$A0,$8E
+		dta $95,$0D,$20,$06,$B5,$42,$27,$4C,$4B,$00,$52,$19,$73,$B5,$F7,$1F
+		dta $F6,$B4,$72,$90,$36,$F3,$A4,$E6,$28,$6A,$0B,$AC,$C2,$D9,$54,$15
+		dta $B9,$67,$A6,$E8,$EE,$F4,$FA,$00,$00,$00,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-		dta $FF,$FF,$83,$83,$88,$83,$88,$83,$83,$84,$83,$84,$83,$84,$88,$88
-;vid	dta $FF,$FF,d"##(#(##$#$#$(("*
-		dta $88,$84,$85,$86,$85,$85,$86,$86,$88,$86,$86,$86,$89,$87,$87,$87
-;vid	dta d"($%&%%&&(&&&)'''"*
-		dta $89,$89,$89,$89,$89,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta d")))))"*,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+		dta $FF,$FF,$FF,$FF,$83,$83,$88,$83,$88,$83,$83,$84,$83,$84,$83,$84
+		dta $88,$88,$88,$84,$85,$86,$85,$85,$86,$86,$88,$86,$86,$86,$89,$87
+		dta $87,$87,$89,$89,$89,$89,$89,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-		dta $FF,$FF,$0C,$A8,$00,$20,$00,$00,$04,$A0,$00,$20,$00,$00,$F4,$C7
-;vid	dta $FF,$FF,d",",d"H"*,d" @  $",d"@"*,d" @  ",d"t"*,$C7
-		dta $70,$20,$80,$00,$04,$A1,$0C,$00,$00,$00,$0C,$A0,$00,$20,$00,$00
-;vid	dta d"p@",d" "*,d" $",d"A"*,d",   ,",d"@"*,d" @  "
-		dta $F1,$A0,$0C,$00,$00,$00,$00,$A5,$0C,$00,$00,$00,$04,$A1,$0C,$00
-;vid	dta d"q@"*,d",    ",d"E"*,d",   $",d"A"*,d", "
-		dta $00,$00,$F0,$C7,$C0,$20,$00,$00,$C1,$A1,$00,$00,$00,$00,$C1,$A5
-;vid	dta d"  ",d"p"*,$C7,$C0,d"@  ",$C1,d"A"*,d"    ",$C1,d"E"*
-		dta $00,$10,$00,$00,$C5,$A9,$00,$10,$00,$00,$01,$A1,$0C,$00,$80,$00
-;vid	dta d" 0  ",$C5,d"I"*,d" 0  !",d"A"*,d", ",d" "*,d" "
-		dta $05,$A1,$0C,$00,$80,$00,$FB,$90,$00,$00,$82,$40,$FF,$90,$00,$00
-;vid	dta d"%",d"A"*,d", ",d" "*,d" ",d"{0"*,d"  ",d"""*,$40,$FF,d"0"*,d"  "
-		dta $82,$40,$FF,$90,$00,$00,$82,$40,$FF,$90,$00,$00,$82,$40,$05,$90
-;vid	dta d"""*,$40,$FF,d"0"*,d"  ",d"""*,$40,$FF,d"0"*,d"  ",d"""*,$40,d"%",d"0"*
-		dta $00,$00,$80,$00,$05,$90,$00,$00,$80,$00,$05,$90,$00,$00,$80,$00
-;vid	dta d"  ",d" "*,d" %",d"0"*,d"  ",d" "*,d" %",d"0"*,d"  ",d" "*,d" "
-		dta $01,$90,$00,$00,$80,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"!",d"0"*,d"  ",d" "*,d"           "
-		dta $00,$00,$FC,$A0,$C0,$00,$00,$00,$00,$00,$00,$00,$00,$00,$33,$23
-;vid	dta d"  ",d"|@"*,$C0,d"         SC"
-		dta $22,$11,$11,$11,$11,$01,$22,$12,$11,$11,$11,$11,$11,$01,$63,$45
-;vid	dta d"B1111!B211111!c",$45
-		dta $23,$22,$12,$11,$11,$01,$9C,$67,$55,$55,$55,$55,$55,$05,$46,$23
-;vid	dta d"CB211!",d"<"*,d"g",$55,$55,$55,$55,$55,d"%",$46,d"C"
-		dta $12,$11,$11,$11,$11,$01,$AB,$89,$78,$45,$34,$23,$11,$01,$43,$55
-;vid	dta d"21111!",d"K)"*,d"x",$45,d"TC1!",$43,$55
-		dta $34,$22,$22,$22,$22,$02,$22,$22,$22,$22,$22,$22,$22,$02,$33,$22
-;vid	dta d"TBBBB"BBBBBBB"SB"
-		dta $12,$11,$11,$11,$11,$01,$88,$67,$55,$44,$44,$44,$33,$03,$56,$34
-;vid	dta d"21111!",d"("*,d"g",$55,$44,$44,$44,d"S#",$56,d"T"
-		dta $22,$22,$12,$11,$11,$01,$88,$77,$77,$77,$77,$77,$77,$07,$68,$34
-;vid	dta d"BB211!",d"("*,d"wwwwww'hT"
-		dta $22,$22,$22,$11,$11,$01,$45,$23,$22,$22,$12,$11,$11,$01,$F7,$8B
-;vid	dta d"BBB11!",$45,d"CBB211!",d"w+"*
-		dta $46,$33,$12,$11,$11,$00,$B4,$68,$34,$23,$22,$11,$11,$00,$83,$36
-;vid	dta $46,d"S211 ",d"T"*,d"hTCB11 ",d"#"*,d"V"
-		dta $22,$11,$11,$01,$00,$00,$51,$23,$11,$11,$11,$00,$00,$00,$CF,$8A
-;vid	dta d"B11!  ",$51,d"C111   ",$CF,d"*"*
-		dta $56,$34,$23,$12,$01,$00,$9C,$57,$34,$23,$12,$11,$00,$00,$68,$45
-;vid	dta $56,d"TC2! ",d"<"*,$57,d"TC21  h",$45
-		dta $23,$11,$01,$00,$00,$00,$45,$23,$11,$11,$00,$00,$00,$00,$00,$00
-;vid	dta d"C1!   ",$45,d"C11      "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$24,$11
-;vid	dta d"              D1"
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$CF,$01
-;vid	dta d"              ",$CF,d"!"
-		dta $03,$01,$07,$0E,$CF,$1A,$1B,$1C,$1D,$1F,$20,$21,$22,$FE,$FE,$FE
-;vid	dta d"#!'.",$CF,d":;<=?@AB",d"~~~"*
+		dta $FF,$FF,$FF,$FF,$0C,$A8,$00,$20,$00,$00,$04,$A0,$00,$20,$00,$00
+		dta $F4,$C7,$70,$20,$80,$00,$04,$A1,$0C,$00,$00,$00,$0C,$A0,$00,$20
+		dta $00,$00,$F1,$A0,$0C,$00,$00,$00,$00,$A5,$0C,$00,$00,$00,$04,$A1
+		dta $0C,$00,$00,$00,$F0,$C7,$C0,$20,$00,$00,$C1,$A1,$00,$00,$00,$00
+		dta $C1,$A5,$00,$10,$00,$00,$C5,$A9,$00,$10,$00,$00,$01,$A1,$0C,$00
+		dta $80,$00,$05,$A1,$0C,$00,$80,$00,$FB,$90,$00,$00,$82,$40,$FF,$90
+		dta $00,$00,$82,$40,$FF,$90,$00,$00,$82,$40,$FF,$90,$00,$00,$82,$40
+		dta $05,$90,$00,$00,$80,$00,$05,$90,$00,$00,$80,$00,$05,$90,$00,$00
+		dta $80,$00,$01,$90,$00,$00,$80,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		dta $00,$00,$00,$00,$FC,$A0,$C0,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		dta $33,$23,$22,$11,$11,$11,$11,$01,$22,$12,$11,$11,$11,$11,$11,$01
+		dta $63,$45,$23,$22,$12,$11,$11,$01,$9C,$67,$55,$55,$55,$55,$55,$05
+		dta $46,$23,$12,$11,$11,$11,$11,$01,$AB,$89,$78,$45,$34,$23,$11,$01
+		dta $43,$55,$34,$22,$22,$22,$22,$02,$22,$22,$22,$22,$22,$22,$22,$02
+		dta $33,$22,$12,$11,$11,$11,$11,$01,$88,$67,$55,$44,$44,$44,$33,$03
+		dta $56,$34,$22,$22,$12,$11,$11,$01,$88,$77,$77,$77,$77,$77,$77,$07
+		dta $68,$34,$22,$22,$22,$11,$11,$01,$45,$23,$22,$22,$12,$11,$11,$01
+		dta $F7,$8B,$46,$33,$12,$11,$11,$00,$B4,$68,$34,$23,$22,$11,$11,$00
+		dta $83,$36,$22,$11,$11,$01,$00,$00,$51,$23,$11,$11,$11,$00,$00,$00
+		dta $CF,$8A,$56,$34,$23,$12,$01,$00,$9C,$57,$34,$23,$12,$11,$00,$00
+		dta $68,$45,$23,$11,$01,$00,$00,$00,$45,$23,$11,$11,$00,$00,$00,$00
+		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		dta $24,$11,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		dta $CF,$01,$03,$01,$07,$0E,$CF,$1A,$1B,$1C,$1D,$1F,$20,$21,$22,$FE
 		dta $FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE
-;vid	dta d"~~~~~~~~~~~~~~~~"*
 		dta $FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE
-;vid	dta d"~~~~~~~~~~~~~~~~"*
 		dta $FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE
-;vid	dta d"~~~~~~~~~~~~~~~~"*
 		dta $FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE
-;vid	dta d"~~~~~~~~~~~~~~~~"*
-		dta $FE,$FE,$EF,$0C,$00,$05,$00,$08,$0D,$06,$12,$13,$14,$15,$16,$17
-;vid	dta d"~~o"*,d", % (-&234567"
-		dta $18,$19,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta d"89",$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+		dta $FE,$FE,$FE,$FE,$EF,$0C,$00,$05,$00,$08,$0D,$06,$12,$13,$14,$15
+		dta $16,$17,$18,$19,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$02,$04,$02,$06,$0C,$FF,$16
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,d""$"&,",$FF,d"6"
-		dta $17,$18,$19,$1E,$1E,$1E,$1E,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta d"789>>>>",$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$02,$04,$02,$06,$0C
+		dta $FF,$16,$17,$18,$19,$1E,$1E,$1E,$1E,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$0C,$48
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,d",",$48
-		dta $4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$48
-;vid	dta $4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$48
-		dta $4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$47
-;vid	dta $4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$47
-		dta $4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$47
-;vid	dta $4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$47
-		dta $4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$FF
-;vid	dta $4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$FF
-		dta $06,$40,$8E,$40,$8E,$42,$8E,$40,$8D,$FF,$06,$40,$AE,$42,$8D,$FF
-;vid	dta d"&",$40,d"."*,$40,d"."*,$42,d"."*,$40,d"-"*,$FF,d"&",$40,d"N"*,$42,d"-"*,$FF
-		dta $81,$09,$4F,$81,$4E,$81,$51,$81,$4F,$81,$4E,$82,$4F,$81,$4E,$81
-;vid	dta d"!"*,d")",$4F,d"!"*,$4E,d"!"*,$51,d"!"*,$4F,d"!"*,$4E,d"""*,$4F,d"!"*,$4E,d"!"*
-		dta $51,$81,$53,$81,$54,$80,$53,$8A,$53,$54,$53,$51,$53,$86,$57,$85
-;vid	dta $51,d"!"*,$53,d"!"*,$54,d" "*,$53,d"*"*,$53,$54,$53,$51,$53,d"&"*,$57,d"%"*
-		dta $FF,$0C,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$48
-;vid	dta $FF,d",",$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$48
-		dta $4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C
-;vid	dta $4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C
-		dta $51,$48,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C
-;vid	dta $51,$48,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C
-		dta $4F,$47,$47,$4B,$4E,$47,$4B,$4E,$47,$4B,$4E,$47,$4B,$4E,$47,$4B
-;vid	dta $4F,$47,$47,$4B,$4E,$47,$4B,$4E,$47,$4B,$4E,$47,$4B,$4E,$47,$4B
-		dta $4E,$4B,$FF,$0C,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F
-;vid	dta $4E,$4B,$FF,d",",$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F
-		dta $47,$4C,$4F,$47,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E
-;vid	dta $47,$4C,$4F,$47,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E
-		dta $47,$4C,$4E,$47,$47,$4A,$4E,$47,$4A,$4E,$47,$4A,$4E,$47,$4A,$4E
-;vid	dta $47,$4C,$4E,$47,$47,$4A,$4E,$47,$4A,$4E,$47,$4A,$4E,$47,$4A,$4E
-		dta $47,$4A,$4E,$4A,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E
-;vid	dta $47,$4A,$4E,$4A,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E
-		dta $47,$4C,$4E,$47,$FF,$09,$58,$84,$5A,$5B,$5D,$80,$5B,$5A,$5B,$5A
-;vid	dta $47,$4C,$4E,$47,$FF,d")",$58,d"$"*,$5A,$5B,$5D,d" "*,$5B,$5A,$5B,$5A
-		dta $58,$80,$5A,$86,$56,$84,$53,$80,$56,$84,$58,$5A,$5B,$80,$5A,$58
-;vid	dta $58,d" "*,$5A,d"&"*,$56,d"$"*,$53,d" "*,$56,d"$"*,$58,$5A,$5B,d" "*,$5A,$58
-		dta $5A,$58,$56,$80,$58,$8D,$FF,$06,$40,$9E,$47,$9D,$FF,$06,$47,$80
-;vid	dta $5A,$58,$56,d" "*,$58,d"-"*,$FF,d"&",$40,d">"*,$47,d"="*,$FF,d"&",$47,d" "*
-		dta $02,$47,$47,$0E,$70,$0F,$70,$10,$70,$11,$70,$06,$47,$80,$02,$47
-;vid	dta d""",$47,$47,d".p/p0p1p&",$47,d" "*,d""",$47
-		dta $47,$0E,$70,$0F,$70,$10,$70,$11,$70,$06,$42,$80,$02,$42,$42,$0E
-;vid	dta $47,d".p/p0p1p&",$42,d" "*,d""",$42,$42,d"."
+		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+		dta $0C,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F
+		dta $48,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51
+		dta $48,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F
+		dta $47,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E
+		dta $47,$FF,$06,$40,$8E,$40,$8E,$42,$8E,$40,$8D,$FF,$06,$40,$AE,$42
+		dta $8D,$FF,$81,$09,$4F,$81,$4E,$81,$51,$81,$4F,$81,$4E,$82,$4F,$81
+		dta $4E,$81,$51,$81,$53,$81,$54,$80,$53,$8A,$53,$54,$53,$51,$53,$86
+		dta $57,$85,$FF,$0C,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F,$48,$4C,$4F
+		dta $48,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51,$48,$4C,$51
+		dta $48,$4C,$51,$48,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F
+		dta $47,$4C,$4F,$47,$47,$4B,$4E,$47,$4B,$4E,$47,$4B,$4E,$47,$4B,$4E
+		dta $47,$4B,$4E,$4B,$FF,$0C,$47,$4C,$4F,$47,$4C,$4F,$47,$4C,$4F,$47
+		dta $4C,$4F,$47,$4C,$4F,$47,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47
+		dta $4C,$4E,$47,$4C,$4E,$47,$47,$4A,$4E,$47,$4A,$4E,$47,$4A,$4E,$47
+		dta $4A,$4E,$47,$4A,$4E,$4A,$47,$4C,$4E,$47,$4C,$4E,$47,$4C,$4E,$47
+		dta $4C,$4E,$47,$4C,$4E,$47,$FF,$09,$58,$84,$5A,$5B,$5D,$80,$5B,$5A
+		dta $5B,$5A,$58,$80,$5A,$86,$56,$84,$53,$80,$56,$84,$58,$5A,$5B,$80
+		dta $5A,$58,$5A,$58,$56,$80,$58,$8D,$FF,$06,$40,$9E,$47,$9D,$FF,$06
+		dta $47,$80,$02,$47,$47,$0E,$70,$0F,$70,$10,$70,$11,$70,$06,$47,$80
+		dta $02,$47,$47,$0E,$70,$0F,$70,$10,$70,$11,$70,$06,$42,$80,$02,$42
+		dta $42,$0E,$70,$0F,$70,$10,$70,$11,$70,$06,$42,$80,$02,$42,$42,$0E
 		dta $70,$0F,$70,$10,$70,$11,$70,$06,$42,$80,$02,$42,$42,$0E,$70,$0F
-;vid	dta d"p/p0p1p&",$42,d" "*,d""",$42,$42,d".p/"
 		dta $70,$10,$70,$11,$70,$06,$42,$80,$02,$42,$42,$0E,$70,$0F,$70,$10
-;vid	dta d"p0p1p&",$42,d" "*,d""",$42,$42,d".p/p0"
-		dta $70,$11,$70,$06,$42,$80,$02,$42,$42,$0E,$70,$0F,$70,$10,$70,$11
-;vid	dta d"p1p&",$42,d" "*,d""",$42,$42,d".p/p0p1"
-		dta $70,$06,$47,$80,$02,$47,$47,$0E,$70,$0F,$70,$10,$70,$11,$70,$06
-;vid	dta d"p&",$47,d" "*,d""",$47,$47,d".p/p0p1p&"
-		dta $47,$80,$02,$47,$47,$0E,$70,$0F,$70,$10,$70,$11,$70,$FF,$81,$09
-;vid	dta $47,d" "*,d""",$47,$47,d".p/p0p1p",$FF,d"!"*,d")"
-		dta $5B,$81,$5A,$81,$5D,$81,$5B,$81,$5B,$82,$5B,$81,$5A,$81,$5D,$81
-;vid	dta $5B,d"!"*,$5A,d"!"*,$5D,d"!"*,$5B,d"!"*,$5B,d"""*,$5B,d"!"*,$5A,d"!"*,$5D,d"!"*
-		dta $5B,$81,$5D,$80,$5F,$8C,$5D,$5B,$5A,$86,$63,$5F,$5A,$63,$5F,$4E
-;vid	dta $5B,d"!"*,$5D,d" "*,$5F,d","*,$5D,$5B,$5A,d"&"*,d"c",$5F,$5A,d"c",$5F,$4E
-		dta $53,$57,$FF,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D,$53,$0E
-;vid	dta $53,$57,$FF,d",",$58,d"-",$53,d".k-",$53,d",",$4C,d"-",$53,d"."
+		dta $70,$11,$70,$06,$47,$80,$02,$47,$47,$0E,$70,$0F,$70,$10,$70,$11
+		dta $70,$06,$47,$80,$02,$47,$47,$0E,$70,$0F,$70,$10,$70,$11,$70,$FF
+		dta $81,$09,$5B,$81,$5A,$81,$5D,$81,$5B,$81,$5B,$82,$5B,$81,$5A,$81
+		dta $5D,$81,$5B,$81,$5D,$80,$5F,$8C,$5D,$5B,$5A,$86,$63,$5F,$5A,$63
+		dta $5F,$4E,$53,$57,$FF,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D
+		dta $53,$0E,$6B,$0D,$53,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D
+		dta $53,$0E,$6B,$0D,$53,$0C,$5A,$0D,$53,$0E,$6B,$0D,$53,$0C,$4E,$0D
+		dta $53,$0E,$6B,$0D,$53,$0C,$5A,$0D,$53,$0E,$6B,$0D,$53,$0C,$4E,$0D
+		dta $53,$0E,$6B,$0D,$53,$0C,$5A,$0D,$53,$0E,$6B,$0D,$53,$0C,$4E,$0D
+		dta $53,$0E,$6B,$0D,$53,$0C,$5A,$0D,$53,$0E,$6B,$0D,$53,$0C,$4E,$0D
+		dta $53,$0E,$6B,$0D,$53,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D
+		dta $53,$0E,$6B,$0D,$53,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D
+		dta $53,$0E,$6B,$0D,$53,$FF,$0C,$58,$0D,$54,$0E,$6B,$0C,$48,$4C,$48
+		dta $0E,$6B,$0C,$48,$58,$48,$0E,$6B,$0C,$48,$4C,$48,$0E,$6B,$0C,$48
+		dta $5A,$48,$0E,$6B,$0C,$48,$4E,$48,$0E,$6B,$0C,$48,$5A,$48,$0E,$6B
+		dta $0C,$48,$4E,$48,$0E,$6B,$0C,$48,$5A,$48,$0E,$6B,$0C,$48,$4E,$48
+		dta $0E,$6B,$0C,$4E,$48,$0D,$53,$0C,$48,$0D,$53,$0C,$48,$0D,$53,$0E
 		dta $6B,$0D,$53,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D,$53,$0E
-;vid	dta d"k-",$53,d",",$58,d"-",$53,d".k-",$53,d",",$4C,d"-",$53,d"."
-		dta $6B,$0D,$53,$0C,$5A,$0D,$53,$0E,$6B,$0D,$53,$0C,$4E,$0D,$53,$0E
-;vid	dta d"k-",$53,d",",$5A,d"-",$53,d".k-",$53,d",",$4E,d"-",$53,d"."
-		dta $6B,$0D,$53,$0C,$5A,$0D,$53,$0E,$6B,$0D,$53,$0C,$4E,$0D,$53,$0E
-;vid	dta d"k-",$53,d",",$5A,d"-",$53,d".k-",$53,d",",$4E,d"-",$53,d"."
-		dta $6B,$0D,$53,$0C,$5A,$0D,$53,$0E,$6B,$0D,$53,$0C,$4E,$0D,$53,$0E
-;vid	dta d"k-",$53,d",",$5A,d"-",$53,d".k-",$53,d",",$4E,d"-",$53,d"."
-		dta $6B,$0D,$53,$0C,$5A,$0D,$53,$0E,$6B,$0D,$53,$0C,$4E,$0D,$53,$0E
-;vid	dta d"k-",$53,d",",$5A,d"-",$53,d".k-",$53,d",",$4E,d"-",$53,d"."
 		dta $6B,$0D,$53,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D,$53,$0E
-;vid	dta d"k-",$53,d",",$58,d"-",$53,d".k-",$53,d",",$4C,d"-",$53,d"."
-		dta $6B,$0D,$53,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D,$53,$0E
-;vid	dta d"k-",$53,d",",$58,d"-",$53,d".k-",$53,d",",$4C,d"-",$53,d"."
-		dta $6B,$0D,$53,$FF,$0C,$58,$0D,$54,$0E,$6B,$0C,$48,$4C,$48,$0E,$6B
-;vid	dta d"k-",$53,$FF,d",",$58,d"-",$54,d".k,",$48,$4C,$48,d".k"
-		dta $0C,$48,$58,$48,$0E,$6B,$0C,$48,$4C,$48,$0E,$6B,$0C,$48,$5A,$48
-;vid	dta d",",$48,$58,$48,d".k,",$48,$4C,$48,d".k,",$48,$5A,$48
-		dta $0E,$6B,$0C,$48,$4E,$48,$0E,$6B,$0C,$48,$5A,$48,$0E,$6B,$0C,$48
-;vid	dta d".k,",$48,$4E,$48,d".k,",$48,$5A,$48,d".k,",$48
-		dta $4E,$48,$0E,$6B,$0C,$48,$5A,$48,$0E,$6B,$0C,$48,$4E,$48,$0E,$6B
-;vid	dta $4E,$48,d".k,",$48,$5A,$48,d".k,",$48,$4E,$48,d".k"
-		dta $0C,$4E,$48,$0D,$53,$0C,$48,$0D,$53,$0C,$48,$0D,$53,$0E,$6B,$0D
-;vid	dta d",",$4E,$48,d"-",$53,d",",$48,d"-",$53,d",",$48,d"-",$53,d".k-"
-		dta $53,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D,$53,$0E,$6B,$0D
-;vid	dta $53,d",",$58,d"-",$53,d".k-",$53,d",",$4C,d"-",$53,d".k-"
-		dta $53,$0C,$58,$0D,$53,$0E,$6B,$0D,$53,$0C,$4C,$0D,$53,$0E,$6B,$0D
-;vid	dta $53,d",",$58,d"-",$53,d".k-",$53,d",",$4C,d"-",$53,d".k-"
-		dta $53,$FF,$0C,$47,$80,$4C,$80,$4F,$80,$47,$80,$4C,$80,$4F,$80,$47
-;vid	dta $53,$FF,d",",$47,d" "*,$4C,d" "*,$4F,d" "*,$47,d" "*,$4C,d" "*,$4F,d" "*,$47
-		dta $80,$4C,$80,$4F,$80,$47,$80,$4C,$80,$4F,$80,$47,$80,$4C,$80,$4F
-;vid	dta d" "*,$4C,d" "*,$4F,d" "*,$47,d" "*,$4C,d" "*,$4F,d" "*,$47,d" "*,$4C,d" "*,$4F
-		dta $80,$47,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E,$80,$47
-;vid	dta d" "*,$47,d" "*,$47,d" "*,$4C,d" "*,$4E,d" "*,$47,d" "*,$4C,d" "*,$4E,d" "*,$47
-		dta $80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E
-;vid	dta d" "*,$4C,d" "*,$4E,d" "*,$47,d" "*,$4C,d" "*,$4E,d" "*,$47,d" "*,$4C,d" "*,$4E
-		dta $80,$47,$80,$FF,$0C,$47,$80,$4A,$80,$4E,$80,$47,$80,$4A,$80,$4E
-;vid	dta d" "*,$47,d" "*,$FF,d",",$47,d" "*,$4A,d" "*,$4E,d" "*,$47,d" "*,$4A,d" "*,$4E
-		dta $80,$47,$80,$4A,$80,$4E,$80,$47,$80,$4A,$80,$4E,$80,$47,$80,$4A
-;vid	dta d" "*,$47,d" "*,$4A,d" "*,$4E,d" "*,$47,d" "*,$4A,d" "*,$4E,d" "*,$47,d" "*,$4A
-		dta $80,$4E,$80,$4A,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E
-;vid	dta d" "*,$4E,d" "*,$4A,d" "*,$47,d" "*,$4C,d" "*,$4E,d" "*,$47,d" "*,$4C,d" "*,$4E
+		dta $6B,$0D,$53,$FF,$0C,$47,$80,$4C,$80,$4F,$80,$47,$80,$4C,$80,$4F
+		dta $80,$47,$80,$4C,$80,$4F,$80,$47,$80,$4C,$80,$4F,$80,$47,$80,$4C
+		dta $80,$4F,$80,$47,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E
 		dta $80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C
-;vid	dta d" "*,$47,d" "*,$4C,d" "*,$4E,d" "*,$47,d" "*,$4C,d" "*,$4E,d" "*,$47,d" "*,$4C
-		dta $80,$4E,$80,$47,$80,$FF,$0C,$48,$80,$4C,$80,$4F,$80,$48,$80,$4C
-;vid	dta d" "*,$4E,d" "*,$47,d" "*,$FF,d",",$48,d" "*,$4C,d" "*,$4F,d" "*,$48,d" "*,$4C
-		dta $80,$4F,$80,$48,$80,$4C,$80,$4F,$80,$48,$80,$4C,$80,$4F,$80,$48
-;vid	dta d" "*,$4F,d" "*,$48,d" "*,$4C,d" "*,$4F,d" "*,$48,d" "*,$4C,d" "*,$4F,d" "*,$48
-		dta $80,$4C,$80,$4F,$80,$48,$80,$48,$80,$4C,$80,$51,$80,$48,$80,$4C
-;vid	dta d" "*,$4C,d" "*,$4F,d" "*,$48,d" "*,$48,d" "*,$4C,d" "*,$51,d" "*,$48,d" "*,$4C
-		dta $80,$51,$80,$48,$80,$4C,$80,$51,$80,$48,$80,$4C,$80,$51,$80,$48
-;vid	dta d" "*,$51,d" "*,$48,d" "*,$4C,d" "*,$51,d" "*,$48,d" "*,$4C,d" "*,$51,d" "*,$48
-		dta $80,$4C,$80,$51,$80,$48,$80,$FF,$0C,$47,$80,$4C,$80,$4F,$80,$47
-;vid	dta d" "*,$4C,d" "*,$51,d" "*,$48,d" "*,$FF,d",",$47,d" "*,$4C,d" "*,$4F,d" "*,$47
-		dta $80,$4C,$80,$4F,$80,$47,$80,$4C,$80,$4F,$80,$47,$80,$4C,$80,$4F
-;vid	dta d" "*,$4C,d" "*,$4F,d" "*,$47,d" "*,$4C,d" "*,$4F,d" "*,$47,d" "*,$4C,d" "*,$4F
-		dta $80,$47,$80,$4C,$80,$4F,$80,$47,$80,$47,$80,$4C,$80,$4E,$80,$47
-;vid	dta d" "*,$47,d" "*,$4C,d" "*,$4F,d" "*,$47,d" "*,$47,d" "*,$4C,d" "*,$4E,d" "*,$47
-		dta $80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E
-;vid	dta d" "*,$4C,d" "*,$4E,d" "*,$47,d" "*,$4C,d" "*,$4E,d" "*,$47,d" "*,$4C,d" "*,$4E
-		dta $80,$47,$80,$4C,$80,$4E,$80,$47,$80,$FF,$09,$4A,$8A,$4C,$80,$4E
-;vid	dta d" "*,$47,d" "*,$4C,d" "*,$4E,d" "*,$47,d" "*,$FF,d")",$4A,d"*"*,$4C,d" "*,$4E
-		dta $80,$4F,$82,$4E,$80,$4C,$80,$4E,$80,$4C,$80,$4A,$82,$4C,$9D,$FF
-;vid	dta d" "*,$4F,d"""*,$4E,d" "*,$4C,d" "*,$4E,d" "*,$4C,d" "*,$4A,d"""*,$4C,d"="*,$FF
-		dta $83,$09,$4F,$84,$4E,$84,$51,$84,$4F,$84,$4F,$86,$4F,$84,$4E,$84
-;vid	dta d"#"*,d")",$4F,d"$"*,$4E,d"$"*,$51,d"$"*,$4F,d"$"*,$4F,d"&"*,$4F,d"$"*,$4E,d"$"*
-		dta $51,$84,$4F,$84,$51,$81,$FF,$09,$53,$9A,$51,$80,$4F,$80,$4E,$8E
-;vid	dta $51,d"$"*,$4F,d"$"*,$51,d"!"*,$FF,d")",$53,d":"*,$51,d" "*,$4F,d" "*,$4E,d"."*
-		dta $57,$80,$53,$80,$4E,$80,$4B,$80,$47,$80,$42,$80,$47,$80,$4B,$80
-;vid	dta $57,d" "*,$53,d" "*,$4E,d" "*,$4B,d" "*,$47,d" "*,$42,d" "*,$47,d" "*,$4B,d" "*
-		dta $FF,$03,$4C,$80,$4C,$80,$4C,$80,$4C,$80,$4C,$80,$4C,$80,$4C,$80
-;vid	dta $FF,d"#",$4C,d" "*,$4C,d" "*,$4C,d" "*,$4C,d" "*,$4C,d" "*,$4C,d" "*,$4C,d" "*
+		dta $80,$4E,$80,$47,$80,$FF,$0C,$47,$80,$4A,$80,$4E,$80,$47,$80,$4A
+		dta $80,$4E,$80,$47,$80,$4A,$80,$4E,$80,$47,$80,$4A,$80,$4E,$80,$47
+		dta $80,$4A,$80,$4E,$80,$4A,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C
+		dta $80,$4E,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E,$80,$47
+		dta $80,$4C,$80,$4E,$80,$47,$80,$FF,$0C,$48,$80,$4C,$80,$4F,$80,$48
+		dta $80,$4C,$80,$4F,$80,$48,$80,$4C,$80,$4F,$80,$48,$80,$4C,$80,$4F
+		dta $80,$48,$80,$4C,$80,$4F,$80,$48,$80,$48,$80,$4C,$80,$51,$80,$48
+		dta $80,$4C,$80,$51,$80,$48,$80,$4C,$80,$51,$80,$48,$80,$4C,$80,$51
+		dta $80,$48,$80,$4C,$80,$51,$80,$48,$80,$FF,$0C,$47,$80,$4C,$80,$4F
+		dta $80,$47,$80,$4C,$80,$4F,$80,$47,$80,$4C,$80,$4F,$80,$47,$80,$4C
+		dta $80,$4F,$80,$47,$80,$4C,$80,$4F,$80,$47,$80,$47,$80,$4C,$80,$4E
+		dta $80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$4C
+		dta $80,$4E,$80,$47,$80,$4C,$80,$4E,$80,$47,$80,$FF,$09,$4A,$8A,$4C
+		dta $80,$4E,$80,$4F,$82,$4E,$80,$4C,$80,$4E,$80,$4C,$80,$4A,$82,$4C
+		dta $9D,$FF,$83,$09,$4F,$84,$4E,$84,$51,$84,$4F,$84,$4F,$86,$4F,$84
+		dta $4E,$84,$51,$84,$4F,$84,$51,$81,$FF,$09,$53,$9A,$51,$80,$4F,$80
+		dta $4E,$8E,$57,$80,$53,$80,$4E,$80,$4B,$80,$47,$80,$42,$80,$47,$80
+		dta $4B,$80,$FF,$03,$4C,$80,$4C,$80,$4C,$80,$4C,$80,$4C,$80,$4C,$80
 		dta $4C,$80,$4C,$80,$4C,$80,$4C,$80,$4C,$80,$4C,$80,$4C,$80,$4C,$80
-;vid	dta $4C,d" "*,$4C,d" "*,$4C,d" "*,$4C,d" "*,$4C,d" "*,$4C,d" "*,$4C,d" "*,$4C,d" "*
-		dta $4C,$9F,$FF,$02,$4A,$56,$4A,$80,$0F,$68,$80,$02,$4A,$80,$4A,$80
-;vid	dta $4C,d"?"*,$FF,d""",$4A,$56,$4A,d" "*,d"/h",d" "*,d""",$4A,d" "*,$4A,d" "*
-		dta $4A,$80,$0F,$68,$80,$02,$4A,$80,$4A,$56,$4A,$80,$0F,$68,$80,$02
-;vid	dta $4A,d" "*,d"/h",d" "*,d""",$4A,d" "*,$4A,$56,$4A,d" "*,d"/h",d" "*,d"""
-		dta $4A,$80,$4A,$80,$4A,$80,$0F,$68,$80,$02,$4A,$80,$4C,$58,$4C,$80
-;vid	dta $4A,d" "*,$4A,d" "*,$4A,d" "*,d"/h",d" "*,d""",$4A,d" "*,$4C,$58,$4C,d" "*
-		dta $0F,$68,$80,$02,$4C,$80,$4C,$80,$4C,$80,$0F,$68,$80,$02,$4C,$80
-;vid	dta d"/h",d" "*,d""",$4C,d" "*,$4C,d" "*,$4C,d" "*,d"/h",d" "*,d""",$4C,d" "*
-		dta $4C,$58,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C,$80,$4C,$80,$0F,$68
-;vid	dta $4C,$58,$4C,d" "*,d"/h",d" "*,d""",$4C,d" "*,$4C,d" "*,$4C,d" "*,d"/h"
-		dta $80,$02,$4C,$80,$FF,$02,$47,$53,$47,$80,$0F,$68,$80,$02,$47,$80
-;vid	dta d" "*,d""",$4C,d" "*,$FF,d""",$47,$53,$47,d" "*,d"/h",d" "*,d""",$47,d" "*
-		dta $47,$80,$47,$80,$0F,$68,$80,$02,$47,$80,$47,$53,$47,$80,$0F,$68
-;vid	dta $47,d" "*,$47,d" "*,d"/h",d" "*,d""",$47,d" "*,$47,$53,$47,d" "*,d"/h"
-		dta $80,$02,$47,$80,$47,$80,$47,$80,$0F,$68,$80,$02,$47,$80,$4B,$57
-;vid	dta d" "*,d""",$47,d" "*,$47,d" "*,$47,d" "*,d"/h",d" "*,d""",$47,d" "*,$4B,$57
-		dta $4B,$80,$0F,$68,$80,$02,$4B,$80,$4B,$80,$4B,$80,$0F,$68,$80,$02
-;vid	dta $4B,d" "*,d"/h",d" "*,d""",$4B,d" "*,$4B,d" "*,$4B,d" "*,d"/h",d" "*,d"""
-		dta $4B,$80,$4B,$57,$4B,$80,$0F,$68,$80,$02,$4B,$80,$4B,$80,$4B,$80
-;vid	dta $4B,d" "*,$4B,$57,$4B,d" "*,d"/h",d" "*,d""",$4B,d" "*,$4B,d" "*,$4B,d" "*
-		dta $0F,$68,$80,$02,$4B,$80,$FF,$02,$48,$54,$48,$80,$0F,$68,$80,$02
-;vid	dta d"/h",d" "*,d""",$4B,d" "*,$FF,d""",$48,$54,$48,d" "*,d"/h",d" "*,d"""
-		dta $48,$80,$48,$80,$48,$80,$0F,$68,$80,$02,$48,$80,$48,$54,$48,$80
-;vid	dta $48,d" "*,$48,d" "*,$48,d" "*,d"/h",d" "*,d""",$48,d" "*,$48,$54,$48,d" "*
-		dta $0F,$68,$80,$02,$48,$80,$48,$80,$48,$80,$0F,$68,$80,$02,$48,$80
-;vid	dta d"/h",d" "*,d""",$48,d" "*,$48,d" "*,$48,d" "*,d"/h",d" "*,d""",$48,d" "*
-		dta $45,$51,$45,$80,$0F,$68,$80,$02,$45,$80,$45,$80,$45,$80,$0F,$68
-;vid	dta $45,$51,$45,d" "*,d"/h",d" "*,d""",$45,d" "*,$45,d" "*,$45,d" "*,d"/h"
-		dta $80,$02,$45,$80,$45,$51,$45,$80,$0F,$68,$80,$02,$45,$80,$45,$80
-;vid	dta d" "*,d""",$45,d" "*,$45,$51,$45,d" "*,d"/h",d" "*,d""",$45,d" "*,$45,d" "*
-		dta $45,$80,$0F,$68,$80,$02,$45,$80,$FF,$09,$4C,$8A,$4E,$80,$0B,$4E
-;vid	dta $45,d" "*,d"/h",d" "*,d""",$45,d" "*,$FF,d")",$4C,d"*"*,$4E,d" "*,d"+",$4E
-		dta $80,$09,$51,$82,$4F,$80,$4E,$80,$4F,$80,$4E,$80,$4C,$82,$4E,$8E
-;vid	dta d" "*,d")",$51,d"""*,$4F,d" "*,$4E,d" "*,$4F,d" "*,$4E,d" "*,$4C,d"""*,$4E,d"."*
-		dta $4A,$8A,$47,$81,$FF,$09,$4C,$84,$4E,$4F,$0B,$4F,$09,$51,$4F,$4E
-;vid	dta $4A,d"*"*,$47,d"!"*,$FF,d")",$4C,d"$"*,$4E,$4F,d"+",$4F,d")",$51,$4F,$4E
-		dta $4F,$4E,$4C,$80,$4E,$86,$4A,$84,$47,$80,$4A,$84,$4C,$4E,$4F,$80
-;vid	dta $4F,$4E,$4C,d" "*,$4E,d"&"*,$4A,d"$"*,$47,d" "*,$4A,d"$"*,$4C,$4E,$4F,d" "*
-		dta $4E,$4C,$4E,$4C,$4A,$80,$4C,$8D,$FF,$81,$09,$4F,$81,$4E,$81,$51
-;vid	dta $4E,$4C,$4E,$4C,$4A,d" "*,$4C,d"-"*,$FF,d"!"*,d")",$4F,d"!"*,$4E,d"!"*,$51
-		dta $81,$4F,$81,$4F,$82,$4F,$81,$4E,$81,$51,$81,$4F,$81,$51,$0B,$51
-;vid	dta d"!"*,$4F,d"!"*,$4F,d"""*,$4F,d"!"*,$4E,d"!"*,$51,d"!"*,$4F,d"!"*,$51,d"+",$51
-		dta $09,$53,$8C,$51,$4F,$4E,$86,$57,$53,$4E,$57,$47,$42,$47,$57,$FF
-;vid	dta d")",$53,d","*,$51,$4F,$4E,d"&"*,$57,$53,$4E,$57,$47,$42,$47,$57,$FF
-		dta $08,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$43,$43,$45
-;vid	dta d"(",$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$43,$43,$45
-		dta $45,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$43,$43,$45
-;vid	dta $45,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$43,$43,$45
-		dta $45,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$43,$43,$45
-;vid	dta $45,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$43,$43,$45
-		dta $45,$47,$47,$47,$47,$47,$47,$47,$47,$43,$43,$43,$43,$42,$42,$42
-;vid	dta $45,$47,$47,$47,$47,$47,$47,$47,$47,$43,$43,$43,$43,$42,$42,$42
-		dta $42,$FF,$0C,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$48
-;vid	dta $42,$FF,d",",$4C,$4C,d" "*,$4C,$4C,$4C,d" "*,$4C,$4C,$4C,d" "*,$4C,$48
-		dta $48,$4A,$4A,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$48
-;vid	dta $48,$4A,$4A,$4C,$4C,d" "*,$4C,$4C,$4C,d" "*,$4C,$4C,$4C,d" "*,$4C,$48
-		dta $48,$4A,$4A,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$48
-;vid	dta $48,$4A,$4A,$4C,$4C,d" "*,$4C,$4C,$4C,d" "*,$4C,$4C,$4C,d" "*,$4C,$48
-		dta $48,$4A,$4A,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$48,$48,$48,$48,$47
-;vid	dta $48,$4A,$4A,$4C,$4C,d" "*,$4C,$4C,$4C,d" "*,$4C,$48,$48,$48,$48,$47
-		dta $47,$47,$47,$FF,$04,$4C,$4F,$53,$58,$5B,$58,$5B,$5F,$64,$64,$00
-;vid	dta $47,$47,$47,$FF,d"$",$4C,$4F,$53,$58,$5B,$58,$5B,$5F,d"dd "
-		dta $64,$64,$64,$64,$64,$04,$70,$81,$0E,$70,$0F,$70,$10,$70,$70,$11
-;vid	dta d"ddddd$p",d"!"*,d".p/p0pp1"
-		dta $70,$70,$12,$53,$13,$53,$14,$53,$15,$53,$0E,$70,$70,$0F,$70,$70
-;vid	dta d"pp2",$53,d"3",$53,d"4",$53,d"5",$53,d".pp/pp"
-		dta $70,$10,$70,$70,$70,$11,$70,$70,$70,$70,$12,$53,$13,$53,$14,$53
-;vid	dta d"p0ppp1pppp2",$53,d"3",$53,d"4",$53
-		dta $15,$47,$0E,$70,$70,$0F,$70,$70,$70,$10,$70,$70,$70,$11,$70,$70
-;vid	dta d"5",$47,d".pp/ppp0ppp1pp"
-		dta $70,$70,$12,$53,$13,$53,$14,$53,$15,$47,$0F,$70,$10,$70,$70,$11
-;vid	dta d"pp2",$53,d"3",$53,d"4",$53,d"5",$47,d"/p0pp1"
-		dta $70,$FF,$02,$4C,$58,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C,$80,$4C
-;vid	dta d"p",$FF,d""",$4C,$58,$4C,d" "*,d"/h",d" "*,d""",$4C,d" "*,$4C,d" "*,$4C
-		dta $80,$0F,$68,$80,$02,$4C,$80,$4C,$58,$4C,$80,$0F,$68,$80,$02,$4C
-;vid	dta d" "*,d"/h",d" "*,d""",$4C,d" "*,$4C,$58,$4C,d" "*,d"/h",d" "*,d""",$4C
-		dta $80,$4C,$80,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C,$58,$4C,$80,$0F
-;vid	dta d" "*,$4C,d" "*,$4C,d" "*,d"/h",d" "*,d""",$4C,d" "*,$4C,$58,$4C,d" "*,d"/"
-		dta $68,$80,$02,$4C,$80,$4C,$80,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C
-;vid	dta d"h",d" "*,d""",$4C,d" "*,$4C,d" "*,$4C,d" "*,d"/h",d" "*,d""",$4C,d" "*,$4C
-		dta $58,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C,$80,$4C,$80,$0F,$68,$80
-;vid	dta $58,$4C,d" "*,d"/h",d" "*,d""",$4C,d" "*,$4C,d" "*,$4C,d" "*,d"/h",d" "*
-		dta $02,$4C,$80,$FF,$12,$5C,$15,$50,$13,$5C,$15,$50,$14,$5C,$15,$50
-;vid	dta d""",$4C,d" "*,$FF,d"2",$5C,d"5",$50,d"3",$5C,d"5",$50,d"4",$5C,d"5",$50
-		dta $50,$50,$81,$00,$64,$80,$68,$82,$12,$5C,$15,$50,$13,$5C,$15,$50
-;vid	dta $50,$50,d"!"*,d" d",d" "*,d"h",d"""*,d"2",$5C,d"5",$50,d"3",$5C,d"5",$50
-		dta $14,$5C,$15,$50,$50,$50,$87,$12,$5C,$15,$50,$13,$5C,$15,$50,$14
-;vid	dta d"4",$5C,d"5",$50,$50,$50,d"'"*,d"2",$5C,d"5",$50,d"3",$5C,d"5",$50,d"4"
-		dta $5C,$15,$50,$50,$50,$87,$12,$5C,$15,$50,$13,$5C,$15,$50,$14,$5C
-;vid	dta $5C,d"5",$50,$50,$50,d"'"*,d"2",$5C,d"5",$50,d"3",$5C,d"5",$50,d"4",$5C
-		dta $15,$50,$50,$50,$86,$FF,$06,$40,$9E,$40,$9D,$FF,$06,$42,$9E,$40
-;vid	dta d"5",$50,$50,$50,d"&"*,$FF,d"&",$40,d">"*,$40,d"="*,$FF,d"&",$42,d">"*,$40
-		dta $9D,$FF,$06,$40,$9E,$40,$9D,$FF,$06,$40,$9E,$42,$9D,$FF,$A0,$E3
-;vid	dta d"="*,$FF,d"&",$40,d">"*,$40,d"="*,$FF,d"&",$40,d">"*,$42,d"="*,$FF,d"@c"*
-		dta $ED,$E3,$A0,$E4,$E1,$F4,$E1,$A0,$E6,$E9,$EC,$E5,$A0,$8E,$95,$0D
-;vid	dta d"mc@data@file@.5"*,d"-"
-		dta $20,$06,$42,$0A,$00,$C2,$3B,$AF,$45,$02,$2E,$6F,$84,$A6,$4F,$7F
-;vid	dta d"@&",$42,d"* ",$C2,d"[",d"O"*,$45,d""No",d"$F"*,$4F,$7F
-		dta $C6,$83,$E4,$D4,$DA,$6D,$CC,$61,$0C,$B9,$D8,$CE,$00,$38,$AC,$00
-;vid	dta $C6,d"#d"*,$D4,$DA,d"m",$CC,d"a,",d"Y"*,$D8,$CE,d" X",d"L"*,d" "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta d"        ",$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+		dta $4C,$80,$4C,$9F,$FF,$02,$4A,$56,$4A,$80,$0F,$68,$80,$02,$4A,$80
+		dta $4A,$80,$4A,$80,$0F,$68,$80,$02,$4A,$80,$4A,$56,$4A,$80,$0F,$68
+		dta $80,$02,$4A,$80,$4A,$80,$4A,$80,$0F,$68,$80,$02,$4A,$80,$4C,$58
+		dta $4C,$80,$0F,$68,$80,$02,$4C,$80,$4C,$80,$4C,$80,$0F,$68,$80,$02
+		dta $4C,$80,$4C,$58,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C,$80,$4C,$80
+		dta $0F,$68,$80,$02,$4C,$80,$FF,$02,$47,$53,$47,$80,$0F,$68,$80,$02
+		dta $47,$80,$47,$80,$47,$80,$0F,$68,$80,$02,$47,$80,$47,$53,$47,$80
+		dta $0F,$68,$80,$02,$47,$80,$47,$80,$47,$80,$0F,$68,$80,$02,$47,$80
+		dta $4B,$57,$4B,$80,$0F,$68,$80,$02,$4B,$80,$4B,$80,$4B,$80,$0F,$68
+		dta $80,$02,$4B,$80,$4B,$57,$4B,$80,$0F,$68,$80,$02,$4B,$80,$4B,$80
+		dta $4B,$80,$0F,$68,$80,$02,$4B,$80,$FF,$02,$48,$54,$48,$80,$0F,$68
+		dta $80,$02,$48,$80,$48,$80,$48,$80,$0F,$68,$80,$02,$48,$80,$48,$54
+		dta $48,$80,$0F,$68,$80,$02,$48,$80,$48,$80,$48,$80,$0F,$68,$80,$02
+		dta $48,$80,$45,$51,$45,$80,$0F,$68,$80,$02,$45,$80,$45,$80,$45,$80
+		dta $0F,$68,$80,$02,$45,$80,$45,$51,$45,$80,$0F,$68,$80,$02,$45,$80
+		dta $45,$80,$45,$80,$0F,$68,$80,$02,$45,$80,$FF,$09,$4C,$8A,$4E,$80
+		dta $0B,$4E,$80,$09,$51,$82,$4F,$80,$4E,$80,$4F,$80,$4E,$80,$4C,$82
+		dta $4E,$8E,$4A,$8A,$47,$81,$FF,$09,$4C,$84,$4E,$4F,$0B,$4F,$09,$51
+		dta $4F,$4E,$4F,$4E,$4C,$80,$4E,$86,$4A,$84,$47,$80,$4A,$84,$4C,$4E
+		dta $4F,$80,$4E,$4C,$4E,$4C,$4A,$80,$4C,$8D,$FF,$81,$09,$4F,$81,$4E
+		dta $81,$51,$81,$4F,$81,$4F,$82,$4F,$81,$4E,$81,$51,$81,$4F,$81,$51
+		dta $0B,$51,$09,$53,$8C,$51,$4F,$4E,$86,$57,$53,$4E,$57,$47,$42,$47
+		dta $57,$FF,$08,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$43
+		dta $43,$45,$45,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$43
+		dta $43,$45,$45,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$47,$43
+		dta $43,$45,$45,$47,$47,$47,$47,$47,$47,$47,$47,$43,$43,$43,$43,$42
+		dta $42,$42,$42,$FF,$0C,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$4C,$4C,$80
+		dta $4C,$48,$48,$4A,$4A,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$4C,$4C,$80
+		dta $4C,$48,$48,$4A,$4A,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$4C,$4C,$80
+		dta $4C,$48,$48,$4A,$4A,$4C,$4C,$80,$4C,$4C,$4C,$80,$4C,$48,$48,$48
+		dta $48,$47,$47,$47,$47,$FF,$04,$4C,$4F,$53,$58,$5B,$58,$5B,$5F,$64
+		dta $64,$00,$64,$64,$64,$64,$64,$04,$70,$81,$0E,$70,$0F,$70,$10,$70
+		dta $70,$11,$70,$70,$12,$53,$13,$53,$14,$53,$15,$53,$0E,$70,$70,$0F
+		dta $70,$70,$70,$10,$70,$70,$70,$11,$70,$70,$70,$70,$12,$53,$13,$53
+		dta $14,$53,$15,$47,$0E,$70,$70,$0F,$70,$70,$70,$10,$70,$70,$70,$11
+		dta $70,$70,$70,$70,$12,$53,$13,$53,$14,$53,$15,$47,$0F,$70,$10,$70
+		dta $70,$11,$70,$FF,$02,$4C,$58,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C
+		dta $80,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C,$58,$4C,$80,$0F,$68,$80
+		dta $02,$4C,$80,$4C,$80,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C,$58,$4C
+		dta $80,$0F,$68,$80,$02,$4C,$80,$4C,$80,$4C,$80,$0F,$68,$80,$02,$4C
+		dta $80,$4C,$58,$4C,$80,$0F,$68,$80,$02,$4C,$80,$4C,$80,$4C,$80,$0F
+		dta $68,$80,$02,$4C,$80,$FF,$12,$5C,$15,$50,$13,$5C,$15,$50,$14,$5C
+		dta $15,$50,$50,$50,$81,$00,$64,$80,$68,$82,$12,$5C,$15,$50,$13,$5C
+		dta $15,$50,$14,$5C,$15,$50,$50,$50,$87,$12,$5C,$15,$50,$13,$5C,$15
+		dta $50,$14,$5C,$15,$50,$50,$50,$87,$12,$5C,$15,$50,$13,$5C,$15,$50
+		dta $14,$5C,$15,$50,$50,$50,$86,$FF,$06,$40,$9E,$40,$9D,$FF,$06,$42
+		dta $9E,$40,$9D,$FF,$06,$40,$9E,$40,$9D,$FF,$06,$40,$9E,$42,$9D,$FF
+		dta $A0,$E3,$ED,$E3,$A0,$E4,$E1,$F4,$E1,$A0,$E6,$E9,$EC,$E5,$A0,$8E
+		dta $95,$0D,$20,$06,$42,$0A,$00,$C2,$3B,$AF,$45,$02,$2E,$6F,$84,$A6
+		dta $4F,$7F,$C6,$83,$E4,$D4,$DA,$6D,$CC,$61,$0C,$B9,$D8,$CE,$00,$38
+		dta $AC,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-		dta $FF,$FF,$90,$8D,$8D,$8F,$8D,$8E,$8D,$8E,$90,$8D,$90,$90,$8D,$8D
-;vid	dta $FF,$FF,d"0--/-.-.0-00--"*
-		dta $90,$8D,$8D,$90,$90,$8E,$90,$8F,$8E,$8E,$8F,$8E,$8F,$90,$FF,$FF
-;vid	dta d"0--00.0/.././0"*,$FF,$FF
+		dta $FF,$FF,$FF,$FF,$90,$8D,$8D,$8F,$8D,$8E,$8D,$8E,$90,$8D,$90,$90
+		dta $8D,$8D,$90,$8D,$8D,$90,$90,$8E,$90,$8F,$8E,$8E,$8F,$8E,$8F,$90
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-		dta $FF,$FF,$0C,$A1,$00,$00,$00,$00,$00,$A0,$00,$20,$00,$00,$F0,$C7
-;vid	dta $FF,$FF,d",",d"A"*,d"     ",d"@"*,d" @  ",d"p"*,$C7
-		dta $70,$00,$00,$00,$F0,$A1,$0C,$00,$00,$00,$00,$A0,$00,$20,$00,$00
-;vid	dta d"p   ",d"pA"*,d",    ",d"@"*,d" @  "
-		dta $FC,$A0,$C0,$00,$00,$00,$00,$A4,$00,$00,$00,$00,$F8,$A1,$00,$00
-;vid	dta d"|@"*,$C0,d"    ",d"D"*,d"    ",d"xA"*,d"  "
-		dta $00,$00,$F0,$A1,$00,$00,$00,$00,$F0,$C7,$70,$20,$00,$00,$C1,$A5
-;vid	dta d"  ",d"pA"*,d"    ",d"p"*,$C7,d"p@  ",$C1,d"E"*
-		dta $00,$10,$00,$00,$C5,$A9,$00,$10,$00,$00,$C5,$A1,$07,$00,$50,$00
-;vid	dta d" 0  ",$C5,d"I"*,d" 0  ",$C5,d"A"*,d"' ",$50,d" "
-		dta $05,$A1,$0C,$00,$80,$00,$FB,$90,$00,$00,$82,$40,$FF,$90,$00,$00
-;vid	dta d"%",d"A"*,d", ",d" "*,d" ",d"{0"*,d"  ",d"""*,$40,$FF,d"0"*,d"  "
-		dta $82,$40,$FF,$90,$00,$00,$82,$40,$FF,$90,$00,$00,$82,$40,$05,$90
-;vid	dta d"""*,$40,$FF,d"0"*,d"  ",d"""*,$40,$FF,d"0"*,d"  ",d"""*,$40,d"%",d"0"*
-		dta $00,$00,$80,$00,$05,$90,$00,$00,$80,$00,$05,$90,$00,$00,$80,$00
-;vid	dta d"  ",d" "*,d" %",d"0"*,d"  ",d" "*,d" %",d"0"*,d"  ",d" "*,d" "
-		dta $05,$90,$00,$00,$80,$00,$F0,$A1,$0C,$30,$00,$00,$F4,$A4,$00,$20
-;vid	dta d"%",d"0"*,d"  ",d" "*,d" ",d"pA"*,d",P  ",d"tD"*,d" @"
-		dta $00,$00,$FC,$A0,$C0,$00,$00,$00,$00,$00,$00,$00,$00,$00,$11,$11
-;vid	dta d"  ",d"|@"*,$C0,d"         11"
-		dta $11,$11,$11,$11,$11,$01,$22,$12,$11,$11,$11,$11,$11,$01,$11,$11
-;vid	dta d"11111!B211111!11"
-		dta $11,$11,$11,$11,$11,$01,$14,$13,$02,$00,$00,$00,$00,$00,$46,$23
-;vid	dta d"11111!43"     ",$46,d"C"
-		dta $12,$11,$11,$11,$11,$01,$24,$11,$00,$00,$00,$00,$00,$00,$11,$11
-;vid	dta d"21111!D1      11"
-		dta $11,$11,$11,$11,$11,$01,$54,$45,$33,$33,$33,$22,$22,$02,$32,$12
-;vid	dta d"11111!",$54,$45,d"SSSBB"R2"
-		dta $11,$11,$11,$11,$11,$01,$52,$34,$22,$11,$11,$11,$11,$01,$56,$34
-;vid	dta d"11111!",$52,d"TB1111!",$56,d"T"
-		dta $22,$22,$12,$11,$11,$01,$88,$77,$77,$77,$77,$77,$77,$07,$57,$23
-;vid	dta d"BB211!",d"("*,d"wwwwww'",$57,d"C"
-		dta $11,$01,$00,$00,$00,$00,$45,$23,$22,$22,$12,$11,$11,$01,$F7,$8B
-;vid	dta d"1!    ",$45,d"CBB211!",d"w+"*
-		dta $46,$33,$12,$11,$11,$00,$93,$56,$23,$22,$22,$11,$11,$00,$62,$24
-;vid	dta $46,d"S211 ",d"3"*,$56,d"CBB11 bD"
-		dta $11,$11,$11,$01,$00,$00,$51,$23,$11,$11,$11,$00,$00,$00,$78,$45
-;vid	dta d"111!  ",$51,d"C111   x",$45
-		dta $23,$12,$11,$11,$01,$00,$56,$23,$12,$11,$11,$11,$00,$00,$34,$12
-;vid	dta d"C211! ",$56,d"C2111  T2"
-		dta $11,$11,$11,$11,$00,$00,$23,$11,$11,$11,$11,$11,$00,$00,$35,$12
-;vid	dta d"1111  C11111  U2"
-		dta $11,$11,$11,$11,$11,$01,$22,$33,$33,$22,$22,$11,$11,$01,$24,$11
-;vid	dta d"11111!BSSBB11!D1"
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$DF,$0D
-;vid	dta d"              ",$DF,d"-"
-		dta $0D,$04,$05,$04,$05,$04,$05,$0E,$0E,$0E,$0E,$0E,$0E,$FE,$0E,$0E
-;vid	dta d"-$%$%$%......",d"~"*,d".."
-		dta $12,$13,$12,$13,$12,$13,$0E,$0E,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE
-;vid	dta d"232323..",d"~~~~~~~~"*
+		dta $FF,$FF,$FF,$FF,$0C,$A1,$00,$00,$00,$00,$00,$A0,$00,$20,$00,$00
+		dta $F0,$C7,$70,$00,$00,$00,$F0,$A1,$0C,$00,$00,$00,$00,$A0,$00,$20
+		dta $00,$00,$FC,$A0,$C0,$00,$00,$00,$00,$A4,$00,$00,$00,$00,$F8,$A1
+		dta $00,$00,$00,$00,$F0,$A1,$00,$00,$00,$00,$F0,$C7,$70,$20,$00,$00
+		dta $C1,$A5,$00,$10,$00,$00,$C5,$A9,$00,$10,$00,$00,$C5,$A1,$07,$00
+		dta $50,$00,$05,$A1,$0C,$00,$80,$00,$FB,$90,$00,$00,$82,$40,$FF,$90
+		dta $00,$00,$82,$40,$FF,$90,$00,$00,$82,$40,$FF,$90,$00,$00,$82,$40
+		dta $05,$90,$00,$00,$80,$00,$05,$90,$00,$00,$80,$00,$05,$90,$00,$00
+		dta $80,$00,$05,$90,$00,$00,$80,$00,$F0,$A1,$0C,$30,$00,$00,$F4,$A4
+		dta $00,$20,$00,$00,$FC,$A0,$C0,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		dta $11,$11,$11,$11,$11,$11,$11,$01,$22,$12,$11,$11,$11,$11,$11,$01
+		dta $11,$11,$11,$11,$11,$11,$11,$01,$14,$13,$02,$00,$00,$00,$00,$00
+		dta $46,$23,$12,$11,$11,$11,$11,$01,$24,$11,$00,$00,$00,$00,$00,$00
+		dta $11,$11,$11,$11,$11,$11,$11,$01,$54,$45,$33,$33,$33,$22,$22,$02
+		dta $32,$12,$11,$11,$11,$11,$11,$01,$52,$34,$22,$11,$11,$11,$11,$01
+		dta $56,$34,$22,$22,$12,$11,$11,$01,$88,$77,$77,$77,$77,$77,$77,$07
+		dta $57,$23,$11,$01,$00,$00,$00,$00,$45,$23,$22,$22,$12,$11,$11,$01
+		dta $F7,$8B,$46,$33,$12,$11,$11,$00,$93,$56,$23,$22,$22,$11,$11,$00
+		dta $62,$24,$11,$11,$11,$01,$00,$00,$51,$23,$11,$11,$11,$00,$00,$00
+		dta $78,$45,$23,$12,$11,$11,$01,$00,$56,$23,$12,$11,$11,$11,$00,$00
+		dta $34,$12,$11,$11,$11,$11,$00,$00,$23,$11,$11,$11,$11,$11,$00,$00
+		dta $35,$12,$11,$11,$11,$11,$11,$01,$22,$33,$33,$22,$22,$11,$11,$01
+		dta $24,$11,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		dta $DF,$0D,$0D,$04,$05,$04,$05,$04,$05,$0E,$0E,$0E,$0E,$0E,$0E,$FE
+		dta $0E,$0E,$12,$13,$12,$13,$12,$13,$0E,$0E,$FE,$FE,$FE,$FE,$FE,$FE
 		dta $FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE
-;vid	dta d"~~~~~~~~~~~~~~~~"*
 		dta $FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE
-;vid	dta d"~~~~~~~~~~~~~~~~"*
 		dta $FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE,$FE
-;vid	dta d"~~~~~~~~~~~~~~~~"*
-		dta $FE,$FE,$EF,$0E,$08,$1B,$06,$07,$06,$07,$0A,$0B,$06,$06,$06,$0C
-;vid	dta d"~~o"*,d".(;&'&'*+&&&,"
-		dta $06,$0C,$FF,$06,$0C,$15,$16,$15,$16,$00,$00,$00,$00,$FF,$FF,$FF
-;vid	dta d"&,",$FF,d"&,5656    ",$FF,$FF,$FF
+		dta $FE,$FE,$FE,$FE,$EF,$0E,$08,$1B,$06,$07,$06,$07,$0A,$0B,$06,$06
+		dta $06,$0C,$06,$0C,$FF,$06,$0C,$15,$16,$15,$16,$00,$00,$00,$00,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$02,$00,$00,$00,$00,$00,$00,$00
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,d""       "
-		dta $00,$00,$00,$01,$01,$00,$00,$FF,$0F,$0F,$11,$14,$00,$00,$11,$14
-;vid	dta d"   !!  ",$FF,d"//14  14"
-		dta $06,$0C,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta d"&,",$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$02,$00,$00,$00,$00,$00
+		dta $00,$00,$00,$00,$00,$01,$01,$00,$00,$FF,$0F,$0F,$11,$14,$00,$00
+		dta $11,$14,$06,$0C,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$06,$4A
-;vid	dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,d"&",$4A
-		dta $8E,$4A,$8E,$49,$8E,$49,$8D,$FF,$05,$70,$80,$70,$80,$70,$80,$70
-;vid	dta d"."*,$4A,d"."*,$49,d"."*,$49,d"-"*,$FF,d"%p",d" "*,d"p",d" "*,d"p",d" "*,d"p"
-		dta $80,$01,$42,$86,$05,$6D,$80,$6D,$80,$6D,$80,$6D,$80,$01,$42,$86
-;vid	dta d" "*,d"!",$42,d"&"*,d"%m",d" "*,d"m",d" "*,d"m",d" "*,d"m",d" "*,d"!",$42,d"&"*
-		dta $05,$70,$80,$70,$80,$70,$80,$70,$80,$01,$42,$86,$05,$6D,$80,$6D
-;vid	dta d"%p",d" "*,d"p",d" "*,d"p",d" "*,d"p",d" "*,d"!",$42,d"&"*,d"%m",d" "*,d"m"
-		dta $80,$6D,$80,$6D,$80,$01,$42,$85,$FF,$06,$42,$8E,$42,$8E,$45,$8E
-;vid	dta d" "*,d"m",d" "*,d"m",d" "*,d"!",$42,d"%"*,$FF,d"&",$42,d"."*,$42,d"."*,$45,d"."*
-		dta $45,$8D,$FF,$00,$5A,$8E,$5A,$8E,$58,$8E,$58,$8D,$FF,$00,$5A,$8E
-;vid	dta $45,d"-"*,$FF,d" ",$5A,d"."*,$5A,d"."*,$58,d"."*,$58,d"-"*,$FF,d" ",$5A,d"."*
-		dta $5A,$8E,$58,$8E,$12,$4E,$80,$13,$4E,$80,$14,$4E,$80,$15,$4E,$80
-;vid	dta $5A,d"."*,$58,d"."*,d"2",$4E,d" "*,d"3",$4E,d" "*,d"4",$4E,d" "*,d"5",$4E,d" "*
-		dta $12,$4E,$80,$13,$4E,$80,$14,$4E,$80,$15,$4E,$80,$FF,$06,$42,$B6
-;vid	dta d"2",$4E,d" "*,d"3",$4E,d" "*,d"4",$4E,d" "*,d"5",$4E,d" "*,$FF,d"&",$42,d"V"*
-		dta $12,$4E,$80,$13,$4E,$80,$14,$4E,$80,$15,$4E,$80,$FF,$06,$42,$BD
-;vid	dta d"2",$4E,d" "*,d"3",$4E,d" "*,d"4",$4E,d" "*,d"5",$4E,d" "*,$FF,d"&",$42,d"]"*
-		dta $FF,$01,$5A,$80,$5A,$80,$12,$4E,$13,$4E,$15,$4E,$80,$01,$5D,$80
-;vid	dta $FF,d"!",$5A,d" "*,$5A,d" "*,d"2",$4E,d"3",$4E,d"5",$4E,d" "*,d"!",$5D,d" "*
-		dta $5D,$80,$0F,$66,$10,$66,$11,$66,$80,$01,$5A,$80,$5A,$80,$12,$4E
-;vid	dta $5D,d" "*,d"/f0f1f",d" "*,d"!",$5A,d" "*,$5A,d" "*,d"2",$4E
-		dta $13,$4E,$15,$4E,$80,$01,$5D,$80,$5D,$80,$0F,$66,$10,$66,$11,$66
-;vid	dta d"3",$4E,d"5",$4E,d" "*,d"!",$5D,d" "*,$5D,d" "*,d"/f0f1f"
-		dta $80,$01,$5A,$80,$5A,$80,$12,$4E,$13,$4E,$15,$4E,$80,$01,$5D,$80
-;vid	dta d" "*,d"!",$5A,d" "*,$5A,d" "*,d"2",$4E,d"3",$4E,d"5",$4E,d" "*,d"!",$5D,d" "*
-		dta $5D,$80,$0F,$66,$10,$66,$11,$66,$80,$01,$5A,$80,$5A,$80,$12,$4E
-;vid	dta $5D,d" "*,d"/f0f1f",d" "*,d"!",$5A,d" "*,$5A,d" "*,d"2",$4E
-		dta $13,$4E,$15,$4E,$80,$01,$5D,$80,$5D,$80,$0F,$66,$10,$66,$11,$66
-;vid	dta d"3",$4E,d"5",$4E,d" "*,d"!",$5D,d" "*,$5D,d" "*,d"/f0f1f"
-		dta $80,$FF,$07,$4E,$8E,$4E,$86,$51,$80,$50,$80,$4E,$80,$50,$80,$4C
-;vid	dta d" "*,$FF,d"'",$4E,d"."*,$4E,d"&"*,$51,d" "*,$50,d" "*,$4E,d" "*,$50,d" "*,$4C
-		dta $8A,$49,$82,$4C,$84,$49,$80,$51,$80,$50,$80,$4E,$80,$50,$80,$FF
-;vid	dta d"*"*,$49,d"""*,$4C,d"$"*,$49,d" "*,$51,d" "*,$50,d" "*,$4E,d" "*,$50,d" "*,$FF
-		dta $00,$56,$8E,$56,$8E,$55,$8E,$58,$8D,$FF,$16,$47,$80,$0C,$53,$53
-;vid	dta d" ",$56,d"."*,$56,d"."*,$55,d"."*,$58,d"-"*,$FF,d"6",$47,d" "*,d",",$53,$53
-		dta $0F,$68,$80,$0C,$53,$80,$16,$47,$80,$0C,$53,$53,$0F,$68,$80,$0C
-;vid	dta d"/h",d" "*,d",",$53,d" "*,d"6",$47,d" "*,d",",$53,$53,d"/h",d" "*,d","
-		dta $53,$80,$16,$47,$80,$0C,$53,$53,$0F,$68,$80,$0C,$53,$80,$16,$47
-;vid	dta $53,d" "*,d"6",$47,d" "*,d",",$53,$53,d"/h",d" "*,d",",$53,d" "*,d"6",$47
-		dta $80,$0C,$53,$53,$0F,$68,$80,$0C,$53,$80,$16,$4A,$80,$0C,$56,$56
-;vid	dta d" "*,d",",$53,$53,d"/h",d" "*,d",",$53,d" "*,d"6",$4A,d" "*,d",",$56,$56
-		dta $0F,$68,$80,$0C,$56,$80,$16,$4A,$80,$0C,$56,$56,$0F,$68,$80,$0C
-;vid	dta d"/h",d" "*,d",",$56,d" "*,d"6",$4A,d" "*,d",",$56,$56,d"/h",d" "*,d","
-		dta $56,$80,$16,$4C,$80,$0C,$58,$58,$0F,$68,$80,$0C,$58,$80,$16,$4C
-;vid	dta $56,d" "*,d"6",$4C,d" "*,d",",$58,$58,d"/h",d" "*,d",",$58,d" "*,d"6",$4C
-		dta $80,$0C,$58,$58,$0F,$68,$80,$0C,$58,$80,$FF,$09,$53,$80,$4E,$51
-;vid	dta d" "*,d",",$58,$58,d"/h",d" "*,d",",$58,d" "*,$FF,d")",$53,d" "*,$4E,$51
-		dta $47,$80,$47,$53,$80,$4E,$51,$53,$47,$80,$47,$80,$53,$80,$4E,$51
-;vid	dta $47,d" "*,$47,$53,d" "*,$4E,$51,$53,$47,d" "*,$47,d" "*,$53,d" "*,$4E,$51
-		dta $47,$80,$47,$53,$80,$4E,$51,$53,$47,$80,$47,$80,$56,$80,$4C,$4E
-;vid	dta $47,d" "*,$47,$53,d" "*,$4E,$51,$53,$47,d" "*,$47,d" "*,$56,d" "*,$4C,$4E
-		dta $4A,$80,$4A,$56,$80,$4C,$4E,$51,$4A,$80,$4A,$80,$58,$53,$56,$58
-;vid	dta $4A,d" "*,$4A,$56,d" "*,$4C,$4E,$51,$4A,d" "*,$4A,d" "*,$58,$53,$56,$58
-		dta $4C,$80,$4C,$58,$80,$53,$56,$58,$4C,$80,$4C,$80,$FF,$06,$47,$8E
-;vid	dta $4C,d" "*,$4C,$58,d" "*,$53,$56,$58,$4C,d" "*,$4C,d" "*,$FF,d"&",$47,d"."*
-		dta $47,$8E,$4A,$8E,$4C,$8D,$FF,$06,$47,$8E,$47,$8E,$4A,$8E,$4C,$84
-;vid	dta $47,d"."*,$4A,d"."*,$4C,d"-"*,$FF,d"&",$47,d"."*,$47,d"."*,$4A,d"."*,$4C,d"$"*
-		dta $09,$4E,$49,$4C,$49,$4C,$4E,$42,$80,$42,$80,$FF,$07,$53,$82,$4E
-;vid	dta d")",$4E,$49,$4C,$49,$4C,$4E,$42,d" "*,$42,d" "*,$FF,d"'",$53,d"""*,$4E
-		dta $82,$51,$82,$4E,$80,$53,$82,$4E,$80,$4C,$80,$4E,$80,$51,$80,$4E
-;vid	dta d"""*,$51,d"""*,$4E,d" "*,$53,d"""*,$4E,d" "*,$4C,d" "*,$4E,d" "*,$51,d" "*,$4E
-		dta $80,$4C,$80,$4E,$80,$56,$82,$55,$82,$53,$82,$55,$80,$51,$82,$4E
-;vid	dta d" "*,$4C,d" "*,$4E,d" "*,$56,d"""*,$55,d"""*,$53,d"""*,$55,d" "*,$51,d"""*,$4E
-		dta $80,$4C,$80,$4E,$80,$51,$80,$53,$80,$55,$80,$58,$80,$FF,$16,$42
-;vid	dta d" "*,$4C,d" "*,$4E,d" "*,$51,d" "*,$53,d" "*,$55,d" "*,$58,d" "*,$FF,d"6",$42
-		dta $80,$0C,$5A,$5A,$0F,$68,$80,$0C,$5A,$80,$16,$42,$80,$0C,$5A,$5A
-;vid	dta d" "*,d",",$5A,$5A,d"/h",d" "*,d",",$5A,d" "*,d"6",$42,d" "*,d",",$5A,$5A
-		dta $0F,$68,$80,$0C,$5A,$80,$16,$42,$80,$0C,$5A,$5A,$0F,$68,$80,$0C
-;vid	dta d"/h",d" "*,d",",$5A,d" "*,d"6",$42,d" "*,d",",$5A,$5A,d"/h",d" "*,d","
-		dta $5A,$80,$16,$42,$80,$0C,$5A,$5A,$0F,$68,$80,$0C,$5A,$80,$16,$45
-;vid	dta $5A,d" "*,d"6",$42,d" "*,d",",$5A,$5A,d"/h",d" "*,d",",$5A,d" "*,d"6",$45
-		dta $80,$0C,$51,$51,$0F,$68,$80,$0C,$51,$80,$16,$45,$80,$0C,$51,$51
-;vid	dta d" "*,d",",$51,$51,d"/h",d" "*,d",",$51,d" "*,d"6",$45,d" "*,d",",$51,$51
-		dta $0F,$68,$80,$0C,$51,$80,$16,$45,$80,$0C,$51,$51,$0F,$68,$80,$0C
-;vid	dta d"/h",d" "*,d",",$51,d" "*,d"6",$45,d" "*,d",",$51,$51,d"/h",d" "*,d","
-		dta $51,$80,$16,$45,$80,$0C,$51,$51,$0F,$68,$80,$0C,$51,$80,$FF,$16
-;vid	dta $51,d" "*,d"6",$45,d" "*,d",",$51,$51,d"/h",d" "*,d",",$51,d" "*,$FF,d"6"
-		dta $42,$80,$0C,$5A,$5A,$0F,$68,$80,$0C,$5A,$80,$16,$42,$80,$0C,$5A
-;vid	dta $42,d" "*,d",",$5A,$5A,d"/h",d" "*,d",",$5A,d" "*,d"6",$42,d" "*,d",",$5A
-		dta $5A,$0F,$68,$80,$0C,$5A,$80,$16,$42,$80,$0C,$5A,$5A,$0F,$68,$80
-;vid	dta $5A,d"/h",d" "*,d",",$5A,d" "*,d"6",$42,d" "*,d",",$5A,$5A,d"/h",d" "*
-		dta $0C,$5A,$80,$16,$42,$80,$0C,$5A,$5A,$0F,$68,$80,$0C,$5A,$80,$16
-;vid	dta d",",$5A,d" "*,d"6",$42,d" "*,d",",$5A,$5A,d"/h",d" "*,d",",$5A,d" "*,d"6"
-		dta $45,$80,$0C,$51,$51,$0F,$68,$80,$0C,$51,$80,$16,$45,$80,$0C,$51
-;vid	dta $45,d" "*,d",",$51,$51,d"/h",d" "*,d",",$51,d" "*,d"6",$45,d" "*,d",",$51
-		dta $51,$0F,$68,$80,$0C,$51,$80,$16,$45,$80,$0C,$51,$51,$0F,$68,$80
-;vid	dta $51,d"/h",d" "*,d",",$51,d" "*,d"6",$45,d" "*,d",",$51,$51,d"/h",d" "*
-		dta $0C,$51,$80,$16,$45,$80,$0C,$51,$51,$0F,$68,$80,$0C,$51,$80,$FF
-;vid	dta d",",$51,d" "*,d"6",$45,d" "*,d",",$51,$51,d"/h",d" "*,d",",$51,d" "*,$FF
-		dta $00,$56,$8E,$56,$8E,$55,$8E,$58,$86,$12,$4E,$80,$13,$4E,$80,$14
-;vid	dta d" ",$56,d"."*,$56,d"."*,$55,d"."*,$58,d"&"*,d"2",$4E,d" "*,d"3",$4E,d" "*,d"4"
-		dta $4E,$80,$0F,$68,$80,$FF,$07,$5A,$17,$55,$07,$53,$17,$55,$07,$4E
-;vid	dta $4E,d" "*,d"/h",d" "*,$FF,d"'",$5A,d"7",$55,d"'",$53,d"7",$55,d"'",$4E
-		dta $80,$17,$55,$53,$07,$58,$17,$55,$07,$53,$17,$51,$07,$55,$80,$5A
-;vid	dta d" "*,d"7",$55,$53,d"'",$58,d"7",$55,d"'",$53,d"7",$51,d"'",$55,d" "*,$5A
-		dta $80,$5A,$17,$55,$07,$53,$17,$55,$07,$4E,$80,$17,$55,$53,$07,$58
-;vid	dta d" "*,$5A,d"7",$55,d"'",$53,d"7",$55,d"'",$4E,d" "*,d"7",$55,$53,d"'",$58
-		dta $17,$55,$07,$53,$17,$51,$07,$55,$80,$5A,$80,$58,$51,$53,$55,$51
-;vid	dta d"7",$55,d"'",$53,d"7",$51,d"'",$55,d" "*,$5A,d" "*,$58,$51,$53,$55,$51
-		dta $80,$53,$51,$58,$51,$53,$51,$55,$80,$51,$80,$58,$51,$53,$55,$51
-;vid	dta d" "*,$53,$51,$58,$51,$53,$51,$55,d" "*,$51,d" "*,$58,$51,$53,$55,$51
-		dta $80,$53,$51,$58,$51,$53,$51,$55,$80,$51,$80,$FF,$00,$4E,$8E,$4E
-;vid	dta d" "*,$53,$51,$58,$51,$53,$51,$55,d" "*,$51,d" "*,$FF,d" ",$4E,d"."*,$4E
-		dta $9E,$4A,$86,$49,$85,$FF,$00,$4E,$8E,$4E,$9E,$4A,$86,$4C,$85,$FF
-;vid	dta d">"*,$4A,d"&"*,$49,d"%"*,$FF,d" ",$4E,d"."*,$4E,d">"*,$4A,d"&"*,$4C,d"%"*,$FF
-		dta $01,$5A,$80,$5A,$80,$61,$80,$61,$80,$5D,$80,$5D,$80,$5F,$80,$5F
-;vid	dta d"!",$5A,d" "*,$5A,d" "*,d"a",d" "*,d"a",d" "*,$5D,d" "*,$5D,d" "*,$5F,d" "*,$5F
-		dta $80,$5A,$80,$5A,$80,$61,$80,$61,$80,$5D,$80,$5D,$80,$5F,$80,$5F
-;vid	dta d" "*,$5A,d" "*,$5A,d" "*,d"a",d" "*,d"a",d" "*,$5D,d" "*,$5D,d" "*,$5F,d" "*,$5F
-		dta $80,$5A,$80,$5A,$80,$61,$80,$61,$80,$5D,$80,$5D,$80,$5F,$80,$5F
-;vid	dta d" "*,$5A,d" "*,$5A,d" "*,d"a",d" "*,d"a",d" "*,$5D,d" "*,$5D,d" "*,$5F,d" "*,$5F
-		dta $80,$5A,$80,$5A,$80,$61,$80,$61,$80,$5D,$80,$5D,$80,$5F,$80,$5F
-;vid	dta d" "*,$5A,d" "*,$5A,d" "*,d"a",d" "*,d"a",d" "*,$5D,d" "*,$5D,d" "*,$5F,d" "*,$5F
-		dta $80,$FF,$08,$4E,$86,$4E,$82,$51,$80,$4E,$88,$4C,$82,$4E,$82,$4C
-;vid	dta d" "*,$FF,d"(",$4E,d"&"*,$4E,d"""*,$51,d" "*,$4E,d"("*,$4C,d"""*,$4E,d"""*,$4C
-		dta $81,$4C,$81,$4C,$80,$4C,$81,$4A,$81,$4C,$80,$51,$82,$50,$82,$4C
-;vid	dta d"!"*,$4C,d"!"*,$4C,d" "*,$4C,d"!"*,$4A,d"!"*,$4C,d" "*,$51,d"""*,$50,d"""*,$4C
-		dta $82,$49,$81,$FF,$08,$4E,$86,$4E,$82,$4C,$80,$4E,$8C,$4E,$80,$50
-;vid	dta d"""*,$49,d"!"*,$FF,d"(",$4E,d"&"*,$4E,d"""*,$4C,d" "*,$4E,d","*,$4E,d" "*,$50
-		dta $80,$51,$82,$51,$80,$51,$84,$51,$80,$53,$80,$51,$82,$50,$80,$4C
-;vid	dta d" "*,$51,d"""*,$51,d" "*,$51,d"$"*,$51,d" "*,$53,d" "*,$51,d"""*,$50,d" "*,$4C
-		dta $84,$49,$81,$FF,$02,$42,$9E,$40,$9D,$FF,$0D,$56,$9E,$55,$8E,$58
-;vid	dta d"$"*,$49,d"!"*,$FF,d""",$42,d">"*,$40,d"="*,$FF,d"-",$56,d">"*,$55,d"."*,$58
-		dta $8D,$FF,$0D,$5A,$9E,$58,$9D,$FF,$09,$4E,$80,$47,$49,$42,$80,$42
-;vid	dta d"-"*,$FF,d"-",$5A,d">"*,$58,d"="*,$FF,d")",$4E,d" "*,$47,$49,$42,d" "*,$42
-		dta $4E,$80,$47,$49,$4C,$42,$80,$42,$80,$4E,$80,$47,$49,$42,$80,$42
-;vid	dta $4E,d" "*,$47,$49,$4C,$42,d" "*,$42,d" "*,$4E,d" "*,$47,$49,$42,d" "*,$42
-		dta $4E,$80,$47,$49,$4C,$42,$80,$42,$80,$51,$80,$47,$49,$45,$80,$45
-;vid	dta $4E,d" "*,$47,$49,$4C,$42,d" "*,$42,d" "*,$51,d" "*,$47,$49,$45,d" "*,$45
-		dta $51,$80,$47,$49,$4C,$45,$80,$45,$80,$51,$80,$47,$49,$45,$80,$45
-;vid	dta $51,d" "*,$47,$49,$4C,$45,d" "*,$45,d" "*,$51,d" "*,$47,$49,$45,d" "*,$45
-		dta $51,$80,$47,$49,$4C,$45,$80,$45,$80,$FF,$4C,$76,$98
-;vid	dta $51,d" "*,$47,$49,$4C,$45,d" "*,$45,d" "*,$FF,$4C,d"v",d"8"*
+		dta $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+		dta $06,$4A,$8E,$4A,$8E,$49,$8E,$49,$8D,$FF,$05,$70,$80,$70,$80,$70
+		dta $80,$70,$80,$01,$42,$86,$05,$6D,$80,$6D,$80,$6D,$80,$6D,$80,$01
+		dta $42,$86,$05,$70,$80,$70,$80,$70,$80,$70,$80,$01,$42,$86,$05,$6D
+		dta $80,$6D,$80,$6D,$80,$6D,$80,$01,$42,$85,$FF,$06,$42,$8E,$42,$8E
+		dta $45,$8E,$45,$8D,$FF,$00,$5A,$8E,$5A,$8E,$58,$8E,$58,$8D,$FF,$00
+		dta $5A,$8E,$5A,$8E,$58,$8E,$12,$4E,$80,$13,$4E,$80,$14,$4E,$80,$15
+		dta $4E,$80,$12,$4E,$80,$13,$4E,$80,$14,$4E,$80,$15,$4E,$80,$FF,$06
+		dta $42,$B6,$12,$4E,$80,$13,$4E,$80,$14,$4E,$80,$15,$4E,$80,$FF,$06
+		dta $42,$BD,$FF,$01,$5A,$80,$5A,$80,$12,$4E,$13,$4E,$15,$4E,$80,$01
+		dta $5D,$80,$5D,$80,$0F,$66,$10,$66,$11,$66,$80,$01,$5A,$80,$5A,$80
+		dta $12,$4E,$13,$4E,$15,$4E,$80,$01,$5D,$80,$5D,$80,$0F,$66,$10,$66
+		dta $11,$66,$80,$01,$5A,$80,$5A,$80,$12,$4E,$13,$4E,$15,$4E,$80,$01
+		dta $5D,$80,$5D,$80,$0F,$66,$10,$66,$11,$66,$80,$01,$5A,$80,$5A,$80
+		dta $12,$4E,$13,$4E,$15,$4E,$80,$01,$5D,$80,$5D,$80,$0F,$66,$10,$66
+		dta $11,$66,$80,$FF,$07,$4E,$8E,$4E,$86,$51,$80,$50,$80,$4E,$80,$50
+		dta $80,$4C,$8A,$49,$82,$4C,$84,$49,$80,$51,$80,$50,$80,$4E,$80,$50
+		dta $80,$FF,$00,$56,$8E,$56,$8E,$55,$8E,$58,$8D,$FF,$16,$47,$80,$0C
+		dta $53,$53,$0F,$68,$80,$0C,$53,$80,$16,$47,$80,$0C,$53,$53,$0F,$68
+		dta $80,$0C,$53,$80,$16,$47,$80,$0C,$53,$53,$0F,$68,$80,$0C,$53,$80
+		dta $16,$47,$80,$0C,$53,$53,$0F,$68,$80,$0C,$53,$80,$16,$4A,$80,$0C
+		dta $56,$56,$0F,$68,$80,$0C,$56,$80,$16,$4A,$80,$0C,$56,$56,$0F,$68
+		dta $80,$0C,$56,$80,$16,$4C,$80,$0C,$58,$58,$0F,$68,$80,$0C,$58,$80
+		dta $16,$4C,$80,$0C,$58,$58,$0F,$68,$80,$0C,$58,$80,$FF,$09,$53,$80
+		dta $4E,$51,$47,$80,$47,$53,$80,$4E,$51,$53,$47,$80,$47,$80,$53,$80
+		dta $4E,$51,$47,$80,$47,$53,$80,$4E,$51,$53,$47,$80,$47,$80,$56,$80
+		dta $4C,$4E,$4A,$80,$4A,$56,$80,$4C,$4E,$51,$4A,$80,$4A,$80,$58,$53
+		dta $56,$58,$4C,$80,$4C,$58,$80,$53,$56,$58,$4C,$80,$4C,$80,$FF,$06
+		dta $47,$8E,$47,$8E,$4A,$8E,$4C,$8D,$FF,$06,$47,$8E,$47,$8E,$4A,$8E
+		dta $4C,$84,$09,$4E,$49,$4C,$49,$4C,$4E,$42,$80,$42,$80,$FF,$07,$53
+		dta $82,$4E,$82,$51,$82,$4E,$80,$53,$82,$4E,$80,$4C,$80,$4E,$80,$51
+		dta $80,$4E,$80,$4C,$80,$4E,$80,$56,$82,$55,$82,$53,$82,$55,$80,$51
+		dta $82,$4E,$80,$4C,$80,$4E,$80,$51,$80,$53,$80,$55,$80,$58,$80,$FF
+		dta $16,$42,$80,$0C,$5A,$5A,$0F,$68,$80,$0C,$5A,$80,$16,$42,$80,$0C
+		dta $5A,$5A,$0F,$68,$80,$0C,$5A,$80,$16,$42,$80,$0C,$5A,$5A,$0F,$68
+		dta $80,$0C,$5A,$80,$16,$42,$80,$0C,$5A,$5A,$0F,$68,$80,$0C,$5A,$80
+		dta $16,$45,$80,$0C,$51,$51,$0F,$68,$80,$0C,$51,$80,$16,$45,$80,$0C
+		dta $51,$51,$0F,$68,$80,$0C,$51,$80,$16,$45,$80,$0C,$51,$51,$0F,$68
+		dta $80,$0C,$51,$80,$16,$45,$80,$0C,$51,$51,$0F,$68,$80,$0C,$51,$80
+		dta $FF,$16,$42,$80,$0C,$5A,$5A,$0F,$68,$80,$0C,$5A,$80,$16,$42,$80
+		dta $0C,$5A,$5A,$0F,$68,$80,$0C,$5A,$80,$16,$42,$80,$0C,$5A,$5A,$0F
+		dta $68,$80,$0C,$5A,$80,$16,$42,$80,$0C,$5A,$5A,$0F,$68,$80,$0C,$5A
+		dta $80,$16,$45,$80,$0C,$51,$51,$0F,$68,$80,$0C,$51,$80,$16,$45,$80
+		dta $0C,$51,$51,$0F,$68,$80,$0C,$51,$80,$16,$45,$80,$0C,$51,$51,$0F
+		dta $68,$80,$0C,$51,$80,$16,$45,$80,$0C,$51,$51,$0F,$68,$80,$0C,$51
+		dta $80,$FF,$00,$56,$8E,$56,$8E,$55,$8E,$58,$86,$12,$4E,$80,$13,$4E
+		dta $80,$14,$4E,$80,$0F,$68,$80,$FF,$07,$5A,$17,$55,$07,$53,$17,$55
+		dta $07,$4E,$80,$17,$55,$53,$07,$58,$17,$55,$07,$53,$17,$51,$07,$55
+		dta $80,$5A,$80,$5A,$17,$55,$07,$53,$17,$55,$07,$4E,$80,$17,$55,$53
+		dta $07,$58,$17,$55,$07,$53,$17,$51,$07,$55,$80,$5A,$80,$58,$51,$53
+		dta $55,$51,$80,$53,$51,$58,$51,$53,$51,$55,$80,$51,$80,$58,$51,$53
+		dta $55,$51,$80,$53,$51,$58,$51,$53,$51,$55,$80,$51,$80,$FF,$00,$4E
+		dta $8E,$4E,$9E,$4A,$86,$49,$85,$FF,$00,$4E,$8E,$4E,$9E,$4A,$86,$4C
+		dta $85,$FF,$01,$5A,$80,$5A,$80,$61,$80,$61,$80,$5D,$80,$5D,$80,$5F
+		dta $80,$5F,$80,$5A,$80,$5A,$80,$61,$80,$61,$80,$5D,$80,$5D,$80,$5F
+		dta $80,$5F,$80,$5A,$80,$5A,$80,$61,$80,$61,$80,$5D,$80,$5D,$80,$5F
+		dta $80,$5F,$80,$5A,$80,$5A,$80,$61,$80,$61,$80,$5D,$80,$5D,$80,$5F
+		dta $80,$5F,$80,$FF,$08,$4E,$86,$4E,$82,$51,$80,$4E,$88,$4C,$82,$4E
+		dta $82,$4C,$81,$4C,$81,$4C,$80,$4C,$81,$4A,$81,$4C,$80,$51,$82,$50
+		dta $82,$4C,$82,$49,$81,$FF,$08,$4E,$86,$4E,$82,$4C,$80,$4E,$8C,$4E
+		dta $80,$50,$80,$51,$82,$51,$80,$51,$84,$51,$80,$53,$80,$51,$82,$50
+		dta $80,$4C,$84,$49,$81,$FF,$02,$42,$9E,$40,$9D,$FF,$0D,$56,$9E,$55
+		dta $8E,$58,$8D,$FF,$0D,$5A,$9E,$58,$9D,$FF,$09,$4E,$80,$47,$49,$42
+		dta $80,$42,$4E,$80,$47,$49,$4C,$42,$80,$42,$80,$4E,$80,$47,$49,$42
+		dta $80,$42,$4E,$80,$47,$49,$4C,$42,$80,$42,$80,$51,$80,$47,$49,$45
+		dta $80,$45,$51,$80,$47,$49,$4C,$45,$80,$45,$80,$51,$80,$47,$49,$45
+		dta $80,$45,$51,$80,$47,$49,$4C,$45,$80,$45,$80,$FF
+;CMC PLAYER:	
+	dta $4C,$76,$98
+;vid	dta $4C,d"v",d"8"*
 L_911F	jmp L_917F			;911F 4C 7F 91
 L_9122	jmp L_93D7			;9122 4C D7 93
 L_9125	brk				;9125 00
@@ -6545,7 +6082,7 @@ L_9251	stx L_9172			;9251 8E 72 91
 		sta L_9170			;9279 8D 70 91
 		sta L_9171			;927C 8D 71 91
 		ldx #$03			;927F A2 03
-		stx L_D21F			;9281 8E 1F D2
+		stx L_d20f ;{fixed idiotic init} L_D21F			;9281 8E 1F D2
 L_9284	lda #$00			;9284 A9 00
 		sta L_917E			;9286 8D 7E 91
 		ldy #$08			;9289 A0 08
