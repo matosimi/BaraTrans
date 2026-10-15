@@ -332,18 +332,18 @@ L_2014	lda #$08			;2014 A9 08
 		jsr L_4520_print_frame			;2020 20 20 45
 		lda L_2111			;2023 AD 11 21
 		bne L_2032			;2026 D0 0A
-		ldx #$F3			;2028 A2 F3
-		ldy #$20			;202A A0 20
+		ldx <L_20F3			;2028 A2 F3
+		ldy >L_20F3			;202A A0 20
 		jsr L_448C_print_text			;202C 20 8C 44
 		jmp L_204A			;202F 4C 4A 20
 L_2032	cmp #$01			;2032 C9 01
 		bne L_2040			;2034 D0 0A
-		ldx #$FD			;2036 A2 FD
-		ldy #$20			;2038 A0 20
+		ldx <L_20FD			;2036 A2 FD
+		ldy >L_20FD			;2038 A0 20
 		jsr L_448C_print_text			;203A 20 8C 44
 		jmp L_204A			;203D 4C 4A 20
-L_2040	ldx #$07			;2040 A2 07
-		ldy #$21			;2042 A0 21
+L_2040		ldx <L_2107			;2040 A2 07
+		ldy >L_2107			;2042 A0 21
 		jsr L_448C_print_text			;2044 20 8C 44
 		jmp L_204A			;2047 4C 4A 20
 L_204A	lda L_0278			;204A AD 78 02
@@ -455,8 +455,8 @@ L_2142	dta $01,$0c		;2142 01 0C
 L_2155	jsr L_17A5			;2155 20 A5 17
 		lda L_33CB			;2158 AD CB 33
 		bpl L_2179			;215B 10 1C
-		ldx #$AD			;215D A2 AD
-		ldy #$22			;215F A0 22
+		ldx <L_22AD			;215D A2 AD
+		ldy >L_22AD			;215F A0 22
 		jsr L_448C_print_text			;2161 20 8C 44
 		lda #$1D			;2164 A9 1D
 		sta ZP_FA			;2166 85 FA
@@ -469,8 +469,8 @@ L_2155	jsr L_17A5			;2155 20 A5 17
 		jmp L_425D			;2176 4C 5D 42
 L_2179	lda #$00			;2179 A9 00
 		sta L_3E23			;217B 8D 23 3E
-L_217E	ldx #$2A			;217E A2 2A
-		ldy #$21			;2180 A0 21
+L_217E		ldx <L_212A			;217E A2 2A
+		ldy >L_212A			;2180 A0 21
 		jsr L_448C_print_text			;2182 20 8C 44
 		lda #$16			;2185 A9 16
 		sta ZP_FA			;2187 85 FA
@@ -587,8 +587,8 @@ L_227A	lda L_0C36			;227A AD 36 0C
 		sta L_3FA2,X		;2285 9D A2 3F
 L_2288	jsr L_3E73			;2288 20 73 3E
 		jmp L_425D			;228B 4C 5D 42
-L_228E	ldx #$42			;228E A2 42
-		ldy #$21			;2290 A0 21
+L_228E		ldx <L_2142			;228E A2 42
+		ldy >L_2142			;2290 A0 21
 		jsr L_448C_print_text			;2292 20 8C 44
 		ldx #$0B			;2295 A2 0B
 		ldy #$03			;2297 A0 03
@@ -613,17 +613,10 @@ L_22EB	dta $00,$00,$00
 ;vid	dta d"   "
 L_22EE	dta $00			;22EE 00    
 L_22EF	dta $00			;22EF 00    
-L_22F0	dta 1,6		;22F0 01 06
-		dta $03,$80,$B4,$A8,$A9,$B3,$80,$B0,$A1,$B4,$A8,$80,$AC,$A5,$A1,$A4
-;vid	dta d"#",d" THIS PATH LEAD"*
-		dta $B3,$80,$8E,$8E,$8E,$80,$80,$80,$FF
-;vid	dta d"S ...   "*,$FF
-L_230B	dta $1,$4		;230B 01 04
-		dta $04,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$AE,$AF,$80,$B7,$A1
-;vid	dta d"$",d"          NO WA"*
-		dta $B9,$80,$AF,$B5,$B4,$80,$81,$80,$80,$80,$80,$80,$80,$80,$80,$80
-;vid	dta d"Y OUT !         "*
-		dta $FF			;232D FF    
+L_22F0	dta 1,6,3
+	dta d"THIS WAY LEADS ..."*,$FF
+L_230B	dta $1,$4,$04
+	dta d"   NO WAY OUT!    "*,$FF    
 L_232E_ptrlut_direction_lo	dta a(L_2384)		;232E 84 23
 L_232F_ptrlut_direction_hi	equ *-1
 		dta a(L_2396)		;2330 96 23
@@ -778,6 +771,25 @@ L_27EA	dta /*$19,*/d" TO MEZZANINE "*,$FF
 ;L_27FA	dta $1A,d" DEEPER "*,$FF
 ;L_2808	dta $18,d" TO THE CHAMBER "*,$FF
 L_2816	dta /*$19,*/d" OUTSIDE "*,$FF
+
+L_3E0C	dta 1
+	dta $b,4,d"YOU'VE ALREADY DONE IT!"*,$ff
+	
+L_3E62	dta 1,$1d,8,d"PRESS FIRE"*,$FF
+
+L_3EBA	dta $01,$22,$07
+	dta d"O.K."*,$FF
+	
+L_4275	dta 1
+	dta 2
+L_4277	dta 7,d"YOU SEE: ",$FF
+
+L_443A	dta 1
+	dta 1,4,d"YOU SEE A CRYSTAL SKULL",$FF
+	
+L_4464	dta 1
+	dta 1,4,d"YOU SEE A SMALL HIDING PLACE",$ff
+	
 .print *
 	fill_until $2825 0
 L_2825	ldx #$00			;2825 A2 00
@@ -786,8 +798,8 @@ L_2827	lda L_1B15_previous_compass_states,X		;2827 BD 15 1B
 		inx				;282C E8
 		cpx #$06			;282D E0 06
 		bne L_2827			;282F D0 F6
-		ldx #$0B			;2831 A2 0B
-		ldy #$23			;2833 A0 23
+		ldx <L_230B			;2831 A2 0B
+		ldy >L_230B			;2833 A0 23
 		jsr L_448C_print_text			;2835 20 8C 44
 		lda #$22			;2838 A9 22
 		sta ZP_FA			;283A 85 FA
@@ -805,8 +817,8 @@ L_284D	lda #$06			;284D A9 06
 		stx L_2B98			;2857 8E 98 2B
 		sty L_2B99			;285A 8C 99 2B
 L_285D	jsr L_4285			;285D 20 85 42
-		ldx #$F0			;2860 A2 F0
-		ldy #$22			;2862 A0 22
+		ldx <L_22F0			;2860 A2 F0
+		ldy >L_22F0			;2862 A0 22
 		jsr L_448C_print_text			;2864 20 8C 44
 		ldx #$05			;2867 A2 05
 		ldy #$02			;2869 A0 02
@@ -1116,8 +1128,8 @@ L_2AE5	pla				;2AE5 68
 		bne L_2B1B			;2AF7 D0 22
 		jsr L_18AA_pause5			;2AF9 20 AA 18
 		jsr L_18AA_pause5			;2AFC 20 AA 18
-		ldx #$BC			;2AFF A2 BC
-		ldy #$2B			;2B01 A0 2B
+		ldx <L_2BBC			;2AFF A2 BC
+		ldy >L_2BBC			;2B01 A0 2B
 		jsr L_448C_print_text			;2B03 20 8C 44
 		lda #$20			;2B06 A9 20
 		sta ZP_FA			;2B08 85 FA
@@ -1133,8 +1145,8 @@ L_2B1B	lda ZP_F9_current_room_id			;2B1B A5 F9
 		bne L_2B43			;2B1F D0 22
 		jsr L_18AA_pause5			;2B21 20 AA 18
 		jsr L_18AA_pause5			;2B24 20 AA 18
-		ldx #$41			;2B27 A2 41
-		ldy #$2C			;2B29 A0 2C
+		ldx <L_2C41			;2B27 A2 41
+		ldy >L_2C41			;2B29 A0 2C
 		jsr L_448C_print_text			;2B2B 20 8C 44
 		lda #$1E			;2B2E A9 1E
 		sta ZP_FA			;2B30 85 FA
@@ -1157,8 +1169,8 @@ L_2B45	lda L_0C2E,Y		;2B45 B9 2E 0C
 L_2B55	jsr L_5830			;2B55 20 30 58
 		jmp L_425D			;2B58 4C 5D 42
 L_2B5B	jsr L_18AA_pause5			;2B5B 20 AA 18
-		ldx #$7A			;2B5E A2 7A
-		ldy #$2B			;2B60 A0 2B
+		ldx <L_2B7A			;2B5E A2 7A
+		ldy >L_2B7A			;2B60 A0 2B
 		jsr L_448C_print_text			;2B62 20 8C 44
 		lda #$1C			;2B65 A9 1C
 		sta ZP_FA			;2B67 85 FA
@@ -1187,36 +1199,13 @@ L_2BAD_compas_selected_index	dta $00	;0..5=compas selection:W,E,N,S,U,D;6=nothin
 L_2BAE	dta $B4			;2BAE B4 4 T
 L_2BAF	dta $3C,$C8,$3C,$BE,$28,$BE,$4F,$BE,$19,$BE,$60,$BE,$3A
 ;vid	dta d"\",$C8,d"\",d"^"*,d"H",d"^"*,$4F,d"^"*,d"9",d"^"*,d"`",d"^"*,d"Z"
-L_2BBC	dta $04,$05,$02,$34,$2F,$00,$30,$35,$1C,$21,$30,$2B,$21,$00,$01,$00
-;vid	dta d"$%"TO PU<APKA ! "
-		dta $2B,$29,$25,$24,$39,$00,$30,$2F,$33,$34,$21,$37,$29,$1C,$25,$0B
-;vid	dta d"KIEDY POSTAWI<E+"
-		dta $00,$FF,$05,$03,$33,$34,$2F,$30,$39,$00,$2E,$21,$00,$33,$34,$2F
-;vid	dta d" ",$FF,d"%#STOPY NA STO"
-		dta $30,$2E,$29,$21,$23,$28,$0C,$00,$34,$25,$00,$3A,$21,$30,$21,$24
-;vid	dta d"PNIACH, TE ZAPAD"
-		dta $1C,$39,$FF,$05,$04,$33,$29,$1D,$00,$30,$2F,$24,$00,$34,$37,$39
-;vid	dta d"<Y",$FF,d"%$SI= POD TWY"
-		dta $2D,$00,$23,$29,$1D,$3B,$21,$32,$25,$2D,$0E,$00,$3A,$21,$22,$29
-;vid	dta d"M CI=[AREM. ZABI"
-		dta $1C,$25,$0B,$FF,$05,$05,$33,$29,$1D,$00,$35,$30,$21,$24,$21,$2A
-;vid	dta d"<E+",$FF,d"%%SI= UPADAJ"
-		dta $20,$23,$00,$37,$00,$22,$25,$3A,$24,$25,$2E,$2E,$20,$00,$2A,$21
-;vid	dta d"@C W BEZDENN@ JA"
-		dta $2D,$1D,$0E,$00,$FF
-;vid	dta d"M=. ",$FF
-L_2C41	dta $03,$06,$03,$2B,$21,$2D,$29,$25,$2E,$2E,$25,$00,$24,$2E,$2F,$00
-;vid	dta d"#&#KAMIENNE DNO "
-		dta $2E,$21,$27,$2C,$25,$00,$33,$2B,$2F,$1B,$23,$3A,$39,$1C,$2F,$FF
-;vid	dta d"NAGLE SKO;CZY<O",$FF
-		dta $06,$04,$33,$29,$1D,$01,$00,$37,$30,$21,$24,$1C,$25,$0B,$00,$37
-;vid	dta d"&$SI=! WPAD<E+ W"
-		dta $00,$22,$25,$3A,$24,$25,$2E,$2E,$20,$00,$34,$2F,$1B,$0C,$FF,$06
-;vid	dta d" BEZDENN@ TO;,",$FF,d"&"
-		dta $05,$00,$22,$25,$3A,$00,$3B,$21,$24,$2E,$39,$23,$28,$00,$33,$3A
-;vid	dta d"% BEZ [ADNYCH SZ"
-		dta $21,$2E,$33,$00,$32,$21,$34,$35,$2E,$2B,$35,$00,$01,$FF
-;vid	dta d"ANS RATUNKU !",$FF
+L_2BBC	dta 4
+	dta 5,2,d"IT'S A TRAP! AS SOON AS YOU SET FOOT",$FF
+	dta 5,3,d"ON THE STEPS, THEY GAVE WAY BENEATH ",$FF
+	dta 5,4,d" YOUR WEIGHT. YOU PLUMMETED INTO A  ",$FF
+	dta 5,5,d"  BOTTOMLESS PIT AND MET YOUR END.  ",$FF
+	
+	fill_until $2c9f 0
 L_2C9F	ldx #$00			;2C9F A2 00
 		lda #$FF			;2CA1 A9 FF
 L_2CA3	sta L_0C28,X		;2CA3 9D 28 0C
@@ -1225,8 +1214,8 @@ L_2CA3	sta L_0C28,X		;2CA3 9D 28 0C
 		bne L_2CA3			;2CA9 D0 F8
 		lda L_0C2E			;2CAB AD 2E 0C
 		bpl L_2CCC			;2CAE 10 1C
-		ldx #$19			;2CB0 A2 19
-		ldy #$2D			;2CB2 A0 2D
+		ldx <L_2D19			;2CB0 A2 19
+		ldy >L_2D19		;2CB2 A0 2D
 		jsr L_448C_print_text			;2CB4 20 8C 44
 		lda #$25			;2CB7 A9 25
 		sta ZP_FA			;2CB9 85 FA
@@ -1239,8 +1228,8 @@ L_2CA3	sta L_0C28,X		;2CA3 9D 28 0C
 		jmp L_425D			;2CC9 4C 5D 42
 L_2CCC	lda L_0C2F			;2CCC AD 2F 0C
 		bpl L_2CEA			;2CCF 10 19
-		ldx #$40			;2CD1 A2 40
-		ldy #$2D			;2CD3 A0 2D
+		ldx <L_2D40			;2CD1 A2 40
+		ldy >L_2D40			;2CD3 A0 2D
 		jsr L_448C_print_text			;2CD5 20 8C 44
 		lda #$24			;2CD8 A9 24
 		sta ZP_FA			;2CDA 85 FA
@@ -1250,8 +1239,8 @@ L_2CCC	lda L_0C2F			;2CCC AD 2F 0C
 		ldy #$02			;2CE2 A0 02
 		jsr L_4520_print_frame			;2CE4 20 20 45
 		jmp L_2D00			;2CE7 4C 00 2D
-L_2CEA	ldx #$66			;2CEA A2 66
-		ldy #$2D			;2CEC A0 2D
+L_2CEA		ldx <L_2D66			;2CEA A2 66
+		ldy >L_2D66			;2CEC A0 2D
 		jsr L_448C_print_text			;2CEE 20 8C 44
 		lda #$24			;2CF1 A9 24
 		sta ZP_FA			;2CF3 85 FA
@@ -1270,34 +1259,19 @@ L_2D02	lda L_0C2E,X		;2D02 BD 2E 0C
 		jsr L_3E73			;2D10 20 73 3E
 		jsr L_3E73			;2D13 20 73 3E
 		jmp L_425D			;2D16 4C 5D 42
-L_2D19	ora (ZP_03,X)		;2D19 01 03
-		dta $03,$80,$80,$B9,$AF,$B5,$80,$A1,$B2,$A5,$80,$AE,$AF,$B4,$80,$A3
-;vid	dta d"#",d"  YOU ARE NOT C"*
-		dta $A1,$B2,$B2,$B9,$A9,$AE,$A7,$80,$A1,$AE,$B9,$80,$A9,$B4,$A5,$AD
-;vid	dta d"ARRYING ANY ITEM"*
-		dta $81,$80,$80,$80,$FF
-;vid	dta d"!   "*,$FF
-L_2D40	ora (ZP_03,X)		;2D40 01 03
-		dta $03,$80,$B9,$AF,$B5,$80,$A1,$B2,$A5,$80,$A3,$A1,$B2,$B2,$B9,$A9
-;vid	dta d"#",d" YOU ARE CARRYI"*
-		dta $AE,$A7,$80,$AF,$AE,$AC,$B9,$80,$AF,$AE,$A5,$80,$A9,$B4,$A5,$AD
-;vid	dta d"NG ONLY ONE ITEM"*
-		dta $9A,$80,$80,$FF
-;vid	dta d":  "*,$FF
-L_2D66	dta 1,3		;2D66 01 03
-		dta 1,$80		;2D68 01 80
-		dta $ae,$a9,$a5			;2D6A AE A9 A5
-		dta $B3,$A9,$A5,$B3,$BA,$80,$AE,$A1,$B3,$B4,$9D,$B0,$B5,$AA,$A0,$A3
-;vid	dta d"SIESZ NAST=PUJ@C"*
-		dta $A5,$80,$B0,$B2,$BA,$A5,$A4,$AD,$A9,$AF,$B4,$B9,$9A,$80,$FF
-;vid	dta d"E PRZEDMIOTY: "*,$FF
-L_2D8C	dta 1,2		;2D8C 01 02
-		dta $02,$80,$AE,$A9,$A5,$B3,$B4,$A5,$B4,$B9,$80,$AE,$A9,$A5,$80,$AD
-;vid	dta d""",d" NIESTETY NIE M"*
-		dta $A1,$B3,$BA,$80,$B7,$AF,$AC,$AE,$A5,$A7,$AF,$80,$AD,$A9,$A5,$AA
-;vid	dta d"ASZ WOLNEGO MIEJ"*
-		dta $B3,$A3,$A1,$80,$81,$FF
-;vid	dta d"SCA !"*,$FF
+L_2D19	dta 1
+	dta 3,3,d"YOU ARE NOT CARRYING ANY ITEM!"*,$FF
+		
+L_2D40	dta 1
+	dta 3,3,d"YOU ARE CARRYING ONLY ONE ITEM"*,$ff
+		
+L_2D66	dta 1
+	dta 3,1,d"YOU ARE CARRYING FOLLOWING ITEMS:"*,$FF
+L_2D8C	dta 1
+	dta 2,2,d"YOUR BACKPACK IS FULL!"*,$FF
+	
+	fill_until $2db4 0
+	
 L_2DB4	lda #$FF			;2DB4 A9 FF
 		ldx #$00			;2DB6 A2 00
 L_2DB8	sta L_0C28,X		;2DB8 9D 28 0C
@@ -1317,8 +1291,8 @@ L_2DC2	lda L_0C2E,X		;2DC2 BD 2E 0C
 		ldx #$01			;2DD4 A2 01
 		ldy #$01			;2DD6 A0 01
 		jsr L_4520_print_frame			;2DD8 20 20 45
-		ldx #$8C			;2DDB A2 8C
-		ldy #$2D			;2DDD A0 2D
+		ldx <L_2D8C			;2DDB A2 8C
+		ldy >L_2D8C			;2DDD A0 2D
 		jsr L_448C_print_text			;2DDF 20 8C 44
 		jsr L_3E2F			;2DE2 20 2F 3E
 		jmp L_425D			;2DE5 4C 5D 42
@@ -1351,8 +1325,8 @@ L_2E0C	txa				;2E0C 8A
 		jmp L_2DF4			;2E1B 4C F4 2D
 L_2E1E	lda L_0C28			;2E1E AD 28 0C
 		bpl L_2E3F			;2E21 10 1C
-		ldx #$FD			;2E23 A2 FD
-		ldy #$2F			;2E25 A0 2F
+		ldx <L_2FFD			;2E23 A2 FD
+		ldy >L_2FFD			;2E25 A0 2F
 		jsr L_448C_print_text			;2E27 20 8C 44
 		ldx #$03			;2E2A A2 03
 		ldy #$01			;2E2C A0 01
@@ -1365,8 +1339,8 @@ L_2E1E	lda L_0C28			;2E1E AD 28 0C
 		jmp L_425D			;2E3C 4C 5D 42
 L_2E3F	lda L_0C29			;2E3F AD 29 0C
 		bpl L_2E5D			;2E42 10 19
-		ldx #$42			;2E44 A2 42
-		ldy #$30			;2E46 A0 30
+		ldx <L_3042			;2E44 A2 42
+		ldy >L_3042		;2E46 A0 30
 		jsr L_448C_print_text			;2E48 20 8C 44
 		ldx #$00			;2E4B A2 00
 		ldy #$02			;2E4D A0 02
@@ -1376,8 +1350,8 @@ L_2E3F	lda L_0C29			;2E3F AD 29 0C
 		sta ZP_FB			;2E55 85 FB
 		jsr L_4520_print_frame			;2E57 20 20 45
 		jmp L_2E73			;2E5A 4C 73 2E
-L_2E5D	ldx #$6C			;2E5D A2 6C
-		ldy #$30			;2E5F A0 30
+L_2E5D		ldx <L_306C			;2E5D A2 6C
+		ldy >L_306C			;2E5F A0 30
 		jsr L_448C_print_text			;2E61 20 8C 44
 		ldx #$09			;2E64 A2 09
 		ldy #$00			;2E66 A0 00
@@ -1415,8 +1389,8 @@ L_2E8E	lda ZP_FE			;2E8E A5 FE
 		lda #$FE			;2EB1 A9 FE
 		ldx #$2A			;2EB3 A2 2A
 		sta L_3FA2,X		;2EB5 9D A2 3F
-		ldx #$9C			;2EB8 A2 9C
-		ldy #$2F			;2EBA A0 2F
+		ldx <L_2F9C			;2EB8 A2 9C
+		ldy >L_2F9C			;2EBA A0 2F
 		jsr L_448C_print_text			;2EBC 20 8C 44
 		lda #$22			;2EBF A9 22
 		sta ZP_FA			;2EC1 85 FA
@@ -1439,8 +1413,8 @@ L_2ED1	lda ZP_FE			;2ED1 A5 FE
 		ldx #$47			;2EE9 A2 47
 		lda #$01			;2EEB A9 01
 		sta L_3FA2,X		;2EED 9D A2 3F
-		ldx #$40			;2EF0 A2 40
-		ldy #$2F			;2EF2 A0 2F
+		ldx <L_2F40			;2EF0 A2 40
+		ldy >L_2F40			;2EF2 A0 2F
 		jsr L_448C_print_text			;2EF4 20 8C 44
 		lda #$1B			;2EF7 A9 1B
 		sta ZP_FA			;2EF9 85 FA
@@ -1460,8 +1434,8 @@ L_2F09	lda ZP_FE			;2F09 A5 FE
 		jsr L_18AA_pause5			;2F18 20 AA 18
 		jsr L_18AA_pause5			;2F1B 20 AA 18
 		jsr L_18AA_pause5			;2F1E 20 AA 18
-		ldx #$5D			;2F21 A2 5D
-		ldy #$2F			;2F23 A0 2F
+		ldx <L_2F5D			;2F21 A2 5D
+		ldy >L_2F5D			;2F23 A0 2F
 		jsr L_448C_print_text			;2F25 20 8C 44
 		lda #$1E			;2F28 A9 1E
 		sta ZP_FA			;2F2A 85 FA
@@ -1473,57 +1447,31 @@ L_2F09	lda ZP_FE			;2F09 A5 FE
 L_2F37	jsr L_3E73			;2F37 20 73 3E
 L_2F3A	jsr L_18B6			;2F3A 20 B6 18
 		jmp L_425D			;2F3D 4C 5D 42
-L_2F40	dta 1,8		;2F40 01 08
-		dta $04,$00,$27,$2F,$2C,$24,$00,$22,$25,$28,$29,$2E,$24,$00,$34,$28
-;vid	dta d"$ GOLD BEHIND TH"
-		dta $25,$00,$22,$2F,$2F,$2B,$33,$01,$00,$00,$FF
-;vid	dta d"E BOOKS!  ",$FF
-L_2F5D	dta $02,$06,$04,$37,$28,$25,$2E,$00,$39,$2F,$35,$00,$2C,$29,$26,$34
-;vid	dta d""&$WHEN YOU LIFT"
-		dta $25,$24,$00,$34,$28,$25,$00,$26,$35,$32,$0C,$00,$00,$00,$00,$FF
-;vid	dta d"ED THE FUR,    ",$FF
-		dta $06,$05,$21,$2E,$00,$25,$2E,$34,$32,$21,$2E,$23,$25,$00,$37,$21
-;vid	dta d"&%AN ENTRANCE WA"
-		dta $33,$00,$32,$25,$36,$25,$21,$2C,$25,$24,$01,$00,$00,$00,$FF
-;vid	dta d"S REVEALED!   ",$FF
-L_2F9C	dta 1,4		;2F9C 01 04
-		dta $04,$30,$2F,$24,$00,$27,$1C,$2F,$37,$20,$00,$22,$39,$1C,$21,$00
-;vid	dta d"$POD G<OW@ BY<A "
-		dta $35,$2B,$32,$39,$34,$21,$00,$24,$0A,$37,$29,$27,$2E,$29,$21,$00
-;vid	dta d"UKRYTA D*WIGNIA "
-		dta $01,$FF
-;vid	dta d"!",$FF
-L_2FC0	dta $02,$06,$03,$21,$32,$25,$2E,$07,$34,$00,$39,$2F,$35,$00,$2F,$36
-;vid	dta d""&#AREN'T YOU OV"
-		dta $25,$32,$24,$2F,$29,$2E,$27,$00,$29,$34,$00,$22,$39,$00,$FF,$06
-;vid	dta d"ERDOING IT BY ",$FF,d"&"
-		dta $04,$28,$2F,$21,$32,$24,$29,$2E,$27,$00,$21,$2C,$2C,$00,$34,$28
-;vid	dta d"$HOARDING ALL TH"
-		dta $29,$33,$00,$33,$34,$35,$26,$26,$00,$1F,$01,$00,$FF
-;vid	dta d"IS STUFF ?! ",$FF
-L_2FFD	dta $02,$04,$02,$B5,$AE,$A6,$AF,$B2,$B4,$B5,$AE,$A1,$B4,$A5,$AC,$B9
-;vid	dta d""$"",d"UNFORTUNATELY"*
-		dta $80,$8D,$80,$B9,$AF,$B5,$80,$A3,$A1,$AE,$87,$B4,$80,$B4,$A1,$AB
-;vid	dta d" - YOU CAN'T TAK"*
-		dta $A5,$80,$FF,$04,$03,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80
-;vid	dta d"E "*,$FF,d"$#",d"           "*
-		dta $A1,$AE,$B9,$80,$A9,$B4,$A5,$AD,$80,$80,$80,$80,$80,$80,$80,$80
-;vid	dta d"ANY ITEM        "*
-		dta $80,$80,$80,$80,$FF
-;vid	dta d"    "*,$FF
-L_3042	dta 1,1		;3042 01 01
-		dta $03,$80,$80,$80,$80,$80,$B9,$AF,$B5,$80,$A3,$A1,$AE,$80,$AF,$AE
-;vid	dta d"#",d"     YOU CAN ON"*
-		dta $AC,$B9,$80,$B4,$A1,$AB,$A5,$80,$AF,$AE,$A5,$80,$A9,$B4,$A5,$AD
-;vid	dta d"LY TAKE ONE ITEM"*
-		dta $9A,$80,$80,$80,$80,$80,$80,$FF
-;vid	dta d":      "*,$FF
-L_306C	dta 1,$0a		;306C 01 0A
-		ora (ZP_80,X)		;306E 01 80
-		dta $A3,$AF,$80,$A3,$A8,$A3,$A5,$B3,$BA,$80,$B7,$BA,$A9,$A0,$8B,$9E
-;vid	dta d"CO CHCESZ WZI@+>"*
-		dta $80,$9F,$80,$FF
-;vid	dta d" ? "*,$FF
+L_2F40	dta 1
+	dta 8,4,d"GOLD BEHIND THE BOOKS!",$FF
+	
+L_2F5D	dta 2
+	dta 6,4,d"WHEN YOU LIFTED THE FUR,",$FF
+	dta 6,5,d"YOU FOUND AN ENTRANCE!  ",$FF
+	
+L_2F9C	dta 1
+	dta 2,4,d"A LEVER WAS HIDDEN BENEATH THE HEAD!",$ff
+		
+L_2FC0	dta 2
+	dta 6,3,d"AREN'T YOU OVERDOING IT BY",$FF
+	dta 6,4,d"HOARDING ALL THIS STUFF ?!",$FF
+
+L_2FFD	dta 1
+	dta 8,2,d"THERE IS NO ITEM TO TAKE."*,$ff
+		
+L_3042	dta 1
+	dta 10,3,d"TAKE AN ITEM:"*,$FF
+	
+L_306C	dta 1
+	dta 6,1,d"WHAT DO YOU WANT TO TAKE?"*,$FF
+	
+	fill_until $3084 0
+	
 L_3084	ldx #$00			;3084 A2 00
 		lda #$FF			;3086 A9 FF
 L_3088	sta L_0C28,X		;3088 9D 28 0C
@@ -1532,8 +1480,8 @@ L_3088	sta L_0C28,X		;3088 9D 28 0C
 		bne L_3088			;308E D0 F8
 		lda L_0C2E			;3090 AD 2E 0C
 		bpl L_30B1			;3093 10 1C
-		ldx #$19			;3095 A2 19
-		ldy #$2D			;3097 A0 2D
+		ldx <L_2D19			;3095 A2 19
+		ldy >L_2D19			;3097 A0 2D
 		jsr L_448C_print_text			;3099 20 8C 44
 		ldx #$02			;309C A2 02
 		ldy #$02			;309E A0 02
@@ -1547,8 +1495,8 @@ L_3088	sta L_0C28,X		;3088 9D 28 0C
 L_30B1	lda L_442B			;30B1 AD 2B 44
 		cmp #$06			;30B4 C9 06
 		bne L_30D4			;30B6 D0 1C
-		ldx #$C0			;30B8 A2 C0
-		ldy #$2F			;30BA A0 2F
+		ldx <L_2FC0			;30B8 A2 C0
+		ldy >L_2FC0		;30BA A0 2F
 		jsr L_448C_print_text			;30BC 20 8C 44
 		ldx #$05			;30BF A2 05
 		ldy #$02			;30C1 A0 02
@@ -1561,8 +1509,8 @@ L_30B1	lda L_442B			;30B1 AD 2B 44
 		jmp L_425D			;30D1 4C 5D 42
 L_30D4	lda L_0C2F			;30D4 AD 2F 0C
 		bpl L_30F2			;30D7 10 19
-		ldx #$7F			;30D9 A2 7F
-		ldy #$31			;30DB A0 31
+		ldx <L_317F			;30D9 A2 7F
+		ldy >L_317F			;30DB A0 31
 		jsr L_448C_print_text			;30DD 20 8C 44
 		ldx #$00			;30E0 A2 00
 		ldy #$02			;30E2 A0 02
@@ -1572,8 +1520,8 @@ L_30D4	lda L_0C2F			;30D4 AD 2F 0C
 		sta ZP_FB			;30EA 85 FB
 		jsr L_4520_print_frame			;30EC 20 20 45
 		jmp L_3108			;30EF 4C 08 31
-L_30F2	ldx #$65			;30F2 A2 65
-		ldy #$31			;30F4 A0 31
+L_30F2		ldx <L_3165			;30F2 A2 65
+		ldy >L_3165		;30F4 A0 31
 		jsr L_448C_print_text			;30F6 20 8C 44
 		ldx #$08			;30F9 A2 08
 		ldy #$00			;30FB A0 00
@@ -1624,24 +1572,20 @@ L_3157	lda #$FF			;3157 A9 FF
 		jsr L_3E73			;315C 20 73 3E
 L_315F	jsr L_18B6			;315F 20 B6 18
 		jmp L_425D			;3162 4C 5D 42
-L_3165	ora (ZP_09,X)		;3165 01 09
-		ora (ZP_80,X)		;3167 01 80
-		dta $A3,$AF,$80,$A3,$A8,$A3,$A5,$B3,$BA,$80,$BA,$AF,$B3,$B4,$A1,$B7
-;vid	dta d"CO CHCESZ ZOSTAW"*
-		dta $A9,$9E,$80,$9F,$80,$FF
-;vid	dta d"I> ? "*,$FF
-L_317F	dta 1,1		;317F 01 01
-		dta $03,$80,$B9,$AF,$B5,$80,$A3,$A1,$AE,$80,$AC,$A5,$A1,$B6,$A5,$80
-;vid	dta d"#",d" YOU CAN LEAVE "*
-		dta $A2,$A5,$A8,$A9,$AE,$A4,$80,$AF,$AE,$AC,$B9,$80,$AF,$AE,$A5,$80
-;vid	dta d"BEHIND ONLY ONE "*
-		dta $A9,$B4,$A5,$AD,$81,$80,$80,$FF,$20,$AA,$18
-;vid	dta d"ITEM!  "*,$FF,d"@",d"J"*,d"8"
+L_3165	dta 1
+	dta 9,1,d"WHAT DO YOU WANT TO DROP?"*,$FF
+	
+L_317F	dta 1
+	dta 12,3,d"ITEM TO DROP:"*,$FF
+	
+	fill_until $31a9 0
+	
+L_31a9	jsr L_18AA_pause5 ;	dta $20,$AA,$18
 L_31AC	jsr L_17A5			;31AC 20 A5 17
 		lda L_33CB			;31AF AD CB 33
 		bpl L_31D0			;31B2 10 1C
-		ldx #$77			;31B4 A2 77
-		ldy #$3D			;31B6 A0 3D
+		ldx <L_3D77			;31B4 A2 77
+		ldy >L_3D77			;31B6 A0 3D
 		jsr L_448C_print_text			;31B8 20 8C 44
 		lda #$1E			;31BB A9 1E
 		sta ZP_FA			;31BD 85 FA
@@ -1654,8 +1598,8 @@ L_31AC	jsr L_17A5			;31AC 20 A5 17
 		jmp L_425D			;31CD 4C 5D 42
 L_31D0	lda #$00			;31D0 A9 00
 		sta L_3E23			;31D2 8D 23 3E
-L_31D5	ldx #$DB			;31D5 A2 DB
-		ldy #$3D			;31D7 A0 3D
+L_31D5		ldx <L_3DDB			;31D5 A2 DB
+		ldy >L_3DDB			;31D7 A0 3D
 		jsr L_448C_print_text			;31D9 20 8C 44
 		lda #$14			;31DC A9 14
 		sta ZP_FA			;31DE 85 FA
@@ -1781,8 +1725,8 @@ L_32EA	ldy #$03			;32EA A0 03
 L_32F9	jmp L_3356			;32F9 4C 56 33
 L_32FC	jsr L_18AA_pause5			;32FC 20 AA 18
 		jsr L_18AA_pause5			;32FF 20 AA 18
-		ldx #$F1			;3302 A2 F1
-		ldy #$3D			;3304 A0 3D
+		ldx <L_3DF1			;3302 A2 F1
+		ldy >L_3DF1		;3304 A0 3D
 		jsr L_448C_print_text			;3306 20 8C 44
 		ldx #$07			;3309 A2 07
 		ldy #$03			;330B A0 03
@@ -1799,8 +1743,8 @@ L_32FC	jsr L_18AA_pause5			;32FC 20 AA 18
 		jmp L_425D			;3326 4C 5D 42
 L_3329	jsr L_18AA_pause5			;3329 20 AA 18
 		jsr L_18AA_pause5			;332C 20 AA 18
-		ldx #$0C			;332F A2 0C
-		ldy #$3E			;3331 A0 3E
+		ldx <L_3E0C			;332F A2 0C
+		ldy >L_3E0C			;3331 A0 3E
 		jsr L_448C_print_text			;3333 20 8C 44
 		ldx #$0A			;3336 A2 0A
 		ldy #$03			;3338 A0 03
@@ -1854,8 +1798,8 @@ L_3391	dey				;3391 88
 		jsr L_18B6			;33A6 20 B6 18
 		jsr L_3E73			;33A9 20 73 3E
 		jmp L_425D			;33AC 4C 5D 42
-L_33AF	ldx #$B6			;33AF A2 B6
-		ldy #$3D			;33B1 A0 3D
+L_33AF		ldx <L_3DB6			;33AF A2 B6
+		ldy >L_3DB6		;33B1 A0 3D
 		jsr L_448C_print_text			;33B3 20 8C 44
 		ldx #$02			;33B6 A2 02
 		ldy #$03			;33B8 A0 03
@@ -1932,8 +1876,8 @@ L_3446	ldx #$30			;3446 A2 30
 		lda #$FE			;3448 A9 FE
 		sta L_3FA2,X		;344A 9D A2 3F
 		jmp L_4267			;344D 4C 67 42
-L_3450	ldx #$6C			;3450 A2 6C
-		ldy #$34			;3452 A0 34
+L_3450		ldx <L_346C			;3450 A2 6C
+		ldy >L_346C			;3452 A0 34
 		jsr L_448C_print_text			;3454 20 8C 44
 		lda #$24			;3457 A9 24
 		sta ZP_FA			;3459 85 FA
@@ -1944,22 +1888,14 @@ L_3450	ldx #$6C			;3450 A2 6C
 		jsr L_4520_print_frame			;3463 20 20 45
 		jsr L_3E2F			;3466 20 2F 3E
 		jmp L_3B5A			;3469 4C 5A 3B
-L_346C	dta $03,$03,$03,$30,$2F,$24,$1C,$2F,$27,$21,$00,$3A,$21,$30,$21,$24
-;vid	dta d"###POD<OGA ZAPAD"
-		dta $1C,$21,$00,$33,$29,$1D,$00,$37,$32,$21,$3A,$00,$3A,$00,$34,$2F
-;vid	dta d"<A SI= WRAZ Z TO"
-		dta $22,$20,$00,$01,$00,$FF,$03,$04,$22,$21,$32,$24,$3A,$2F,$00,$34
-;vid	dta d"B@ ! ",$FF,d"#$BARDZO T"
-		dta $32,$35,$24,$2E,$2F,$00,$30,$32,$3A,$25,$3B,$39,$1E,$00,$23,$3A
-;vid	dta d"RUDNO PRZE[Y> CZ"
-		dta $34,$25,$32,$24,$3A,$29,$25,$33,$34,$2F,$FF,$03,$05,$00,$2D,$25
-;vid	dta d"TERDZIESTO",$FF,d"#% ME"
-		dta $34,$32,$2F,$37,$39,$00,$2C,$2F,$34,$0E,$00,$3B,$25,$27,$2E,$21
-;vid	dta d"TROWY LOT. [EGNA"
-		dta $2A,$00,$22,$21,$32,$21,$28,$29,$32,$3A,$25,$0E,$0E,$0E,$00,$FF
-;vid	dta d"J BARAHIRZE... ",$FF
-L_34DC	ldx #$FF			;34DC A2 FF
-		ldy #$34			;34DE A0 34
+L_346C	dta 4
+	dta 3,3,d" THE FLOOR GAVE WAY, TAKING YOU DOWN ",$FF
+	dta 3,4,d"WITH IT! IT IS EXTREMELY DIFFICULT TO",$FF
+	dta 3,5,d"     SURVIVE A FORTY-METER FALL.     ",$FF
+	dta 3,6,d"       REST IN PIECE, BARAHIR...     ",$ff
+
+L_34DC		ldx <L_34FF			;34DC A2 FF
+		ldy >L_34FF			;34DE A0 34
 		jsr L_448C_print_text			;34E0 20 8C 44
 		lda #$23			;34E3 A9 23
 		sta ZP_FA			;34E5 85 FA
@@ -1973,20 +1909,12 @@ L_34DC	ldx #$FF			;34DC A2 FF
 		sta ZP_F9_current_room_id			;34F7 85 F9
 		jsr L_5830			;34F9 20 30 58
 		jmp L_4267			;34FC 4C 67 42
-L_34FF	dta $03,$03,$03,$2E,$21,$27,$2C,$25,$00,$33,$34,$21,$1C,$2F,$00,$33
-;vid	dta d"###NAGLE STA<O S"
-		dta $29,$1D,$00,$23,$2F,$0B,$00,$2E,$29,$25,$3A,$37,$39,$2B,$1C,$25
-;vid	dta d"I= CO+ NIEZWYK<E"
-		dta $27,$2F,$00,$0D,$FF,$03,$04,$30,$32,$3A,$25,$2E,$29,$2B,$2E,$20
-;vid	dta d"GO -",$FF,d"#$PRZENIKN@"
-L_352F	dta $1C,$25,$0B,$00,$30,$32,$3A,$25,$3A,$00,$34,$21,$26,$2C,$1D,$00
-;vid	dta d"<E+ PRZEZ TAFL= "
-		dta $2C,$35,$33,$34,$32,$21,$00,$29,$FF,$03,$05,$3A,$2E,$21,$2C,$21
-;vid	dta d"LUSTRA I",$FF,d"#%ZNALA"
-		dta $3A,$1C,$25,$0B,$00,$33,$29,$1D,$00,$30,$2F,$00,$24,$32,$35,$27
-;vid	dta d"Z<E+ SI= PO DRUG"
-		dta $29,$25,$2A,$00,$33,$34,$32,$2F,$2E,$29,$25,$01,$FF
-;vid	dta d"IEJ STRONIE!",$FF
+L_34FF	dta 4
+	dta 3,3,d"SOMETHING EXTRAORDINARY HAPPENED...",$FF
+	dta 3,4,d" YOU PASSED TRHOUGH THE SURFACE OF ",$ff
+	dta 3,5,d"THE MIRROR AND FOUND YOUSELF ON THE",$FF
+	dta 3,6,d"            OTHER SIDE!            ",$ff
+	
 L_356C	lda #$FE			;356C A9 FE
 		ldx #$36			;356E A2 36
 		sta L_3FA2,X		;3570 9D A2 3F
@@ -1996,8 +1924,8 @@ L_3579	lda ZP_D0			;3579 A5 D0
 		cmp #$D0			;357B C9 D0
 		beq L_3582			;357D F0 03
 		jmp L_35D0			;357F 4C D0 35
-L_3582	ldx #$EC			;3582 A2 EC
-		ldy #$35			;3584 A0 35
+L_3582		ldx <L_35EC			;3582 A2 EC
+		ldy >L_35EC		;3584 A0 35
 		jsr L_448C_print_text			;3586 20 8C 44
 		lda #$28			;3589 A9 28
 		sta ZP_FA			;358B 85 FA
@@ -2007,8 +1935,8 @@ L_3582	ldx #$EC			;3582 A2 EC
 		ldy #$00			;3593 A0 00
 		jsr L_4520_print_frame			;3595 20 20 45
 		jsr L_3E2F			;3598 20 2F 3E
-		ldx #$BA			;359B A2 BA
-		ldy #$36			;359D A0 36
+		ldx <L_36BA			;359B A2 BA
+		ldy >L_36BA			;359D A0 36
 		jsr L_448C_print_text			;359F 20 8C 44
 		lda #$28			;35A2 A9 28
 		sta ZP_FA			;35A4 85 FA
@@ -2018,8 +1946,8 @@ L_3582	ldx #$EC			;3582 A2 EC
 		ldy #$00			;35AC A0 00
 		jsr L_4520_print_frame			;35AE 20 20 45
 		jsr L_3E73			;35B1 20 73 3E
-		ldx #$B1			;35B4 A2 B1
-		ldy #$37			;35B6 A0 37
+		ldx <L_37B1			;35B4 A2 B1
+		ldy >L_37B1			;35B6 A0 37
 		jsr L_448C_print_text			;35B8 20 8C 44
 		lda #$1B			;35BB A9 1B
 		sta ZP_FA			;35BD 85 FA
@@ -2030,8 +1958,8 @@ L_3582	ldx #$EC			;3582 A2 EC
 		jsr L_4520_print_frame			;35C7 20 20 45
 		jsr L_3E73			;35CA 20 73 3E
 		jmp L_3B73			;35CD 4C 73 3B
-L_35D0	ldx #$CE			;35D0 A2 CE
-		ldy #$37			;35D2 A0 37
+L_35D0		ldx <L_37CE			;35D0 A2 CE
+		ldy >L_37CE		;35D2 A0 37
 		jsr L_448C_print_text			;35D4 20 8C 44
 		lda #$18			;35D7 A9 18
 		sta ZP_FA			;35D9 85 FA
@@ -2042,81 +1970,30 @@ L_35D0	ldx #$CE			;35D0 A2 CE
 		jsr L_4520_print_frame			;35E3 20 20 45
 		jsr L_3E2F			;35E6 20 2F 3E
 		jmp L_4267			;35E9 4C 67 42
-L_35EC	ora ZP_01			;35EC 05 01
-		ora (ZP_00,X)		;35EE 01 00
-		dta $3A,$21,$2D,$25,$2B,$00,$30,$1D,$2B,$1C,$00,$30,$2F,$24,$00,$37
-;vid	dta d"ZAMEK P=K< POD W"
-		dta $30,$1C,$39,$37,$25,$2D,$00,$2D,$2F,$23,$39,$00,$24,$21,$25,$32
-;vid	dta d"P<YWEM MOCY DAER"
-		dta $2F,$2E,$21,$01,$00,$FF,$01,$02,$00,$23,$3A,$21,$32,$2E,$2F,$2B
-;vid	dta d"ONA! ",$FF,d"!" CZARNOK"
-		dta $33,$29,$1D,$3B,$2E,$29,$2B,$00,$3A,$21,$22,$32,$21,$1C,$00,$2F
-;vid	dta d"SI=[NIK ZABRA< O"
-		dta $24,$00,$23,$29,$25,$22,$29,$25,$00,$2C,$21,$33,$2B,$1D,$FF,$01
-;vid	dta d"D CIEBIE LASK=",$FF,d"!"
-		dta $03,$00,$29,$00,$37,$39,$33,$3A,$25,$30,$34,$21,$1C,$00,$2E,$29
-;vid	dta d"# I WYSZEPTA< NI"
-		dta $25,$3A,$2E,$21,$2E,$25,$00,$3A,$21,$2B,$2C,$1D,$23,$29,$25,$0E
-;vid	dta d"EZNANE ZAKL=CIE."
-		dta $00,$2E,$21,$27,$2C,$25,$00,$FF,$01,$04,$00,$00,$00,$37,$33,$3A
-;vid	dta d" NAGLE ",$FF,d"!$   WSZ"
-		dta $39,$33,$34,$2B,$2F,$00,$3A,$21,$37,$29,$32,$2F,$37,$21,$1C,$2F
-;vid	dta d"YSTKO ZAWIROWA<O"
-		dta $00,$29,$00,$2F,$0B,$2C,$25,$30,$29,$1C,$00,$23,$29,$1D,$00,$00
-;vid	dta d" I O+LEPI< CI=  "
-		dta $FF,$01,$05,$00,$00,$24,$3A,$29,$37,$2E,$39,$00,$22,$2C,$21,$33
-;vid	dta $FF,d"!%  DZIWNY BLAS"
-		dta $2B,$0E,$00,$35,$30,$21,$24,$1C,$25,$0B,$00,$2E,$21,$00,$3A,$29
-;vid	dta d"K. UPAD<E+ NA ZI"
-		dta $25,$2D,$29,$1D,$00,$0E,$0E,$0E,$00,$FF
-;vid	dta d"EMI= ... ",$FF
-L_36BA	dta 6,1		;36BA 06 01
-		dta 1,$2b		;36BC 01 2B
-		dta $29,$25			;36BE 29 25
-		dta $24,$39			;36C0 24 39
-		dta 00				;36C2 00
-		dta $2F,$34,$37,$2F,$32,$3A,$39,$1C,$25,$0B,$00,$2F,$23,$3A,$39,$0C
-;vid	dta d"OTWORZY<E+ OCZY,"
-		dta $00,$33,$30,$2F,$33,$34,$32,$3A,$25,$27,$1C,$25,$0B,$00,$3B,$25
-;vid	dta d" SPOSTRZEG<E+ [E"
-		dta $FF,$01,$02,$2E,$29,$25,$00,$3A,$2E,$21,$2A,$24,$35,$2A,$25,$33
-;vid	dta $FF,d"!"NIE ZNAJDUJES"
-		dta $3A,$00,$33,$29,$1D,$00,$37,$00,$3A,$21,$2D,$2B,$35,$0C,$00,$21
-;vid	dta d"Z SI= W ZAMKU, A"
-		dta $2C,$25,$00,$33,$34,$2F,$29,$33,$3A,$FF,$01,$03,$2E,$21,$00,$2C
-;vid	dta d"LE STOISZ",$FF,d"!#NA L"
-		dta $25,$0B,$2E,$25,$2A,$00,$30,$2F,$2C,$21,$2E,$29,$25,$0E,$00,$35
-;vid	dta d"E+NEJ POLANIE. U"
-		dta $2A,$32,$3A,$21,$1C,$25,$0B,$00,$24,$21,$25,$32,$2F,$2E,$21,$0C
-;vid	dta d"JRZA<E+ DAERONA,"
-		dta $00,$00,$FF,$01,$04,$2B,$34,$0F,$32,$39,$00,$2B,$32,$3A,$39,$2B
-;vid	dta d"  ",$FF,d"!$KT/RY KRZYK"
-		dta $2E,$20,$1C,$1A,$00,$02,$00,$35,$24,$21,$1C,$2F,$00,$23,$29,$00
-;vid	dta d"N@<: " UDA<O CI "
-		dta $33,$29,$1D,$00,$01,$00,$34,$25,$32,$21,$3A,$FF,$01,$05,$2F,$22
-;vid	dta d"SI= ! TERAZ",$FF,d"!%OB"
-		dta $21,$2A,$00,$37,$32,$0F,$23,$29,$2D,$39,$00,$24,$2F,$00,$2B,$32
-;vid	dta d"AJ WR/CIMY DO KR"
-		dta $0F,$2C,$25,$33,$34,$37,$21,$0D,$00,$23,$3A,$25,$2B,$21,$00,$2E
-;vid	dta d"/LESTWA- CZEKA N"
-		dta $21,$33,$00,$00,$FF,$01,$06,$00,$00,$2D,$2E,$0F,$33,$34,$37,$2F
-;vid	dta d"AS  ",$FF,d"!&  MN/STWO"
-		dta $00,$30,$32,$21,$23,$39,$0C,$00,$22,$21,$32,$21,$28,$29,$32,$3A
-;vid	dta d" PRACY, BARAHIRZ"
-		dta $25,$00,$01,$00,$02,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"E ! "        ",$FF
-L_37B1	dta 1,8		;37B1 01 08
-		dta $04,$23,$2F,$2E,$27,$32,$21,$34,$35,$2C,$21,$34,$29,$2F,$2E,$33
-;vid	dta d"$CONGRATULATIONS"
-		dta $0C,$00,$22,$21,$32,$21,$28,$29,$32,$01,$FF
-;vid	dta d", BARAHIR!",$FF
-L_37CE	dta 1,9		;37CE 01 09
-		dta $04,$00,$34,$28,$25,$00,$2C,$2F,$23,$2B,$00,$24,$29,$24,$2E,$07
-;vid	dta d"$ THE LOCK DIDN'"
-		dta $34,$00,$2F,$30,$25,$2E,$00,$FF
-;vid	dta d"T OPEN ",$FF
-L_37E8	ldx #$1E			;37E8 A2 1E
-		ldy #$38			;37EA A0 38
+L_35EC	dta 6
+	dta 1,1,d"THE CASTLE CRACKED UNDER THE FORCE OF",$ff
+	dta 1,2,d"DAERON’S POWER! THE WIZARD TOOK YOUR ",$FF
+	dta 1,3,d" CANE AND WHISPERED AN UNKNOWN SPELL.",$FF
+	dta 1,4,d" SUDDENLY, EVERYTHING BEGAN TO SPIN, ",$FF
+	dta 1,5,d"     AND YOU GOT BLINDED BY THE      ",$ff
+	dta 1,6,d"LIGHTENING. YOU FELL TO THE GROUND...",$ff
+	
+L_36BA	dta 7
+	dta 1,1,d"    WHEN YOU OPENED YOUR EYES, YOU    ",$ff
+	dta 1,2,d"  REALIZED THAT YOU WERE NO LONGER IN ",$ff
+	dta 1,3,d" THE CASTLE, BUT STANDING IN A FOREST ",$ff
+	dta 1,4,d"CLEARING. YOU SAW DAERON, WHO SHOUTED:",$ff
+	dta 1,5,d"""YOU DID IT! NOW WE SHALL BOTH RETURN ",$ff
+	dta 1,6,d"  TO THE KINGDOM - THERE IS MUCH WORK ",$ff
+	dta 1,7,d"AHEAD OF US, BARAHIR!""                ",$ff
+
+L_37B1	dta 1
+	dta 8,4,d"CONGRATULATIONS BARAHIR!",$FF
+L_37CE	dta 1
+	dta 9,4,d"THE LOCK DIDN'T OPEN.",$FF
+	
+L_37E8		ldx <L_381E			;37E8 A2 1E
+		ldy >L_381E			;37EA A0 38
 		jsr L_448C_print_text			;37EC 20 8C 44
 		lda #$28			;37EF A9 28
 		sta ZP_FA			;37F1 85 FA
@@ -2138,24 +2015,15 @@ L_3811	lda #$0D			;3811 A9 0D
 		jsr L_3E2F			;3815 20 2F 3E
 		jsr L_5830			;3818 20 30 58
 		jmp L_4267			;381B 4C 67 42
-L_381E	dta $02,$01,$03,$0B,$23,$29,$21,$2E,$21,$0C,$00,$30,$32,$3A,$39,$00
-;vid	dta d""!#+CIANA, PRZY "
-		dta $2B,$34,$2F,$32,$25,$2A,$00,$3A,$2E,$21,$2A,$24,$35,$2A,$25,$00
-;vid	dta d"KTOREJ ZNAJDUJE "
-		dta $33,$29,$1D,$00,$26,$2F,$34,$25,$2C,$FF,$01,$04,$00,$2F,$22,$32
-;vid	dta d"SI= FOTEL",$FF,d"!$ OBR"
-		dta $0F,$23,$29,$1C,$21,$00,$33,$29,$25,$00,$2E,$21,$27,$2C,$25,$00
-;vid	dta d"/CI<A SIE NAGLE "
-		dta $37,$32,$21,$3A,$00,$3A,$00,$34,$2F,$22,$20,$00,$0E,$0E,$0E,$00
-;vid	dta d"WRAZ Z TOB@ ... "
-		dta $00,$00,$00,$FF
-;vid	dta d"   ",$FF
-L_3872	lda #$01			;3872 A9 01
+L_381E	dta 1
+	dta 1,3,d"THE WALL TURNED ALONG WITH YOU!",$ff
+	
+L_3872		lda #$01			;3872 A9 01
 		ldx #$28			;3874 A2 28
 		sta L_3FA2,X		;3876 9D A2 3F
 		jmp L_4267			;3879 4C 67 42
-L_387C	ldx #$98			;387C A2 98
-		ldy #$38			;387E A0 38
+L_387C		ldx <L_3898			;387C A2 98
+		ldy >L_3898			;387E A0 38
 		jsr L_448C_print_text			;3880 20 8C 44
 		lda #$26			;3883 A9 26
 		sta ZP_FA			;3885 85 FA
@@ -2166,28 +2034,12 @@ L_387C	ldx #$98			;387C A2 98
 		jsr L_4520_print_frame			;388F 20 20 45
 		jsr L_3E2F			;3892 20 2F 3E
 		jmp L_3B5A			;3895 4C 5A 3B
-L_3898	dta $04,$02,$02,$00,$00,$29,$34,$00,$37,$21,$33,$00,$34,$32,$25,$21
-;vid	dta d"$""  IT WAS TREA"
-		dta $23,$28,$25,$32,$2F,$35,$33,$00,$21,$33,$2B,$21,$32,$07,$33,$00
-;vid	dta d"CHEROUS ASKAR'S "
-		dta $34,$32,$21,$30,$01,$00,$00,$FF,$02,$03,$00,$00,$21,$00,$24,$25
-;vid	dta d"TRAP!  ",$FF,d""#  A DE"
-		dta $21,$24,$2C,$39,$00,$22,$25,$24,$00,$24,$32,$21,$27,$27,$25,$24
-;vid	dta d"ADLY BED DRAGGED"
-		dta $00,$39,$2F,$35,$00,$29,$2E,$33,$29,$24,$25,$0E,$00,$00,$FF,$02
-;vid	dta d" YOU INSIDE.  ",$FF,d"""
-		dta $04,$00,$00,$00,$00,$00,$34,$28,$25,$2E,$00,$21,$2C,$2C,$00,$39
-;vid	dta d"$     THEN ALL Y"
-		dta $2F,$35,$00,$23,$2F,$35,$2C,$24,$00,$28,$25,$21,$32,$00,$37,$21
-;vid	dta d"OU COULD HEAR WA"
-		dta $33,$00,$00,$00,$00,$FF,$02,$05,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"S    ",$FF,d""%        "
-		dta $00,$00,$00,$00,$33,$2D,$21,$23,$2B,$29,$2E
-;vid	dta d"    SMACKIN"
-L_3923	dta $27,$0E,$0E,$0E,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"G...            "
-		dta $00,$FF
-;vid	dta d" ",$FF
+L_3898	dta 4
+	dta 2,2,d"  IT WAS TREACHEROUS ASKAR'S TRAP!  ",$FF
+	dta 2,3,d"  A DEADLY BED DRAGGED YOU INSIDE.  ",$FF
+	dta 2,4,d"     THEN ALL YOU COULD HEAR WAS    ",$FF
+	dta 2,5,d"             SMACKING...            ",$FF
+		
 L_3935	lda #$01			;3935 A9 01
 		ldx #$19			;3937 A2 19
 		sta L_3FA2,X		;3939 9D A2 3F
@@ -2274,8 +2126,8 @@ L_39FB	inc L_3AE3			;39FB EE E3 3A
 		lda L_3AE3			;39FE AD E3 3A
 		cmp #$03			;3A01 C9 03
 		bne L_3A21			;3A03 D0 1C
-		ldx #$29			;3A05 A2 29
-		ldy #$3A			;3A07 A0 3A
+		ldx <L_3A29			;3A05 A2 29
+		ldy >L_3A29			;3A07 A0 3A
 		jsr L_448C_print_text			;3A09 20 8C 44
 		lda #$24			;3A0C A9 24
 		sta ZP_FA			;3A0E 85 FA
@@ -2289,34 +2141,13 @@ L_39FB	inc L_3AE3			;39FB EE E3 3A
 L_3A21	lda #$01			;3A21 A9 01
 		sta L_0C10			;3A23 8D 10 0C
 		jmp L_4267			;3A26 4C 67 42
-L_3A29	dta 5,3,1,d"UNFO"
-	;ora ZP_03			;3A29 05 03
-	;	ora (ZP_35,X)		;3A2B 01 35
-	;	rol L_2F26			;3A2D 2E 26 2F
-		dta $32,$34,$35,$2E,$21,$34,$25,$2C,$39,$00,$0D,$00,$39,$2F,$35,$32
-;vid	dta d"RTUNATELY - YOUR"
-		dta $00,$2C,$35,$23,$2B,$00,$28,$21,$33,$00,$32,$35,$2E,$00,$FF,$03
-;vid	dta d" LUCK HAS RUN ",$FF,d"#"
-		dta $02,$00,$2F,$35,$34,$00,$34,$28,$29,$33,$00,$34,$29,$2D,$25,$01
-;vid	dta d"" OUT THIS TIME!"
-		dta $00,$21,$00,$33,$25,$23,$2F,$2E,$24,$00,$33,$2F,$2C,$24,$29,$25
-;vid	dta d" A SECOND SOLDIE"
-		dta $32,$00,$00,$FF,$03,$03,$00,$23,$21,$2D,$25,$00,$2F,$35,$34,$00
-;vid	dta d"R  ",$FF,d"## CAME OUT "
-		dta $2F,$26,$00,$34,$28,$25,$00,$27,$21,$34,$25,$00,$21,$2E,$24,$00
-;vid	dta d"OF THE GATE AND "
-		dta $33,$30,$2F,$34,$34,$25,$24,$00,$FF,$03,$04,$39,$2F,$35,$00,$22
-;vid	dta d"SPOTTED ",$FF,d"#$YOU B"
-		dta $25,$28,$29,$2E,$24,$00,$34,$28,$25,$00,$22,$2F,$35,$2C,$24,$25
-;vid	dta d"EHIND THE BOULDE"
-		dta $32,$0E,$00,$39,$2F,$35,$00,$24,$29,$24,$2E,$07,$34,$FF,$03,$05
-;vid	dta d"R. YOU DIDN'T",$FF,d"#%"
-		dta $00,$00,$33,$34,$21,$2E,$24,$00,$21,$00,$23,$28,$21,$2E,$23,$25
-;vid	dta d"  STAND A CHANCE"
-		dta $00,$21,$27,$21,$29,$2E,$33,$34,$00,$34,$28,$25,$2D,$0E,$0E,$0E
-;vid	dta d" AGAINST THEM..."
-		dta $00,$00,$FF
-;vid	dta d"  ",$FF
+L_3A29	dta 5
+	dta 3,1,d"UNFORTUNATELY - YOUR LUCK HAS RUN ",$FF
+	dta 3,2,d" OUT THIS TIME! A SECOND SOLDIER  ",$FF
+	dta 3,3,d" CAME OUT OF THE GATE AND SPOTTED ",$FF
+	dta 3,4,d"YOU BEHIND THE BOULDER. YOU DIDN'T",$FF
+	dta 3,5,d"  STAND A CHANCE AGAINST THEM...  ",$ff
+		
 L_3AE3	dta $00			;3AE3 00    
 L_3AE4	inc L_0DDA			;3AE4 EE DA 0D
 		lda L_0DDA			;3AE7 AD DA 0D
@@ -2327,8 +2158,8 @@ L_3AF1	ldx #$04			;3AF1 A2 04
 		lda L_3FA2,X		;3AF3 BD A2 3F
 		beq L_3AFB			;3AF6 F0 03
 		jmp L_4267			;3AF8 4C 67 42
-L_3AFB	ldx #$38			;3AFB A2 38
-		ldy #$3B			;3AFD A0 3B
+L_3AFB		ldx <L_3B38			;3AFB A2 38
+		ldy >L_3B38			;3AFD A0 3B
 		jsr L_448C_print_text			;3AFF 20 8C 44
 		lda #$20			;3B02 A9 20
 		sta ZP_FA			;3B04 85 FA
@@ -2352,13 +2183,11 @@ L_3AFB	ldx #$38			;3AFB A2 38
 		jsr L_18AA_pause5			;3B2F 20 AA 18
 		jsr L_18B6			;3B32 20 B6 18
 		jmp L_4267			;3B35 4C 67 42
-L_3B38	ora (ZP_05,X)		;3B38 01 05
-		dta $04,$00,$00,$00,$00,$00,$00,$34,$28,$25,$00,$27,$21,$34,$25,$00
-;vid	dta d"$      THE GATE "
-		dta $29,$33,$00,$2F,$30,$25,$2E,$29,$2E,$27,$0E,$00,$00,$00,$00,$FF
-;vid	dta d"IS OPENING.    ",$FF
-L_3B5A	ldx #$7B			;3B5A A2 7B
-		ldy #$3C			;3B5C A0 3C
+L_3B38	dta 1
+	dta 5,4,d"THE GATE IS OPENING.",$FF
+	
+L_3B5A		ldx <L_3C7B			;3B5A A2 7B
+		ldy >L_3C7B			;3B5C A0 3C
 		jsr L_448C_print_text			;3B5E 20 8C 44
 		lda #$26			;3B61 A9 26
 		sta ZP_FA			;3B63 85 FA
@@ -2368,8 +2197,8 @@ L_3B5A	ldx #$7B			;3B5A A2 7B
 		ldy #$01			;3B6B A0 01
 		jsr L_4520_print_frame			;3B6D 20 20 45
 		jsr L_3E2F			;3B70 20 2F 3E
-L_3B73	ldx #$5C			;3B73 A2 5C
-		ldy #$3C			;3B75 A0 3C
+L_3B73		ldx <L_3C5C			;3B73 A2 5C
+		ldy >L_3C5C			;3B75 A0 3C
 		jsr L_448C_print_text			;3B77 20 8C 44
 		lda #$0E			;3B7A A9 0E
 		sta ZP_FA			;3B7C 85 FA
@@ -2501,8 +2330,8 @@ L_3C7B	dta $04,$02,$02,$39,$2F,$35,$32,$00,$2D,$29,$33,$33,$29,$2F,$2E,$00
 ;vid	dta d"FOREVER INTO DAR"
 		dta $2B,$2E,$25,$33,$33,$0E,$0E,$0E,$00,$00,$00,$00,$FF
 ;vid	dta d"KNESS...    ",$FF
-L_3D18	ldx #$34			;3D18 A2 34
-		ldy #$3D			;3D1A A0 3D
+L_3D18		ldx <L_3D34			;3D18 A2 34
+		ldy >L_3D34			;3D1A A0 3D
 		jsr L_448C_print_text			;3D1C 20 8C 44
 		lda #$20			;3D1F A9 20
 		sta ZP_FA			;3D21 85 FA
@@ -2531,29 +2360,17 @@ L_3D77	dta $02,$06,$03,$80,$80,$A9,$87,$AD,$80,$B3,$AF,$B2,$B2,$B9,$8C,$80
 ;vid	dta d"&$",d"    NOTHING TO"*
 		dta $80,$B5,$B3,$A5,$80,$A8,$A5,$B2,$A5,$80,$80,$80,$80,$80,$FF
 ;vid	dta d" USE HERE     "*,$FF
-L_3DB6	ora (ZP_03,X)		;3DB6 01 03
-		dta $04,$00,$AE,$A9,$A5,$80,$BA,$B2,$AF,$A2,$A9,$B3,$BA,$80,$BA,$80
-;vid	dta d"$ ",d"NIE ZROBISZ Z "*
-		dta $B4,$B9,$AD,$80,$AE,$A9,$A3,$80,$A3,$A9,$A5,$AB,$A1,$B7,$A5,$A7
-;vid	dta d"TYM NIC CIEKAWEG"*
-		dta $AF,$80,$FF
-;vid	dta d"O "*,$FF
-L_3DDB	dta 1,$b		;3DDB 01 0B
-		ora (ZP_00,X)		;3DDD 01 00
-		dta $A3,$AF,$80,$A3,$A8,$A3,$A5,$B3,$BA,$80,$B5,$BB,$B9,$9E,$80,$9F
-;vid	dta d"CO CHCESZ U[Y> ?"*
-		dta $00,$FF
-;vid	dta d" ",$FF
+L_3DB6	dta 1
+	dta 3,4,d"IT HAS NO USE HERE."*,$ff
+L_3DDB	dta 1
+	dta $b,1,d"WHAT DO YOU WANT TO USE?"*,$FF
 L_3DF1	dta 1,8		;3DF1 01 08
 		dta $04,$80,$80,$80,$B4,$A8,$A5,$B2,$A5,$87,$B3,$80,$AE,$AF,$80,$A5
 ;vid	dta d"$",d"   THERE'S NO E"*
 		dta $A6,$A6,$A5,$A3,$B4,$80,$80,$80,$FF
 ;vid	dta d"FFECT   "*,$FF
-L_3E0C	dta 1,$b		;3E0C 01 0B
-		dta $04,$80,$AA,$B5,$BB,$80,$B4,$AF,$80,$BA,$B2
-;vid	dta d"$",d" JU[ TO ZR"*
-L_3E19	dta $AF,$A2,$A9,$9C,$A5,$8B,$80,$81,$80,$FF
-;vid	dta d"OBI<E+ ! "*,$FF
+
+	
 L_3E23	dta $00			;3E23 00    
 L_3E24	dta $00			;3E24 00    
 L_3E25	dta $00			;3E25 00    
@@ -2571,8 +2388,8 @@ L_3E2F	jsr L_18AA_pause5			;3E2F 20 AA 18
 		ldx #$19			;3E3D A2 19
 		ldy #$07			;3E3F A0 07
 		jsr L_4520_print_frame			;3E41 20 20 45
-		ldx #$62			;3E44 A2 62
-		ldy #$3E			;3E46 A0 3E
+		ldx <L_3E62			;3E44 A2 62
+		ldy >L_3E62			;3E46 A0 3E
 		jsr L_448C_print_text			;3E48 20 8C 44
 L_3E4B	lda L_D010			;3E4B AD 10 D0
 		beq L_3E53			;3E4E F0 03
@@ -2583,17 +2400,11 @@ L_3E53	lda L_D010			;3E53 AD 10 D0
 		jsr L_18AA_pause5			;3E5B 20 AA 18
 		jsr L_18AA_pause5			;3E5E 20 AA 18
 		rts				;3E61 60
-L_3E62	dta 1,$1a,8,d"PRES"
-	;ora (ZP_1A,X)		;3E62 01 1A
-	;	php				;3E64 08
-	;	bcs L_3E19			;3E65 B0 B2
-	;	lda ZP_B3			;3E67 A5 B3
-		dta $B3,$80,$A6,$A9,$B2,$A5,$80,$80,$80,$FF
-;vid	dta d"S FIRE   "*,$FF
+
 L_3E73	jsr L_18AA_pause5			;3E73 20 AA 18
 		jsr L_18AA_pause5			;3E76 20 AA 18
-		ldx #$BA			;3E79 A2 BA
-		ldy #$3E			;3E7B A0 3E
+		ldx <L_3EBA			;3E79 A2 BA
+		ldy >L_3EBA			;3E7B A0 3E
 		jsr L_448C_print_text			;3E7D 20 8C 44
 		ldx #$21			;3E80 A2 21
 		ldy #$06			;3E82 A0 06
@@ -2622,9 +2433,7 @@ L_3EA9	lda L_D010			;3EA9 AD 10 D0
 		ldx #$01			;3EB7 A2 01
 		rts				;3EB9 60
 		
-L_3EBA	dta $01,$22,$07
-	dta d"O.K."*,$FF
-		
+
 L_3EC2	dta $00,$05,$01,$01,$01,$05,$02,$02,$02,$02,$04,$04,$04,$04,$04,$04
 ;vid	dta d" %!!!%""""$$$$$$"
 		dta $04,$06,$06,$03,$08,$08,$08,$07,$07,$07,$07,$07,$07,$08,$03,$03
@@ -2976,9 +2785,7 @@ L_4267	lda #$FF			;4267 A9 FF
 		sta L_4284			;426C 8D 84 42
 		jsr L_4285			;426F 20 85 42
 		jmp L_0EF7			;4272 4C F7 0E
-L_4275	ora (ZP_02,X)		;4275 01 02
-L_4277	dta $07,$39,$2F,$35,$00,$33,$25,$25,$00,$1A,$00,$FF
-;vid	dta d"'YOU SEE : ",$FF
+
 L_4283	dta $FF			;4283 FF    
 L_4284	dta $FF			;4284 FF    
 L_4285	jsr L_1FCA			;4285 20 CA 1F
@@ -3036,8 +2843,8 @@ L_42D0	lda ZP_F9_current_room_id			;42D0 A5 F9
 		ldx #$26			;42F7 A2 26
 		lda L_3FA2,X		;42F9 BD A2 3F
 		beq L_4305			;42FC F0 07
-		ldx #$3A			;42FE A2 3A
-		ldy #$44			;4300 A0 44
+		ldx <L_443A			;42FE A2 3A
+		ldy >L_443A			;4300 A0 44
 		jsr L_448C_print_text			;4302 20 8C 44
 L_4305	lda ZP_F9_current_room_id			;4305 A5 F9
 		cmp #$16			;4307 C9 16
@@ -3048,8 +2855,8 @@ L_4305	lda ZP_F9_current_room_id			;4305 A5 F9
 		ldx #$39			;4312 A2 39
 		lda L_3FA2,X		;4314 BD A2 3F
 		beq L_4320			;4317 F0 07
-L_4319	ldx #$64			;4319 A2 64
-		ldy #$44			;431B A0 44
+L_4319		ldx <L_4464			;4319 A2 64
+		ldy >L_4464			;431B A0 44
 		jsr L_448C_print_text			;431D 20 8C 44
 L_4320	ldx #$00			;4320 A2 00
 L_4322	lda #$FF			;4322 A9 FF
@@ -3109,8 +2916,8 @@ L_437E	clc				;437E 18
 		inc L_2013			;4397 EE 13 20
 L_439A	lda L_2013			;439A AD 13 20
 		sta L_4277			;439D 8D 77 42
-		ldx #$75			;43A0 A2 75
-		ldy #$42			;43A2 A0 42
+		ldx <L_4275			;43A0 A2 75
+		ldy >L_4275			;43A2 A0 42
 		jsr L_448C_print_text			;43A4 20 8C 44
 		ldy #$0C			;43A7 A0 0C
 		sty L_4433			;43A9 8C 33 44
@@ -3186,20 +2993,8 @@ L_4435	dta $00,$00
 L_4437	dta $00			;4437 00    
 L_4438	dta $00			;4438 00    
 L_4439	dta $00			;4439 00    
-L_443A	ora (ZP_01,X)		;443A 01 01
-		dta $04,$30,$32,$3A,$25,$24,$00,$33,$2F,$22,$20,$00,$37,$29,$24,$3A
-;vid	dta d"$PRZED SOB@ WIDZ"
-		dta $29,$33,$3A,$00,$2B,$32,$39,$33,$3A,$34,$21,$1C,$2F,$37,$20,$00
-;vid	dta d"ISZ KRYSZTA<OW@ "
-		dta $23,$3A,$21,$33,$3A,$2B,$1D,$FF
-;vid	dta d"CZASZK=",$FF
-L_4464	ora (ZP_01,X)		;4464 01 01
-		dta $04,$37,$00,$0B,$23,$29,$21,$2E,$29,$25,$00,$37,$29,$24,$3A,$29
-;vid	dta d"$W +CIANIE WIDZI"
-		dta $33,$3A,$00,$2F,$34,$37,$2F,$32,$3A,$2F,$2E,$39,$00,$33,$23,$28
-;vid	dta d"SZ OTWORZONY SCH"
-		dta $2F,$37,$25,$2B,$0E,$FF
-;vid	dta d"OWEK.",$FF
+
+	
 L_448C_print_text	stx ZP_F0			;448C 86 F0
 		sty ZP_F1			;448E 84 F1
 		ldy #$00			;4490 A0 00
@@ -3352,7 +3147,10 @@ L_45A0	iny				;45A0 C8
 		lda #$3F			;45A8 A9 3F
 		sta (ZP_F0),Y		;45AA 91 F0
 		rts				;45AC 60
-L_45AD
+	
+	fill_until $45ad 0
+	
+L_45AD_talking_face_animation_frames
 		dta $FF,$FF,$FF,$A8,$AA,$AA,$95,$5C,$80,$00,$00,$1C,$80,$00,$00,$1C
 		dta $80,$15,$40,$1C,$80,$6F,$50,$1C,$80,$BF,$90,$1C,$82,$FF,$94,$1C
 		dta $83,$FE,$A4,$1C,$83,$FE,$A4,$1C,$8F,$59,$69,$1C,$8D,$AA,$99,$1C
@@ -3396,8 +3194,8 @@ L_45AD
 		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
 		dta $00,$00,$00
 
-L_4840		ldx #$A4			;4840 A2 A4
-		ldy #$4F			;4842 A0 4F
+L_4840		ldx <L_4FA4			;4840 A2 A4
+		ldy >L_4FA4			;4842 A0 4F
 		jsr L_448C_print_text			;4844 20 8C 44
 		lda #$15			;4847 A9 15
 		sta ZP_FA			;4849 85 FA
@@ -3462,8 +3260,8 @@ L_48B4	inx				;48B4 E8
 		tay				;48C1 A8
 		dey				;48C2 88
 		jsr L_4520_print_frame			;48C3 20 20 45
-		ldx #$C6			;48C6 A2 C6
-		ldy #$51			;48C8 A0 51
+		ldx <L_51C6			;48C6 A2 C6
+		ldy >L_51C6			;48C8 A0 51
 		jsr L_448C_print_text			;48CA 20 8C 44
 		lda #$0F			;48CD A9 0F
 		sta ZP_FA			;48CF 85 FA
@@ -3618,8 +3416,8 @@ L_49EF	lda ZP_EE			;49EF A5 EE
 		ldy #$04			;4A11 A0 04
 		jsr L_4520_print_frame			;4A13 20 20 45
 		jmp L_4A2F			;4A16 4C 2F 4A
-L_4A19	ldx #$07			;4A19 A2 07
-		ldy #$52			;4A1B A0 52
+L_4A19		ldx <L_5207			;4A19 A2 07
+		ldy >L_5207			;4A1B A0 52
 		jsr L_448C_print_text			;4A1D 20 8C 44
 		lda #$18			;4A20 A9 18
 		sta ZP_FA			;4A22 85 FA
@@ -3641,8 +3439,8 @@ L_4A35	lda ZP_EF			;4A35 A5 EF
 		sta L_4FA2			;4A46 8D A2 4F
 		jmp (L_4FA1)		;4A49 6C A1 4F
 L_4A4C	jsr L_18AA_pause5			;4A4C 20 AA 18
-		ldx #$3F			;4A4F A2 3F
-		ldy #$50			;4A51 A0 50
+		ldx <L_503F			;4A4F A2 3F
+		ldy >L_503F			;4A51 A0 50
 		jsr L_448C_print_text			;4A53 20 8C 44
 		lda #$0C			;4A56 A9 0C
 		sta ZP_FA			;4A58 85 FA
@@ -3653,28 +3451,15 @@ L_4A4C	jsr L_18AA_pause5			;4A4C 20 AA 18
 		jsr L_4520_print_frame			;4A62 20 20 45
 		jsr L_3E2F			;4A65 20 2F 3E
 		jmp L_425D			;4A68 4C 5D 42
-L_4A6B	dta 1,7,1,d"TAKE YOU"
-	;ora (ZP_07,X)		;4A6B 01 07
-	;	ora (ZP_34,X)		;4A6D 01 34
-	;	and (ZP_2B,X)		;4A6F 21 2B
-	;	and ZP_00			;4A71 25 00
-	;	and L_352F,Y		;4A73 39 2F 35
-		dta $32,$00,$2C,$21,$33,$34,$00,$24,$25,$23,$29,$33,$29,$2F,$2E,$1A
-;vid	dta d"R LAST DECISION:"
-		dta $00,$00,$00,$FF
-;vid	dta d"   ",$FF
-L_4A8A	dta 1,$b		;4A8A 01 0B
-		dta $04,$00,$00,$24,$2F,$2E
-;vid	dta d"$  DON"
-L_4A92	dta $07,$34,$00,$22,$25,$00,$33,$29,$2C,$2C,$39,$01,$00,$00,$FF
-;vid	dta d"'T BE SILLY!  ",$FF
+L_4A6B	dta 1,7,1,d"TAKE YOUR FINAL DECISION:",$FF
+L_4A8A	dta 1,$b,4,d"DON'T BE SILLY!",$FF
 L_4AA1	jsr L_18AA_pause5			;4AA1 20 AA 18
 L_4AA4	jsr L_18AA_pause5			;4AA4 20 AA 18
 		lda ZP_F9_current_room_id			;4AA7 A5 F9
 		cmp #$18			;4AA9 C9 18
 		bne L_4AC9			;4AAB D0 1C
-		ldx #$8A			;4AAD A2 8A
-		ldy #$4A			;4AAF A0 4A
+		ldx <L_4A8A		;4AAD A2 8A
+		ldy >L_4A8A			;4AAF A0 4A
 		jsr L_448C_print_text			;4AB1 20 8C 44
 		lda #$15			;4AB4 A9 15
 		sta ZP_FA			;4AB6 85 FA
@@ -3687,8 +3472,8 @@ L_4AA4	jsr L_18AA_pause5			;4AA4 20 AA 18
 		jmp L_425D			;4AC6 4C 5D 42
 L_4AC9	jsr L_4285			;4AC9 20 85 42
 		jsr L_18AA_pause5			;4ACC 20 AA 18
-		ldx #$6B			;4ACF A2 6B
-		ldy #$4A			;4AD1 A0 4A
+		ldx <L_4A6B			;4ACF A2 6B
+		ldy >L_4A6B			;4AD1 A0 4A
 		jsr L_448C_print_text			;4AD3 20 8C 44
 		lda #$1D			;4AD6 A9 1D
 		sta ZP_FA			;4AD8 85 FA
@@ -3697,8 +3482,8 @@ L_4AC9	jsr L_4285			;4AC9 20 85 42
 		ldx #$06			;4ADE A2 06
 		ldy #$00			;4AE0 A0 00
 		jsr L_4520_print_frame			;4AE2 20 20 45
-		ldx #$30			;4AE5 A2 30
-		ldy #$4F			;4AE7 A0 4F
+		ldx <L_4F30			;4AE5 A2 30
+		ldy >L_4F30			;4AE7 A0 4F
 		jsr L_448C_print_text			;4AE9 20 8C 44
 		lda #$11			;4AEC A9 11
 		sta ZP_FA			;4AEE 85 FA
@@ -3811,8 +3596,8 @@ L_4BC4	lda ZP_D1_previous_position			;4BC4 A5 D1
 L_4BD1	jsr L_18AA_pause5			;4BD1 20 AA 18
 		jsr L_18AA_pause5			;4BD4 20 AA 18
 		jsr L_18AA_pause5			;4BD7 20 AA 18
-		ldx #$BA			;4BDA A2 BA
-		ldy #$4D			;4BDC A0 4D
+		ldx <L_4DBA			;4BDA A2 BA
+		ldy >L_4DBA			;4BDC A0 4D
 		jsr L_448C_print_text			;4BDE 20 8C 44
 		lda #$26			;4BE1 A9 26
 		sta ZP_FA			;4BE3 85 FA
@@ -3866,8 +3651,8 @@ L_4C3E	ldx #$49			;4C3E A2 49
 L_4C58	jmp L_4C7D			;4C58 4C 7D 4C
 L_4C5B	jsr L_18AA_pause5			;4C5B 20 AA 18
 		jsr L_18AA_pause5			;4C5E 20 AA 18
-		ldx #$79			;4C61 A2 79
-		ldy #$4D			;4C63 A0 4D
+		ldx <L_4D79			;4C61 A2 79
+		ldy >L_4D79			;4C63 A0 4D
 		jsr L_448C_print_text			;4C65 20 8C 44
 		lda #$1D			;4C68 A9 1D
 		sta ZP_FA			;4C6A 85 FA
@@ -3886,8 +3671,8 @@ L_4C88	jsr L_18AA_pause5			;4C88 20 AA 18
 		jsr L_18AA_pause5			;4C8B 20 AA 18
 		jsr L_18AA_pause5			;4C8E 20 AA 18
 		jsr L_18AA_pause5			;4C91 20 AA 18
-		ldx #$E2			;4C94 A2 E2
-		ldy #$4D			;4C96 A0 4D
+		ldx <L_4DE2			;4C94 A2 E2
+		ldy >L_4DE2			;4C96 A0 4D
 		jsr L_448C_print_text			;4C98 20 8C 44
 		lda #$1A			;4C9B A9 1A
 		sta ZP_FA			;4C9D 85 FA
@@ -3901,8 +3686,8 @@ L_4C88	jsr L_18AA_pause5			;4C88 20 AA 18
 		bne L_4CDC			;4CAF D0 2B
 		jsr L_18AA_pause5			;4CB1 20 AA 18
 		jsr L_18AA_pause5			;4CB4 20 AA 18
-		ldx #$46			;4CB7 A2 46
-		ldy #$4D			;4CB9 A0 4D
+		ldx <L_4D46			;4CB7 A2 46
+		ldy >L_4D46		;4CB9 A0 4D
 		jsr L_448C_print_text			;4CBB 20 8C 44
 		lda #$18			;4CBE A9 18
 		sta ZP_FA			;4CC0 85 FA
@@ -3922,8 +3707,8 @@ L_4CDC	lda ZP_EF			;4CDC A5 EF
 		bne L_4D0B			;4CE0 D0 29
 		jsr L_18AA_pause5			;4CE2 20 AA 18
 		jsr L_18AA_pause5			;4CE5 20 AA 18
-		ldx #$15			;4CE8 A2 15
-		ldy #$4D			;4CEA A0 4D
+		ldx <L_4D15			;4CE8 A2 15
+		ldy >L_4D15			;4CEA A0 4D
 		jsr L_448C_print_text			;4CEC 20 8C 44
 		lda #$17			;4CEF A9 17
 		sta ZP_FA			;4CF1 85 FA
@@ -3948,14 +3733,8 @@ L_4D15	dta $02,$0C,$05,$39,$2F,$35,$00,$33,$25,$21,$32,$23,$28,$25,$24,$00
 		dta $00,$26,$2F,$35,$2E,$24,$00,$34,$28,$25,$00,$2B,$25,$39,$00,$00
 ;vid	dta d" FOUND THE KEY  "
 		dta $FF			;4D45 FF    
-L_4D46	dta $02,$0C,$05,$00,$2D,$21,$32,$34,$37,$25,$2D,$35,$00,$33,$34,$32
-;vid	dta d"",% MARTWEMU STR"
-		dta $21,$3B,$2E,$29,$2B,$2F,$37,$29,$00,$FF,$0C,$06,$00,$37,$39,$30
-;vid	dta d"A[NIKOWI ",$FF,d",& WYP"
-		dta $21,$24,$1C,$00,$3A,$00,$32,$1D,$2B,$29,$00,$2D,$29,$25,$23,$3A
-;vid	dta d"AD< Z R=KI MIECZ"
-		dta $00,$00,$FF
-;vid	dta d"  ",$FF
+L_4D46	dta $01
+	dta $0C,$05,d"DEAD GUARD DROPPED HIS SWORD.",$ff
 L_4D79	dta $02,$07,$04,$35,$2E,$26,$2F,$32,$34,$35,$2E,$21,$34,$25,$2C,$39
 ;vid	dta d""'$UNFORTUNATELY"
 		dta $0C,$00,$34,$28,$25,$00,$2F,$30,$30,$2F,$2E,$25,$2E,$34,$FF,$07
@@ -3994,8 +3773,8 @@ L_4E19	lda ZP_EF			;4E19 A5 EF
 		sta L_4FA2			;4E2A 8D A2 4F
 		jmp (L_4FA1)		;4E2D 6C A1 4F
 L_4E30	jsr L_18AA_pause5			;4E30 20 AA 18
-		ldx #$3A			;4E33 A2 3A
-		ldy #$52			;4E35 A0 52
+		ldx <L_523A			;4E33 A2 3A
+		ldy >L_523A		;4E35 A0 52
 		jsr L_448C_print_text			;4E37 20 8C 44
 		lda #$18			;4E3A A9 18
 		sta ZP_FA			;4E3C 85 FA
@@ -4022,8 +3801,8 @@ L_4E5D	lda L_0C2E,X		;4E5D BD 2E 0C
 		lda L_0C2E			;4E6B AD 2E 0C
 		bpl L_4E8F			;4E6E 10 1F
 		jsr L_18AA_pause5			;4E70 20 AA 18
-		ldx #$BB			;4E73 A2 BB
-		ldy #$4F			;4E75 A0 4F
+		ldx <L_4FBB			;4E73 A2 BB
+		ldy >L_4FBB			;4E75 A0 4F
 		jsr L_448C_print_text			;4E77 20 8C 44
 		lda #$20			;4E7A A9 20
 		sta ZP_FA			;4E7C 85 FA
@@ -4036,8 +3815,8 @@ L_4E5D	lda L_0C2E,X		;4E5D BD 2E 0C
 		jmp L_425D			;4E8C 4C 5D 42
 L_4E8F	lda L_0C2F			;4E8F AD 2F 0C
 		bpl L_4EAD			;4E92 10 19
-		ldx #$77			;4E94 A2 77
-		ldy #$4F			;4E96 A0 4F
+		ldx <L_4F77			;4E94 A2 77
+		ldy >L_4F77			;4E96 A0 4F
 		jsr L_448C_print_text			;4E98 20 8C 44
 		lda #$28			;4E9B A9 28
 		sta ZP_FA			;4E9D 85 FA
@@ -4047,8 +3826,8 @@ L_4E8F	lda L_0C2F			;4E8F AD 2F 0C
 		ldy #$02			;4EA5 A0 02
 		jsr L_4520_print_frame			;4EA7 20 20 45
 		jmp L_4EC3			;4EAA 4C C3 4E
-L_4EAD	ldx #$DD			;4EAD A2 DD
-		ldy #$4F			;4EAF A0 4F
+L_4EAD		ldx <L_4FDD			;4EAD A2 DD
+		ldy >L_4FDD			;4EAF A0 4F
 		jsr L_448C_print_text			;4EB1 20 8C 44
 		lda #$14			;4EB4 A9 14
 		sta ZP_FA			;4EB6 85 FA
@@ -4081,8 +3860,8 @@ L_4EED	lda ZP_EF			;4EED A5 EF
 		cmp #$FF			;4EF4 C9 FF
 		bne L_4F24			;4EF6 D0 2C
 L_4EF8	jsr L_18AA_pause5			;4EF8 20 AA 18
-		ldx #$55			;4EFB A2 55
-		ldy #$4F			;4EFD A0 4F
+		ldx <L_4F55			;4EFB A2 55
+		ldy >L_4F55			;4EFD A0 4F
 		jsr L_448C_print_text			;4EFF 20 8C 44
 		lda #$20			;4F02 A9 20
 		sta ZP_FA			;4F04 85 FA
@@ -4113,13 +3892,8 @@ L_4F55	ora (ZP_05,X)		;4F55 01 05
 ;vid	dta d"$  HE DOESN'T WA"
 		dta $2E,$34,$00,$21,$2E,$39,$00,$29,$34,$25,$2D,$00,$00,$00,$00,$FF
 ;vid	dta d"NT ANY ITEM    ",$FF
-L_4F77	ora (ZP_01,X)		;4F77 01 01
-		dta $03,$00,$00,$00,$39,$2F,$35,$00,$23,$21,$2E,$00,$27,$29,$36,$25
-;vid	dta d"#   YOU CAN GIVE"
-		dta $00,$2F,$2E,$2C,$39,$00,$34,$28,$29,$33,$00,$2F,$2E,$25,$00,$29
-;vid	dta d" ONLY THIS ONE I"
-		dta $34,$25,$2D,$1A,$00,$00,$00,$FF
-;vid	dta d"TEM:   ",$FF
+L_4F77	dta 1
+	dta 1,3,d"PICK AN ITEM TO GIVE:",$FF
 L_4FA1	dta $00			;4FA1 00    
 L_4FA2	dta $00			;4FA2 00    
 L_4FA3	dta $00			;4FA3 00    
@@ -4133,12 +3907,9 @@ L_4FBB	dta 1,5		;4FBB 01 05
 ;vid	dta d"$   YOU DON'T HA"
 		dta $36,$25,$00,$21,$2E,$39,$00,$29,$34,$25,$2D,$01,$00,$00,$00,$FF
 ;vid	dta d"VE ANY ITEM!   ",$FF
-L_4FDD	dta 1,$b		;4FDD 01 0B
-		dta 1,$23		;4FDF 01 23
-		dta $2F,$00,$23,$28,$23,$25,$33,$3A,$00,$2D,$35,$00,$24,$21,$1E,$00
-;vid	dta d"O CHCESZ MU DA> "
-		dta $1F,$FF
-;vid	dta d"?",$FF
+L_4FDD	dta 1
+	dta $4,1,d"WHAT DO YOU WANT TO GIVE HIM?",$ff
+	
 L_4FF3		dta a(L_4A35)		;4FF3 35 4A
 L_4FF4	equ *-1
 		dta a(L_4E19)		;4FF5 19 4E
@@ -4183,10 +3954,9 @@ L_5034	equ *-1
 		dta a(L_5193)		;5039 93 51
 		dta a(L_5193)		;503B 93 51
 		dta a(L_5193)		;503D 93 51
-L_503F	dta 1,$f		;503F 01 0F
-		dta 5,$23			;5041 05 23
-		dta $3A,$25,$2B,$21,$33,$3A,$0E,$0E,$0E,$FF
-;vid	dta d"ZEKASZ...",$FF
+L_503F	dta 1
+	dta $f,5,d"WAITING...",$FF
+	
 L_504D	dta $03,$10,$05,$00,$39,$2F,$35,$00,$33,$25,$25,$00,$21,$00,$27,$35
 ;vid	dta d"#0% YOU SEE A GU"
 		dta $21,$32,$24,$0E,$00,$28,$25,$00,$00,$FF,$10,$06,$2C,$2F,$2F,$2B
@@ -4205,12 +3975,8 @@ L_5099	dta $02,$10,$05,$39,$2F,$35,$00,$33,$25,$25,$00,$34,$28,$25,$00,$27
 ;vid	dta d"OCUSED ON YOU..."
 		dta $00,$00,$FF
 ;vid	dta d"  ",$FF
-L_50CC	dta $02,$11,$05,$00,$37,$29,$24,$3A,$29,$33,$3A,$00,$2B,$2F,$2C,$25
-;vid	dta d""1% WIDZISZ KOLE"
-		dta $2A,$2E,$25,$27,$2F,$00,$00,$FF,$11,$06,$33,$34,$32,$21,$2E,$29
-;vid	dta d"JNEGO  ",$FF,d"1&STRANI"
-		dta $2B,$21,$00,$34,$25,$27,$2F,$00,$3A,$21,$2D,$2B,$35,$0E,$FF
-;vid	dta d"KA TEGO ZAMKU.",$FF
+L_50CC	dta $02
+	dta $6,$05,d"YOU SEE ANOTHER GUARD.",$ff
 L_50FB	dta $03,$10,$05,$39,$2F,$35,$00,$33,$25,$25,$00,$21,$00,$27,$29,$21
 ;vid	dta d"#0%YOU SEE A GIA"
 		dta $2E,$34,$00,$27,$35,$21,$32,$24,$0E,$FF,$10,$06,$00,$26,$29,$27
@@ -4256,20 +4022,14 @@ L_5207	dta $02,$09,$05,$80,$80,$B4,$A8,$A5,$B2,$A5,$87,$B3,$80,$AE,$AF,$80
 ;vid	dta d"ON HERE BUT YOU."*
 		dta $80,$80,$FF
 ;vid	dta d"  "*,$FF
-L_523A	dta $02,$09,$04,$2E,$29,$25,$00,$33,$20,$24,$3A,$1D,$0C,$00,$21,$22
-;vid	dta d"")$NIE S@DZ=, AB"
-		dta $39,$00,$22,$39,$1C,$21,$00,$34,$2F,$FF,$09,$05,$00,$3A,$22,$39
-;vid	dta d"Y BY<A TO",$FF,d")% ZBY"
-		dta $34,$00,$2F,$37,$2F,$23,$2E,$21,$00,$32,$2F,$3A,$2D,$2F,$37,$21
-;vid	dta d"T OWOCNA ROZMOWA"
-		dta $00,$00,$FF
-;vid	dta d"  ",$FF
+L_523A	dta $02
+	dta 2,4,"THERE'S NOTHING FOR US TO TALK ABOUT.",$ff
 L_526D	dta $00			;526D 00    
 L_526E	jsr L_18AA_pause5			;526E 20 AA 18
 		lda L_526D			;5271 AD 6D 52
 		bne L_5292			;5274 D0 1C
-		ldx #$35			;5276 A2 35
-		ldy #$53			;5278 A0 53
+		ldx <L_5335			;5276 A2 35
+		ldy >L_5335			;5278 A0 53
 		jsr L_448C_print_text			;527A 20 8C 44
 		lda #$22			;527D A9 22
 		sta ZP_FA			;527F 85 FA
@@ -4283,8 +4043,8 @@ L_526E	jsr L_18AA_pause5			;526E 20 AA 18
 L_5292	lda ZP_D0			;5292 A5 D0
 		cmp #$D0			;5294 C9 D0
 		beq L_52B1			;5296 F0 19
-		ldx #$00			;5298 A2 00
-		ldy #$53			;529A A0 53
+		ldx <L_5300			;5298 A2 00
+		ldy >L_5300			;529A A0 53
 		jsr L_448C_print_text			;529C 20 8C 44
 		lda #$19			;529F A9 19
 		sta ZP_FA			;52A1 85 FA
@@ -4294,8 +4054,8 @@ L_5292	lda ZP_D0			;5292 A5 D0
 		ldy #$03			;52A9 A0 03
 		jsr L_4520_print_frame			;52AB 20 20 45
 		jmp L_52C7			;52AE 4C C7 52
-L_52B1	ldx #$CD			;52B1 A2 CD
-		ldy #$52			;52B3 A0 52
+L_52B1		ldx <L_52CD			;52B1 A2 CD
+		ldy >L_52CD			;52B3 A0 52
 		jsr L_448C_print_text			;52B5 20 8C 44
 		lda #$18			;52B8 A9 18
 		sta ZP_FA			;52BA 85 FA
@@ -4306,7 +4066,7 @@ L_52B1	ldx #$CD			;52B1 A2 CD
 		jsr L_4520_print_frame			;52C4 20 20 45
 L_52C7	jsr L_3E2F			;52C7 20 2F 3E
 		jsr L_425D			;52CA 20 5D 42
-		dta $02,$09,$04,$02,$2E,$2F,$37,$00,$35,$33,$25,$00,$39,$2F,$35,$32
+L_52CD		dta $02,$09,$04,$02,$2E,$2F,$37,$00,$35,$33,$25,$00,$39,$2F,$35,$32
 ;vid	dta d"")$"NOW USE YOUR"
 		dta $00,$23,$21,$2E,$25,$00,$21,$2E,$24,$FF,$09,$05,$29,$07,$2C,$2C
 ;vid	dta d" CANE AND",$FF,d")%I'LL"
@@ -4350,8 +4110,8 @@ L_53E5	jsr L_18AA_pause5			;53E5 20 AA 18
 		beq L_53F0			;53EB F0 03
 		jmp L_4E30			;53ED 4C 30 4E
 L_53F0	jsr L_18AA_pause5			;53F0 20 AA 18
-		ldx #$A6			;53F3 A2 A6
-		ldy #$54			;53F5 A0 54
+		ldx <L_54A6			;53F3 A2 A6
+		ldy >L_54A6			;53F5 A0 54
 		jsr L_448C_print_text			;53F7 20 8C 44
 		lda #$1F			;53FA A9 1F
 		sta ZP_FA			;53FC 85 FA
@@ -4367,8 +4127,8 @@ L_540F	jsr L_18AA_pause5			;540F 20 AA 18
 		beq L_541A			;5415 F0 03
 		jmp L_4E30			;5417 4C 30 4E
 L_541A	jsr L_18AA_pause5			;541A 20 AA 18
-		ldx #$39			;541D A2 39
-		ldy #$54			;541F A0 54
+		ldx <L_5439			;541D A2 39
+		ldy >L_5439			;541F A0 54
 		jsr L_448C_print_text			;5421 20 8C 44
 		lda #$23			;5424 A9 23
 		sta ZP_FA			;5426 85 FA
@@ -4419,8 +4179,8 @@ L_5527	jsr L_18AA_pause5			;5527 20 AA 18
 L_5537	cmp #$47			;5537 C9 47
 		bne L_553E			;5539 D0 03
 		jmp L_555F			;553B 4C 5F 55
-L_553E	ldx #$8F			;553E A2 8F
-		ldy #$56			;5540 A0 56
+L_553E		ldx <L_568f			;553E A2 8F
+		ldy >L_568f			;5540 A0 56
 		jsr L_448C_print_text			;5542 20 8C 44
 		lda #$21			;5545 A9 21
 		sta ZP_FA			;5547 85 FA
@@ -4438,8 +4198,8 @@ L_555F	ldx L_0C36			;555F AE 36 0C
 		ldx #$02			;5565 A2 02
 		lda #$FF			;5567 A9 FF
 		sta L_0C18,X		;5569 9D 18 0C
-L_556C	ldx #$D4			;556C A2 D4
-		ldy #$56			;556E A0 56
+L_556C		ldx <L_56D4			;556C A2 D4
+		ldy >L_56D4			;556E A0 56
 		jsr L_448C_print_text			;5570 20 8C 44
 		lda #$20			;5573 A9 20
 		sta ZP_FA			;5575 85 FA
@@ -4478,8 +4238,8 @@ L_55D1	jsr L_18AA_pause5			;55D1 20 AA 18
 		lda L_0C36			;55D7 AD 36 0C
 		cmp #$38			;55DA C9 38
 		beq L_55FA			;55DC F0 1C
-		ldx #$B3			;55DE A2 B3
-		ldy #$55			;55E0 A0 55
+		ldx <L_55B3			;55DE A2 B3
+		ldy >L_55B3			;55E0 A0 55
 		jsr L_448C_print_text			;55E2 20 8C 44
 		lda #$1C			;55E5 A9 1C
 		sta ZP_FA			;55E7 85 FA
@@ -4494,8 +4254,8 @@ L_55FA	ldx #$38			;55FA A2 38
 		jsr L_33FF			;55FC 20 FF 33
 		lda #$D0			;55FF A9 D0
 		sta ZP_D0			;5601 85 D0
-		ldx #$1F			;5603 A2 1F
-		ldy #$56			;5605 A0 56
+		ldx <L_561F			;5603 A2 1F
+		ldy >L_561F			;5605 A0 56
 		jsr L_448C_print_text			;5607 20 8C 44
 		lda #$24			;560A A9 24
 		sta ZP_FA			;560C 85 FA
@@ -4506,30 +4266,14 @@ L_55FA	ldx #$38			;55FA A2 38
 		jsr L_4520_print_frame			;5616 20 20 45
 		jsr L_3E2F			;5619 20 2F 3E
 		jmp L_425D			;561C 4C 5D 42
-L_561F	dta $03,$03,$03,$02,$29,$07,$36,$25,$00,$26,$29,$2E,$21,$2C,$2C,$39
-;vid	dta d"###"I'VE FINALLY"
-		dta $00,$32,$25,$27,$21,$29,$2E,$25,$24,$00,$2D,$39,$00,$30,$2F,$37
-;vid	dta d" REGAINED MY POW"
-		dta $25,$32,$00,$22,$21,$FF,$03,$04,$00,$35,$3B,$39,$2A,$00,$34,$25
-;vid	dta d"ER BA",$FF,d"#$ U[YJ TE"
-		dta $32,$21,$3A,$00,$2D,$21,$27,$29,$23,$3A,$2E,$25,$2A,$00,$2C,$21
-;vid	dta d"RAZ MAGICZNEJ LA"
-		dta $33,$2B,$29,$0C,$00,$21,$00,$2A,$21,$00,$FF,$03,$05,$33,$30,$32
-;vid	dta d"SKI, A JA ",$FF,d"#%SPR"
-		dta $21,$37,$29,$1D,$0C,$00,$3B,$25,$00,$2F,$34,$37,$2F,$32,$3A,$39
-;vid	dta d"AWI=, [E OTWORZY"
-		dta $00,$2F,$2E,$21,$00,$2B,$2C,$21,$34,$2B,$1D,$0E,$00,$02,$00,$FF
-;vid	dta d" ONA KLATK=. " ",$FF
-		dta $02,$05,$04,$02,$34,$28,$21,$34,$00,$28,$21,$33,$00,$2E,$2F,$00
-;vid	dta d""%$"THAT HAS NO "
-		dta $36,$21,$2C,$35,$25,$00,$34,$2F,$00,$2D,$25,$0E,$00,$00,$00,$00
-;vid	dta d"VALUE TO ME.    "
-		dta $00,$00,$FF,$05,$05,$00,$00,$00,$00,$29,$00,$37,$21,$32,$2E,$25
-;vid	dta d"  ",$FF,d"%%    I WARNE"
-		dta $24,$00,$39,$2F,$35,$01,$00,$02,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"D YOU! "        "
-		dta $00,$00,$00,$00,$FF
-;vid	dta d"    ",$FF
+L_561F	dta 3
+	dta 3,3,d" ""I'VE FINALLY REGAINED MY POWER! USE ",$FF
+	dta 3,4,d"THE MAGIC WAND NOW, AND I WILL MAKE IT",$FF
+	dta 3,5,d"         OPEN THE CAGE.""              ",$ff
+L_568f	dta 2
+	dta 8,4,d"""THAT HAS NO VALUE TO ME.",$FF
+	dta 8,5,d"      I WARNED YOU!""     ",$FF
+
 L_56D4	ora (ZP_05,X)		;56D4 01 05
 		dta $04,$00,$00,$00,$00,$02,$21,$2C,$2C,$00,$32,$29,$27,$28,$34,$00
 ;vid	dta d"$    "ALL RIGHT "
@@ -4540,8 +4284,8 @@ L_56F6	lda ZP_F9_current_room_id			;56F6 A5 F9
 		bne L_5721			;56FA D0 25
 		lda ZP_D3			;56FC A5 D3
 		bne L_5721			;56FE D0 21
-		ldx #$3D			;5700 A2 3D
-		ldy #$57			;5702 A0 57
+		ldx <L_573D			;5700 A2 3D
+		ldy >L_573D			;5702 A0 57
 		jsr L_448C_print_text			;5704 20 8C 44
 		lda #$25			;5707 A9 25
 		sta ZP_FA			;5709 85 FA
@@ -4554,8 +4298,8 @@ L_56F6	lda ZP_F9_current_room_id			;56F6 A5 F9
 		lda #$02			;5719 A9 02
 		sta L_0C10			;571B 8D 10 0C
 		jmp L_425D			;571E 4C 5D 42
-L_5721	ldx #$D6			;5721 A2 D6
-		ldy #$57			;5723 A0 57
+L_5721		ldx <L_57D6		;5721 A2 D6
+		ldy >L_57D6			;5723 A0 57
 		jsr L_448C_print_text			;5725 20 8C 44
 		lda #$24			;5728 A9 24
 		sta ZP_FA			;572A 85 FA
@@ -4623,8 +4367,8 @@ L_5850	tax				;5850 AA
 		jsr L_0FD4			;586B 20 D4 0F
 		lda L_5998			;586E AD 98 59
 		beq L_5896			;5871 F0 23
-		ldx #$48			;5873 A2 48
-		ldy #$59			;5875 A0 59
+		ldx <L_5948			;5873 A2 48
+		ldy >L_5948			;5875 A0 59
 		jsr L_448C_print_text			;5877 20 8C 44
 		lda #$1E			;587A A9 1E
 		sta ZP_FA			;587C 85 FA
@@ -5319,6 +5063,11 @@ L_73C0	dta $FF,$FF,$FF,$FF,$01,$01,$04
 L_73EB	dta $01,$01,$05,$00,$01,$02,$04
 	dta d"THERE ARE PEBBLES BEHIND THE BOULDER",$FF
 
+L_2C41	dta 3
+	dta 6,3,d"THE STONE FLOOR SUDDENLY GAVE WAY!",$FF
+	dta 6,4,d" YOU FELL INTO BOTTOMLESS ABYSS,  ",$FF
+	dta 6,5,d"     WITH NO CHANCE OF RESCUE!    ",$ff
+	
 .print "after object descriptions:",*
 	fill_until $740d 0
 
