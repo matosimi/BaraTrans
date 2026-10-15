@@ -4879,209 +4879,77 @@ L_62D0	dta 5
 	dta 1,3,d"ATMOSPHERE HERE. THROUGH A HAZE, YOU",$ff
 	dta 1,4,d"SEE A HUGE MIRROR COVERING ONE OF THE",$ff
 	dta 1,5,d"WALLS.",$ff
-.print "gogo:",*
-	fill_until $6385 00
-L_6385	dta $04,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$29,$2E,$00,$21,$00,$33
-;vid	dta d"$!!YOU'RE IN A S"
-		dta $25,$23,$32,$25,$34,$00,$32,$2F,$2F,$2D,$0E,$00,$25,$36,$25,$32
-;vid	dta d"ECRET ROOM. EVER"
-		dta $39,$34,$28,$29,$FF,$01,$02,$32,$21,$24,$29,$21,$34,$25,$33,$00
-;vid	dta d"YTHI",$FF,d"!"RADIATES "
-		dta $21,$00,$33,$34,$32,$21,$2E,$27,$25,$00,$27,$2C,$2F,$37,$0E,$00
-;vid	dta d"A STRANGE GLOW. "
-		dta $21,$00,$33,$34,$2F,$2E,$25,$00,$00,$00,$00,$FF,$01,$03,$30,$25
-;vid	dta d"A STONE    ",$FF,d"!#PE"
-		dta $24,$25,$33,$34,$21,$2C,$00,$33,$34,$21,$2E,$24,$33,$00,$29,$2E
-;vid	dta d"DESTAL STANDS IN"
-		dta $00,$34,$28,$25,$00,$23,$25,$2E,$34,$25,$32,$0E,$00,$21,$2E,$00
-;vid	dta d" THE CENTER. AN "
-		dta $00,$00,$FF,$01,$04,$21,$32,$2D,$23,$28,$21,$29,$32,$00,$33,$34
-;vid	dta d"  ",$FF,d"!$ARMCHAIR ST"
-		dta $2E,$00,$21,$27,$21,$29,$2E,$33,$34,$00,$34,$0E,$37,$21,$2C,$0D
-;vid	dta d"N AGAINST T.WAL-"
-		dta $FF			;6415 FF    
-L_6416	dta $04,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$29,$2E,$00,$21,$00,$24
-;vid	dta d"$!!YOU'RE IN A D"
-		dta $21,$32,$2B,$00,$28,$21,$2C,$2C,$37,$21,$39,$0E,$00,$39,$2F,$35
-;vid	dta d"ARK HALLWAY. YOU"
-		dta $00,$23,$21,$2E,$00,$00,$00,$FF,$01,$02,$2F,$2E,$2C,$39,$00,$33
-;vid	dta d" CAN   ",$FF,d"!"ONLY S"
-		dta $25,$25,$00,$2F,$2E,$25,$00,$25,$38,$29,$34,$00,$2C,$25,$21,$24
-;vid	dta d"EE ONE EXIT LEAD"
-		dta $29,$2E,$27,$00,$34,$2F,$00,$34,$28,$25,$00,$00,$FF,$01,$03,$2F
-;vid	dta d"ING TO THE  ",$FF,d"!#O"
-		dta $34,$28,$25,$32,$00,$33,$29,$24,$25,$00,$2F,$26,$00,$34,$28,$25
-;vid	dta d"THER SIDE OF THE"
-		dta $00,$23,$2F,$32,$32,$29,$24,$2F,$32,$0E,$00,$34,$28,$25,$32,$25
-;vid	dta d" CORRIDOR. THERE"
-		dta $07,$33,$FF,$07,$04,$21,$00,$2C,$25,$36,$25,$32,$00,$2F,$2E,$00
-;vid	dta d"'S",$FF,d"'$A LEVER ON "
-		dta $34,$28,$25,$00,$37,$0D,$FF
-;vid	dta d"THE W-",$FF
-L_649D	dta $03,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$29,$2E,$00,$34,$28,$25
-;vid	dta d"#!!YOU'RE IN THE"
-		dta $00,$33,$25,$23,$2F,$2E,$24,$00,$33,$25,$23,$34,$29,$2F,$2E,$00
-;vid	dta d" SECOND SECTION "
-		dta $2F,$26,$00,$34,$28,$25,$00,$00,$FF,$01,$02,$00,$23,$2F,$32,$32
-;vid	dta d"OF THE  ",$FF,d"!" CORR"
-		dta $29,$24,$2F,$32,$0C,$00,$25,$31,$35,$21,$2C,$2C,$39,$00,$24,$21
-;vid	dta d"IDOR, EQUALLY DA"
-		dta $32,$2B,$00,$21,$2E,$24,$00,$24,$21,$2D,$30,$0E,$00,$00,$00,$00
-;vid	dta d"RK AND DAMP.    "
-		dta $FF,$01,$03,$21,$00,$33,$23,$2F,$2E,$23,$25,$00,$29,$33,$00,$21
-;vid	dta $FF,d"!#A SCONCE IS A"
-		dta $34,$34,$21,$23,$28,$25,$24,$00,$34,$2F,$00,$34,$28,$25,$00,$37
-;vid	dta d"TTACHED TO THE W"
-		dta $21,$2C,$2C,$0E,$00,$00,$00,$00,$00,$FF
-;vid	dta d"ALL.     ",$FF
-L_6517	dta $04,$01,$01,$39,$2F,$35,$00,$37,$21,$2C,$2B,$25,$24,$00,$29,$2E
-;vid	dta d"$!!YOU WALKED IN"
-		dta $34,$2F,$00,$21,$00,$24,$25,$33,$25,$32,$34,$25,$24,$00,$32,$2F
-;vid	dta d"TO A DESERTED RO"
-		dta $2F,$2D,$0E,$00,$39,$2F,$35,$00,$FF,$01,$02,$23,$21,$2E,$00,$27
-;vid	dta d"OM. YOU ",$FF,d"!"CAN G"
-		dta $2F,$00,$2F,$35,$34,$00,$34,$28,$25,$00,$24,$2F,$2F,$32,$00,$2F
-;vid	dta d"O OUT THE DOOR O"
-		dta $32,$00,$23,$28,$2F,$2F,$33,$25,$00,$22,$25,$34,$37,$25,$25,$2E
-;vid	dta d"R CHOOSE BETWEEN"
-		dta $FF,$01,$03,$00,$34,$37,$2F,$00,$33,$34,$21,$29,$32,$33,$0E,$00
-;vid	dta $FF,d"!# TWO STAIRS. "
-		dta $34,$28,$25,$39,$00,$2C,$25,$21,$24,$00,$35,$30,$00,$21,$2E,$24
-;vid	dta d"THEY LEAD UP AND"
-		dta $00,$24,$2F,$37,$2E,$0E,$00,$00,$FF,$03,$04,$0D,$00,$00,$00,$00
-;vid	dta d" DOWN.  ",$FF,d"#$-    "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"             ",$FF
-L_65A5	dta $03,$01,$01,$34,$28,$25,$32,$25,$00,$21,$32,$25,$00,$22,$2F,$2F
-;vid	dta d"#!!THERE ARE BOO"
-		dta $2B,$33,$28,$25,$2C,$36,$25,$33,$00,$29,$2E,$00,$34,$28,$29,$33
-;vid	dta d"KSHELVES IN THIS"
-		dta $00,$32,$2F,$2F,$2D,$0E,$00,$FF,$01,$02,$00,$00,$34,$28,$29,$33
-;vid	dta d" ROOM. ",$FF,d"!"  THIS"
-		dta $00,$2D,$29,$27,$28,$34,$00,$22,$25,$00,$21,$33,$2B,$21,$32,$07
-;vid	dta d" MIGHT BE ASKAR'"
-		dta $33,$00,$33,$34,$35,$24,$39,$0E,$00,$34,$28,$25,$00,$FF,$01,$03
-;vid	dta d"S STUDY. THE ",$FF,d"!#"
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$25,$38,$29,$34,$00
-;vid	dta d"           EXIT "
-		dta $29,$33,$00,$21,$00,$24,$2F,$2F,$32,$0E,$0D,$00,$00,$00,$00,$00
-;vid	dta d"IS A DOOR.-     "
-		dta $00,$00,$00,$00,$FF
-;vid	dta d"    ",$FF
-L_661A	dta $03,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$29,$2E,$00,$34,$28,$25
-;vid	dta d"#!!YOU'RE IN THE"
-		dta $00,$2C,$29,$22,$32,$21,$32,$39,$0E,$00,$34,$28,$25,$32,$25,$00
-;vid	dta d" LIBRARY. THERE "
-		dta $21,$32,$25,$00,$30,$2C,$25,$FF,$01,$02,$30,$2C,$25,$2E,$34,$39
-;vid	dta d"ARE PLE",$FF,d"!"PLENTY"
-		dta $00,$2F,$26,$00,$22,$2F,$2F,$2B,$33,$00,$2F,$2E,$00,$34,$28,$25
-;vid	dta d" OF BOOKS ON THE"
-		dta $00,$33,$28,$25,$2C,$36,$25,$33,$0E,$00,$39,$2F,$35,$00,$00,$00
-;vid	dta d" SHELVES. YOU   "
-		dta $FF,$01,$03,$27,$2F,$00,$34,$2F,$00,$34,$28,$25,$00,$23,$2F,$32
-;vid	dta $FF,d"!#GO TO THE COR"
-		dta $32,$29,$24,$2F,$32,$0C,$00,$29,$2E,$34,$2F,$00,$34,$28,$25,$00
-;vid	dta d"RIDOR, INTO THE "
-		dta $32,$2F,$2F,$2D,$00,$2F,$32,$00,$FF
-;vid	dta d"ROOM OR ",$FF
-L_6693	dta $03,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$29,$2E,$00,$21,$00,$33
-;vid	dta d"#!!YOU'RE IN A S"
-		dta $2D,$21,$2C,$2C,$00,$25,$2D,$30,$34,$39,$00,$32,$2F,$2F,$2D,$0E
-;vid	dta d"MALL EMPTY ROOM."
-		dta $00,$34,$28,$25,$FF,$01,$02,$2C,$29,$27,$28,$34,$00,$26,$21,$2C
-;vid	dta d" THE",$FF,d"!"LIGHT FAL"
-		dta $2C,$33,$00,$34,$28,$32,$2F,$35,$27,$28,$00,$21,$00,$33,$2D,$21
-;vid	dta d"LS THROUGH A SMA"
-		dta $2C,$2C,$00,$28,$2F,$2C,$25,$00,$29,$2E,$FF,$01,$03,$34,$28,$25
-;vid	dta d"LL HOLE IN",$FF,d"!#THE"
-		dta $00,$23,$25,$29,$2C,$29,$2E,$27,$0E,$00,$39,$2F,$35,$00,$23,$21
-;vid	dta d" CEILING. YOU CA"
-		dta $2E,$00,$27,$2F,$00,$29,$2E,$00,$34,$37,$2F,$00,$37,$21,$39,$33
-;vid	dta d"N GO IN TWO WAYS"
-		dta $0E,$FF
-;vid	dta d".",$FF
-L_6705	dta $03,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$29,$2E,$00,$21,$00,$30
-;vid	dta d"#!!YOU'RE IN A P"
-		dta $2C,$21,$23,$25,$00,$37,$28,$25,$32,$25,$00,$39,$2F,$35,$32,$00
-;vid	dta d"LACE WHERE YOUR "
-		dta $26,$32,$29,$25,$2E,$24,$00,$00,$00,$FF,$01,$02,$24,$21,$25,$32
-;vid	dta d"FRIEND   ",$FF,d"!"DAER"
-		dta $2F,$2E,$00,$29,$33,$00,$34,$32,$21,$30,$30,$25,$24,$0E,$00,$28
-;vid	dta d"ON IS TRAPPED. H"
-		dta $25,$00,$29,$33,$00,$00,$00,$00,$00,$00,$00,$FF,$01,$03,$33,$35
-;vid	dta d"E IS       ",$FF,d"!#SU"
-		dta $32,$32,$2F,$35,$2E,$24,$25,$24,$00,$22,$39,$00,$33,$29,$2C,$36
-;vid	dta d"RROUNDED BY SILV"
-		dta $25,$32,$00,$22,$21,$32,$33,$0E,$0D,$00,$00,$00,$00,$00,$FF
-;vid	dta d"ER BARS.-     ",$FF
-L_6774	dta $02,$01,$01,$39,$2F,$35,$07,$32,$25,$00,$2F,$2E,$00,$34,$28,$25
-;vid	dta d""!!YOU'RE ON THE"
-		dta $00,$28,$21,$2C,$26,$0D,$33,$34,$2F,$32,$39,$00,$2F,$26,$00,$34
-;vid	dta d" HALF-STORY OF T"
-		dta $28,$25,$00,$24,$21,$32,$2B,$FF,$01,$02,$34,$2F,$37,$25,$32,$0E
-;vid	dta d"HE DARK",$FF,d"!"TOWER."
-		dta $00,$33,$34,$21,$29,$32,$33,$00,$2C,$25,$21,$24,$00,$35,$30,$00
-;vid	dta d" STAIRS LEAD UP "
-		dta $21,$2E,$24,$00,$24,$2F,$37,$2E,$0E,$FF
-;vid	dta d"AND DOWN.",$FF
-L_67BE	dta $04,$01,$01,$33,$34,$2F,$29,$33,$3A,$00,$2E,$21,$00,$2B,$21,$2D
-;vid	dta d"$!!STOISZ NA KAM"
-		dta $29,$25,$2E,$2E,$25,$2A,$00,$30,$2F,$33,$21,$24,$3A,$23,$25,$00
-;vid	dta d"IENNEJ POSADZCE "
-		dta $30,$32,$3A,$39,$FF,$01,$02,$37,$25,$2A,$0B,$23,$29,$35,$00,$24
-;vid	dta d"PRZY",$FF,d"!"WEJ+CIU D"
-		dta $2F,$00,$2B,$21,$2E,$21,$1C,$35,$0E,$00,$2B,$32,$1D,$34,$25,$00
-;vid	dta d"O KANA<U. KR=TE "
-		dta $33,$23,$28,$2F,$24,$39,$00,$37,$29,$2F,$24,$20,$FF,$01,$03,$24
-;vid	dta d"SCHODY WIOD@",$FF,d"!#D"
-		dta $2F,$00,$27,$0F,$32,$39,$0C,$00,$2D,$2F,$3B,$25,$33,$3A,$00,$29
-;vid	dta d"O G/RY, MO[ESZ I"
-		dta $0B,$1E,$00,$34,$25,$3B,$00,$24,$2F,$00,$2B,$2F,$2D,$2E,$21,$34
-;vid	dta d"+> TE[ DO KOMNAT"
-		dta $39,$FF,$07,$04,$2F,$22,$2F,$2B,$0E,$FF
-;vid	dta d"Y",$FF,d"'$OBOK.",$FF
-L_6838	dta $04,$01,$01,$00,$39,$2F,$35,$07,$32,$25,$00,$2B,$2E,$25,$25,$0D
-;vid	dta d"$!! YOU'RE KNEE-"
-		dta $24,$25,$25,$30,$00,$29,$2E,$00,$29,$23,$25,$00,$37,$21,$34,$25
-;vid	dta d"DEEP IN ICE WATE"
-		dta $32,$00,$29,$2E,$00,$21,$00,$FF,$01,$02,$00,$00,$24,$21,$32,$2B
-;vid	dta d"R IN A ",$FF,d"!"  DARK"
-		dta $00,$23,$21,$2E,$21,$2C,$0E,$00,$34,$28,$25,$32,$25,$07,$33,$00
-;vid	dta d" CANAL. THERE'S "
-		dta $21,$00,$28,$2F,$2C,$25,$00,$21,$22,$2F,$36,$25,$00,$FF,$01,$03
-;vid	dta d"A HOLE ABOVE ",$FF,d"!#"
-		dta $39,$2F,$35,$0E,$00,$34,$28,$25,$32,$25,$00,$29,$33,$00,$21,$2E
-;vid	dta d"YOU. THERE IS AN"
-		dta $2F,$34,$28,$25,$32,$00,$23,$2F,$35,$30,$2C,$25,$00,$2D,$25,$34
-;vid	dta d"OTHER COUPLE MET"
-		dta $25,$32,$33,$FF,$04,$04,$21,$37,$21,$39,$0E,$FF
-;vid	dta d"ERS",$FF,d"$$AWAY.",$FF
-L_68B4	dta $03,$01,$01,$39,$2F,$35,$00,$37,$21,$2C,$2B,$25,$24,$00,$29,$2E
-;vid	dta d"#!!YOU WALKED IN"
-		dta $34,$2F,$00,$21,$00,$33,$2D,$21,$2C,$2C,$00,$32,$2F,$2F,$2D,$0E
-;vid	dta d"TO A SMALL ROOM."
-		dta $00,$39,$2F,$35,$00,$00,$00,$FF,$01,$02,$23,$21,$2E,$00,$27,$2F
-;vid	dta d" YOU   ",$FF,d"!"CAN GO"
-		dta $00,$24,$2F,$37,$2E,$00,$34,$28,$25,$00,$33,$34,$21,$29,$32,$33
-;vid	dta d" DOWN THE STAIRS"
-		dta $0E,$00,$39,$2F,$35,$00,$00,$00,$00,$00,$00,$FF,$04,$03,$26,$25
-;vid	dta d". YOU      ",$FF,d"$#FE"
-		dta $25,$2C,$00,$34,$28,$25,$00,$23,$2F,$2C,$24,$00,$21,$29,$32,$0E
-;vid	dta d"EL THE COLD AIR."
-		dta $00,$0D,$00,$00,$00,$00,$00,$FF
-;vid	dta d" -     ",$FF
-L_691C	dta $03,$01,$01,$39,$2F,$35,$00,$21,$32,$25,$00,$29,$2E,$00,$21,$2E
-;vid	dta d"#!!YOU ARE IN AN"
-		dta $00,$25,$2E,$23,$2C,$2F,$33,$25,$24,$00,$33,$30,$21,$23,$25,$0E
-;vid	dta d" ENCLOSED SPACE."
-		dta $00,$34,$28,$25,$00,$00,$FF,$01,$02,$2F,$2E,$2C,$39,$00,$25,$38
-;vid	dta d" THE  ",$FF,d"!"ONLY EX"
-		dta $29,$34,$00,$2C,$25,$21,$24,$33,$00,$22,$21,$23,$2B,$00,$34,$2F
-;vid	dta d"IT LEADS BACK TO"
-		dta $00,$23,$21,$2E,$21,$2C,$0E,$00,$00,$00,$00,$FF,$04,$03,$0D,$00
-;vid	dta d" CANAL.    ",$FF,d"$#- "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"        ",$FF
+
+L_6385	dta 4
+	dta 1,1,d"YOU'RE IN A SECRET ROOM. EVERYTHI",$FF
+	dta 1,2,d"RADIATES A STRANGE GLOW. A STONE",$FF
+	dta 1,3,d"PEDESTAL STANDS IN THE CENTER. AN",$FF
+	dta 1,4,d"ARMCHAIR STANDS AGAINST THE WALL.",$FF
+    
+L_6416	dta 4
+	dta 1,1,d"YOU'RE IN A DARK HALLWAY. YOU CAN ONLY",$FF
+	dta 1,2,d"SEE ONE EXIT LEADING TO THE OTHER SIDE",$ff
+	dta 1,3,d"OF THE CORRIDOR. THERE'S A LEVER ON",$ff
+	dta 1,4,d"THE WALL.",$FF
+
+L_649D	dta 3
+	dta 1,1,d"YOU'RE IN THE SECOND SECTION OF THE",$FF
+	dta 1,2,d"CORRIDOR, EQUALLY DARK AND DAMP. A",$ff
+	dta 1,3,d"SCONCE IS ATTACHED TO THE WALL.",$FF
+	
+L_6517	dta 3
+	dta 1,1,d"YOU WALKED INTO A DESERTED ROOM. YOU",$FF
+	dta 1,2,d"CAN GO OUT THE DOOR OR CHOOSE BETWEEN",$ff
+	dta 1,3,d"TWO STAIRS. THEY LEAD UP AND DOWN.",$FF
+	
+L_65A5	dta 3
+	dta 1,1,d"THERE ARE BOOKSHELVES IN THIS ROOM.",$FF
+	dta 1,2,d"THIS MIGHT BE ASKAR'S STUDY. THE EXIT",$FF
+	dta 1,3,d"IS A DOOR.",$FF
+	
+L_661A	dta 4
+	dta 1,1,d"YOU'RE IN THE LIBRARY. THERE ARE",$ff
+	dta 1,2,d"PLENTY OF BOOKS ON THE SHELVES. YOU",$ff
+	dta 1,3,d"CAN GO TO THE CORRIDOR, INTO THE ROOM,",$ff
+	dta 1,4,d"OR THROUGH THE DOOR.",$FF
+	
+L_6693	dta 3
+	dta 1,1,d"YOU'RE IN A SMALL EMPTY ROOM. THE",$ff
+	dta 1,2,d"LIGHT FALLS THROUGH A SMALL HOLE IN",$FF
+	dta 1,3,d"THE CEILING. YOU CAN GO IN TWO WAYS.",$ff
+	
+L_6705	dta 3
+	dta 1,1,d"YOU'RE IN A PLACE WHERE YOUR FRIEND",$ff
+	dta 1,2,d"DAERON IS TRAPPED. HE IS SURROUNDED BY",$ff
+	dta 1,3,d"SILVER BARS.",$FF
+	
+L_6774	dta 2
+	dta 1,1,d"YOU'RE ON THE HALF-STORY OF THE DARK",$FF
+	dta 1,2,d"TOWER. STAIRS LEAD UP AND DOWN.",$FF
+	
+L_67BE	dta 4
+	dta 1,1,d"YOU ARE STANDING ON A STONE PLATFORM",$ff
+	dta 1,2,d"BY THE ENTRANCE TO A SEWER. WINDING",$ff
+	dta 1,3,d"STAIRS LEAD UPWARD. YOU CAN ALSO HEAD",$ff
+	dta 1,4,d"INTO THE ADJACENT CHAMBER.",$ff
+
+L_6838	dta 3
+	dta 1,1,d"YOU'RE KNEE-DEEP IN ICE WATER IN A",$FF
+	dta 1,2,d"DARK CANAL. THERE'S A HOLE ABOVE YOU",$ff
+	dta 1,3,d"AND ANOTHER ONE COUPLE METERS AWAY.",$FF
+	
+L_68B4	dta 3
+	dta 1,1,d"YOU WALKED INTO A SMALL ROOM. YOU CAN",$FF
+	dta 1,2,d"GO DOWN THE STAIRS. YOU FEEL THE COLD",$ff
+	dta 1,3,d"AIR.",$FF
+
+L_691C	dta 2
+	dta 1,1,d"YOU ARE IN AN ENCLOSED SPACE. THE ONLY",$ff
+	dta 1,2,d"EXIT LEADS BACK TO CANAL.",$FF
+	
+.print "after location texts:",*
+	fill_until $6975 00	
+	
 L_6975		dta a(L_6A09)		;6975 09 6A
 L_6976	equ *-1
 		dta a(L_6A0F)		;6977 0F 6A
@@ -5157,94 +5025,53 @@ L_6976	equ *-1
 		dta a(L_6B63)		;6A03 63 6B
 		dta a(L_6B19)		;6A05 19 6B
 		dta a(L_6B69)		;6A07 69 6B
-L_6A09	dta $22,$32,$21,$2E,$23,$FF
-;vid	dta d"BRANC",$FF
-L_6A0F	dta $2B,$21,$2D,$39,$2B,$29,$FF
-;vid	dta d"KAMYKI",$FF
-L_6A16	dta $2B,$2F,$1C,$21,$34,$2B,$1D,$FF
-;vid	dta d"KO<ATK=",$FF
-L_6A1E	dta $27,$21,$34,$25,$0D,$FF
-;vid	dta d"GATE-",$FF
-L_6A24	dta $27,$1C,$21,$3A,$FF
-;vid	dta d"G<AZ",$FF
-L_6A29	dta $22,$25,$25,$23,$28,$00,$24,$2F,$2F,$32,$0D,$00,$FF
-;vid	dta d"BEECH DOOR- ",$FF
-L_6A36	dta $2F,$21,$2B,$00,$24,$2F,$2F,$32,$00,$00,$00,$00,$FF
-;vid	dta d"OAK DOOR    ",$FF
-L_6A43	dta $2B,$25,$39,$0D,$00,$FF
-;vid	dta d"KEY- ",$FF
-L_6A49	dta $2C,$25,$36,$25,$32,$0D,$00,$00,$FF
-;vid	dta d"LEVER-  ",$FF
-L_6A52	dta $33,$34,$0F,$1C,$FF
-;vid	dta d"ST/<",$FF
-L_6A57	dta $24,$32,$21,$37,$25,$32,$0D,$00,$FF
-;vid	dta d"DRAWER- ",$FF
-L_6A60	dta $26,$2C,$29,$2E,$34,$0D,$00,$00,$FF
-;vid	dta d"FLINT-  ",$FF
-L_6A69	dta $34,$2F,$32,$23,$28,$0D,$00,$00,$00,$FF
-;vid	dta d"TORCH-   ",$FF
-L_6A73	dta $2C,$21,$24,$24,$25,$32,$0D,$FF
-;vid	dta d"LADDER-",$FF
-L_6A7B	dta $2E,$0F,$3B,$FF
-;vid	dta d"N/[",$FF
-L_6A7F	dta $2B,$32,$25,$24,$25,$2E,$33,$FF
-;vid	dta d"KREDENS",$FF
-L_6A87	dta $22,$32,$25,$21,$24,$FF
-;vid	dta d"BREAD",$FF
-L_6A8D	dta $33,$2B,$32,$3A,$39,$2E,$29,$1D,$FF
-;vid	dta d"SKRZYNI=",$FF
-L_6A96	dta $27,$2C,$21,$33,$33,$00,$22,$21,$2C,$2C,$0D,$00,$FF
-;vid	dta d"GLASS BALL- ",$FF
-L_6AA3	dta $27,$2F,$2C,$24,$00,$2B,$25,$39,$00,$00,$00,$00,$00,$FF
-;vid	dta d"GOLD KEY     ",$FF
-L_6AB1	dta $37,$2F,$24,$1D,$FF
-;vid	dta d"WOD=",$FF
-L_6AB6	dta $2D,$25,$21,$34,$0D,$FF
-;vid	dta d"MEAT-",$FF
-L_6ABC	dta $33,$2B,$35,$2C,$2C,$0D,$00,$FF
-;vid	dta d"SKULL- ",$FF
-L_6AC4	dta $27,$2C,$21,$33,$33,$00,$23,$32,$35,$2D,$22,$33,$00,$FF
-;vid	dta d"GLASS CRUMBS ",$FF
-L_6AD2	dta $2B,$25,$39,$00,$00,$00,$00,$FF
-;vid	dta d"KEY    ",$FF
-L_6ADA	dta $27,$1C,$2F,$37,$1D,$00,$24,$3A,$29,$2B,$21,$FF
-;vid	dta d"G<OW= DZIKA",$FF
-L_6AE6	dta $2D,$29,$32,$32,$2F,$32,$FF
-;vid	dta d"MIRROR",$FF
-L_6AED	dta $22,$25,$24,$00,$FF
-;vid	dta d"BED ",$FF
-L_6AF2	dta $37,$21,$2E,$24,$00,$00,$00,$FF
-;vid	dta d"WAND   ",$FF
-L_6AFA	dta $24,$2F,$2F,$32,$00,$FF
-;vid	dta d"DOOR ",$FF
-L_6B00	dta $26,$2F,$34,$25,$2C,$FF
-;vid	dta d"FOTEL",$FF
-L_6B06	dta $30,$25,$24,$25,$33,$34,$21,$2C,$00,$FF
-;vid	dta d"PEDESTAL ",$FF
-L_6B10	dta $2D,$25,$24,$21,$2C,$29,$2F,$2E,$FF
-;vid	dta d"MEDALION",$FF
-L_6B19	dta $0B,$37,$29,$25,$23,$3A,$2E,$29,$2B,$FF
-;vid	dta d"+WIECZNIK",$FF
-L_6B23	dta $33,$34,$2F,$32,$21,$27,$25,$FF
-;vid	dta d"STORAGE",$FF
-L_6B2B	dta $23,$2F,$21,$34,$00,$00,$00,$FF
-;vid	dta d"COAT   ",$FF
-L_6B33	dta $2C,$21,$33,$2B,$1D,$FF
-;vid	dta d"LASK=",$FF
-L_6B39	dta $22,$2F,$2F,$2B,$33,$00,$00,$FF
-;vid	dta d"BOOKS  ",$FF
-L_6B41	dta $26,$35,$32,$00,$00,$FF
-;vid	dta d"FUR  ",$FF
-L_6B47	dta $2D,$21,$2E,$35,$33,$23,$32,$29,$30,$34,$FF
-;vid	dta d"MANUSCRIPT",$FF
-L_6B52	dta $23,$28,$25,$33,$34,$00,$FF
-;vid	dta d"CHEST ",$FF
-L_6B59	dta $30,$32,$3A,$25,$2A,$0B,$23,$29,$25,$FF
-;vid	dta d"PRZEJ+CIE",$FF
-L_6B63	dta $27,$2F,$2C,$24,$00,$FF
-;vid	dta d"GOLD ",$FF
-L_6B69	dta $33,$37,$2F,$32,$24,$FF
-;vid	dta d"SWORD",$FF
+L_6A09	dta d"BRANCH",$FF
+L_6A0F	dta d"PEBBLES",$FF
+L_6A16	dta d"KNOCKER",$FF
+L_6A1E	dta d"GATE",$FF
+L_6A24	dta d"BOULDER",$FF
+L_6A29	dta d"BEECH DOOR",$FF
+L_6A36	dta d"OAK DOOR",$FF
+L_6A43	dta d"KEY",$FF
+L_6A49	dta d"LEVER",$FF
+L_6A52	dta d"TABLE",$FF
+L_6A57	dta d"DRAWER",$FF
+L_6A60	dta d"FLINT",$FF
+L_6A69	dta d"TORCH",$FF
+L_6A73	dta d"LADDER",$FF
+L_6A7B	dta d"KNIFE",$FF
+L_6A7F	dta d"CUPBOARD",$FF
+L_6A87	dta d"BREAD",$FF
+L_6A8D	dta d"CHEST",$FF
+L_6A96	dta d"GLASS SPHERE",$FF
+L_6AA3	dta d"GOLD KEY",$FF
+L_6AB1	dta d"WATER",$FF
+L_6AB6	dta d"MEAT",$FF
+L_6ABC	dta d"SKULL",$FF
+L_6AC4	dta d"GLASS CRUMBS",$FF
+L_6AD2	dta d"KEY",$FF
+L_6ADA	dta d"BOAR'S HEAD",$FF
+L_6AE6	dta d"MIRROR",$FF
+L_6AED	dta d"BED",$FF
+L_6AF2	dta d"WAND",$FF
+L_6AFA	dta d"DOOR",$FF
+L_6B00	dta d"THRONE",$FF
+L_6B06	dta d"PEDESTAL",$FF
+L_6B10	dta d"MEDALLION",$FF
+L_6B19	dta d"CANDLESTICK",$FF
+L_6B23	dta d"STORAGE",$FF
+L_6B2B	dta d"COAT",$FF
+L_6B33	dta d"CANE",$FF
+L_6B39	dta d"BOOKS",$FF
+L_6B41	dta d"FUR",$FF
+L_6B47	dta d"MANUSCRIPT",$FF
+L_6B52	dta d"CHEST",$FF
+L_6B59	dta d"PASSAGE",$FF
+L_6B63	dta d"GOLD",$FF
+L_6B69	dta d"SWORD",$FF
+
+.print "after object names:",*
+	fill_until $6b6f 0
 L_6B6F		dta a(L_6C01)		;6B6F 01 6C
 L_6B70	equ *-1
 		dta a(L_FFFF)		;6B71 FF FF
@@ -5319,312 +5146,182 @@ L_6B70	equ *-1
 		dta a(L_FFFF)		;6BFB FF FF
 		dta a(L_FFFF)		;6BFD FF FF
 		dta a(L_6F66)		;6BFF 66 6F
-L_6C01	dta $FF,$FF,$FF,$FF,$01,$0C,$04,$28,$21,$32,$24,$00,$21,$2E,$24,$00
-;vid	dta $FF,$FF,$FF,$FF,d"!,$HARD AND "
-		dta $2B,$2E,$2F,$34,$34,$39,$FF
-;vid	dta d"KNOTTY",$FF
-L_6C18	dta $FF,$FF,$FF,$FF,$01,$08,$04,$28,$25,$21,$36,$39,$0C,$00,$32,$29
-;vid	dta $FF,$FF,$FF,$FF,d"!($HEAVY, RI"
-		dta $23,$28,$2C,$39,$00,$24,$25,$23,$2F,$32,$21,$34,$25,$24,$00,$FF
-;vid	dta d"CHLY DECORATED ",$FF
-L_6C38	dta $FF,$FF,$FF,$FF,$01,$07,$04,$29,$33,$00,$2C,$2F,$23,$2B,$25,$24
-;vid	dta $FF,$FF,$FF,$FF,d"!'$IS LOCKED"
-		dta $00,$26,$32,$2F,$2D,$00,$34,$28,$25,$00,$29,$2E,$33,$29,$24,$25
-;vid	dta d" FROM THE INSIDE"
-		dta $00,$FF
-;vid	dta d" ",$FF
-L_6C5A	dta $FF,$FF,$FF,$FF,$01,$0B,$04,$29,$34,$07,$33,$00,$2F,$30,$25,$2E
-;vid	dta $FF,$FF,$FF,$FF,d"!+$IT'S OPEN"
-		dta $00,$00,$00,$FF,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"   ",$FF,d"            "
+L_6C01	dta $FF,$FF,$FF,$FF,$01,$0C,$04
+	dta d"HARD AND KNOTTY",$FF
+L_6C18	dta $FF,$FF,$FF,$FF,$01,$08,$04
+	dta d"HEAVY, RICHLY DECORATED",$FF
+L_6C38	dta $FF,$FF,$FF,$FF,$01,$07,$04
+	dta d"IS LOCKED FROM THE INSIDE",$FF
+L_6C5A	dta $FF,$FF,$FF,$FF,$01,$0B,$04
+	dta d"IT'S OPEN",$FF
+/*
+;???
 		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
 ;vid	dta d"                "
 		dta $00,$00,$00,$00
-;vid	dta d"    "
-L_6C8E	dta $FF,$FF,$FF,$FF,$01,$0A,$04,$21,$32,$25,$00,$2C,$2F,$23,$2B,$25
-;vid	dta $FF,$FF,$FF,$FF,d"!*$ARE LOCKE"
-		dta $24,$00,$37,$29,$34,$28,$00,$21,$00,$2B,$25,$39,$FF
-;vid	dta d"D WITH A KEY",$FF
-L_6CAB	dta $FF,$FF,$FF,$FF,$01,$0E,$04,$21,$32,$25,$00,$2F,$30,$25,$2E,$25
-;vid	dta $FF,$FF,$FF,$FF,d"!.$ARE OPENE"
-		dta $24,$00,$00,$FF
-;vid	dta d"D  ",$FF
-L_6CBF	dta $FF,$FF,$FF,$FF,$01,$0D,$04,$21,$32,$25,$00,$2C,$2F,$23,$2B,$25
-;vid	dta $FF,$FF,$FF,$FF,d"!-$ARE LOCKE"
-		dta $24,$00,$00,$FF
-;vid	dta d"D  ",$FF
-L_6CD3	dta $FF,$FF,$FF,$FF,$01,$0E,$04,$21,$32,$25,$00,$2F,$30,$25,$2E,$25
-;vid	dta $FF,$FF,$FF,$FF,d"!.$ARE OPENE"
-		dta $24,$00,$00,$FF
-;vid	dta d"D  ",$FF
-L_6CE7	dta $FF,$FF,$FF,$FF,$01,$0B,$04,$33,$29,$2D,$30,$2C,$25,$00,$2D,$25
-;vid	dta $FF,$FF,$FF,$FF,d"!+$SIMPLE ME"
-		dta $34,$21,$2C,$00,$2B,$25,$39,$00,$00,$00,$00,$00,$FF
-;vid	dta d"TAL KEY     ",$FF
-L_6D04	dta $FF,$FF,$FF,$FF,$01,$03,$04,$35,$33,$25,$24,$00,$34,$2F,$00,$2F
-;vid	dta $FF,$FF,$FF,$FF,d"!#$USED TO O"
-		dta $30,$25,$2E,$00,$34,$28,$25,$00,$2D,$21,$29,$2E,$00,$27,$21,$34
-;vid	dta d"PEN THE MAIN GAT"
-		dta $25,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"E       ",$FF
-L_6D2D	dta $FF,$FF,$FF,$FF,$01,$04,$04,$2D,$2F,$3B,$25,$33,$3A,$00,$2E,$29
-;vid	dta $FF,$FF,$FF,$FF,d"!$$MO[ESZ NI"
-		dta $20,$00,$3A,$21,$2D,$2B,$2E,$20,$1E,$00,$27,$1C,$0F,$37,$2E,$20
-;vid	dta d"@ ZAMKN@> G</WN@"
-		dta $00,$22,$32,$21,$2D,$1D,$FF
-;vid	dta d" BRAM=",$FF
-L_6D54	dta $0F,$FE,$0D,$00,$01,$08,$04,$3A,$2E,$21,$2C,$21,$3A,$1C,$25,$0B
-;vid	dta d"/",d"~"*,d"- !($ZNALAZ<E+"
-		dta $00,$33,$3A,$35,$26,$2C,$21,$24,$1D,$FF
-;vid	dta d" SZUFLAD=",$FF
-L_6D6E	dta $FF,$FF,$FF,$FF,$01,$02,$04,$32,$29,$27,$28,$34,$00,$2E,$2F,$37
-;vid	dta $FF,$FF,$FF,$FF,d"!"$RIGHT NOW"
-		dta $0C,$00,$34,$28,$25,$00,$24,$32,$21,$37,$25,$32,$00,$29,$33,$00
-;vid	dta d", THE DRAWER IS "
-		dta $2F,$30,$25,$2E,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"OPEN       ",$FF
-L_6D9A	dta $FF,$FF,$FF,$FF,$01,$0A,$04,$29,$33,$00,$23,$2C,$2F,$33,$25,$24
-;vid	dta $FF,$FF,$FF,$FF,d"!*$IS CLOSED"
-		dta $00,$00,$00,$00,$00,$FF
-;vid	dta d"     ",$FF
-L_6DB0	dta $FF,$FF,$FF,$FF,$02,$07,$04,$21,$33,$00,$39,$2F,$35,$00,$23,$21
-;vid	dta $FF,$FF,$FF,$FF,d""'$AS YOU CA"
-		dta $2E,$00,$29,$2D,$21,$27,$29,$2E,$25,$00,$0D,$00,$29,$34,$07,$33
-;vid	dta d"N IMAGINE - IT'S"
-		dta $00,$00,$FF,$07,$05,$35,$33,$25,$24,$00,$34,$2F,$00,$2C,$29,$27
-;vid	dta d"  ",$FF,d"'%USED TO LIG"
-		dta $28,$34,$00,$21,$00,$26,$29,$32,$25,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"HT A FIRE       "
-		dta $FF			;6DF0 FF    
-L_6DF1	dta $FF,$FF,$FF,$FF,$02,$04,$04,$29,$34,$07,$33,$00,$2F,$35,$34,$00
-;vid	dta $FF,$FF,$FF,$FF,d""$$IT'S OUT "
-		dta $0D,$00,$37,$25,$00,$23,$2F,$35,$2C,$24,$00,$35,$33,$25,$00,$00
-;vid	dta d"- WE COULD USE  "
-		dta $00,$FF,$04,$05,$00,$00,$00,$00,$21,$00,$26,$2C,$29,$2E,$34,$0D
-;vid	dta d" ",$FF,d"$%    A FLINT-"
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"              ",$FF
-L_6E30	dta $FF,$FF,$FF,$FF,$01,$0D,$04,$29,$34,$07,$33,$00,$2C,$29,$34,$00
-;vid	dta $FF,$FF,$FF,$FF,d"!-$IT'S LIT "
-		dta $00,$00,$00,$00,$FF
-;vid	dta d"    ",$FF
-L_6E45	dta $FF,$FF,$FF,$FF,$02,$06,$04,$29,$34,$00,$2D,$21,$39,$00,$22,$25
-;vid	dta $FF,$FF,$FF,$FF,d""&$IT MAY BE"
-		dta $00,$35,$33,$25,$24,$00,$34,$2F,$00,$2F,$30,$25,$2E,$00,$00,$00
-;vid	dta d" USED TO OPEN   "
-		dta $00,$00,$00,$FF,$06,$05,$00,$00,$00,$00,$21,$2E,$2F,$34,$28,$25
-;vid	dta d"   ",$FF,d"&%    ANOTHE"
-		dta $32,$00,$30,$21,$33,$33,$21,$27,$25,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"R PASSAGE       "
-		dta $00,$00,$FF
-;vid	dta d"  ",$FF
-L_6E88	dta $FF,$FF,$FF,$FF,$01,$09,$04,$2A,$35,$3B,$00,$33,$29,$1D,$00,$2E
-;vid	dta $FF,$FF,$FF,$FF,d"!)$JU[ SI= N"
-		dta $29,$20,$00,$22,$21,$37,$29,$1C,$25,$0B,$00,$01,$FF
-;vid	dta d"I@ BAWI<E+ !",$FF
-L_6EA5	dta $FF,$FF,$FF,$FF,$01,$0F,$04,$3A,$37,$39,$2B,$1C,$39,$00,$2E,$0F
-;vid	dta $FF,$FF,$FF,$FF,d"!/$ZWYK<Y N/"
-		dta $3B,$FF
-;vid	dta d"[",$FF
-L_6EB7	dta $FF,$FF,$FF,$FF,$01,$0D,$04,$29,$34,$07,$33,$00,$23,$2C,$2F,$33
-;vid	dta $FF,$FF,$FF,$FF,d"!-$IT'S CLOS"
-		dta $25,$24,$00,$00,$00,$FF
-;vid	dta d"ED   ",$FF
-L_6ECD	dta $FF,$FF,$FF,$FF,$01,$07,$04,$39,$2F,$35,$07,$2C,$2C,$00,$26,$29
-;vid	dta $FF,$FF,$FF,$FF,d"!'$YOU'LL FI"
-		dta $2E,$24,$00,$2E,$2F,$34,$28,$29,$2E,$27,$00,$28,$25,$32,$25,$00
-;vid	dta d"ND NOTHING HERE "
-		dta $FF			;6EED FF    
-L_6EEE	dta $FF,$FF,$FF,$FF,$01,$09,$04,$2C,$2F,$2F,$2B,$33,$00,$2E,$35,$34
-;vid	dta $FF,$FF,$FF,$FF,d"!)$LOOKS NUT"
-		dta $32,$29,$34,$29,$2F,$35,$33,$00,$00,$FF
-;vid	dta d"RITIOUS  ",$FF
-L_6F08	dta $FF,$FF,$FF,$FF,$02,$07,$04,$29,$34,$07,$33,$00,$2C,$2F,$23,$2B
-;vid	dta $FF,$FF,$FF,$FF,d""'$IT'S LOCK"
-		dta $25,$24,$0E,$00,$29,$00,$37,$2F,$2E,$24,$25,$32,$00,$37,$28,$21
-;vid	dta d"ED. I WONDER WHA"
-		dta $34,$00,$00,$00,$FF,$07,$05,$00,$00,$34,$32,$25,$21,$33,$35,$32
-;vid	dta d"T   ",$FF,d"'%  TREASUR"
-		dta $25,$33,$00,$29,$34,$00,$23,$2F,$2E,$34,$21,$29,$2E,$33,$1F,$00
-;vid	dta d"ES IT CONTAINS? "
-		dta $00,$00,$00,$00,$FF
-;vid	dta d"    ",$FF
-L_6F4D	dta $FF,$FF,$FF,$FF,$01,$0C,$04,$2A,$25,$33,$34,$00,$2A,$35,$3B,$00
-;vid	dta $FF,$FF,$FF,$FF,d"!,$JEST JU[ "
-		dta $2F,$34,$2F,$32,$3A,$2F,$2E,$21,$FF
-;vid	dta d"OTORZONA",$FF
-L_6F66	dta $FF,$FF,$FF,$FF,$01,$02,$04,$29,$34,$07,$33,$00,$24,$25,$26,$29
-;vid	dta $FF,$FF,$FF,$FF,d"!"$IT'S DEFI"
-		dta $2E,$29,$34,$25,$2C,$39,$00,$21,$00,$2D,$21,$27,$29,$23,$00,$2F
-;vid	dta d"NITELY A MAGIC O"
-		dta $22,$2A,$25,$23,$34,$01,$00,$00,$00,$00,$FF
-;vid	dta d"BJECT!    ",$FF
-L_6F91	dta $FF,$FF,$FF,$FF,$01,$02,$04,$28,$21,$33,$00,$25,$2E,$27,$32,$21
-;vid	dta $FF,$FF,$FF,$FF,d"!"$HAS ENGRA"
-		dta $36,$25,$24,$00,$29,$2C,$2C,$25,$27,$29,$22,$2C,$25,$00,$30,$21
-;vid	dta d"VED ILLEGIBLE PA"
-		dta $34,$34,$25,$32,$2E,$33,$00,$00,$00,$00,$FF
-;vid	dta d"TTERNS    ",$FF
-L_6FBC	dta $FF,$FF,$FF,$FF,$02,$06,$04,$29,$34,$07,$33,$00,$2C,$2F,$23,$2B
-;vid	dta $FF,$FF,$FF,$FF,d""&$IT'S LOCK"
-		dta $25,$24,$0E,$00,$39,$2F,$35,$00,$23,$21,$2E,$07,$34,$00,$33,$25
-;vid	dta d"ED. YOU CAN'T SE"
-		dta $25,$00,$FF,$06,$05,$00,$00,$00,$00,$21,$00,$2B,$25,$39,$28,$2F
-;vid	dta d"E ",$FF,d"&%    A KEYHO"
-		dta $2C,$25,$00,$21,$2E,$39,$37,$28,$25,$32,$25,$00,$00,$00,$00,$00
-;vid	dta d"LE ANYWHERE     "
-		dta $FF			;6FFC FF    
-L_6FFD	dta $FF,$FF,$FF,$FF,$01,$08,$04,$37,$25,$2A,$0B,$23,$29,$25,$00,$23
-;vid	dta $FF,$FF,$FF,$FF,d"!($WEJ+CIE C"
-		dta $3A,$25,$2B,$21,$00,$2E,$21,$00,$0B,$2D,$29,$21,$1C,$2B,$0F,$37
-;vid	dta d"ZEKA NA +MIA<K/W"
-		dta $00,$01,$FF
-;vid	dta d" !",$FF
-L_7020	dta $FF,$FF,$FF,$FF,$01,$0D,$04,$29,$34,$07,$33,$00,$23,$2C,$2F,$33
-;vid	dta $FF,$FF,$FF,$FF,d"!-$IT'S CLOS"
-		dta $25,$24,$00,$00,$00,$FF
-;vid	dta d"ED   ",$FF
-L_7036	dta $FF,$FF,$FF,$FF,$01,$0D,$04,$29,$34,$07,$33,$00,$23,$2C,$2F,$33
-;vid	dta $FF,$FF,$FF,$FF,d"!-$IT'S CLOS"
-		dta $25,$24,$00,$0D,$0D,$FF
-;vid	dta d"ED --",$FF
-L_704C	dta $FF,$FF,$FF,$FF,$01,$0A,$04,$34,$28,$25,$32,$25,$07,$33,$00,$2E
-;vid	dta $FF,$FF,$FF,$FF,d"!*$THERE'S N"
-		dta $2F,$34,$28,$29,$2E,$27,$00,$29,$2E,$00,$29,$FF
-;vid	dta d"OTHING IN I",$FF
-L_7068	dta $FF,$FF,$FF,$FF,$01,$0A,$04,$22,$29,$27,$0C,$00,$2D,$35,$34,$34
-;vid	dta $FF,$FF,$FF,$FF,d"!*$BIG, MUTT"
-		dta $2F,$2E,$00,$34,$28,$29,$27,$28,$00,$00,$00,$00,$FF
-;vid	dta d"ON THIGH    ",$FF
-L_7085	dta $FF,$FF,$FF,$FF,$02,$07,$04,$2A,$25,$33,$34,$00,$22,$21,$32,$24
-;vid	dta $FF,$FF,$FF,$FF,d""'$JEST BARD"
-		dta $3A,$2F,$00,$24,$35,$3B,$21,$0C,$00,$33,$34,$2F,$29,$00,$37,$00
-;vid	dta d"ZO DU[A, STOI W "
-		dta $FF,$07,$05,$23,$25,$2E,$34,$32,$21,$2C,$2E,$25,$2A,$00,$23,$3A
-;vid	dta $FF,d"'%CENTRALNEJ CZ"
-		dta $1D,$0B,$23,$29,$00,$2B,$2F,$2D,$2E,$21,$34,$39,$FF
-;vid	dta d"=+CI KOMNATY",$FF
-L_70C2	dta $FF,$FF,$FF,$FF,$01,$0A,$04,$21,$00,$2B,$25,$39,$00,$2C,$29,$2B
-;vid	dta $FF,$FF,$FF,$FF,d"!*$A KEY LIK"
-		dta $25,$00,$2D,$21,$2E,$39,$00,$2F,$34,$28,$0D,$FF
-;vid	dta d"E MANY OTH-",$FF
-L_70DE	dta $FF,$FF,$FF,$FF,$01,$06,$04,$23,$2F,$2D,$2D,$2F,$2E,$00,$28,$35
-;vid	dta $FF,$FF,$FF,$FF,d"!&$COMMON HU"
-		dta $2E,$34,$29,$2E,$27,$00,$34,$32,$2F,$30,$28,$39,$00,$00,$00,$00
-;vid	dta d"NTING TROPHY    "
-		dta $FF			;70FE FF    
-L_70FF	dta $FF,$FF,$FF,$FF,$01,$07,$04,$22,$25,$21,$35,$34,$29,$26,$35,$2C
-;vid	dta $FF,$FF,$FF,$FF,d"!'$BEAUTIFUL"
-		dta $00,$23,$32,$39,$33,$34,$21,$2C,$00,$2D,$29,$32,$32,$2F,$32,$00
-;vid	dta d" CRYSTAL MIRROR "
-		dta $00,$FF
-;vid	dta d" ",$FF
-L_7121	dta $FF,$FF,$FF,$FF,$01,$03,$04,$37,$32,$1D,$23,$3A,$00,$2B,$35,$33
-;vid	dta $FF,$FF,$FF,$FF,d"!#$WR=CZ KUS"
-		dta $29,$0C,$00,$21,$22,$39,$00,$33,$29,$1D,$00,$2E,$21,$00,$2E,$29
-;vid	dta d"I, ABY SI= NA NI"
-		dta $2D,$00,$30,$2F,$1C,$2F,$3B,$39,$1E,$FF
-;vid	dta d"M PO<O[Y>",$FF
-L_714B	dta $FF,$FF,$FF,$FF,$02,$0A,$04,$2C,$2F,$2F,$2B,$33,$00,$2C,$29,$2B
-;vid	dta $FF,$FF,$FF,$FF,d""*$LOOKS LIK"
-		dta $25,$00,$25,$36,$25,$32,$39,$00,$00,$00,$00,$00,$FF,$0A,$05,$00
-;vid	dta d"E EVERY     ",$FF,d"*% "
-		dta $00,$2D,$21,$27,$29,$23,$00,$37,$21,$2E,$24,$00,$00,$00,$00,$00
-;vid	dta d" MAGIC WAND     "
-		dta $00,$00,$00,$00,$FF
-;vid	dta d"    ",$FF
-L_7180	dta $FF,$FF,$FF,$FF,$01,$07,$04,$29,$34,$07,$33,$00,$2D,$21,$24,$25
-;vid	dta $FF,$FF,$FF,$FF,d"!'$IT'S MADE"
-		dta $00,$2F,$26,$00,$33,$34,$2F,$2E,$25,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d" OF STONE      ",$FF
-L_71A0	dta $FF,$FF,$FF,$FF,$02,$02,$04,$29,$34,$07,$33,$00,$2D,$21,$24,$25
-;vid	dta $FF,$FF,$FF,$FF,d"""$IT'S MADE"
-		dta $00,$2F,$26,$00,$33,$34,$2F,$2E,$25,$0C,$00,$2F,$2E,$00,$29,$34
-;vid	dta d" OF STONE, ON IT"
-		dta $33,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF,$02,$05,$37,$21,$2C
-;vid	dta d"S         ",$FF,d""%WAL"
-		dta $2C,$33,$00,$21,$32,$25,$00,$37,$32,$29,$34,$34,$25,$2E,$00,$32
-;vid	dta d"LS ARE WRITTEN R"
-		dta $35,$2E,$29,$23,$00,$33,$29,$27,$2E,$33,$00,$00,$00,$00,$00,$00
-;vid	dta d"UNIC SIGNS      "
-		dta $FF			;71F0 FF    
-L_71F1	dta $FF,$FF,$FF,$FF,$01,$07,$04,$29,$34,$00,$29,$33,$00,$33,$34,$35
-;vid	dta $FF,$FF,$FF,$FF,d"!'$IT IS STU"
-		dta $24,$24,$25,$24,$00,$37,$29,$34,$28,$00,$27,$25,$2D,$33,$0E,$00
-;vid	dta d"DDED WITH GEMS. "
-		dta $FF			;7211 FF    
-L_7212	dta $37,$00,$39,$FE,$01,$04,$04,$39,$2F,$35,$00,$26,$2F,$35,$2E,$24
-;vid	dta d"W Y",d"~"*,d"!$$YOU FOUND"
-		dta $00,$21,$00,$23,$2F,$21,$34,$00,$29,$2E,$33,$29,$24,$25,$00,$28
-;vid	dta d" A COAT INSIDE H"
-		dta $29,$2D,$00,$00,$00,$00,$00,$FF
-;vid	dta d"IM     ",$FF
-L_723A	dta $FF,$FF,$FF,$FF,$02,$02,$04,$22,$29,$27,$00,$22,$2C,$21,$23,$2B
-;vid	dta $FF,$FF,$FF,$FF,d"""$BIG BLACK"
-		dta $00,$23,$2F,$21,$34,$00,$0D,$00,$29,$00,$37,$2F,$2E,$24,$25,$32
-;vid	dta d" COAT - I WONDER"
-		dta $00,$29,$26,$00,$29,$34,$07,$33,$00,$00,$00,$FF,$02,$05,$00,$00
-;vid	dta d" IF IT'S   ",$FF,d""%  "
-		dta $35,$33,$25,$24,$00,$34,$2F,$00,$30,$32,$2F,$34,$25,$23,$34,$00
-;vid	dta d"USED TO PROTECT "
-		dta $21,$27,$21,$29,$2E,$33,$34,$00,$32,$21,$29,$2E,$1F,$00,$00,$00
-;vid	dta d"AGAINST RAIN?   "
-		dta $00,$00,$FF
-;vid	dta d"  ",$FF
-L_728D	dta $FF,$FF,$FF,$FF,$01,$04,$04,$2E,$29,$25,$00,$2D,$21,$00,$37,$00
-;vid	dta $FF,$FF,$FF,$FF,d"!$$NIE MA W "
-		dta $2E,$29,$2D,$00,$2E,$29,$23,$00,$37,$29,$1D,$23,$25,$2A,$0C,$00
-;vid	dta d"NIM NIC WI=CEJ, "
-		dta $21,$00,$33,$3A,$2B,$2F,$24,$21,$FF
-;vid	dta d"A SZKODA",$FF
-L_72B6	dta $FF,$FF,$FF,$FF,$03,$04,$03,$00,$34,$28,$25,$39,$07,$32,$25,$00
-;vid	dta $FF,$FF,$FF,$FF,d"#$# THEY'RE "
-		dta $33,$25,$21,$2C,$25,$24,$00,$37,$29,$34,$28,$00,$29,$32,$2F,$2E
-;vid	dta d"SEALED WITH IRON"
-		dta $0C,$00,$00,$00,$00,$00,$FF,$04,$04,$25,$2E,$27,$32,$21,$36,$25
-;vid	dta d",     ",$FF,d"$$ENGRAVE"
-		dta $24,$00,$37,$29,$34,$28,$00,$32,$35,$2E,$33,$0E,$00,$34,$28,$25
-;vid	dta d"D WITH RUNS. THE"
-		dta $39,$07,$32,$25,$00,$00,$00,$00,$FF,$04,$05,$23,$2C,$2F,$33,$25
-;vid	dta d"Y'RE    ",$FF,d"$%CLOSE"
-		dta $24,$00,$2F,$26,$26,$00,$37,$29,$34,$28,$00,$33,$2F,$2D,$25,$34
-;vid	dta d"D OFF WITH SOMET"
-		dta $28,$29,$2E,$27,$0E,$00,$00,$00,$00,$00,$FF
-;vid	dta d"HING.     ",$FF
-L_7321	dta $FF,$FF,$FF,$FF,$01,$05,$04,$29,$34,$07,$33,$00,$2C,$2F,$2E,$27
-;vid	dta $FF,$FF,$FF,$FF,d"!%$IT'S LONG"
-		dta $0C,$00,$37,$29,$34,$28,$00,$32,$35,$22,$39,$00,$21,$34,$34,$28
-;vid	dta d", WITH RUBY ATTH"
-		dta $25,$25,$2E,$24,$0D,$FF
-;vid	dta d"EEND-",$FF
-L_7347	dta $FF,$FF,$FF,$FF,$02,$08,$04,$2E,$21,$34,$35,$32,$25,$00,$22,$2F
-;vid	dta $FF,$FF,$FF,$FF,d""($NATURE BO"
-		dta $2F,$2B,$33,$00,$0D,$25,$0E,$27,$0E,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"OKS -E.G.       "
-		dta $FF,$08,$05,$02,$22,$29,$32,$24,$00,$22,$32,$25,$25,$24,$29,$2E
-;vid	dta $FF,d"(%"BIRD BREEDIN"
-		dta $27,$02,$0D,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"G"-         ",$FF
-L_7384	dta $FF,$FF,$FF,$FF,$01,$0A,$04,$29,$34,$07,$33,$00,$21,$22,$2F,$35
-;vid	dta $FF,$FF,$FF,$FF,d"!*$IT'S ABOU"
-		dta $34,$00,$22,$2C,$21,$23,$2B,$2D,$21,$27,$29,$0D,$FF
-;vid	dta d"T BLACKMAGI-",$FF
-L_73A1	dta $FF,$FF,$FF,$FF,$01,$09,$04,$23,$2F,$2E,$34,$21,$29,$2E,$33,$00
-;vid	dta $FF,$FF,$FF,$FF,d"!)$CONTAINS "
-		dta $33,$2F,$2D,$25,$00,$33,$30,$25,$2C,$2C,$33,$00,$00,$00,$FF
-;vid	dta d"SOME SPELLS   ",$FF
-L_73C0	dta $FF,$FF,$FF,$FF,$01,$02,$04,$34,$28,$25,$00,$23,$21,$27,$25,$00
-;vid	dta $FF,$FF,$FF,$FF,d"!"$THE CAGE "
-		dta $2C,$2F,$23,$2B,$00,$29,$33,$00,$24,$25,$23,$2F,$32,$21,$34,$25
-;vid	dta d"LOCK IS DECORATE"
-		dta $24,$00,$37,$0E,$32,$35,$22,$39,$0D,$00,$FF
-;vid	dta d"D W.RUBY- ",$FF
-L_73EB	dta $01,$01,$05,$00,$01,$07,$04,$3A,$21,$00,$27,$1C,$21,$3A,$25,$2D
-;vid	dta d"!!% !'$ZA G<AZEM"
-		dta $00,$3A,$2E,$21,$2C,$21,$3A,$1C,$25,$0B,$00,$2B,$21,$2D,$39,$2B
-;vid	dta d" ZNALAZ<E+ KAMYK"
-		dta $29,$FF
-;vid	dta d"I",$FF
+;vid	dta d"    "*/
+L_6C8E	dta $FF,$FF,$FF,$FF,$01,$0A,$04
+	dta d"LOCKED WITH A KEY",$FF
+
+L_6CD3	;rpt	
+L_6CAB	dta $FF,$FF,$FF,$FF,$01,$0E,$04
+	dta d"OPENED",$FF
+	
+L_6CBF	dta $FF,$FF,$FF,$FF,$01,$0D,$04
+	dta d"LOCKED",$FF
+
+/*L_6CD3	dta $FF,$FF,$FF,$FF,$01,$0E,$04
+	dta d"OPENED",$FF
+*/	
+L_6CE7	dta $FF,$FF,$FF,$FF,$01,$0B,$04
+	dta d"SIMPLE METAL KEY",$FF
+	
+L_6D04	dta $FF,$FF,$FF,$FF,$01,$03,$04
+	dta d"USED TO OPEN THE MAIN GATE",$FF
+	
+L_6D2D	dta $FF,$FF,$FF,$FF,$01,$04,$04
+	dta d"YOU CAN USE IT TO CLOSE THE MAIN GATE"
+
+L_6D54	dta $0F,$FE,$0D,$00,$01,$08,$04
+	dta d"YOU FOUND A DRAWER",$ff
+	
+L_6D6E	dta $FF,$FF,$FF,$FF,$01,$02,$04
+	dta d"RIGHT NOW, THE DRAWER IS OPEN",$FF
+	
+L_6D9A	dta $FF,$FF,$FF,$FF,$01,$0A,$04
+	dta d"CLOSED",$ff
+	
+L_6DB0	dta $FF,$FF,$FF,$FF,$02,$07,$04
+	dta d"AS YOU CAN IMAGINE, IT'S",$ff,9,5
+	dta d"USED TO LIGHT A FIRE",$ff
+	
+L_6DF1	dta $FF,$FF,$FF,$FF,$02,$04,$04
+	dta d"IT'S OUT - WE COULD",$FF,7,5
+	dta d"USE A FLINT",$ff
+	
+L_6E30	dta $FF,$FF,$FF,$FF,$01,$0D,$04
+	dta d"IT'S LIT",$FF
+
+L_6E45	dta $FF,$FF,$FF,$FF,$02,$06,$04
+	dta d"IT MAY BE USED TO OPEN",$FF,9,5
+	dta d"ANOTHER PASSAGE",$FF
+
+L_6E88	dta $FF,$FF,$FF,$FF,$01,$03,$04
+	dta d"YOU'VE ALREADY PLAYED WITH IT",$ff
+	
+L_6EA5	dta $FF,$FF,$FF,$FF,$01,$0F,$04
+	dta d"REGULAR KNIFE",$FF
+
+L_7020	;rept
+L_7036
+L_6EB7	dta $FF,$FF,$FF,$FF,$01,$0D,$04
+	dta d"IT'S CLOSED",$FF
+	
+L_6ECD	dta $FF,$FF,$FF,$FF,$01,$07,$04
+	dta d"YOU'LL FIND NOTHING HERE",$FF
+	
+L_6EEE	dta $FF,$FF,$FF,$FF,$01,$09,$04
+	dta d"LOOKS NUTRITIOUS",$FF
+	
+L_6F08	dta $FF,$FF,$FF,$FF,$02,$07,$04
+	dta d"IT'S LOCKED. I WONDER WHAT",$FF,8,5
+	dta d"TREASURES IT CONTAINS?",$FF
+
+L_6F4D	dta $FF,$FF,$FF,$FF,$01,$0C,$04
+	dta d"IT'S ALREADY OPEN",$FF
+	
+L_6F66	dta $FF,$FF,$FF,$FF,$01,$02,$04
+	dta d"IT'S DEFINITELY A MAGIC OBJECT!",$FF
+
+L_6F91	dta $FF,$FF,$FF,$FF,$01,$02,$04
+	dta d"HAS ENGRAVED ILLEGIBLE PATTERNS",$FF
+	
+L_6FBC	dta $FF,$FF,$FF,$FF,$02,$06,$04
+	dta d"IT'S LOCKED. YOU CAN'T SEE",$FF,9,5
+	dta d"A KEYHOLE ANYWHERE",$FF
+	
+L_6FFD	dta $FF,$FF,$FF,$FF,$01,$01,$04
+	dta d"THE ENTRANCE IT WAITING FOR THE BRAVE!",$ff
+		
+;L_7020	dta $FF,$FF,$FF,$FF,$01,$0D,$04
+;	dta d"IT'S CLOSED",$FF
+	
+;L_7036	dta $FF,$FF,$FF,$FF,$01,$0D,$04
+;	dta d"IT'S CLOSED",$FF
+	
+L_704C	dta $FF,$FF,$FF,$FF,$01,$0A,$04
+	dta d"THERE'S NOTHING IN IT",$FF
+	
+L_7068	dta $FF,$FF,$FF,$FF,$01,$0A,$04
+	dta d"BIG, MUTTON THIGH",$FF
+	
+L_7085	dta $FF,$FF,$FF,$FF,$02,$07,$04
+	dta d"IT'S VERY LARGE. IT STANDS IN",$ff,6,4
+	dta d"THE CENTRAL PART OF THE CHAMBER",$ff
+	
+L_70C2	dta $FF,$FF,$FF,$FF,$01,$0A,$04
+	dta d"A KEY LIKE MANY OTHERS",$FF
+	
+L_70DE	dta $FF,$FF,$FF,$FF,$01,$06,$04
+	dta d"COMMON HUNTING TROPHY",$FF
+	
+L_70FF	dta $FF,$FF,$FF,$FF,$01,$07,$04
+	dta d"BEAUTIFUL CRYSTAL MIRROR",$FF
+
+L_7121	dta $FF,$FF,$FF,$FF,$02,$03,$04
+	dta d"IT'S ALMOST TEMPTING TO",$ff,6,5
+	dta d"LIE DOWN ON IT",$ff
+	
+L_714B	dta $FF,$FF,$FF,$FF,$01,$06,$04
+	dta d"LOOKS LIKE EVERY MAGIC WAND",$FF
+	
+L_7180	dta $FF,$FF,$FF,$FF,$01,$07,$04
+	dta d"IT'S MADE OF STONE",$FF
+	
+L_71A0	dta $FF,$FF,$FF,$FF,$02,$02,$04
+	dta d"IT'S MADE OF STONE, ON IT'S",$ff,1,5
+	dta d"WALLS ARE WRITTEN RUNIC SIGNS",$ff
+	
+L_71F1	dta $FF,$FF,$FF,$FF,$01,$07,$04
+	dta d"IT IS STUDDED WITH GEMS.",$FF
+	
+L_7212	dta $37,$00,$39,$FE,$01,$04,$04
+	dta d"YOU FOUND A COAT INSIDE",$FF
+	
+L_723A	dta $FF,$FF,$FF,$FF,$02,$02,$04
+	dta d"BIG BLACK COAT - I WONDER IF IT'S",$FF,1,5
+	dta d"USED TO PROTECT AGAINST RAIN?",$FF
+		
+L_728D	dta $FF,$FF,$FF,$FF,$01,$04,$04
+	dta d"NOTHING ELSE",$ff
+	
+L_72B6	dta $FF,$FF,$FF,$FF,$03,$04,$03
+	dta d"THEY'RE SEALED WITH IRON,",$ff,3,4
+	dta d"ENGRAVED WITH RUNS. THEY'RE",$ff,3,5
+	dta d"CLOSED OFF WITH SOMETHING.",$FF
+	
+L_7321	dta $FF,$FF,$FF,$FF,$01,$02,$04
+	dta d"IT'S LONG, WITH A RUBY GEM AT THE END",$FF
+	
+L_7347	dta $FF,$FF,$FF,$FF,$02,$08,$04
+	dta d"NATURE BOOKS -E.G.",$ff,10,5
+	dta d"BIRD BREEDING",$FF
+	
+L_7384	dta $FF,$FF,$FF,$FF,$01,$0A,$04
+	dta d"IT'S ABOUT BLACK MAGIC",$FF
+	
+L_73A1	dta $FF,$FF,$FF,$FF,$01,$09,$04
+	dta d"CONTAINS SOME SPELLS",$FF
+	
+L_73C0	dta $FF,$FF,$FF,$FF,$01,$01,$04
+	dta d"THE CAGE LOCK IS DECORATED WITH A RUBY",$FF
+	
+L_73EB	dta $01,$01,$05,$00,$01,$02,$04
+	dta d"THERE ARE PEBBLES BEHIND THE BOULDER",$FF
+
+.print "after object descriptions:",*
+	fill_until $740d 0
+
 L_740D		dta a(L_749F)		;740D 9F 74
 L_740E	equ *-1
 		dta a(L_74B3)		;740F B3 74
