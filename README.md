@@ -41,4 +41,4 @@ In some cases there are additional metadata before the paragraphs. Also some tex
 
 ## Further translation
 ...So the second (main) part of the translation required full disassembly and reverse engineering of the source. It is here:
-https://github.com/matosimi/BaraTrans/atari
+https://github.com/matosimi/BaraTrans/tree/main/atari
