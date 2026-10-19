@@ -1,0 +1,47 @@
+Barahir - Druhé kolo připomínek
+===============================
+
+** Předmět "Gold key" - lépe by znělo "Golden key"?
+
+** Po konzumaci masa: "It tasted bad, but whatever." - nejsem si jistý tím závěrečným rčením, lépe by možná znělo "It tasted bad, but who cares?"
+
+** "A little key lies among the fragments!" - přetéká o 1 znak vpravo ("A" by se dalo přesunout na konec minulého řádku, i když to vypadá zas blbě...)
+
+** "An armchair stands against the wall." - Ten předmět se v ostatních textech jmenuje "Throne", trochu ten rozdíl bije do očí. Polsky je tam něco jako "dobře známé křeslo", protože ten předmět zde vidíme již podruhé - asi bych tam dal "Familiar throne" or "The throne"?
+
+** "The large canopy bed" .... nemělo by tam přece jen být "a large canopy bed"? Je to nový, neznámý předmět (který je dokonce pastí, takže nic důvěrně známého, co by si zasloužilo "the")
+
+** "When you gently pulled the candlestick, a secret passage opened!" (bylo tam: "the secret passage", ale jde o překvápko, tedy opět se mi "the" úplně nezdá)
+
+** "engraved with runes" (tam přetrvává typo "runs"), a v téže zprávě "It's closed off" přetéká z rámce doprava, a ještě na konci zprávy ("with something.") přebývá vpravo jakýsi grafický znak.
+
+** "You see a small hiding place" vs. objekt "storage" - tohle je nejdnotné, jde o tutéž věc. Navíc v polské verzi je "W scianie widisz otworzony schowek" - tohle místo je velké překvápko, když se konečně člověku podaří tu tajnou skrýš otevřít (já na tomhle místě byl zaseklý snad několik let, a nebyl jsem sám), takže bych se přimlouval za zachování informace, že je najednou vidět otevření té skrýše - pokud se to vejde, napsal bych: "You see an open hideout in the wall."
+
+** Nejednotný název předmětu "Cane":
+"I've finally regained my power! Use the magic wand now, and I will make it open the cage."
+"...the wizard took your cane and whispered..."
+Navíc "cane" je spíš něco jako třtina či bambus, polsky je tam poměrně neurčitý pojem "laska". Jde o kouzelnou hůl či hůlku (je na ní drahý kámen, provádí se s ní kouzlo k otevření klece), ale "wand" už máme ve hře jinde...
+Sjednotil bych to asi na "stick" (hůl), to mi přijde takové nekonfliktní.
+
+** "...and you got blinded by the lightening..." - možná radši "by lightning"? Nějak se mi to tam nezdá.
+
+** "You did it! Now we shall both return to the kingdom - there's much work ahead of us, Barahir!" - totéž (nebo skoro totéž? Neměl jsem nervy celou hru procházet podruhé) se opakuje 2x po sobě, poprvé s výzvou "Press Fire", podruhé s "O.K."
+
+** "You pulled the lever, but it gave you a bad feelling." - tady je typo (přebývá "l").
+
+** "The stone floor suddenly gave way! You fell into a bottomless abyss, with no chance of rescue!" - tady polská verze říká, že ta podlaha (vlastně dno, brodíme se tam vodou) prostě najednou skončila, a spadli jsme do tůně. Napsal bych tedy spíše "floor suddenly ended!", aby těch propadajících se podlah nebylo až moc.
+
+
+Pokud jde o další bugy:
+
+
+++ Chyba v grafice se objevuje na 2 místech (u dveří ložnice nad trůnem, a pak v místnosti za knihovnou), jde zřejmě o výpis rámce se zprávou na špatnou pozici, která místo textového okna spadne do grafiky. Je to v okamžiku, kdy otevřu interakci s postavou strážného, a měl by se objevit překlad textu "Widisz kolejnego stranika tego zamku." [tam mají překlep i Poláci - správně "Straźnika"] - ten rámec s textem zcela chybí a místo toho se objeví bordel v grafice.
+
+++ Po skonzumování nemizí potraviny. Ve sklepě hned za vchodem do budovy je voda a maso (ty jsem použil tak, jak tam ležely), ke konci hry v místnosti s kožešinou ("Fur") je chléb (ten jsem nejdříve sebral, až pak použil). V polské verzi všechny tyto předměty zmizely, v překladu tam i po použití pořád byly.
+
+
+Co se nás netýká:
+
+-- Taky jsem si všiml, že když hlavu divočáka položím v místnosti s křišťálovou lebkou (ještě nerozbitou), tak se tam přepíšou dva texty přes sebe, ale tentýž bug má už i polská verze, takže toto není náš problém.
+
+

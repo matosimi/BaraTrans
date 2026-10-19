@@ -650,12 +650,12 @@ L_232F_ptrlut_direction_hi	equ *-1
 		dta a(L_27FA)		;237E FA 27
 		dta a(L_2808)		;2380 08 28
 		dta a(L_2816)		;2382 16 28
-L_2384	dta /*$01,*/d" TO THE CASTLE GATE"*,$FF
-L_2396	dta /*$05,*/d" BEHIND THE BOULDER"*,$FF
-L_23A2	dta /*$02,*/d" INTO THE CASTLE"*,$FF
-L_23B6	dta /*$00,*/d" TO THE FOREST"*,$FF
-L_23C1	dta /*$04,*/d" THROUGH THE OAK DOOR"*,$FF
-L_23D7	dta /*$03,*/d" TO THE COURTYARD"*,$FF
+L_2384	dta $01,d"TO THE CASTLE GATE"*,$FF
+L_2396	dta $05,d"BEHIND THE BOULDER"*,$FF
+L_23A2	dta $02,d"INTO THE CASTLE"*,$FF
+L_23B6	dta $00,d"TO THE FOREST"*,$FF
+L_23C1	dta $04,d"THROUGH THE OAK DOOR"*,$FF
+L_23D7	dta $03,d"TO THE COURTYARD"*,$FF
 	guard $2400
 	fill_until $2400 0
 .print "FONT at $2400: ",*
@@ -695,7 +695,7 @@ L_23D7	dta /*$03,*/d" TO THE COURTYARD"*,$FF
 	dta $00,$03,$0F,$3E,$3A,$0F,$03,$00,$00,$00,$00,$F0,$F0,$00,$00,$00
 	dta $00,$03,$03,$3E,$3E,$03,$03,$00,$00,$00,$C0,$F0,$B0,$C0,$00,$00
 	dta $7C,$FC,$00,$00,$00,$FC,$BC,$6A,$F4,$3D,$0E,$02,$0E,$3E,$F9,$A4
-
+/*
 destination_table ;room_ids
 	dta 1,5,2,0,4,3
 	dta 6,9,7,2,8,6,9,$c,$d
@@ -705,61 +705,61 @@ destination_table ;room_ids
 	dta $1a,$1d,$1b,$19,$1a,$18,$19
 	dta $ff ;crazy value for debug
 future_room_id
-	dta 0	;set right when selected
+	dta 0	;set right when selected */
 	
-L_23E9	dta /*$06,*/d" THROUGH THE BEECH DOOR"*,$FF
-L_2630	dta /*$09,*/d" DEEPER INTO THE CASTLE"*,$FF
-L_2640	dta /*$07,*/d" INTO THE ROOM"*,$FF
-L_2654	dta /*$02,*/d" TO THE PASSAGE"*,$FF
-L_2664	dta /*$08,*/d" UP TO THE ATTIC"*,$FF
-L_26D9 ;repeated:
-L_276C
-L_2673	dta /*$06,*/d" DOWN"*,$FF
-L_26A7 ;repeated:
-L_26CE
-L_26F1
-L_267D	dta /*$09,*/d" UP"*,$FF
-L_268B	dta /*$0C,*/d" TO THE CELLAR"*,$FF
-L_26B2 ;repeated:
-L_26E3
-L_2750
-L_275E
-L_2775
-L_2808
-L_2699	dta /*$0D,*/d" TO A CHAMBER"*,$FF
-;L_26A7	dta $0A,d" UP "*,$FF
-;L_26B2	dta $0B,d" TO THE CHAMBER "*,$FF
-L_26FF ;repeated:
-L_2709 
-L_27AE
-L_27FA
-L_26C0	dta /*$0A,*/d" DEEPER"*,$FF
-;L_26CE	dta $0E,d" UP "*,$FF
-;L_26D9	dta $0D,d" DOWN "*,$FF
-;L_26E3	dta $0F,d" TO THE CHAMBER "*,$FF
-;L_26F1	dta $0E,d" DOWN "*,$FF
-;L_26FF	dta $12,d" DEEPER "*,$FF
-;L_2709	dta $11,d" DEEPER "*,$FF
-L_2713	dta /*$16,*/d" INSIDE"*,$FF
-L_2720	dta /*$12,*/d" TO THE CORRIDOR"*,$FF
-L_2730	dta /*$15,*/d" THROUGH THE DOOR"*,$FF
-L_273F	dta /*$16,*/d" TO THE LIBRARY"*,$FF			
-;L_2750	dta $17,d" TO THE CHAMBER "*,$FF
-;L_275E	dta $13,d" TO THE CHAMBER "*,$FF
-;L_276C	dta $14,d" DOWN "*,$FF
-;L_2775	dta $1C,d" TO THE CHAMBER "*,$FF
-L_2783	dta /*$13,*/d" TO THE STAIRS"*,$FF
-L_279F ;repeated:
-L_2790	dta /*$1B,*/d" THROUGH THE OPENING"*,$FF
-;L_279F	dta $1C,d" THROUGH THE OPENING "*,$FF
-;L_27AE	dta $1E,d" DEEPER "*,$FF
-L_27B8	dta /*$1A,*/d" THROUGH THE EXIT"*,$FF
-L_27C9	dta /*$1D,*/d" INSIDE"*,$FF
-L_27DD	dta /*$1B,*/d" TO THE CANAL"*,$FF
-L_27EA	dta /*$19,*/d" TO MEZZANINE"*,$FF
-;L_27FA	dta $1A,d" DEEPER "*,$FF
-;L_2808	dta $18,d" TO THE CHAMBER "*,$FF
-L_2816	dta /*$19,*/d" OUTSIDE"*,$FF
+L_23E9	dta $06,d"THROUGH THE BEECH DOOR"*,$FF
+L_2630	dta $09,d"INSIDE THE CASTLE"*,$FF
+L_2640	dta $07,d"INTO THE ROOM"*,$FF
+L_2654	dta $02,d"TO THE PASSAGE"*,$FF
+L_2664	dta $08,d"UP TO THE ATTIC"*,$FF
+;L_26D9 ;repeated:
+;L_276C
+L_2673	dta $06,d"DOWN"*,$FF
+;L_26A7 ;repeated:
+;L_26CE
+;L_26F1
+L_267D	dta $09,d"INSIDE"*,$FF
+L_268B	dta $0C,d"TO THE CELLAR"*,$FF
+;L_26B2 ;repeated:
+;L_26E3
+;L_2750
+;L_275E
+;L_2775
+;L_2808
+L_2699	dta $0D,d"TO THE CHAMBER"*,$FF
+L_26A7	dta $0A,d"UP"*,$FF
+L_26B2	dta $0B,d"TO THE CHAMBER"*,$FF
+;L_26FF ;repeated:
+;L_2709 
+;L_27AE
+;L_27FA
+L_26C0	dta $0A,d"OUTSIDE"*,$FF
+L_26CE	dta $0E,d"UP"*,$FF
+L_26D9	dta $0D,d"DOWN"*,$FF
+L_26E3	dta $0F,d"TO THE CHAMBER"*,$FF
+L_26F1	dta $0E,d"OUTSIDE"*,$FF
+L_26FF	dta $12,d"DEEPER"*,$FF
+L_2709	dta $11,d"DEEPER"*,$FF
+L_2713	dta $16,d"ENTRANCE HALL"*,$FF
+L_2720	dta $12,d"TO THE CORRIDOR"*,$FF
+L_2730	dta $15,d"THROUGH THE DOOR"*,$FF
+L_273F	dta $16,d"TO THE LIBRARY"*,$FF			
+L_2750	dta $17,d"TO THE CHAMBER"*,$FF
+L_275E	dta $13,d"TO THE CHAMBER"*,$FF
+L_276C	dta $14,d"DOWN"*,$FF
+L_2775	dta $1C,d"TO THE CHAMBER"*,$FF
+L_2783	dta $13,d"TO THE STAIRS"*,$FF
+;L_279F ;repeated:
+L_2790	dta $1B,d"THROUGH THE OPENING"*,$FF
+L_279F	dta $1C,d"THROUGH THE OPENING"*,$FF
+L_27AE	dta $1E,d"DEEPER"*,$FF
+L_27B8	dta $1A,d"THROUGH THE EXIT"*,$FF
+L_27C9	dta $1D,d"TO THE ROOM"*,$FF
+L_27DD	dta $1B,d"TO THE CANAL"*,$FF
+L_27EA	dta $19,d"TO MEZZANINE"*,$FF
+L_27FA	dta $1A,d"OUTSIDE"*,$FF
+L_2808	dta $18,d"TO THE CHAMBER"*,$FF
+L_2816	dta $19,d"TO THE OUTSIDE"*,$FF
 
 L_3E0C	dta 1
 	dta $b,4,d"YOU'VE ALREADY DONE IT!"*,$ff
@@ -777,10 +777,10 @@ L_443A	dta 1
 	dta 1,4,d"YOU SEE A CRYSTAL SKULL",$FF
 	
 L_4464	dta 1
-	dta 1,4,d"YOU SEE A SMALL HIDING PLACE",$ff
+	dta 1,4,d"YOU SEE A SMALL HIDEOUT",$ff
 	
-.print *
-	fill_until $2825 0
+;.print *
+;	fill_until $2825 0
 L_2825	ldx #$00			;2825 A2 00
 L_2827	lda L_1B15_previous_compass_states,X		;2827 BD 15 1B
 		bne L_284D			;282A D0 21
@@ -854,9 +854,9 @@ L_28BA	cpx L_2BAD_compas_selected_index			;28BA EC AD 2B
 		iny				;28C0 C8
 		jmp L_28AF			;28C1 4C AF 28
 L_28C4	;{ this sets up the destination from the LUT
-	tax
-	mva destination_table,x future_room_id
-	txa
+	;tax
+	;mva destination_table,x future_room_id
+	;txa
 	;}
 	asl @				;28C4 0A
 		tax				;28C5 AA
@@ -875,8 +875,8 @@ L_28C4	;{ this sets up the destination from the LUT
 		lda ZP_F3			;28DF A5 F3
 		adc #$00			;28E1 69 00
 		sta ZP_F3			;28E3 85 F3
-		ldy #$00	;moved destination out from the prefix
-		;ldy #$01			;28E5 A0 01
+		;ldy #$00	;moved destination out from the prefix
+		ldy #$01			;28E5 A0 01
 L_28E7	lda (ZP_F0),Y		;28E7 B1 F0
 		cmp #$FF			;28E9 C9 FF
 		beq L_28F5			;28EB F0 08
@@ -1060,7 +1060,7 @@ L_2A93	cpx L_2BAD_compas_selected_index			;2A93 EC AD 2B
 		jmp L_2A88			;2A9A 4C 88 2A
 L_2A9D	
 	;no need to calculate the offset since we already have future_room_id set
-	/*asl @				;2A9D 0A
+		asl @				;2A9D 0A
 		tax				;2A9E AA
 		lda L_232E_ptrlut_direction_lo,X		;2A9F BD 2E 23
 		sta ZP_F0			;2AA2 85 F0
@@ -1068,9 +1068,9 @@ L_2A9D
 		sta ZP_F1			;2AA7 85 F1
 		ldy #$00			;2AA9 A0 00
 		lda (ZP_F0),Y		;2AAB B1 F0 
-	*/
+	
 	;{
-		lda future_room_id
+		;lda future_room_id
 	;}
 		cmp ZP_D1_previous_position			;2AAD C5 D1
 		beq L_2ACE			;2AAF F0 1D
@@ -1088,11 +1088,11 @@ L_2AC6	lda L_0C18,X		;2AC6 BD 18 0C
 		bne L_2ACE			;2AC9 D0 03
 		jmp L_2B5B			;2ACB 4C 5B 2B
 L_2ACE	;{
-	lda future_room_id
+	;lda future_room_id
 	
-	;lda (ZP_F0),Y		;2ACE B1 F0
-		guard $2AD0
-		fill_until $2ad0 {nop}
+	lda (ZP_F0),Y		;2ACE B1 F0
+		;guard $2AD0
+		;fill_until $2ad0 {nop}
 	;}	
 		pha				;2AD0 48
 		tya				;2AD1 98
@@ -1198,7 +1198,7 @@ L_2BBC_txt_trap	dta 4
 	dta 2,4,d" YOUR WEIGHT. YOU PLUMMETED INTO A  ",$FF
 	dta 2,5,d"  BOTTOMLESS PIT AND MET YOUR END.  ",$FF
 	
-	fill_until $2c9f 0
+	;fill_until $2c9f 0
 L_2C9F	ldx #$00			;2C9F A2 00
 		lda #$FF			;2CA1 A9 FF
 L_2CA3	sta L_0C28,X		;2CA3 9D 28 0C
@@ -1267,7 +1267,7 @@ L_2D66	dta 1
 L_2D8C	dta 1
 	dta 9,2,d"YOUR BACKPACK IS FULL!"*,$FF
 	
-	fill_until $2db4 0
+	;fill_until $2db4 0
 	
 L_2DB4	lda #$FF			;2DB4 A9 FF
 		ldx #$00			;2DB6 A2 00
@@ -1459,8 +1459,8 @@ L_2F40	dta 1
 	dta 4,4,d"YOU FOUND GOLD BEHIND THE BOOKS!",$FF
 	
 L_2F5D	dta 2
-	dta 6,4,d"WHEN YOU LIFTED THE FUR,",$FF
-	dta 6,5,d"YOU FOUND AN ENTRANCE!",$FF
+	dta 8,4,d"WHEN YOU LIFTED THE FUR,",$FF
+	dta 8,5,d" YOU FOUND AN ENTRANCE! ",$FF
 	
 L_2F9C	dta 1
 	dta 2,4,d"A LEVER WAS HIDDEN BENEATH THE HEAD!",$ff
@@ -1478,7 +1478,7 @@ L_3042	dta 1
 L_306C	dta 1
 	dta 6,1,d"WHAT DO YOU WANT TO TAKE?"*,$FF
 	
-	fill_until $3084 0
+	;fill_until $3084 0
 	
 L_3084	ldx #$00			;3084 A2 00
 		lda #$FF			;3086 A9 FF
@@ -1592,7 +1592,7 @@ L_3165	dta 1
 L_317F	dta 1
 	dta 14,3,d"ITEM TO DROP:"*,$FF
 	
-	fill_until $31a9 0
+	;fill_until $31a9 0
 	
 L_31a9	jsr L_18AA_pause5 ;	dta $20,$AA,$18
 L_31AC	jsr L_17A5			;31AC 20 A5 17
@@ -1939,8 +1939,8 @@ L_34DC		ldx <L_34FF			;34DC A2 FF
 L_34FF	dta 4
 	dta 3,3,d"SOMETHING EXTRAORDINARY HAPPENED...",$FF
 	dta 3,4,d" YOU PASSED TRHOUGH THE SURFACE OF ",$ff
-	dta 3,5,d"THE MIRROR AND FOUND YOUSELF ON THE",$FF
-	dta 3,6,d"            OTHER SIDE!            ",$ff
+	dta 3,5,d" THE MIRROR AND FOUND YOURSELF ON",$FF
+	dta 3,6,d"         THE OTHER SIDE!",$ff
 	
 L_356C	lda #$FE			;356C A9 FE
 		ldx #$36			;356E A2 36
@@ -1972,7 +1972,7 @@ L_3582		ldx <L_35EC			;3582 A2 EC
 		ldx <L_36BA_2
 		ldy >L_36BA_2
 		print_frame_and_text
-		jsr L_3E2F_press_fire			;3598 20 2F 3E
+		;jsr L_3E2F_press_fire			;3598 20 2F 3E
 				
 		;}
 		
@@ -2017,9 +2017,9 @@ L_35D0		ldx <L_37CE			;35D0 A2 CE
 L_35EC	dta 6
 	dta 1,1,d"THE CASTLE CRACKED UNDER THE FORCE OF",$ff
 	dta 1,2,d"DAERON'S POWER! THE WIZARD TOOK YOUR ",$FF
-	dta 1,3,d" CANE AND WHISPERED AN UNKNOWN SPELL.",$FF
+	dta 1,3,d"STICK AND WHISPERED AN UNKNOWN SPELL.",$FF
 	dta 1,4,d" SUDDENLY, EVERYTHING BEGAN TO SPIN, ",$FF
-	dta 1,5,d"     AND YOU GOT BLINDED BY THE      ",$ff
+	dta 1,5,d"       AND YOU GOT BLINDED BY        ",$ff
 	dta 1,6,d"LIGHTENING. YOU FELL TO THE GROUND...",$ff
 	
 L_36BA	dta 4
@@ -2037,7 +2037,7 @@ L_36BA_2	dta 3
 L_37B1	dta 1
 	dta 8,4,d"CONGRATULATIONS BARAHIR!",$FF
 L_37CE	dta 1
-	dta 9,4,d"THE LOCK DIDN'T OPEN.",$FF
+	dta 10,4,d"THE LOCK DIDN'T OPEN.",$FF
 	
 L_37E8		ldx <L_381E			;37E8 A2 1E
 		ldy >L_381E			;37EA A0 38
@@ -2065,7 +2065,7 @@ L_3811	lda #$0D			;3811 A9 0D
 		jsr L_5830			;3818 20 30 58
 		jmp L_4267			;381B 4C 67 42
 L_381E	dta 1
-	dta 1,3,d"THE WALL TURNED ALONG WITH YOU!",$ff
+	dta 5,3,d"THE WALL TURNED ALONG WITH YOU!",$ff
 	
 L_3872		lda #$01			;3872 A9 01
 		ldx #$28			;3874 A2 28
@@ -4025,17 +4025,12 @@ L_5099	dta $02,$10,$05,$39,$2F,$35,$00,$33,$25,$25,$00,$34,$28,$25,$00,$27
 		dta $00,$00,$FF
 ;vid	dta d"  ",$FF
 L_50CC	dta $02
-	dta $6,$05,d"YOU SEE ANOTHER GUARD.",$ff
-L_50FB	dta $03,$10,$05,$39,$2F,$35,$00,$33,$25,$25,$00,$21,$00,$27,$29,$21
-;vid	dta d"#0%YOU SEE A GIA"
-		dta $2E,$34,$00,$27,$35,$21,$32,$24,$0E,$FF,$10,$06,$00,$26,$29,$27
-;vid	dta d"NT GUARD.",$FF,d"0& FIG"
-		dta $28,$34,$29,$2E,$27,$00,$28,$29,$2D,$00,$37,$29,$2C,$2C,$00,$22
-;vid	dta d"HTING HIM WILL B"
-		dta $25,$00,$FF,$10,$07,$00,$00,$00,$36,$25,$32,$39,$00,$24,$29,$26
-;vid	dta d"E ",$FF,d"0'   VERY DIF"
-		dta $26,$29,$23,$35,$2C,$34,$0E,$00,$00,$00,$00,$FF
-;vid	dta d"FICULT.    ",$FF
+	dta $11,$05,d"YOU SEE ANOTHER GUARD",$ff
+	dta $11,$06,d"   OF THIS CASTLE.",$ff 
+L_50FB	dta $03
+	dta $10,$05,d"YOU SEE A GIANT GUARD.",$FF
+	dta $10,$06,d" FIGHTING HIM WILL BE ",$FF
+	dta $10,$07,d"   VERY DIFFICULT.    ",$FF
 L_5147	dta $03,$10,$05,$39,$2F,$35,$00,$33,$25,$25,$00,$39,$2F,$35,$32,$00
 ;vid	dta d"#0%YOU SEE YOUR "
 		dta $26,$32,$29,$25,$2E,$24,$00,$00,$00,$FF,$10,$06,$24,$21,$25,$32
@@ -4116,14 +4111,10 @@ L_52B1		ldx <L_52CD			;52B1 A2 CD
 		jsr L_4520_print_frame*/			;52C4 20 20 45
 L_52C7	jsr L_3E2F_press_fire			;52C7 20 2F 3E
 		jsr L_425D			;52CA 20 5D 42
-L_52CD		dta $02,$09,$04,$02,$2E,$2F,$37,$00,$35,$33,$25,$00,$39,$2F,$35,$32
-;vid	dta d"")$"NOW USE YOUR"
-		dta $00,$23,$21,$2E,$25,$00,$21,$2E,$24,$FF,$09,$05,$29,$07,$2C,$2C
-;vid	dta d" CANE AND",$FF,d")%I'LL"
-		dta $00,$26,$29,$2E,$21,$2C,$2C,$39,$00,$22,$25,$00,$26,$32,$25,$25
-;vid	dta d" FINALLY BE FREE"
-		dta $01,$02,$FF
-;vid	dta d"!"",$FF
+L_52CD	dta $02
+	dta 9,4,d"""NOW USE YOUR STICK AND",$FF
+	dta 9,5,d"I'LL FINALLY BE FREE!"" ",$FF
+	
 L_5300	dta $02,$09,$04,$02,$28,$35,$32,$32,$39,$00,$35,$30,$01,$00,$34,$28
 ;vid	dta d"")$"HURRY UP! TH"
 		dta $25,$32,$25,$00,$29,$33,$00,$2E,$2F,$00,$FF,$09,$05,$00,$00,$00
@@ -4267,11 +4258,8 @@ L_55A1	ldx L_0C36			;55A1 AE 36 0C
 		jmp L_556C			;55AE 4C 6C 55
 L_55B1	brk				;55B1 00
 L_55B2	dta $00			;55B2 00    
-L_55B3	ora (ZP_07,X)		;55B3 01 07
-		dta $04,$00,$00,$00,$00,$29,$00,$24,$2F,$2E,$07,$34,$00,$2E,$25,$25
-;vid	dta d"$    I DON'T NEE"
-		dta $24,$00,$29,$34,$01,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"D IT!      ",$FF
+L_55B3	dta 1,11,4		
+	dta d"""I DON'T NEED IT!""",$FF
 L_55D1	jsr L_18AA_pause5			;55D1 20 AA 18
 		jsr L_18AA_pause5			;55D4 20 AA 18
 		lda L_0C36			;55D7 AD 36 0C
@@ -4661,7 +4649,7 @@ L_6246	dta 3
 	dta 1,3,d"THE STAIRCASE WHICH LEADS DOWNWARDS.",$FF
 	
 L_62D0	dta 5
-	dta 1,1,d"YOU'RE IN A BEDROOM, WITH THE LARGE",$FF
+	dta 1,1,d"YOU'RE IN A BEDROOM, WITH A LARGE",$FF
 	dta 1,2,d"CANOPY BED. THERE IS A VERY SLEEPY",$ff
 	dta 1,3,d"ATMOSPHERE HERE. THROUGH A HAZE, YOU",$ff
 	dta 1,4,d"SEE A HUGE MIRROR COVERING ONE OF THE",$ff
@@ -4671,7 +4659,7 @@ L_6385	dta 4
 	dta 1,1,d"YOU'RE IN A SECRET ROOM. EVERYTHING",$FF
 	dta 1,2,d"RADIATES A STRANGE GLOW. A STONE",$FF
 	dta 1,3,d"PEDESTAL STANDS IN THE CENTER. AN",$FF
-	dta 1,4,d"ARMCHAIR STANDS AGAINST THE WALL.",$FF
+	dta 1,4,d"THE THRONE STANDS AGAINST THE WALL.",$FF
     
 L_6416	dta 4
 	dta 1,1,d"YOU'RE IN A DARK HALLWAY. YOU CAN ONLY",$FF
@@ -4907,7 +4895,7 @@ L_6A7F	dta d"CUPBOARD",$FF
 L_6A87	dta d"BREAD",$FF
 L_6A8D	dta d"CHEST",$FF
 L_6A96	dta d"GLASS SPHERE",$FF
-L_6AA3	dta d"GOLD KEY",$FF
+L_6AA3	dta d"GOLDEN KEY",$FF
 L_6AB1	dta d"WATER",$FF
 L_6AB6	dta d"MEAT",$FF
 L_6ABC	dta d"SKULL",$FF
@@ -4922,13 +4910,13 @@ L_6B00	dta d"THRONE",$FF
 L_6B06	dta d"PEDESTAL",$FF
 L_6B10	dta d"MEDALLION",$FF
 L_6B19	dta d"CANDLESTICK",$FF
-L_6B23	dta d"STORAGE",$FF
+L_6B23	dta d"HIDEOUT",$FF
 L_6B2B	dta d"COAT",$FF
-L_6B33	dta d"CANE",$FF
+L_6B33	dta d"STICK",$FF
 L_6B39	dta d"BOOKS",$FF
 L_6B41	dta d"FUR",$FF
 L_6B47	dta d"MANUSCRIPT",$FF
-L_6B52	dta d"CHEST",$FF
+L_6B52	dta d"CAGE",$FF
 L_6B59	dta d"PASSAGE",$FF
 L_6B63	dta d"GOLD",$FF
 L_6B69	dta d"SWORD",$FF
@@ -5030,7 +5018,7 @@ L_6CD3	;rpt
 L_6CAB	dta $FF,$FF,$FF,$FF,$01,$0E,$04
 	dta d"OPENED",$FF
 	
-L_6CBF	dta $FF,$FF,$FF,$FF,$01,$0D,$04
+L_6CBF	dta $FF,$FF,$FF,$FF,$01,17,$04
 	dta d"LOCKED",$FF
 
 /*L_6CD3	dta $FF,$FF,$FF,$FF,$01,$0E,$04
@@ -5125,14 +5113,14 @@ L_7085	dta $FF,$FF,$FF,$FF,$02,$07,$04
 L_70C2	dta $FF,$FF,$FF,$FF,$01,$0A,$04
 	dta d"A KEY LIKE MANY OTHERS",$FF
 	
-L_70DE	dta $FF,$FF,$FF,$FF,$01,$10,$04
+L_70DE	dta $FF,$FF,$FF,$FF,$01,10,$04
 	dta d"COMMON HUNTING TROPHY",$FF
 	
-L_70FF	dta $FF,$FF,$FF,$FF,$01,$07,$04
+L_70FF	dta $FF,$FF,$FF,$FF,$01,$08,$04
 	dta d"BEAUTIFUL CRYSTAL MIRROR",$FF
 
-L_7121	dta $FF,$FF,$FF,$FF,$02,$03,$04
-	dta d"IT'S ALMOST TEMPTING TO",$ff,3,5
+L_7121	dta $FF,$FF,$FF,$FF,$02,$08,$04
+	dta d"IT'S ALMOST TEMPTING TO",$ff,8,5
 	dta d"    LIE DOWN ON IT.    ",$ff
 	
 L_714B	dta $FF,$FF,$FF,$FF,$01,$06,$04
@@ -5141,27 +5129,27 @@ L_714B	dta $FF,$FF,$FF,$FF,$01,$06,$04
 L_7180	dta $FF,$FF,$FF,$FF,$01,11,$04
 	dta d"IT'S MADE OF STONE",$FF
 	
-L_71A0	dta $FF,$FF,$FF,$FF,$02,$01,$04
-	dta d" IT'S MADE OF STONE, ON IT'S ",$ff,1,5
-	dta d"WALLS ARE WRITTEN RUNIC SIGNS",$ff
+L_71A0	dta $FF,$FF,$FF,$FF,$02,$04,$04
+	dta d"  IT'S MADE OF STONE, THERE ARE  ",$ff
+	dta 4,5,d"RUNIC SIGNS WRITTEN ON ITS SIDES.",$ff
 	
 L_71F1	dta $FF,$FF,$FF,$FF,$01,$07,$04
 	dta d"IT IS STUDDED WITH GEMS.",$FF
 	
-L_7212	dta $37,$00,$39,$FE,$01,$04,$04
+L_7212	dta $37,$00,$39,$FE,$01,$08,$04
 	dta d"YOU FOUND A COAT INSIDE",$FF
 	
-L_723A	dta $FF,$FF,$FF,$FF,$02,$02,$04
-	dta d"BIG BLACK COAT - I WONDER IF IT'S",$FF,2,5
+L_723A	dta $FF,$FF,$FF,$FF,$02,$03,$04
+	dta d"BIG BLACK COAT - I WONDER IF IT'S",$FF,3,5
 	dta d"  USED TO PROTECT AGAINST RAIN?  ",$FF
 		
 L_728D	dta $FF,$FF,$FF,$FF,$01,$04,$04
 	dta d"NOTHING ELSE",$ff
 	
 L_72B6	dta $FF,$FF,$FF,$FF,$03,$07,$03
-	dta d"IT'S IRON-BOUND, ENGRAVED",$ff,7,4
-	dta d"WITH RUNS. IT'S CLOSED OFF",$ff,7,5
-	dta d"     WITH SOMETHING. ",$FF
+	dta d" IT'S IRON-BOUND, ENGRAVED ",$ff,7,4
+	dta d"WITH RUNES. IT'S CLOSED OFF",$ff,7,5
+	dta d"     WITH SOMETHING.       ",$FF
 	
 L_7321	dta $FF,$FF,$FF,$FF,$01,$02,$04
 	dta d"IT'S LONG, WITH A RUBY GEM AT THE END",$FF
@@ -5183,9 +5171,9 @@ L_73EB	dta $01,$01,$05,$00,$01,$02,$04
 	dta d"THERE ARE PEBBLES BEHIND THE BOULDER",$FF
 
 L_2C41_txt_trap2	dta 3
-	dta 3,3,d"THE STONE FLOOR SUDDENLY GAVE WAY!",$FF
-	dta 3,4,d" YOU FELL INTO BOTTOMLESS ABYSS,  ",$FF
-	dta 3,5,d"     WITH NO CHANCE OF RESCUE!    ",$ff
+	dta 4,3,d"THE STONE FLOOR SUDDENLY ENDED!",$FF
+	dta 4,4,d"YOU FELL INTO BOTTOMLESS ABYSS,",$FF
+	dta 4,5,d"   WITH NO CHANCE OF RESCUE!   ",$ff
 	
 .print "after object descriptions:",*
 	fill_until $740d 0
@@ -5382,14 +5370,14 @@ L_7AD1	dta $08,$FF,$FF,$FF,$FF,$01
 	dta $0D,$04,d"SO REFRESHING!",$FF
 	
 L_7AE9	dta $08,$FF,$FF,$FF,$FF,$01
-	dta $06,$04,d"IT TASTED BAD, BUT WHATEVER."
+	dta $06,$04,d"IT TASTED BAD, BUT WHO CARES?",$FF
 		
 L_7B0E	dta $FF,$2E,$00,$2F,$FE,$02
 	dta $09,$04,d"YOU TURNED THE KEY IN",$FF
 	dta $09,$05,d"  THE LOCK - OPEN!   ",$FF
 	
 L_7B46	dta $12,$2A,$FE,$45,$00,$01
-	dta $0A,$04,d"YOU UNLOCKED THE LEVER!",$FF
+	dta $0A,$04,d"YOU PULLED THE LEVER!",$FF
 	
 L_7B64	dta $FF,$FF,$FF,$FF,$FF,$01
 	dta $08,$04,d"HOW HANDSOME YOU ARE...",$FF
@@ -5398,12 +5386,12 @@ L_7B85	dta $0A,$FF,$FF,$FF,$FF,$01
 	dta $0A,$04,d"YOU LAID DOWN WITH RELIEF.",$FF
 	
 L_7BB9	dta $0B,$26,$00,$27,$01,$03
-	dta $01,$03,d"   UNDER THE TOUCH OF THE WAND, THE  ",$FF
-	dta $01,$04,d"  CRYSTAL SKULL SHATTERED VIOLENTLY. ",$ff
+	dta $01,$03,d"   UNDER THE TOUCH OF THE WAND, THE   ",$FF
+	dta $01,$04,d"  CRYSTAL SKULL SHATTERED VIOLENTLY.  ",$ff
 	dta $01,$05,d"A LITTLE KEY LIES AMONG THE FRAGMENTS!",$FF
 	
 L_7C34	dta $FF,$FF,$FF,$FF,$FF,$01
-	dta $0A,$04,d"LOCKED BY A KEY.",$FF
+	dta $0c,$04,d"LOCKED BY A KEY.",$FF
 	
 L_7C51	dta $FF,$2F,$00,$2E,$FE,$01
 	dta $0B,$04,d"YOU SLAMMED THE DOOR!",$FF
@@ -5419,15 +5407,15 @@ L_7CA8	dta $FF,$FF,$FF,$FF,$FF,$01
 	
 L_7CCD	dta $0D,$FF,$FF,$FF,$FF,$02
 	dta $05,$02,d"YOU PULLED THE LEVER, BUT IT GAVE",$FF
-	dta $05,$03,d"      YOU A BAD FEELLING.        ",$ff
+	dta $05,$03,d"       YOU A BAD FEELING.        ",$ff
 	dta $05,$04,d" SUDDENLY THE FLOOR OPENED UNDER ",$FF
 	dta $05,$05,d"  YOUR FEET AND YOU'RE FALLING   ",$FF
 	dta $05,$06,d"        INTO THE DEPTHS !        ",$FF
 	
 L_7D78	dta $0E,$35,$00,$46,$FE,$03
-	dta $04,$03,d"   WHEN YOU GENTLY PULLED THE  ",$FF
-	dta $04,$04,d"CANDLESTICK, THE SECRET PASSAGE",$FF
-	dta $04,$05,d"          OPENED!              ",$ff
+	dta $05,$03,d"  WHEN YOU GENTLY PULLED THE  ",$FF
+	dta $05,$04,d"CANDLESTICK, A SECRET PASSAGE ",$FF
+	dta $05,$05,d"          OPENED!             ",$ff
 	
 L_7DE4	dta $13,$36,$00,$37,$FE,$01
 	dta $04,$04,d"YOU PULLED THE CANDLESTICK AGAIN.",$FF
@@ -5446,10 +5434,10 @@ L_7E72	dta $FF,$FF,$FF,$FF,$FF,$01
 	
 L_7E8E	dta $0F,$FF,$FF,$FF,$FF,$02
 	dta $0A,$04,d"  YOU GENTLY TOUCHED  ",$FF
-	dta $0a,$05,d"THE LOCK OF THE CRATE.",$FF
+	dta $0a,$05,d" THE LOCK OF THE CAGE.",$FF
 	
 L_7EC2	dta $FF,$FF,$FF,$FF,$FF,$01
-	dta $09,$04,d"NO TIME TO READ...",$FF
+	dta $0b,$04,d"NO TIME TO READ...",$FF
 	
 L_7EE2	dta $FF,$3A,$00,$3B,$FE,$02
 	dta $0A,$04,d"YOU READ THE SPELL...",$FF
