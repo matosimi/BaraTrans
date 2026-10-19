@@ -578,7 +578,7 @@ L_227A	lda L_0C36			;227A AD 36 0C
 		lda #$01			;2281 A9 01
 		ldx #$38			;2283 A2 38
 		sta L_3FA2,X		;2285 9D A2 3F
-L_2288	jsr L_3E73			;2288 20 73 3E
+L_2288	jsr L_3E73_ok_wait			;2288 20 73 3E
 		jmp L_425D			;228B 4C 5D 42
 L_228E		ldx <L_2142			;228E A2 42
 		ldy >L_2142			;2290 A0 21
@@ -726,7 +726,7 @@ L_2750
 L_275E
 L_2775
 L_2808
-L_2699	dta /*$0D,*/d" TO THE CHAMBER"*,$FF
+L_2699	dta /*$0D,*/d" TO A CHAMBER"*,$FF
 ;L_26A7	dta $0A,d" UP "*,$FF
 ;L_26B2	dta $0B,d" TO THE CHAMBER "*,$FF
 L_26FF ;repeated:
@@ -740,7 +740,7 @@ L_26C0	dta /*$0A,*/d" DEEPER"*,$FF
 ;L_26F1	dta $0E,d" DOWN "*,$FF
 ;L_26FF	dta $12,d" DEEPER "*,$FF
 ;L_2709	dta $11,d" DEEPER "*,$FF
-L_2713	dta /*$16,*/d" TO THE CENTER"*,$FF
+L_2713	dta /*$16,*/d" INSIDE"*,$FF
 L_2720	dta /*$12,*/d" TO THE CORRIDOR"*,$FF
 L_2730	dta /*$15,*/d" THROUGH THE DOOR"*,$FF
 L_273F	dta /*$16,*/d" TO THE LIBRARY"*,$FF			
@@ -1099,7 +1099,7 @@ L_2ACE	;{
 		pha				;2AD2 48
 		txa				;2AD3 8A
 		pha				;2AD4 48
-		jsr L_3E73			;2AD5 20 73 3E
+		jsr L_3E73_ok_wait			;2AD5 20 73 3E
 		cpx #$FF			;2AD8 E0 FF
 		bne L_2AE5			;2ADA D0 09
 		jsr L_18AA_pause5			;2ADC 20 AA 18
@@ -1193,10 +1193,10 @@ L_2BAE	dta $B4			;2BAE B4 4 T
 L_2BAF	dta $3C,$C8,$3C,$BE,$28,$BE,$4F,$BE,$19,$BE,$60,$BE,$3A
 ;vid	dta d"\",$C8,d"\",d"^"*,d"H",d"^"*,$4F,d"^"*,d"9",d"^"*,d"`",d"^"*,d"Z"
 L_2BBC_txt_trap	dta 4
-	dta 5,2,d"IT'S A TRAP! AS SOON AS YOU SET FOOT",$FF
-	dta 5,3,d"ON THE STEPS, THEY GAVE WAY BENEATH ",$FF
-	dta 5,4,d" YOUR WEIGHT. YOU PLUMMETED INTO A  ",$FF
-	dta 5,5,d"  BOTTOMLESS PIT AND MET YOUR END.  ",$FF
+	dta 2,2,d"IT'S A TRAP! AS SOON AS YOU SET FOOT",$FF
+	dta 2,3,d"ON THE STEPS, THEY GAVE WAY BENEATH ",$FF
+	dta 2,4,d" YOUR WEIGHT. YOU PLUMMETED INTO A  ",$FF
+	dta 2,5,d"  BOTTOMLESS PIT AND MET YOUR END.  ",$FF
 	
 	fill_until $2c9f 0
 L_2C9F	ldx #$00			;2C9F A2 00
@@ -1253,8 +1253,8 @@ L_2D02	lda L_0C2E,X		;2D02 BD 2E 0C
 		cpx #$06			;2D09 E0 06
 		bne L_2D02			;2D0B D0 F5
 		jsr L_3FF4			;2D0D 20 F4 3F
-		jsr L_3E73			;2D10 20 73 3E
-		jsr L_3E73			;2D13 20 73 3E
+		jsr L_3E73_ok_wait			;2D10 20 73 3E
+		jsr L_3E73_ok_wait			;2D13 20 73 3E
 		jmp L_425D			;2D16 4C 5D 42
 L_2D19	dta 1
 	dta 5,3,d"YOU ARE NOT CARRYING ANY ITEM!"*,$FF
@@ -1265,7 +1265,7 @@ L_2D40	dta 1
 L_2D66	dta 1
 	dta 3,1,d"YOU ARE CARRYING FOLLOWING ITEMS:"*,$FF
 L_2D8C	dta 1
-	dta 2,2,d"YOUR BACKPACK IS FULL!"*,$FF
+	dta 9,2,d"YOUR BACKPACK IS FULL!"*,$FF
 	
 	fill_until $2db4 0
 	
@@ -1281,18 +1281,17 @@ L_2DC2	lda L_0C2E,X		;2DC2 BD 2E 0C
 		inx				;2DC7 E8
 		cpx #$06			;2DC8 E0 06
 		bne L_2DC2			;2DCA D0 F6
-		lda #$26			;2DCC A9 26
+		/*lda #$26			;2DCC A9 26
 		sta ZP_FA			;2DCE 85 FA
 		lda #$03			;2DD0 A9 03
 		sta ZP_FB			;2DD2 85 FB
 		ldx #$01			;2DD4 A2 01
 		ldy #$01			;2DD6 A0 01
-		print_frame_and_text
-		/*
-		jsr L_4520_print_frame			;2DD8 20 20 45
+		jsr L_4520_print_frame*/			;2DD8 20 20 45
 		ldx <L_2D8C			;2DDB A2 8C
-		ldy >L_2D8C			;2DDD A0 2D
-		jsr L_448C_print_text */			;2DDF 20 8C 44
+		ldy >L_2D8C		;2DDD A0 2D
+		print_frame_and_text
+		/*jsr L_448C_print_text */			;2DDF 20 8C 44
 		jsr L_3E2F_press_fire			;2DE2 20 2F 3E
 		jmp L_425D			;2DE5 4C 5D 42
 L_2DE8	stx ZP_FA			;2DE8 86 FA
@@ -1453,7 +1452,7 @@ L_2F09	lda ZP_FE			;2F09 A5 FE
 		ldx #$05			;2F30 A2 05
 		ldy #$03			;2F32 A0 03
 		jsr L_4520_print_frame*/			;2F34 20 20 45
-L_2F37	jsr L_3E73			;2F37 20 73 3E
+L_2F37	jsr L_3E73_ok_wait			;2F37 20 73 3E
 L_2F3A	jsr L_18B6			;2F3A 20 B6 18
 		jmp L_425D			;2F3D 4C 5D 42
 L_2F40	dta 1
@@ -1571,7 +1570,7 @@ L_312F	lda L_0C2E,X		;312F BD 2E 0C
 		jmp L_315F			;313B 4C 5F 31
 L_313E	cpx #$05			;313E E0 05
 		bne L_3148			;3140 D0 06
-		jsr L_3E73			;3142 20 73 3E
+		jsr L_3E73_ok_wait			;3142 20 73 3E
 		jmp L_3157			;3145 4C 57 31
 L_3148	txa				;3148 8A
 		tay				;3149 A8
@@ -1584,7 +1583,7 @@ L_314B	lda L_0C2E,Y		;314B B9 2E 0C
 		bne L_314B			;3155 D0 F4
 L_3157	lda #$FF			;3157 A9 FF
 		sta L_0C33			;3159 8D 33 0C
-		jsr L_3E73			;315C 20 73 3E
+		jsr L_3E73_ok_wait			;315C 20 73 3E
 L_315F	jsr L_18B6			;315F 20 B6 18
 		jmp L_425D			;3162 4C 5D 42
 L_3165	dta 1
@@ -1818,7 +1817,7 @@ L_3391	dey				;3391 88
 		ldy L_22EB			;33A0 AC EB 22
 		jsr L_448C_print_text			;33A3 20 8C 44
 		jsr L_18B6			;33A6 20 B6 18
-		jsr L_3E73			;33A9 20 73 3E
+		jsr L_3E73_ok_wait			;33A9 20 73 3E
 		jmp L_425D			;33AC 4C 5D 42
 L_33AF		ldx <L_3DB6			;33AF A2 B6
 		ldy >L_3DB6		;33B1 A0 3D
@@ -1915,10 +1914,10 @@ L_3450		ldx <L_346C_txt_trap3			;3450 A2 6C
 		jsr L_3E2F_press_fire			;3466 20 2F 3E
 		jmp L_3B5A			;3469 4C 5A 3B
 L_346C_txt_trap3	dta 4
-	dta 3,3,d" THE FLOOR GAVE WAY, TAKING YOU DOWN ",$FF
-	dta 3,4,d"WITH IT! IT IS EXTREMELY DIFFICULT TO",$FF
-	dta 3,5,d"     SURVIVE A FORTY-METER FALL.     ",$FF
-	dta 3,6,d"       REST IN PIECE, BARAHIR...     ",$ff
+	dta 1,3,d" THE FLOOR GAVE WAY, TAKING YOU DOWN ",$FF
+	dta 1,4,d"WITH IT! IT IS EXTREMELY DIFFICULT TO",$FF
+	dta 1,5,d"     SURVIVE A FORTY-METER FALL.     ",$FF
+	dta 1,6,d"         FAREWELL, BARAHIR...        ",$ff
 
 L_34DC		ldx <L_34FF			;34DC A2 FF
 		ldy >L_34FF			;34DE A0 34
@@ -1968,6 +1967,15 @@ L_3582		ldx <L_35EC			;3582 A2 EC
 		ldx <L_36BA			;359B A2 BA
 		ldy >L_36BA			;359D A0 36
 		print_frame_and_text
+		
+		;{ added split of a long text
+		ldx <L_36BA_2
+		ldy >L_36BA_2
+		print_frame_and_text
+		jsr L_3E2F_press_fire			;3598 20 2F 3E
+				
+		;}
+		
 		/*
 		jsr L_448C_print_text			;359F 20 8C 44
 		lda #$28			;35A2 A9 28
@@ -1977,7 +1985,7 @@ L_3582		ldx <L_35EC			;3582 A2 EC
 		ldx #$00			;35AA A2 00
 		ldy #$00			;35AC A0 00
 		jsr L_4520_print_frame*/			;35AE 20 20 45
-		jsr L_3E73			;35B1 20 73 3E
+		jsr L_3E73_ok_wait			;35B1 20 73 3E
 		ldx <L_37B1			;35B4 A2 B1
 		ldy >L_37B1			;35B6 A0 37
 		print_frame_and_text
@@ -1990,7 +1998,7 @@ L_3582		ldx <L_35EC			;3582 A2 EC
 		ldx #$07			;35C3 A2 07
 		ldy #$03			;35C5 A0 03
 		jsr L_4520_print_frame*/			;35C7 20 20 45
-		jsr L_3E73			;35CA 20 73 3E
+		jsr L_3E73_ok_wait			;35CA 20 73 3E
 		jmp L_3B73			;35CD 4C 73 3B
 L_35D0		ldx <L_37CE			;35D0 A2 CE
 		ldy >L_37CE		;35D2 A0 37
@@ -2008,20 +2016,23 @@ L_35D0		ldx <L_37CE			;35D0 A2 CE
 		jmp L_4267			;35E9 4C 67 42
 L_35EC	dta 6
 	dta 1,1,d"THE CASTLE CRACKED UNDER THE FORCE OF",$ff
-	dta 1,2,d"DAERON’S POWER! THE WIZARD TOOK YOUR ",$FF
+	dta 1,2,d"DAERON'S POWER! THE WIZARD TOOK YOUR ",$FF
 	dta 1,3,d" CANE AND WHISPERED AN UNKNOWN SPELL.",$FF
 	dta 1,4,d" SUDDENLY, EVERYTHING BEGAN TO SPIN, ",$FF
 	dta 1,5,d"     AND YOU GOT BLINDED BY THE      ",$ff
 	dta 1,6,d"LIGHTENING. YOU FELL TO THE GROUND...",$ff
 	
-L_36BA	dta 7
-	dta 1,1,d"    WHEN YOU OPENED YOUR EYES, YOU    ",$ff
-	dta 1,2,d"  REALIZED THAT YOU WERE NO LONGER IN ",$ff
-	dta 1,3,d" THE CASTLE, BUT STANDING IN A FOREST ",$ff
-	dta 1,4,d"CLEARING. YOU SAW DAERON, WHO SHOUTED:",$ff
-	dta 1,5,d"""YOU DID IT! NOW WE SHALL BOTH RETURN ",$ff
-	dta 1,6,d"  TO THE KINGDOM - THERE IS MUCH WORK ",$ff
-	dta 1,7,d"AHEAD OF US, BARAHIR!""                ",$ff
+L_36BA	dta 4
+	dta 1,2,d"    WHEN YOU OPENED YOUR EYES, YOU    ",$ff
+	dta 1,3,d"  REALIZED THAT YOU WERE NO LONGER IN ",$ff
+	dta 1,4,d" THE CASTLE, BUT STANDING IN A FOREST ",$ff
+	dta 1,5,d"CLEARING. YOU SAW DAERON, WHO SHOUTED:",$ff
+	
+L_36BA_2	dta 3
+	
+	dta 1,3,d"""YOU DID IT! NOW WE SHALL BOTH RETURN ",$ff
+	dta 1,4,d"  TO THE KINGDOM - THERE IS MUCH WORK ",$ff
+	dta 1,5,d"        AHEAD OF US, BARAHIR!""",$ff
 
 L_37B1	dta 1
 	dta 8,4,d"CONGRATULATIONS BARAHIR!",$FF
@@ -2222,7 +2233,7 @@ L_3AFB		ldx <L_3B38			;3AFB A2 38
 		sta L_0DDA			;3B20 8D DA 0D
 		jsr L_18AA_pause5			;3B23 20 AA 18
 		jsr L_18AA_pause5			;3B26 20 AA 18
-		jsr L_3E73			;3B29 20 73 3E
+		jsr L_3E73_ok_wait			;3B29 20 73 3E
 		jsr L_18AA_pause5			;3B2C 20 AA 18
 		jsr L_18AA_pause5			;3B2F 20 AA 18
 		jsr L_18B6			;3B32 20 B6 18
@@ -2422,7 +2433,7 @@ L_3E53	lda L_D010			;3E53 AD 10 D0
 		jsr L_18AA_pause5			;3E5E 20 AA 18
 		rts				;3E61 60
 
-L_3E73	jsr L_18AA_pause5			;3E73 20 AA 18
+L_3E73_ok_wait	jsr L_18AA_pause5			;3E73 20 AA 18
 		jsr L_18AA_pause5			;3E76 20 AA 18
 		ldx <L_3EBA_txt_ok			;3E79 A2 BA
 		ldy >L_3EBA_txt_ok		;3E7B A0 3E
@@ -3453,7 +3464,7 @@ L_4A19		ldx <L_5207			;4A19 A2 07
 		ldx #$08			;4A28 A2 08
 		ldy #$04			;4A2A A0 04
 		jsr L_4520_print_frame	*/		;4A2C 20 20 45
-L_4A2F	jsr L_3E73			;4A2F 20 73 3E
+L_4A2F	jsr L_3E73_ok_wait			;4A2F 20 73 3E
 		jmp L_425D			;4A32 4C 5D 42
 L_4A35	lda ZP_EF			;4A35 A5 EF
 		asl @				;4A37 0A
@@ -3718,7 +3729,7 @@ L_4C88	jsr L_18AA_pause5			;4C88 20 AA 18
 		ldx #$07			;4CA3 A2 07
 		ldy #$03			;4CA5 A0 03
 		jsr L_4520_print_frame*/			;4CA7 20 20 45
-		jsr L_3E73			;4CAA 20 73 3E
+		jsr L_3E73_ok_wait			;4CAA 20 73 3E
 		lda ZP_EF			;4CAD A5 EF
 		bne L_4CDC			;4CAF D0 2B
 		jsr L_18AA_pause5			;4CB1 20 AA 18
@@ -3762,14 +3773,14 @@ L_4CDC	lda ZP_EF			;4CDC A5 EF
 		lda #$01			;4D00 A9 01
 		sta L_3FA2,X		;4D02 9D A2 3F
 		jmp L_4D08			;4D05 4C 08 4D
-L_4D08	jsr L_3E73			;4D08 20 73 3E
+L_4D08	jsr L_3E73_ok_wait			;4D08 20 73 3E
 L_4D0B	ldx ZP_EF			;4D0B A6 EF
 		lda #$01			;4D0D A9 01
 		sta L_0C18,X		;4D0F 9D 18 0C
 		jmp L_425D			;4D12 4C 5D 42
 L_4D15	dta $02
 	dta $0a,$05,d"YOU SEARCHED THE BODY",$FF
-	dta $0c,$06,d"AND FOUND A KEY.",$FF
+	dta $0a,$06,d"  AND FOUND A KEY.   ",$FF
 L_4D46	dta $01
 	dta $4,$05,d"DEAD GUARD DROPPED HIS SWORD.",$ff
 L_4D79	dta $02,$07,$04,$35,$2E,$26,$2F,$32,$34,$35,$2E,$21,$34,$25,$2C,$39
@@ -4182,37 +4193,17 @@ L_541A	jsr L_18AA_pause5			;541A 20 AA 18
 		jsr L_4520_print_frame*/			;5430 20 20 45
 		jsr L_3E2F_press_fire			;5433 20 2F 3E
 		jmp L_425D			;5436 4C 5D 42
-L_5439	dta $03,$04,$02,$34,$28,$25,$00,$27,$35,$21,$32,$24,$00,$33,$21,$29
-;vid	dta d"#$"THE GUARD SAI"
-		dta $24,$1A,$00,$02,$29,$07,$2C,$2C,$00,$2C,$25,$34,$00,$39,$2F,$35
-;vid	dta d"D: "I'LL LET YOU"
-		dta $00,$00,$00,$00,$FF,$04,$03,$00,$27,$2F,$00,$29,$26,$00,$39,$2F
-;vid	dta d"    ",$FF,d"$# GO IF YO"
-		dta $35,$00,$27,$25,$34,$00,$2D,$25,$00,$33,$2F,$2D,$25,$34,$28,$29
-;vid	dta d"U GET ME SOMETHI"
-		dta $2E,$27,$00,$00,$00,$00,$00,$00,$FF,$04,$04,$00,$00,$00,$00,$00
-;vid	dta d"NG      ",$FF,d"$$     "
-		dta $00,$00,$00,$00,$00,$36,$21,$2C,$35,$21,$22,$2C,$25,$0E,$02,$00
-;vid	dta d"     VALUABLE." "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"            ",$FF
-L_54A6	dta $04,$06,$02,$02,$29,$07,$2C,$2C,$00,$2C,$25,$34,$00,$39,$2F,$35
-;vid	dta d"$&""I'LL LET YOU"
-		dta $00,$27,$2F,$00,$29,$26,$00,$39,$2F,$35,$00,$27,$29,$36,$25,$00
-;vid	dta d" GO IF YOU GIVE "
-		dta $FF,$06,$03,$00,$2D,$25,$00,$33,$2F,$2D,$25,$34,$28,$29,$2E,$27
-;vid	dta $FF,d"&# ME SOMETHING"
-		dta $00,$29,$00,$2C,$29,$2B,$25,$0E,$00,$24,$2F,$2E,$07,$34,$00,$00
-;vid	dta d" I LIKE. DON'T  "
-		dta $FF,$06,$04,$2D,$21,$2B,$25,$00,$21,$00,$2D,$29,$33,$34,$21,$2B
-;vid	dta $FF,d"&$MAKE A MISTAK"
-		dta $25,$0C,$00,$39,$2F,$35,$00,$2F,$2E,$2C,$39,$00,$28,$21,$36,$25
-;vid	dta d"E, YOU ONLY HAVE"
-		dta $FF,$06,$05,$2F,$2E,$25,$00,$23,$28,$21,$2E,$23,$25,$01,$02,$00
-;vid	dta $FF,d"&%ONE CHANCE!" "
-		dta $0D,$00,$33,$21,$39,$33,$00,$34,$28,$25,$00,$27,$35,$21,$32,$24
-;vid	dta d"- SAYS THE GUARD"
-		dta $FF			;5526 FF    
+L_5439	dta $03
+	dta 4,2,d"THE GUARD SAID: ""I'LL LET YOU    ",$FF
+	dta 4,3,d"  GO IF YOU GET ME SOMETHING      ",$FF
+	dta 4,4,d"          VALUABLE.""  ",$FF
+
+L_54A6	dta $04
+	dta 6,2,d"""I'LL LET YOU GO IF YOU GIVE ",$FF
+	dta 6,3,d"ME SOMETHING I LIKE. DON'T  ",$FF
+	dta 6,4,d"MAKE A MISTAKE, YOU ONLY HAVE",$FF
+	dta 6,5,d"ONE CHANCE!"" - SAYS THE GUARD",$FF
+	
 L_5527	jsr L_18AA_pause5			;5527 20 AA 18
 		jsr L_18AA_pause5			;552A 20 AA 18
 		lda L_0C36			;552D AD 36 0C
@@ -4256,7 +4247,7 @@ L_556C		ldx <L_56D4			;556C A2 D4
 		ldx #$04			;557B A2 04
 		ldy #$03			;557D A0 03
 		jsr L_4520_print_frame*/			;557F 20 20 45
-		jsr L_3E73			;5582 20 73 3E
+		jsr L_3E73_ok_wait			;5582 20 73 3E
 		jmp L_425D			;5585 4C 5D 42
 L_5588	jsr L_18AA_pause5			;5588 20 AA 18
 		jsr L_18AA_pause5			;558B 20 AA 18
@@ -4343,7 +4334,7 @@ L_56F6	lda ZP_F9_current_room_id			;56F6 A5 F9
 		ldx #$01			;570F A2 01
 		ldy #$01			;5711 A0 01
 		jsr L_4520_print_frame*/			;5713 20 20 45
-		jsr L_3E73			;5716 20 73 3E
+		jsr L_3E73_ok_wait			;5716 20 73 3E
 		lda #$02			;5719 A9 02
 		sta L_0C10			;571B 8D 10 0C
 		jmp L_425D			;571E 4C 5D 42
@@ -4358,7 +4349,7 @@ L_5721		ldx <L_57D6		;5721 A2 D6
 		ldx #$02			;5730 A2 02
 		ldy #$02			;5732 A0 02
 		jsr L_4520_print_frame*/			;5734 20 20 45
-		jsr L_3E73			;5737 20 73 3E
+		jsr L_3E73_ok_wait			;5737 20 73 3E
 		jmp L_4AA1			;573A 4C A1 4A
 L_573D	dta $04,$02,$02,$00,$00,$34,$28,$25,$00,$27,$35,$21,$32,$24,$00,$33
 ;vid	dta d"$""  THE GUARD S"
@@ -4582,7 +4573,7 @@ L_5A01	equ *-1
 		dta a(L_691C)		;5A3A 1C 69
 L_5A3C	dta 3
 ;	dta 0,0,d"0123456789012345678901234567890123456789"
-	dta 1,1,d"YOU'RE AT THE EDGE OF THE FOREST.",$FF
+	dta 1,1,d"YOU'RE AT THE EDGE OF A FOREST.",$FF
 	dta 1,2,d"THERE'S A GLOOMY CASTLE BEHIND THE",$FF
 	dta 1,3,d"TREES. THE PATH LEADS TOWARD THE GATE.",$FF
 	
@@ -4621,9 +4612,9 @@ L_5D5D	dta 5
 	
 L_5DE2	dta 4
 	dta 1,1,d"YOU'RE STANDING IN A COOL AND DAMP",$FF
-	dta 1,2,d"ROOM. I WONDER IF THAT'S HOW THE REST",$FF
-	dta 1,3,d"OF THE STRUCTURE LOOKS THE SAME. A",$ff
-	dta 1,4,d"TORCH IS MOUNTED TO THE WALL.",$FF
+	dta 1,2,d"ROOM. I WONDER IF THE REST OF THE",$FF
+	dta 1,3,d"CASTLE LOOKS THE SAME. A TORCH IS",$ff
+	dta 1,4,d"MOUNTED TO THE WALL.",$FF
 	
 L_5E7C	dta 4
 	dta 1,1,d"THIS ROOM IS NOT VERY LARGE, BUT",$ff
@@ -4640,12 +4631,12 @@ L_5FAB	dta 4
 	dta 1,1,d"YOU'RE INSIDE THE CASTLE. YOU SEE",$ff
 	dta 1,2,d"THREE EXITS: ONE LEADS TO THE",$ff
 	dta 1,3,d"BASEMENT, OTHER UPSTAIRS, THIRD TOWARD",$ff
-	dta 1,4,d"DOOR TO THE CHAMBER."
+	dta 1,4,d"A DOOR TO A CHAMBER.",$ff
 		
 L_6047	dta 3
 	dta 1,1,d"YOU'RE STANDING ON THE FLOOR IN THE",$ff
-	dta 1,2,d"BOTTOM OF THE TOWER. THE WINDING STAIRS",$ff
-	dta 1,3,d"LEAD DOWN.",$ff
+	dta 1,2,d"BOTTOM OF THE TOWER. THE WINDING",$ff
+	dta 1,3,d"STAIRS LEAD DOWN.",$ff
 		
 L_60BD	dta 3
 	dta 1,1,d"YOU SEE A DARK SMALL ROOM IN THE UPPER",$ff
@@ -4670,14 +4661,14 @@ L_6246	dta 3
 	dta 1,3,d"THE STAIRCASE WHICH LEADS DOWNWARDS.",$FF
 	
 L_62D0	dta 5
-	dta 1,1,d"YOU'RE IN THE BEDROOM, WITH THE LARGE",$FF
+	dta 1,1,d"YOU'RE IN A BEDROOM, WITH THE LARGE",$FF
 	dta 1,2,d"CANOPY BED. THERE IS A VERY SLEEPY",$ff
 	dta 1,3,d"ATMOSPHERE HERE. THROUGH A HAZE, YOU",$ff
 	dta 1,4,d"SEE A HUGE MIRROR COVERING ONE OF THE",$ff
 	dta 1,5,d"WALLS.",$ff
 
 L_6385	dta 4
-	dta 1,1,d"YOU'RE IN A SECRET ROOM. EVERYTHI",$FF
+	dta 1,1,d"YOU'RE IN A SECRET ROOM. EVERYTHING",$FF
 	dta 1,2,d"RADIATES A STRANGE GLOW. A STONE",$FF
 	dta 1,3,d"PEDESTAL STANDS IN THE CENTER. AN",$FF
 	dta 1,4,d"ARMCHAIR STANDS AGAINST THE WALL.",$FF
@@ -4691,7 +4682,7 @@ L_6416	dta 4
 L_649D	dta 3
 	dta 1,1,d"YOU'RE IN THE SECOND SECTION OF THE",$FF
 	dta 1,2,d"CORRIDOR, EQUALLY DARK AND DAMP. A",$ff
-	dta 1,3,d"SCONCE IS ATTACHED TO THE WALL.",$FF
+	dta 1,3,d"CANDLESTICK IS ATTACHED TO THE WALL.",$FF
 	
 L_6517	dta 3
 	dta 1,1,d"YOU WALKED INTO A DESERTED ROOM. YOU",$FF
@@ -4706,7 +4697,7 @@ L_65A5	dta 3
 L_661A	dta 4
 	dta 1,1,d"YOU'RE IN THE LIBRARY. THERE ARE",$ff
 	dta 1,2,d"PLENTY OF BOOKS ON THE SHELVES. YOU",$ff
-	dta 1,3,d"CAN GO TO THE CORRIDOR, INTO THE ROOM,",$ff
+	dta 1,3,d"CAN GO TO THE CORRIDOR, OR TO A ROOM,",$ff
 	dta 1,4,d"OR THROUGH THE DOOR.",$FF
 	
 L_6693	dta 3
@@ -4720,7 +4711,7 @@ L_6705	dta 3
 	dta 1,3,d"SILVER BARS.",$FF
 	
 L_6774	dta 2
-	dta 1,1,d"YOU'RE ON THE HALF-STORY OF THE DARK",$FF
+	dta 1,1,d"YOU'RE ON THE HALF-STORY OF A DARK",$FF
 	dta 1,2,d"TOWER. STAIRS LEAD UP AND DOWN.",$FF
 	
 L_67BE	dta 4
@@ -4921,7 +4912,7 @@ L_6AB1	dta d"WATER",$FF
 L_6AB6	dta d"MEAT",$FF
 L_6ABC	dta d"SKULL",$FF
 L_6AC4	dta d"GLASS CRUMBS",$FF
-L_6AD2	dta d"KEY",$FF
+L_6AD2	dta d"LITTLE KEY",$FF
 L_6ADA	dta d"BOAR'S HEAD",$FF
 L_6AE6	dta d"MIRROR",$FF
 L_6AED	dta d"BED",$FF
@@ -5051,8 +5042,8 @@ L_6CE7	dta $FF,$FF,$FF,$FF,$01,$0B,$04
 L_6D04	dta $FF,$FF,$FF,$FF,$01,$03,$04
 	dta d"USED TO OPEN THE MAIN GATE",$FF
 	
-L_6D2D	dta $FF,$FF,$FF,$FF,$01,$04,$04
-	dta d"YOU CAN USE IT TO CLOSE THE MAIN GATE"
+L_6D2D	dta $FF,$FF,$FF,$FF,$01,$0a,$04
+	dta d"CLOSES THE MAIN GATE",$FF
 
 L_6D54	dta $0F,$FE,$0D,$00,$01,$08,$04
 	dta d"YOU FOUND A DRAWER",$ff
@@ -5071,7 +5062,7 @@ L_6DF1	dta $FF,$FF,$FF,$FF,$02,$04,$04
 	dta d"IT'S OUT - WE COULD",$FF,4,5
 	dta d"    USE A FLINT    ",$ff
 	
-L_6E30	dta $FF,$FF,$FF,$FF,$01,$0D,$04
+L_6E30	dta $FF,$FF,$FF,$FF,$01,16,$04
 	dta d"IT'S LIT",$FF
 
 L_6E45	dta $FF,$FF,$FF,$FF,$02,$06,$04
@@ -5081,7 +5072,7 @@ L_6E45	dta $FF,$FF,$FF,$FF,$02,$06,$04
 L_6E88	dta $FF,$FF,$FF,$FF,$01,$03,$04
 	dta d"YOU'VE ALREADY PLAYED WITH IT",$ff
 	
-L_6EA5	dta $FF,$FF,$FF,$FF,$01,$0F,$04
+L_6EA5	dta $FF,$FF,$FF,$FF,$01,$0e,$04
 	dta d"REGULAR KNIFE",$FF
 
 L_7020	;rept
@@ -5092,7 +5083,7 @@ L_6EB7	dta $FF,$FF,$FF,$FF,$01,$0D,$04
 L_6ECD	dta $FF,$FF,$FF,$FF,$01,$07,$04
 	dta d"YOU'LL FIND NOTHING HERE",$FF
 	
-L_6EEE	dta $FF,$FF,$FF,$FF,$01,$09,$04
+L_6EEE	dta $FF,$FF,$FF,$FF,$01,12,$04
 	dta d"LOOKS NUTRITIOUS",$FF
 	
 L_6F08	dta $FF,$FF,$FF,$FF,$02,$07,$04
@@ -5102,7 +5093,7 @@ L_6F08	dta $FF,$FF,$FF,$FF,$02,$07,$04
 L_6F4D	dta $FF,$FF,$FF,$FF,$01,$0C,$04
 	dta d"IT'S ALREADY OPEN",$FF
 	
-L_6F66	dta $FF,$FF,$FF,$FF,$01,$02,$04
+L_6F66	dta $FF,$FF,$FF,$FF,$01,$05,$04
 	dta d"IT'S DEFINITELY A MAGIC OBJECT!",$FF
 
 L_6F91	dta $FF,$FF,$FF,$FF,$01,$02,$04
@@ -5113,7 +5104,7 @@ L_6FBC	dta $FF,$FF,$FF,$FF,$02,$06,$04
 	dta d"   A KEYHOLE ANYWHERE.    ",$FF
 	
 L_6FFD	dta $FF,$FF,$FF,$FF,$01,$01,$04
-	dta d"THE ENTRANCE IT WAITING FOR THE BRAVE!",$ff
+	dta d"THE ENTRANCE IS WAITING FOR THE BRAVE!",$ff
 		
 ;L_7020	dta $FF,$FF,$FF,$FF,$01,$0D,$04
 ;	dta d"IT'S CLOSED",$FF
@@ -5134,7 +5125,7 @@ L_7085	dta $FF,$FF,$FF,$FF,$02,$07,$04
 L_70C2	dta $FF,$FF,$FF,$FF,$01,$0A,$04
 	dta d"A KEY LIKE MANY OTHERS",$FF
 	
-L_70DE	dta $FF,$FF,$FF,$FF,$01,$06,$04
+L_70DE	dta $FF,$FF,$FF,$FF,$01,$10,$04
 	dta d"COMMON HUNTING TROPHY",$FF
 	
 L_70FF	dta $FF,$FF,$FF,$FF,$01,$07,$04
@@ -5147,7 +5138,7 @@ L_7121	dta $FF,$FF,$FF,$FF,$02,$03,$04
 L_714B	dta $FF,$FF,$FF,$FF,$01,$06,$04
 	dta d"LOOKS LIKE EVERY MAGIC WAND",$FF
 	
-L_7180	dta $FF,$FF,$FF,$FF,$01,$07,$04
+L_7180	dta $FF,$FF,$FF,$FF,$01,11,$04
 	dta d"IT'S MADE OF STONE",$FF
 	
 L_71A0	dta $FF,$FF,$FF,$FF,$02,$01,$04
@@ -5167,10 +5158,10 @@ L_723A	dta $FF,$FF,$FF,$FF,$02,$02,$04
 L_728D	dta $FF,$FF,$FF,$FF,$01,$04,$04
 	dta d"NOTHING ELSE",$ff
 	
-L_72B6	dta $FF,$FF,$FF,$FF,$03,$04,$03
-	dta d" THEY'RE SEALED WITH IRON, ",$ff,4,4
-	dta d"ENGRAVED WITH RUNS. THEY'RE",$ff,4,5
-	dta d"CLOSED OFF WITH SOMETHING. ",$FF
+L_72B6	dta $FF,$FF,$FF,$FF,$03,$07,$03
+	dta d"IT'S IRON-BOUND, ENGRAVED",$ff,7,4
+	dta d"WITH RUNS. IT'S CLOSED OFF",$ff,7,5
+	dta d"     WITH SOMETHING. ",$FF
 	
 L_7321	dta $FF,$FF,$FF,$FF,$01,$02,$04
 	dta d"IT'S LONG, WITH A RUBY GEM AT THE END",$FF
@@ -5192,9 +5183,9 @@ L_73EB	dta $01,$01,$05,$00,$01,$02,$04
 	dta d"THERE ARE PEBBLES BEHIND THE BOULDER",$FF
 
 L_2C41_txt_trap2	dta 3
-	dta 6,3,d"THE STONE FLOOR SUDDENLY GAVE WAY!",$FF
-	dta 6,4,d" YOU FELL INTO BOTTOMLESS ABYSS,  ",$FF
-	dta 6,5,d"     WITH NO CHANCE OF RESCUE!    ",$ff
+	dta 3,3,d"THE STONE FLOOR SUDDENLY GAVE WAY!",$FF
+	dta 3,4,d" YOU FELL INTO BOTTOMLESS ABYSS,  ",$FF
+	dta 3,5,d"     WITH NO CHANCE OF RESCUE!    ",$ff
 	
 .print "after object descriptions:",*
 	fill_until $740d 0
@@ -5284,7 +5275,7 @@ L_74B3	dta $00,$FF,$FF,$FF,$FF,$05
 	dta 2,5,d"ENTRANCE AND BEGAN TO LOOK AROUND...",$FF
 
 L_757B	dta $01,$FF,$FF,$FF,$FF,$01
-	dta 9,4,d"YOU HEAR THE CLATTER!",$FF
+	dta 9,4,d"YOU HEAR A CLATTER!",$FF
 	
 L_759F	dta $FF,$FF,$FF,$FF,$FF,$02
 	dta 5,4,d"IT'S TOO HEAVY - YOU CAN'T",$FF
@@ -5313,16 +5304,16 @@ L_76B2	dta $FF,$09,$00,$08,$FE,$01
 	dta $0E,$04,d"YOU CLOSED THEM",$FF
 	
 L_76C7	dta $FF,$06,$00,$07,$FE,$02
-	dta $06,$04,d"THE LOCK CLICKED SOFTLY.",$ff
-	dta $06,$05,d"         OPEN !         ",$ff
+	dta $08,$04,d"THE LOCK CLICKED SOFTLY.",$ff
+	dta $08,$05,d"         OPEN !         ",$ff
 	
 L_7709	dta $03,$0B,$00,$0C,$FE,$02
 	dta $0F,$04,d" YOU'VE ACTIVATED THE ",$FF
 	dta $0F,$05,d"GATE OPENING MECHANISM",$ff
 	
 L_773F	dta $04,$0C,$00,$0B,$FE,$02
-	dta $04,$04,d"YOU HEAR THE CLANG OF",$ff
-	dta $04,$05,d" THE CLOSING GATE.   ",$FF
+	dta $0a,$04,d"YOU HEAR THE CLANG OF",$ff
+	dta $0a,$05,d" THE CLOSING GATE.   ",$FF
 	
 L_7768	dta $FF,$FF,$FF,$FF,$FF,$02
 	dta $08,$04,d"WOULD YOU LIKE TO CARVE",$ff
@@ -5352,10 +5343,10 @@ L_7891	dta $07,$17,$00,$18,$FE,$02
 	dta $06,$05,d"    YOU TOOK IT OUT GENTLY.     ",$ff
 	
 L_78D5	dta $FF,$18,$00,$23,$FE,$01
-	dta $0B,$04,d"YOU CLOSED THE CUPBOARD.",$FF
+	dta $0e,$04,d"YOU CLOSED THE CUPBOARD.",$FF
 	
 L_78EF	dta $08,$FF,$FF,$19,$00,$01
-	dta $0C,$04,d"SO TASTY!",$FF
+	dta $0f,$04,d"SO TASTY!",$FF
 	
 L_7908	dta $FF,$FF,$FF,$FF,$FF,$02
 	dta $0E,$04,d"YOU CAN'T LOCK IT, THE ",$FF
@@ -5385,7 +5376,7 @@ L_7A9A	dta $FF,$22,$00,$0E,$FE,$01
 	dta $0A,$04,d"YOU OPENED THE DRAWER.",$FF
 	
 L_7AB6	dta $FF,$23,$00,$18,$FE,$01
-	dta $0B,$04,d"YOU OPENED THE CUPBOARD.",$FF
+	dta $08,$04,d"YOU OPENED THE CUPBOARD.",$FF
 	
 L_7AD1	dta $08,$FF,$FF,$FF,$FF,$01
 	dta $0D,$04,d"SO REFRESHING!",$FF
@@ -5407,9 +5398,9 @@ L_7B85	dta $0A,$FF,$FF,$FF,$FF,$01
 	dta $0A,$04,d"YOU LAID DOWN WITH RELIEF.",$FF
 	
 L_7BB9	dta $0B,$26,$00,$27,$01,$03
-	dta $02,$03,d"   UNDER THE TOUCH OF THE WAND, THE  ",$FF
-	dta $02,$04,d"  CRYSTAL SKULL SHATTERED VIOLENTLY. ",$ff
-	dta $02,$05,d"A SMALL KEY LIES AMONG THE FRAGMENTS!",$FF
+	dta $01,$03,d"   UNDER THE TOUCH OF THE WAND, THE  ",$FF
+	dta $01,$04,d"  CRYSTAL SKULL SHATTERED VIOLENTLY. ",$ff
+	dta $01,$05,d"A LITTLE KEY LIES AMONG THE FRAGMENTS!",$FF
 	
 L_7C34	dta $FF,$FF,$FF,$FF,$FF,$01
 	dta $0A,$04,d"LOCKED BY A KEY.",$FF
@@ -5427,11 +5418,11 @@ L_7CA8	dta $FF,$FF,$FF,$FF,$FF,$01
 	dta $06,$04,d"I DON'T THINK IT'S USEFUL.",$FF
 	
 L_7CCD	dta $0D,$FF,$FF,$FF,$FF,$02
-	dta $05,$02,d"YOU PULLED THE LEVER, THEN YOU ",$FF
-	dta $05,$03,d"	      FROZE.             ",$ff
-	dta $05,$04,d"SUDDENLY THE FLOOR OPENED UNDER",$FF
-	dta $05,$05,d" YOUR FEET AND YOU'RE FALLING  ",$FF
-	dta $05,$06,d"       INTO THE DEPTHS !       ",$FF
+	dta $05,$02,d"YOU PULLED THE LEVER, BUT IT GAVE",$FF
+	dta $05,$03,d"      YOU A BAD FEELLING.        ",$ff
+	dta $05,$04,d" SUDDENLY THE FLOOR OPENED UNDER ",$FF
+	dta $05,$05,d"  YOUR FEET AND YOU'RE FALLING   ",$FF
+	dta $05,$06,d"        INTO THE DEPTHS !        ",$FF
 	
 L_7D78	dta $0E,$35,$00,$46,$FE,$03
 	dta $04,$03,d"   WHEN YOU GENTLY PULLED THE  ",$FF
@@ -5847,7 +5838,7 @@ L_917F	sta L_916D			;917F 8D 6D 91
 		lda L_91B1,X		;9194 BD B1 91
 		sta L_91AF			;9197 8D AF 91
 		lda #$03			;919A A9 03
-		sta L_D21F			;919C 8D 1F D2
+		sta $d20f ;cmc bug L_D21F			;919C 8D 1F D2
 		lda #$01			;919F A9 01
 		sta L_917E			;91A1 8D 7E 91
 		ldy L_916F			;91A4 AC 6F 91
