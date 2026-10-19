@@ -1,0 +1,16 @@
+Barahir - třetí průchod
+=======================
+
+** "You see the guard. He is focused on you..." - lépe "a guard"
+
+** "An the throne stands against the wall." - přebývá "An" (zbytek po změně textu)
+
+** "I'll let you go, if you get me something valuable." - za "something" je díra v pravém okraji boxu (mezera navíc?)
+
+** "You've got to find my magic cloak and cane." - předmět jsme označili "stick"
+** "Use the magic wand now, and I will make it...." - opět "stick"
+
+** "Lightening" by mělo přece jen být "lightning". (Lightning je blesk, lightening je zesvětlení.)
+
+Jinak s potěšením pozoruji, že směry poblíž trůnu vypadají dobře, a dokonce je opravený i ten původní polský bug s překryvem nápisů u křišťálové lebky. Už to vypadá dosti dobře.
+

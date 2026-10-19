@@ -714,7 +714,7 @@ L_2654	dta $02,d"TO THE PASSAGE"*,$FF
 L_2664	dta $08,d"UP TO THE ATTIC"*,$FF
 ;L_26D9 ;repeated:
 ;L_276C
-L_2673	dta $06,d"DOWN"*,$FF
+L_2673	dta $06,d"DOWN TO THE ROOM"*,$FF
 ;L_26A7 ;repeated:
 ;L_26CE
 ;L_26F1
@@ -727,37 +727,37 @@ L_268B	dta $0C,d"TO THE CELLAR"*,$FF
 ;L_2775
 ;L_2808
 L_2699	dta $0D,d"TO THE CHAMBER"*,$FF
-L_26A7	dta $0A,d"UP"*,$FF
+L_26A7	dta $0A,d"UP THE STAIRS"*,$FF
 L_26B2	dta $0B,d"TO THE CHAMBER"*,$FF
 ;L_26FF ;repeated:
 ;L_2709 
 ;L_27AE
 ;L_27FA
-L_26C0	dta $0A,d"OUTSIDE"*,$FF
-L_26CE	dta $0E,d"UP"*,$FF
-L_26D9	dta $0D,d"DOWN"*,$FF
-L_26E3	dta $0F,d"TO THE CHAMBER"*,$FF
-L_26F1	dta $0E,d"OUTSIDE"*,$FF
-L_26FF	dta $12,d"DEEPER"*,$FF
-L_2709	dta $11,d"DEEPER"*,$FF
-L_2713	dta $16,d"INSIDE"*,$FF
+L_26C0	dta $0A,d"OUTSIDE THE CHAMBER"*,$FF
+L_26CE	dta $0E,d"UP THE STAIRS"*,$FF
+L_26D9	dta $0D,d"DOWN THE STAIRS"*,$FF
+L_26E3	dta $0F,d"TO THE BEDROOM"*,$FF
+L_26F1	dta $0E,d"OUTSIDE THE BEDROOM"*,$FF
+L_26FF	dta $12,d"DEEPER TO THE CORRIDOR"*,$FF
+L_2709	dta $11,d"DEEPER TO THE CORRIDOR"*,$FF
+L_2713	dta $16,d"INSIDE THE PASSAGE"*,$FF
 L_2720	dta $12,d"TO THE CORRIDOR"*,$FF
 L_2730	dta $15,d"THROUGH THE DOOR"*,$FF
 L_273F	dta $16,d"TO THE LIBRARY"*,$FF			
-L_2750	dta $17,d"TO THE CHAMBER"*,$FF
-L_275E	dta $13,d"TO THE CHAMBER"*,$FF
-L_276C	dta $14,d"DOWN"*,$FF
+L_2750	dta $17,d"TO THE ROOM"*,$FF
+L_275E	dta $13,d"TO THE ROOM"*,$FF
+L_276C	dta $14,d"DOWN THE STAIRS"*,$FF
 L_2775	dta $1C,d"TO THE CHAMBER"*,$FF
 L_2783	dta $13,d"TO THE STAIRS"*,$FF
 ;L_279F ;repeated:
 L_2790	dta $1B,d"THROUGH THE OPENING"*,$FF
 L_279F	dta $1C,d"THROUGH THE OPENING"*,$FF
-L_27AE	dta $1E,d"DEEPER"*,$FF
+L_27AE	dta $1E,d"DEEPER TO THE SEWER"*,$FF
 L_27B8	dta $1A,d"THROUGH THE EXIT"*,$FF
 L_27C9	dta $1D,d"TO THE ROOM"*,$FF
-L_27DD	dta $1B,d"TO THE CANAL"*,$FF
+L_27DD	dta $1B,d"TO THE SEWER"*,$FF
 L_27EA	dta $19,d"TO MEZZANINE"*,$FF
-L_27FA	dta $1A,d"OUTSIDE"*,$FF
+L_27FA	dta $1A,d"TO A STONE PLATFORM"*,$FF
 L_2808	dta $18,d"TO THE CHAMBER"*,$FF
 L_2816	dta $19,d"TO THE OUTSIDE"*,$FF
 
@@ -2020,7 +2020,7 @@ L_35EC	dta 6
 	dta 1,3,d"STICK AND WHISPERED AN UNKNOWN SPELL.",$FF
 	dta 1,4,d" SUDDENLY, EVERYTHING BEGAN TO SPIN, ",$FF
 	dta 1,5,d"       AND YOU GOT BLINDED BY        ",$ff
-	dta 1,6,d"LIGHTENING. YOU FELL TO THE GROUND...",$ff
+	dta 1,6,d"LIGHTNING. YOU FELL TO THE GROUND... ",$ff
 	
 L_36BA	dta 4
 	dta 1,2,d"    WHEN YOU OPENED YOUR EYES, YOU    ",$ff
@@ -3495,14 +3495,15 @@ L_49EF	lda ZP_EE			;49EF A5 EE
 		lda L_5034,X		;49FD BD 34 50
 		tay				;4A00 A8
 		ldx L_4FA1			;4A01 AE A1 4F
-		jsr L_448C_print_text			;4A04 20 8C 44
+		print_frame_and_text
+		/*jsr L_448C_print_text			;4A04 20 8C 44
 		lda #$18			;4A07 A9 18
 		sta ZP_FA			;4A09 85 FA
 		lda #$04			;4A0B A9 04
 		sta ZP_FB			;4A0D 85 FB
 		ldx #$08			;4A0F A2 08
 		ldy #$04			;4A11 A0 04
-		jsr L_4520_print_frame			;4A13 20 20 45
+		jsr L_4520_print_frame*/			;4A13 20 20 45
 		jmp L_4A2F			;4A16 4C 2F 4A
 L_4A19		ldx <L_5207			;4A19 A2 07
 		ldy >L_5207			;4A1B A0 52
@@ -3694,6 +3695,8 @@ L_4BD1	jsr L_18AA_pause5			;4BD1 20 AA 18
 		jsr L_18AA_pause5			;4BD7 20 AA 18
 		ldx <L_4DBA			;4BDA A2 BA
 		ldy >L_4DBA			;4BDC A0 4D
+		print_frame_and_text
+		/*
 		jsr L_448C_print_text			;4BDE 20 8C 44
 		lda #$26			;4BE1 A9 26
 		sta ZP_FA			;4BE3 85 FA
@@ -3701,7 +3704,7 @@ L_4BD1	jsr L_18AA_pause5			;4BD1 20 AA 18
 		sta ZP_FB			;4BE7 85 FB
 		ldx #$01			;4BE9 A2 01
 		ldy #$03			;4BEB A0 03
-		jsr L_4520_print_frame			;4BED 20 20 45
+		jsr L_4520_print_frame*/			;4BED 20 20 45
 		jsr L_3E2F_press_fire			;4BF0 20 2F 3E
 		lda L_0C34			;4BF3 AD 34 0C
 		sta L_4DB8			;4BF6 8D B8 4D
@@ -3830,38 +3833,25 @@ L_4D0B	ldx ZP_EF			;4D0B A6 EF
 		lda #$01			;4D0D A9 01
 		sta L_0C18,X		;4D0F 9D 18 0C
 		jmp L_425D			;4D12 4C 5D 42
-L_4D15	dta $02
-	dta $0a,$05,d"YOU SEARCHED THE BODY",$FF
-	dta $0a,$06,d"  AND FOUND A KEY.   ",$FF
-L_4D46	dta $01
-	dta $4,$05,d"DEAD GUARD DROPPED HIS SWORD.",$ff
-L_4D79	dta $02,$07,$04,$35,$2E,$26,$2F,$32,$34,$35,$2E,$21,$34,$25,$2C,$39
-;vid	dta d""'$UNFORTUNATELY"
-		dta $0C,$00,$34,$28,$25,$00,$2F,$30,$30,$2F,$2E,$25,$2E,$34,$FF,$07
-;vid	dta d", THE OPPONENT",$FF,d"'"
-		dta $05,$30,$32,$2F,$36,$25,$24,$00,$33,$34,$32,$2F,$2E,$27,$25,$32
-;vid	dta d"%PROVED STRONGER"
-		dta $00,$34,$28,$21,$2E,$00,$39,$2F,$35,$0E,$0E,$0E,$FF
-;vid	dta d" THAN YOU...",$FF
+L_4D15	dta 2
+	dta 10,5,d"YOU SEARCHED THE BODY",$FF
+	dta 10,6,d"  AND FOUND A KEY.   ",$FF
+L_4D46	dta 1
+	dta 4,5,d"DEAD GUARD DROPPED HIS SWORD.",$FF
+L_4D79	dta 2
+	dta 7,4,d"UNFORTUNATELY, THE OPPONENT",$FF
+	dta 7,5,d"PROVED STRONGER THAN YOU...",$FF
+	
 L_4DB6	dta $00			;4DB6 00    
 L_4DB7	dta $00			;4DB7 00    
 L_4DB8	dta $00			;4DB8 00    
 L_4DB9	dta $00			;4DB9 00    
-L_4DBA	ora (ZP_02,X)		;4DBA 01 02
-		dta $04,$00,$39,$2F,$35,$00,$34,$28,$32,$25,$37,$00,$39,$2F,$35,$32
-;vid	dta d"$ YOU THREW YOUR"
-		dta $33,$25,$2C,$26,$00,$21,$34,$00,$34,$28,$25,$00,$2F,$30,$30,$2F
-;vid	dta d"SELF AT THE OPPO"
-		dta $2E,$25,$2E,$34,$01,$FF
-;vid	dta d"NENT!",$FF
-L_4DE2	dta $02,$08,$04,$00,$34,$28,$25,$00,$27,$2F,$24,$33,$00,$26,$21,$36
-;vid	dta d""($ THE GODS FAV"
-		dta $2F,$32,$00,$39,$2F,$35,$01,$00,$00,$00,$00,$FF,$08,$05,$00,$00
-;vid	dta d"OR YOU!    ",$FF,d"(%  "
-		dta $39,$2F,$35,$00,$37,$2F,$2E,$00,$34,$28,$25,$00,$26,$29,$27,$28
-;vid	dta d"YOU WON THE FIGH"
-		dta $34,$0E,$00,$00,$00,$00,$FF
-;vid	dta d"T.    ",$FF
+L_4DBA	dta 1
+	dta 2,5,d"YOU THREW YOURSELF AT THE OPPONENT!",$FF
+L_4DE2	dta 2
+	dta 10,4,d"THE GODS FAVOR YOU!",$FF
+	dta 10,5,d" YOU WON THE FIGHT.",$FF
+	
 L_4E19	lda ZP_EF			;4E19 A5 EF
 		asl @				;4E1B 0A
 		tax				;4E1C AA
@@ -3994,11 +3984,7 @@ L_4F24	sta L_4FA1			;4F24 8D A1 4F
 L_4F30	dta $02
 	dta $0D,$03,d"   BACK OFF    "*,$FF
 	dta $0d,$05,d"     FIGHT     "*,$FF
-L_4F55	ora (ZP_05,X)		;4F55 01 05
-		dta $04,$00,$00,$28,$25,$00,$24,$2F,$25,$33,$2E,$07,$34,$00,$37,$21
-;vid	dta d"$  HE DOESN'T WA"
-		dta $2E,$34,$00,$21,$2E,$39,$00,$29,$34,$25,$2D,$00,$00,$00,$00,$FF
-;vid	dta d"NT ANY ITEM    ",$FF
+L_4F55	dta 1,8,4,d"HE DOESN'T WANT ANY ITEM.",$FF
 L_4F77	dta 1
 	dta 8,3,d"CHOOSE AN ITEM TO GIVE:",$FF
 L_4FA1	dta $00			;4FA1 00    
@@ -4058,24 +4044,15 @@ L_5034	equ *-1
 L_503F	dta 1
 	dta $f,5,d"WAITING...",$FF
 	
-L_504D	dta $03,$10,$05,$00,$39,$2F,$35,$00,$33,$25,$25,$00,$21,$00,$27,$35
-;vid	dta d"#0% YOU SEE A GU"
-		dta $21,$32,$24,$0E,$00,$28,$25,$00,$00,$FF,$10,$06,$2C,$2F,$2F,$2B
-;vid	dta d"ARD. HE  ",$FF,d"0&LOOK"
-		dta $33,$00,$37,$25,$21,$2B,$25,$32,$00,$34,$28,$21,$2E,$00,$39,$2F
-;vid	dta d"S WEAKER THAN YO"
-		dta $35,$0C,$FF,$10,$07,$22,$35,$34,$00,$28,$25,$07,$33,$00,$27,$2F
-;vid	dta d"U,",$FF,d"0'BUT HE'S GO"
-		dta $34,$00,$21,$00,$37,$25,$21,$30,$2F,$2E,$0E,$FF
-;vid	dta d"T A WEAPON.",$FF
-L_5099	dta $02,$10,$05,$39,$2F,$35,$00,$33,$25,$25,$00,$34,$28,$25,$00,$27
-;vid	dta d""0%YOU SEE THE G"
-		dta $35,$21,$32,$24,$0E,$00,$28,$25,$00,$FF,$10,$06,$29,$33,$00,$26
-;vid	dta d"UARD. HE ",$FF,d"0&IS F"
-		dta $2F,$23,$35,$33,$25,$24,$00,$2F,$2E,$00,$39,$2F,$35,$0E,$0E,$0E
-;vid	dta d"OCUSED ON YOU..."
-		dta $00,$00,$FF
-;vid	dta d"  ",$FF
+L_504D	dta $03
+	dta 16,5,d" YOU SEE A GUARD. HE  ",$FF
+	dta 16,6,d"LOOKS WEAKER THAN YOU,",$FF
+	dta 16,7,d"BUT HE'S GOT A WEAPON.",$FF
+	
+L_5099	dta $02
+	dta 16,5,d"YOU SEE A GUARD. HE ",$FF
+	dta 16,6,d"IS FOCUSED ON YOU...",$FF
+
 L_50CC	dta $02
 	dta $11,$05,d"YOU SEE ANOTHER GUARD",$ff
 	dta $11,$06,d"   OF THIS CASTLE.",$ff 
@@ -4083,33 +4060,21 @@ L_50FB	dta $03
 	dta $10,$05,d"YOU SEE A GIANT GUARD.",$FF
 	dta $10,$06,d" FIGHTING HIM WILL BE ",$FF
 	dta $10,$07,d"   VERY DIFFICULT.    ",$FF
-L_5147	dta $03,$10,$05,$39,$2F,$35,$00,$33,$25,$25,$00,$39,$2F,$35,$32,$00
-;vid	dta d"#0%YOU SEE YOUR "
-		dta $26,$32,$29,$25,$2E,$24,$00,$00,$00,$FF,$10,$06,$24,$21,$25,$32
-;vid	dta d"FRIEND   ",$FF,d"0&DAER"
-		dta $2F,$2E,$0E,$00,$28,$25,$07,$33,$00,$34,$32,$21,$30,$30,$25,$24
-;vid	dta d"ON. HE'S TRAPPED"
-		dta $00,$00,$FF,$10,$07,$00,$00,$22,$25,$28,$29,$2E,$24,$00,$34,$28
-;vid	dta d"  ",$FF,d"0'  BEHIND TH"
-		dta $25,$00,$22,$21,$32,$33,$0E,$00,$00,$00,$00,$FF
-;vid	dta d"E BARS.    ",$FF
-L_5193	dta $02,$09,$05,$21,$00,$24,$25,$21,$24,$00,$22,$2F,$24,$39,$00,$2C
-;vid	dta d"")%A DEAD BODY L"
-		dta $29,$25,$33,$00,$00,$00,$00,$00,$00,$FF,$09,$06,$29,$2E,$00,$26
-;vid	dta d"IES      ",$FF,d")&IN F"
-		dta $32,$2F,$2E,$34,$00,$2F,$26,$00,$39,$2F,$35,$0E,$00,$00,$00,$00
-;vid	dta d"RONT OF YOU.    "
-		dta $00,$00,$FF
-;vid	dta d"  ",$FF
-L_51C6	dta $04,$01,$02,$00,$00,$00,$00,$37,$21,$29,$34,$00,$00,$00,$00,$00
-;vid	dta d"$!"    WAIT     "
-		dta $FF,$01,$04,$00,$00,$00,$00,$34,$21,$2C,$2B,$00,$00,$00,$00,$00
-;vid	dta $FF,d"!$    TALK     "
-		dta $FF,$01,$06,$00,$00,$00,$00,$27,$29,$36,$25,$00,$00,$00,$00,$00
-;vid	dta $FF,d"!&    GIVE     "
-		dta $FF,$01,$08,$00,$00,$00,$00,$26,$29,$27,$28,$34,$00,$00,$00,$00
-;vid	dta $FF,d"!(    FIGHT    "
-		dta $FF			;5206 FF    
+L_5147	dta 3
+	dta 10,5,d"YOU SEE YOUR FRIEND ",$FF
+	dta 10,6,d"DAERON. HE'S TRAPPED",$FF
+	dta 10,7,d"  BEHIND THE BARS.  ",$FF
+	
+L_5193	dta 2
+	dta 12,5,d"A DEAD BODY LIES",$FF
+	dta 12,6,d"IN FRONT OF YOU.",$FF
+
+L_51C6	dta 4
+	dta 1,2,d"    WAIT     ",$FF
+	dta 1,4,d"    TALK     ",$FF
+	dta 1,6,d"    GIVE     ",$FF
+	dta 1,8,d"    FIGHT    ",$FF
+	
 L_5207	dta $02
 	dta 10,5,d"  THERE'S NO OTHER  "*,$FF
 	dta 10,6,d"PERSON HERE BUT YOU."*,$FF
@@ -4167,37 +4132,17 @@ L_52CD	dta $02
 	dta 9,4,d"""NOW USE YOUR STICK AND",$FF
 	dta 9,5,d"I'LL FINALLY BE FREE!"" ",$FF
 	
-L_5300	dta $02,$09,$04,$02,$28,$35,$32,$32,$39,$00,$35,$30,$01,$00,$34,$28
-;vid	dta d"")$"HURRY UP! TH"
-		dta $25,$32,$25,$00,$29,$33,$00,$2E,$2F,$00,$FF,$09,$05,$00,$00,$00
-;vid	dta d"ERE IS NO ",$FF,d")%   "
-		dta $34,$29,$2D,$25,$0C,$00,$2D,$39,$00,$26,$32,$29,$25,$2E,$24,$0E
-;vid	dta d"TIME, MY FRIEND."
-		dta $02,$00,$00,$00,$FF
-;vid	dta d""   ",$FF
-L_5335	dta 5,4			;5335 05 04
-		dta $02,$02,$39,$2F,$35,$07,$32,$25,$00,$26,$29,$2E,$21,$2C,$2C,$39
-;vid	dta d"""YOU'RE FINALLY"
-		dta $00,$28,$25,$32,$25,$01,$00,$2E,$2F,$37,$00,$28,$25,$2C,$30,$00
-;vid	dta d" HERE! NOW HELP "
-		dta $00,$FF,$04,$03,$2D,$25,$00,$27,$25,$34,$00,$2F,$35,$34,$00,$2F
-;vid	dta d" ",$FF,d"$#ME GET OUT O"
-		dta $26,$00,$28,$25,$32,$25,$00,$0D,$00,$39,$2F,$35,$07,$36,$25,$00
-;vid	dta d"F HERE - YOU'VE "
-		dta $27,$2F,$34,$00,$FF,$04,$04,$34,$2F,$00,$26,$29,$2E,$24,$00,$2D
-;vid	dta d"GOT ",$FF,d"$$TO FIND M"
-		dta $39,$00,$2D,$21,$27,$29,$23,$00,$23,$2C,$2F,$21,$2B,$00,$21,$2E
-;vid	dta d"Y MAGIC CLOAK AN"
-		dta $24,$00,$23,$21,$2E,$25,$0E,$FF,$04,$05,$27,$2F,$00,$26,$2F,$32
-;vid	dta d"D CANE.",$FF,d"$%GO FOR"
-		dta $00,$29,$34,$0C,$00,$26,$32,$29,$25,$2E,$24,$0E,$02,$00,$0D,$24
-;vid	dta d" IT, FRIEND." -D"
-		dta $21,$25,$32,$2F,$2E,$00,$00,$00,$00,$00,$FF,$04,$06,$33,$28,$2F
-;vid	dta d"AERON     ",$FF,d"$&SHO"
-		dta $35,$34,$25,$24,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"UTED            "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$FF
-;vid	dta d"             ",$FF
+L_5300	dta $02
+	dta 9,4,d"""HURRY UP! THERE IS NO ",$FF
+	dta 9,5,d"   TIME, MY FRIEND.""   ",$FF
+	
+L_5335	dta 5
+	dta 4,2,d"""YOU'RE FINALLY HERE! NOW HELP ",$FF
+	dta 4,3,d"ME GET OUT OF HERE - YOU'VE GOT",$FF
+	dta 4,4,d"  TO FIND MY MAGIC CLOAK AND   ",$FF
+	dta 4,5,d"   STICK. GO FOR IT, FRIEND.""  ",$FF
+	dta 4,6,d"      - DAERON SHOUTED         ",$FF
+	
 L_53E5	jsr L_18AA_pause5			;53E5 20 AA 18
 		lda L_55B1			;53E8 AD B1 55
 		beq L_53F0			;53EB F0 03
@@ -4238,7 +4183,7 @@ L_541A	jsr L_18AA_pause5			;541A 20 AA 18
 		jmp L_425D			;5436 4C 5D 42
 L_5439	dta $03
 	dta 4,2,d"THE GUARD SAID: ""I'LL LET YOU    ",$FF
-	dta 4,3,d"  GO IF YOU GET ME SOMETHING      ",$FF
+	dta 4,3,d"  GO IF YOU GET ME SOMETHING     ",$FF
 	dta 4,4,d"          VALUABLE.""  ",$FF
 
 L_54A6	dta $04
@@ -4351,8 +4296,8 @@ L_55FA	ldx #$38			;55FA A2 38
 		jmp L_425D			;561C 4C 5D 42
 L_561F	dta 3
 	dta 1,3,d" ""I'VE FINALLY REGAINED MY POWER! USE ",$FF
-	dta 1,4,d"THE MAGIC WAND NOW, AND I WILL MAKE IT",$FF
-	dta 1,5,d"         OPEN THE CAGE.""              ",$ff
+	dta 1,4,d"THE MAGIC STICK NOW, AND I WILL MAKE  ",$FF
+	dta 1,5,d"        IT OPEN THE CAGE.""            ",$ff
 L_568f	dta 2
 	dta 8,4,d"""THAT HAS NO VALUE TO ME.",$FF
 	dta 8,5,d"      I WARNED YOU!""     ",$FF
@@ -4391,38 +4336,15 @@ L_5721		ldx <L_57D6		;5721 A2 D6
 		jsr L_4520_print_frame*/			;5734 20 20 45
 		jsr L_3E73_ok_wait			;5737 20 73 3E
 		jmp L_4AA1			;573A 4C A1 4A
-L_573D	dta $04,$02,$02,$00,$00,$34,$28,$25,$00,$27,$35,$21,$32,$24,$00,$33
-;vid	dta d"$""  THE GUARD S"
-		dta $28,$35,$26,$26,$2C,$25,$24,$00,$21,$2C,$2F,$2E,$27,$00,$26,$2F
-;vid	dta d"HUFFLED ALONG FO"
-		dta $32,$00,$21,$00,$00,$00,$FF,$02,$03,$2D,$2F,$2D,$25,$2E,$34,$0C
-;vid	dta d"R A   ",$FF,d""#MOMENT,"
-		dta $00,$26,$29,$2E,$24,$29,$2E,$27,$00,$2E,$2F,$34,$28,$29,$2E,$27
-;vid	dta d" FINDING NOTHING"
-		dta $00,$33,$35,$33,$30,$29,$23,$29,$2F,$35,$33,$0C,$FF,$02,$04,$00
-;vid	dta d" SUSPICIOUS,",$FF,d""$ "
-		dta $37,$21,$2C,$2B,$25,$24,$00,$35,$30,$00,$34,$2F,$00,$34,$28,$25
-;vid	dta d"WALKED UP TO THE"
-		dta $00,$27,$21,$34,$25,$0C,$00,$2B,$2E,$2F,$23,$2B,$25,$24,$00,$34
-;vid	dta d" GATE, KNOCKED T"
-		dta $37,$2F,$FF,$02,$05,$00,$00,$34,$29,$2D,$25,$33,$0C,$00,$21,$2E
-;vid	dta d"WO",$FF,d""%  TIMES, AN"
-		dta $24,$00,$24,$29,$33,$33,$21,$30,$30,$25,$21,$32,$25,$24,$00,$29
-;vid	dta d"D DISSAPPEARED I"
-		dta $2E,$33,$29,$24,$25,$0E,$00,$00,$FF
-;vid	dta d"NSIDE.  ",$FF
-L_57D6	dta $02,$03,$03,$39,$2F,$35,$00,$28,$25,$21,$32,$24,$00,$21,$00,$33
-;vid	dta d""##YOU HEARD A S"
-		dta $28,$2F,$35,$34,$1A,$00,$02,$24,$29,$25,$0C,$00,$37,$32,$25,$34
-;vid	dta d"HOUT: "DIE, WRET"
-		dta $23,$28,$01,$02,$00,$FF,$03,$04,$00,$00,$00,$2E,$2F,$37,$00,$39
-;vid	dta d"CH!" ",$FF,d"#$   NOW Y"
-		dta $2F,$35,$00,$28,$21,$36,$25,$00,$34,$2F,$00,$26,$29,$27,$28,$34
-;vid	dta d"OU HAVE TO FIGHT"
-		dta $0E,$0E,$0E,$00,$00,$00,$00,$00,$00,$00,$FF,$00,$00,$00,$00,$00
-;vid	dta d"...       ",$FF,d"     "
-		dta $00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-;vid	dta d"          "
+L_573D	dta 4
+	dta 2,2,d"  THE GUARD SHUFFLED ALONG FOR A   ",$FF
+	dta 2,3,d"MOMENT, FINDING NOTHING SUSPICIOUS,",$FF
+	dta 3,4,d"WALKED UP TO THE GATE, KNOCKED TWO ",$FF
+	dta 4,4,d"  TIMES, AND DISSAPPEARED INSIDE.  ",$FF
+	
+L_57D6	dta 2
+	dta 3,3,d"YOU HEARD A SHOUT: ""DIE, WRETCH!""",$FF
+	dta 3,4,d"    NOW YOU HAVE TO FIGHT...     ",$FF
 L_5830	lda L_022F			;5830 AD 2F 02
 		sta L_5999			;5833 8D 99 59
 		lda L_5998			;5836 AD 98 59
@@ -4690,7 +4612,7 @@ L_6129	dta 4
 	dta 1,4,d"WALL.",$ff
 	
 L_61AB	dta 4
-	dta 1,1,d"YOU'RE STANDING IN A LARGE ROOM.",$ff
+	dta 1,1,d"YOU'RE STANDING IN A LARGE CHAMBER.",$ff
 	dta 1,2,d"AGAINST THE WALL IS A LARGE, RICHLY",$ff
 	dta 1,3,d"DECORATED THRONE. YOU SEE STAIRS",$ff
 	dta 1,4,d"LEADING UP.",$FF
@@ -4710,7 +4632,7 @@ L_62D0	dta 5
 L_6385	dta 4
 	dta 1,1,d"YOU'RE IN A SECRET ROOM. EVERYTHING",$FF
 	dta 1,2,d"RADIATES A STRANGE GLOW. A STONE",$FF
-	dta 1,3,d"PEDESTAL STANDS IN THE CENTER. AN",$FF
+	dta 1,3,d"PEDESTAL STANDS IN THE CENTER.",$FF
 	dta 1,4,d"THE THRONE STANDS AGAINST THE WALL.",$FF
     
 L_6416	dta 4
@@ -4762,17 +4684,17 @@ L_67BE	dta 4
 
 L_6838	dta 3
 	dta 1,1,d"YOU'RE KNEE-DEEP IN ICE WATER IN A",$FF
-	dta 1,2,d"DARK CANAL. THERE'S A HOLE ABOVE YOU",$ff
+	dta 1,2,d"DARK SEWER. THERE'S A HOLE ABOVE YOU",$ff
 	dta 1,3,d"AND ANOTHER ONE COUPLE METERS AWAY.",$FF
 	
 L_68B4	dta 3
-	dta 1,1,d"YOU WALKED INTO A SMALL ROOM. YOU CAN",$FF
-	dta 1,2,d"GO DOWN THE STAIRS. YOU FEEL THE COLD",$ff
-	dta 1,3,d"AIR.",$FF
+	dta 1,1,d"YOU WALKED INTO A SMALL CHAMBER. YOU",$FF
+	dta 1,2,d"CAN GO DOWN THE STAIRS. YOU FEEL THE",$ff
+	dta 1,3,d"COLD AIR.",$FF
 
 L_691C	dta 2
 	dta 1,1,d"YOU ARE IN AN ENCLOSED SPACE. THE ONLY",$ff
-	dta 1,2,d"EXIT LEADS BACK TO CANAL.",$FF
+	dta 1,2,d"EXIT LEADS BACK TO THE SEWER.",$FF
 	
 ;input text address ptr in X,Y
 .proc	print_frame_and_text
@@ -4963,7 +4885,7 @@ L_6B06	dta d"PEDESTAL",$FF
 L_6B10	dta d"MEDALLION",$FF
 L_6B19	dta d"CANDLESTICK",$FF
 L_6B23	dta d"HIDEOUT",$FF
-L_6B2B	dta d"COAT",$FF
+L_6B2B	dta d"CLOAK",$FF
 L_6B33	dta d"STICK",$FF
 L_6B39	dta d"BOOKS",$FF
 L_6B41	dta d"FUR",$FF
@@ -5063,7 +4985,7 @@ L_6C5A	dta $FF,$FF,$FF,$FF,$01,$0B,$04
 ;vid	dta d"                "
 		dta $00,$00,$00,$00
 ;vid	dta d"    "*/
-L_6C8E	dta $FF,$FF,$FF,$FF,$01,$0A,$04
+L_6C8E	dta $FF,$FF,$FF,$FF,$01,$0c,$04
 	dta d"LOCKED WITH A KEY",$FF
 
 L_6CD3	;rpt	
@@ -5189,11 +5111,11 @@ L_71F1	dta $FF,$FF,$FF,$FF,$01,$07,$04
 	dta d"IT IS STUDDED WITH GEMS.",$FF
 	
 L_7212	dta $37,$00,$39,$FE,$01,$08,$04
-	dta d"YOU FOUND A COAT INSIDE",$FF
+	dta d"YOU FOUND A CLOAK INSIDE",$FF
 	
 L_723A	dta $FF,$FF,$FF,$FF,$02,$03,$04
-	dta d"BIG BLACK COAT - I WONDER IF IT'S",$FF,3,5
-	dta d"  USED TO PROTECT AGAINST RAIN?  ",$FF
+	dta d"BIG BLACK CLOAK - I WONDER IF IT'S",$FF,3,5
+	dta d"  USED TO PROTECT AGAINST RAIN?   ",$FF
 		
 L_728D	dta $FF,$FF,$FF,$FF,$01,14,$04
 	dta d"NOTHING ELSE",$ff
@@ -5207,8 +5129,8 @@ L_7321	dta $FF,$FF,$FF,$FF,$02
 	dta 7,4,d"IT'S A LONG WALKING STICK,",$ff
 	dta 7,5,d"WITH A RUBY GEM AT THE END",$FF
 	
-L_7347	dta $FF,$FF,$FF,$FF,$02,$08,$04
-	dta d"NATURE BOOKS - E.G.",$ff,8,5
+L_7347	dta $FF,$FF,$FF,$FF,$02,10,4
+	dta d"NATURE BOOKS - E.G.",$ff,10,5
 	dta d"   BIRD BREEDING   ",$FF
 	
 L_7384	dta $FF,$FF,$FF,$FF,$01,$0A,$04
@@ -5316,7 +5238,7 @@ L_74B3	dta $00,$FF,$FF,$FF,$FF,$05
 	dta 2,5,d"ENTRANCE AND BEGAN TO LOOK AROUND...",$FF
 
 L_757B	dta $01,$FF,$FF,$FF,$FF,$01
-	dta 9,4,d"YOU HEAR A CLATTER!",$FF
+	dta 10,4,d"YOU HEAR A CLATTER!",$FF
 	
 L_759F	dta $FF,$FF,$FF,$FF,$FF,$02
 	dta 5,4,d"IT'S TOO HEAVY - YOU CAN'T",$FF
@@ -5333,7 +5255,7 @@ L_7623	dta $FF,$FF,$FF,$FF,$FF,$02
 	dta 6,5,d" LITTLE MORE ANABOLICS?  ",$ff
 	
 L_7667	dta $FF,$FF,$FF,$FF,$FF,$01
-	dta 10,4,d"KEY NEEDED!",$FF
+	dta 15,4,d"KEY NEEDED!",$FF
 	
 L_7684	dta $FF,$07,$00,$06,$FE,$01
 	dta $0C,$04,d"THEY'RE STUCK!",$FF
@@ -5346,11 +5268,11 @@ L_76B2	dta $FF,$09,$00,$08,$FE,$01
 	
 L_76C7	dta $FF,$06,$00,$07,$FE,$02
 	dta $08,$04,d"THE LOCK CLICKED SOFTLY.",$ff
-	dta $08,$05,d"         OPEN !         ",$ff
+	dta $08,$05,d"         OPEN!          ",$ff
 	
 L_7709	dta $03,$0B,$00,$0C,$FE,$02
-	dta $0F,$04,d" YOU'VE ACTIVATED THE ",$FF
-	dta $0F,$05,d"GATE OPENING MECHANISM",$ff
+	dta $08,$04,d" YOU'VE ACTIVATED THE  ",$FF
+	dta $08,$05,d"GATE OPENING MECHANISM.",$ff
 	
 L_773F	dta $04,$0C,$00,$0B,$FE,$02
 	dta $0a,$04,d"YOU HEAR THE CLANG OF",$ff
@@ -5361,7 +5283,7 @@ L_7768	dta $FF,$FF,$FF,$FF,$FF,$02
 	dta $08,$05,d"   A SIGN IN IT?       ",$FF
 	
 L_77A6	dta $FF,$0E,$00,$22,$FE,$01
-	dta $0B,$04,d"YOU CLOSED THE DRAWER",$FF
+	dta $0B,$04,d"YOU CLOSED THE DRAWER.",$FF
 	
 L_77C1	dta $FF,$0F,$00,$10,$01,$01
 	dta $04,$04,d"YOU FOUND A FLINT IN THE DRAWER!",$FF
@@ -5384,7 +5306,7 @@ L_7891	dta $07,$17,$00,$18,$FE,$02
 	dta $06,$05,d"    YOU TOOK IT OUT GENTLY.     ",$ff
 	
 L_78D5	dta $FF,$18,$00,$23,$FE,$01
-	dta $0e,$04,d"YOU CLOSED THE CUPBOARD.",$FF
+	dta $08,$04,d"YOU CLOSED THE CUPBOARD.",$FF
 	
 L_78EF	dta $08,$FF,$FF,$19,$00,$01
 	dta $0f,$04,d"SO TASTY!",$FF
@@ -5394,7 +5316,7 @@ L_7908	dta $FF,$FF,$FF,$FF,$FF,$02
 	dta 9,$05,d"   LOCK IS TOO OLD.   ",$FF
 	
 L_7942	dta $FF,$FF,$FF,$FF,$FF,$01
-	dta $07,$04,d"IT'S LOCKED WITH A KEY.",$FF
+	dta $08,$04,d"IT'S LOCKED WITH A KEY.",$FF
 	
 L_7963	dta $11,$32,$FE,$2B,$00,$04
 	dta $05,$02,d" EVERYTHING BEGAN TO VIBRATE ",$FF
@@ -5486,8 +5408,8 @@ L_7E72	dta $FF,$FF,$FF,$FF,$FF,$01
 	dta $0A,$04,d"IT WON'T BUDGE!",$FF
 	
 L_7E8E	dta $0F,$FF,$FF,$FF,$FF,$02
-	dta $0A,$04,d"  YOU GENTLY TOUCHED  ",$FF
-	dta $0a,$05,d" THE LOCK OF THE CAGE.",$FF
+	dta $0A,$04,d" YOU GENTLY TOUCHED  ",$FF
+	dta $0a,$05,d"THE LOCK OF THE CAGE.",$FF
 	
 L_7EC2	dta $FF,$FF,$FF,$FF,$FF,$01
 	dta $0b,$04,d"NO TIME TO READ...",$FF
@@ -5507,7 +5429,7 @@ L_7F6F	dta $FF,$FF,$FF,$FF,$FF,$01
 	dta $08,$04,d"YOU SAT ON IT COMFORTABLY.",$FF
 	
 L_7F90	dta $FF,$FF,$FF,$FF,$FF,$01
-	dta $03,$04,d"MAYBE TRY GOING THROUGH THEM...",$FF
+	dta $08,$04,d"MAYBE TRY GOING THERE...",$FF
 	
 L_7FB7	dta $FF,$FF,$FF,$FF,$FF,$01
 	dta $0C,$04,d"NOTHING HAPPENED.",$FF,d"      "
