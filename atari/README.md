@@ -26,3 +26,6 @@ To decompile the original Polish version run:
 
 To decompile the baratrans output version (partial translation) run:
 ```"decompile baratrans version.cmd"```
+
+## Special thanks
+...goes to BeWeSoft for language corrections, helping with the translation consistency and testing
