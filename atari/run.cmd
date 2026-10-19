@@ -1,0 +1,1 @@
+altirra64 "Barahir EN.atr" /singleinstance

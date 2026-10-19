@@ -1,0 +1,30 @@
+Barahir - testing walkthrough on 17.10.2026 - Jiří Bernášek
+-----------------------------------------------------------
+
+Suggested fixes:
+
+You're at the edge of a forest (was: the forest)
+You hear a clatter! (was: the clatter)
+You searched the body and found a key. (was: [graphics element] and found a key.)
+[lever] Closes the main gate. (was: You can use it to close the main gate [overflows to next line with bogus characters and appended next phrase "You found a drawer")
+I wonder if the rest of the castle looks the same. (was: I wonder if that's how the rest of the structure looks the same.)
+The entrance is waiting for the brave (was: The entrance it[typo!] waiting for the brave)
+third towards a door to the chamber (a chamber?) (was: third toward door to the chamber. [bogus characters] you're standing on...[overwritten by next line])
+Winding stairs lead down. (was: The winding stairs [overflows length of line by 1 character] lead down.)
+Description is wrong on exits from the throne to the left, and from the tower with strong guard and trophy down - both lead to the same room, and should read "To the entrance" (currently there is "Up", which is okay on exit from the cellar, but the same description is used on ways to that room also from other directions - these are plain wrong)
+You're in a secret room. Everything radiates a strange glow. (was: You're in a secret room. Everythi[missing letters] radiates a strange glow.)
+You're in a bedroom, with a large canopy bed. (was: You're in the bedroom, with the large canopy bed.)
+You pulled the lever, but it gave you a bad feeling. (was: You pulled the lever. Then you [bogus and spaces] froze. [spaces] er on)
+The floor gave way, taking you down with it! [....] Farewell, Barahir... (was: The floor gave way, taking you down with it! [....] Rest in piece, Barahir... [entire frame overflows right end of screen by 1 character, needs to be moved left])
+...equally dark and damp. A candlestick is attached to the wall. (was: ...equally dark and damp. A sconce is attached to the wall. [but the object is called "candlestick" elsewhere])
+Target description here should be "Inside" or similar (currently there is "To the center", which is weird)
+You can go to the corridor, or to a room. (was: You can go to the corridor, into the room.)
+It's iron-bound, engraved with runes. It's closed off with something. (was: They're sealed with iron, engraved with runs. They are closed off with something. [speaking of a door])
+Entire box overflows right side of screen by 2 characters, needs to be moved left - text: It's a trap! As soon as you set foot on the steps ...... bottomless pit, and met your end.
+Entire box overflows right side of screen by 1 character, needs to be moved left - text: The stone floor suddenly gave way! You fell into a bottomless abyss, with no chance of rescue!
+You're on the half-story of a dark tower. (was: You're on the half-story of the dark tower.)
+The castle cracked under the force of Daeron's power! The wizard took your... (was: The castle cracked under the force of Daeron[3 bogus characters]s power! The wizard took your [overflows the line by 1 character, due to the bogus earlier]...)
+Too long text, gets hidden behind the "OK" prompt: When you opened your eyes, you realized ..... return to the kingdom - there is much ["more"? - invisible] ahead of us, Barahir! (needs to be shorter by one line, plus the last line must be max. 32 characters, to allow space for the pop-up prompt)
+
+Also, there are two keys now called exactly the same (just "Key"), which is confusing. Apart from golden key, the original version have "Klucz" ("Key", in the guards' room), and "Kluczyk" ("Little key", in the crystal skull). The distinction needs to be reintroduced somehow.
+
