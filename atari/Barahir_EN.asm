@@ -718,7 +718,7 @@ L_2673	dta $06,d"DOWN"*,$FF
 ;L_26A7 ;repeated:
 ;L_26CE
 ;L_26F1
-L_267D	dta $09,d"INSIDE"*,$FF
+L_267D	dta $09,d"TO THE ENTRANCE HALL"*,$FF
 L_268B	dta $0C,d"TO THE CELLAR"*,$FF
 ;L_26B2 ;repeated:
 ;L_26E3
@@ -740,7 +740,7 @@ L_26E3	dta $0F,d"TO THE CHAMBER"*,$FF
 L_26F1	dta $0E,d"OUTSIDE"*,$FF
 L_26FF	dta $12,d"DEEPER"*,$FF
 L_2709	dta $11,d"DEEPER"*,$FF
-L_2713	dta $16,d"ENTRANCE HALL"*,$FF
+L_2713	dta $16,d"INSIDE"*,$FF
 L_2720	dta $12,d"TO THE CORRIDOR"*,$FF
 L_2730	dta $15,d"THROUGH THE DOOR"*,$FF
 L_273F	dta $16,d"TO THE LIBRARY"*,$FF			
@@ -774,10 +774,10 @@ L_4275	dta 1
 L_4277	dta 5,d"YOU SEE:",$FF
 
 L_443A	dta 1
-	dta 1,4,d"YOU SEE A CRYSTAL SKULL",$FF
+	dta 1,5,d"YOU SEE A CRYSTAL SKULL.",$FF
 	
 L_4464	dta 1
-	dta 1,4,d"YOU SEE A SMALL HIDEOUT",$ff
+	dta 1,5,d"YOU SEE A SMALL HIDEOUT.",$ff
 	
 ;.print *
 ;	fill_until $2825 0
@@ -2397,7 +2397,7 @@ L_3D77	dta 2
 L_3DB6	dta 1
 	dta 11,4,d"YOU CANNOT USE IT."*,$ff
 L_3DDB	dta 1
-	dta $b,1,d"WHAT DO YOU WANT TO USE?"*,$FF
+	dta 8,1,d"WHAT DO YOU WANT TO USE?"*,$FF
 L_3DF1	dta 1
 	dta 11,4,d"THERE'S NO EFFECT."*,$FF
 
@@ -3181,6 +3181,58 @@ L_45A0	iny				;45A0 C8
 		lda #$3F			;45A8 A9 3F
 		sta (ZP_F0),Y		;45AA 91 F0
 		rts				;45AC 60
+	
+.proc	NTSC
+	sta L_D01B
+	ldx #2
+	ldy #2
+	lda $d014
+	and #$0e
+	cmp #$0e
+	bne PAL
+	ldy #5
+PAL	lda $2c4,x
+	and #$0f
+	ora topclr,y
+	sta $2c4,x
+	
+	lda $de1,x
+	and #$0f
+	ora botclr,y
+	sta $de1,x
+	
+	lda $dea,x
+	and #$0f
+	ora botclr,y
+	sta $dea,x
+	
+	dey
+	dex
+	bpl PAL
+		
+x0	rts
+topclr	
+	dta $30,$30,$20 ;pal
+	dta $40,$40,$30 ;ntsc
+
+botclr	
+	dta $60,$60,$60 ;pal
+	dta $70,$70,$70 ;ntsc
+.endp	
+
+.proc	PLAY
+	lda $d014
+	and #$0e
+	cmp #$0e
+	bne PAL
+	dec counter
+	bne PAL
+	mva #6 counter
+	rts
+PAL	jsr L_9122	;cmc_play
+	rts
+counter	dta 1
+.endp
 	
 	fill_until $45ad 0
 	
@@ -5027,37 +5079,37 @@ L_6CBF	dta $FF,$FF,$FF,$FF,$01,17,$04
 L_6CE7	dta $FF,$FF,$FF,$FF,$01,$0B,$04
 	dta d"SIMPLE METAL KEY",$FF
 	
-L_6D04	dta $FF,$FF,$FF,$FF,$01,$03,$04
+L_6D04	dta $FF,$FF,$FF,$FF,$01,$07,$04
 	dta d"USED TO OPEN THE MAIN GATE",$FF
 	
 L_6D2D	dta $FF,$FF,$FF,$FF,$01,$0a,$04
 	dta d"CLOSES THE MAIN GATE",$FF
 
-L_6D54	dta $0F,$FE,$0D,$00,$01,$08,$04
+L_6D54	dta $0F,$FE,$0D,$00,$01,$0b,$04
 	dta d"YOU FOUND A DRAWER",$ff
 	
-L_6D6E	dta $FF,$FF,$FF,$FF,$01,$02,$04
+L_6D6E	dta $FF,$FF,$FF,$FF,$01,$05,$04
 	dta d"RIGHT NOW, THE DRAWER IS OPEN",$FF
 	
-L_6D9A	dta $FF,$FF,$FF,$FF,$01,$0A,$04
+L_6D9A	dta $FF,$FF,$FF,$FF,$01,17,$04
 	dta d"CLOSED",$ff
 	
 L_6DB0	dta $FF,$FF,$FF,$FF,$02,$07,$04
 	dta d"AS YOU CAN IMAGINE, IT'S",$ff,7,5
 	dta d"  USED TO LIGHT A FIRE  ",$ff
 	
-L_6DF1	dta $FF,$FF,$FF,$FF,$02,$04,$04
-	dta d"IT'S OUT - WE COULD",$FF,4,5
+L_6DF1	dta $FF,$FF,$FF,$FF,$02,$09,$04
+	dta d"IT'S OUT - WE COULD",$FF,9,5
 	dta d"    USE A FLINT    ",$ff
 	
 L_6E30	dta $FF,$FF,$FF,$FF,$01,16,$04
 	dta d"IT'S LIT",$FF
 
-L_6E45	dta $FF,$FF,$FF,$FF,$02,$06,$04
-	dta d"IT MAY BE USED TO OPEN",$FF,6,5
+L_6E45	dta $FF,$FF,$FF,$FF,$02,$09,$04
+	dta d"IT MAY BE USED TO OPEN",$FF,9,5
 	dta d"   ANOTHER PASSAGE    ",$FF
 
-L_6E88	dta $FF,$FF,$FF,$FF,$01,$03,$04
+L_6E88	dta $FF,$FF,$FF,$FF,$01,$05,$04
 	dta d"YOU'VE ALREADY PLAYED WITH IT",$ff
 	
 L_6EA5	dta $FF,$FF,$FF,$FF,$01,$0e,$04
@@ -5065,7 +5117,7 @@ L_6EA5	dta $FF,$FF,$FF,$FF,$01,$0e,$04
 
 L_7020	;rept
 L_7036
-L_6EB7	dta $FF,$FF,$FF,$FF,$01,$0D,$04
+L_6EB7	dta $FF,$FF,$FF,$FF,$01,15,$04
 	dta d"IT'S CLOSED",$FF
 	
 L_6ECD	dta $FF,$FF,$FF,$FF,$01,$07,$04
@@ -5084,7 +5136,7 @@ L_6F4D	dta $FF,$FF,$FF,$FF,$01,$0C,$04
 L_6F66	dta $FF,$FF,$FF,$FF,$01,$05,$04
 	dta d"IT'S DEFINITELY A MAGIC OBJECT!",$FF
 
-L_6F91	dta $FF,$FF,$FF,$FF,$01,$02,$04
+L_6F91	dta $FF,$FF,$FF,$FF,$01,$04,$04
 	dta d"HAS ENGRAVED ILLEGIBLE PATTERNS",$FF
 	
 L_6FBC	dta $FF,$FF,$FF,$FF,$02,$06,$04
@@ -5106,8 +5158,8 @@ L_704C	dta $FF,$FF,$FF,$FF,$01,$0A,$04
 L_7068	dta $FF,$FF,$FF,$FF,$01,$0A,$04
 	dta d"BIG, MUTTON THIGH",$FF
 	
-L_7085	dta $FF,$FF,$FF,$FF,$02,$07,$04
-	dta d" IT'S VERY LARGE. IT STANDS IN ",$ff,7,5
+L_7085	dta $FF,$FF,$FF,$FF,$02,$05,$04
+	dta d" IT'S VERY LARGE. IT STANDS IN ",$ff,5,5
 	dta d"THE CENTRAL PART OF THE CHAMBER",$ff
 	
 L_70C2	dta $FF,$FF,$FF,$FF,$01,$0A,$04
@@ -5143,7 +5195,7 @@ L_723A	dta $FF,$FF,$FF,$FF,$02,$03,$04
 	dta d"BIG BLACK COAT - I WONDER IF IT'S",$FF,3,5
 	dta d"  USED TO PROTECT AGAINST RAIN?  ",$FF
 		
-L_728D	dta $FF,$FF,$FF,$FF,$01,$04,$04
+L_728D	dta $FF,$FF,$FF,$FF,$01,14,$04
 	dta d"NOTHING ELSE",$ff
 	
 L_72B6	dta $FF,$FF,$FF,$FF,$03,$07,$03
@@ -5151,8 +5203,9 @@ L_72B6	dta $FF,$FF,$FF,$FF,$03,$07,$03
 	dta d"WITH RUNES. IT'S CLOSED OFF",$ff,7,5
 	dta d"     WITH SOMETHING.       ",$FF
 	
-L_7321	dta $FF,$FF,$FF,$FF,$01,$02,$04
-	dta d"IT'S LONG, WITH A RUBY GEM AT THE END",$FF
+L_7321	dta $FF,$FF,$FF,$FF,$02
+	dta 7,4,d"IT'S A LONG WALKING STICK,",$ff
+	dta 7,5,d"WITH A RUBY GEM AT THE END",$FF
 	
 L_7347	dta $FF,$FF,$FF,$FF,$02,$08,$04
 	dta d"NATURE BOOKS - E.G.",$ff,8,5
@@ -5337,8 +5390,8 @@ L_78EF	dta $08,$FF,$FF,$19,$00,$01
 	dta $0f,$04,d"SO TASTY!",$FF
 	
 L_7908	dta $FF,$FF,$FF,$FF,$FF,$02
-	dta $0E,$04,d"YOU CAN'T LOCK IT, THE ",$FF
-	dta $0e,$05,d"   LOCK IS TOO OLD.    ",$FF
+	dta 9,$04,d"YOU CAN'T LOCK IT, THE",$FF
+	dta 9,$05,d"   LOCK IS TOO OLD.   ",$FF
 	
 L_7942	dta $FF,$FF,$FF,$FF,$FF,$01
 	dta $07,$04,d"IT'S LOCKED WITH A KEY.",$FF
@@ -6684,12 +6737,12 @@ L_0C4E	cmp ZP_14			;0C4E C5 14
 		sta L_D20F			;0C5B 8D 0F D2
 		lda #$FE			;0C5E A9 FE
 		sta L_D301			;0C60 8D 01 D3
-		ldx #$0C			;0C63 A2 0C
-		ldy #$80			;0C65 A0 80
+		ldx >L_0C80			;0C63 A2 0C
+		ldy <L_0C80			;0C65 A0 80
 		stx L_FFFE			;0C67 8E FE FF
 		sty L_FFFF			;0C6A 8C FF FF
-		ldx #$0C			;0C6D A2 0C
-		ldy #$81			;0C6F A0 81
+		ldx >L_0C81			;0C6D A2 0C
+		ldy <L_0C81			;0C6F A0 81
 		stx L_FFFB			;0C71 8E FB FF
 		sty L_FFFA			;0C74 8C FA FF
 		lda #$40			;0C77 A9 40
@@ -6718,8 +6771,9 @@ L_0C89	php				;0C89 08
 		lda L_02F4			;0CA7 AD F4 02
 		sta L_D409			;0CAA 8D 09 D4
 		lda L_026F			;0CAD AD 6F 02
-		sta L_D01B			;0CB0 8D 1B D0
+		jsr NTSC	;sta L_D01B			;0CB0 8D 1B D0
 		ldx #$07			;0CB3 A2 07
+		
 L_0CB5	lda L_02C0,X		;0CB5 BD C0 02
 		sta L_D012,X		;0CB8 9D 12 D0
 		dex				;0CBB CA
@@ -6728,7 +6782,7 @@ L_0CB5	lda L_02C0,X		;0CB5 BD C0 02
 		and #$0F			;0CC1 29 0F
 		sta L_0278			;0CC3 8D 78 02
 		inc ZP_14			;0CC6 E6 14
-		jsr L_9122			;0CC8 20 22 91
+		jsr PLAY ;jsr L_9122			;0CC8 20 22 91
 		ldx #$25			;0CCB A2 25
 		ldy #$10			;0CCD A0 10
 		stx ZP_EA			;0CCF 86 EA
@@ -6803,8 +6857,8 @@ L_0D57	ldx #$00			;0D57 A2 00
 		stx L_0230			;0D5B 8E 30 02
 		sty L_0231			;0D5E 8C 31 02
 		lda #$C0			;0D61 A9 C0
-		ldx #$80			;0D63 A2 80
-		ldy #$0D			;0D65 A0 0D
+		ldx <L_0D80			;0D63 A2 80
+		ldy >L_0D80			;0D65 A0 0D
 		stx L_0200			;0D67 8E 00 02
 		sty L_0201			;0D6A 8C 01 02
 		sta L_D40E			;0D6D 8D 0E D4
@@ -6830,9 +6884,9 @@ L_0D80	pha				;0D80 48
 		sta L_D01A			;0D9F 8D 1A D0
 		lda #$22			;0DA2 A9 22
 		sta L_D40A			;0DA4 8D 0A D4
-		lda #$B3			;0DA7 A9 B3
+		lda <L_0DB3			;0DA7 A9 B3
 		sta L_0200			;0DA9 8D 00 02
-		lda #$0D			;0DAC A9 0D
+		lda >L_0DB3			;0DAC A9 0D
 		sta L_0201			;0DAE 8D 01 02
 		pla				;0DB1 68
 		rti				;0DB2 40
@@ -6846,9 +6900,9 @@ L_0DB3	pha				;0DB3 48
 		sta L_D018			;0DC6 8D 18 D0
 		lda #$00			;0DC9 A9 00
 		sta L_D01A			;0DCB 8D 1A D0
-		lda #$80			;0DCE A9 80
+		lda <L_0D80			;0DCE A9 80
 		sta L_0200			;0DD0 8D 00 02
-		lda #$0D			;0DD3 A9 0D
+		lda >L_0D80			;0DD3 A9 0D
 		sta L_0201			;0DD5 8D 01 02
 		pla				;0DD8 68
 		rti				;0DD9 40
@@ -7787,7 +7841,7 @@ L_1E3C
 	dta $10, $40, $00, $40, $00, $00, $00, $00, $40, $00, $40, $00, $00, $00, $00, $40
 	dta $00, $55, $55, $55, $55, $55, $40, $00
 :6	dta 0
-;PL icons: 
+;PL compass labels: 
 /*
 		dta $03,$FF,$FF,$FF,$FF,$FF,$F0,$03,$AA,$AA,$AA,$AA,$95,$70,$03,$80
 		dta $00,$00,$00,$00,$70,$03,$80,$00,$0C,$00,$00,$70,$03,$80,$39,$19
