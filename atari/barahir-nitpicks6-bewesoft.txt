@@ -1,0 +1,41 @@
+Barahir - 6. průchod
+====================
+
+** Již zmíněno v diskusi: Překlep "DEPLEATED" - správně "DEPLETED"
+
+** "They're stuck!" - mělo by být "It slammed shut!", řeč je o dveřích (beech door - anglicky jednotné číslo), a jde o akci jejich hlučného zavření (originál "Zatrzasnęły się"), není to žádný nevratný zásek.
+
+** "You closed them" - "You closed it", opět jde o dveře (oak door - jednotné číslo)
+
+** "You see your friend Daeron. He's trapped behind the bars."
+ - Celý box je posunutý vlevo, kde ho částečně překrývají další položky. (Zřejmě ve zdrojáku chybí "$" u čísla 10?)
+
+** Závěrečný text se nám nějak nechtěně zkrátil (hýbalo se tam s tím). Ve zdrojáku vidím plné znění, které bylo příliš dlouhé - konce posledních dvou řádků mizely pod "OK":
+    WHEN YOU OPENED YOUR EYES, YOU    
+  REALIZED THAT YOU WERE NO LONGER IN 
+ THE CASTLE, BUT STANDING IN A FOREST 
+CLEARING. YOU SAW DAERON, WHO SHOUTED:
+"YOU DID IT! NOW WE SHALL BOTH RETURN 
+  TO THE KINGDOM - THERE IS MUCH WORK 
+        AHEAD OF US, BARAHIR!"
+...Pak byla zřejmě snaha to rozdělit na 2 stránky, měli jsme tam jen tu závěrečnou část od "You did it" zopakovanou dvakrát
+...Pak se duplicita dala pryč, a máme teď jen ten konec.
+ - Mám dvě možnosti řešení:
+
+ a) Zkrátit text tak, aby se vešel na 5 řádků, to je plnohodnotný box (umístěný až nahoru):
+   OPENING YOUR EYES, YOU SAW DAERON  
+    STANDING IN A FOREST CLEARING.
+ HE SHOUTED: "YOU DID IT! NOW WE SHALL
+  BOTH RETURN TO THE KINGDOM - THERE
+  IS MUCH WORK AHEAD OF US, BARAHIR!"
+
+ b) Použít stejně jako originál 6 řádků, z nichž poslední ale musí být kratší (konec je překrytý boxem "OK"):
+OPENING YOUR EYES, YOU FOUND YOURSELF 
+   OUT OF THE CASTLE, IN A FOREST
+CLEARING. YOU SAW DAERON, WHO SHOUTED:
+"YOU DID IT! NOW WE SHALL BOTH RETURN 
+ TO THE KINGDOM - THERE IS MUCH WORK 
+     AHEAD OF US, BARAHIR!"     ######
+...Tady znaky "###" zastupují část, která nebude ve hře vidět.
+
+

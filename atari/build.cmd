@@ -1,4 +1,4 @@
-mads "Barahir_EN.asm" -o:"Barahir_EN.xex"
+mads "Barahir_EN.asm" -o:"Barahir_EN.xex" -l -t
 copy "Barahir_EN.xex" atr\AUTORUN.SYS
 dir2atr -b Dos25 Barahir_EN_noGFX.atr atr
 python merge_atr_files.py

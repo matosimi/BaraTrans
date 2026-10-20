@@ -1,0 +1,18 @@
+Barahir - 5. průchod
+====================
+
+Koukal jsem do zdrojáku, a je tam ještě hromádka textů, které jsem ve hře vůbec nepotkal. Některé se mi podařilo ověřit:
+
+** "The guard shuffled along for a moment, finding nothing suspicious.  W  times, and disappeared inside. [další mezery přetékají mimo]" + 1 nezačištěný řádek navíc (Toto se zobrazí, když na začátku hry jen stojím za balvanem, házím na bránu kamínky, a pokaždé akorát čekám, než strážný zas odejde dovnitř)
+ - Jsou tam nějak divně souřadnice pro výpis těch řádků.
+
+** "It's too heavy, you can't open it yourself" (při pokusu o otevření brány ručně)
+ - ve spodním řádku není začištěný zbylý prostor vpravo
+
+Ještě se večer podívám na tu závěrečnou obrazovku, tentokrát jsem až tam nedošel, ale v minulých verzích chyběl kus textu (WHEN YOU OPENED YOUR EYES, YOU REALIZED THAT YOU WERE NO LONGER IN THE CASTLE atd.), možná by se tam přece jen po nějakém zkrácení vešel.
+
+Také je tam nějaký bug, který ale má stejně i původní polská verze: Když naskládám příliš mnoho předmětů v jedné lokaci, zobrazuje se jich jen 6 (jakýsi výběr, asi podle pořadí v seznamu), ale mohu pokládat stále další (které jakoby mizí, ale objeví se zas po odebrání předmětů na únosný počet). Ve zdrojáku vidím text "AREN'T YOU OVERDOING IT BY HOARDING ALL THIS STUFF ?!", což by asi mělo být pro tento případ, nicméně nahromadil jsem v jedné lokaci až 14 předmětů a nic se nestalo (stejně v polské i anglické verzi).
+
+Mám ještě na seznamu pár dalších textů, které se pokusím ve hře najít a vyzkoušet jak vypadají. (Podařilo se mi nakonec vyvolat i zprávu o vyčerpání energie, ta je technicky v pořádku, ale byla to fuška - dosáhnu toho neustálým klepáním na bránu a jejím ručním zavíráním, je těžká a to unaví...)
+
+

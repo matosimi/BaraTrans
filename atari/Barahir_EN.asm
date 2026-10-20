@@ -1502,7 +1502,7 @@ L_3088	sta L_0C28,X		;3088 9D 28 0C
 		*/
 		jsr L_3E2F_press_fire			;30AB 20 2F 3E
 		jmp L_425D			;30AE 4C 5D 42
-L_30B1	lda L_442B			;30B1 AD 2B 44
+L_30B1		lda L_442a ;HOARDING check fix... L_442B			;30B1 AD 2B 44
 		cmp #$06			;30B4 C9 06
 		bne L_30D4			;30B6 D0 1C
 		ldx <L_2FC0			;30B8 A2 C0
@@ -1967,12 +1967,13 @@ L_3582		ldx <L_35EC			;3582 A2 EC
 		ldx <L_36BA			;359B A2 BA
 		ldy >L_36BA			;359D A0 36
 		print_frame_and_text
+		jsr L_3E2F_press_fire
 		
 		;{ added split of a long text
 		ldx <L_36BA_2
 		ldy >L_36BA_2
 		print_frame_and_text
-		;jsr L_3E2F_press_fire			;3598 20 2F 3E
+		;			;3598 20 2F 3E
 				
 		;}
 		
@@ -1985,7 +1986,7 @@ L_3582		ldx <L_35EC			;3582 A2 EC
 		ldx #$00			;35AA A2 00
 		ldy #$00			;35AC A0 00
 		jsr L_4520_print_frame*/			;35AE 20 20 45
-		jsr L_3E73_ok_wait			;35B1 20 73 3E
+		jsr L_3E2F_press_fire		;35B1 20 73 3E
 		ldx <L_37B1			;35B4 A2 B1
 		ldy >L_37B1			;35B6 A0 37
 		print_frame_and_text
@@ -1998,7 +1999,7 @@ L_3582		ldx <L_35EC			;3582 A2 EC
 		ldx #$07			;35C3 A2 07
 		ldy #$03			;35C5 A0 03
 		jsr L_4520_print_frame*/			;35C7 20 20 45
-		jsr L_3E73_ok_wait			;35CA 20 73 3E
+		jsr L_3E2F_press_fire			;35CA 20 73 3E
 		jmp L_3B73			;35CD 4C 73 3B
 L_35D0		ldx <L_37CE			;35D0 A2 CE
 		ldy >L_37CE		;35D2 A0 37
@@ -2015,12 +2016,12 @@ L_35D0		ldx <L_37CE			;35D0 A2 CE
 		jsr L_3E2F_press_fire			;35E6 20 2F 3E
 		jmp L_4267			;35E9 4C 67 42
 L_35EC	dta 6
-	dta 1,1,d"THE CASTLE CRACKED UNDER THE FORCE OF",$ff
-	dta 1,2,d"DAERON'S POWER! THE WIZARD TOOK YOUR ",$FF
-	dta 1,3,d"STICK AND WHISPERED AN UNKNOWN SPELL.",$FF
-	dta 1,4,d" SUDDENLY, EVERYTHING BEGAN TO SPIN, ",$FF
-	dta 1,5,d"       AND YOU GOT BLINDED BY        ",$ff
-	dta 1,6,d"LIGHTNING. YOU FELL TO THE GROUND... ",$ff
+	dta 1,1,d"THE CASTLE CRACKED UNDER THE FORCE OF ",$ff
+	dta 1,2,d" DAERON'S POWER! THE WIZARD TOOK YOUR ",$FF
+	dta 1,3,d"STICK AND WHISPERED AN UNKNOWN SPELL. ",$FF
+	dta 1,4,d" SUDDENLY, EVERYTHING BEGAN TO SPIN,  ",$FF
+	dta 1,5,d"  AND YOU GOT BLINDED BY LIGHTNING.   ",$ff
+	dta 1,6,d"       YOU FELL TO THE GROUND...      ",$ff
 	
 L_36BA	dta 4
 	dta 1,2,d"    WHEN YOU OPENED YOUR EYES, YOU    ",$ff
@@ -2032,7 +2033,7 @@ L_36BA_2	dta 3
 	
 	dta 1,3,d"""YOU DID IT! NOW WE SHALL BOTH RETURN ",$ff
 	dta 1,4,d"  TO THE KINGDOM - THERE IS MUCH WORK ",$ff
-	dta 1,5,d"        AHEAD OF US, BARAHIR!""",$ff
+	dta 1,5,d"        AHEAD OF US, BARAHIR!""        ",$ff
 
 L_37B1	dta 1
 	dta 8,4,d"CONGRATULATIONS BARAHIR!",$FF
@@ -2390,7 +2391,7 @@ L_3D18		ldx <L_3D34			;3D18 A2 34
 		jmp L_3B5A			;3D31 4C 5A 3B
 L_3D34	dta 2
 	dta 7,4,d"I'M SORRY, BUT YOUR ENERGY",$FF
-	dta 10,5,d"HAS BEEN DEPLEATED!",$FF
+	dta 7,5,d"    HAS BEEN DEPLETED!    ",$FF
 L_3D77	dta 2
 	dta 6,3,d"I'M SORRY, BUT YOU HAVE"*,$FF
 	dta 8,4,d"NOTHING TO USE HERE."*,$FF
@@ -3212,7 +3213,7 @@ PAL	lda $2c4,x
 		
 x0	rts
 topclr	
-	dta $20,$20,$10 ;pal
+	dta $20,$20,$20 ;pal
 	dta $40,$40,$30 ;ntsc
 
 botclr	
@@ -4061,9 +4062,9 @@ L_50FB	dta $03
 	dta $10,$06,d" FIGHTING HIM WILL BE ",$FF
 	dta $10,$07,d"   VERY DIFFICULT.    ",$FF
 L_5147	dta 3
-	dta 10,5,d"YOU SEE YOUR FRIEND ",$FF
-	dta 10,6,d"DAERON. HE'S TRAPPED",$FF
-	dta 10,7,d"  BEHIND THE BARS.  ",$FF
+	dta $10,5,d"YOU SEE YOUR FRIEND ",$FF
+	dta $10,6,d"DAERON. HE'S TRAPPED",$FF
+	dta $10,7,d"  BEHIND THE BARS.  ",$FF
 	
 L_5193	dta 2
 	dta 12,5,d"A DEAD BODY LIES",$FF
@@ -4339,8 +4340,8 @@ L_5721		ldx <L_57D6		;5721 A2 D6
 L_573D	dta 4
 	dta 2,2,d"  THE GUARD SHUFFLED ALONG FOR A   ",$FF
 	dta 2,3,d"MOMENT, FINDING NOTHING SUSPICIOUS,",$FF
-	dta 3,4,d"WALKED UP TO THE GATE, KNOCKED TWO ",$FF
-	dta 4,4,d"  TIMES, AND DISSAPPEARED INSIDE.  ",$FF
+	dta 2,4,d"WALKED UP TO THE GATE, KNOCKED TWO ",$FF
+	dta 2,5,d"  TIMES, AND DISSAPPEARED INSIDE.  ",$FF
 	
 L_57D6	dta 2
 	dta 3,3,d"YOU HEARD A SHOUT: ""DIE, WRETCH!""",$FF
@@ -5227,7 +5228,7 @@ L_740E	equ *-1
 		dta a(L_7F90)		;7499 90 7F
 		dta a(L_FFFF)		;749B FF FF
 		dta a(L_7FB7)		;749D B7 7F
-L_749F	dta $FF,$FF,$FF,$FF,$FF,$01,$0F,$04
+L_749F	dta $FF,$FF,$FF,$FF,$FF,$01,$0d,$04
 	dta d"ON YOURSELF?!",$FF
 	
 L_74B3	dta $00,$FF,$FF,$FF,$FF,$05
@@ -5241,8 +5242,8 @@ L_757B	dta $01,$FF,$FF,$FF,$FF,$01
 	dta 10,4,d"YOU HEAR A CLATTER!",$FF
 	
 L_759F	dta $FF,$FF,$FF,$FF,$FF,$02
-	dta 5,4,d"IT'S TOO HEAVY - YOU CAN'T",$FF
-	dta 9,5,d"OPEN IT YOURSELF.",$FF
+	dta 7,4,d"IT'S TOO HEAVY - YOU CAN'T",$FF
+	dta 7,5,d"    OPEN IT YOURSELF.     ",$FF
 	
 	fill_until $75e1 0
 	
@@ -5264,7 +5265,7 @@ L_769E	dta $FF,$08,$00,$09,$FE,$01
 	dta $0F,$04,d"IT'S OPEN!",$FF
 	
 L_76B2	dta $FF,$09,$00,$08,$FE,$01
-	dta $0E,$04,d"YOU CLOSED THEM",$FF
+	dta 13,$04,d"YOU CLOSED IT.",$FF
 	
 L_76C7	dta $FF,$06,$00,$07,$FE,$02
 	dta $08,$04,d"THE LOCK CLICKED SOFTLY.",$ff
