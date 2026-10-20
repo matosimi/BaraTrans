@@ -757,7 +757,7 @@ L_27B8	dta $1A,d"THROUGH THE EXIT"*,$FF
 L_27C9	dta $1D,d"TO THE ROOM"*,$FF
 L_27DD	dta $1B,d"TO THE SEWER"*,$FF
 L_27EA	dta $19,d"TO MEZZANINE"*,$FF
-L_27FA	dta $1A,d"TO A STONE PLATFORM"*,$FF
+L_27FA	dta $1A,d"TO THE STONE PLATFORM"*,$FF
 L_2808	dta $18,d"TO THE CHAMBER"*,$FF
 L_2816	dta $19,d"TO THE OUTSIDE"*,$FF
 
@@ -3212,7 +3212,7 @@ PAL	lda $2c4,x
 		
 x0	rts
 topclr	
-	dta $30,$30,$20 ;pal
+	dta $20,$20,$10 ;pal
 	dta $40,$40,$30 ;ntsc
 
 botclr	
@@ -4649,12 +4649,12 @@ L_649D	dta 3
 L_6517	dta 3
 	dta 1,1,d"YOU WALKED INTO A DESERTED ROOM. YOU",$FF
 	dta 1,2,d"CAN GO OUT THE DOOR OR CHOOSE BETWEEN",$ff
-	dta 1,3,d"TWO STAIRS. THEY LEAD UP AND DOWN.",$FF
+	dta 1,3,d"TWO STAIRWAYS LEADING UP AND DOWN.",$FF
 	
 L_65A5	dta 3
 	dta 1,1,d"THERE ARE BOOKSHELVES IN THIS ROOM.",$FF
-	dta 1,2,d"THIS MIGHT BE ASKAR'S STUDY. THE EXIT",$FF
-	dta 1,3,d"IS A DOOR.",$FF
+	dta 1,2,d"THIS MIGHT BE ASKAR'S STUDY. A DOOR",$FF
+	dta 1,3,d"LEADS OUT.",$FF
 	
 L_661A	dta 4
 	dta 1,1,d"YOU'RE IN THE LIBRARY. THERE ARE",$ff
@@ -4690,11 +4690,11 @@ L_6838	dta 3
 L_68B4	dta 3
 	dta 1,1,d"YOU WALKED INTO A SMALL CHAMBER. YOU",$FF
 	dta 1,2,d"CAN GO DOWN THE STAIRS. YOU FEEL THE",$ff
-	dta 1,3,d"COLD AIR.",$FF
+	dta 1,3,d"FLOW OF COLD AIR.",$FF
 
 L_691C	dta 2
 	dta 1,1,d"YOU ARE IN AN ENCLOSED SPACE. THE ONLY",$ff
-	dta 1,2,d"EXIT LEADS BACK TO THE SEWER.",$FF
+	dta 1,2,d"EXIT LEADS BACK TO THE PLATFORM.",$FF
 	
 ;input text address ptr in X,Y
 .proc	print_frame_and_text
@@ -5133,8 +5133,8 @@ L_7347	dta $FF,$FF,$FF,$FF,$02,10,4
 	dta d"NATURE BOOKS - E.G.",$ff,10,5
 	dta d"   BIRD BREEDING   ",$FF
 	
-L_7384	dta $FF,$FF,$FF,$FF,$01,$0A,$04
-	dta d"IT'S ABOUT BLACK MAGIC",$FF
+L_7384	dta $FF,$FF,$FF,$FF,$01,$07,$04
+	dta d"THESE ARE ABOUT BLACK MAGIC",$FF
 	
 L_73A1	dta $FF,$FF,$FF,$FF,$01,$09,$04
 	dta d"CONTAINS SOME SPELLS",$FF

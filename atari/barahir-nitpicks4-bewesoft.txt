@@ -1,0 +1,24 @@
+Barahir - čtvrtý průchod
+========================
+
+Barvy se mi v browser-based emulátoru Sfotty Pie teď zobrazují jiné než má originál (i pro PAL), možná je ale problém s detekcí PAL/NTSC v tom emulátoru, ještě to večer zkusím doma na klasičtější konfiguraci.
+
+** Deserted room: "You can go out the door or choose between two stairs. They lead up and down."
+ - lépe by vyznělo "...two stairways. These lead up and down", nebo případně "...two stairways leading up and down"
+
+** Místnost nad tím: "You feel the cold air."
+Zde se vlastně jedná o nápovědu - otvor je zakrytý kožešinou, ale hrdina vnímá studený průvan. ("Czujesz powiew zimnego powietrza")
+ - radši bych použil "You feel flow of cold air."
+
+** "You are in an enclosed space. The only exit leads back to the sewer."
+Toto je podivné, protože východ nevede přímo do kanálu, ale jen k němu (originál "...z powrotem nad kanał"), což bohužel v anglické verzi asi nejde moc odlišit. Navíc je nyní východ z místnosti při samotném pohybu hrdiny označený jinak: "to a stone platform".
+ - Nejspíš bych tam napsal "back to the platform", a asi i při pohybu bych to upravil na "to the stone platform" (vracíme se na již známé místo, takže radši "the").
+
+** "Exit is a door" (původně "Wyjściem są drzwi.")
+Ač to překladač Google uznává za správné, nějak mi to pořád zní blbě. Stejného názoru je i umělá inteligence, která jako kompaktní náhradu nabízí ještě kratší "A door leads out." - mně se to taky líbí, tak to by asi šlo použít.
+
+** Look at books: "It's about black magic"
+Tady jsme pomíchali jednotné a množné číslo. Radši bych napsal: "These are about black magic" (jsou i v protikladu ke knížkám o ptácích v předešlé místnosti).
+
+...Jinak musím pochválit úpravy směrů pohybu, to je moc pěkné.
+
