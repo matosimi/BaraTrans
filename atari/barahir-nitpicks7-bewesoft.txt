@@ -1,0 +1,32 @@
+Barahir - 7. průchod
+====================
+
+** "...walked up to the gate, knocked two times, and dissappeared inside."
+ - Přebytečné "s" v "disappeared".
+ - má tam být "knocked three(!) times" - toto je nápověda, i my musíme zaklepat třikrát, aby se brána otevřela. (Je tam "3x" i polsky)
+
+** Stále tam při zavření Beech door vidím "They're stuck!" (spíše bych dal "It slammed shut!", viz nitpicks6), to se minule nějak ztratilo
+
+** Ještě jsem se znovu podíval na závěrečný text při neúspěchu, jak se celkově úroveň zlepšila, tak mi to najednou nějak nesedělo...
+- Máme tam: "Your mission has not been completed. The kingdom is already lost. Evil powers under Askar will plunge these lands forever into darkness..."
+- Polsky: "Twoja misja nie została wypełniona. Królestwo jest juź utracone. Złe moce pod rządami Askara pogrążą te ziemie na wieki w ciemnościach..."
+- Google to klasicky překládá takhle: "Your mission has not been fulfilled. The kingdom is already lost. Evil forces, under the rule of Askar, will plunge these lands into darkness for all eternity..."
+- Umělá inteligence na Googlu (na dotaz ohledně dalších úprav pro přirozené vyznění toho překladu) navrhuje dvě verze (vnímám ty návrhy jako přiměřené):
+"Your mission remains unfulfilled. The kingdom is already lost. Under Askar's rule, evil powers will plunge these lands into eternal darkness..."
+"Your mission is unfulfilled. The kingdom is already lost. The evil forces of Askar will plunge these lands into darkness forever..."
+- Když to zkusím naformátovat podle zdrojáku, první verze se tam v podstatě nevejde (musel jsem vypustit mezeru za čárkou):
+	dta 2,2,d"  YOUR MISSION REMAINS UNFULFILLED. ",$FF
+	dta 2,3,d" THE KINGDOM IS ALREADY LOST. UNDER ",$FF
+	dta 2,4,d"ASKAR'S RULE,EVIL POWERS WILL PLUNGE",$FF
+	dta 2,5,d"THESE LANDS INTO DARKNESS FOREVER...",$FF
+- Kombinace s druhou verzí ale pasuje lépe, dokonce vycházejí jednotlivé věty na nové řádky. To bych tam navrhoval dát:
+	dta 2,2,d"  YOUR MISSION REMAINS UNFULFILLED. ",$FF
+	dta 2,3,d"    THE KINGDOM IS ALREADY LOST.    ",$FF
+	dta 2,4,d"THE EVIL FORCES OF ASKAR WILL PLUNGE",$FF
+	dta 2,5,d"THESE LANDS INTO DARKNESS FOREVER...",$FF
+
+
+Jinak "Hoarding" už funguje, mohu položit jen 6 předmětů - prima.
+Hra je mimochodem v tomto směru zabugovaná i dál - pokud je v místnosti nějaký pevný objekt (pochodeň na stěně v místnosti vlevo od brány, kde jsem to zkoušel), tak v momentě použití předmětů je seznam stejně přes limit (6 ležících předmětů + pevná pochodeň) a zobrazí se neúplný. Aspoň se ale nic nerozpadne, a řešit se toto už nedá, to bychom tu hru museli přepsat úplně. Do očí to moc nebije, originál to dělá taky, takže to bych nechal tak.
+
+
