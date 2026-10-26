@@ -75,7 +75,16 @@ L_3000		ldx #$00			;3000 A2 00
 		sta L_02C5			;370D 8D C5 02
 		lda #$BC			;3710 A9 BC
 		sta L_02C6			;3712 8D C6 02
-		mwa #pic1 unzx7.ZX7_INPUT
+		lda $d014
+		and #$0e
+		cmp #$0e
+		bne PAL
+;ntsc colors	
+		mva #$d4 L_02C4
+		mva #$d8 L_02C5
+		mva #$dc L_02C6
+		
+PAL		mwa #pic1 unzx7.ZX7_INPUT
 		mwa #$a000 unzx7.ZX7_OUTPUT
 		unzx7
 		mva #0 $af01
